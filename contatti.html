@@ -18,7 +18,15 @@
   
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
+  <!-- Leaflet (OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+
   <!-- Central Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -236,82 +244,41 @@
         </div>
       </div>
       
-      <!-- Interactive GIS Map Mockup -->
+      <!-- Interactive OSM Map (Leaflet + OpenStreetMap) -->
       <div>
         <div class="mockup-gis-container">
-          <!-- Abstract SVG Map Background simulating GIS layers (topological/cadastral elements) -->
-          <svg class="gis-svg-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-            <!-- Grid Lines -->
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--border-color)" stroke-width="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-            
-            <!-- Map features: Green Areas (Parks) -->
-            <path d="M 50 120 Q 150 100 220 180 T 350 250 T 400 450 L 50 500 Z" fill="rgba(122, 181, 92, 0.08)" stroke="rgba(122, 181, 92, 0.2)" stroke-width="1" />
-            <path d="M 500 80 Q 600 60 700 120 T 750 300 L 550 400 Z" fill="rgba(122, 181, 92, 0.08)" stroke="rgba(122, 181, 92, 0.2)" stroke-width="1" />
-            
-            <!-- Map features: River (Blue Line) -->
-            <path d="M -50 300 C 150 310 250 150 400 200 S 600 450 850 400" fill="none" stroke="rgba(54, 138, 169, 0.2)" stroke-width="6" stroke-linecap="round" />
-            <path d="M -50 300 C 150 310 250 150 400 200 S 600 450 850 400" fill="none" stroke="rgba(54, 138, 169, 0.4)" stroke-width="2" stroke-linecap="round" />
-            
-            <!-- Map features: Roads (Gray & Orange Lines) -->
-            <path d="M 100 -50 L 120 650" fill="none" stroke="rgba(148, 163, 184, 0.25)" stroke-width="8" />
-            <path d="M 100 -50 L 120 650" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6,4" />
-            
-            <path d="M -50 100 L 850 150" fill="none" stroke="rgba(148, 163, 184, 0.25)" stroke-width="6" />
-            
-            <path d="M 450 -50 C 420 150 480 300 400 450 S 200 550 150 650" fill="none" stroke="rgba(148, 163, 184, 0.25)" stroke-width="10" />
-            <path d="M 450 -50 C 420 150 480 300 400 450 S 200 550 150 650" fill="none" stroke="#ffffff" stroke-width="3" />
-            
-            <!-- Primary Road passing close to the office -->
-            <path d="M -50 480 Q 200 490 420 400 T 850 350" fill="none" stroke="rgba(239, 102, 47, 0.2)" stroke-width="8" stroke-linecap="round" />
-            <path d="M -50 480 Q 200 490 420 400 T 850 350" fill="none" stroke="rgba(239, 102, 47, 0.3)" stroke-width="4" stroke-linecap="round" />
-            
-            <!-- Cadastral Parcels (Abstract Polygons) -->
-            <polygon points="380,80 430,70 440,110 390,120" fill="rgba(148, 163, 184, 0.05)" stroke="rgba(148, 163, 184, 0.15)" stroke-width="0.75" />
-            <polygon points="390,120 440,110 450,150 400,160" fill="rgba(148, 163, 184, 0.05)" stroke="rgba(148, 163, 184, 0.15)" stroke-width="0.75" />
-            <polygon points="400,160 450,150 460,190 410,200" fill="rgba(239, 102, 47, 0.08)" stroke="rgba(239, 102, 47, 0.2)" stroke-width="1" />
-          </svg>
-          
-          <!-- Layer Switcher Sidebar Widget -->
-          <div class="gis-sidebar">
-            <h5>Strati Cartografici</h5>
-            <div class="gis-layer-item">
-              <input type="checkbox" checked id="layer-sede" disabled>
-              <label for="layer-sede">Sede Gis3W</label>
-            </div>
-            <div class="gis-layer-item">
-              <input type="checkbox" checked id="layer-grafo" disabled>
-              <label for="layer-grafo">Viabilità</label>
-            </div>
-            <div class="gis-layer-item">
-              <input type="checkbox" checked id="layer-idro" disabled>
-              <label for="layer-idro">Idrografia</label>
-            </div>
-            <div class="gis-layer-item">
-              <input type="checkbox" checked id="layer-catasto" disabled>
-              <label for="layer-catasto">Fogli Catastali</label>
-            </div>
-          </div>
-          
-          <!-- GIS Marker on Montecatini Terme -->
-          <!-- We position it around the primary road / orange building polygon (e.g., top 48%, left 51%) -->
-          <div class="gis-marker" style="top: 48%; left: 51%;">
-            <div class="gis-popup">
-              <h4>Gis3W Snc</h4>
-              <p>Viale Verdi, 24<br>Montecatini Terme (PT)</p>
-              <a href="https://maps.google.com/?q=Viale+Verdi+24+Montecatini+Terme" target="_blank" rel="noopener">Apri Mappa <i class="fa-solid fa-up-right-from-square" style="font-size: 0.7rem;"></i></a>
-            </div>
-            <div class="gis-pin"></div>
-            <div class="gis-pulse"></div>
-          </div>
+          <div id="osm-map" style="width: 100%; height: 100%; border-radius: inherit;"></div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof L === 'undefined') return;
+      // Coordinate sede Gis3W — Viale Verdi 24, Montecatini Terme (PT)
+      var sedeCoords = [43.88275, 10.77140];
+      var map = L.map('osm-map', {
+        scrollWheelZoom: false
+      }).setView(sedeCoords, 16);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      L.marker(sedeCoords).addTo(map)
+        .bindPopup(
+          '<strong>Gis3W Snc</strong><br>Viale Verdi, 24<br>51016 Montecatini Terme (PT)' +
+          '<br><a href="https://www.openstreetmap.org/?mlat=43.88275&mlon=10.77140#map=18/43.88275/10.77140" target="_blank" rel="noopener">Apri in OpenStreetMap</a>'
+        )
+        .openPopup();
+
+      // Abilita lo scroll-zoom solo al click sulla mappa
+      map.on('click', function () { map.scrollWheelZoom.enable(); });
+      map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
