@@ -1,3 +1,4 @@
-# g3w-suite.it
+# g3wsuite.it
 
-This repository contains the static website of [g3w-suite.it](https://g3w-suite.it).
+This repository contains the static website of [g3wsuite.it](https://g3wsuite.it).
+
