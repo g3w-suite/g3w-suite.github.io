@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Features – Cartographic Client & Administration | G3W-Suite</title>
+  <meta name="description" content="Explore the advanced features of the G3W-Suite Cartographic Client and Administration panel. QGIS publishing, online relational editing, and more.">
+  <meta name="keywords" content="webgis features, cartographic client, gis admin, relational editing, dataplotly, cdu, cadastre webgis">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Features – Cartographic Client & Administration | G3W-Suite">
+  <meta property="og:description" content="Discover how G3W-Suite simplifies WebGIS management with its powerful cartographic client and administrative panel.">
+  <meta property="og:image" content="https://g3wsuite.it/wp-content/uploads/2020/06/qgis_api.jpeg">
+  <meta property="og:type" content="website">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Central Stylesheet -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <div class="header-wrapper">
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="header-logo-link">
+        <img src="https://g3wsuite.it/wp-content/uploads/2019/06/logo_g3wsuite-1.png" alt="G3W-Suite Logo">
+      </a>
+      
+      <nav class="nav-menu" id="main-nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        
+        <div class="nav-dropdown">
+          <span class="nav-link" style="cursor: pointer;">Resources <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+          <div class="dropdown-menu">
+            <a href="resources.html#demo" class="dropdown-item">Online Demo</a>
+            <a href="resources.html#quickstart" class="dropdown-item">Quick Start</a>
+            <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener" class="dropdown-item">User Manual</a>
+            <a href="https://github.com/g3w-suite/g3w-suite" target="_blank" rel="noopener" class="dropdown-item">GitHub Download</a>
+          </div>
+        </div>
+        
+        <div class="nav-dropdown">
+          <span class="nav-link" style="cursor: pointer;">Partnership <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+          <div class="dropdown-menu">
+            <a href="https://g3wsuite.it/g3wsuite-partners/" target="_blank" rel="noopener" class="dropdown-item">Our Partners</a>
+            <a href="https://g3wsuite.it/merginmaps-partnership/" target="_blank" rel="noopener" class="dropdown-item">MerginMaps</a>
+          </div>
+        </div>
+        
+        <a href="index.html#clienti" class="nav-link">Clients</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="header-actions">
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon"></i>
+        </button>
+        
+        <!-- Language Selector -->
+        <div class="lang-switcher">
+          <a href="../features.html" class="lang-btn" title="Italiano" id="lang-it-btn">
+            <img src="https://flagcdn.com/w40/it.png" alt="Italiano">
+          </a>
+          <a href="#" class="lang-btn active" title="English" id="lang-en-btn">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English">
+          </a>
+        </div>
+        
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB / HERO HEADER -->
+  <section class="section" style="padding-top: 8.5rem; padding-bottom: 3.5rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+    <div class="container text-center">
+      <span class="section-tag">Explore Details</span>
+      <h1>Features and Capabilities</h1>
+      <p class="section-subtitle" style="margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Discover all the modules, technologies, and integrated tools in G3W-Suite, split between the web cartographic client and the administration panel.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TABS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="tabs-container">
+        <!-- Tabs Buttons Nav -->
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="client"><i class="fa-solid fa-map" style="margin-right: 0.5rem;"></i> Web Cartographic Client</button>
+          <button class="tab-btn" data-tab="admin"><i class="fa-solid fa-gears" style="margin-right: 0.5rem;"></i> Administration Panel</button>
+        </div>
+        
+        <!-- Tab Content Panes -->
+        
+        <!-- PANE 1: CLIENT CARTOGRAFICO -->
+        <div class="tab-pane active" data-tab="client">
+          <div class="tab-grid">
+            <div class="features-detailed-list">
+              
+              <!-- Item 1 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="df-text">
+                  <h4>Optimized Cartographic Client</h4>
+                  <p>Highly responsive interface for smartphones, tablets, and Desktop PCs. Includes integrated real-time GPS location features for field surveys and a customizable graphic layout with logos and texts of your organization.</p>
+                </div>
+              </div>
+              
+              <!-- Item 2 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-compass"></i></div>
+                <div class="df-text">
+                  <h4>Base Tools & Maps</h4>
+                  <p>Immediate integration with commercial and open-source base maps (OpenStreetMap, Google Maps, Bing Maps). Advanced searches with auto-zoom, layer transparency control, and structured legend view.</p>
+                </div>
+              </div>
+              
+              <!-- Item 3 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="df-text">
+                  <h4>Advanced Tools & Charts</h4>
+                  <p>Integrated Query Builder for custom questions and searches. Native management of spatial relations, 1:N and N:M joins. Dynamic generation of interactive charts based on the QGIS **DataPlotly** plugin, historical time series, and multimedia attachments.</p>
+                </div>
+              </div>
+              
+              <!-- Item 4 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <div class="df-text">
+                  <h4>Online Relational Editing</h4>
+                  <p>Modify geometric shapes and attributes directly from the web, inheriting widgets and form designs configured in QGIS. Feature locking to prevent multi-user edit conflicts and offline editing for connectionless areas.</p>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Graphic element / Mockup illustration for client -->
+            <div style="position: relative;">
+              <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 1.5rem; box-shadow: var(--shadow-lg);">
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                  <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></span>
+                  <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></span>
+                  <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></span>
+                  <span style="margin-left: auto; font-family: var(--font-headings); font-size: 0.8rem; font-weight: 600; color: var(--color-teal);"><i class="fa-solid fa-globe"></i> Active Client</span>
+                </div>
+                <img src="https://g3wsuite.it/wp-content/uploads/2020/07/editing-1.jpg" alt="Client Cartographic Example" style="border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%;">
+                <div style="margin-top: 1.25rem; font-size: 0.85rem; padding: 0.75rem; background: var(--bg-primary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                  <strong>Premium Interface:</strong> Supports high-resolution printing by perfectly inheriting the layout composers and print templates defined in QGIS Desktop, including geographic Atlases.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PANE 2: AMMINISTRAZIONE -->
+        <div class="tab-pane" data-tab="admin">
+          <div class="tab-grid">
+            <div class="features-detailed-list">
+              
+              <!-- Item 1 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <div class="df-text">
+                  <h4>Fast Project Publishing</h4>
+                  <p>Create and organize thematic geographic groups on the web. Immediate publishing by uploading the `.qgz` project file. Full graphic correspondence of legends, styles, vector, and raster layers.</p>
+                </div>
+              </div>
+              
+              <!-- Item 2 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-server"></i></div>
+                <div class="df-text">
+                  <h4>Real-time Data Synchronization</h4>
+                  <p>Direct integration with corporate relational and spatial databases: PostgreSQL/PostGIS, Oracle Spatial, MSSQL Server. Support for lightweight local formats like SQLite/SpatiaLite, GeoPackage, Shapefile, and raster formats.</p>
+                </div>
+              </div>
+              
+              <!-- Item 3 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <div class="df-text">
+                  <h4>Surgical User Profiling</h4>
+                  <p>Independent user and group management with diversified roles. Configure permissions for editing individual layers and enable geographic filters and alphanumeric constraints (SQL / QGIS Expression) specific to each user.</p>
+                </div>
+              </div>
+              
+              <!-- Item 4 -->
+              <div class="detailed-feature-item">
+                <div class="df-icon"><i class="fa-solid fa-landmark"></i></div>
+                <div class="df-text">
+                  <h4>Modules Integrated for PA</h4>
+                  <p>Enable modules dedicated to Public Administration: cadastral integration, CDU (Certificate of Urban Destination) with dedicated print layouts, address registry and house number management modules complying with RNDT and INSPIRE standards.</p>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Graphic element / Mockup illustration for admin -->
+            <div style="position: relative;">
+              <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 1.5rem; box-shadow: var(--shadow-lg);">
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                  <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></span>
+                  <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></span>
+                  <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></span>
+                  <span style="margin-left: auto; font-family: var(--font-headings); font-size: 0.8rem; font-weight: 600; color: var(--color-orange);"><i class="fa-solid fa-shield-halved"></i> Administration</span>
+                </div>
+                <img src="https://g3wsuite.it/wp-content/uploads/2020/07/test2-1.jpg" alt="G3W-Suite Administration Panel" style="border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%;">
+                <div style="margin-top: 1.25rem; font-size: 0.85rem; padding: 0.75rem; background: var(--bg-primary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                  <strong>Admin Interface:</strong> Allows to manage cache regeneration, file system synchronization, and user access monitoring with extreme simplicity.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL INFRASTRUCTURE SUMMARY -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" style="background-color: var(--glow-green); color: var(--color-green);">Robust Architecture</span>
+        <h2>Infrastructure and Open Standards</h2>
+        <p class="section-subtitle">G3W-Suite is designed to guarantee stability, high performance, and full compatibility with international geographic standards.</p>
+      </div>
+      
+      <div class="grid-4">
+        <!-- Feature 1 -->
+        <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+          <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-diagram-project"></i></div>
+          <h4 style="margin-bottom: 0.5rem;">QGIS Server</h4>
+          <p style="font-size: 0.85rem;">Leverages 100% of QGIS Server APIs and engine to perfectly render your graphic styles and maps.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+          <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-shield"></i></div>
+          <h4 style="margin-bottom: 0.5rem;">OGC Standards</h4>
+          <p style="font-size: 0.85rem;">Full compliance with international WMS, WFS, WCS standards and CSW specifications for geographic metadata.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+          <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-cube"></i></div>
+          <h4 style="margin-bottom: 0.5rem;">Spatial Databases</h4>
+          <p style="font-size: 0.85rem;">Deep integration with popular relational and geographic databases with support for complex spatial queries.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+          <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-cubes"></i></div>
+          <h4 style="margin-bottom: 0.5rem;">API & Extensibility</h4>
+          <p style="font-size: 0.85rem;">Ability to extend core features by writing custom modules and integrating with third-party APIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%); color: #ffffff; text-align: center; position: relative; overflow: hidden;">
+    <div class="hero-glow-1" style="background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);"></div>
+    <div class="container" style="position: relative; z-index: 10;">
+      <h2 style="color: #ffffff; font-size: 2rem; margin-bottom: 1rem;">Want to test these features yourself?</h2>
+      <p style="font-size: 1.15rem; max-width: 600px; margin: 0 auto 2.5rem auto; opacity: 0.9;">
+        Access the dedicated demo area and experience the client interface and the administration panel.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="resources.html#demo" class="btn btn-primary" style="background-color: #ffffff; color: var(--color-teal-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.1);"><i class="fa-solid fa-play"></i> Access the Demo</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;"><i class="fa-solid fa-envelope"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container grid-4">
+      <!-- Col 1 -->
+      <div>
+        <a href="index.html" class="footer-logo">
+          <img src="https://gis3w.it/wp-content/uploads/sites/1/2017/05/logo_gis3w2.png" alt="Gis3W Logo">
+        </a>
+        <p style="margin-bottom: 1.5rem; opacity: 0.85;">
+          G3W-SUITE is a web application developed by Gis3W to publish and manage QGIS desktop projects as WebGIS mapping services independently.
+        </p>
+        <p style="font-size: 0.85rem; opacity: 0.7;">
+          Mozilla Public License (MPL)
+        </p>
+      </div>
+      
+      <!-- Col 2 -->
+      <div>
+        <h4>Website</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="resources.html">Resources & Demo</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+      </div>
+      
+      <!-- Col 3 -->
+      <div>
+        <h4>Our Office</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Viale Verdi, 24<br>Montecatini Terme (PT)<br>Tuscany, Italy</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@gis3w.it">info@gis3w.it</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+393938534336">+39 393 8534336</a>
+        </div>
+      </div>
+      
+      <!-- Col 4 -->
+      <div>
+        <h4>About Us</h4>
+        <p style="opacity: 0.85;">
+          We provide consulting and software tools for creating <b>Geographic Information Systems</b> compatible with OGC international standards and the European Inspire directive. We also develop plugins for QGIS and provide certified professional training.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/gis3w" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/gis3w.sas/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/_gis3w_" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Gis3W Snc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy</a>
+        <a href="https://g3wsuite.it" target="_blank" rel="noopener">Official G3W Site</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JS Script -->
+  <script src="../main.js"></script>
+</body>
+</html>

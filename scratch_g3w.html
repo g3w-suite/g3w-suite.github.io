@@ -1,0 +1,324 @@
+<!doctype html>
+<html class="no-js" lang="it-IT">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>G3W-Suite &#8211; Publish your QGIS project on the Web</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="G3W-Suite &raquo; Feed" href="https://g3wsuite.it/feed/" />
+<link rel="alternate" type="application/rss+xml" title="G3W-Suite &raquo; Comments Feed" href="https://g3wsuite.it/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/g3wsuite.it\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://g3wsuite.it/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='marketing-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A400%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ytplayer-css-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/YTPlayer.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/bootstrap.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/font-awesome.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='font-icon-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/icon-font.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/woocommerce.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='marketing-main-style-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/style.css?ver=1.0' type='text/css' media='all' />
+<style id='marketing-main-style-inline-css' type='text/css'>
+.tt-service-icon span {
+    display: block;
+}
+
+.textwidget {
+    color: white;
+}
+</style>
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='vc_lte_ie9-css'  href='https://g3wsuite.it/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css?ver=6.0.2' type='text/css' media='screen' />
+<![endif]-->
+<link rel='stylesheet' id='js_composer_front-css'  href='https://g3wsuite.it/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.0.2' type='text/css' media='all' />
+<style id='js_composer_front-inline-css' type='text/css'>
+.vc_custom_1561740124544{background-color: #dbdbdb !important;}.vc_custom_1561740124544{background-color: #dbdbdb !important;}.vc_custom_1629275542850{background-color: #ffffff !important;}.vc_custom_1591369257774{margin-left: 100px !important;}
+</style>
+<script type='text/javascript' src='https://g3wsuite.it/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://g3wsuite.it/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://g3wsuite.it/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://g3wsuite.it/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel="canonical" href="https://g3wsuite.it/" />
+<link rel='shortlink' href='https://g3wsuite.it/' />
+<link rel="alternate" type="application/json+oembed" href="https://g3wsuite.it/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fg3wsuite.it%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://g3wsuite.it/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fg3wsuite.it%2F&#038;format=xml" />
+<link rel="alternate" href="https://g3wsuite.it/" hreflang="it" />
+<link rel="alternate" href="https://g3wsuite.it/en/g3w-suite-publish-qgis-projects/" hreflang="en" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+		<style type="text/css" id="wp-custom-css">
+			.tt-header-margin {
+	display: block !important;
+}
+
+#content-wrapper {
+	padding: 0 !important;
+}		</style>
+		<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>  </head>
+  <body class="home page-template-default page page-id-49  menu-left-with-social-right default-layout theme-orange wpb-js-composer js-comp-ver-6.0.2 vc_responsive">
+
+      <div id="loader-wrapper">
+      <div id="loader"><span class="loader-inner"></span></div>
+      <div id="loading-text">LOADING</div>
+    </div>
+    
+<!-- HEADER -->
+<header class="tt-header">
+  <div class="container">
+    <div class="top-inner clearfix">
+      <div class="top-inner-container">
+            <a href="https://g3wsuite.it/" class=" logo"><img src="https://g3wsuite.it/wp-content/uploads/2019/06/logo_g3wsuite-1.png" alt="G3W-Suite"></a>
+            <button class="cmn-toggle-switch"><span></span></button>
+      </div>
+    </div>
+    <div class="toggle-block float-none">
+      <div class="toggle-block-container">
+        <nav class="main-nav clearfix">
+          <ul id="nav" class=""><li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-58"><a href="/#cosa" class=" ">Caratteristiche</a></li>
+<li id="menu-item-1632" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-1632"><a href="/#comefunziona" class=" ">Funzionalità</a></li>
+<li id="menu-item-1737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-49 current_page_item menu-item-has-children menu-item-1737"><a href="https://g3wsuite.it/" class=" drop-link"><i class="menu-toggle fa fa-angle-down"></i>Risorse</a>
+<ul class="drop-menu">
+	<li id="menu-item-2223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2223"><a href="https://g3wsuite.it/demo-3-10/" class=" ">Demo</a></li>
+	<li id="menu-item-2087" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2087"><a href="https://g3wsuite.it/quick-start/" class=" ">Quick Start</a></li>
+	<li id="menu-item-1889" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1889"><a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" class=" ">Manuale</a></li>
+	<li id="menu-item-319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-319"><a href="https://g3wsuite.it/scarica-g3w-suite/" class=" ">Download</a></li>
+</ul></li>
+<li id="menu-item-1736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-49 current_page_item menu-item-has-children menu-item-1736"><a href="https://g3wsuite.it/" class=" drop-link"><i class="menu-toggle fa fa-angle-down"></i>Partnership</a>
+<ul class="drop-menu">
+	<li id="menu-item-1665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1665"><a href="https://g3wsuite.it/g3wsuite-partners/" class=" ">G3W-SUITE partners</a></li>
+	<li id="menu-item-1623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1623"><a href="https://g3wsuite.it/merginmaps-partnership/" class=" ">MerginMaps</a></li>
+</ul></li>
+<li id="menu-item-59" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-59"><a href="/#clienti" class=" ">Clienti</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-62"><a href="/#contatti" class=" ">Contatti</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="https://gis3w.it/privacy/" class=" ">Privacy</a></li>
+<li id="menu-item-134-it" class="lang-item lang-item-2 lang-item-it lang-item-first current-lang menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home menu-item-134-it"><a href="https://g3wsuite.it/" class=" " hreflang="it-IT" lang="it-IT"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE2SURBVHjaYmSYyMDwgwEE/jEw/GF4mvT0HyqQUlX9B5aEIIAAYmH4wlDtWg1SDwT//0lKSv7/D+T9/w+nYmL+//79/88fIPll0yaAAGJhYAGJP/n69O+/v0CAUAcHt2////ULqJpRVhZoA0AAsQCtAZoMVP0HiP7+RlcNBEDVYA0Mv38DNQAEEMj8vwx//wCt/AdC/zEBkgagYoAAYgF6FGj277+///wlpAEoz8AAEEAgDX/BZv/69wuoB48GRrCTAAKICajh9//fv/6CVP/++wu7BrDxQFf/YWAACCCwk0BKf0MQdg1/gBqAPv0L9ANAALEAY+33vz+S3JIgb/z5C45CBkZGRgY4UFICKQUjoJMAAoiRoZSB4RMojkHx/YPhbNVZoM3AOISQQPUK9vaQOIYAgAADAC5Wd4RRwnKfAAAAAElFTkSuQmCC" title="Italiano" alt="Italiano" /></a></li>
+<li id="menu-item-134-en" class="lang-item lang-item-5 lang-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-134-en"><a href="https://g3wsuite.it/en/g3w-suite-publish-qgis-projects/" class=" " hreflang="en-GB" lang="en-GB"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAflJREFUeNpinDRzn5qN3uFDt16+YWBg+Pv339+KGN0rbVP+//2rW5tf0Hfy/2+mr99+yKpyOl3Ydt8njEWIn8f9zj639NC7j78eP//8739GVUUhNUNuhl8//ysKeZrJ/v7z10Zb2PTQTIY1XZO2Xmfad+f7XgkXxuUrVB6cjPVXef78JyMjA8PFuwyX7gAZj97+T2e9o3d4BWNp84K1NzubTjAB3fH0+fv6N3qP/ir9bW6ozNQCijB8/8zw/TuQ7r4/ndvN5mZgkpPXiis3Pv34+ZPh5t23//79Rwehof/9/NDEgMrOXHvJcrllgpoRN8PFOwy/fzP8+gUlgZI/f/5xcPj/69e/37//AUX+/mXRkN555gsOG2xt/5hZQMwF4r9///75++f3nz8nr75gSms82jfvQnT6zqvXPjC8e/srJQHo9P9fvwNtAHmG4f8zZ6dDc3bIyM2LTNlsbtfM9OPHH3FhtqUz3eXX9H+cOy9ZMB2o6t/Pn0DHMPz/b+2wXGTvPlPGFxdcD+mZyjP8+8MUE6sa7a/xo6Pykn1s4zdzIZ6///8zMGpKM2pKAB0jqy4UE7/msKat6Jw5mafrsxNtWZ6/fjvNLW29qv25pQd///n+5+/fxDDVbcc//P/zx/36m5Ub9zL8+7t66yEROcHK7q5bldMBAgwADcRBCuVLfoEAAAAASUVORK5CYII=" title="English" alt="English" /></a></li>
+</ul>        </nav>
+          <div class="nav-more social-module float-right">
+            <ul class="tt-social clearfix header-social-icons">
+              <li><a href="https://www.linkedin.com/company/gis3w"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/gis3w.sas/"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/_gis3w_"><i class="fa fa-twitter"></i></a></li>            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="tt-header-margin visible-xs-block visible-sm-block"></div>  
+<div id="content-wrapper" class="content pt-100 pb-100">
+  <div class="container">
+  	<div class="simple-tesxt">
+    <div class="simple-texst tt-content tt-column-content">
+    <div class="row">
+  	<div class="col-md-12">
+<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><img  class="img-responsive center-block img-shadow " src="https://g3wsuite.it/wp-content/uploads/2025/07/homepage_ita2.png" alt=""><div  class="empty-space  marg-lg-b20"></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1561740124544 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="text-block " ><div class="simple-text "><h3 style="text-align: center;">G3W-SUITE è una soluzione Open Source, rilasciata con licenza MPL e disponibile su <a href="https://github.com/g3w-suite">GitHub</a></h3>
+</div></div><div  class="empty-space  marg-lg-b20"></div><div class="text-block " ><div class="simple-text "><h3 style="text-align: center;">Scopri le novità della versione 3.10</h3>
+</div></div><div  class="empty-space  marg-lg-b10"></div><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2023/12/qgis_processing-1.png" alt=""></div></div></div></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1561740124544 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container vc_btn3-right" >
+	<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-success" href="https://g3wsuite.it/changelog-3-10/" title="Change Log 3.10">Change Log 3.10</a>	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container vc_btn3-center" >
+	<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-success" href="https://g3wsuite.it/model-builder-processing-integration/" title="QGSI API Processing">Processing API integration</a>	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container vc_btn3-left" >
+	<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-success" href="https://g3wsuite.it/demo-3-10/" title="Demo 3.10">Accedi alla demo!</a>	</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1629275542850 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2024/03/MM_logo_HORIZ_COLOR.jpg" alt=""><div  class="tt-title"><div class="tt-title-cat">Partnership</div><h2 class="c-h2"><small>G3W-SUITE è partner dell&#039;applicativo Mergin Maps</small></h2></div><div  id="cosa" class="empty-space  marg-lg-b15"></div><div class="vc_btn3-container vc_btn3-center" >
+	<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-success" href="https://g3wsuite.it/merginmaps-partnership/" title="MerginMaps">Soluzioni dedicate</a>	</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_border_width_6 vc_sep_pos_align_center vc_separator_no_text vc_sep_color_grey" ><span class="vc_sep_holder vc_sep_holder_l"><span  class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span  class="vc_sep_line"></span></span>
+</div><div  class="tt-title"><div class="tt-title-cat">Soluzioni in hosting ed in house</div><h2 class="c-h2"><small>Il modo più semplice per pubblicare progetti QGIS su servizi WebGIS</small></h2></div><div  class="empty-space  marg-lg-b50"></div></div></div></div></div><div id="cosa" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-rocket"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Semplice e veloce</a><div class="simple-text size-3"><p>Crea il tuo progetto QGIS</p>
+<p>Usa dati su GeoDB o file system</p>
+<p>Pubblica su WebGis</p>
+</div></div></div><div  class="empty-space  marg-lg-b30"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-magic-wand"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Personalizzabile</a><div class="simple-text size-3"><p>Personalizza contenuti del portale di accesso e del client cartografico</p>
+<p>Crea ambienti gestionali e definisci i relativi amministratori</p>
+<p>Attiva i moduli funzionali di interesse</p>
+</div></div></div><div  class="empty-space  marg-lg-b30"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-pencil"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Editing on web</a><div class="simple-text size-3"><p>Editing geometrico e degli attributi anche su relazioni 1:1 e 1:N</p>
+<p>Editing basato sulle API di QGIS</p>
+<p>Form ed widget di editing ereditati da progetto QGIS</p>
+<p>Feature lock per l&#8217;editing multi utente</p>
+<p>Vincoli geografici ed alfanumerici personalizzabili per i singoli utenti</p>
+</div></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b70"></div><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2020/06/qgis_api.jpeg" alt=""><div  class="empty-space  marg-lg-b35"></div><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2024/04/Schermata-del-2024-04-01-19-21-05-1.png" alt=""></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-lock"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Profilazione utenti</a><div class="simple-text size-3"><p>Definisci utenti, gruppi e ruoli per differenziare gestione, accesso, editing on line e uso dei moduli funzionali</p>
+</div></div></div><div  class="empty-space  marg-lg-b50"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-list"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Ricco di funzionalità</a><div class="simple-text size-3"><p><strong>Integrazione con le API di QGIS<br />
+</strong></p>
+<p>Ricerche personalizzabili</p>
+<p>Layout di stampa standard o basati su atlanti geografici</p>
+<p>Visualizzazione grafici basati sul plugin DataPlotly</p>
+<p>Time series e grafici temporali</p>
+<p>Servizio CSW per la metadatazione (RNDT e INSPIRE)</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-laptop-phone"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Desktop e mobile</a><div class="simple-text size-3"><p>Client repsonisve per la consultazione desktop e tablet</p>
+<p>Editing su web anche in modalità off line</p>
+</div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b10 marg-sm-b50 marg-xs-b30"></div><div class="tt-devider"></div></div></div></div></div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b100"></div><div class="text-block " ><div class="simple-text "><h3 style="text-align: center;">Sei una Pubblica Amministrazione in cerca di un sistema integrato?</h3>
+<h3 style="text-align: center;"><a href="https://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener noreferrer">Scopri le nostre soluzioni</a></h3>
+</div></div><div  class="empty-space  marg-lg-b20"></div><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2024/10/pa-digitale-2026-transizione-digitale.png" alt=""><div  class="empty-space  marg-lg-b10"></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b50"></div><div class="text-block " ><div class="simple-text "><h3 style="text-align: center;">Misura 1.3.1 &#8220;Piattaforma Digitale Nazionale Dati&#8221; ANNCSU</h3>
+<h3 style="text-align: center;"><a href="https://areariservata.padigitale2026.gov.it/Pa_digitale2026_dettagli_avviso?id=a01bU00000FnKS8QAN" target="_blank" rel="noopener noreferrer">Modulo PDND ANNUCS</a></h3>
+</div></div><div  class="empty-space  marg-lg-b40"></div><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2025/07/anncsu.png" alt=""><div  class="empty-space  marg-lg-b10"></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b100"></div><div class="text-block " ><div class="simple-text "><h3 style="text-align: center;">Integrazione con la Piattaforma Digitale Nazionale Dati</h3>
+<h3 style="text-align: center;"><a href="https://developers.italia.it/it/pdnd/" target="_blank" rel="noopener noreferrer">PDND Interoperabilità</a></h3>
+</div></div><div  class="empty-space  marg-lg-b20"></div><img  class="img-responsive center-block " src="https://g3wsuite.it/wp-content/uploads/2024/10/pndp.png" alt=""><div  class="empty-space  marg-lg-b10"></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b10 marg-sm-b50 marg-xs-b30"></div><div class="tt-devider"></div><div  class="empty-space  marg-lg-b30 marg-sm-b50 marg-xs-b30"></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><img  class="img-responsive center-block img-shadow " src="https://g3wsuite.it/wp-content/uploads/2020/07/editing-1.jpg" alt=""><div  class="empty-space  marg-lg-b90 marg-sm-b50 marg-xs-b30"></div><div class="text-block " ><div class="simple-text "><h3 style="padding-left: 80px;">Consulta le nostre ultime realizzazioni</h3>
+</div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="tt-post-2-info"><a class="tt-post-2-title c-h2"><small>Creare gestionali cartografici web?</small></a><div class="simple-text"><p>G3W-Suite è una soluzione ideata per semplificare la pubblicazione e la gestione di servizi WebGis da parte di qualsiasi tipologia di utente e per le più disparate necessità.</p>
+<p>L’infrastruttura permette di pubblicare direttamente i progetti cartografici realizzati con il software OS QGIS mantenendo le caratteristiche grafiche e informative ad esso associate.</p>
+<p>Il pannello di Amministrazione permette di gestire permessi di accesso ed attivare moduli funzionali in base alle proprie esigenze.</p>
+<p>La funzione di editing su web permette di trasformare i tuoi progetti QGIS in gestionali cartografici web.</p></div><a class="c-btn type-2 size-2" title="Accedi alla demo" target="_blank" href="https://v310.g3wsuite.it"><span>Accedi alle demo on line</span></a></div></div></div></div></div><div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="text-center"><a  class="c-btn type-1 size-4 color-1" target="_blank" title="button" href="http://sit.egov.ba.it"><span>Area Vasta Metropoli Terra di Bari</span></a></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="text-center"><a  class="c-btn type-1 size-4 color-1" target="_blank" title="button" href="https://sit.parco.gran-paradiso.g3wsuite.it"><span>Parco Nazionale Gran Paradiso</span></a></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="text-center"><a  class="c-btn type-1 size-4 color-1" target="_blank" title="button" href="http://www.regione.fvg.it/rafvg/cms/RAFVG/ambiente-territorio/pianificazione-gestione-territorio/FOGLIA21/"><span>Piano Paesaggistico Regionale Friuli Venezia Giulia</span></a></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="text-center"><a  class="c-btn type-1 size-4 color-1" target="_blank" title="button" href="https://gis.comune.trento.it/it/#map=groups"><span>Comune di Trento</span></a></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="text-center"><a  class="c-btn type-1 size-4 color-1" target="_blank" title="button" href="https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/"><span>Città Metropolitana Roma Capitale</span></a></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="text-center"><a  class="c-btn type-1 size-4 color-1" target="_blank" title="button" href="https://geout.comune.palermo.it"><span>Comune di Palermo</span></a></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div><div class="tt-devider"></div><div  class="tt-title"><div class="tt-title-cat">Scopri le funzionalità ed i vantaggi della nostra soluzione</div><h2 class="c-h2"><small>Attiva il servizio dedicato e pubblica i tuoi progetti QGIS in 4 semplici passi</small></h2></div><div  class="empty-space  marg-lg-b50"></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="empty-space  marg-lg-b20"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-earth"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Crea il tuo progetto QGIS</a><div class="simple-text size-3"><p>Crea il tuo progetto cartografico utilizzando i tuoi dati geografici</p>
+<p>Caratterizza il progetto definendo struttura del progetto, join e relazioni 1:N, form e widget di editing, grafici interattivi (DataPlotly), layout di stampa e qualsiasi altro aspetto grafico e funzionale</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-database"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Sincronizza i tuoi dati geografici</a><div class="simple-text size-3"><p>Carica ed aggiorna i tuoi dati nel formato che preferisci (SpatiaLite, GeoPackage, Shapefile, Virtual layer&#8230;)</p>
+<p>Utilizza dati su GeoDatabase PostGreSQL/PostGis, Oracle Spatial e MSSLQ</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-cloud-upload"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Pubblica il tuo progetto QGIS</a><div class="simple-text size-3"><p>Accedi al tuo portale web dedicato per pubblicare i tuoi progetti come servizi WebGis</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-magic-wand"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Gestisci accessi e attiva funzioni aggiuntive</a><div class="simple-text size-3"><p>Gestisci autonomamente i tuoi progetti definendo utenti, permessi e vincoli di editing, grafici interattivi, metodi di ricerca e attivando le funzionalità più utili per il tuo gestionale</p>
+</div></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><img  class="img-responsive center-block img-shadow " src="https://g3wsuite.it/wp-content/uploads/2020/07/test3-1.jpg" alt=""><div  class="empty-space  marg-lg-b25"></div><img  class="img-responsive center-block img-shadow " src="https://g3wsuite.it/wp-content/uploads/2020/07/test2-1.jpg" alt=""><div  class="empty-space  marg-lg-b25"></div><img  class="img-responsive center-block img-shadow " src="https://g3wsuite.it/wp-content/uploads/2020/07/test1-1.jpg" alt=""></div></div></div></div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  id="clienti" class="empty-space  marg-lg-b80 marg-sm-b50 marg-xs-b30"></div><div  class="tt-title"><div class="tt-title-cat"></div><h2 class="c-h2"><small>Sponsor ed utilizzatori</small></h2></div><div  class="swiper-container" data-autoplay="5000" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="3" data-md-slides="3" data-lg-slides="4" data-add-slides="5"><div class="swiper-wrapper clearfix"><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2019/06/suez.png" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2019/06/planetek_logo-rid-1.jpg" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2019/06/regione-lazio.png" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2019/06/l.png" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2020/06/citta_metro_roma-1.jpg" alt=""></div></div></div><div class="pagination type-1 visible-xs-block"></div></div><div  class="swiper-container" data-autoplay="5000" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="3" data-md-slides="3" data-lg-slides="4" data-add-slides="5"><div class="swiper-wrapper clearfix"><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2020/06/logo_bonifica_renana.jpg" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2020/06/polito-1.jpg" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2020/06/pngp-1.jpg" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2019/06/parco_casentino.png" alt=""></div></div><div class="swiper-slide active" data-val="0"><div class="tt-partner"><img class="img-responsive" src="https://g3wsuite.it/wp-content/uploads/2019/06/apuane.png" alt=""></div></div></div><div class="pagination type-1 visible-xs-block"></div></div><div class="tt-devider"></div><div  class="empty-space  marg-lg-b50 marg-sm-b50 marg-xs-b30"></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="swiper-container " data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="1" data-add-slides="2"><div class="swiper-wrapper clearfix"></div><div class="pagination type-1 pos-1 visible-xs-block"></div><div class="swiper-arrow-left tt-arrow-left type-1 pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div><div class="swiper-arrow-right tt-arrow-right type-1 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div></div></div></div></div></div><div id="comefunziona" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  class="tt-title"><div class="tt-title-cat"></div><h2 class="c-h2"><small>Caratteristiche e funzionalità</small></h2></div><div  class="empty-space  marg-lg-b50"></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="text-block " ><div class="simple-text size-2"><h3 style="text-align: center;"><span style="color: #368aa9;">Client cartografico</span></h3>
+</div></div><div  class="empty-space  marg-lg-b20"></div><div  class="tt-service color-2 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-laptop-phone"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Client cartografico ottimizzato</a><div class="simple-text size-3"><div class="textwidget">
+<p><strong>Ottimizzazione grafica e funzionale</strong> per tablet e smartphone</p>
+<p><strong>Interfaccia grafica personalizzabile</strong> con testi, loghi e riferimenti di contatto</p>
+<p><strong>Funzioni di geolocalizzazione</strong> per il lavoro in campo</p>
+</div>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-2 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-printer"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Strumenti di base</a><div class="simple-text size-3"><p>Strumenti di <strong>ricerca geografica</strong> e funzioni di auto-zoom</p>
+<p><strong>Carte di base</strong> (OSM, GoogleMaps, Yahoo, Bing&#8230;)</p>
+<p><strong>Stampa</strong> basata sui<strong> layout composer</strong> (con supporto degli <strong>Atlanti</strong>) associati al <strong>progetto QGIS</strong></p>
+<p><strong>Pubblicazione Metadati</strong> definiti su progetto QGIS</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-2 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-magic-wand"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Strumenti avanzati</a><div class="simple-text size-3"><p><strong>Query Builder</strong> per ricerche personalizzate</p>
+<p>Visualizzazione dati basati su <strong>join e relazioni 1:N e N:M<br />
+</strong></p>
+<p><strong>Visualizzazione grafici</strong> realizzati con il plugin di QGIS <strong>DataPlotly</strong></p>
+<p>Collegamenti a <strong>link web e a contenuti multimediali</strong></p>
+<p><strong>Caricamento on-the-fly</strong> di strati vettoriali (.shp, .kml, .geojson, csv&#8230;)</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-2 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-pencil"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Editing on line</a><div class="simple-text size-3"><div class="textwidget">
+<p>Editing on line, anche <strong>relazionale</strong>, con <strong>gestione dei permessi</strong></p>
+<p><strong>Form ed widget</strong> per la <strong>compilazione semplificata degli attributi</strong></p>
+<p>Funzioni di <strong>feauture-lock</strong> per l&#8217;<strong>editing multiutente</strong></p>
+<p><strong>Vincoli alfanumerici e geografici</strong> definibili per singoli/gruppi di utenti</p>
+<p>Editing anche <strong>off line</strong></p>
+</div>
+</div></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="text-block " ><div class="simple-text size-2"><h3 style="text-align: center;"><span style="color: #ff6600;">Amministrazione</span></h3>
+</div></div><div  class="empty-space  marg-lg-b20"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-earth"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Pubblicazione progetti cartografici</a><div class="simple-text size-3"><p>Possibilità di creare <strong>contenitori cartografici tematici</strong> per la <strong>gestione strutturata</strong> dei servizi WebGis</p>
+<p>Pubblicazione diretta e <strong>completa corrispondenza grafica con i progetti QGIS</strong></p>
+<p><strong>Costruzione grafica di ricerche</strong> attivabili sui singoli servizi</p>
+<p><strong>Gestione cache</strong> e <strong>creazione base layer</strong> da servizi WebGis</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-database"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Sincronizzazione dati</a><div class="simple-text size-3"><p>Usa dati sui tuoi <strong>DB PostGreSQL/PostGis, Oracle Spatial o MSSQL</strong></p>
+<p>..ma anche <strong>SQLite/SpatiaLite,</strong> <strong>GeoPackage, Shapefile, Virtual layer</strong> e i tuoi dati <strong>raster</strong>&#8230;</p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-users"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Gestione permessi di accesso ed editing</a><div class="simple-text size-3"><p><strong>Creazione utenti</strong> (singoli e gruppi) e <strong>gestioni permessi di accesso</strong></p>
+<p>Gestione <strong>permessi di editing on-line</strong> sui singoli strati</p>
+<p><strong>Vincoli alfanumerici </strong>basati su <strong>SQL ed espressioni QGIS</strong> per la creazione di <strong>filtri di visualizzazione ed editing<br />
+</strong></p>
+<p><strong>Vincoli geografici </strong>per la creazione di <strong>filtri di visualizzazione ed editing<br />
+</strong></p>
+</div></div></div><div  class="empty-space  marg-lg-b40"></div><div  class="tt-service color-1 type-1 clearfix"><a class="tt-service-icon" href="#" target="_self"><span class="lnr lnr-apartment"></span></a><div class="tt-service-info"><a class="tt-service-title c-h4">Moduli dedicati alle PA</a><div class="simple-text size-3"><p>Collegamento <strong>censuario catasto</strong> e verifiche tributarie</p>
+<p><strong>CDU e normative associate</strong></p>
+<p>Gestione <strong>civici e stradario</strong></p>
+<p><strong>Metadatazione RNDT e INSPIRE</strong></p>
+<h4><strong><a href="http://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener noreferrer">Sei una PA? Approfondisci</a></strong></h4>
+</div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  id="contatti" class="empty-space  marg-lg-b30 marg-sm-b50 marg-xs-b30"></div><div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_border_width_3 vc_sep_pos_align_center vc_separator_no_text vc_sep_color_grey" ><span class="vc_sep_holder vc_sep_holder_l"><span  class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span  class="vc_sep_line"></span></span>
+</div><div  id="contatti" class="empty-space  marg-lg-b10 marg-sm-b50 marg-xs-b30"></div><div  class="tt-title"><div class="tt-title-cat"></div><h2 class="c-h2"><small>Contatti e supporto</small></h2></div></div></div></div></div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper"><div  id="contatti" class="empty-space  marg-lg-b15 marg-sm-b50 marg-xs-b30"></div><div class="text-block " ><div class="simple-text "><p>Hai necessità di supporto per l&#8217;installazione in house o come servizio in cloud?</p>
+<p>Necessiti di supporto operativo e formazione ?</p>
+<p>Sei interessato allo sviluppo di moduli specifici per le tue esigenze?</p>
+</div></div><div  id="contatti" class="empty-space  marg-lg-b35 marg-sm-b50 marg-xs-b30"></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner vc_custom_1591369257774"><div class="wpb_wrapper"><div  id="contatti" class="empty-space  marg-lg-b15 marg-sm-b50 marg-xs-b30"></div><div class="text-block " ><div class="simple-text "><h4><strong>Contattaci!</strong></h4>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<h4><strong>E-mail: </strong><a href="mailto:info@gis3w.it?subject=Info G3W-SUITE">info@gis3w.it</a></h4>
+</li>
+<li>
+<h4><strong>Mobile:</strong> +39 393 8534336</h4>
+</li>
+</ul>
+</li>
+</ul>
+</div></div><div  id="contatti" class="empty-space  marg-lg-b35 marg-sm-b50 marg-xs-b30"></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div  id="contatti" class="empty-space  marg-lg-b60 marg-sm-b50 marg-xs-b30"></div></div></div></div></div>
+	</div>
+</div>
+</div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- FOOTER -->
+<footer class="tt-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+                  <div id="text-3" class="widget tt-footer-list footer_widget widget_text">			<div class="textwidget"><p><a href="”https://www.gis3w.it“" target="”_blank“"><img src="https://gis3w.it/wp-content/uploads/sites/1/2017/05/logo_gis3w2.png" alt="" /></a></p>
+<div class="empty-space marg-lg-b25"></div>
+<div class="simple-text size-3 color-4">
+<p>G3W-SUITE è un prodotto <a href="https://www.gis3w.it" target="_blank" rel="noopener">Gis3W</a></p>
+</div>
+<div class="empty-space marg-xs-b30"></div>
+</div>
+		</div>                <div class="empty-space marg-xs-b30"></div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+                  <div id="contact-details-3" class="widget tt-footer-list footer_widget widget_contact_details"><h5 class="c-h5 color-3">La nostra sede</h5><div class="empty-space marg-lg-b10"></div>
+    
+        <div class="tt-address clearfix">
+      <div class="tt-address-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+      <div class="tt-address-info">
+        Viale Verdi, 24 <br> Montecatini Terme (PT) <br> Italy      </div>
+    </div>
+    <div class="empty-space marg-lg-b25"></div>
+    
+        <div class="tt-address clearfix">
+      <div class="tt-address-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+      <div class="tt-address-info">
+        <a href="mailto:info@gis3w.it">info@gis3w.it</a>
+      </div>
+    </div>
+    <div class="empty-space marg-lg-b25"></div>
+    
+        <div class="tt-address clearfix">
+      <div class="tt-address-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+      <div class="tt-address-info">
+        <a href="tel:+39 393 8534336">+39 393 8534336</a>
+      </div>
+    </div>
+    <div class="empty-space marg-lg-b40 marg-xs-b30"></div>
+    
+
+    
+    </div><div id="social-media-3" class="widget tt-footer-list footer_widget widget_social_media"><h5 class="c-h5 color-3">I nostri canali social</h5><div class="empty-space marg-lg-b10"></div>      <ul class="tt-social clearfix">
+       <li><a href="https://www.linkedin.com/company/gis3w"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/gis3w.sas/"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/_gis3w_"><i class="fa fa-twitter"></i></a></li>      </ul>
+      </div>                <div class="empty-space marg-sm-b30"></div>                       
+      </div>
+      <div class="col-xs-12 col-md-6">
+                  <div id="text-4" class="widget tt-footer-list footer_widget widget_text"><h5 class="c-h5 color-3">Gis3W</h5><div class="empty-space marg-lg-b10"></div>			<div class="textwidget"><p>Forniamo consulenza e strumenti per la creazione di <b>Sistemi Informativi Geografici</b> compatibili con gli standard internazionali dell’<b>Open Geospatial Consortium</b> e con la direttiva europea <b>Inspire</b>.</p>
+<p>Gis3W sviluppa inoltre <b>plugin per QGIS</b> e per i principali software geografici Open Source Desktop e Web.</p>
+<p>In particolare forniamo <b>supporto e formazione specifici su QGIS</b> e sui principali Software Geografici Open Source sia Desktop che Web.</p>
+</div>
+		</div><div id="text-6" class="widget tt-footer-list footer_widget widget_text"><h5 class="c-h5 color-3">Gis3W</h5><div class="empty-space marg-lg-b10"></div>			<div class="textwidget"><p>We provide consultancy and tools for the creation of <b>Geographic Information Systems</b> compatible with the international standards of the <b>Open Geospatial Consortium</b> and with the <b>European directive Inspire</b>.<br />
+</br><br />
+Gis3W also develops <b>plugins for QGIS</b> and for the main Open Source Desktop and Web geographic software.</p>
+</div>
+		</div>                 
+      </div>
+    </div>
+    <div class="empty-space marg-lg-b80 marg-sm-b50 marg-xs-b30"></div>
+  </div>
+  <div class="tt-footer-copy">
+    <div class="container">
+      <div class="simple-text size-5 color-4">
+        <p>Gis3W Snc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<link rel='stylesheet' id='swiper-css'  href='https://g3wsuite.it/wp-content/themes/marketing/css/idangerous.swiper.css?ver=1.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://g3wsuite.it/wp-includes/js/comment-reply.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-content/themes/marketing/js/global.js?ver=1.0'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-content/themes/marketing/js/jquery.formstone.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.0.2'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-content/themes/marketing/js/YT.player.js?ver=1.0'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.0.2'></script>
+<script type='text/javascript' src='https://g3wsuite.it/wp-content/themes/marketing/js/idangerous.swiper.min.js?ver=1.0'></script>
+</body>
+</html>
