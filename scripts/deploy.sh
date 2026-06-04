@@ -18,7 +18,7 @@
 set -euo pipefail
 
 # === CONFIGURAZIONE ===
-REPO_DIR="var/www/website"
+REPO_DIR="/var/www/website"
 BRANCH="master"
 LOG_FILE="/root/g3wsuite_website-deploy.log"
 # ======================
