@@ -725,6 +725,69 @@ body.dark-theme .theme-toggle-btn .moon-icon { display: none; }
   }
 }
 
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-grid {
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.25rem 1.5rem;
+    padding-top: 1.5rem;
+    justify-content: space-around;
+  }
+
+  .stat-item {
+    flex: 1 1 30%;
+    min-width: 0;
+  }
+
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-item p {
+    font-size: 0.75rem;
+  }
+
+  .hero-glow-1,
+  .hero-glow-2 {
+    width: 260px;
+    height: 260px;
+    filter: blur(40px);
+  }
+
+  .mockup-wrapper {
+    padding: 0.4rem;
+  }
+}
+
 /* ==========================================================================
    HIGHLIGHT / NOTICES SECTION
    ========================================================================== */
