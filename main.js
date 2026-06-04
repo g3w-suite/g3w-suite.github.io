@@ -55,16 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Initialize Theme
+  // Initialize Theme — default: light (ignora la preferenza di sistema)
   const savedTheme = localStorage.getItem('g3w-theme');
   if (savedTheme === 'dark') {
     setTheme(true);
-  } else if (savedTheme === 'light') {
-    setTheme(false);
   } else {
-    // Check system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark);
+    setTheme(false);
   }
 
   // Add click listener to all theme buttons
