@@ -35,6 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dd => {
       const trigger = dd.querySelector('.nav-link');
       if (!trigger) return;
+      // Make the <span> trigger reachable via keyboard (Tab) and announced as a button
+      if (!trigger.hasAttribute('tabindex')) trigger.setAttribute('tabindex', '0');
+      if (!trigger.hasAttribute('role')) trigger.setAttribute('role', 'button');
+      if (!trigger.hasAttribute('aria-haspopup')) trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+
+      // Open/close on Enter or Space when focused via keyboard
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          dd.classList.toggle('open');
+          trigger.setAttribute('aria-expanded', dd.classList.contains('open') ? 'true' : 'false');
+        } else if (e.key === 'Escape') {
+          dd.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
       trigger.addEventListener('click', (e) => {
         // Only intercept on mobile layout
         if (window.matchMedia('(max-width: 992px)').matches) {

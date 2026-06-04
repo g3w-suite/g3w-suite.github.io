@@ -352,7 +352,9 @@ ul {
   transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
 }
 
-.nav-dropdown:hover .dropdown-menu {
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -368,8 +370,8 @@ ul {
 }
 
 .dropdown-item:hover {
-  background-color: var(--bg-secondary);
-  color: var(--color-orange);
+  background-color: var(--color-orange);
+  color: #ffffff;
 }
 
 /* Actions Menu (Toggles) */
@@ -488,6 +490,10 @@ body.dark-theme .theme-toggle-btn .moon-icon { display: none; }
 
   /* On mobile the dropdown is toggled via .open class (set by JS on tap),
      not :hover, which is unreliable on touch devices. */
+  .nav-dropdown {
+    width: 100%;
+  }
+
   .nav-dropdown .dropdown-menu {
     position: static;
     transform: none;
@@ -495,12 +501,12 @@ body.dark-theme .theme-toggle-btn .moon-icon { display: none; }
     visibility: hidden;
     box-shadow: none;
     border: none;
-    padding-left: 1.5rem;
     background: transparent;
+    width: 100%;
+    min-width: 0;
     max-height: 0;
     overflow: hidden;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 0 0 1.5rem;
     transition: max-height var(--transition-fast), opacity var(--transition-fast);
   }
 
@@ -508,13 +514,21 @@ body.dark-theme .theme-toggle-btn .moon-icon { display: none; }
     opacity: 1;
     visibility: visible;
     max-height: 500px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+  }
+
+  .nav-dropdown .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    white-space: normal;
   }
 
   .nav-dropdown > .nav-link {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
