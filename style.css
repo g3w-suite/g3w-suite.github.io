@@ -486,15 +486,46 @@ body.dark-theme .theme-toggle-btn .moon-icon { display: none; }
     transform: translateX(0);
   }
 
-  .nav-dropdown:hover .dropdown-menu {
+  /* On mobile the dropdown is toggled via .open class (set by JS on tap),
+     not :hover, which is unreliable on touch devices. */
+  .nav-dropdown .dropdown-menu {
     position: static;
     transform: none;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     box-shadow: none;
     border: none;
     padding-left: 1.5rem;
     background: transparent;
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-dropdown > .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .nav-dropdown > .nav-link .fa-chevron-down {
+    transition: transform var(--transition-fast);
+  }
+
+  .nav-dropdown.open > .nav-link .fa-chevron-down {
+    transform: rotate(180deg);
   }
 
   .mobile-nav-toggle {

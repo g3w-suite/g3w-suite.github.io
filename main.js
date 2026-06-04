@@ -29,12 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
     });
 
-    // Close menu when a link is clicked
-    const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
+    // Mobile dropdown toggle: clicking the parent opens/closes the submenu
+    // instead of navigating or closing the whole menu.
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dd => {
+      const trigger = dd.querySelector('.nav-link');
+      if (!trigger) return;
+      trigger.addEventListener('click', (e) => {
+        // Only intercept on mobile layout
+        if (window.matchMedia('(max-width: 992px)').matches) {
+          e.preventDefault();
+          e.stopPropagation();
+          dd.classList.toggle('open');
+        }
+      });
+    });
+
+    // Close menu when a real link is clicked (excludes dropdown parents,
+    // which are <span class="nav-link"> inside .nav-dropdown).
+    const navLinks = document.querySelectorAll('.nav-menu > a.nav-link, .dropdown-item');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileToggle.classList.remove('active');
         navMenu.classList.remove('active');
+        // Reset any opened dropdown
+        dropdowns.forEach(dd => dd.classList.remove('open'));
       });
     });
   }
