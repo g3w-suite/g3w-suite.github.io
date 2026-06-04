@@ -298,6 +298,11 @@ ul {
   transform: scale(1.03);
 }
 
+/* Light/dark logo swap */
+.logo .logo-dark { display: none; }
+body.dark-theme .logo .logo-light { display: none; }
+body.dark-theme .logo .logo-dark { display: block; }
+
 .nav-menu {
   display: flex;
   align-items: center;
