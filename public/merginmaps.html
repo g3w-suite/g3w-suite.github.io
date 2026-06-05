@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="it-IT">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mergin Maps Partnership – G3W-Suite | WebGIS Open Source</title>
+<meta name="description" content="Integrazione nativa tra G3W-Suite e Mergin Maps per la raccolta dati geospaziali in campo e la sincronizzazione in tempo reale.">
+<meta name="keywords" content="[mergin maps, rilievi in campo, qgis mobile, gis offline, gis3w partner, sincronizzazione postgis, mobile mapping]">
+
+
+<meta property="og:title" content="Mergin Maps Partnership – G3W-Suite">
+<meta property="og:description" content="Gis3W è partner ufficiale di Mergin Maps per il supporto, la formazione e la consulenza sui rilievi geografici da dispositivo mobile.">
+<meta property="og:image" content="assets/images/Two-screens.png">
+<meta property="og:url" content="https://g3wsuite.it/merginmaps.html">
+<meta property="og:type" content="website">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+
+  
+
+
+
+
+
+
+
+
+
+<div class="header-wrapper">
+  <div class="container header-container">
+    <a href="/" class="logo" id="header-logo-link">
+      <img src="/assets/images/logo_g3wsuite-1.png" alt="G3W-Suite Logo" class="logo-light"><img src="/assets/images/logo_g3wsuite-1-dark.png" alt="G3W-Suite Logo" class="logo-dark">
+    </a>
+
+    <nav class="nav-menu" id="main-nav-menu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/features.html" class="nav-link">Funzionalità</a>
+
+      <div class="nav-dropdown">
+        <span class="nav-link" style="cursor: pointer;">Risorse <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+        <div class="dropdown-menu">
+          <a href="/risorse.html#demo" class="dropdown-item">Demo Online</a>
+          <a href="/risorse.html#quickstart" class="dropdown-item">Guida Rapida</a>
+          <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener" class="dropdown-item">Manuale d&#39;Uso</a>
+          <a href="https://github.com/g3w-suite/g3w-suite" target="_blank" rel="noopener" class="dropdown-item">Download GitHub</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <span class="nav-link" style="cursor: pointer;">Partnership <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+        <div class="dropdown-menu">
+          <a href="/partners.html" class="dropdown-item">I nostri Partner</a>
+          <a href="/merginmaps.html" class="dropdown-item">MerginMaps</a>
+        </div>
+      </div>
+
+      <a href="/index.html#clienti" class="nav-link">Clienti</a>
+      <a href="/contatti.html" class="nav-link">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambia Tema">
+        <i class="fa-solid fa-moon moon-icon"></i>
+        <i class="fa-solid fa-sun sun-icon"></i>
+      </button>
+
+      
+      <div class="lang-switcher">
+        
+          <a href="#" class="lang-btn active" title="Italiano" id="lang-it-btn">
+            <img src="/assets/images/it.png" alt="Italiano">
+          </a>
+          
+            <a href="https://g3wsuite.it/en/merginmaps.html" class="lang-btn" title="English" id="lang-en-btn">
+              <img src="/assets/images/gb.png" alt="English">
+            </a>
+          
+        
+      </div>
+
+      
+      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Apri Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+  
+
+<!-- BREADCRUMB / HERO HEADER -->
+<section class="section" style="padding-top: 8.5rem; padding-bottom: 3.5rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+  <div class="container text-center">
+    <span class="section-tag">Mappatura &amp; Rilievi</span>
+    <h1>Mergin Maps Partnership</h1>
+    <p class="section-subtitle" style="margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Rileva dati geografici sul territorio in modalità offline e sincronizzali con l'infrastruttura SIT centrale.
+    </p>
+  </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section class="section">
+  <div class="container grid-2" style="align-items: center;">
+    <div>
+      <img src="assets/images/MM_logo_HORIZ_COLOR.jpg" alt="Mergin Maps Logo" style="max-height: 70px; margin-bottom: 1.5rem;">
+      <span class="section-tag" style="background-color: var(--glow-teal); color: var(--color-teal);">Supporto Ufficiale</span>
+      <h2 style="margin-bottom: 1.5rem;">Raccolta Dati su Campo basata su QGIS</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 1.25rem;">
+        Gis3W fornisce supporto completo, formazione e consulenza professionale per <b>Mergin Maps</b>, la soluzione open source leader per l'acquisizione dati in campo basata su QGIS.
+      </p>
+      <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 1.5rem;">Con la soluzione mobile Mergin Maps puoi:</p>
+      <ul style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-teal); margin-top: 0.2rem;"></i>
+          <span>Predisporre app di acquisizione dati su campo definendo stili e layer su progetto QGIS Desktop.</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-teal); margin-top: 0.2rem;"></i>
+          <span>Definire form di compilazione avanzati sfruttando widget, vincoli e tabelle relazionali di QGIS.</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-teal); margin-top: 0.2rem;"></i>
+          <span>Sincronizzare i dati offline sul territorio tramite cloud o server interno gestendo le incongruenze.</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-teal); margin-top: 0.2rem;"></i>
+          <span>Collegare ricevitori ed antenne GPS esterni ad alta precisione per rilievi millimetrici (RTK).</span>
+        </li>
+      </ul>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <img src="assets/images/Two-screens.png" alt="Mergin Maps App Schermate" style="max-height: 480px; width: auto; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15));">
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATION SECTION -->
+<section class="section section-bg">
+  <div class="container grid-2" style="align-items: center; gap: 4rem;">
+    <div class="grid-3" style="gap: 1rem;">
+      <div style="box-shadow: var(--shadow-md); border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--border-color);">
+        <img src="assets/images/1285.jpg" alt="Mergin Maps Mappa Rilievo">
+      </div>
+      <div style="box-shadow: var(--shadow-md); border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--border-color);">
+        <img src="assets/images/1286.jpg" alt="Mergin Maps Form Compilazione">
+      </div>
+      <div style="box-shadow: var(--shadow-md); border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--border-color);">
+        <img src="assets/images/1290.jpg" alt="Mergin Maps Sincronizzazione Dati">
+      </div>
+    </div>
+
+    <div>
+      <span class="section-tag" style="background-color: var(--glow-orange); color: var(--color-orange);">Flusso di Lavoro Integrato</span>
+      <h2>Integrazione nativa con G3W-SUITE</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">
+        L'integrazione a livello di progetto QGIS consente un connubio perfetto tra la visualizzazione e la modifica WebGIS di G3W-Suite e la raccolta offline dell'app Mergin Maps.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="font-size: 1.25rem; color: var(--color-orange); margin-top: 0.15rem;"><i class="fa-solid fa-window-restore"></i></div>
+          <div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Amministrazione Unificata</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Un unico punto di gestione per pubblicare il tuo progetto QGIS sia come mappa WebGIS consultabile sia come progetto mobile per la compilazione in campo.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="font-size: 1.25rem; color: var(--color-orange); margin-top: 0.15rem;"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Condivisione degli Utenti</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Amministra e sincronizza le utenze, i ruoli e i relativi permessi di inserimento per gli operatori territoriali in modo unificato.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="font-size: 1.25rem; color: var(--color-orange); margin-top: 0.15rem;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Gestione e Sincronizzazione</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Sincronizza in tempo reale i rilievi geografici mobile all'interno dei database spaziali aziendali (PostGIS) visualizzabili all'istante su WebGIS.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIS3W SERVICES FOR MERGIN MAPS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag" style="background-color: var(--glow-teal); color: var(--color-teal);">Nostri Servizi</span>
+      <h2>Servizi Professionali Mergin Maps</h2>
+      <p class="section-subtitle">Forniamo supporto completo dall'installazione del server alla formazione degli operatori.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="feature-card teal" style="background-color: var(--bg-secondary); padding: 2rem;">
+        <div class="card-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <h3>Formazione</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6;">Formazione specifica per preparare progetti QGIS per il campo, progettare maschere di inserimento, impostare mappe offline e sincronizzare correttamente i dati raccolti.</p>
+      </div>
+      <div class="feature-card teal" style="background-color: var(--bg-secondary); padding: 2rem;">
+        <div class="card-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+        <h3>Consulenza SIT</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6;">Consulenza e supporto per l'integrazione di database PostgreSQL/PostGIS aziendali, risoluzione di conflitti topologici e installazione di server Mergin Maps dedicati in cloud o on-premises.</p>
+      </div>
+      <div class="feature-card teal" style="background-color: var(--bg-secondary); padding: 2rem;">
+        <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+        <h3>Sviluppo Custom</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6;">Sviluppo di moduli integrativi, flussi di lavoro personalizzati ed automatizzazioni per la sincronizzazione dei dati geo-spaziali in sinergia diretta con gli sviluppatori core di Mergin Maps.</p>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 3.5rem;">
+      <a href="contatti.html" class="btn btn-teal"><i class="fa-solid fa-envelope"></i> Richiedi una Consulenza Dedicata</a>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+
+
+<footer class="footer">
+  <div class="container grid-4">
+    
+    <div>
+      <a href="/" class="footer-logo">
+        <img src="/assets/images/logo_gis3w_100_53-1.png" alt="Gis3W Logo">
+      </a>
+      <p style="margin-bottom: 1.5rem; opacity: 0.85;">
+        G3W-SUITE è un'applicazione web sviluppata da Gis3W per pubblicare e gestire in autonomia progetti cartografici QGIS come servizi WebGIS.
+      </p>
+      <p style="font-size: 0.85rem; opacity: 0.7;">
+        Licenza MPL (Mozilla Public License)
+      </p>
+    </div>
+
+    
+    <div>
+      <h4>Sito Web</h4>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/features.html">Funzionalità</a>
+        <a href="/risorse.html">Risorse &amp; Demo</a>
+        <a href="/contatti.html">Contatti</a>
+        <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+      </div>
+    </div>
+
+    
+    <div>
+      <h4>La nostra sede</h4>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Viale Verdi, 24<br>Montecatini Terme (PT)<br>Toscana, Italia</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:info@gis3w.it">info@gis3w.it</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+393938534336">+39 393 8534336</a>
+      </div>
+    </div>
+
+    
+    <div>
+      <h4>Chi Siamo</h4>
+      <p style="opacity: 0.85;">
+        Forniamo consulenza e strumenti per la creazione di <b>Sistemi Informativi Geografici</b> compatibili con gli standard internazionali dell'OGC e con la direttiva europea Inspire. Sviluppiamo inoltre plugin per QGIS e forniamo formazione professionale qualificata.
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/gis3w" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/gis3w.sas/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com/_gis3w_" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Gis3W Snc. Tutti i diritti riservati.</p>
+    <div class="footer-bottom-links">
+      <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy</a>
+      <a href="https://g3wsuite.it" target="_blank" rel="noopener">Sito Ufficiale G3W</a>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/main.js"></script>
+  
+
+</body>
+</html>

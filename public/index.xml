@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>G3W-Suite – Pubblica i tuoi progetti QGIS sul Web | WebGIS Open Source on G3W-Suite</title>
+    <link>https://g3wsuite.it/</link>
+    <description>Recent content in G3W-Suite – Pubblica i tuoi progetti QGIS sul Web | WebGIS Open Source on G3W-Suite</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <atom:link href="https://g3wsuite.it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contatti &amp; Supporto – G3W-Suite | WebGIS Open Source</title>
+      <link>https://g3wsuite.it/contatti.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://g3wsuite.it/contatti.html</guid>
+      <description>Parla con Noi Contatti e Supporto Hai bisogno di supporto tecnico, consulenza o vuoi richiedere un preventivo personalizzato? Compila il form o consulta le nostre FAQ. Domande Frequenti FAQ - Domande Comuni G3W-Suite è davvero 100% Open Source? Sì. G3W-Suite è una soluzione open source rilasciata sotto licenza Mozilla Public License (MPL 2.0). Il codice è interamente disponibile su GitHub e può essere utilizzato liberamente senza costi di licenza o vincoli proprietari.</description>
+    </item>
+    <item>
+      <title>Funzionalità – Client Cartografico &amp; Amministrazione | G3W-Suite</title>
+      <link>https://g3wsuite.it/features.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://g3wsuite.it/features.html</guid>
+      <description>Esplora Dettagli Caratteristiche e Funzionalità Tutti i moduli, le tecnologie e gli strumenti integrati in G3W-Suite, divisi tra il client cartografico web e la suite di amministrazione. Client Cartografico Web Pannello di Amministrazione Client Cartografico Ottimizzato Interfaccia responsive altamente reattiva per smartphone, tablet e PC Desktop. Include funzioni di geolocalizzazione GPS integrate in tempo reale per il lavoro in campo ed una veste grafica personalizzabile con testi e loghi del proprio Ente.</description>
+    </item>
+    <item>
+      <title>I nostri Partner – G3W-Suite | WebGIS Open Source</title>
+      <link>https://g3wsuite.it/partners.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://g3wsuite.it/partners.html</guid>
+      <description>Rete Geospaziale I nostri Partner Unisciti alla rete di aziende e professionisti che offrono supporto e consulenza su G3W-Suite per crescere insieme. Cresciamo Insieme Soluzioni Geospaziali Innovative Open Source G3W-SUITE è un applicativo open source, altamente integrato con le API di QGIS Server, dedicato alla pubblicazione di progetti QGIS come servizi WebGIS. La suite permette inoltre di predisporre gestionali cartografici web collaborativi anche ad accesso condiviso. Grazie alla sua estrema duttilità e stabilità, la suite è impiegata oggi da numerosi Enti Pubblici, Enti Parco, Istituti di Ricerca e studi professionali.</description>
+    </item>
+    <item>
+      <title>Mergin Maps Partnership – G3W-Suite | WebGIS Open Source</title>
+      <link>https://g3wsuite.it/merginmaps.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://g3wsuite.it/merginmaps.html</guid>
+      <description>Mappatura &amp;amp; Rilievi Mergin Maps Partnership Rileva dati geografici sul territorio in modalità offline e sincronizzali con l&#39;infrastruttura SIT centrale. Supporto Ufficiale Raccolta Dati su Campo basata su QGIS Gis3W fornisce supporto completo, formazione e consulenza professionale per Mergin Maps, la soluzione open source leader per l&#39;acquisizione dati in campo basata su QGIS. Con la soluzione mobile Mergin Maps puoi:&#xA;Predisporre app di acquisizione dati su campo definendo stili e layer su progetto QGIS Desktop.</description>
+    </item>
+    <item>
+      <title>Risorse &amp; Area Demo – G3W-Suite | WebGIS Open Source</title>
+      <link>https://g3wsuite.it/risorse.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://g3wsuite.it/risorse.html</guid>
+      <description>Area Download &amp;amp; Test Risorse e Area Demo Scopri G3W-Suite attraverso le demo online, scarica i codici sorgente e segui la guida rapida di installazione. Accesso Gratuito Prova la Demo Online G3W-Suite ti permette di vedere all&#39;istante l&#39;effetto dei tuoi progetti QGIS sul Web. Accedi alla nostra area demo ufficiale per testare sia la visualizzazione cartografica che gli strumenti di amministrazione. Per accedere in modalità amministratore e provare a caricare i tuoi progetti, o per abilitare funzioni di editing relazionale, compila il modulo di richiesta a fianco per ricevere le credenziali personali.</description>
+    </item>
+  </channel>
+</rss>

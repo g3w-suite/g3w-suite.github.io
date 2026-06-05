@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ .Content }}
+{{ end }}
+
+{{ define "extra_js" }}
+<script>
+  window.addEventListener('load', function () {
+    if (typeof L === 'undefined') return;
+    var sedeCoords = [43.88275, 10.77140];
+    var map = L.map('osm-map', { scrollWheelZoom: false }).setView(sedeCoords, 16);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker(sedeCoords).addTo(map)
+      .bindPopup('<strong>Gis3W Snc</strong><br>Viale Verdi, 24<br>51016 Montecatini Terme (PT)<br><a href="https://www.openstreetmap.org/?mlat=43.88275&mlon=10.77140#map=18/43.88275/10.77140" target="_blank" rel="noopener">Open in OpenStreetMap</a>')
+      .openPopup();
+    map.on('click', function () { map.scrollWheelZoom.enable(); });
+    map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+  });
+</script>
+{{ end }}

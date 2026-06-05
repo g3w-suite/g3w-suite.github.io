@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{{ $langCode := cond (eq .Lang "en") "en-GB" "it-IT" }}
+<html lang="{{ $langCode }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+
+  {{ partial "header.html" . }}
+
+  {{ block "main" . }}{{ end }}
+
+  {{ partial "footer.html" . }}
+
+  <script src="{{ relURL "assets/main.js" }}"></script>
+  {{ block "extra_js" . }}{{ end }}
+
+</body>
+</html>

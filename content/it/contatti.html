@@ -1,0 +1,159 @@
+---
+title: "Contatti & Supporto – G3W-Suite | WebGIS Open Source"
+pageTitle: "Contatti & Supporto – G3W-Suite | WebGIS Open Source"
+description: "Contatta Gis3W per ricevere supporto tecnico, consulenza o preventivi personalizzati per l'installazione e la gestione di G3W-Suite."
+keywords: "contatti webgis, supporto g3w-suite, consulenza gis, qgis server supporto, gis3w montecatini, faq webgis"
+ogTitle: "Contatti & Supporto – G3W-Suite | WebGIS Open Source"
+ogDescription: "Hai domande o hai bisogno di supporto tecnico per G3W-Suite? Siamo qui per aiutarti."
+ogImage: "assets/images/editing-1.jpg"
+translationKey: "contact"
+leaflet: true
+---
+
+<!-- BREADCRUMB / HERO HEADER -->
+<section class="section" style="padding-top: 8.5rem; padding-bottom: 3.5rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+  <div class="container text-center">
+    <span class="section-tag">Parla con Noi</span>
+    <h1>Contatti e Supporto</h1>
+    <p class="section-subtitle" style="margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Hai bisogno di supporto tecnico, consulenza o vuoi richiedere un preventivo personalizzato? Compila il form o consulta le nostre FAQ.
+    </p>
+  </div>
+</section>
+
+<!-- FAQS & CONTACT FORM SECTION -->
+<section class="section">
+  <div class="container grid-2">
+    <!-- FAQs Accordion (Left) -->
+    <div>
+      <span class="section-tag" style="background-color: var(--glow-orange); color: var(--color-orange);">Domande Frequenti</span>
+      <h2 style="margin-bottom: 2rem;">FAQ - Domande Comuni</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-header" aria-label="Espandi domanda">
+            <h4>G3W-Suite è davvero 100% Open Source?</h4>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-content">
+              Sì. G3W-Suite è una soluzione open source rilasciata sotto licenza Mozilla Public License (MPL 2.0). Il codice è interamente disponibile su GitHub e può essere utilizzato liberamente senza costi di licenza o vincoli proprietari.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-label="Espandi domanda">
+            <h4>Quali versioni di QGIS sono supportate?</h4>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-content">
+              G3W-Suite supporta le versioni ufficiali LTR (Long Term Release) stabili di QGIS Server e Desktop (serie 3.x). Consigliamo di allineare le versioni di QGIS desktop con quelle installate sul server per garantire la massima corrispondenza grafica.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-label="Espandi domanda">
+            <h4>Posso installare la suite sui miei server (in-house)?</h4>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-content">
+              Certamente. La suite può essere installata su server on-premises o in cloud (AWS, Google Cloud, Azure, ecc.) tramite pacchetti Docker Compose, garantendo il pieno controllo dei tuoi dati territoriali e sensibili.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-label="Espandi domanda">
+            <h4>Fornite supporto o servizi di personalizzazione?</h4>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-content">
+              Sì, Gis3W Snc (l'azienda creatrice del progetto) offre pacchetti di supporto professionale, servizi di installazione e configurazione in cloud o in-house, corsi di formazione qualificati e lo sviluppo di funzionalità o moduli custom personalizzati.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form (Right) -->
+    <div>
+      <div class="form-card">
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">Invia un Messaggio</h3>
+        <form id="contactForm" action="#" data-lang="it">
+          <div class="form-alert"></div>
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Nome e Cognome *</label>
+            <input type="text" id="contact-name" class="form-control" required placeholder="Inserisci il tuo nome">
+          </div>
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Indirizzo E-mail *</label>
+            <input type="email" id="contact-email" class="form-control" required placeholder="esempio@email.com">
+          </div>
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Oggetto *</label>
+            <input type="text" id="contact-subject" class="form-control" required placeholder="Es. Richiesta Supporto, Info Commerciali...">
+          </div>
+          <div class="form-group">
+            <label for="contact-msg" class="form-label">Messaggio *</label>
+            <textarea id="contact-msg" class="form-control" required placeholder="Scrivi qui la tua richiesta dettagliata..."></textarea>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="contact-privacy" required>
+            <label for="contact-privacy">Accetto il trattamento dei dati personali secondo la <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Invia Messaggio
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPS & CONTACT DETAILS SECTION -->
+<section class="section section-bg">
+  <div class="container grid-2" style="align-items: stretch;">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <span class="section-tag" style="background-color: var(--glow-teal); color: var(--color-teal);">Dove Siamo</span>
+      <h2 style="margin-bottom: 1.5rem;">Sede di Gis3W Snc</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 2rem;">
+        La nostra sede operativa si trova a Montecatini Terme, nel cuore della Toscana. Da qui coordiniamo gli sviluppi del progetto open source G3W-Suite e forniamo supporto alle pubbliche amministrazioni ed aziende dislocate in tutta Italia.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--glow-orange); color: var(--color-orange); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Indirizzo Sede</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Viale Verdi, 24 — 51016 Montecatini Terme (PT)</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--glow-green); color: var(--color-green); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">E-mail di contatto</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);"><a href="mailto:info@gis3w.it">info@gis3w.it</a></p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--glow-teal); color: var(--color-teal); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.15rem;">Telefono / Mobile</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);"><a href="tel:+393938534336">+39 393 8534336</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mockup-gis-container">
+        <div id="osm-map" style="width: 100%; height: 100%; border-radius: inherit;"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+{{ $homeURL      := relLangURL "/" }}
+{{ $base         := relURL "" }}
+{{ $featuresURL  := printf "%s%s" $base (i18n "slug_features") }}
+{{ $resourcesURL := printf "%s%s" $base (i18n "slug_resources") }}
+{{ $contactURL   := printf "%s%s" $base (i18n "slug_contact") }}
+
+<footer class="footer">
+  <div class="container grid-4">
+    <!-- Col 1 -->
+    <div>
+      <a href="{{ $homeURL }}" class="footer-logo">
+        <img src="{{ relURL "assets/images/logo_gis3w_100_53-1.png" }}" alt="Gis3W Logo">
+      </a>
+      <p style="margin-bottom: 1.5rem; opacity: 0.85;">
+        {{ i18n "footer_about_desc" | safeHTML }}
+      </p>
+      <p style="font-size: 0.85rem; opacity: 0.7;">
+        {{ i18n "footer_license" }}
+      </p>
+    </div>
+
+    <!-- Col 2 -->
+    <div>
+      <h4>{{ i18n "footer_website" }}</h4>
+      <div class="footer-links">
+        <a href="{{ $homeURL }}">{{ i18n "nav_home" }}</a>
+        <a href="{{ $featuresURL }}">{{ i18n "nav_features" }}</a>
+        <a href="{{ $resourcesURL }}">{{ i18n "footer_resources" | safeHTML }}</a>
+        <a href="{{ $contactURL }}">{{ i18n "nav_contact" }}</a>
+        <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">{{ i18n "footer_privacy" }}</a>
+      </div>
+    </div>
+
+    <!-- Col 3 -->
+    <div>
+      <h4>{{ i18n "footer_office" }}</h4>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>{{ i18n "footer_address" | safeHTML }}</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:info@gis3w.it">info@gis3w.it</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+393938534336">+39 393 8534336</a>
+      </div>
+    </div>
+
+    <!-- Col 4 -->
+    <div>
+      <h4>{{ i18n "footer_about_title" }}</h4>
+      <p style="opacity: 0.85;">
+        {{ i18n "footer_about_text" | safeHTML }}
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/gis3w" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/gis3w.sas/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com/_gis3w_" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>{{ i18n "footer_copyright" | safeHTML }}</p>
+    <div class="footer-bottom-links">
+      <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">{{ i18n "footer_privacy_link" }}</a>
+      <a href="https://g3wsuite.it" target="_blank" rel="noopener">{{ i18n "footer_official_site" }}</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+# Navigation
+nav_home: "Home"
+nav_features: "Features"
+nav_resources_label: "Resources"
+nav_resources_demo: "Online Demo"
+nav_resources_quickstart: "Quick Start"
+nav_resources_manual: "User Manual"
+nav_resources_github: "GitHub Download"
+nav_partnership_label: "Partnership"
+nav_partners: "Our Partners"
+nav_clients: "Clients"
+nav_contact: "Contact"
+nav_merginmaps: "MerginMaps"
+
+# Header actions
+theme_toggle_aria: "Change Theme"
+mobile_menu_aria: "Open Menu"
+lang_it_title: "Italiano"
+lang_en_title: "English"
+
+# Footer
+footer_website: "Website"
+footer_office: "Our Office"
+footer_about_title: "About Us"
+footer_about_desc: "G3W-SUITE is a web application developed by Gis3W to independently publish and manage QGIS cartographic projects as WebGIS services."
+footer_about_text: "We provide consulting and tools for creating <b>Geographic Information Systems</b> compatible with OGC international standards and the European Inspire directive. We also develop QGIS plugins and provide qualified professional training."
+footer_license: "MPL License (Mozilla Public License)"
+footer_privacy: "Privacy Policy"
+footer_resources: "Resources &amp; Demo"
+footer_copyright: "&copy; 2026 Gis3W Snc. All rights reserved."
+footer_privacy_link: "Privacy"
+footer_official_site: "G3W Official Website"
+footer_address: "Viale Verdi, 24<br>Montecatini Terme (PT)<br>Tuscany, Italy"
+
+# Nav slugs (used for building hrefs)
+slug_features: "features.html"
+slug_resources: "resources.html"
+slug_contact: "contact.html"
+slug_partners: "partners.html"
+slug_merginmaps: "merginmaps.html"
+slug_clients_anchor: "#clienti"

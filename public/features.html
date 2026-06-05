@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="it-IT">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Funzionalità – Client Cartografico &amp; Amministrazione | G3W-Suite</title>
+<meta name="description" content="Esplora le funzionalità avanzate del Client Cartografico e del pannello di Amministrazione di G3W-Suite. Pubblicazione QGIS, editing relazionale online e molto altro.">
+<meta name="keywords" content="[funzionalità webgis, client cartografico, amministrazione gis, editing relazionale, dataplotly, cdu, catasto webgis]">
+
+
+<meta property="og:title" content="Funzionalità – Client Cartografico &amp; Amministrazione | G3W-Suite">
+<meta property="og:description" content="Scopri come G3W-Suite semplifica la gestione WebGIS con il suo potente client cartografico e pannello amministrativo.">
+<meta property="og:image" content="assets/images/qgis_api.jpeg">
+<meta property="og:url" content="https://g3wsuite.it/features.html">
+<meta property="og:type" content="website">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+
+  
+
+
+
+
+
+
+
+
+
+<div class="header-wrapper">
+  <div class="container header-container">
+    <a href="/" class="logo" id="header-logo-link">
+      <img src="/assets/images/logo_g3wsuite-1.png" alt="G3W-Suite Logo" class="logo-light"><img src="/assets/images/logo_g3wsuite-1-dark.png" alt="G3W-Suite Logo" class="logo-dark">
+    </a>
+
+    <nav class="nav-menu" id="main-nav-menu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/features.html" class="nav-link">Funzionalità</a>
+
+      <div class="nav-dropdown">
+        <span class="nav-link" style="cursor: pointer;">Risorse <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+        <div class="dropdown-menu">
+          <a href="/risorse.html#demo" class="dropdown-item">Demo Online</a>
+          <a href="/risorse.html#quickstart" class="dropdown-item">Guida Rapida</a>
+          <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener" class="dropdown-item">Manuale d&#39;Uso</a>
+          <a href="https://github.com/g3w-suite/g3w-suite" target="_blank" rel="noopener" class="dropdown-item">Download GitHub</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <span class="nav-link" style="cursor: pointer;">Partnership <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+        <div class="dropdown-menu">
+          <a href="/partners.html" class="dropdown-item">I nostri Partner</a>
+          <a href="/merginmaps.html" class="dropdown-item">MerginMaps</a>
+        </div>
+      </div>
+
+      <a href="/index.html#clienti" class="nav-link">Clienti</a>
+      <a href="/contatti.html" class="nav-link">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambia Tema">
+        <i class="fa-solid fa-moon moon-icon"></i>
+        <i class="fa-solid fa-sun sun-icon"></i>
+      </button>
+
+      
+      <div class="lang-switcher">
+        
+          <a href="#" class="lang-btn active" title="Italiano" id="lang-it-btn">
+            <img src="/assets/images/it.png" alt="Italiano">
+          </a>
+          
+            <a href="https://g3wsuite.it/en/features.html" class="lang-btn" title="English" id="lang-en-btn">
+              <img src="/assets/images/gb.png" alt="English">
+            </a>
+          
+        
+      </div>
+
+      
+      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Apri Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+  
+
+<!-- BREADCRUMB / HERO HEADER -->
+<section class="section" style="padding-top: 8.5rem; padding-bottom: 3.5rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+  <div class="container text-center">
+    <span class="section-tag">Esplora Dettagli</span>
+    <h1>Caratteristiche e Funzionalità</h1>
+    <p class="section-subtitle" style="margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Tutti i moduli, le tecnologie e gli strumenti integrati in G3W-Suite, divisi tra il client cartografico web e la suite di amministrazione.
+    </p>
+  </div>
+</section>
+
+<!-- INTERACTIVE TABS SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="tabs-container">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="client"><i class="fa-solid fa-map" style="margin-right: 0.5rem;"></i> Client Cartografico Web</button>
+        <button class="tab-btn" data-tab="admin"><i class="fa-solid fa-gears" style="margin-right: 0.5rem;"></i> Pannello di Amministrazione</button>
+      </div>
+
+      <!-- PANE 1: CLIENT CARTOGRAFICO -->
+      <div class="tab-pane active" data-tab="client">
+        <div class="tab-grid">
+          <div class="features-detailed-list">
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+              <div class="df-text">
+                <h4>Client Cartografico Ottimizzato</h4>
+                <p>Interfaccia responsive altamente reattiva per smartphone, tablet e PC Desktop. Include funzioni di geolocalizzazione GPS integrate in tempo reale per il lavoro in campo ed una veste grafica personalizzabile con testi e loghi del proprio Ente.</p>
+              </div>
+            </div>
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-compass"></i></div>
+              <div class="df-text">
+                <h4>Strumenti di Base e Mappe</h4>
+                <p>Integrazione immediata con mappe di base commerciali e open source (OpenStreetMap, Google Maps, Bing Maps). Ricerche cartografiche avanzate con auto-zoom, gestione della trasparenza dei layer e consultazione strutturata della legenda.</p>
+              </div>
+            </div>
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              <div class="df-text">
+                <h4>Strumenti Avanzati e Grafici</h4>
+                <p>Query Builder integrato per interrogazioni e ricerche personalizzate. Gestione nativa delle relazioni spaziali, join 1:N ed N:M. Generazione dinamica di grafici interattivi basati sul plugin QGIS DataPlotly, serie storiche temporali e allegati multimediali.</p>
+              </div>
+            </div>
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-pen-nib"></i></div>
+              <div class="df-text">
+                <h4>Editing Relazionale Online</h4>
+                <p>Modifica forme geometriche e attributi direttamente dal web, ereditando widget e moduli form preconfigurati in QGIS. Feature-lock per prevenire conflitti multi-utente ed editing offline per zone senza connettività.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="position: relative;">
+            <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 1.5rem; box-shadow: var(--shadow-lg);">
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></span>
+                <span style="margin-left: auto; font-family: var(--font-headings); font-size: 0.8rem; font-weight: 600; color: var(--color-teal);"><i class="fa-solid fa-globe"></i> Client cartografico attivo</span>
+              </div>
+              <img src="assets/images/editing-1.jpg" alt="Esempio Client Cartografico" style="border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%;">
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; padding: 0.75rem; background: var(--bg-primary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                <strong>Interfaccia Premium:</strong> Supporta stampe ad alta risoluzione ereditando perfettamente i layout composer ed i modelli di stampe definiti su QGIS Desktop, compresi gli Atlanti geografici.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANE 2: AMMINISTRAZIONE -->
+      <div class="tab-pane" data-tab="admin">
+        <div class="tab-grid">
+          <div class="features-detailed-list">
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+              <div class="df-text">
+                <h4>Pubblicazione Rapida dei Progetti</h4>
+                <p>Crea e organizza contenitori geografici tematici (gruppi) sul web. Pubblicazione immediata caricando il file di progetto <code>.qgz</code>. Totale corrispondenza grafica di legende, stili di tematizzazione, layer vettoriali e raster.</p>
+              </div>
+            </div>
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-server"></i></div>
+              <div class="df-text">
+                <h4>Sincronizzazione Dati Real-time</h4>
+                <p>Integrazione diretta con database aziendali relazionali e spaziali: PostGreSQL/PostGIS, Oracle Spatial, MSSQL Server. Supporto a formati locali leggeri quali SQLite/SpatiaLite, GeoPackage, Shapefile e formati raster.</p>
+              </div>
+            </div>
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-users-gear"></i></div>
+              <div class="df-text">
+                <h4>Profilazione chirurgica degli utenti</h4>
+                <p>Gestione autonoma di utenti e gruppi con ruoli diversificati. Configurazione dei permessi di modifica dei singoli strati e abilitazione dei filtri geografici e vincoli alfanumerici (SQL / QGIS Expression) specifici per ciascun utente.</p>
+              </div>
+            </div>
+            <div class="detailed-feature-item">
+              <div class="df-icon"><i class="fa-solid fa-landmark"></i></div>
+              <div class="df-text">
+                <h4>Moduli Integrati per le PA</h4>
+                <p>Abilita moduli dedicati alla Pubblica Amministrazione: collegamento censuario catasto, CDU (Certificato di Destinazione Urbanistica) con modelli di stampa dedicati, moduli per la gestione dei numeri civici e stradario in conformità con gli standard RNDT e INSPIRE.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="position: relative;">
+            <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 1.5rem; box-shadow: var(--shadow-lg);">
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></span>
+                <span style="margin-left: auto; font-family: var(--font-headings); font-size: 0.8rem; font-weight: 600; color: var(--color-orange);"><i class="fa-solid fa-shield-halved"></i> Amministrazione</span>
+              </div>
+              <img src="assets/images/test2-1.jpg" alt="Pannello di Amministrazione G3W-Suite" style="border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%;">
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; padding: 0.75rem; background: var(--bg-primary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                <strong>Interfaccia di Amministrazione:</strong> Permette di gestire con estrema semplicità la rigenerazione delle cache, la sincronizzazione del file system e il monitoraggio degli accessi utenti.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL INFRASTRUCTURE SUMMARY -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag" style="background-color: var(--glow-green); color: var(--color-green);">Architettura Robusta</span>
+      <h2>Infrastruttura e Standard Aperti</h2>
+      <p class="section-subtitle">G3W-Suite è concepito per garantire stabilità, prestazioni elevate e totale compatibilità con gli standard geografici internazionali.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+        <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-diagram-project"></i></div>
+        <h4 style="margin-bottom: 0.5rem;">QGIS Server</h4>
+        <p style="font-size: 0.85rem;">Sfrutta al 100% le API e l'engine di QGIS Server per visualizzare in modo perfetto i tuoi stili grafici e le tue mappe.</p>
+      </div>
+      <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+        <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-shield"></i></div>
+        <h4 style="margin-bottom: 0.5rem;">Standard OGC</h4>
+        <p style="font-size: 0.85rem;">Piena conformità con gli standard internazionali WMS, WFS, WCS e le specifiche CSW per i metadati geografici.</p>
+      </div>
+      <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+        <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-cube"></i></div>
+        <h4 style="margin-bottom: 0.5rem;">Database Spaziali</h4>
+        <p style="font-size: 0.85rem;">Integrazione profonda con i più diffusi database relazionali e geografici con supporto a query spaziali complesse.</p>
+      </div>
+      <div class="feature-card green" style="background-color: var(--bg-primary); padding: 1.75rem;">
+        <div class="card-icon" style="margin-bottom: 1rem;"><i class="fa-solid fa-cubes"></i></div>
+        <h4 style="margin-bottom: 0.5rem;">API &amp; Estendibilità</h4>
+        <p style="font-size: 0.85rem;">Possibilità di estendere le funzioni del nucleo base scrivendo moduli ad-hoc ed integrandosi con API di terze parti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%); color: #ffffff; text-align: center; position: relative; overflow: hidden;">
+  <div class="hero-glow-1" style="background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);"></div>
+  <div class="container" style="position: relative; z-index: 10;">
+    <h2 style="color: #ffffff; font-size: 2rem; margin-bottom: 1rem;">Vuoi testare queste funzionalità in prima persona?</h2>
+    <p style="font-size: 1.15rem; max-width: 600px; margin: 0 auto 2.5rem auto; opacity: 0.9;">
+      Accedi all'area demo dedicata e sperimenta l'interfaccia client e il pannello di amministrazione.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="risorse.html#demo" class="btn btn-primary" style="background-color: #ffffff; color: var(--color-teal-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.1);"><i class="fa-solid fa-play"></i> Accedi alla Demo</a>
+      <a href="contatti.html" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;"><i class="fa-solid fa-envelope"></i> Parla con un esperto</a>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+
+
+<footer class="footer">
+  <div class="container grid-4">
+    
+    <div>
+      <a href="/" class="footer-logo">
+        <img src="/assets/images/logo_gis3w_100_53-1.png" alt="Gis3W Logo">
+      </a>
+      <p style="margin-bottom: 1.5rem; opacity: 0.85;">
+        G3W-SUITE è un'applicazione web sviluppata da Gis3W per pubblicare e gestire in autonomia progetti cartografici QGIS come servizi WebGIS.
+      </p>
+      <p style="font-size: 0.85rem; opacity: 0.7;">
+        Licenza MPL (Mozilla Public License)
+      </p>
+    </div>
+
+    
+    <div>
+      <h4>Sito Web</h4>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/features.html">Funzionalità</a>
+        <a href="/risorse.html">Risorse &amp; Demo</a>
+        <a href="/contatti.html">Contatti</a>
+        <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+      </div>
+    </div>
+
+    
+    <div>
+      <h4>La nostra sede</h4>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Viale Verdi, 24<br>Montecatini Terme (PT)<br>Toscana, Italia</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:info@gis3w.it">info@gis3w.it</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+393938534336">+39 393 8534336</a>
+      </div>
+    </div>
+
+    
+    <div>
+      <h4>Chi Siamo</h4>
+      <p style="opacity: 0.85;">
+        Forniamo consulenza e strumenti per la creazione di <b>Sistemi Informativi Geografici</b> compatibili con gli standard internazionali dell'OGC e con la direttiva europea Inspire. Sviluppiamo inoltre plugin per QGIS e forniamo formazione professionale qualificata.
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/gis3w" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/gis3w.sas/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com/_gis3w_" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Gis3W Snc. Tutti i diritti riservati.</p>
+    <div class="footer-bottom-links">
+      <a href="https://gis3w.it/privacy/" target="_blank" rel="noopener">Privacy</a>
+      <a href="https://g3wsuite.it" target="_blank" rel="noopener">Sito Ufficiale G3W</a>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/main.js"></script>
+  
+
+</body>
+</html>

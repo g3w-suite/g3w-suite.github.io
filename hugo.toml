@@ -1,0 +1,25 @@
+baseURL = "https://g3wsuite.it/"
+title = "G3W-Suite"
+defaultContentLanguage = "it"
+defaultContentLanguageInSubdir = false
+uglyURLs = true
+disableKinds = ["taxonomy", "term"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[languages]
+  [languages.it]
+    languageName  = "Italiano"
+    contentDir    = "content/it"
+    weight        = 1
+    [languages.it.params]
+      flagImage  = "it.png"
+      altLangURL = "en/"
+  [languages.en]
+    languageName  = "English"
+    contentDir    = "content/en"
+    weight        = 2
+    [languages.en.params]
+      flagImage  = "gb.png"
+      altLangURL = ""

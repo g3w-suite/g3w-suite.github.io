@@ -1,0 +1,81 @@
+{{ $lang := .Lang }}
+{{ $base := relURL "" }}
+{{ $featuresURL  := printf "%s%s" $base (i18n "slug_features") }}
+{{ $resourcesURL := printf "%s%s" $base (i18n "slug_resources") }}
+{{ $contactURL   := printf "%s%s" $base (i18n "slug_contact") }}
+{{ $partnersURL  := printf "%s%s" $base (i18n "slug_partners") }}
+{{ $merginURL    := printf "%s%s" $base (i18n "slug_merginmaps") }}
+{{ $homeURL      := relLangURL "/" }}
+{{ $clientsURL   := printf "%s%s" $base "index.html#clienti" }}
+
+<div class="header-wrapper">
+  <div class="container header-container">
+    <a href="{{ $homeURL }}" class="logo" id="header-logo-link">
+      <img src="{{ relURL "assets/images/logo_g3wsuite-1.png" }}" alt="G3W-Suite Logo" class="logo-light"><img src="{{ relURL "assets/images/logo_g3wsuite-1-dark.png" }}" alt="G3W-Suite Logo" class="logo-dark">
+    </a>
+
+    <nav class="nav-menu" id="main-nav-menu">
+      <a href="{{ $homeURL }}" class="nav-link">{{ i18n "nav_home" }}</a>
+      <a href="{{ $featuresURL }}" class="nav-link">{{ i18n "nav_features" }}</a>
+
+      <div class="nav-dropdown">
+        <span class="nav-link" style="cursor: pointer;">{{ i18n "nav_resources_label" }} <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+        <div class="dropdown-menu">
+          <a href="{{ $resourcesURL }}#demo" class="dropdown-item">{{ i18n "nav_resources_demo" }}</a>
+          <a href="{{ $resourcesURL }}#quickstart" class="dropdown-item">{{ i18n "nav_resources_quickstart" }}</a>
+          <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener" class="dropdown-item">{{ i18n "nav_resources_manual" }}</a>
+          <a href="https://github.com/g3w-suite/g3w-suite" target="_blank" rel="noopener" class="dropdown-item">{{ i18n "nav_resources_github" }}</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <span class="nav-link" style="cursor: pointer;">{{ i18n "nav_partnership_label" }} <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></span>
+        <div class="dropdown-menu">
+          <a href="{{ $partnersURL }}" class="dropdown-item">{{ i18n "nav_partners" }}</a>
+          <a href="{{ $merginURL }}" class="dropdown-item">{{ i18n "nav_merginmaps" }}</a>
+        </div>
+      </div>
+
+      <a href="{{ $clientsURL }}" class="nav-link">{{ i18n "nav_clients" }}</a>
+      <a href="{{ $contactURL }}" class="nav-link">{{ i18n "nav_contact" }}</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="{{ i18n "theme_toggle_aria" }}">
+        <i class="fa-solid fa-moon moon-icon"></i>
+        <i class="fa-solid fa-sun sun-icon"></i>
+      </button>
+
+      <!-- Language Selector -->
+      <div class="lang-switcher">
+        {{ if eq $lang "it" }}
+          <a href="#" class="lang-btn active" title="{{ i18n "lang_it_title" }}" id="lang-it-btn">
+            <img src="{{ relURL "assets/images/it.png" }}" alt="Italiano">
+          </a>
+          {{ range .Translations }}
+            <a href="{{ .Permalink }}" class="lang-btn" title="{{ i18n "lang_en_title" }}" id="lang-en-btn">
+              <img src="{{ relURL "assets/images/gb.png" }}" alt="English">
+            </a>
+          {{ end }}
+        {{ else }}
+          {{ range .Translations }}
+            <a href="{{ .Permalink }}" class="lang-btn" title="{{ i18n "lang_it_title" }}" id="lang-it-btn">
+              <img src="{{ relURL "assets/images/it.png" }}" alt="Italiano">
+            </a>
+          {{ end }}
+          <a href="#" class="lang-btn active" title="{{ i18n "lang_en_title" }}" id="lang-en-btn">
+            <img src="{{ relURL "assets/images/gb.png" }}" alt="English">
+          </a>
+        {{ end }}
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="{{ i18n "mobile_menu_aria" }}">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</div>
