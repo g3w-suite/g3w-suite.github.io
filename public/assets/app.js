@@ -1,5 +1,10 @@
 ﻿'use strict';
 
+if (window.location.pathname.endsWith('.html')) {
+  const cleanPath = window.location.pathname.slice(0, -5);
+  window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+}
+
 // ── Menu hamburger mobile ───────────────────────────────────────────────────
 const toggleBtn = document.querySelector('.menu-toggle-btn');
 const nav       = document.querySelector('.main-nav');
