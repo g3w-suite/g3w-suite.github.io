@@ -2,19 +2,20 @@
 
 ## Scope
 
-Static multilingual marketing/documentation website for G3W-Suite. No build step and no frontend framework.
+Static multilingual marketing/documentation website for G3W-Suite. `server.js` expands reusable components into static HTML; there is no frontend framework.
 
 ## Verified Current State (2026-05-18)
 
-- `package.json` exists and defines `npm run dev` -> `node server.js`.
-- Site is served from `public/` by `server.js` (port 8080).
-- Language folders are inside `public/` (`public/it/`, `public/en/`), not at repository root.
+- `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`.
+- Source pages are in `src/it/` and `src/en/`; shared components are `header.html` and `footer.html` in each language folder.
 
 ## Run
 
 ```bash
 npm run dev
 ```
+
+`src/assets/` contains source styles, scripts, fonts and images; `src/index.html` is the root redirect. `public/` is generated output.
 
 ## Tests
 
@@ -25,17 +26,15 @@ for pushes and pull requests.
 ## Project Structure
 
 ```
-public/
+src/
 |- index.html           # Redirect to it/index.html
-|- assets/
-|  |- style.css         # Single global stylesheet
-|  |- app.js            # Single global javascript
-|  |- icons.svg         # SVG sprite
-|  |- fonts/            # Titillium Web woff2
-|  `- img/              # Shared images
-|- it/                  # Italian pages (default language)
-`- en/                  # English pages
+|- assets/              # Source styles, scripts, fonts and images
+|- it/                  # Italian pages and header.html/footer.html
+`- en/                  # English pages and header.html/footer.html
+public/                 # Generated publishing output; ignored by Git
 ```
+
+`src/index.html` is the root redirect. `server.js` generates static pages for publishing or local development.
 
 ## Key Conventions
 
@@ -43,7 +42,7 @@ public/
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
 - IT and EN are intentionally not always symmetric.
-- `public/index.html` is a redirect page; do not turn it into a content page.
+- `src/index.html` is a redirect page; do not turn it into a content page.
 
 ## HTML Pattern
 
@@ -59,9 +58,9 @@ Most content pages follow:
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>...</header>
+  <!--#include file="header.html"-->
   <main id="main-content">...</main>
-  <footer>...</footer>
+  <!--#include file="footer.html"-->
   <script src="../assets/app.js"></script>
 </body>
 </html>
@@ -69,12 +68,12 @@ Most content pages follow:
 
 ## Critical Pitfall
 
-There is no template/include system for header/footer/nav across language pages. Shared navigation/footer edits require updating many HTML files manually or via scripted bulk edits.
+Edit shared navigation and footer in `src/it/header.html`, `src/it/footer.html`, `src/en/header.html` and `src/en/footer.html`; `server.js` expands the SSI include directives into static output. From `changelog/`, use `../header.html` and `../footer.html`.
 
 ## CSS/JS Rules
 
-- Use only `public/assets/style.css` for site styles.
-- Use only `public/assets/app.js` for global interactions.
+- Use only `src/assets/style.css` for site styles.
+- Use only `src/assets/app.js` for global interactions.
 - Keep javascript vanilla (`'use strict'`, no libraries).
 - Existing interactions to preserve: mobile menu toggle, dropdown accessibility, demo-card filtering.
 - Prefer class-based styling over inline `style="..."`.
@@ -86,8 +85,8 @@ There is no template/include system for header/footer/nav across language pages.
 
 ## Working Guidance For Agents
 
-- For nav/footer or repeated snippet changes, use scripted edits to avoid drift between pages.
-- When adding or renaming pages, verify language pair links (`public/it/*` <-> `public/en/*`) and hreflang tags.
+- For nav/footer changes, edit the shared component instead of page files.
+- When adding or renaming pages, verify language pair links (`src/it/*` <-> `src/en/*`) and hreflang tags.
 - Keep content/language changes local to the correct folder and preserve existing URL conventions.
 
 ## Key Files
@@ -95,8 +94,10 @@ There is no template/include system for header/footer/nav across language pages.
 - `AGENTS.md`
 - `package.json`
 - `server.js`
-- `public/index.html`
-- `public/assets/style.css`
-- `public/assets/app.js`
-- `public/it/index.html`
-- `public/en/index.html`
+- `src/index.html`
+- `src/assets/style.css`
+- `src/assets/app.js`
+- `src/it/header.html`
+- `src/it/footer.html`
+- `src/it/index.html`
+- `src/en/index.html`

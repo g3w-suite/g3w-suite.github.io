@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog 3.9 - G3W-Suite</title>
+  <link rel="alternate" href="v3.9.html" hreflang="it">
+  <link rel="alternate" href="../../en/changelog/v3.9.html" hreflang="en">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<!--#include file="../header.html"-->
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <h1>Changelog G3W-Suite 3.9</h1>
+      <p class="section-intro">Release date: <strong>23 January 2025</strong></p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container content-page">
+      <div class="changelog">
+<div><h2>Changelog for G3W-SUITE 3.9</h2>
+<p><strong>Version 3.9 of G3W-SUITE is characterized by a great refactoring jobÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦.</strong></p>
+<p>Among the main innovations we also remember:</p>
+<ul>
+<ul>
+<ul>
+<li>a complete <strong>restyling</strong> of the cartographic client</li>
+<li>
+<p><strong>simpler management</strong> of editing permission configurations dedicated to complex projects</p>
+</li>
+<li>
+<p><strong>new editing features</strong> inherited from the QGIS project</p>
+</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<li></li>
+</ul></div>
+<div><h3><strong>We hope you enjoy this great work!</strong></h3>
+<h3><strong>Happy mapping with G3W-SUITE!</strong></h3></div>
+<div>
+<h2>Sponsor and funder</h2>
+<p>G3W-SUITE is an <strong>open source project</strong> and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on.</p>
+<p>Among the <strong>main funder of this version</strong> we remember:</p>
+<div class="changelog-sponsors">
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/logo-irpi.png" alt="IRPI CNR" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.irpi.cnr.it/" target="_blank" rel="noopener noreferrer">IRPI CNR</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/grosseto_logo.png" alt="Public Administration of Grosseto" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.comune.grosseto.it/" target="_blank" rel="noopener noreferrer">Public Administration of Grosseto</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/logomcr.png" alt="Rovereto Civic Museum Foundation" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.fondazionemcr.it/" target="_blank" rel="noopener noreferrer">Rovereto Civic Museum Foundation</a></div>
+  </div>
+</div>
+</div>
+<div><h2>General</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: A complete restyling of the cartographic client</h3>
+<p>The cartographic client has undergone a major restyling to make the interface cleaner, more functional and eliminate some problems with the correct display of the various contextual menus.</p></div>
+  <img src="../../assets/img/new_client2.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Upgrade to Django 4.2<br />
+</h3>
+<p>Migration to Django 4.2 and integration of new features in the release</p></div>
+  <img src="../../assets/img/4249002_fc19.jpg" alt="" loading="lazy">
+</div>
+<div><h2>Administration</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Cloning editing powers between users<b><br />
+</b></h3>
+<p>This function helps in the management of complex projects where users must be able to edit many layers, even with different powers.</p>
+<p>Through this function it is possible to clone the editing settings of a user and automatically apply the same settings to other users and/or groups of users.</p></div>
+  <img src="../../assets/img/user_copy_permissions.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Definition of the layers visible in the list of editable layers<br />
+</h3>
+<p>In the case of layers with many 1:N relations (even cascade ones), it could be useful not to allow direct editing on the child layers but to allow it only starting from the parent.</p>
+<p>This function allows you not to make the child layers visible in the list of editable layers, simplifying the interface and forcing the workflowÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s user in this direction.</p></div>
+  <img src="../../assets/img/visibility_layers_editable.png" alt="" loading="lazy">
+</div>
+<div><h2>Cartographic client and interaction with the map</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Refactoring<br />
+</h3>
+<p>The client has undergone extensive refactoring work in order to improve the graphic appearance, standardize the operational flows and eliminate small bugs present in previous versions.</p></div>
+  <img src="../../assets/img/new_client.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Pagination of records of the child layer of 1:N relation<br />
+</h3>
+<p>In order to allow the management of large amounts of data, the list of records of a layer related in 1:N mode is displayed on the basis of a pagination system.</p></div>
+  <img src="../../assets/img/Immagine-2025-02-07-105949.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Pagination of search and query results<br />
+</h3>
+<p>The pagination system allows you to manage a large number of results without encountering client time-out problems.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uzrrub_WxMk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Automatic filter on search results<br />
+</h3>
+<p>This feature allows the user to perform a search by automatically activating the filter on the search results.</p>
+<p>This will allow only the results obtained to be automatically displayed in the map and attribute table.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TJiXPpSVm7E" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Sorting fields of the attribute table<br />
+</h3>
+<p><strong>Inherited from QGIS project!</strong></p>
+<p>The ordering of the fields of the layer attributes table defined in QGIS is inherited from the WebGis service</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1TH5y2DWDxw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div><h2>Editing on line<br />
+</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Value relation widget: &#8220;Allow multiple selections&#8221; option integrated<br />
+</h3>
+<p><strong>Inherited from QGIS project!</strong></p>
+<p>With this version it is possible to allow the choice of more than one value among those associated with a field via the &#8220;value relation&#8221; widget.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1wRyPBNtNBY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Multirecords editing on 1:N relations<br />
+</h3>
+<p>Starting from a parent feature, it will be possible to select some child records and edit some fields for all the selected records.</p>
+<p>Not only that, it is also possible to select multiple parent features and modify the attributes for all the records, of the child layer, associated with the selected parents.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8ta7AVfr7-o" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Value relation widget: order setting<br />
+</h3>
+<p><strong>Inherited from QGIS project!</strong></p>
+<p>The list of values listed in the drop-down menu can be sorted both by key and by value, defining this aspect on the QGIS project.</p></div>
+  <img src="../../assets/img/editing_order_value_key.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Copy and paste between layers</h3>
+<p>The workflow related to the &#8220;copy and paste between layers&#8221; operation has been restructured and improved.</p>
+<p>The workflow is now identical whether this operation is carried out directly on a layer or on a child layer of a relation.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RkI1DMS-Fbc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Conditional field groups</h3>
+<p><strong>Inherited from QGIS project!</strong></p>
+<p>Visibility management of conditional field groups has been implemented and improved, managing conditions based on Boolean fields or with multiple choices.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q3RbLSy2kCQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Store of the user groups associated with the user<br />
+</h3>
+<p>During the editing phase, not only the individual user can be traced, but also the groups of users associated with him, differentiating the creation and modification of features</p></div>
+  <img src="../../assets/img/editing_user_group_log.png" alt="" loading="lazy">
+</div>
+<div><h2>Print</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Print layout exclusion</h3>
+<p><b>Eredited from QGIS projects</b></p>
+<p>If on the QGIS project I exclude a print layout from those available in the WMS service, this is excluded also from the WebGis service</p></div>
+  <img src="../../assets/img/exlud_layout.png" alt="" loading="lazy">
+</div>
+<div><h2>Minor improvements</h2></div>
+<div><h3>Feature: Editing: checkbox widget improved</h3>
+<p><a href="https://github.com/g3w-suite/g3w-admin/issues/958" target="_blank" rel="noopener noreferrer">https://github.com/g3w-suite/g3w-admin/issues/958</a></p></div>
+<div><h3>Feature: Points layers export: add coordinates on CSV</h3>
+<p><a href="https://github.com/g3w-suite/g3w-admin/issues/963" target="_blank" rel="noopener noreferrer">https://github.com/g3w-suite/g3w-admin/issues/963</a></p></div>
+<div><h3>Feature: State of user visible in the users list</h3>
+<p><a href="https://github.com/g3w-suite/g3w-admin/issues/941" target="_blank" rel="noopener noreferrer">https://github.com/g3w-suite/g3w-admin/issues/941</a></p></div>
+      </div>
+      <div class="cta-box">
+        <p>Per il dettaglio completo consulta il <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">manuale ufficiale su ReadTheDocs</a>.</p>
+        <div class="btn-group">
+          <a class="btn btn--primary" href="../demo.html#demo-3-9">Prova la demo</a>
+          <a class="btn btn--outline" href="../download.html">Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <!--#include file="../footer.html"-->
+<script src="../../assets/app.js"></script>
+</body>
+</html>

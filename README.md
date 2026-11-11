@@ -1,6 +1,6 @@
 # G3W-Suite Website
 
-The multilingual G3W-Suite website is a static site in Italian and English. No build step is required.
+The multilingual G3W-Suite website is a static site in Italian and English. Shared components are expanded into static HTML at build time.
 
 ## Run locally
 
@@ -11,23 +11,25 @@ npm i
 npm run dev
 ```
 
-Open [http://localhost:8080/](http://localhost:8080/). Port 8080 must be available and does not normally require elevated privileges on Linux.
+Open [http://localhost:8080/](http://localhost:8080/). Development output is generated in `.dev/`; port 8080 must be available and does not normally require elevated privileges on Linux.
+
+Run `npm run build` to generate the published site in `public/`.
 
 ## Where to make changes
 
-- **Text and pages:** edit the HTML files in `public/it/` and `public/en/` directly. Check both versions: filenames may differ, for example `it/moduli.html` and `en/modules.html`.
-- **Appearance:** edit `public/assets/style.css`.
-- **Interactions:** edit `public/assets/app.js` (vanilla JavaScript, without libraries).
-- **Images:** add them to `public/assets/img/` and use paths relative to the page.
+- **Text and pages:** edit the HTML files in `src/it/` and `src/en/`. Check both versions: filenames may differ, for example `it/moduli.html` and `en/modules.html`.
+- **Shared header and footer:** edit `header.html` and `footer.html` in each language folder; pages include them with `<!--#include file="header.html"-->` and `<!--#include file="footer.html"-->` (use `../` from `changelog/`).
+- **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
+- **Images:** add them to `src/assets/img/` and use paths relative to the page.
 
-Reload the browser to see changes. `public/index.html` only redirects to the Italian version.
+Reload the browser to see changes. `src/index.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
 
 ## Add or update a page
 
-1. Start from an existing page in the same folder, keeping the language, title, metadata, header, footer and `<main id="main-content">`.
+1. Start from an existing page in the same folder, keeping the language, title, metadata, component markers and `<main id="main-content">`.
 2. Update the Italian and English versions and check that `hreflang` tags and language switcher links point to the correct pages in both directions.
 3. Use correct relative paths for CSS, JavaScript and images: for example, `../assets/style.css` from language folders and `../../assets/style.css` from subfolders such as `changelog/`.
-4. When changing navigation or footers, apply the changes to every affected page: there are no shared templates. Preserve ARIA attributes and keyboard behavior for menus.
+4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 
 ## Tests and deployment

@@ -59,6 +59,7 @@ Then('every page declares its language, metadata, and main structure', function 
     expect($('body > header').length === 1, 'missing header');
     expect($('body > main#main-content').length === 1, 'missing main#main-content');
     expect($('body > footer').length === 1, 'missing footer');
+    expect(!/<!--#include\b/.test(html) && !/\{\{(?:langRoot|siteRoot|itPage|enPage)\}\}/.test(html), 'unexpanded component');
   });
 });
 

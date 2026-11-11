@@ -1,12 +1,15 @@
-// server.js
-// Semplice server statico Node.js per servire la cartella public
+'use strict';
 
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+const http = require('node:http');
+const fs = require('node:fs');
+const path = require('node:path');
 
-// Cambia qui il percorso della cartella da servire
-const root = path.resolve(__dirname, 'public');
+const projectRoot = __dirname;
+const publicDir = path.join(projectRoot, 'public');
+const languages = ['it', 'en'];
+const devMode = process.argv.includes('--dev');
+const buildOnly = process.argv.includes('--build');
+const root = devMode ? path.join(projectRoot, '.dev') : publicDir;
 const port = 8080;
 
 const mimeTypes = {
@@ -22,33 +25,120 @@ const mimeTypes = {
   '.json': 'application/json',
 };
 
-http.createServer((req, res) => {
-  let filePath = path.join(root, req.url.split('?')[0]);
-  if (fs.statSync(root).isDirectory() && req.url === '/') {
-    filePath = path.join(root, 'index.html');
-  }
-  fs.stat(filePath, (err, stats) => {
-    if (!err && stats.isFile()) {
-      const ext = path.extname(filePath).toLowerCase();
-      res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
-      fs.createReadStream(filePath).pipe(res);
-    } else if (!err && stats.isDirectory()) {
-      // Cerca index.html in directory
-      const indexFile = path.join(filePath, 'index.html');
-      fs.stat(indexFile, (err2, stats2) => {
-        if (!err2 && stats2.isFile()) {
-          res.writeHead(200, { 'Content-Type': 'text/html' });
-          fs.createReadStream(indexFile).pipe(res);
-        } else {
-          res.writeHead(403);
-          res.end('Directory access is forbidden');
-        }
-      });
-    } else {
-      res.writeHead(404);
-      res.end('File not found');
-    }
+function htmlFiles(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) return htmlFiles(file);
+    return entry.isFile() && file.endsWith('.html') && !['header.html', 'footer.html'].includes(entry.name) ? [file] : [];
   });
-}).listen(port, () => {
-  console.log(`Server avviato su http://localhost:${port}/`);
-});
+}
+
+function alternateUrl(html, lang) {
+  const tag = html.match(/<link\b[^>]*>/gi)?.find(link =>
+    /\brel="alternate"/i.test(link) && new RegExp(`\\bhreflang="${lang}"`, 'i').test(link)
+  );
+  const href = tag && /\bhref="([^"]+)"/i.exec(tag)?.[1];
+  if (!href) throw new Error(`Missing ${lang} alternate link`);
+  return href;
+}
+
+function renderComponent(component, lang, page, html) {
+  const pageDir = path.dirname(page);
+  const langRoot = path.relative(pageDir, '.');
+  const siteRoot = path.relative(pageDir, '..');
+  const values = {
+    itPage: alternateUrl(html, 'it'),
+    enPage: alternateUrl(html, 'en'),
+    langRoot: langRoot ? `${langRoot}${path.sep}`.split(path.sep).join('/') : '',
+    siteRoot: siteRoot ? `${siteRoot}${path.sep}`.split(path.sep).join('/') : '',
+  };
+  const name = `${component}.html`;
+  let output = fs.readFileSync(path.join(projectRoot, 'src', lang, name), 'utf8').trim();
+  output = output.replace(/\{\{(\w+)\}\}/g, (_, key) => {
+    if (!(key in values)) throw new Error(`Unknown ${component} placeholder: ${key}`);
+    return values[key];
+  });
+  const active = page.startsWith(`changelog${path.sep}`)
+    ? 'changelog'
+    : ({ moduli: 'modules', modules: 'modules' })[path.basename(page, '.html')] || path.basename(page, '.html');
+  output = output.replace(/<a\b([^>]*?)\sdata-nav-key="([^"]+)"([^>]*)>/g, (_, before, key, after) =>
+    `<a${before}${after}${key === active ? ' aria-current="page"' : ''}>`
+  );
+  return output.replace(/<a\b([^>]*?)\sdata-lang-key="([^"]+)"([^>]*)>/g, (_, before, key, after) =>
+    `<a${before}${after}${key === lang ? ' aria-current="true"' : ''}>`
+  );
+}
+
+function build(outputDir) {
+  const pages = languages.flatMap(lang => {
+    const langDir = path.join(projectRoot, 'src', lang);
+    return htmlFiles(langDir).map(file => ({
+      file,
+      lang,
+      page: path.relative(langDir, file),
+    }));
+  });
+  if (!pages.length) throw new Error('No source HTML pages found in src/it or src/en');
+
+  fs.mkdirSync(outputDir, { recursive: true });
+  fs.rmSync(path.join(outputDir, 'assets'), { recursive: true, force: true });
+  fs.cpSync(path.join(projectRoot, 'src', 'assets'), path.join(outputDir, 'assets'), { recursive: true });
+  fs.copyFileSync(path.join(projectRoot, 'src', 'index.html'), path.join(outputDir, 'index.html'));
+  for (const lang of languages) {
+    fs.rmSync(path.join(outputDir, lang), { recursive: true, force: true });
+    fs.mkdirSync(path.join(outputDir, lang), { recursive: true });
+  }
+
+  for (const { file, lang, page } of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    const counts = { header: 0, footer: 0 };
+    const output = html.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
+      const name = path.basename(include, '.html');
+      const componentPath = path.normalize(path.join(path.dirname(page), include));
+      if (!['header', 'footer'].includes(name) || componentPath !== `${name}.html`) {
+        throw new Error(`Invalid component include in ${file}: ${include}`);
+      }
+      counts[name]++;
+      return renderComponent(name, lang, page, html);
+    });
+    if (counts.header !== 1 || counts.footer !== 1) {
+      throw new Error(`${file} must contain one header and one footer component marker`);
+    }
+    const target = path.join(outputDir, lang, page);
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, output);
+  }
+}
+
+if (buildOnly) build(publicDir);
+else if (devMode) build(root);
+
+if (!buildOnly) {
+  http.createServer((req, res) => {
+    let filePath = path.join(root, req.url.split('?')[0]);
+    if (req.url === '/') filePath = path.join(root, 'index.html');
+    fs.stat(filePath, (err, stats) => {
+      if (!err && stats.isFile()) {
+        const ext = path.extname(filePath).toLowerCase();
+        res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
+        fs.createReadStream(filePath).pipe(res);
+      } else if (!err && stats.isDirectory()) {
+        const indexFile = path.join(filePath, 'index.html');
+        fs.stat(indexFile, (err2, stats2) => {
+          if (!err2 && stats2.isFile()) {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            fs.createReadStream(indexFile).pipe(res);
+          } else {
+            res.writeHead(403);
+            res.end('Directory access is forbidden');
+          }
+        });
+      } else {
+        res.writeHead(404);
+        res.end('File not found');
+      }
+    });
+  }).listen(port, () => {
+    console.log(`Server avviato su http://localhost:${port}/`);
+  });
+}

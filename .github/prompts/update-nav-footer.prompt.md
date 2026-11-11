@@ -5,37 +5,25 @@ argument-hint: "descrivi la modifica da fare, es. 'aggiungi voce Blog nel menu R
 agent: "agent"
 ---
 
-Devi propagare la seguente modifica a header o footer su **tutti** i file HTML del sito G3W-Suite:
+Applica la seguente modifica alle componenti condivise del sito G3W-Suite:
 
 **Modifica richiesta:** $ARGUMENTS
 
 ## Passi da eseguire
 
-### 1. Individua le pagine di riferimento
+### 1. Individua le componenti
 
-Leggi [public/it/index.html](../../public/it/index.html) e [public/en/index.html](../../public/en/index.html) per capire la struttura attuale di header e footer prima di qualsiasi modifica.
+Leggi `src/it/header.html`, `src/en/header.html`, `src/it/footer.html` e `src/en/footer.html`. Le pagine generate in `public/` non sono sorgenti.
 
 ### 2. Pianifica la modifica
 
-- Identifica esattamente quale stringa HTML va sostituita nell'header IT, nell'header EN e (se la modifica tocca il footer) nel footer comune
+- Modifica solo le componenti necessarie nelle versioni IT e EN
 - Ricorda che IT e EN hanno testi e link diversi nel nav: es. "Risorse" (IT) vs "Resources" (EN), `aria-label="Navigazione principale"` (IT) vs `aria-label="Main navigation"` (EN)
 - Se la modifica riguarda solo il menu di navigazione, il footer probabilmente non va toccato, e viceversa
 
-### 3. Elenca i file da modificare
+### 3. Verifica
 
-Elenca tutti i file `.html` in:
-- `public/it/` — applica la variante IT
-- `public/en/` — applica la variante EN
-
-### 4. Applica la modifica
-
-Per ciascun file:
-- Usa `replace_string_in_file` (o `multi_replace_string_in_file` per batch) includendo almeno 3 righe di contesto prima e dopo la stringa da sostituire
-- **Non modificare** `public/assets/style.css`, `public/assets/app.js` o `public/index.html` (root redirect) a meno che la modifica lo richieda esplicitamente
-
-### 5. Verifica
-
-Dopo aver modificato tutti i file, elenca quanti file sono stati aggiornati per lingua e conferma che nessun file è stato saltato per errore.
+Esegui `npm test` per rigenerare il sito e verificare la struttura e l'accessibilità.
 
 ## Regole
 

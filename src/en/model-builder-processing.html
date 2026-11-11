@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Builder Processing - G3W-Suite</title>
+  <link rel="alternate" href="../it/model-builder-processing.html" hreflang="it">
+  <link rel="alternate" href="model-builder-processing.html" hreflang="en">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<!--#include file="header.html"-->
+
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <span class="badge badge--blue">G3W-SUITE QPROCESSING</span>
+      <h1>Model Builder &amp; Processing</h1>
+      <p>Release date: <strong>13 December 2023</strong></p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container content-page">
+      <div class="grid-2" style="align-items:center;margin-bottom:3rem;">
+        <img src="../assets/img/g3wsuite_processing.png" alt="G3W-Suite Processing" style="border-radius:6px;">
+        <div>
+          <h3><strong>The module dedicated to the creation of geographic analyzes on the web is based on the automated analysis models prepared on QGIS through the Processing ModelDesigner.</strong></h3>
+          <h4>The setup flow is very simple:</h4>
+          <ol>
+            <li><strong>Set up your analysis model on QGIS using the ModelDesigner</strong></li>
+            <li><strong>Upload the model file (.model3) to G3W-SUITE and associate it with one or more WebGis projects</strong></li>
+            <li><strong>The model is used directly on the web side, displaying and downloading the results created</strong></li>
+          </ol>
+          <p>The analyzes are performed in "on line" mode. At the end of the analysis flow, the results will be uploaded to the map (if geographical) and available for download.</p>
+          <p>Even if the analysis operations to be performed are limited to those performed by a single analysis module, it is necessary to implement a model using the ModelDesigner. This is also to distinguish the options set beforehand from those available to the user.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="align-items:start;margin-bottom:2rem;">
+        <img src="../assets/img/Schermata-del-2023-11-25-12-57-54.png" alt="" style="border-radius:4px;">
+        <img src="../assets/img/model_output.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <hr style="border:none;border-top:2px solid var(--color-primary);margin:2.5rem 0;">
+
+      <h2>QGIS Model Builder features and settings</h2>
+
+      <div class="grid-2" style="align-items:start;margin:2rem 0;">
+        <div>
+          <h3>Input type supported</h3>
+          <ul>
+            <li><strong>Boolean</strong></li>
+            <li><strong>Distance</strong></li>
+            <li><strong>Fields Mapper</strong></li>
+            <li><strong>Number</strong></li>
+            <li><strong>Raster Layers</strong></li>
+            <li><strong>Vector Features (selected feature of a layer)</strong></li>
+            <li><strong>Vector Layers</strong></li>
+          </ul>
+          <p>It is also possible to define project layers as default input of the individual modules.</p>
+          <p>This option limits the use of the model to a specific project or to projects containing the layers defined as inputs.</p>
+          <p><strong>Additional input types will be integrated into the next version of the module!</strong></p>
+        </div>
+        <img src="../assets/img/inputs.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <div class="grid-2" style="align-items:start;margin:2rem 0;">
+        <div>
+          <h3>Managed algorithms</h3>
+          <p><strong>All QGIS modules, considering limitations in handling options/inputs associated with managed type of inputs</strong></p>
+        </div>
+        <img src="../assets/img/algoritmi.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <div class="grid-2" style="align-items:start;margin:2rem 0;">
+        <div>
+          <h3>Further settings</h3>
+          <ul>
+            <li><strong>input order in the model form</strong></li>
+          </ul>
+        </div>
+        <img src="../assets/img/reorder_model_inputs.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <hr style="border:none;border-top:2px solid var(--color-primary);margin:2.5rem 0;">
+
+      <h2>G3W-SUITE: features and settings</h2>
+
+      <div class="grid-2" style="align-items:start;margin:2rem 0;">
+        <div>
+          <h3>How to import analysis models created in QGIS to G3W-SUITE</h3>
+          <p>Access the PROCESSING - MODEL session in the Administration session, choosing the ADD MODEL item:</p>
+          <ul>
+            <li><strong>Load the .model3 file relating to the analysis model to import</strong></li>
+            <li><strong>Choose the projects to associate the model with</strong></li>
+            <li><strong>Choose the users (among those who have permission to access the selected projects) who will be able to use the model on WebGis</strong></li>
+          </ul>
+        </div>
+        <img src="../assets/img/Schermata-del-2023-11-25-12-54-14.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <div class="grid-2" style="align-items:start;margin:2rem 0;">
+        <div>
+          <h3>Input layer type supported</h3>
+          <ul>
+            <li><strong>Project layers</strong> (all or only selected features)</li>
+            <li><strong>Layers loaded on the fly</strong></li>
+            <li><strong>Geometries drawn on the map</strong></li>
+          </ul>
+        </div>
+        <img src="../assets/img/Schermata-del-2023-11-25-12-46-14.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <div class="grid-2" style="align-items:start;margin:2rem 0;">
+        <div>
+          <h3>Output types supported</h3>
+          <ul>
+            <li><strong>vectors (Shapefile, GeoJSON, KML, KMZ)</strong></li>
+            <li><strong>CSV</strong></li>
+            <li><strong>rasters</strong></li>
+            <li><strong>PDF export (print layout simple and atlas)</strong></li>
+            <li><strong>HTML plots</strong></li>
+          </ul>
+        </div>
+        <img src="../assets/img/model_output.png" alt="" style="border-radius:4px;">
+      </div>
+
+      <div class="cta-box">
+        <h2>Try to run a QGIS Processing Model on the web!</h2>
+        <a class="btn btn--primary" href="https://v310.g3wsuite.it/it/#/it/group/30" target="_blank" rel="noopener">Try the demo!</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <!--#include file="footer.html"-->
+<script src="../assets/app.js"></script>
+</body>
+</html>

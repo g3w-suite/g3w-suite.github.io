@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog 3.6 - G3W-Suite</title>
+  <link rel="alternate" href="v3.6.html" hreflang="it">
+  <link rel="alternate" href="../../en/changelog/v3.6.html" hreflang="en">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<!--#include file="../header.html"-->
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <h1>Changelog G3W-Suite 3.6</h1>
+      <p class="section-intro">Release date: <strong>17 May 2023</strong></p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container content-page">
+      <div class="changelog">
+<div><h2>Changelog for G3W-SUITE 3.6</h2>
+<p>Version 3.6 of G3W-SUITE is characterized by greater stability and a greater number of functions and features inherited from the QGIS project.</p>
+<p>We remember in particular:</p>
+<ul>
+<ul>
+<ul>
+<li><strong>QGIS 3.28 LTR compatibility</strong></li>
+<li><strong>Django Log and System Log</strong></li>
+<li><strong>Multilayer search</strong></li>
+<li><strong>Zoom previous/next</strong></li>
+<li><strong>Display number of layer elements</strong></li>
+<li><strong>Switching between maps of diversified Cartographic Groups</strong></li>
+<li><strong>Layer transparency</strong></li>
+<li><strong>Project and group trash management</strong></li>
+<li><strong>Spatial Bookmarks</strong></li>
+<li><strong>QueryByDraw</strong></li>
+<li><strong>Multi-layer time series</strong></li>
+</ul>
+</ul>
+</ul>
+<ul>
+<li></li>
+</ul></div>
+<div class="grid-2">
+  <div><h3><strong>We hope you enjoy this great work!</strong></h3>
+<h3><strong>Happy mapping!</strong></h3></div>
+  <img src="../../assets/img/g3wsuite_3.6.png" alt="" loading="lazy">
+</div>
+<div>
+<h2>Sponsor and funder</h2>
+<p>G3W-SUITE is an <strong>open source project</strong> and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the <strong>main funder of this version</strong> we remember:</p>
+<div class="changelog-sponsors">
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/download-6.png" alt="Mountain Community of Carnia" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.carnia.comunitafvg.it/" target="_blank" rel="noopener noreferrer">Mountain Community of Carnia</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/logo_bonifica_renana.jpg" alt="Reno Reclamation Consortium" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Reno Reclamation Consortium</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/download-1.jpeg" alt="Municipality of Grosseto" loading="lazy">
+    <div class="sponsor-name"><a href="https://new.comune.grosseto.it/web/" target="_blank" rel="noopener noreferrer">Municipality of Grosseto</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/download.jpeg" alt="Municipality of Trento" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.comune.trento.it/" target="_blank" rel="noopener noreferrer">Municipality of Trento</a></div>
+  </div>
+</div>
+</div>
+<div><h2>General</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: QGIS 3.28 LTR compatibility</h3>
+<p><strong>G3W-SUITE 3.</strong><strong>6</strong><strong> is compatible with the new </strong><strong>3.28 </strong><strong>LTR of QGIS</strong></p>
+<p>Take advantage of all the news related to the preparation of QGIS projects with the new LTR version</p></div>
+  <img src="../../assets/img/qgis_3.28.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature:ÃƒÂ¯Ã‚Â¿Ã‚Â½Project and group trash management<b></b></h3>
+<p>With the new version, the deletion of cartographic projects and/or groups can be restored thanks to the &#8220;Trash&#8221; function.</p>
+<p>Restoring a project involves <strong>restoring all accessory settings/functions</strong> (permissions, searches, editing settings, downloads, etc&#8230;).</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ovRCmPDXZiA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Messages and map info</h3>
+<p><strong>The tool allows you to define personalized (timed) messages visible when the WebGis service starts.</strong></p>
+<p>In the message you can define</p>
+<ul>
+<ul>
+<li>title</li>
+<li>message body (also in html)</li>
+<li>message type (info, warning, error, critical)</li>
+<li>validity period (optional)</li>
+</ul>
+</ul></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OY3ob-GAvKE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Multilayer Search</h3>
+<p>It is possible to create searches based on two or more layers with homonymous fields.</p>
+<p>The result will show the features of all layers that satisfy the search criteria.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nNMND9HX1qM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: System log management<b><br />
+</b></h3>
+<p>With v3.6.x version G3W-SUITE can save message logs inside the database.</p>
+<p>In the specific Django administration section, the logs deriving from:</p>
+<ul>
+<ul>
+<li>Django</li>
+<li>QGIS Server</li>
+<li>PostGreSQL/PostGis</li>
+</ul>
+</ul></div>
+  <img src="../../assets/img/log_vari.png" alt="" loading="lazy">
+</div>
+<div><h2>Cartographic Client</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Switching between maps of different Cartographic MacroGroups and Groups</h3>
+<p>It is now possible to switch between different maps even if they belong to different Cartographic Groups and/or MacroGroups.</p>
+<p>Maintaining as always extension and visualization scale.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YFu8RmFXx7M" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature:ÃƒÂ¯Ã‚Â¿Ã‚Â½QueryByDraw</h3>
+<p>A new query tool adds to the previous ones.</p>
+<p>Now you can draw your polygon on the map and get as a result all the elements that intersect or are contained in it.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/D9pfLmF0Uxs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature:ÃƒÂ¯Ã‚Â¿Ã‚Â½Layer transparency</h3>
+<p>A slide tool allows users to customize the level of transparency of individual layers</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nvWWfxYzAE0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Zoom last/next</h3>
+<p>A new optional map tool is added to locate to previous/next map extents</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TpalCHABwUc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Show features count</h3>
+<p><b>Function inherited from QGIS project</b></p>
+<p>If the &#8216;Show features count&#8217; function is activated in the QGIS project at vector layer level, the same information will be displayed on the web map.</p>
+<p>The number of features updates automatically based on the style associated with the layer.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FfkOGqjOp_A" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Spatial bookmarks</h3>
+<p><b>Function inherited from QGIS project</b></p>
+<p>In case Spatial Bookmarks are saved at the QGIS project level, they will also be available on the web map.</p>
+<p>The user will be able to create his own personalized spatial bookmarks which will be kept until the bookmark itself or the browser cache is deleted</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/K8Qbzb6PJZc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div><h2>Editing</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Default values</h3>
+<p><b>Function inherited from QGIS project</b></p>
+<p>Fields associated with default values also based on QGIS geometric expressions are updated in real time during editing</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XllGNxFaXfg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div><h2>Analysis tool</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Time series multilayer</h3>
+<p><b>Function inherited from QGIS project</b></p>
+<p>Continues time series feature implementations.</p>
+<p>It is now possible to create animations based on multiple temporal layers both raster and vector.</p>
+<p><b></b></p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/g5ZpoypOHms" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+      </div>
+      <div class="cta-box">
+        <p>Per il dettaglio completo consulta il <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">manuale ufficiale su ReadTheDocs</a>.</p>
+        <div class="btn-group">
+          <a class="btn btn--primary" href="../demo.html#demo-3-6">Prova la demo</a>
+          <a class="btn btn--outline" href="../download.html">Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <!--#include file="../footer.html"-->
+<script src="../../assets/app.js"></script>
+</body>
+</html>

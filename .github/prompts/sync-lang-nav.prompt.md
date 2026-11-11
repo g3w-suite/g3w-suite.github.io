@@ -10,9 +10,9 @@ Esegui una verifica completa della sincronizzazione multilingua del sito G3W-Sui
 
 ### 1. Inventario pagine per lingua
 
-Elenca tutti i file `.html` presenti in:
-- `public/it/` 
-- `public/en/`
+Elenca le pagine sorgenti `.html` presenti in:
+- `src/it/`
+- `src/en/`
 
 Costruisci due elenchi e calcola:
 - Pagine presenti in IT ma mancanti in EN
@@ -20,7 +20,7 @@ Costruisci due elenchi e calcola:
 
 ### 2. Verifica language-switcher in ogni pagina
 
-Per ogni file HTML in entrambe le cartelle, leggi il blocco `<div class="lang-switcher">` e verifica che:
+Per ogni pagina sorgente in entrambe le cartelle, leggi gli URL alternates e i link generati dal componente `src/{lang}/header.html`, verificando che:
 - Il link alla lingua corrente abbia `aria-current="true"`
 - Il link all'altra lingua punti a un file che **esiste effettivamente** nel filesystem
 
@@ -57,6 +57,6 @@ Se tutto è corretto, scrivi "Nessun problema trovato" per quella sezione.
 
 ### 5. Proponi azioni correttive
 
-Per ogni problema trovato, suggerisci l'azione correttiva specifica (es. "Creare `public/en/changelog-3-11.html`" oppure "Aggiornare il link EN in `public/it/demo-3-9.html` da `../en/demo-3-9.html` a `demo-3-9.html`").
+Per ogni problema trovato, suggerisci l'azione correttiva specifica nei file sorgenti `src/it/` o `src/en/`.
 
 Non applicare automaticamente le correzioni — mostra solo il report e le proposte.
