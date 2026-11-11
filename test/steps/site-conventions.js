@@ -11,9 +11,13 @@ const publicDir = path.resolve('public');
 const languages = ['it', 'en'];
 
 function htmlFiles(dir) {
+  return filesIn(dir).filter(file => file.endsWith('.html'));
+}
+
+function filesIn(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
     const file = path.join(dir, entry.name);
-    return entry.isDirectory() ? htmlFiles(file) : entry.isFile() && file.endsWith('.html') ? [file] : [];
+    return entry.isDirectory() ? filesIn(file) : entry.isFile() ? [file] : [];
   });
 }
 
@@ -220,6 +224,23 @@ Then('every page uses the shared assets with root-relative paths', function () {
     expect($(`head link[rel="stylesheet"][href="${stylesheet}"]`).length === 1, `missing stylesheet ${stylesheet}`);
     expect($(`body script[src="${script}"]`).length === 1, `missing script ${script}`);
   });
+});
+
+Then('every published image is referenced by compiled code', function () {
+  const imageDir = path.join(publicDir, 'assets', 'img');
+  const images = filesIn(imageDir).filter(file => /\.(?:apng|avif|bmp|gif|ico|jpe?g|png|svg|tiff?|webp)$/i.test(file));
+  const compiledCode = filesIn(publicDir)
+    .filter(file => !file.startsWith(imageDir + path.sep) && /\.(?:html|css|js|svg)$/i.test(file))
+    .map(file => fs.readFileSync(file, 'utf8'))
+    .join('\n');
+  const unreferenced = images
+    .filter(file => {
+      const relative = path.relative(imageDir, file).split(path.sep).join('/');
+      return !compiledCode.includes(`img/${relative}`);
+    })
+    .map(file => path.relative(imageDir, file).split(path.sep).join('/'))
+    .sort();
+  assert.deepEqual(unreferenced, [], `unreferenced images: ${unreferenced.join(', ')}`);
 });
 
 Then('every page links consistently to the Italian and English versions', function () {

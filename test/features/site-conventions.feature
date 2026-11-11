@@ -30,6 +30,9 @@ Feature: Multilingual site conventions
     Given the HTML pages in the language folders
     Then every internal link and asset resolves without HTML extensions
 
+  Scenario: Published images are referenced
+    Then every published image is referenced by compiled code
+
   Scenario: The root page redirects to Italian
     Then the root page redirects to the Italian version
 
