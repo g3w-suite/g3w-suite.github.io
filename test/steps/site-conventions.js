@@ -26,8 +26,12 @@ function relativeAsset(file, name) {
 }
 
 function localTarget(file, href) {
-  if (!href || /^(?:[a-z][a-z\d+.-]*:|[\\/]|#)/i.test(href)) return null;
-  return path.resolve(path.dirname(file), href.split(/[?#]/, 1)[0]);
+  if (!href) return null;
+  const pagePath = path.relative(publicDir, file).split(path.sep).join('/');
+  const url = new URL(href, `https://www.g3wsuite.it/${pagePath}`);
+  if (!['http:', 'https:'].includes(url.protocol) || !['g3wsuite.it', 'www.g3wsuite.it'].includes(url.hostname)) return null;
+  const target = path.join(publicDir, decodeURIComponent(url.pathname));
+  return fs.existsSync(target) && fs.statSync(target).isDirectory() ? path.join(target, 'index.html') : target;
 }
 
 function checkPages(pages, check) {
@@ -130,4 +134,28 @@ Then('the root page redirects to the Italian version', function () {
   assert.equal(localTarget(file, match && match[1]), target, 'redirect must target the Italian homepage');
   assert.ok($('a[href]').toArray().some(element => localTarget(file, $(element).attr('href')) === target), 'fallback link must target the Italian homepage');
   assert.equal($('main').length, 0, 'the root page must remain a redirect');
+});
+
+Then('every internal link and asset resolves without HTML extensions', function () {
+  const pages = [readPage(path.join(publicDir, 'index.html')), ...this.pages];
+  const cache = new Map(pages.map(page => [page.file, page.$]));
+  checkPages(pages, ({ $, file }, expect) => {
+    $('[href], [src]').each((_, element) => {
+      for (const attr of ['href', 'src']) {
+        const href = $(element).attr(attr);
+        const target = localTarget(file, href);
+        if (!target) continue;
+        expect(!/\.html(?:[?#]|$)/i.test(href), `internal URL must not use .html: ${href}`);
+        const exists = fs.existsSync(target) && fs.statSync(target).isFile();
+        expect(exists, `broken ${attr}: ${href}`);
+        const fragment = href.split('#')[1];
+        if (exists && fragment && /\.(?:html|svg)$/.test(target)) {
+          if (!cache.has(target)) cache.set(target, load(fs.readFileSync(target, 'utf8'), { xmlMode: target.endsWith('.svg') }));
+          const other = cache.get(target);
+          const id = decodeURIComponent(fragment);
+          expect(other('[id], a[name]').toArray().some(el => other(el).attr('id') === id || other(el).attr('name') === id), `missing fragment: ${href}`);
+        }
+      }
+    });
+  });
 });

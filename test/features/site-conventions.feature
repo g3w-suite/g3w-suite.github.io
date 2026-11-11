@@ -14,6 +14,10 @@ Feature: Multilingual site conventions
     Given the HTML pages in the language folders
     Then the navigation controls retain their accessibility attributes
 
+  Scenario: Internal links are extensionless and resolve
+    Given the HTML pages in the language folders
+    Then every internal link and asset resolves without HTML extensions
+
   Scenario: The root page redirects to Italian
     Then the root page redirects to the Italian version
 

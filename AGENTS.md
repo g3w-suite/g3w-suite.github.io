@@ -38,7 +38,7 @@ public/                 # Generated publishing output; ignored by Git
 
 ## Key Conventions
 
-- Keep page-level assets relative to language folders (`../assets/style.css`, `../assets/app.js`).
+- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Resolve links and assets from the published URL, while SSI paths remain relative to source files.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
 - IT and EN are intentionally not always symmetric.

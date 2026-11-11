@@ -15,6 +15,8 @@ Open [http://localhost:8080/](http://localhost:8080/). Development output is gen
 
 Run `npm run build` to generate the published site in `public/`.
 
+Page URLs use directories, never `.html`: `src/it/demo.html` becomes `/it/demo/` (published as `it/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. Use these URLs in links and hreflang tags. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
+
 ## Where to make changes
 
 - **Text and pages:** edit the HTML files in `src/it/` and `src/en/`. Check both versions: filenames may differ, for example `it/moduli.html` and `en/modules.html`.
@@ -30,7 +32,7 @@ Reload the browser to see changes. `src/index.html` only redirects to the Italia
 
 1. Start from an existing page in the same folder, keeping the language, title, metadata, component markers and `<main id="main-content">`.
 2. Update the Italian and English versions and check that `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Use correct relative paths for CSS, JavaScript and images: for example, `../assets/style.css` from language folders and `../../assets/style.css` from subfolders such as `changelog/`.
+3. Resolve relative links and assets from the published directory URL, not the source filename: `/it/demo/` uses `../../assets/`, while `/it/changelog/v3.11/` uses `../../../assets/`. Shared components calculate these prefixes automatically. SSI file paths remain relative to the source file.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 
@@ -40,7 +42,7 @@ Reload the browser to see changes. `src/index.html` only redirects to the Italia
 npm test
 ```
 
-The Gherkin scenarios in `test/features/` check page structure, assets, language links and navigation accessibility; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.
+The Gherkin scenarios in `test/features/` check page structure, assets, language links, navigation accessibility and every internal `href`/`src` target (including HTML fragments) without contacting external sites; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.
 
 A separate workflow deploys `public/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
 

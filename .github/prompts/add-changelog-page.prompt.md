@@ -15,14 +15,14 @@ Crea una nuova pagina changelog per G3W-Suite versione **$ARGUMENTS**.
    - `<html lang="it">`
    - `<title>Changelog 3.X - G3W-Suite</title>`
    - Nel `<head>`, inserisci `<!--#include file="../_meta.html"-->` per charset, viewport e stylesheet condivisi
-   - Mantieni gli URL alternates relativi alla pagina (`v3.X.html` per IT, `../../en/changelog/v3.X.html` per EN)
+   - Mantieni gli URL alternates relativi all'URL pubblicato (`./` per IT, `../../../en/changelog/v3.X/` per EN), senza `.html`
    - Inserisci `<!--#include file="../_header.html"-->` e `<!--#include file="../_footer.html"-->`; non copiare il markup dei componenti
    - Body con segnaposto `<!-- TODO: inserire contenuto changelog 3.X -->`
 
 3. **Crea `src/en/changelog/v3.X.html`**:
    - `<html lang="en">`
    - Nel `<head>`, inserisci `<!--#include file="../_meta.html"-->` per charset, viewport e stylesheet condivisi
-   - Mantieni gli URL alternates relativi alla pagina (`../../it/changelog/v3.X.html` per IT, `v3.X.html` per EN)
+   - Mantieni gli URL alternates relativi all'URL pubblicato (`../../../it/changelog/v3.X/` per IT, `./` per EN), senza `.html`
    - Inserisci `<!--#include file="../_header.html"-->` e `<!--#include file="../_footer.html"-->`
    - Body con segnaposto `<!-- TODO: insert changelog 3.X content -->`
 

@@ -42,14 +42,18 @@ function alternateUrl(html, lang) {
   return href;
 }
 
+function outputPage(page) {
+  return path.basename(page) === 'index.html' ? page : page.replace(/\.html$/, `${path.sep}index.html`);
+}
+
 function renderComponent(component, lang, page, html) {
-  const pageDir = path.dirname(page);
+  const pageDir = path.dirname(outputPage(page));
   const langRoot = path.relative(pageDir, '.');
   const siteRoot = path.relative(pageDir, '..');
   const values = {
     itPage: alternateUrl(html, 'it'),
     enPage: alternateUrl(html, 'en'),
-    langRoot: langRoot ? `${langRoot}${path.sep}`.split(path.sep).join('/') : '',
+    langRoot: langRoot ? `${langRoot}${path.sep}`.split(path.sep).join('/') : './',
     siteRoot: siteRoot ? `${siteRoot}${path.sep}`.split(path.sep).join('/') : '',
   };
   const name = `_${component}.html`;
@@ -104,7 +108,7 @@ function build(outputDir) {
     if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
       throw new Error(`${file} must contain one meta, one header and one footer include`);
     }
-    const target = path.join(outputDir, lang, page);
+    const target = path.join(outputDir, lang, outputPage(page));
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, output);
   }
@@ -115,7 +119,14 @@ else if (devMode) build(root);
 
 if (!buildOnly) {
   http.createServer((req, res) => {
-    let filePath = path.join(root, req.url.split('?')[0]);
+    const url = new URL(req.url, 'http://localhost');
+    if (url.pathname.endsWith('.html')) {
+      const clean = url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '/');
+      res.writeHead(301, { Location: clean + url.search });
+      res.end();
+      return;
+    }
+    let filePath = path.join(root, decodeURIComponent(url.pathname));
     if (req.url === '/') filePath = path.join(root, 'index.html');
     fs.stat(filePath, (err, stats) => {
       if (!err && stats.isFile()) {
@@ -123,6 +134,11 @@ if (!buildOnly) {
         res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
         fs.createReadStream(filePath).pipe(res);
       } else if (!err && stats.isDirectory()) {
+        if (!url.pathname.endsWith('/')) {
+          res.writeHead(301, { Location: url.pathname + '/' + url.search });
+          res.end();
+          return;
+        }
         const indexFile = path.join(filePath, 'index.html');
         fs.stat(indexFile, (err2, stats2) => {
           if (!err2 && stats2.isFile()) {
