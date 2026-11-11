@@ -71,7 +71,10 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(fs.existsSync(path.join(sourceDir, 'index.html')), 'missing shared homepage template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
-  assert.ok(fs.existsSync(path.join(sourceDir, 'translations.json')), 'missing translation catalog');
+  const translations = require(path.join(sourceDir, 'i18n', 'it.js'));
+  assert.ok(Object.values(translations).every(value => typeof value === 'string'), 'Italian translations must be flat string values');
+  assert.ok(Object.hasOwn(translations, 'Features'), 'translation keys must be source strings');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'translations.json')), 'obsolete translation catalog still exists');
   for (const lang of languages) {
     assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
     assert.ok(fs.existsSync(path.join(publicDir, lang, 'index.html')), `missing generated homepage for ${lang}`);

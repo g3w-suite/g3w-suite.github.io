@@ -8,7 +8,7 @@ const projectRoot = __dirname;
 const publicDir = path.join(projectRoot, 'public');
 const sourceDir = path.join(projectRoot, 'src');
 const languages = ['it', 'en'];
-const translations = JSON.parse(fs.readFileSync(path.join(projectRoot, 'src', 'translations.json'), 'utf8'));
+const translations = require(path.join(sourceDir, 'i18n', 'it.js'));
 const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
 const root = devMode ? path.join(projectRoot, '.dev') : publicDir;
@@ -32,34 +32,28 @@ function renderLanguageBlocks(html, lang) {
   return output;
 }
 
-function translatedValue(values, key, counts, scope, kind) {
-  if (!(key in values)) throw new Error(`Missing ${kind} translation for "${key}" in ${scope}`);
-  const value = values[key];
-  const index = counts.get(key) || 0;
-  const translation = Array.isArray(value) ? value[index] : value;
-  if (translation === undefined) throw new Error(`Too many ${kind} translations for "${key}" in ${scope}`);
-  counts.set(key, index + 1);
-  return translation;
+function translatedValue(key, scope, kind, attribute) {
+  if (Object.hasOwn(translations, key)) return translations[key];
+  if (attribute) return undefined;
+  throw new Error(`Missing ${kind} translation for "${key}" in ${scope}`);
 }
 
 function translateHtml(html, lang, scope) {
-  const catalog = translations[lang]?.[scope] || { text: {}, attributes: {} };
-  const attrCounts = new Map();
-  let output = html.replace(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g, (match, name, quoted, doubleValue, singleValue) => {
-    const value = doubleValue === undefined ? singleValue : doubleValue;
-    const translationsForAttribute = catalog.attributes[name];
-    if (lang === 'en' || !translationsForAttribute || !(value in translationsForAttribute)) return match;
-    const counts = attrCounts.get(name) || new Map();
-    attrCounts.set(name, counts);
-    const translated = translatedValue(translationsForAttribute, value, counts, scope, name);
-    return `${name}=${quoted[0]}${translated}${quoted[0]}`;
+  let output = html.replace(/<([a-z][^\s/>]*)([^>]*)>/gi, (tag, name, attributes) => {
+    if (lang === 'en' || (name.toLowerCase() === 'link' && /\brel\s*=\s*(["'])alternate\1/i.test(attributes))) return tag;
+    const translatedAttributes = attributes.replace(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g, (match, attribute, quoted, doubleValue, singleValue) => {
+      const value = doubleValue === undefined ? singleValue : doubleValue;
+      const translated = translatedValue(value, scope, 'attribute', attribute);
+      if (translated === undefined) return match;
+      return `${attribute}=${quoted[0]}${translated}${quoted[0]}`;
+    });
+    return `<${name}${translatedAttributes}>`;
   });
-  const textCounts = new Map();
   output = output.replace(/\{\{t\s+("(?:\\.|[^"\\])*")\}\}/g, (_, literal) => {
     const text = JSON.parse(literal);
     const translated = lang === 'en'
       ? text
-      : translatedValue(catalog.text, text, textCounts, scope, 'text');
+      : translatedValue(text, scope, 'text');
     return translated.replace(/[&<>"']/g, char => ({
       '&': '&amp;',
       '<': '&lt;',

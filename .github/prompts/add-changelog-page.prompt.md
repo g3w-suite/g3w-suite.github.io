@@ -12,7 +12,7 @@ Crea una nuova pagina changelog per G3W-Suite versione **$ARGUMENTS**.
 1. **Leggi la pagina di riferimento** [src/changelog/v3.10.html](../../src/changelog/v3.10.html) per estrarre la struttura e gli stili specifici.
 
 2. **Crea `src/changelog/v3.X.html`** (sostituisci X con la versione fornita):
-   - Usa la pagina inglese come testo di base e localizza i testi con `{{t "testo inglese"}}`, aggiungendo le traduzioni italiane a `src/translations.json`
+   - Usa la pagina inglese come testo di base e localizza i testi con `{{t "testo inglese"}}`, aggiungendo le traduzioni italiane in `src/i18n/it.js` con la stringa inglese esatta come chiave
    - `<title>Changelog 3.X - G3W-Suite</title>`
    - Nel `<head>`, inserisci `<!--#include file="../_meta.html"-->` per charset, viewport e stylesheet condivisi
    - Usa URL alternates dalla radice (`/it/changelog/v3.X/` per IT, `/en/changelog/v3.X/` per EN), senza `.html`

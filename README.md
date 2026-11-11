@@ -19,7 +19,7 @@ Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` an
 
 ## Where to make changes
 
-- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap translatable text with `{{t "English source text"}}` and add Italian strings to `src/translations.json`. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
+- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap translatable text with `{{t "English source text"}}` and add its flat mapping, keyed by that exact string, to `src/i18n/it.js`. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
 - **Shared header, footer and head tags:** edit `src/_header.html`, `src/_footer.html` and `src/_meta.html`; pages include them with `<!--#include file="_header.html"-->`, `<!--#include file="_footer.html"-->` and `<!--#include file="_meta.html"-->` (use `../` from `src/changelog/`).
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
 - **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
@@ -30,7 +30,7 @@ Reload the browser to see changes. `src/_redirect.html` only redirects to the It
 ## Add or update a page
 
 1. Start from an existing page directly in `src/` or in `src/changelog/`, keeping its metadata, component markers and `<main id="main-content">`.
-2. Add translations to `src/translations.json` and use language blocks only for genuine differences; check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
+2. Add translations to `src/i18n/it.js` and use language blocks only for genuine differences; check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
 3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/assets/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically. SSI file paths remain relative to the source file.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
