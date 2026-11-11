@@ -15,23 +15,22 @@ Open [http://localhost:8080/](http://localhost:8080/). Development output is gen
 
 Run `npm run build` to generate the published site in `public/`.
 
-Page URLs use directories, never `.html`: `src/it/demo.html` becomes `/it/demo/` (published as `it/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. Use these URLs in links and hreflang tags. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
+Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` and `/en/demo/` (published as `it/demo/index.html` and `en/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. The shared homepage is `src/index.html`; `src/_redirect.html` generates the root redirect. Use these URLs in links and hreflang tags. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 
 ## Where to make changes
 
-- **Text and pages:** edit the HTML files in `src/it/` and `src/en/`. Check both versions: filenames may differ, for example `it/moduli.html` and `en/modules.html`.
-- **Shared header and footer:** edit `_header.html` and `_footer.html` in each language folder; pages include them with `<!--#include file="_header.html"-->` and `<!--#include file="_footer.html"-->` (use `../` from `changelog/`).
+- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap translatable text with `{{t "English source text"}}` and add Italian strings to `src/translations.json`. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
+- **Shared header, footer and head tags:** edit `src/_header.html`, `src/_footer.html` and `src/_meta.html`; pages include them with `<!--#include file="_header.html"-->`, `<!--#include file="_footer.html"-->` and `<!--#include file="_meta.html"-->` (use `../` from `src/changelog/`).
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
-- **Shared head tags:** `_meta.html` contains charset, viewport and stylesheet. Include it with `<!--#include file="_meta.html"-->` (use `../` from `changelog/`); keep titles, descriptions, Open Graph tags and hreflang links in each page.
 - **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
 - **Images:** add them to `src/assets/img/` and link them with `/assets/img/...`.
 
-Reload the browser to see changes. `src/index.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
+Reload the browser to see changes. `src/_redirect.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
 
 ## Add or update a page
 
-1. Start from an existing page in the same folder, keeping the language, title, metadata, component markers and `<main id="main-content">`.
-2. Update the Italian and English versions and check that `hreflang` tags and language switcher links point to the correct pages in both directions.
+1. Start from an existing page directly in `src/` or in `src/changelog/`, keeping its metadata, component markers and `<main id="main-content">`.
+2. Add translations to `src/translations.json` and use language blocks only for genuine differences; check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
 3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/assets/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically. SSI file paths remain relative to the source file.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.

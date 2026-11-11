@@ -4,23 +4,17 @@ name: "Sincronizza navigazione IT/EN"
 agent: "agent"
 ---
 
-Esegui una verifica completa della sincronizzazione multilingua del sito G3W-Suite.
+Verifica che il sito generato abbia link di navigazione e hreflang corretti per entrambe le lingue. Le pagine sorgenti sono condivise direttamente in `src/`.
 
 ## Passi da eseguire
 
 ### 1. Inventario pagine per lingua
 
-Elenca le pagine sorgenti `.html` presenti in:
-- `src/it/`
-- `src/en/`
-
-Costruisci due elenchi e calcola:
-- Pagine presenti in IT ma mancanti in EN
-- Pagine presenti in EN ma mancanti in IT
+Esegui `npm run build`, poi inventaria le pagine HTML generate in `public/it/` e `public/en/`. Segnala pagine generate mancanti in una delle lingue.
 
 ### 2. Verifica language-switcher in ogni pagina
 
-Per ogni pagina sorgente in entrambe le cartelle, leggi gli URL alternates e i link generati dal componente `src/{lang}/_header.html`, verificando che:
+Per ogni pagina generata, leggi gli URL alternates e i link del language-switcher, verificando che:
 - Il link alla lingua corrente abbia `aria-current="true"`
 - Il link all'altra lingua punti a un file che **esiste effettivamente** nel filesystem
 
@@ -57,6 +51,6 @@ Se tutto è corretto, scrivi "Nessun problema trovato" per quella sezione.
 
 ### 5. Proponi azioni correttive
 
-Per ogni problema trovato, suggerisci l'azione correttiva specifica nei file sorgenti `src/it/` o `src/en/`.
+Per ogni problema trovato, suggerisci l'azione correttiva specifica in `src/` o `src/translations.json`.
 
 Non applicare automaticamente le correzioni — mostra solo il report e le proposte.

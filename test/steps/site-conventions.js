@@ -56,6 +56,29 @@ Then('source text is valid UTF-8 without corrupted character sequences', functio
   }
 });
 
+Then('translated text is rendered for each language', function () {
+  const pages = {
+    it: readPage(path.join(publicDir, 'it', 'index.html')).$,
+    en: readPage(path.join(publicDir, 'en', 'index.html')).$,
+  };
+  assert.equal(pages.it('.section-intro .section-label').first().text(), 'Inizia in pochi minuti');
+  assert.equal(pages.en('.section-intro .section-label').first().text(), 'Get started in minutes');
+  assert.ok(Object.values(pages).every($ => !/\{\{t\b/.test($.html())), 'translation helper must be expanded');
+});
+
+Then('both languages are generated from shared page templates', function () {
+  const sourceDir = path.resolve('src');
+  assert.ok(fs.existsSync(path.join(sourceDir, 'index.html')), 'missing shared homepage template');
+  assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
+  assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
+  assert.ok(fs.existsSync(path.join(sourceDir, 'translations.json')), 'missing translation catalog');
+  for (const lang of languages) {
+    assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
+    assert.ok(fs.existsSync(path.join(publicDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
+  }
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
+});
+
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
     const files = htmlFiles(path.join(publicDir, lang));

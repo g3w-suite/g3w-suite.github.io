@@ -6,7 +6,9 @@ const path = require('node:path');
 
 const projectRoot = __dirname;
 const publicDir = path.join(projectRoot, 'public');
+const sourceDir = path.join(projectRoot, 'src');
 const languages = ['it', 'en'];
+const translations = JSON.parse(fs.readFileSync(path.join(projectRoot, 'src', 'translations.json'), 'utf8'));
 const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
 const root = devMode ? path.join(projectRoot, '.dev') : publicDir;
@@ -20,6 +22,53 @@ function publishedHtml(html) {
   return html
     .replace(/(\b(?:href|src)=["'])\/(?!\/)/g, `$1${basePath}/`)
     .replace(/(\bcontent=["'][^"']*\burl=)\/(?!\/)/gi, `$1${basePath}/`);
+}
+
+function renderLanguageBlocks(html, lang) {
+  const output = html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
+    target === lang ? content : ''
+  );
+  if (/\{\{(?:#(?:it|en)|\/(?:it|en))\}\}/.test(output)) throw new Error('Unclosed language block');
+  return output;
+}
+
+function translatedValue(values, key, counts, scope, kind) {
+  if (!(key in values)) throw new Error(`Missing ${kind} translation for "${key}" in ${scope}`);
+  const value = values[key];
+  const index = counts.get(key) || 0;
+  const translation = Array.isArray(value) ? value[index] : value;
+  if (translation === undefined) throw new Error(`Too many ${kind} translations for "${key}" in ${scope}`);
+  counts.set(key, index + 1);
+  return translation;
+}
+
+function translateHtml(html, lang, scope) {
+  const catalog = translations[lang]?.[scope] || { text: {}, attributes: {} };
+  const attrCounts = new Map();
+  let output = html.replace(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g, (match, name, quoted, doubleValue, singleValue) => {
+    const value = doubleValue === undefined ? singleValue : doubleValue;
+    const translationsForAttribute = catalog.attributes[name];
+    if (lang === 'en' || !translationsForAttribute || !(value in translationsForAttribute)) return match;
+    const counts = attrCounts.get(name) || new Map();
+    attrCounts.set(name, counts);
+    const translated = translatedValue(translationsForAttribute, value, counts, scope, name);
+    return `${name}=${quoted[0]}${translated}${quoted[0]}`;
+  });
+  const textCounts = new Map();
+  output = output.replace(/\{\{t\s+("(?:\\.|[^"\\])*")\}\}/g, (_, literal) => {
+    const text = JSON.parse(literal);
+    const translated = lang === 'en'
+      ? text
+      : translatedValue(catalog.text, text, textCounts, scope, 'text');
+    return translated.replace(/[&<>"']/g, char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    })[char]);
+  });
+  return output;
 }
 
 const mimeTypes = {
@@ -52,7 +101,8 @@ function alternateUrl(html, lang) {
   return href;
 }
 
-function outputPage(page) {
+function outputPage(page, lang) {
+  if (page === 'modules.html' && lang === 'it') page = 'moduli.html';
   return path.basename(page) === 'index.html' ? page : page.replace(/\.html$/, `${path.sep}index.html`);
 }
 
@@ -64,7 +114,11 @@ function renderComponent(component, lang, page, html) {
     siteRoot: '/',
   };
   const name = `_${component}.html`;
-  let output = fs.readFileSync(path.join(projectRoot, 'src', lang, name), 'utf8').trim();
+  let output = translateHtml(
+    renderLanguageBlocks(fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(), lang),
+    lang,
+    name
+  );
   output = output.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (!(key in values)) throw new Error(`Unknown ${component} placeholder: ${key}`);
     return values[key];
@@ -81,43 +135,44 @@ function renderComponent(component, lang, page, html) {
 }
 
 function build(outputDir) {
-  const pages = languages.flatMap(lang => {
-    const langDir = path.join(projectRoot, 'src', lang);
-    return htmlFiles(langDir).map(file => ({
-      file,
-      lang,
-      page: path.relative(langDir, file),
-    }));
-  });
-  if (!pages.length) throw new Error('No source HTML pages found in src/it or src/en');
+  const pages = htmlFiles(sourceDir).map(file => ({
+    file,
+    page: path.relative(sourceDir, file),
+  }));
+  if (!pages.length) throw new Error('No source HTML pages found in src');
 
   fs.mkdirSync(outputDir, { recursive: true });
   fs.rmSync(path.join(outputDir, 'assets'), { recursive: true, force: true });
   fs.cpSync(path.join(projectRoot, 'src', 'assets'), path.join(outputDir, 'assets'), { recursive: true });
-  fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(fs.readFileSync(path.join(projectRoot, 'src', 'index.html'), 'utf8')));
+  fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8')));
   for (const lang of languages) {
     fs.rmSync(path.join(outputDir, lang), { recursive: true, force: true });
     fs.mkdirSync(path.join(outputDir, lang), { recursive: true });
   }
 
-  for (const { file, lang, page } of pages) {
-    const html = fs.readFileSync(file, 'utf8');
-    const counts = { meta: 0, header: 0, footer: 0 };
-    const output = html.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
-      const name = path.basename(include, '.html').replace(/^_/, '');
-      const componentPath = path.normalize(path.join(path.dirname(page), include));
-      if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
-        throw new Error(`Invalid component include in ${file}: ${include}`);
+  for (const { file, page } of pages) {
+    const sourceHtml = fs.readFileSync(file, 'utf8');
+    for (const lang of languages) {
+      const scope = page.split(path.sep).join('/');
+      const html = translateHtml(renderLanguageBlocks(sourceHtml, lang), lang, scope);
+      const counts = { meta: 0, header: 0, footer: 0 };
+      const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
+      const output = localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
+        const name = path.basename(include, '.html').replace(/^_/, '');
+        const componentPath = path.normalize(path.join(path.dirname(page), include));
+        if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
+          throw new Error(`Invalid component include in ${file}: ${include}`);
+        }
+        counts[name]++;
+        return renderComponent(name, lang, page, localized);
+      });
+      if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
+        throw new Error(`${file} must contain one meta, one header and one footer include`);
       }
-      counts[name]++;
-      return renderComponent(name, lang, page, html);
-    });
-    if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
-      throw new Error(`${file} must contain one meta, one header and one footer include`);
+      const target = path.join(outputDir, lang, outputPage(page, lang));
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, publishedHtml(output));
     }
-    const target = path.join(outputDir, lang, outputPage(page));
-    fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, publishedHtml(output));
   }
 }
 

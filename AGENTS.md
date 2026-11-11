@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 ## Verified Current State (2026-05-18)
 
 - `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`.
-- Source pages are in `src/it/` and `src/en/`; shared components are `_meta.html`, `_header.html` and `_footer.html` in each language folder.
+- Shared page templates and components are directly in `src/`; Italian text is in `src/translations.json`. The build generates both languages.
 
 ## Run
 
@@ -15,7 +15,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 npm run dev
 ```
 
-`src/assets/` contains source styles, scripts, fonts and images; `src/index.html` is the root redirect. `public/` is generated output.
+`src/assets/` contains source styles, scripts, fonts and images; `src/index.html` is the shared homepage and `src/_redirect.html` supplies the root redirect. `public/` is generated output.
 
 ## Tests
 
@@ -27,14 +27,18 @@ for pushes and pull requests.
 
 ```
 src/
-|- index.html           # Redirect to it/index.html
+|- index.html           # Shared homepage template, published as it/ and en/
+|- _redirect.html       # Root redirect emitted as public/index.html
 |- assets/              # Source styles, scripts, fonts and images
-|- it/                  # Italian pages and _header.html/_footer.html
-`- en/                  # English pages and _header.html/_footer.html
+|- _header.html          # Shared page components
+|- _footer.html
+|- _meta.html
+|- changelog/            # Shared changelog pages
+`- translations.json    # Italian page and attribute translations
 public/                 # Generated publishing output; ignored by Git
 ```
 
-`src/index.html` is the root redirect. `server.js` generates static pages for publishing or local development.
+`src/index.html` is the shared homepage template. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates static pages for publishing or local development.
 
 ## Key Conventions
 
@@ -42,8 +46,9 @@ public/                 # Generated publishing output; ignored by Git
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
-- IT and EN are intentionally not always symmetric.
-- `src/index.html` is a redirect page; do not turn it into a content page.
+- Use `{{t "English source text"}}` for translated text and add its Italian translation to `src/translations.json`. English is emitted unchanged, and a missing translation fails the build.
+- Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
+- `src/_redirect.html` is the root redirect; do not replace it with page content.
 
 ## HTML Pattern
 
@@ -69,7 +74,7 @@ Most content pages follow:
 
 `_meta.html` contains shared charset, viewport and stylesheet tags. Keep page-specific titles, descriptions, Open Graph tags and hreflang links in each page. Use `../_meta.html` from `changelog/`.
 
-Edit shared navigation and footer in `src/it/_header.html`, `src/it/_footer.html`, `src/en/_header.html` and `src/en/_footer.html`; `server.js` expands the SSI include directives into static output. From `changelog/`, use `../_header.html` and `../_footer.html`.
+Edit shared navigation, footer and metadata in `src/_header.html`, `src/_footer.html` and `src/_meta.html`; `server.js` expands the SSI include directives into static output. From `src/changelog/`, use `../_header.html`, `../_footer.html` and `../_meta.html`.
 
 ## CSS/JS Rules
 
@@ -88,7 +93,7 @@ Edit shared navigation and footer in `src/it/_header.html`, `src/it/_footer.html
 ## Working Guidance For Agents
 
 - For nav/footer changes, edit the shared component instead of page files.
-- When adding or renaming pages, verify language pair links (`src/it/*` <-> `src/en/*`) and hreflang tags.
+- When adding or renaming pages directly in `src/` or in `src/changelog/`, verify generated links in both languages and hreflang tags.
 - Keep content/language changes local to the correct folder and preserve existing URL conventions.
 
 ## Key Files
@@ -99,7 +104,7 @@ Edit shared navigation and footer in `src/it/_header.html`, `src/it/_footer.html
 - `src/index.html`
 - `src/assets/style.css`
 - `src/assets/app.js`
-- `src/it/_header.html`
-- `src/it/_footer.html`
-- `src/it/index.html`
-- `src/en/index.html`
+- `src/_header.html`
+- `src/_footer.html`
+- `src/_redirect.html`
+- `src/translations.json`

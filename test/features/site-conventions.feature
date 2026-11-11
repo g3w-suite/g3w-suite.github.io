@@ -9,6 +9,12 @@ Feature: Multilingual site conventions
   Scenario: Source text encoding
     Then source text is valid UTF-8 without corrupted character sequences
 
+  Scenario: Template translations
+    Then translated text is rendered for each language
+
+  Scenario: Shared page templates
+    Then both languages are generated from shared page templates
+
   Scenario: Links between languages
     Given the HTML pages in the language folders
     Then every page links consistently to the Italian and English versions
