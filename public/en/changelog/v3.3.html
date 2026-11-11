@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog 3.3 - G3W-Suite</title>
+  <link rel="alternate" href="../../it/changelog/v3.3.html" hreflang="it">
+  <link rel="alternate" href="v3.3.html" hreflang="en">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="site-logo"><img src="../../assets/img/2019_06_logo_g3wsuite-1.png" alt="G3W-Suite" height="44"></a>
+    <button class="menu-toggle-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span class="hamburger"></span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="../download.html#cosa">Features</a></li>
+        <li><a href="../modules.html">Modules</a></li>
+        <li><a href="../merginmaps.html">MerginMaps</a></li>
+        <li><a href="../model-builder-processing.html">Model Builder</a></li>
+        <li><a href="../demo.html">Demo</a></li>
+        <li><a href="index.html" aria-current="page">Changelog</a></li>
+        <li><a href="../download.html">Download</a></li>
+        <li><a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener">Documentation</a></li>
+        <li><a href="../sponsor.html">Sponsors</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <a href="../../it/changelog/v3.3.html" lang="it" hreflang="it">IT</a>
+        <a href="v3.3.html" aria-current="true" lang="en" hreflang="en">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <h1>Changelog G3W-Suite 3.3</h1>
+      <p class="section-intro">Release date: <strong>07 October 2021</strong></p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container content-page">
+      <div class="changelog">
+<div><h2>Changelog for G3W-SUITE 3.3</h2>
+<p>G3W-SUITE 3.3 offers an extensive list of <strong>new and improved features</strong> &#8211; the most important shown here.</p>
+<p>In particular, the new release implements:</p>
+<ul>
+<ul>
+<ul>
+<li>ability to <strong>define single editing powers</strong> (create, modify, delete) on individual layers <strong>for each user</strong></li>
+<li><strong>QGIS expression management at the level of online editing</strong>, for the automated calculation of the values to be associated with the individual fields</li>
+<li><strong>Oracle Spatial editing support</strong></li>
+<li><strong>new constraints</strong>, based on users, on layer and attribute tables visibility</li>
+<li>further <strong>integration of the QGIS API</strong></li>
+</ul>
+</ul>
+</ul>
+
+<p>To date, the<strong> modules/functions are managed through the API</strong> are:</p>
+<ul>
+<ul>
+<li></li>
+</ul>
+</ul></div>
+<div><ul>
+<ul>
+<ul>
+<li>project import</li>
+<li>editing</li>
+<li>OWS server (WMS, WFS and WCS)</li>
+<li>searches (optional, standard through WMS service)</li>
+</ul>
+</ul>
+</ul></div>
+<div><ul>
+<ul>
+<ul>
+<li>altas print layout</li>
+<li>editing and visualization constraints</li>
+<li>vector layer API (table view)</li>
+</ul>
+</ul>
+</ul></div>
+<div><p>We hope you enjoy this great work!</p>
+<p><strong>Happy mapping!</strong></p></div>
+<div>
+<h2>Sponsor and funder</h2>
+<p>G3W-SUITE is an <strong>open source project</strong> and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the <strong>main funder of this version</strong> we remember:</p>
+<div class="changelog-sponsors">
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/planetek.png" alt="Planetek Italia" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.planetek.it/" target="_blank" rel="noopener noreferrer">Planetek Italia</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/bonifica_renana.png" alt="Consorzio Bonifica Renana" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Consorzio Bonifica Renana</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/arpal.png" alt="ARPA Liguria" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.arpal.liguria.it/" target="_blank" rel="noopener noreferrer">ARPA Liguria</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/palermo.png" alt="Comune di Palermo" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.comune.palermo.it/" target="_blank" rel="noopener noreferrer">Comune di Palermo</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/trento.png" alt="Comune di Trento" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.comune.trento.it/" target="_blank" rel="noopener noreferrer">Comune di Trento</a></div>
+  </div>
+  <div class="changelog-sponsor-card">
+    <img src="../../assets/img/bari.png" alt="Comune di Bari" loading="lazy">
+    <div class="sponsor-name"><a href="https://www.comune.bari.it/" target="_blank" rel="noopener noreferrer">Comune di Bari</a></div>
+  </div>
+</div>
+</div>
+<div><h2>General</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Layer order<b><br />
+</b></h3>
+<h4>Setting inherited from the QGIS project</h4>
+<p>The definition on the <strong>QGIS project</strong> of the <b>order of the layers in the map</b>, <b>independent of the order of the layers in the TOC</b>, is now managed.</p></div>
+  <img src="../../assets/img/layer_order.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: 1:N relation based on multi fields<b><br />
+</b></h3>
+<h4>Setting inherited from the QGIS project</h4>
+<p>The ability to create <strong>relations based on more than one field</strong> is now managed but <strong>limited to the data consultation aspects</strong> (no searches and no editing)</p></div>
+  <img src="../../assets/img/multi_fields_relation.png" alt="" loading="lazy">
+</div>
+<div><h2>Filters and constraints<br />
+</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Hide layers by user single/group</h3>
+<p>It is possible to <strong>hide specific layers</strong> from the TOC based <strong>on specific users or groups of users</strong></p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/z1yymF7EgII" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: All filters extended to the anonymous user<b></b></h3>
+<p>It is possible to base the <strong>various filters also on the anonymous user</strong> (public maps):</p>
+<ul>
+<ul>
+<li><strong>hide layer</strong></li>
+<li><strong>geo-constraints</strong> (visualization and editing)</li>
+<li><strong>alphanumeric constraints</strong> based on <strong>SLQ</strong> and <strong>QGIS expressions</strong> (visualization and editing)</li>
+</ul>
+</ul></div>
+  <img src="../../assets/img/anonymus_filter.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Filters on empity layers<br />
+</h3>
+<p>It is possible to<strong> hide, automatically, layers from the TOC when they have no records</strong>.</p>
+<p><strong>Useful</strong> when <strong>using filters on layers or geographic views</strong>.</p></div>
+  <img src="../../assets/img/mappa.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Hide attributes table<b><br />
+</b></h3>
+<p>Now you can <strong>hide attributes table for specific layers</strong>.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NkBNxZyvUzg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div><h2>Search tool<br />
+</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Search on 1:N relation data<b><br />
+</b></h3>
+<p>It is now possible to carry out a <b>search based on a related table 1:N (child)</b> and obtain the <b>associated parent geometries as a result</b>.</p>
+<p>It works only on 1:N relation based on one field</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Wfmzlrp-aQM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature:ÃƒÂ¯Ã‚Â¿Ã‚Â½Multi-layer searches<b><br />
+</b></h3>
+<p>It is possible to create <strong>searches based on multiple layers with homologous fields</strong>.</p>
+<p>The results will be differentiated according to the corresponding layer.</p>
+<p><strong>Especially useful in the case of multigeometric layers</strong>.</p></div>
+  <img src="../../assets/img/search_multi_layer.png" alt="" loading="lazy">
+</div>
+<div><h2>Data providers<br />
+</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: More data type support<br />
+</h3>
+<p>Reading/<strong>editing</strong> support on <strong>Oracle Spatial D</strong><b>B</b> is extended</p>
+<p><strong>ÃƒÂ¯Ã‚Â¿Ã‚Â½</strong></p></div>
+  <img src="../../assets/img/index-1.png" alt="" loading="lazy">
+</div>
+<div><h2>Cartographic Client</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: QGIS themes management</h3>
+<h4>Setting inherited from the QGIS project</h4>
+<p>Through a drop-down menu it is possible to view the <strong>different combinations of layers</strong> (switched on and off) <strong>based on themes</strong> defined in the <strong>QGIS project</strong>.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MFyTm9NVvmY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Add layer tool implementation</h3>
+<p>The <strong>Add layer</strong> tool now support:</p>
+<ul>
+<ul>
+<li>GML</li>
+<li>GeoJson</li>
+<li>KML</li>
+<li>GPX</li>
+<li>SHP</li>
+<li>CSV (with X/Y coordinates)</li>
+</ul>
+</ul>
+<p>It is also possible to <strong>define a field</strong> in the imported file to be used for <strong>labels</strong>,</p></div>
+  <img src="../../assets/img/add_layer_csv.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Add GeoTIFF export tool<br />
+</h3>
+<p>The tools permits to <strong>export canvas area as GeoTIFF</strong>.</p></div>
+  <img src="../../assets/img/geotiff.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature:ÃƒÂ¯Ã‚Â¿Ã‚Â½Legend position</h3>
+<p>An option, at the publication level of the QGIS project, allows to set <strong>legend rendering position</strong>:</p>
+<ul>
+<ul>
+<li><strong>TAB</strong> (default value, legend is rendered into a separate tab)</li>
+<li><strong>TOC</strong> (legend is rendered inside layers toc)</li>
+</ul>
+</ul></div>
+  <img src="../../assets/img/legend_toc.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Manually defining the content of a search results<b></b></h3>
+<p>Following a query (single, by bbox or by polygon) or a search, it is possible to <strong>manually add/remove feaures from the list of results</strong>.</p>
+<p>This allows you to <strong>define more precisely the list of contents to be exported</strong> in various formats or <strong>to be used as a basis for filters</strong> on tables and charts.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZCYfo-DqdJo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Additional download information<br />
+</h3>
+<p>It is now possible to <b>associate</b> (at the download level) <b>the information related to the search polygon to the geometries resulting from a QueryByPoligon</b></p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MYULK6o_240" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Creation of links for direct zoom to individual features<br />
+</h3>
+<p>After querying a layer it is possible to copy, for each resulting features, a l<b>ink dedicated to the direct zoom to the object.</b></p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/o6oqJzlmUpU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div><h2>Editing</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: Differentiation of user-based editing powers</h3>
+<p>Ability to define <strong>editing powers on individual layers for each user</strong> (single / group):</p>
+<ul>
+<ul>
+<li><strong>create</strong></li>
+<li><strong>modify geometry</strong></li>
+<li><strong>modify attribute</strong></li>
+<li><strong>delete</strong></li>
+</ul>
+</ul></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DIw7PJdEWTM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="grid-2">
+  <div><h3>Feature: QGIS expressions management</h3>
+<h4>Setting inherited from the QGIS project</h4>
+<p>Now the editing form manage the <strong>QGIS expressions used as default values</strong> for individual fields in the QGIS project.</p>
+<p>Very useful in all cases where we want the <strong>values of a field to be calculated automatically</strong> through the potential of QGIS expressions.</p></div>
+  <div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y2PE1hwQQIA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div><h2>Minor improvements<br />
+</h2></div>
+<div class="grid-2">
+  <div><h3>Feature: More language support</h3>
+<p>Map client and administration panel are available in additional languages:</p>
+<ul>
+<ul>
+<li><strong>French</strong></li>
+</ul>
+</ul></div>
+  <img src="../../assets/img/Flag_of_France.svg.png" alt="" loading="lazy">
+</div>
+<div class="grid-2">
+  <div><h3>Feature: Search system for project and cartographic groups</h3>
+<p>In the administration session, a search tool will<strong> allow you to find projects and cartographic groups</strong> without having to manually consult all the contents.</p></div>
+  <img src="../../assets/img/search_project.png" alt="" loading="lazy">
+</div>
+      </div>
+      <div class="cta-box">
+        <p>For complete details, see the <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">official ReadTheDocs documentation</a>.</p>
+        <div class="btn-group">
+          <a class="btn btn--primary" href="../demo.html#demo-3-3">Try the demo</a>
+          <a class="btn btn--outline" href="../download.html">Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+  <div class="container">
+    <section class="footer-help" aria-labelledby="footer-help-title">
+      <div class="section-intro">
+        <h2 id="footer-help-title">Need help?</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Community forum</h3>
+          <p>Ask questions, report issues and connect with other users and developers, it's free.</p>
+          <a href="https://github.com/g3w-suite/community/discussions" target="_blank" rel="noopener" class="btn btn--outline btn--sm mt-2">Go to the forum &rarr;</a>
+        </div>
+        <div class="contact-info">
+          <h3>Professional support</h3>
+          <p>Installation, training and custom development. By <a href="https://www.gis3w.it" target="_blank" rel="noopener">Gis3W</a>, main sponsor of the project.</p>
+          <a href="mailto:info@gis3w.it?subject=Support G3W-SUITE" class="btn btn--outline btn--sm mt-2">Write to info@gis3w.it &rarr;</a>
+        </div>
+      </div>
+    </section>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Project</h5>
+        <nav class="footer-links" aria-label="Project links">
+          <a href="/en/download.html#cosa">Features</a>
+          <a href="/en/modules.html">Modules</a>
+          <a href="/en/changelog/index.html">Changelog</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <nav class="footer-links" aria-label="Support links">
+          <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener">Documentation</a>
+          <a href="/en/download.html">Download</a>
+          <a href="https://github.com/g3w-suite/g3w-client/issues" target="_blank" rel="noopener">Report an issue</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Community</h5>
+        <nav class="footer-links" aria-label="Community links">
+          <a href="/en/demo.html#demo-3-11">Demo</a>
+          <a href="/en/sponsor.html">Sponsors and contributors</a>
+          <a href="https://github.com/g3w-suite" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Ecosystem</h5>
+        <nav class="footer-links" aria-label="Ecosystem links">
+          <a href="/en/merginmaps.html">Mergin Maps</a>
+          <a href="https://www.qgis.org/" target="_blank" rel="noopener">QGIS</a>
+          <a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank" rel="noopener">MPL 2.0 License</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-signature">
+        <a class="footer-logo" href="/en/index.html" aria-label="G3W-SUITE home">
+          <img src="/assets/img/2019_06_logo_g3wsuite-1.png" alt="G3W-SUITE">
+        </a>
+        <div class="footer-copy">
+          <p>Open source WebGIS for QGIS.</p>
+          <p><a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank" rel="noopener">MPL 2.0</a></p>
+        </div>
+      </div>
+      <ul class="footer-social" aria-label="Social links">
+        <li><a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener" aria-label="RSS"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#rss"></use></svg></a></li>
+        <li><a href="https://mapstodon.space/@gis3w" target="_blank" rel="noopener" aria-label="Mastodon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#mastodon"></use></svg></a></li>
+        <li><a href="https://twitter.com/_gis3w_" target="_blank" rel="noopener" aria-label="X"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#twitter"></use></svg></a></li>
+        <li><a href="https://www.linkedin.com/company/gis3w" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#linkedin"></use></svg></a></li>
+        <li><a href="https://github.com/g3w-suite" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"></use></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/app.js"></script>
+</body>
+</html>

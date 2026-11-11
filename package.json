@@ -1,0 +1,9 @@
+{
+  "name": "www.g3wsuite.it",
+  "version": "0.0.1",
+  "description": "www.g3wsuite.it",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {}
+}
