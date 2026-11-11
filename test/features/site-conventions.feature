@@ -6,6 +6,9 @@ Feature: Multilingual site conventions
     Then every page declares its language, metadata, and main structure
     And every page uses the shared assets with root-relative paths
 
+  Scenario: Source text encoding
+    Then source text is valid UTF-8 without corrupted character sequences
+
   Scenario: Links between languages
     Given the HTML pages in the language folders
     Then every page links consistently to the Italian and English versions

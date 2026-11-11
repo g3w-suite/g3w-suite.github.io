@@ -42,6 +42,20 @@ function checkPages(pages, check) {
   assert.deepEqual(errors, [], errors.join('\n'));
 }
 
+Then('source text is valid UTF-8 without corrupted character sequences', function () {
+  const sourceDir = path.resolve('src');
+  const decoder = new TextDecoder('utf-8', { fatal: true });
+  const corrupted = /[\u0080-\u009f\ufffd]|\u00c3[\u0080-\u00bf\u0192]|\u00c2[\u0080-\u00bf]|\u00e2[\u0080\u20ac]|\u00ef\u00bf\u00bd/;
+  for (const relative of fs.readdirSync(sourceDir, { recursive: true })) {
+    if (!/\.(?:html|css|js|svg)$/.test(relative)) continue;
+    const file = path.join(sourceDir, relative);
+    let text;
+    assert.doesNotThrow(() => { text = decoder.decode(fs.readFileSync(file)); }, `${relative}: invalid UTF-8`);
+    if (relative.endsWith('.html')) text = load(text).html();
+    assert.ok(!corrupted.test(text), `${relative}: corrupted character sequence`);
+  }
+});
+
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
     const files = htmlFiles(path.join(publicDir, lang));

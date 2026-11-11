@@ -44,6 +44,8 @@ npm test
 
 The Gherkin scenarios in `test/features/` check page structure, assets, language links, navigation accessibility and every internal `href`/`src` target (including HTML fragments) without contacting external sites; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.
 
+Source HTML, CSS, JavaScript and SVG must be saved as UTF-8. Tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities.
+
 A separate workflow deploys `public/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
 
 ## Connect a custom domain
