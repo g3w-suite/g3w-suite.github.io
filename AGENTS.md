@@ -38,7 +38,7 @@ public/                 # Generated publishing output; ignored by Git
 
 ## Key Conventions
 
-- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Resolve links and assets from the published URL, while SSI paths remain relative to source files.
+- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/assets/...`) instead of `../` or `./`; SSI paths remain relative to source files.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
 - IT and EN are intentionally not always symmetric.

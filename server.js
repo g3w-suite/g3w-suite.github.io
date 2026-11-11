@@ -47,14 +47,11 @@ function outputPage(page) {
 }
 
 function renderComponent(component, lang, page, html) {
-  const pageDir = path.dirname(outputPage(page));
-  const langRoot = path.relative(pageDir, '.');
-  const siteRoot = path.relative(pageDir, '..');
   const values = {
     itPage: alternateUrl(html, 'it'),
     enPage: alternateUrl(html, 'en'),
-    langRoot: langRoot ? `${langRoot}${path.sep}`.split(path.sep).join('/') : './',
-    siteRoot: siteRoot ? `${siteRoot}${path.sep}`.split(path.sep).join('/') : '',
+    langRoot: `/${lang}/`,
+    siteRoot: '/',
   };
   const name = `_${component}.html`;
   let output = fs.readFileSync(path.join(projectRoot, 'src', lang, name), 'utf8').trim();

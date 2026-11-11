@@ -21,10 +21,6 @@ function readPage(file) {
   return { file, html, $: load(html) };
 }
 
-function relativeAsset(file, name) {
-  return path.relative(path.dirname(file), path.join(publicDir, 'assets', name)).split(path.sep).join('/');
-}
-
 function localTarget(file, href) {
   if (!href) return null;
   const pagePath = path.relative(publicDir, file).split(path.sep).join('/');
@@ -68,13 +64,13 @@ Then('every page declares its language, metadata, and main structure', function 
   });
 });
 
-Then('every page uses the shared assets with correct relative paths', function () {
+Then('every page uses the shared assets with root-relative paths', function () {
   for (const asset of ['style.css', 'app.js']) {
     assert.ok(fs.statSync(path.join(publicDir, 'assets', asset)).isFile(), `Missing shared asset ${asset}`);
   }
-  checkPages(this.pages, ({ $, file }, expect) => {
-    const stylesheet = relativeAsset(file, 'style.css');
-    const script = relativeAsset(file, 'app.js');
+  checkPages(this.pages, ({ $ }, expect) => {
+    const stylesheet = '/assets/style.css';
+    const script = '/assets/app.js';
     expect($(`head link[rel="stylesheet"][href="${stylesheet}"]`).length === 1, `missing stylesheet ${stylesheet}`);
     expect($(`body script[src="${script}"]`).length === 1, `missing script ${script}`);
   });
@@ -145,6 +141,7 @@ Then('every internal link and asset resolves without HTML extensions', function 
         const href = $(element).attr(attr);
         const target = localTarget(file, href);
         if (!target) continue;
+        expect(/^(?:\/|#|https?:)/i.test(href), `internal URL must be root-relative: ${href}`);
         expect(!/\.html(?:[?#]|$)/i.test(href), `internal URL must not use .html: ${href}`);
         const exists = fs.existsSync(target) && fs.statSync(target).isFile();
         expect(exists, `broken ${attr}: ${href}`);

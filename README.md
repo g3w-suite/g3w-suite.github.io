@@ -24,7 +24,7 @@ Page URLs use directories, never `.html`: `src/it/demo.html` becomes `/it/demo/`
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
 - **Shared head tags:** `_meta.html` contains charset, viewport and stylesheet. Include it with `<!--#include file="_meta.html"-->` (use `../` from `changelog/`); keep titles, descriptions, Open Graph tags and hreflang links in each page.
 - **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
-- **Images:** add them to `src/assets/img/` and use paths relative to the page.
+- **Images:** add them to `src/assets/img/` and link them with `/assets/img/...`.
 
 Reload the browser to see changes. `src/index.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
 
@@ -32,7 +32,7 @@ Reload the browser to see changes. `src/index.html` only redirects to the Italia
 
 1. Start from an existing page in the same folder, keeping the language, title, metadata, component markers and `<main id="main-content">`.
 2. Update the Italian and English versions and check that `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Resolve relative links and assets from the published directory URL, not the source filename: `/it/demo/` uses `../../assets/`, while `/it/changelog/v3.11/` uses `../../../assets/`. Shared components calculate these prefixes automatically. SSI file paths remain relative to the source file.
+3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/assets/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The site must be hosted at the domain root. SSI file paths remain relative to the source file.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 

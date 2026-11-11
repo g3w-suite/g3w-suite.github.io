@@ -4,7 +4,7 @@ Feature: Multilingual site conventions
   Scenario: Page structure
     Given the HTML pages in the language folders
     Then every page declares its language, metadata, and main structure
-    And every page uses the shared assets with correct relative paths
+    And every page uses the shared assets with root-relative paths
 
   Scenario: Links between languages
     Given the HTML pages in the language folders
