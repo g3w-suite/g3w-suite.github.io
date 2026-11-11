@@ -1,10 +1,5 @@
 ﻿'use strict';
 
-const clean = location.pathname.replace(/(\/index)?\.html$/, '$1' ? '/' : '');
-if (clean !== location.pathname) {
-  history.replaceState(null, '', clean + location.search + location.hash);
-}
-
 // ── Menu hamburger mobile ───────────────────────────────────────────────────
 const toggleBtn = document.querySelector('.menu-toggle-btn');
 const nav       = document.querySelector('.main-nav');
