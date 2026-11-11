@@ -32,37 +32,32 @@ function renderLanguageBlocks(html, lang) {
   return output;
 }
 
-function translatedValue(key, scope, kind, attribute) {
-  if (Object.hasOwn(translations, key)) return translations[key];
-  if (attribute) return undefined;
-  throw new Error(`Missing ${kind} translation for "${key}" in ${scope}`);
-}
-
-function translateHtml(html, lang, scope) {
+function translateHtml(html, lang) {
+  if (lang === 'en') return html;
   let output = html.replace(/<([a-z][^\s/>]*)([^>]*)>/gi, (tag, name, attributes) => {
-    if (lang === 'en' || (name.toLowerCase() === 'link' && /\brel\s*=\s*(["'])alternate\1/i.test(attributes))) return tag;
+    if (name.toLowerCase() === 'link' && /\brel\s*=\s*(["'])alternate\1/i.test(attributes)) return tag;
     const translatedAttributes = attributes.replace(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g, (match, attribute, quoted, doubleValue, singleValue) => {
-      const value = doubleValue === undefined ? singleValue : doubleValue;
-      const translated = translatedValue(value, scope, 'attribute', attribute);
-      if (translated === undefined) return match;
-      return `${attribute}=${quoted[0]}${translated}${quoted[0]}`;
+      const source = doubleValue === undefined ? singleValue : doubleValue;
+      if (!Object.hasOwn(translations, source)) return match;
+      return `${attribute}=${quoted[0]}${translations[source]}${quoted[0]}`;
     });
     return `<${name}${translatedAttributes}>`;
   });
-  output = output.replace(/\{\{t\s+("(?:\\.|[^"\\])*")\}\}/g, (_, literal) => {
-    const text = JSON.parse(literal);
-    const translated = lang === 'en'
-      ? text
-      : translatedValue(text, scope, 'text');
-    return translated.replace(/[&<>"']/g, char => ({
+  return output.replace(/>([^<]+)</g, (match, content) => {
+    const leading = /^\s*/.exec(content)[0];
+    const trailing = /\s*$/.exec(content)[0];
+    const source = content.slice(leading.length, content.length - trailing.length);
+    const key = Object.hasOwn(translations, source) ? source : source.replace(/&amp;/g, '&');
+    if (!source || !Object.hasOwn(translations, key)) return match;
+    const translated = translations[key].replace(/[&<>"']/g, char => ({
       '&': '&amp;',
       '<': '&lt;',
       '>': '&gt;',
       '"': '&quot;',
       "'": '&#39;',
     })[char]);
+    return `>${leading}${translated}${trailing}<`;
   });
-  return output;
 }
 
 const mimeTypes = {
@@ -110,8 +105,7 @@ function renderComponent(component, lang, page, html) {
   const name = `_${component}.html`;
   let output = translateHtml(
     renderLanguageBlocks(fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(), lang),
-    lang,
-    name
+    lang
   );
   output = output.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (!(key in values)) throw new Error(`Unknown ${component} placeholder: ${key}`);
@@ -147,8 +141,7 @@ function build(outputDir) {
   for (const { file, page } of pages) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
     for (const lang of languages) {
-      const scope = page.split(path.sep).join('/');
-      const html = translateHtml(renderLanguageBlocks(sourceHtml, lang), lang, scope);
+      const html = translateHtml(renderLanguageBlocks(sourceHtml, lang), lang);
       const counts = { meta: 0, header: 0, footer: 0 };
       const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
       const output = localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {

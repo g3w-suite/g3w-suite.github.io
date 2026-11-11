@@ -63,6 +63,15 @@ Then('translated text is rendered for each language', function () {
   };
   assert.equal(pages.it('.section-intro .section-label').first().text(), 'Inizia in pochi minuti');
   assert.equal(pages.en('.section-intro .section-label').first().text(), 'Get started in minutes');
+  assert.equal(
+    readPage(path.join(publicDir, 'it', 'demo', 'index.html')).$('meta[name="description"]').attr('content'),
+    'Demo G3W-Suite relative ai branch attualmente supportati: stabile, bug fixing e sviluppo.',
+    'attributes matching the Italian catalog must be translated'
+  );
+  assert.ok(
+    htmlFiles(path.resolve('src')).every(file => !/\{\{t\b/.test(fs.readFileSync(file, 'utf8'))),
+    'source pages must not use translation markers'
+  );
   assert.ok(Object.values(pages).every($ => !/\{\{t\b/.test($.html())), 'translation helper must be expanded');
 });
 

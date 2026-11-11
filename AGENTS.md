@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 ## Verified Current State (2026-05-18)
 
 - `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`.
-- Shared page templates and components are directly in `src/`; Italian text is in the flat catalog `src/i18n/it.js`, keyed by the exact source string. English uses the source strings directly. The build generates both languages.
+- Shared page templates and components are directly in `src/`; Italian text is in the flat catalog `src/i18n/it.js`, keyed by the exact source string. Matching text nodes and attribute values are translated automatically. English uses the source strings directly.
 
 ## Run
 
@@ -46,7 +46,7 @@ public/                 # Generated publishing output; ignored by Git
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
-- Use `{{t "English source text"}}` for translated text and add its Italian translation under that exact string in `src/i18n/it.js`. English is emitted unchanged, and a missing translation fails the build.
+- Text nodes and attribute values matching a key in `src/i18n/it.js` are translated automatically; no translation marker is needed. Hreflang alternate links are left unchanged.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 

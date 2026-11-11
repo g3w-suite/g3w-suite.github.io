@@ -18,7 +18,7 @@ Leggi `src/_header.html` e `src/_footer.html`. Le pagine generate in `public/` n
 ### 2. Pianifica la modifica
 
 - Modifica solo la componente condivisa necessaria
-- Usa `{{t "English text"}}` e aggiungi la traduzione italiana in `src/i18n/it.js` usando la stringa inglese esatta come chiave; usa blocchi di lingua soltanto per differenze strutturali
+- Aggiungi a `src/i18n/it.js` le traduzioni dei nodi di testo usando la stringa inglese esatta come chiave; usa blocchi di lingua soltanto per differenze strutturali o attributi localizzati
 - Se la modifica riguarda solo il menu di navigazione, il footer probabilmente non va toccato, e viceversa
 
 ### 3. Verifica
