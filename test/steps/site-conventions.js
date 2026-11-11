@@ -17,6 +17,36 @@ function htmlFiles(dir) {
   });
 }
 
+function translationHelperPattern() {
+  return /\{\{t\s+'((?:\\.|[^'\\])*)'\s*\}\}/g;
+}
+
+function renderLanguageBlocks(html, lang) {
+  return html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
+    target === lang ? content : ''
+  );
+}
+
+function findUnmarkedTranslations(file, html, translations) {
+  const source = renderLanguageBlocks(html, 'it').replace(translationHelperPattern(), '__TRANSLATION_HELPER__');
+  const unmarked = [];
+  for (const [, name, attributes] of source.matchAll(/<([a-z][^\s/>]*)([^>]*)>/gi)) {
+    if (name.toLowerCase() === 'link' && /\brel\s*=\s*(["'])alternate\1/i.test(attributes)) continue;
+    for (const [, attribute, quoted, doubleValue, singleValue] of attributes.matchAll(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g)) {
+      const value = doubleValue === undefined ? singleValue : doubleValue;
+      if (Object.hasOwn(translations, value)) unmarked.push(`${file} ${attribute}="${value}"`);
+    }
+  }
+  for (const [, content] of source.matchAll(/>([^<]+)</g)) {
+    const leading = /^\s*/.exec(content)[0];
+    const trailing = /\s*$/.exec(content)[0];
+    const text = content.slice(leading.length, content.length - trailing.length);
+    const key = Object.hasOwn(translations, text) ? text : text.replace(/&amp;/g, '&');
+    if (text && Object.hasOwn(translations, key)) unmarked.push(`${file}: ${text}`);
+  }
+  return unmarked;
+}
+
 function readPage(file) {
   const html = fs.readFileSync(file, 'utf8');
   return { file, html, $: load(html) };
@@ -72,15 +102,15 @@ Then('translated text is rendered for each language', function () {
     'explicit attribute translations must be rendered'
   );
   assert.ok(
-    sourceHtml.some(source => source.includes("{{t('G3W-Suite demos for currently supported branches: stable, bug fixing and dev.')}}")),
+    sourceHtml.some(source => source.includes("{{t 'G3W-Suite demos for currently supported branches: stable, bug fixing and dev.'}}")),
     'translated meta descriptions must use the translation helper'
   );
   assert.ok(
-    sourceHtml.some(source => /\b[\w:-]+=["'][^"']*\{\{t\('(?:\\.|[^'\\])*'\)\}\}[^"']*["']/.test(source)),
+    sourceHtml.some(source => /\b[\w:-]+=["'][^"']*\{\{t '(?:\\.|[^'\\])*'\s*\}\}[^"']*["']/.test(source)),
     'translated attributes must use the translation helper'
   );
   assert.ok(
-    sourceHtml.some(source => />[^<]*\{\{t\('(?:\\.|[^'\\])*'\)\}\}[^<]*</.test(source)),
+    sourceHtml.some(source => />[^<]*\{\{t '(?:\\.|[^'\\])*'\s*\}\}[^<]*</.test(source)),
     'translated text must use the translation helper'
   );
   assert.ok(
@@ -94,15 +124,60 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(fs.existsSync(path.join(sourceDir, 'index.html')), 'missing shared homepage template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
-  const translations = require(path.join(sourceDir, 'i18n', 'it.js'));
+  const translations = require(path.join(sourceDir, 'assets', 'i18n', 'it.json'));
   assert.ok(Object.values(translations).every(value => typeof value === 'string'), 'Italian translations must be flat string values');
   assert.ok(Object.hasOwn(translations, 'Features'), 'translation keys must be source strings');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'i18n')), 'obsolete translation folder still exists');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'translations.json')), 'obsolete translation catalog still exists');
+  assert.ok(fs.existsSync(path.join(publicDir, 'assets', 'i18n', 'it.json')), 'translation catalog was not copied to the build output');
   for (const lang of languages) {
     assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
     assert.ok(fs.existsSync(path.join(publicDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
   }
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
+});
+
+Then('translation keys are unique, sorted, and used by the Italian build', function () {
+  const sourceDir = path.resolve('src');
+  const catalogFile = path.join(sourceDir, 'assets', 'i18n', 'it.json');
+  const catalogSource = fs.readFileSync(catalogFile, 'utf8');
+  const catalogKeys = [...catalogSource.matchAll(/^\s*("(?:\\.|[^"\\])*")\s*:/gm)]
+    .map(([, key]) => JSON.parse(key));
+  const translations = require(catalogFile);
+  const seen = new Set();
+  const duplicates = catalogKeys.filter(key => {
+    if (seen.has(key)) return true;
+    seen.add(key);
+    return false;
+  });
+  assert.deepEqual(duplicates, [], `duplicate translation keys: ${duplicates.join(', ')}`);
+  assert.equal(catalogKeys.length, Object.keys(translations).length, 'every catalog key must be quoted');
+  assert.deepEqual(
+    catalogKeys,
+    [...catalogKeys].sort((a, b) => a < b ? -1 : a > b ? 1 : 0),
+    'translation keys must be sorted'
+  );
+
+  const sourceFiles = htmlFiles(sourceDir);
+  const usedKeys = new Set();
+  const unmarked = [];
+  for (const file of sourceFiles) {
+    const html = fs.readFileSync(file, 'utf8');
+    const italianHtml = renderLanguageBlocks(html, 'it');
+    for (const [, literal] of italianHtml.matchAll(translationHelperPattern())) {
+      const key = literal.replace(/\\(['\\])/g, '$1');
+      assert.ok(Object.hasOwn(translations, key), `${file}: unknown translation key "${key}"`);
+      usedKeys.add(key);
+    }
+    unmarked.push(...findUnmarkedTranslations(path.relative(process.cwd(), file), html, translations));
+  }
+  const unusedKeys = catalogKeys.filter(key => !usedKeys.has(key));
+  assert.deepEqual(unusedKeys, [], `translations not used by the Italian build: ${unusedKeys.join(', ')}`);
+  assert.deepEqual(unmarked, [], `translatable strings missing {{t '...'}}: ${unmarked.join('\n')}`);
+
+  const outputFiles = htmlFiles(path.join(publicDir, 'it'));
+  const unexpanded = outputFiles.filter(file => /\{\{t\b|\{\{\/t\}\}/.test(fs.readFileSync(file, 'utf8')));
+  assert.deepEqual(unexpanded, [], 'Italian build contains unexpanded translation helpers');
 });
 
 Given('the HTML pages in the language folders', function () {

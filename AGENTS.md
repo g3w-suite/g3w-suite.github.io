@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 ## Verified Current State (2026-05-18)
 
 - `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`.
-- Shared page templates and components are directly in `src/`; Italian text is in the flat catalog `src/i18n/it.js`, keyed by the exact source string. Matching text nodes and attribute values are translated automatically. English uses the source strings directly.
+- Shared page templates and components are directly in `src/`; Italian text is in the flat JSON catalog `src/assets/i18n/it.json`, keyed by the exact source string. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
 
 ## Run
 
@@ -15,7 +15,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 npm run dev
 ```
 
-`src/assets/` contains source styles, scripts, fonts and images; `src/index.html` is the shared homepage and `src/_redirect.html` supplies the root redirect. `public/` is generated output.
+`src/assets/` contains the translation catalog, source styles, scripts, fonts and images; `src/index.html` is the shared homepage and `src/_redirect.html` supplies the root redirect. `public/` is generated output.
 
 ## Tests
 
@@ -29,12 +29,11 @@ for pushes and pull requests.
 src/
 |- index.html           # Shared homepage template, published as it/ and en/
 |- _redirect.html       # Root redirect emitted as public/index.html
-|- assets/              # Source styles, scripts, fonts and images
+|- assets/              # Translation catalog, styles, scripts, fonts and images
 |- _header.html          # Shared page components
 |- _footer.html
 |- _meta.html
 |- changelog/            # Shared changelog pages
-`- i18n/it.js            # Flat Italian translation catalog
 public/                 # Generated publishing output; ignored by Git
 ```
 
@@ -46,7 +45,7 @@ public/                 # Generated publishing output; ignored by Git
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
-- Wrap every text or attribute value that needs Italian translation in `{{t('...')}}`; only marked strings are translated. The source string must exist in `src/i18n/it.js`.
+- Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. The source string must exist in `src/assets/i18n/it.json`, whose keys stay unique and alphabetically sorted.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 
@@ -107,4 +106,4 @@ Edit shared navigation, footer and metadata in `src/_header.html`, `src/_footer.
 - `src/_header.html`
 - `src/_footer.html`
 - `src/_redirect.html`
-- `src/i18n/it.js`
+- `src/assets/i18n/it.json`

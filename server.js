@@ -8,7 +8,7 @@ const projectRoot = __dirname;
 const publicDir = path.join(projectRoot, 'public');
 const sourceDir = path.join(projectRoot, 'src');
 const languages = ['it', 'en'];
-const translations = require(path.join(sourceDir, 'i18n', 'it.js'));
+const translations = require(path.join(sourceDir, 'assets', 'i18n', 'it.json'));
 const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
 const root = devMode ? path.join(projectRoot, '.dev') : publicDir;
@@ -50,7 +50,7 @@ function translate(source, lang) {
 }
 
 function translateHtml(html, lang) {
-  const output = html.replace(/\{\{t\('((?:\\.|[^'\\])*)'\)\}\}/g, (_, source) =>
+  const output = html.replace(/\{\{t\s+'((?:\\.|[^'\\])*)'\s*\}\}/g, (_, source) =>
     translate(source.replace(/\\(['\\])/g, '$1'), lang)
   );
   if (/\{\{t\b|\{\{\/t\}\}/.test(output)) throw new Error('Invalid or unclosed translation helper');
