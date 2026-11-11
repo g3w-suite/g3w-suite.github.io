@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. No build step
 ## Verified Current State (2026-05-18)
 
 - `package.json` exists and defines `npm run dev` -> `node server.js`.
-- Site is served from `public/` by `server.js` (port 80).
+- Site is served from `public/` by `server.js` (port 8080).
 - Language folders are inside `public/` (`public/it/`, `public/en/`), not at repository root.
 
 ## Run

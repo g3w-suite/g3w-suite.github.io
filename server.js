@@ -1,5 +1,5 @@
 // server.js
-// Semplice server statico Node.js per servire la cartella corrente sulla porta 80
+// Semplice server statico Node.js per servire la cartella public
 
 const http = require('http');
 const fs = require('fs');
@@ -7,7 +7,7 @@ const path = require('path');
 
 // Cambia qui il percorso della cartella da servire
 const root = path.resolve(__dirname, 'public');
-const port = 80;
+const port = 8080;
 
 const mimeTypes = {
   '.html': 'text/html',

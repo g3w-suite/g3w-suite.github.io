@@ -1,0 +1,58 @@
+# G3W-Suite Website
+
+The multilingual G3W-Suite website is a static site in Italian and English. No build step is required.
+
+## Run locally
+
+With Node.js 22 and npm:
+
+```sh
+npm i
+npm run dev
+```
+
+Open [http://localhost:8080/](http://localhost:8080/). Port 8080 must be available and does not normally require elevated privileges on Linux.
+
+## Where to make changes
+
+- **Text and pages:** edit the HTML files in `public/it/` and `public/en/` directly. Check both versions: filenames may differ, for example `it/moduli.html` and `en/modules.html`.
+- **Appearance:** edit `public/assets/style.css`.
+- **Interactions:** edit `public/assets/app.js` (vanilla JavaScript, without libraries).
+- **Images:** add them to `public/assets/img/` and use paths relative to the page.
+
+Reload the browser to see changes. `public/index.html` only redirects to the Italian version.
+
+## Add or update a page
+
+1. Start from an existing page in the same folder, keeping the language, title, metadata, header, footer and `<main id="main-content">`.
+2. Update the Italian and English versions and check that `hreflang` tags and language switcher links point to the correct pages in both directions.
+3. Use correct relative paths for CSS, JavaScript and images: for example, `../assets/style.css` from language folders and `../../assets/style.css` from subfolders such as `changelog/`.
+4. When changing navigation or footers, apply the changes to every affected page: there are no shared templates. Preserve ARIA attributes and keyboard behavior for menus.
+5. Check the pages in the browser, including on small screens, and run the tests.
+
+## Tests and deployment
+
+```sh
+npm test
+```
+
+The Gherkin scenarios in `test/features/` check page structure, assets, language links and navigation accessibility; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.
+
+A separate workflow deploys `public/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
+
+## Connect a custom domain
+
+To publish the site on your own domain with GitHub Pages:
+
+1. [Verify the domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages) in your GitHub organization to reduce the risk of domain takeover.
+2. In the repository settings, under **Settings → Pages → Custom domain**, enter and save the desired domain.
+3. Configure DNS records with your DNS provider:
+   - For a subdomain such as `www.example.com`, create a `CNAME` record for `www` pointing to `g3w-suite.github.io`, without the repository name. If the site is published from another account or organization, use its `<account>.github.io` address instead.
+   - For an apex domain such as `example.com`, create four `A` records pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`.
+4. Wait for DNS propagation (up to 24 hours), check the domain in the Pages settings and enable **Enforce HTTPS** when available.
+
+Do not use wildcard DNS records. This repository deploys through GitHub Actions, so a `CNAME` file is not required. For more details, see the [GitHub documentation on custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+## License
+
+This project is distributed under the [Mozilla Public License 2.0](LICENSE).

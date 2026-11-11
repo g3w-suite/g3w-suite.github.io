@@ -16,3 +16,7 @@ Feature: Multilingual site conventions
 
   Scenario: The root page redirects to Italian
     Then the root page redirects to the Italian version
+
+  Scenario: The development server uses port 8080
+    When the development server starts with PORT set to another value
+    Then it serves the root page on port 8080
