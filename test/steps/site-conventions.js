@@ -57,6 +57,9 @@ Then('source text is valid UTF-8 without corrupted character sequences', functio
 });
 
 Then('translated text is rendered for each language', function () {
+  const sourceFiles = htmlFiles(path.resolve('src'));
+  const sourceHtml = sourceFiles.map(file => fs.readFileSync(file, 'utf8'));
+  const outputHtml = htmlFiles(publicDir).map(file => fs.readFileSync(file, 'utf8'));
   const pages = {
     it: readPage(path.join(publicDir, 'it', 'index.html')).$,
     en: readPage(path.join(publicDir, 'en', 'index.html')).$,
@@ -66,13 +69,24 @@ Then('translated text is rendered for each language', function () {
   assert.equal(
     readPage(path.join(publicDir, 'it', 'demo', 'index.html')).$('meta[name="description"]').attr('content'),
     'Demo G3W-Suite relative ai branch attualmente supportati: stabile, bug fixing e sviluppo.',
-    'attributes matching the Italian catalog must be translated'
+    'explicit attribute translations must be rendered'
   );
   assert.ok(
-    htmlFiles(path.resolve('src')).every(file => !/\{\{t\b/.test(fs.readFileSync(file, 'utf8'))),
-    'source pages must not use translation markers'
+    sourceHtml.some(source => source.includes("{{t('G3W-Suite demos for currently supported branches: stable, bug fixing and dev.')}}")),
+    'translated meta descriptions must use the translation helper'
   );
-  assert.ok(Object.values(pages).every($ => !/\{\{t\b/.test($.html())), 'translation helper must be expanded');
+  assert.ok(
+    sourceHtml.some(source => /\b[\w:-]+=["'][^"']*\{\{t\('(?:\\.|[^'\\])*'\)\}\}[^"']*["']/.test(source)),
+    'translated attributes must use the translation helper'
+  );
+  assert.ok(
+    sourceHtml.some(source => />[^<]*\{\{t\('(?:\\.|[^'\\])*'\)\}\}[^<]*</.test(source)),
+    'translated text must use the translation helper'
+  );
+  assert.ok(
+    outputHtml.every(html => !/\{\{t\b|\{\{\/t\}\}/.test(html)),
+    'translation helpers must be expanded in all generated pages'
+  );
 });
 
 Then('both languages are generated from shared page templates', function () {

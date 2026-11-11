@@ -32,32 +32,29 @@ function renderLanguageBlocks(html, lang) {
   return output;
 }
 
+function translate(source, lang) {
+  if (lang === 'en') return source;
+  const leading = /^\s*/.exec(source)[0];
+  const trailing = /\s*$/.exec(source)[0];
+  const text = source.slice(leading.length, source.length - trailing.length);
+  const key = text.replace(/&amp;/g, '&');
+  if (!Object.hasOwn(translations, key)) throw new Error(`Missing Italian translation: ${text}`);
+  const translated = translations[key].replace(/&(?!#\d+;|#x[\da-f]+;|[a-z][\da-z]+;)|[<>"']/gi, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  })[char]);
+  return `${leading}${translated}${trailing}`;
+}
+
 function translateHtml(html, lang) {
-  if (lang === 'en') return html;
-  let output = html.replace(/<([a-z][^\s/>]*)([^>]*)>/gi, (tag, name, attributes) => {
-    if (name.toLowerCase() === 'link' && /\brel\s*=\s*(["'])alternate\1/i.test(attributes)) return tag;
-    const translatedAttributes = attributes.replace(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g, (match, attribute, quoted, doubleValue, singleValue) => {
-      const source = doubleValue === undefined ? singleValue : doubleValue;
-      if (!Object.hasOwn(translations, source)) return match;
-      return `${attribute}=${quoted[0]}${translations[source]}${quoted[0]}`;
-    });
-    return `<${name}${translatedAttributes}>`;
-  });
-  return output.replace(/>([^<]+)</g, (match, content) => {
-    const leading = /^\s*/.exec(content)[0];
-    const trailing = /\s*$/.exec(content)[0];
-    const source = content.slice(leading.length, content.length - trailing.length);
-    const key = Object.hasOwn(translations, source) ? source : source.replace(/&amp;/g, '&');
-    if (!source || !Object.hasOwn(translations, key)) return match;
-    const translated = translations[key].replace(/[&<>"']/g, char => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;',
-    })[char]);
-    return `>${leading}${translated}${trailing}<`;
-  });
+  const output = html.replace(/\{\{t\('((?:\\.|[^'\\])*)'\)\}\}/g, (_, source) =>
+    translate(source.replace(/\\(['\\])/g, '$1'), lang)
+  );
+  if (/\{\{t\b|\{\{\/t\}\}/.test(output)) throw new Error('Invalid or unclosed translation helper');
+  return output;
 }
 
 const mimeTypes = {

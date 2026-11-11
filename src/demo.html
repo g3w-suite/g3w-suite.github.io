@@ -3,14 +3,14 @@
 <head>
   <!--#include file="_meta.html"-->
   <title>Demo - G3W-Suite</title>
-  <meta name="description" content="G3W-Suite demos for currently supported branches: stable, bug fixing and dev.">
+  <meta name="description" content="{{t('G3W-Suite demos for currently supported branches: stable, bug fixing and dev.')}}">
   <link rel="alternate" href="/it/demo/" hreflang="it">
   <link rel="alternate" href="/en/demo/" hreflang="en">
 </head>
 <body>
 <!--#include file="_header.html"-->
 <main id="main-content">
-  <div class="page-header"><div class="container"><h1>G3W-Suite Demo</h1></div></div>
+  <div class="page-header"><div class="container"><h1>{{t('G3W-Suite Demo')}}</h1></div></div>
 
   <section class="section">
     <div class="container">
@@ -20,8 +20,8 @@
             <h2>Branch 3.11</h2>
             <p>QGIS 3.44 LTR - Python 3.12 - Django 4.2 - Bug fixing</p>
             <div class="btn-group demo-card__actions">
-              <a class="btn btn--outline btn--sm" href="https://v311.g3wsuite.it/" target="_blank" rel="noopener">Access demo</a>
-              <a class="btn btn--outline btn--sm" href="/en/changelog/v3.11/">Changelog 3.11</a>
+              <a class="btn btn--outline btn--sm" href="https://v311.g3wsuite.it/" target="_blank" rel="noopener">{{t('Access demo')}}</a>
+              <a class="btn btn--outline btn--sm" href="{{t('/en/changelog/v3.11/')}}">Changelog 3.11</a>
             </div>
           </div>
         </li>
@@ -30,17 +30,17 @@
             <h2>Branch 3.10</h2>
             <p>QGIS 3.40 LTR - Python 3.12 - Django 4.2 - Bug fixing</p>
             <div class="btn-group demo-card__actions">
-              <a class="btn btn--outline btn--sm" href="https://v310.g3wsuite.it/it/map/demo-310/" target="_blank" rel="noopener">Access demo</a>
-              <a class="btn btn--outline btn--sm" href="/en/changelog/v3.10/">Changelog 3.10</a>
+              <a class="btn btn--outline btn--sm" href="https://v310.g3wsuite.it/it/map/demo-310/" target="_blank" rel="noopener">{{t('Access demo')}}</a>
+              <a class="btn btn--outline btn--sm" href="{{t('/en/changelog/v3.10/')}}">Changelog 3.10</a>
             </div>
           </div>
         </li>
         <li class="demo-card">
           <div class="demo-card__body">
             <h2>Branch dev (4.0)</h2>
-            <p>QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development</p>
+            <p>{{t('QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development')}}</p>
             <div class="btn-group demo-card__actions">
-              <a class="btn btn--outline btn--sm" href="/en/download/">Track release status</a>
+              <a class="btn btn--outline btn--sm" href="{{t('/en/download/')}}">{{t('Track release status')}}</a>
             </div>
           </div>
         </li>
@@ -50,22 +50,22 @@
 
   <section class="section">
     <div class="container content-page">
-      <h2>How to access the demo</h2>
-      <p>The demo service is designed to show how it is possible to create a <strong>WebGIS management application</strong> starting from a simple <strong>QGIS project</strong>.</p>
-      <p>The demo is dedicated to <strong>building management and associated maintenance operations</strong>.</p>
-      <p>Log in to browse data, run searches, view charts and print reports based on geographic atlases.</p>
-      <h3>Online editing</h3>
-      <p>To test the <strong>geometric and relational editing</strong> features, log in as a demo user with the following credentials:</p>
+      <h2>{{t('How to access the demo')}}</h2>
+      <p>{{t('The demo service is designed to show how it is possible to create a')}} <b>{{t('WebGIS management application')}}</b> {{t('starting from a simple')}} <b>{{t('QGIS project')}}</b>.</p>
+      <p>{{t('The demo is dedicated to')}} <b>{{t('building management and associated maintenance operations')}}</b>.</p>
+      <p>{{t('Log in to browse data, run searches, view charts and print reports based on geographic atlases.')}}</p>
+      <h3>{{t('Online editing')}}</h3>
+      <p>{{t('To test the')}} <b>{{t('geometric and relational editing')}}</b> {{t('features, log in as a demo user with the following credentials:')}}</p>
       <ul>
-        <li>user: <strong>viewer1</strong></li>
-        <li>password: <strong>G3wsuite123</strong></li>
+        <li>user: <b>viewer1</b></li>
+        <li>password: <b>G3wsuite123</b></li>
       </ul>
-      <p><em>G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.</em></p>
-      <h3>Documentation</h3>
+      <p><em>{{t('G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.')}}</em></p>
+      <h3>{{t('Documentation')}}</h3>
       <ul>
-        <li><a href="https://g3w-suite.readthedocs.io/en/latest/demo.html" target="_blank" rel="noopener">Online tutorial</a></li>
-        <li><a href="https://g3w-suite.readthedocs.io/en/latest/introduction.html" target="_blank" rel="noopener">Introduction to G3W-SUITE</a></li>
-        <li><a href="https://g3w-suite.readthedocs.io/en/latest/docker.html" target="_blank" rel="noopener">Docker installation</a></li>
+        <li><a href="https://g3w-suite.readthedocs.io/en/latest/demo.html" target="_blank" rel="noopener">{{t('Online tutorial')}}</a></li>
+        <li><a href="https://g3w-suite.readthedocs.io/en/latest/introduction.html" target="_blank" rel="noopener">{{t('Introduction to G3W-SUITE')}}</a></li>
+        <li><a href="https://g3w-suite.readthedocs.io/en/latest/docker.html" target="_blank" rel="noopener">{{t('Docker installation')}}</a></li>
       </ul>
     </div>
   </section>

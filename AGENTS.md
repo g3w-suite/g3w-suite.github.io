@@ -46,7 +46,7 @@ public/                 # Generated publishing output; ignored by Git
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
-- Text nodes and attribute values matching a key in `src/i18n/it.js` are translated automatically; no translation marker is needed. Hreflang alternate links are left unchanged.
+- Wrap every text or attribute value that needs Italian translation in `{{t('...')}}`; only marked strings are translated. The source string must exist in `src/i18n/it.js`.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 

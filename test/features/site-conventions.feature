@@ -9,7 +9,7 @@ Feature: Multilingual site conventions
   Scenario: Source text encoding
     Then source text is valid UTF-8 without corrupted character sequences
 
-  Scenario: Automatic text and attribute translations
+  Scenario: Explicit text and attribute translations
     Then translated text is rendered for each language
 
   Scenario: Shared page templates
