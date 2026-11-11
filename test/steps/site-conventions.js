@@ -33,6 +33,7 @@ function findUnmarkedTranslations(file, html, translations) {
   for (const [, name, attributes] of source.matchAll(/<([a-z][^\s/>]*)([^>]*)>/gi)) {
     if (name.toLowerCase() === 'link' && /\brel\s*=\s*(["'])alternate\1/i.test(attributes)) continue;
     for (const [, attribute, quoted, doubleValue, singleValue] of attributes.matchAll(/\b([^\s=]+)=("([^"]*)"|'([^']*)')/g)) {
+      if (['lang', 'hreflang', 'data-lang-key', 'data-nav-key'].includes(attribute.toLowerCase())) continue;
       const value = doubleValue === undefined ? singleValue : doubleValue;
       if (Object.hasOwn(translations, value)) unmarked.push(`${file} ${attribute}="${value}"`);
     }
@@ -157,6 +158,12 @@ Then('translation keys are unique, sorted, and used by the Italian build', funct
     [...catalogKeys].sort((a, b) => a < b ? -1 : a > b ? 1 : 0),
     'translation keys must be sorted'
   );
+  assert.deepEqual(
+    catalogKeys.filter(key => /^(?:\/|https?:\/\/|mailto:)/i.test(key)),
+    [],
+    'URLs must not be translated as whole strings'
+  );
+  assert.ok(catalogKeys.every(key => !key.includes('{{langRoot}}')), 'catalog keys must not include URL placeholders');
 
   const sourceFiles = htmlFiles(sourceDir);
   const usedKeys = new Set();

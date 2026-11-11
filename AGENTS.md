@@ -46,6 +46,7 @@ public/                 # Generated publishing output; ignored by Git
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
 - Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. The source string must exist in `src/assets/i18n/it.json`, whose keys stay unique and alphabetically sorted.
+- For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 

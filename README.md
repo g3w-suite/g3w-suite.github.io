@@ -19,7 +19,7 @@ Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` an
 
 ## Where to make changes
 
-- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap every text or attribute value that needs Italian translation in `{{t '...'}}`. The source string must exist in `src/assets/i18n/it.json`, whose keys stay unique and alphabetically sorted; unmarked strings are left unchanged. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
+- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap every text or attribute value that needs Italian translation in `{{t '...'}}`. The source string must exist in `src/assets/i18n/it.json`, whose keys stay unique and alphabetically sorted; unmarked strings are left unchanged. In URLs, mark only the portion that changes between languages, not the entire URL. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
 - **Shared header, footer and head tags:** edit `src/_header.html`, `src/_footer.html` and `src/_meta.html`; pages include them with `<!--#include file="_header.html"-->`, `<!--#include file="_footer.html"-->` and `<!--#include file="_meta.html"-->` (use `../` from `src/changelog/`).
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
 - **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
