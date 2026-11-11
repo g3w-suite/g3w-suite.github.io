@@ -16,6 +16,12 @@ Static multilingual marketing/documentation website for G3W-Suite. No build step
 npm run dev
 ```
 
+## Tests
+
+With Node.js 22, run `npm ci` followed by `npm test`. The English Gherkin
+scenarios in `test/features/` check site conventions and run on GitHub Actions
+for pushes and pull requests.
+
 ## Project Structure
 
 ```

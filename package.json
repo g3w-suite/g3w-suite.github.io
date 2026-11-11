@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "description": "www.g3wsuite.it",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "cucumber-js"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@cucumber/cucumber": "13.3.0",
+    "cheerio": "1.2.0"
+  }
 }
