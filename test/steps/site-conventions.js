@@ -3,6 +3,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 const { Given, Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 
@@ -154,5 +155,39 @@ Then('every internal link and asset resolves without HTML extensions', function 
         }
       }
     });
+
   });
+});
+
+Then('the build supports a project base path without broken internal links', function () {
+  const prefix = '/www.g3wsuite.it';
+  const build = basePath => {
+    const result = spawnSync(process.execPath, ['server.js', '--build'], {
+      env: { ...process.env, SITE_BASE_PATH: basePath },
+      encoding: 'utf8',
+    });
+    assert.equal(result.status, 0, result.stderr);
+  };
+  try {
+    build(prefix);
+    for (const file of htmlFiles(publicDir)) {
+      const { $ } = readPage(file);
+      $('[href], [src]').each((_, element) => {
+        for (const attr of ['href', 'src']) {
+          const href = $(element).attr(attr);
+          if (!href || !href.startsWith('/') || href.startsWith('//')) continue;
+          assert.ok(href.startsWith(prefix + '/'), `${file}: missing project prefix in ${href}`);
+          const target = localTarget(file, href.slice(prefix.length));
+          assert.ok(target && fs.existsSync(target) && fs.statSync(target).isFile(), `${file}: broken ${href}`);
+        }
+      });
+    }
+    const { $ } = readPage(path.join(publicDir, 'index.html'));
+    assert.equal($('meta[http-equiv="refresh"]').attr('content'), `0; url=${prefix}/it/`);
+    const demo = readPage(path.join(publicDir, 'en', 'demo', 'index.html')).$;
+    assert.equal(demo('link[rel="stylesheet"]').attr('href'), `${prefix}/assets/style.css`);
+    assert.ok(demo('a[href="https://v311.g3wsuite.it/"]').length, 'external URLs must remain unchanged');
+  } finally {
+    build('');
+  }
 });

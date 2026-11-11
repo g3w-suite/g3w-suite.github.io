@@ -11,6 +11,16 @@ const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
 const root = devMode ? path.join(projectRoot, '.dev') : publicDir;
 const port = 8080;
+const basePath = (process.env.SITE_BASE_PATH || '').replace(/\/$/, '');
+if (basePath && !/^\/[a-zA-Z0-9._/-]+$/.test(basePath)) {
+  throw new Error('SITE_BASE_PATH must be an absolute URL path, for example /www.g3wsuite.it');
+}
+
+function publishedHtml(html) {
+  return html
+    .replace(/(\b(?:href|src)=["'])\/(?!\/)/g, `$1${basePath}/`)
+    .replace(/(\bcontent=["'][^"']*\burl=)\/(?!\/)/gi, `$1${basePath}/`);
+}
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -84,7 +94,7 @@ function build(outputDir) {
   fs.mkdirSync(outputDir, { recursive: true });
   fs.rmSync(path.join(outputDir, 'assets'), { recursive: true, force: true });
   fs.cpSync(path.join(projectRoot, 'src', 'assets'), path.join(outputDir, 'assets'), { recursive: true });
-  fs.copyFileSync(path.join(projectRoot, 'src', 'index.html'), path.join(outputDir, 'index.html'));
+  fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(fs.readFileSync(path.join(projectRoot, 'src', 'index.html'), 'utf8')));
   for (const lang of languages) {
     fs.rmSync(path.join(outputDir, lang), { recursive: true, force: true });
     fs.mkdirSync(path.join(outputDir, lang), { recursive: true });
@@ -107,7 +117,7 @@ function build(outputDir) {
     }
     const target = path.join(outputDir, lang, outputPage(page));
     fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, output);
+    fs.writeFileSync(target, publishedHtml(output));
   }
 }
 

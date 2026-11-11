@@ -32,7 +32,7 @@ Reload the browser to see changes. `src/index.html` only redirects to the Italia
 
 1. Start from an existing page in the same folder, keeping the language, title, metadata, component markers and `<main id="main-content">`.
 2. Update the Italian and English versions and check that `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/assets/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The site must be hosted at the domain root. SSI file paths remain relative to the source file.
+3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/assets/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically. SSI file paths remain relative to the source file.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 
