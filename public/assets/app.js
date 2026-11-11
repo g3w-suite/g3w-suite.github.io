@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-if (window.location.pathname.endsWith('.html')) {
-  const cleanPath = window.location.pathname.slice(0, -5);
-  window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+const clean = location.pathname.replace(/(\/index)?\.html$/, '$1' ? '/' : '');
+if (clean !== location.pathname) {
+  history.replaceState(null, '', clean + location.search + location.hash);
 }
 
 // ── Menu hamburger mobile ───────────────────────────────────────────────────
