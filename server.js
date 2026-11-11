@@ -29,7 +29,7 @@ function htmlFiles(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
     const file = path.join(dir, entry.name);
     if (entry.isDirectory()) return htmlFiles(file);
-    return entry.isFile() && file.endsWith('.html') && !['header.html', 'footer.html'].includes(entry.name) ? [file] : [];
+    return entry.isFile() && file.endsWith('.html') && !entry.name.startsWith('_') ? [file] : [];
   });
 }
 
@@ -52,7 +52,7 @@ function renderComponent(component, lang, page, html) {
     langRoot: langRoot ? `${langRoot}${path.sep}`.split(path.sep).join('/') : '',
     siteRoot: siteRoot ? `${siteRoot}${path.sep}`.split(path.sep).join('/') : '',
   };
-  const name = `${component}.html`;
+  const name = `_${component}.html`;
   let output = fs.readFileSync(path.join(projectRoot, 'src', lang, name), 'utf8').trim();
   output = output.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (!(key in values)) throw new Error(`Unknown ${component} placeholder: ${key}`);
@@ -91,18 +91,18 @@ function build(outputDir) {
 
   for (const { file, lang, page } of pages) {
     const html = fs.readFileSync(file, 'utf8');
-    const counts = { header: 0, footer: 0 };
+    const counts = { meta: 0, header: 0, footer: 0 };
     const output = html.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
-      const name = path.basename(include, '.html');
+      const name = path.basename(include, '.html').replace(/^_/, '');
       const componentPath = path.normalize(path.join(path.dirname(page), include));
-      if (!['header', 'footer'].includes(name) || componentPath !== `${name}.html`) {
+      if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
         throw new Error(`Invalid component include in ${file}: ${include}`);
       }
       counts[name]++;
       return renderComponent(name, lang, page, html);
     });
-    if (counts.header !== 1 || counts.footer !== 1) {
-      throw new Error(`${file} must contain one header and one footer component marker`);
+    if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
+      throw new Error(`${file} must contain one meta, one header and one footer include`);
     }
     const target = path.join(outputDir, lang, page);
     fs.mkdirSync(path.dirname(target), { recursive: true });

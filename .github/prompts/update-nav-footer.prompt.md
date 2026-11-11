@@ -13,7 +13,7 @@ Applica la seguente modifica alle componenti condivise del sito G3W-Suite:
 
 ### 1. Individua le componenti
 
-Leggi `src/it/header.html`, `src/en/header.html`, `src/it/footer.html` e `src/en/footer.html`. Le pagine generate in `public/` non sono sorgenti.
+Leggi `src/it/_header.html`, `src/en/_header.html`, `src/it/_footer.html` e `src/en/_footer.html`. Le pagine generate in `public/` non sono sorgenti.
 
 ### 2. Pianifica la modifica
 

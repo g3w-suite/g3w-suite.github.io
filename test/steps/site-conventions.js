@@ -45,6 +45,7 @@ Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
     const files = htmlFiles(path.join(publicDir, lang));
     assert.ok(files.length, `No HTML pages found for ${lang}`);
+    assert.ok(files.every(file => !path.basename(file).startsWith('_')), 'included files must not be published');
     return files.map(file => ({ ...readPage(file), lang }));
   });
 });
@@ -53,7 +54,7 @@ Then('every page declares its language, metadata, and main structure', function 
   checkPages(this.pages, ({ $, html, lang }, expect) => {
     expect(/^<!doctype html>/i.test(html.trimStart()), 'missing HTML doctype');
     expect($('html').attr('lang') === lang, `html lang must be ${lang}`);
-    expect($('head meta[charset]').attr('charset')?.toLowerCase() === 'utf-8', 'missing UTF-8 charset');
+    expect($('head meta[charset]').length === 1 && $('head meta[charset]').attr('charset')?.toLowerCase() === 'utf-8', 'expected one UTF-8 charset');
     expect($('head meta[name="viewport"]').length === 1, 'missing viewport');
     expect($('head title').text().trim().length > 0, 'missing title');
     expect($('body > header').length === 1, 'missing header');

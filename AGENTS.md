@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 ## Verified Current State (2026-05-18)
 
 - `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`.
-- Source pages are in `src/it/` and `src/en/`; shared components are `header.html` and `footer.html` in each language folder.
+- Source pages are in `src/it/` and `src/en/`; shared components are `_meta.html`, `_header.html` and `_footer.html` in each language folder.
 
 ## Run
 
@@ -29,8 +29,8 @@ for pushes and pull requests.
 src/
 |- index.html           # Redirect to it/index.html
 |- assets/              # Source styles, scripts, fonts and images
-|- it/                  # Italian pages and header.html/footer.html
-`- en/                  # English pages and header.html/footer.html
+|- it/                  # Italian pages and _header.html/_footer.html
+`- en/                  # English pages and _header.html/_footer.html
 public/                 # Generated publishing output; ignored by Git
 ```
 
@@ -52,26 +52,27 @@ Most content pages follow:
 <!doctype html>
 <html lang="it|en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--#include file="_meta.html"-->
+  <title>...</title>
   <link rel="alternate" ...>
-  <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <!--#include file="header.html"-->
+  <!--#include file="_header.html"-->
   <main id="main-content">...</main>
-  <!--#include file="footer.html"-->
-  <script src="../assets/app.js"></script>
+  <!--#include file="_footer.html"-->
 </body>
 </html>
 ```
 
 ## Critical Pitfall
 
-Edit shared navigation and footer in `src/it/header.html`, `src/it/footer.html`, `src/en/header.html` and `src/en/footer.html`; `server.js` expands the SSI include directives into static output. From `changelog/`, use `../header.html` and `../footer.html`.
+`_meta.html` contains shared charset, viewport and stylesheet tags. Keep page-specific titles, descriptions, Open Graph tags and hreflang links in each page. Use `../_meta.html` from `changelog/`.
+
+Edit shared navigation and footer in `src/it/_header.html`, `src/it/_footer.html`, `src/en/_header.html` and `src/en/_footer.html`; `server.js` expands the SSI include directives into static output. From `changelog/`, use `../_header.html` and `../_footer.html`.
 
 ## CSS/JS Rules
 
+- `_footer.html` includes the shared script after `</footer>` using `{{siteRoot}}assets/app.js`; do not repeat it in pages.
 - Use only `src/assets/style.css` for site styles.
 - Use only `src/assets/app.js` for global interactions.
 - Keep javascript vanilla (`'use strict'`, no libraries).
@@ -97,7 +98,7 @@ Edit shared navigation and footer in `src/it/header.html`, `src/it/footer.html`,
 - `src/index.html`
 - `src/assets/style.css`
 - `src/assets/app.js`
-- `src/it/header.html`
-- `src/it/footer.html`
+- `src/it/_header.html`
+- `src/it/_footer.html`
 - `src/it/index.html`
 - `src/en/index.html`

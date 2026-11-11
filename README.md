@@ -18,7 +18,9 @@ Run `npm run build` to generate the published site in `public/`.
 ## Where to make changes
 
 - **Text and pages:** edit the HTML files in `src/it/` and `src/en/`. Check both versions: filenames may differ, for example `it/moduli.html` and `en/modules.html`.
-- **Shared header and footer:** edit `header.html` and `footer.html` in each language folder; pages include them with `<!--#include file="header.html"-->` and `<!--#include file="footer.html"-->` (use `../` from `changelog/`).
+- **Shared header and footer:** edit `_header.html` and `_footer.html` in each language folder; pages include them with `<!--#include file="_header.html"-->` and `<!--#include file="_footer.html"-->` (use `../` from `changelog/`).
+- `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
+- **Shared head tags:** `_meta.html` contains charset, viewport and stylesheet. Include it with `<!--#include file="_meta.html"-->` (use `../` from `changelog/`); keep titles, descriptions, Open Graph tags and hreflang links in each page.
 - **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
 - **Images:** add them to `src/assets/img/` and use paths relative to the page.
 

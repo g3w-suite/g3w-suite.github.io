@@ -20,7 +20,7 @@ Costruisci due elenchi e calcola:
 
 ### 2. Verifica language-switcher in ogni pagina
 
-Per ogni pagina sorgente in entrambe le cartelle, leggi gli URL alternates e i link generati dal componente `src/{lang}/header.html`, verificando che:
+Per ogni pagina sorgente in entrambe le cartelle, leggi gli URL alternates e i link generati dal componente `src/{lang}/_header.html`, verificando che:
 - Il link alla lingua corrente abbia `aria-current="true"`
 - Il link all'altra lingua punti a un file che **esiste effettivamente** nel filesystem
 
