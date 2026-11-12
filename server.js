@@ -165,6 +165,7 @@ function buildDocumentation(outputDir) {
     fs.rmSync(path.join(targetDir, entry.name), { recursive: true, force: true });
   }
 
+  const searchIndex = [];
   for (const file of documentationFiles(docsDir)) {
     const relative = path.relative(docsDir, file);
     const source = fs.readFileSync(file, 'utf8');
@@ -176,6 +177,21 @@ function buildDocumentation(outputDir) {
     const pagePath = relative === 'index.md'
       ? '/docs/'
       : `/docs/${relative.replace(/\.md$/, '').replace(/\\/g, '/')}/`;
+    const text = content
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/\s+/g, ' ')
+      .trim();
+    searchIndex.push({ title, url: `${basePath}${pagePath}`, text });
+    const componentHtml = `<link rel="alternate" hreflang="it" href="/it/"><link rel="alternate" hreflang="en" href="${pagePath}">`;
+    const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
+    const siteHeader = renderComponent('header', 'en', componentPage, componentHtml);
+    const siteFooter = renderComponent('footer', 'en', componentPage, componentHtml);
     const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -185,7 +201,6 @@ function buildDocumentation(outputDir) {
   <title>${title} - G3W-SUITE Documentation</title>
   <link rel="stylesheet" href="/style.css">
   <style>
-    .docs-header{background:#2f5060;color:#fff;padding:1rem 2rem}.docs-header a{color:inherit;text-decoration:none}
     .docs-layout{display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:2rem;max-width:1440px;margin:2rem auto;padding:0 1.5rem}
     .docs-nav{border-right:1px solid #d8e0e4;padding-right:1rem}.docs-nav section{margin-bottom:1.5rem}.docs-nav h2{font-size:1rem;margin:0 0 .4rem}
     .docs-nav a{display:block;padding:.2rem 0}.docs-nav a[aria-current=page]{font-weight:700}
@@ -195,11 +210,19 @@ function buildDocumentation(outputDir) {
   </style>
 </head>
 <body>
-  <header class="docs-header"><a href="/docs/"><strong>G3W-SUITE documentation</strong></a><span> · </span><a href="/">Main site</a></header>
+  ${siteHeader}
   <div class="docs-layout">
-    <nav class="docs-nav" aria-label="Documentation navigation">${documentationNavigation(index, pagePath, docsDir)}</nav>
+    <nav class="docs-nav" aria-label="Documentation navigation">
+      <form class="docs-search" role="search" data-index-url="${basePath}/docs/search-index.json">
+        <label for="docs-search-input" class="sr-only">Search documentation</label>
+        <input id="docs-search-input" type="search" name="q" placeholder="Search docs" autocomplete="off" aria-controls="docs-search-results">
+      </form>
+      <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
+      ${documentationNavigation(index, pagePath, docsDir)}
+    </nav>
     <main id="main-content" class="docs-content">${content}</main>
   </div>
+  ${siteFooter}
 </body>
 </html>`;
     const target = relative === 'index.md'
@@ -208,6 +231,7 @@ function buildDocumentation(outputDir) {
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, publishedHtml(html));
   }
+  fs.writeFileSync(path.join(targetDir, 'search-index.json'), JSON.stringify(searchIndex));
 }
 
 function alternateUrl(html, lang) {

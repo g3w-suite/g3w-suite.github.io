@@ -110,3 +110,81 @@ if (filterBtns.length && demoCards.length) {
     });
   });
 }
+
+// ── Ricerca documentazione ──────────────────────────────────────────────────
+const docsSearch = document.querySelector('.docs-search');
+
+if (docsSearch) {
+  const searchInput = docsSearch.querySelector('input[type="search"]');
+  const searchResults = document.querySelector('#docs-search-results');
+  let searchIndex;
+
+  const normalize = text => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const clearResults = () => {
+    searchResults.hidden = true;
+    searchResults.replaceChildren();
+  };
+
+  docsSearch.addEventListener('submit', event => event.preventDefault());
+  searchInput.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      searchInput.value = '';
+      clearResults();
+    }
+  });
+  searchInput.addEventListener('input', async () => {
+    const query = normalize(searchInput.value.trim());
+    if (!query) {
+      clearResults();
+      return;
+    }
+
+    searchResults.hidden = false;
+    searchResults.textContent = 'Searching...';
+    try {
+      if (!searchIndex) {
+        const response = await fetch(docsSearch.dataset.indexUrl);
+        if (!response.ok) throw new Error(`Search index request failed: ${response.status}`);
+        searchIndex = await response.json();
+      }
+      if (query !== normalize(searchInput.value.trim())) return;
+
+      const terms = query.split(/\s+/);
+      const matches = searchIndex.map(page => {
+        const title = normalize(page.title);
+        const text = normalize(page.text);
+        if (!terms.every(term => title.includes(term) || text.includes(term))) return null;
+        const score = terms.reduce((total, term) => total + (title.includes(term) ? 2 : 0), 0);
+        return { page, text, score };
+      }).filter(Boolean).sort((a, b) => b.score - a.score);
+
+      if (!matches.length) {
+        searchResults.textContent = 'No results found.';
+        return;
+      }
+
+      const list = document.createElement('ul');
+      matches.slice(0, 8).forEach(({ page, text }) => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = page.url;
+        link.textContent = page.title;
+        const excerpt = document.createElement('p');
+        const position = terms.map(term => text.indexOf(term)).filter(index => index >= 0).sort((a, b) => a - b)[0] || 0;
+        const start = Math.max(0, position - 50);
+        excerpt.textContent = `${start ? '...' : ''}${page.text.slice(start, start + 140)}${start + 140 < page.text.length ? '...' : ''}`;
+        item.append(link, excerpt);
+        list.append(item);
+      });
+
+      const summary = document.createElement('span');
+      summary.className = 'sr-only';
+      summary.textContent = `${matches.length} search results`;
+      searchResults.replaceChildren(summary, list);
+    } catch (error) {
+      searchIndex = null;
+      console.error('Documentation search failed:', error);
+      searchResults.textContent = 'Search is unavailable. Please try again.';
+    }
+  });
+}

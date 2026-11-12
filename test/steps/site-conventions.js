@@ -393,6 +393,10 @@ Then('the build supports a project base path without broken internal links', fun
     const demo = readPage(path.join(staticDir, 'en', 'demo', 'index.html')).$;
     assert.equal(demo('link[rel="stylesheet"]').attr('href'), `${prefix}/style.css`);
     assert.ok(demo('a[href="https://v311.g3wsuite.it/"]').length, 'external URLs must remain unchanged');
+    const docs = readPage(path.join(staticDir, 'docs', 'index.html')).$;
+    assert.equal(docs('form.docs-search').attr('data-index-url'), `${prefix}/docs/search-index.json`);
+    const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'docs', 'search-index.json'), 'utf8'));
+    assert.ok(searchIndex.every(page => page.url.startsWith(`${prefix}/docs/`)), 'search results must include the project base path');
   } finally {
     build('');
   }
@@ -411,6 +415,16 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.ok(index('main h1').text().includes('G3W-SUITE 3.11'), 'documentation landing page is missing');
   assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
   assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
+  assert.equal(index('body > header.site-header').length, 1, 'documentation must use the shared site header');
+  assert.equal(index('body > footer.site-footer').length, 1, 'documentation must use the shared site footer');
+  assert.equal(index('header.site-header .nav-list a[href="/docs/"]').length, 1, 'shared header must link to documentation');
+  assert.equal(index('footer.site-footer a[href="/docs/"]').length, 1, 'shared footer must link to documentation');
+  assert.equal(index('form.docs-search[role="search"] input[type="search"]').length, 1, 'documentation must include a search form');
+  assert.equal(index('form.docs-search').attr('data-index-url'), '/docs/search-index.json');
+  assert.equal(index('body > script[src="/app.js"]').length, 1, 'documentation must load the shared site script');
+  const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'docs', 'search-index.json'), 'utf8'));
+  assert.equal(searchIndex.length, sources.length, 'every documentation page must appear in the search index');
+  assert.ok(searchIndex.every(page => page.title && page.text && page.url.startsWith('/docs/')), 'search index entries must include title, content and local URL');
 
   const imagesDir = path.join(staticDir, 'img');
   const images = filesIn(imagesDir);

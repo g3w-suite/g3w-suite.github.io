@@ -775,6 +775,24 @@ section + .section--dark { border-top: none; }
 .docs-table tr:last-child td { border-bottom: 0; }
 .docs-table tr:nth-child(even) td { background: #fafafa; }
 .docs-table td.eol { color: var(--color-muted); }
+.docs-search { margin-bottom: 1rem; }
+.docs-search input {
+  width: 100%;
+  padding: .5rem .65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+.docs-search-results {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+  font-size: .9rem;
+}
+.docs-nav .docs-search-results li { margin: 0 0 .75rem; }
+.docs-nav .docs-search-results a { padding: .1rem 0; color: var(--color-primary-d); font-weight: 600; }
+.docs-search-results p { margin: .15rem 0 0; font-size: .82rem; line-height: 1.4; }
 
 /* ── 16. Changelog article ───────────────────────────────────── */
 .changelog { max-width: 860px; margin: 0 auto; }
