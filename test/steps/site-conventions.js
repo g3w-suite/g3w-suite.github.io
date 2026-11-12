@@ -177,10 +177,11 @@ Then('both languages are generated from shared page templates', function () {
   }
   for (const file of htmlFiles(sourceDir).filter(file => !path.basename(file).startsWith('_') && path.basename(file) !== '_redirect.html')) {
     const source = fs.readFileSync(file, 'utf8');
-    assert.match(source, /<!--#include file="(?:\.\.\/)?_header\.html"-->/, `${file}: missing shared header include`);
-    const footerInclude = /<!--#include file="(?:\.\.\/)?_footer\.html"-->\s*$/.exec(source);
-    assert.ok(footerInclude, `${file}: shared footer include must be last`);
-    assert.ok(source.lastIndexOf('</script>') < footerInclude.index, `${file}: footer include must follow page scripts`);
+    assert.doesNotMatch(
+      source,
+      /<!--#include file="(?:\.\.\/)?_(?:header|footer)\.html"-->/,
+      `${file}: shared shell components must be injected by the build`
+    );
     assert.doesNotMatch(source, /<!doctype html>|<\/?html\b|<\/?head\b|<\/?body\b/i, `${file}: document shell must come from shared components`);
   }
   assert.ok(fs.existsSync(path.join(staticDir, 'it', 'modules', 'index.html')), 'Italian modules page must use /it/modules/');
@@ -213,8 +214,8 @@ Then('page-local translations are valid and used by the Italian build', function
       const trailingHtml = sourceHtml.slice(last.index + last[0].length);
       assert.match(
         trailingHtml,
-        /^\s*(?:<!--#include file="(?:\.\.\/)?_footer\.html"-->\s*)?(?:<\/body>\s*)?(?:<\/html>\s*)?$/i,
-        `${file}: translation scripts must precede the footer include or document closing tags`
+        /^\s*(?:<\/body>\s*)?(?:<\/html>\s*)?$/i,
+        `${file}: translation scripts must be at the end of the source file`
       );
     }
     const localUsage = new Map(languages.map(lang => [lang, new Set()]));

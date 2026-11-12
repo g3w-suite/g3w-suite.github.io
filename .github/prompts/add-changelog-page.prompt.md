@@ -14,9 +14,9 @@ Crea una nuova pagina changelog per G3W-Suite versione **$ARGUMENTS**.
 2. **Crea `src/changelog/v3.X.html`** (sostituisci X con la versione fornita):
    - Usa la pagina inglese come testo di base; aggiungi le traduzioni italiane desiderate in un blocco JSON `data-i18n` nella pagina, usando la stringa inglese esatta come chiave e marca i testi con `{{t '...'}}`
    - Definisci il titolo in un blocco `data-i18n-meta` in fondo alla pagina; aggiungi la traduzione italiana corrispondente al blocco `data-i18n`
-   - La pagina è un frammento: inizia con `<!--#include file="../_header.html"-->` e non definire `doctype`, `html`, `head` o `body`
+   - La pagina è un frammento: non definire `doctype`, `html`, `head` o `body`; il build inietta automaticamente header e footer condivisi
    - Non inserire tag `rel="alternate"`: il build genera automaticamente gli URL hreflang dal percorso della pagina
-   - Inserisci `<!--#include file="../_footer.html"-->` dopo i blocchi JSON e come ultima riga; non copiare il markup dei componenti
+   - Non inserire include per `src/_header.html` o `src/_footer.html` e non copiare il markup dei componenti
    - Usa `{{#it}}...{{/it}}` o `{{#en}}...{{/en}}` solo per differenze di contenuto o markup non gestibili con le traduzioni
    - Body con segnaposto `<!-- TODO: insert changelog 3.X content -->`
 

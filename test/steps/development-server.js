@@ -69,7 +69,7 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     }
     assert.ok(fs.readFileSync(output, 'utf8').includes('<p>rebuilt</p>'), 'development server must rebuild changed source files');
 
-    fs.writeFileSync(failingPage, '<html lang="en"></html>');
+    fs.writeFileSync(failingPage, '<script type="application/json" data-i18n-meta>{}</script>');
     const failureDeadline = Date.now() + 15000;
     while (Date.now() < failureDeadline && !this.serverErrors.includes('Build failed:')) {
       await new Promise(resolve => setTimeout(resolve, 50));

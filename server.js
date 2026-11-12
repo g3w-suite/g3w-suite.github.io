@@ -398,19 +398,13 @@ function build(outputDir) {
           lang,
           pageTemplate.translations
         );
-        const counts = { header: 0, footer: 0 };
-        const output = renderYoutubeVideos(localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
-          const name = path.basename(include, '.html').replace(/^_/, '');
-          const componentPath = path.normalize(path.join(path.dirname(page), include));
-          if (!['header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
-            throw new Error(`Invalid component include in ${file}: ${include}`);
-          }
-          counts[name]++;
-          return renderComponent(name, lang, page, pageUrls, name === 'header' ? pageHead : '');
-        }));
-        if (counts.header !== 1 || counts.footer !== 1) {
-          throw new Error(`${file} must contain one header and one footer include`);
-        }
+        const content = localized.replace(
+          /<!--#include file="(?:\.\.\/)?_(?:header|footer)\.html"-->/g,
+          ''
+        );
+        const header = renderComponent('header', lang, page, pageUrls, pageHead);
+        const footer = renderComponent('footer', lang, page, pageUrls);
+        const output = renderYoutubeVideos(`${header}\n${content}\n${footer}`);
         const target = path.join(outputDir, lang, outputPage(page));
         fs.mkdirSync(path.dirname(target), { recursive: true });
         fs.writeFileSync(target, publishedHtml(output));

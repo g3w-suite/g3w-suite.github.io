@@ -44,7 +44,7 @@ static/
 
 ## Key Conventions
 
-- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`; SSI paths remain relative to source files.
+- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`.
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - Keep `<main id="main-content">` on all pages.
@@ -57,20 +57,18 @@ static/
 
 ## HTML Pattern
 
-Page files are fragments: the shared header opens the document and the footer closes it. Keep the footer include last, after page-local JSON scripts.
+Page files are fragments: the build automatically injects the shared header before page content and the footer after it. Do not write header/footer include directives in page templates.
 
 ```html
-<!--#include file="_header.html"-->
 <main id="main-content">...</main>
 <!-- data-i18n and data-i18n-meta scripts go here -->
-<!--#include file="_footer.html"-->
 ```
 
 ## Critical Pitfall
 
-`_header.html` provides the doctype, language, head and opening body, including common charset, viewport and stylesheet tags; it receives page metadata and generated hreflang links from the build. `_footer.html` closes the document. Declare titles, descriptions and page-specific Open Graph metadata in `data-i18n-meta`.
+`_header.html` provides the doctype, language, head and opening body, including common charset, viewport and stylesheet tags; the build injects it and passes page metadata and generated hreflang links. `_footer.html` closes the document and is injected after page content and local JSON scripts. Declare titles, descriptions and page-specific Open Graph metadata in `data-i18n-meta`.
 
-Edit shared navigation, common head tags and footer in `src/_header.html` and `src/_footer.html`; `server.js` expands the SSI include directives into static output. From `src/changelog/`, use `../_header.html` and `../_footer.html`.
+Edit shared navigation and common head tags in `src/_header.html`, and the footer in `src/_footer.html`. The build inserts both components automatically for every page template.
 
 ## CSS/JS Rules
 
