@@ -14,6 +14,14 @@ function htmlFiles(dir) {
   return filesIn(dir).filter(file => file.endsWith('.html'));
 }
 
+function pageSourceFiles(dir) {
+  const changelogDir = path.join(dir, 'changelog');
+  return [
+    ...htmlFiles(dir).filter(file => !path.basename(file).startsWith('_')),
+    ...filesIn(changelogDir).filter(file => file.endsWith('.md')),
+  ];
+}
+
 function pageBodyClass(route) {
   const slug = route.split(path.sep).join('/')
     .replace(/(^|\/)index\.html$/, '')
@@ -126,7 +134,7 @@ Then('source text is valid UTF-8 without corrupted character sequences', functio
   const files = [
     ...filesIn(path.resolve('src')),
     ...['app.js', 'style.css', 'icons.svg'].map(file => path.join(staticDir, file)),
-  ].filter(file => /\.(?:html|css|js|svg)$/.test(file));
+  ].filter(file => /\.(?:html|md|css|js|svg)$/.test(file));
   for (const file of files) {
     let text;
     const relative = path.relative(process.cwd(), file);
@@ -137,7 +145,7 @@ Then('source text is valid UTF-8 without corrupted character sequences', functio
 });
 
 Then('translated text is rendered for each language', function () {
-  const sourceFiles = htmlFiles(path.resolve('src'));
+  const sourceFiles = pageSourceFiles(path.resolve('src'));
   const sourceHtml = sourceFiles.map(file => fs.readFileSync(file, 'utf8'));
   const outputHtml = htmlFiles(staticDir).map(file => fs.readFileSync(file, 'utf8'));
   const pages = {
@@ -187,7 +195,10 @@ Then('both languages are generated from shared page templates', function () {
     assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
     assert.ok(fs.existsSync(path.join(staticDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
   }
-  for (const file of htmlFiles(sourceDir).filter(file => !path.basename(file).startsWith('_') && path.basename(file) !== '_redirect.html')) {
+  const changelogFiles = filesIn(path.join(sourceDir, 'changelog'));
+  assert.equal(changelogFiles.length, 13, 'expected all changelog sources to be present');
+  assert.ok(changelogFiles.every(file => file.endsWith('.md')), 'changelog sources must be Markdown');
+  for (const file of pageSourceFiles(sourceDir)) {
     const source = fs.readFileSync(file, 'utf8');
     assert.doesNotMatch(
       source,
@@ -203,7 +214,7 @@ Then('both languages are generated from shared page templates', function () {
 
 Then('page-local translations are valid and used by the Italian build', function () {
   const sourceDir = path.resolve('src');
-  const sourceFiles = htmlFiles(sourceDir);
+  const sourceFiles = pageSourceFiles(sourceDir);
   const unmarked = [];
   for (const file of sourceFiles) {
     const sourceHtml = fs.readFileSync(file, 'utf8');

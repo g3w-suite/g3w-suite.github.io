@@ -1,14 +1,8 @@
-<main id="main-content">
-  <div class="page-header">
-    <div class="container">
-      <h1>{{t 'G3W-Suite Changelog'}}</h1>
-      <p class="section-intro">{{t 'Choose a version to read release details and updates.'}}</p>
-    </div>
-  </div>
+# {{t 'G3W-Suite Changelog'}}
 
-  <section class="section">
-    <div class="container content-page">
-      <div class="feature-list">
+{{t 'Choose a version to read release details and updates.'}}
+
+<div class="feature-list">
         <div class="feature-item"><a class="btn btn--outline" href="/{{t 'en'}}/changelog/v3.11/">{{t 'Version 3.11'}}</a></div>
         <div class="feature-item"><a class="btn btn--outline" href="/{{t 'en'}}/changelog/v3.10/">{{t 'Version 3.10'}}</a></div>
         <div class="feature-item"><a class="btn btn--outline" href="/{{t 'en'}}/changelog/v3.9/">{{t 'Version 3.9'}}</a></div>
@@ -22,9 +16,6 @@
         <div class="feature-item"><a class="btn btn--outline" href="/{{t 'en'}}/changelog/v3.1/">{{t 'Version 3.1'}}</a></div>
         <div class="feature-item"><a class="btn btn--outline" href="/{{t 'en'}}/changelog/v3.0/">{{t 'Version 3.0'}}</a></div>
       </div>
-    </div>
-  </section>
-</main>
 
 <script type="application/json" data-i18n>
   {

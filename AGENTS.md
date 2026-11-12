@@ -31,7 +31,7 @@ src/
 |- _redirect.html       # Root redirect emitted as static/index.html
 |- _header.html          # Shared page components
 |- _footer.html
-|- changelog/            # Shared changelog pages
+|- changelog/            # Markdown release notes compiled by JavaScript
 |- docs/                 # Markdown source for the current English manual
 static/
 |- app.js, style.css, icons.svg
@@ -52,6 +52,7 @@ static/
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
 - Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
 - Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
+- Changelog pages in `src/changelog/` are Markdown. Their first H1 and following paragraph become the page heading and intro; use raw HTML only for custom layout and media.
 - For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.

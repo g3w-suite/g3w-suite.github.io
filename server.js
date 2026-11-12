@@ -145,6 +145,21 @@ function renderYoutubeVideos(html) {
   return output.replace(/<template id="youtube-consent-dialog">[\s\S]*?<\/template>/, '');
 }
 
+function renderChangelogMarkdown(markdown) {
+  const tokens = marked.lexer(markdown);
+  const headerTokens = [];
+  if (tokens[0]?.type === 'heading' && tokens[0].depth === 1) {
+    headerTokens.push(tokens.shift());
+    if (tokens[0]?.type === 'paragraph') headerTokens.push(tokens.shift());
+  }
+  const header = marked.parser(headerTokens).replace('<p>', '<p class="section-intro">');
+  const pageHeader = headerTokens.length
+    ? `<div class="page-header"><div class="container">${header}</div></div>`
+    : '';
+  return `<main id="main-content">${pageHeader}<section class="section"><div class="container content-page"><div class="changelog">${marked.parser(tokens)}</div></div></section></main>`
+    .replace(/(<h[1-6]\b[^>]*?)\s+id="[^"]+"/g, '$1');
+}
+
 const mimeTypes = {
   '.html': 'text/html',
   '.css': 'text/css',
@@ -163,6 +178,14 @@ function htmlFiles(dir) {
     const file = path.join(dir, entry.name);
     if (entry.isDirectory()) return htmlFiles(file);
     return entry.isFile() && file.endsWith('.html') && !entry.name.startsWith('_') ? [file] : [];
+  });
+}
+
+function markdownFiles(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) return markdownFiles(file);
+    return entry.isFile() && file.endsWith('.md') ? [file] : [];
   });
 }
 
@@ -319,7 +342,8 @@ function buildDocumentation(outputDir) {
 }
 
 function outputPage(page) {
-  return path.basename(page) === 'index.html' ? page : page.replace(/\.html$/, `${path.sep}index.html`);
+  const htmlPage = page.replace(/\.md$/, '.html');
+  return path.basename(htmlPage) === 'index.html' ? htmlPage : htmlPage.replace(/\.html$/, `${path.sep}index.html`);
 }
 
 function languagePageUrl(page, lang) {
@@ -376,11 +400,15 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
 }
 
 function build(outputDir) {
-  const pages = htmlFiles(sourceDir).map(file => ({
+  const pageFiles = [
+    ...htmlFiles(sourceDir),
+    ...markdownFiles(path.join(sourceDir, 'changelog')),
+  ];
+  const pages = pageFiles.map(file => ({
     file,
     page: path.relative(sourceDir, file),
   }));
-  if (!pages.length) throw new Error('No source HTML pages found in src');
+  if (!pages.length) throw new Error('No source pages found in src');
 
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8')));
@@ -409,9 +437,12 @@ function build(outputDir) {
           /<!--#include file="(?:\.\.\/)?_(?:header|footer)\.html"-->/g,
           ''
         );
+        const pageContent = path.extname(file) === '.md'
+          ? renderChangelogMarkdown(content)
+          : content;
         const header = renderComponent('header', lang, page, pageUrls, pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls);
-        const output = renderYoutubeVideos(`${header}\n${content}\n${footer}`);
+        const output = renderYoutubeVideos(`${header}\n${pageContent}\n${footer}`);
         const target = path.join(outputDir, lang, outputPage(page));
         fs.mkdirSync(path.dirname(target), { recursive: true });
         fs.writeFileSync(target, publishedHtml(output));
