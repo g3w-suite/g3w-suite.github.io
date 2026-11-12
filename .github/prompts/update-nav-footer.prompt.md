@@ -13,12 +13,12 @@ Applica la seguente modifica alle componenti condivise del sito G3W-Suite:
 
 ### 1. Individua le componenti
 
-Leggi `src/_header.html` e `src/_footer.html`. Le pagine generate in `public/` non sono sorgenti.
+Leggi `src/_header.html` e `src/_footer.html`. Le pagine generate in `static/` non sono sorgenti.
 
 ### 2. Pianifica la modifica
 
 - Modifica solo la componente condivisa necessaria
-- Aggiungi a `src/assets/i18n/it.json` le traduzioni usando la stringa inglese esatta come chiave e marca i testi con `{{t '...'}}`; usa blocchi di lingua soltanto per differenze strutturali o attributi localizzati
+- Aggiungi a `src/i18n/it.json` le traduzioni usando la stringa inglese esatta come chiave e marca i testi con `{{t '...'}}`; usa blocchi di lingua soltanto per differenze strutturali o attributi localizzati
 - Se la modifica riguarda solo il menu di navigazione, il footer probabilmente non va toccato, e viceversa
 
 ### 3. Verifica

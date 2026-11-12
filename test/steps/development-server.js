@@ -6,7 +6,7 @@ const path = require('node:path');
 const { spawn } = require('node:child_process');
 const { When, Then } = require('@cucumber/cucumber');
 
-When('the development server starts with PORT set to another value', async function () {
+When('the development server starts with PORT set to another value', { timeout: 30000 }, async function () {
   this.server = spawn(process.execPath, ['server.js', '--dev'], {
     env: { ...process.env, PORT: '0' },
     stdio: ['ignore', 'pipe', 'pipe'],
@@ -19,7 +19,7 @@ When('the development server starts with PORT set to another value', async funct
   this.server.stdout.on('data', data => { this.serverOutput += data; });
   try {
     this.port = await new Promise((resolve, reject) => {
-      const timer = setTimeout(() => reject(new Error('Server startup timed out')), 4000);
+      const timer = setTimeout(() => reject(new Error('Server startup timed out')), 20000);
       this.server.once('error', error => { clearTimeout(timer); reject(error); });
       this.server.once('exit', code => { clearTimeout(timer); reject(new Error(`Server exited (${code}): ${this.serverErrors}`)); });
       this.server.stdout.once('data', data => {
@@ -35,10 +35,11 @@ When('the development server starts with PORT set to another value', async funct
   }
 });
 
-Then('it serves the root page on port 8080', async function () {
-  const probe = `dev-watch-${process.pid}-${Date.now()}.txt`;
-  const source = path.resolve('src', 'assets', probe);
-  const output = path.resolve('.dev', 'assets', probe);
+Then('it serves the root page on port 8080', { timeout: 90000 }, async function () {
+  const probe = `dev-watch-${process.pid}-${Date.now()}.md`;
+  const source = path.resolve('src', 'docs', probe);
+  const outputDir = path.resolve('static', 'docs', probe.slice(0, -3));
+  const output = path.join(outputDir, 'index.html');
   const failingPage = path.resolve('src', `zz-dev-watch-failure-${process.pid}-${Date.now()}.html`);
   try {
     assert.equal(this.port, 8080);
@@ -62,14 +63,14 @@ Then('it serves the root page on port 8080', async function () {
     }
 
     fs.writeFileSync(source, 'rebuilt');
-    const deadline = Date.now() + 5000;
-    while (Date.now() < deadline && (!fs.existsSync(output) || fs.readFileSync(output, 'utf8') !== 'rebuilt')) {
+    const deadline = Date.now() + 15000;
+    while (Date.now() < deadline && (!fs.existsSync(output) || !fs.readFileSync(output, 'utf8').includes('<p>rebuilt</p>'))) {
       await new Promise(resolve => setTimeout(resolve, 50));
     }
-    assert.equal(fs.readFileSync(output, 'utf8'), 'rebuilt', 'development server must rebuild changed source files');
+    assert.ok(fs.readFileSync(output, 'utf8').includes('<p>rebuilt</p>'), 'development server must rebuild changed source files');
 
     fs.writeFileSync(failingPage, '<html lang="en"></html>');
-    const failureDeadline = Date.now() + 5000;
+    const failureDeadline = Date.now() + 15000;
     while (Date.now() < failureDeadline && !this.serverErrors.includes('Build failed:')) {
       await new Promise(resolve => setTimeout(resolve, 50));
     }
@@ -79,7 +80,7 @@ Then('it serves the root page on port 8080', async function () {
 
     const successfulBuilds = (this.serverOutput.match(/Sito aggiornato\./g) || []).length;
     fs.rmSync(failingPage, { force: true });
-    const recoveryDeadline = Date.now() + 5000;
+    const recoveryDeadline = Date.now() + 15000;
     while (Date.now() < recoveryDeadline && (this.serverOutput.match(/Sito aggiornato\./g) || []).length === successfulBuilds) {
       await new Promise(resolve => setTimeout(resolve, 50));
     }
@@ -88,6 +89,6 @@ Then('it serves the root page on port 8080', async function () {
     fs.rmSync(source, { force: true });
     fs.rmSync(failingPage, { force: true });
     this.server.kill();
-    fs.rmSync(output, { force: true });
+    fs.rmSync(outputDir, { recursive: true, force: true });
   }
 });

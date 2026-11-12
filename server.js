@@ -3,15 +3,19 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const { marked } = require('marked');
+const { gfmHeadingId } = require('marked-gfm-heading-id');
+
+marked.use(gfmHeadingId());
 
 const projectRoot = __dirname;
-const publicDir = path.join(projectRoot, 'public');
+const staticDir = path.join(projectRoot, 'static');
 const sourceDir = path.join(projectRoot, 'src');
 const languages = ['it', 'en'];
-const translations = require(path.join(sourceDir, 'assets', 'i18n', 'it.json'));
+const translations = require(path.join(sourceDir, 'i18n', 'it.json'));
 const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
-const root = devMode ? path.join(projectRoot, '.dev') : publicDir;
+const root = staticDir;
 const port = 8080;
 const basePath = (process.env.SITE_BASE_PATH || '').replace(/\/$/, '');
 if (basePath && !/^\/[a-zA-Z0-9._/-]+$/.test(basePath)) {
@@ -98,6 +102,114 @@ function htmlFiles(dir) {
   });
 }
 
+function documentationFiles(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) return documentationFiles(file);
+    return entry.isFile() && file.endsWith('.md') ? [file] : [];
+  });
+}
+
+function documentationLink(href, file, docsDir) {
+  if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(href)) return href;
+  const suffix = /([?#].*)$/.exec(href)?.[1] || '';
+  const pathname = href.slice(0, href.length - suffix.length);
+  if (!pathname) return href;
+  if (pathname.startsWith('/')) return href;
+
+  const target = path.resolve(path.dirname(file), decodeURIComponent(pathname));
+  const relative = path.relative(docsDir, target);
+  if (relative.startsWith(`..${path.sep}`) || relative === '..') return href;
+
+  const extension = path.extname(relative).toLowerCase();
+  const page = path.join(docsDir, extension ? relative.slice(0, -extension.length) + '.md' : `${relative}.md`);
+  if ((['.md', '.html', '.rst'].includes(extension) || !extension) && fs.existsSync(page)) {
+    const pagePath = path.relative(docsDir, page).replace(/\\/g, '/').replace(/\.md$/, '');
+    const route = pagePath === 'index'
+      ? '/docs/'
+      : `/docs/${pagePath.replace(/\/index$/, '')}/`;
+    return `${route}${suffix}`;
+  }
+
+  return `/docs/${relative.replace(/\\/g, '/')}${suffix}`;
+}
+
+function documentationNavigation(index, currentPage, docsDir) {
+  const groups = [];
+  let group;
+  for (const line of index.split(/\r?\n/)) {
+    const heading = /^##\s+(.+)$/.exec(line);
+    if (heading) {
+      group = { title: heading[1], links: [] };
+      groups.push(group);
+      continue;
+    }
+    const link = /^\s*-\s+\[([^\]]+)\]\(([^)]+)\)/.exec(line);
+    if (group && link) {
+      const href = documentationLink(link[2], path.join(docsDir, 'index.md'), docsDir);
+      group.links.push(`<a href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${link[1]}</a>`);
+    }
+  }
+  return groups.map(({ title, links }) =>
+    `<section><h2>${title}</h2>${links.join('')}</section>`
+  ).join('');
+}
+
+function buildDocumentation(outputDir) {
+  const docsDir = path.join(sourceDir, 'docs');
+  const indexFile = path.join(docsDir, 'index.md');
+  const index = fs.readFileSync(indexFile, 'utf8');
+  const targetDir = path.join(outputDir, 'docs');
+  fs.mkdirSync(targetDir, { recursive: true });
+  for (const entry of fs.readdirSync(targetDir, { withFileTypes: true })) {
+    fs.rmSync(path.join(targetDir, entry.name), { recursive: true, force: true });
+  }
+
+  for (const file of documentationFiles(docsDir)) {
+    const relative = path.relative(docsDir, file);
+    const source = fs.readFileSync(file, 'utf8');
+    const title = /^#\s+(.+)$/m.exec(source)?.[1] || path.basename(file, '.md');
+    let content = marked.parse(source);
+    content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
+      `${name}="${documentationLink(href, file, docsDir)}"`
+    );
+    const pagePath = relative === 'index.md'
+      ? '/docs/'
+      : `/docs/${relative.replace(/\.md$/, '').replace(/\\/g, '/')}/`;
+    const html = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="G3W-SUITE documentation">
+  <title>${title} - G3W-SUITE Documentation</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .docs-header{background:#2f5060;color:#fff;padding:1rem 2rem}.docs-header a{color:inherit;text-decoration:none}
+    .docs-layout{display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:2rem;max-width:1440px;margin:2rem auto;padding:0 1.5rem}
+    .docs-nav{border-right:1px solid #d8e0e4;padding-right:1rem}.docs-nav section{margin-bottom:1.5rem}.docs-nav h2{font-size:1rem;margin:0 0 .4rem}
+    .docs-nav a{display:block;padding:.2rem 0}.docs-nav a[aria-current=page]{font-weight:700}
+    .docs-content{min-width:0;max-width:900px}.docs-content img{max-width:100%;height:auto}.docs-content pre{overflow:auto;padding:1rem;background:#f2f5f6}
+    .docs-content table{display:block;overflow-x:auto;border-collapse:collapse}.docs-content th,.docs-content td{border:1px solid #d8e0e4;padding:.5rem}
+    @media(max-width:760px){.docs-layout{grid-template-columns:1fr}.docs-nav{border-right:0;border-bottom:1px solid #d8e0e4;padding:0 0 1rem}}
+  </style>
+</head>
+<body>
+  <header class="docs-header"><a href="/docs/"><strong>G3W-SUITE documentation</strong></a><span> · </span><a href="/">Main site</a></header>
+  <div class="docs-layout">
+    <nav class="docs-nav" aria-label="Documentation navigation">${documentationNavigation(index, pagePath, docsDir)}</nav>
+    <main id="main-content" class="docs-content">${content}</main>
+  </div>
+</body>
+</html>`;
+    const target = relative === 'index.md'
+      ? path.join(targetDir, 'index.html')
+      : path.join(targetDir, relative.replace(/\.md$/, `${path.sep}index.html`));
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, publishedHtml(html));
+  }
+}
+
 function alternateUrl(html, lang) {
   const tag = html.match(/<link\b[^>]*>/gi)?.find(link =>
     /\brel="alternate"/i.test(link) && new RegExp(`\\bhreflang="${lang}"`, 'i').test(link)
@@ -153,8 +265,6 @@ function build(outputDir) {
   if (!pages.length) throw new Error('No source HTML pages found in src');
 
   fs.mkdirSync(outputDir, { recursive: true });
-  fs.rmSync(path.join(outputDir, 'assets'), { recursive: true, force: true });
-  fs.cpSync(path.join(projectRoot, 'src', 'assets'), path.join(outputDir, 'assets'), { recursive: true });
   fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8')));
   for (const lang of languages) {
     fs.rmSync(path.join(outputDir, lang), { recursive: true, force: true });
@@ -189,6 +299,7 @@ function build(outputDir) {
       }
     }
   }
+  buildDocumentation(outputDir);
 }
 
 function runBuild(dir, exitOnError = true) {
@@ -203,7 +314,7 @@ function runBuild(dir, exitOnError = true) {
   }
 }
 
-if (buildOnly) runBuild(publicDir);
+if (buildOnly) runBuild(staticDir);
 else if (devMode) runBuild(root, false);
 
 if (devMode) {

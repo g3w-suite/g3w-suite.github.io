@@ -11,27 +11,31 @@ npm i
 npm run dev
 ```
 
-Open [http://localhost:8080/](http://localhost:8080/). Development output is generated in `.dev/`; the server watches `src/` and rebuilds when files change, so just reload the browser. Port 8080 must be available and does not normally require elevated privileges on Linux.
+Open [http://localhost:8080/](http://localhost:8080/). The server generates and serves files directly from `static/`, watching `src/` for changes, so just reload the browser. Port 8080 must be available and does not normally require elevated privileges on Linux.
 
-Run `npm run build` to generate the published site in `public/`.
+Run `npm run build` to generate the published site and documentation in `static/`.
+
+## Documentation
+
+The English manual is maintained as Markdown in `src/docs/` and compiled with the site build to `/docs/`. Its images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
 
 Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` and `/en/demo/` (published as `it/demo/index.html` and `en/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. The shared homepage is `src/index.html`; `src/_redirect.html` generates the root redirect. Use these URLs in links and hreflang tags. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 
 ## Where to make changes
 
-- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap every text or attribute value that needs Italian translation in `{{t '...'}}`. The source string must exist in `src/assets/i18n/it.json`, whose keys stay unique and alphabetically sorted; unmarked strings are left unchanged. In URLs, mark only the portion that changes between languages, not the entire URL. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
+- **Text and pages:** edit the shared HTML files directly in `src/`. English text is the default; wrap every text or attribute value that needs Italian translation in `{{t '...'}}`. The source string must exist in `src/i18n/it.json`, whose keys stay unique and alphabetically sorted; unmarked strings are left unchanged. In URLs, mark only the portion that changes between languages, not the entire URL. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
 - **Shared header, footer and head tags:** edit `src/_header.html`, `src/_footer.html` and `src/_meta.html`; pages include them with `<!--#include file="_header.html"-->`, `<!--#include file="_footer.html"-->` and `<!--#include file="_meta.html"-->` (use `../` from `src/changelog/`).
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
-- **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
-- **Images:** add them to `src/assets/img/` and link them with `/assets/img/...`.
+- **Appearance and interactions:** edit `static/style.css` and `static/app.js` (vanilla JavaScript, without libraries).
+- **Images:** add them to the flat `static/img/` directory and link them with `/img/...`.
 
-`src/_redirect.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
+`src/_redirect.html` only redirects to the Italian version. Assets in `static/` are tracked; generated pages are ignored by Git.
 
 ## Add or update a page
 
 1. Start from an existing page directly in `src/` or in `src/changelog/`, keeping its metadata, component markers and `<main id="main-content">`.
-2. Add exact source-string translations to `src/assets/i18n/it.json` and mark translated strings with `{{t '...'}}`; use language blocks only for genuine differences. Check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/assets/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically. SSI file paths remain relative to the source file.
+2. Add exact source-string translations to `src/i18n/it.json` and mark translated strings with `{{t '...'}}`; use language blocks only for genuine differences. Check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
+3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically. SSI file paths remain relative to the source file.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 
@@ -45,7 +49,7 @@ The Gherkin scenarios in `test/features/` check page structure, assets, language
 
 Source HTML, CSS, JavaScript and SVG must be saved as UTF-8. Tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities.
 
-A separate workflow deploys `public/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
+A separate workflow deploys `static/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
 
 ## Connect a custom domain
 

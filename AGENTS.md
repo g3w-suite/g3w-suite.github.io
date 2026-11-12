@@ -4,10 +4,10 @@
 
 Static multilingual marketing/documentation website for G3W-Suite. `server.js` expands reusable components into static HTML; there is no frontend framework.
 
-## Verified Current State (2026-05-18)
+## Verified Current State
 
-- `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`, rebuilding it when files in `src/` change.
-- Shared page templates and components are directly in `src/`; Italian text is in the flat JSON catalog `src/assets/i18n/it.json`, keyed by the exact source string. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
+- `npm run build` generates the publishable site and Markdown documentation in `static/`; `npm run dev` serves the same folder and rebuilds when files in `src/` change.
+- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`, with the Italian translation catalog at `src/i18n/it.json`. Site and Markdown images share the flat `static/img/` directory. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
 
 ## Run
 
@@ -15,7 +15,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 npm run dev
 ```
 
-`src/assets/` contains the translation catalog, source styles, scripts, fonts and images; `src/index.html` is the shared homepage and `src/_redirect.html` supplies the root redirect. `public/` is generated output.
+`static/` contains tracked styles, scripts, fonts and images alongside generated pages. `src/index.html` is the shared homepage and `src/_redirect.html` supplies the root redirect.
 
 ## Tests
 
@@ -28,24 +28,31 @@ for pushes and pull requests.
 ```
 src/
 |- index.html           # Shared homepage template, published as it/ and en/
-|- _redirect.html       # Root redirect emitted as public/index.html
-|- assets/              # Translation catalog, styles, scripts, fonts and images
+|- _redirect.html       # Root redirect emitted as static/index.html
 |- _header.html          # Shared page components
 |- _footer.html
 |- _meta.html
 |- changelog/            # Shared changelog pages
-public/                 # Generated publishing output; ignored by Git
+|- docs/                 # Markdown source for the current English manual
+|- i18n/
+   |- it.json
+static/
+|- app.js, style.css, icons.svg
+|- fonts/                # Tracked fonts
+|- img/                  # Tracked site and manual images; no subfolders
+|- it/, en/, docs/        # Generated publishing output; ignored by Git
 ```
 
-`src/index.html` is the shared homepage template. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates static pages for publishing or local development.
+`src/index.html` is the shared homepage template. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates static pages for publishing or local development, including the Markdown manual under `/docs/`.
 
 ## Key Conventions
 
-- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/assets/...`) instead of `../` or `./`; SSI paths remain relative to source files.
+- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`; SSI paths remain relative to source files.
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
+- Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
-- Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. The source string must exist in `src/assets/i18n/it.json`, whose keys stay unique and alphabetically sorted.
+- Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. The source string must exist in `src/i18n/it.json`, whose keys stay unique and alphabetically sorted.
 - For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
@@ -78,9 +85,9 @@ Edit shared navigation, footer and metadata in `src/_header.html`, `src/_footer.
 
 ## CSS/JS Rules
 
-- `_footer.html` includes the shared script after `</footer>` using `{{siteRoot}}assets/app.js`; do not repeat it in pages.
-- Use only `src/assets/style.css` for site styles.
-- Use only `src/assets/app.js` for global interactions.
+- `_footer.html` includes the shared script after `</footer>` using `{{siteRoot}}app.js`; do not repeat it in pages.
+- Use only `static/style.css` for site styles.
+- Use only `static/app.js` for global interactions.
 - Keep javascript vanilla (`'use strict'`, no libraries).
 - Existing interactions to preserve: mobile menu toggle, dropdown accessibility, demo-card filtering.
 - Prefer class-based styling over inline `style="..."`.
@@ -102,9 +109,9 @@ Edit shared navigation, footer and metadata in `src/_header.html`, `src/_footer.
 - `package.json`
 - `server.js`
 - `src/index.html`
-- `src/assets/style.css`
-- `src/assets/app.js`
+- `static/style.css`
+- `static/app.js`
 - `src/_header.html`
 - `src/_footer.html`
 - `src/_redirect.html`
-- `src/assets/i18n/it.json`
+- `src/i18n/it.json`

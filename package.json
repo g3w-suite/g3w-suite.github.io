@@ -7,7 +7,10 @@
     "dev": "node server.js --dev",
     "test": "npm run build && cucumber-js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "marked": "^15.0.12",
+    "marked-gfm-heading-id": "^4.1.4"
+  },
   "devDependencies": {
     "@cucumber/cucumber": "13.3.0",
     "cheerio": "1.2.0"

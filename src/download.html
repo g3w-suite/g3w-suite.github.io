@@ -57,7 +57,7 @@
               <td>4.2</td>
               <td>Bug fixing</td>
               <td>{{t '09 April 2026'}}</td>
-              <td>{{#en}}-{{/en}}{{#it}}<a href="https://g3w-suite.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">ENG</a>{{/it}}</td>
+              <td>{{#en}}-{{/en}}{{#it}}<a href="/docs/">ENG</a>{{/it}}</td>
               <td><a href="/{{t 'en'}}/changelog/v3.11/">3.11</a></td>
             </tr>
             <tr>
@@ -68,7 +68,7 @@
               <td>4.2</td>
               <td>Bug fixing</td>
               <td>{{t '30 July 2025'}}</td>
-              <td>{{#en}}<a href="https://g3w-suite.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">ENG</a>{{/en}}{{#it}}<a href="https://g3w-suite.readthedocs.io/en/v3.10.x/index.html" target="_blank" rel="noopener">ENG</a>{{/it}}</td>
+              <td>{{#en}}<a href="/docs/">ENG</a>{{/en}}{{#it}}<a href="https://g3w-suite.readthedocs.io/en/v3.10.x/index.html" target="_blank" rel="noopener">ENG</a>{{/it}}</td>
               <td><a href="/{{t 'en'}}/changelog/v3.10/">3.10</a></td>
             </tr>
             <tr>
@@ -235,8 +235,8 @@
         </li>
       </ul>
       <div class="features-gallery">
-        <img src="/assets/img/qgis_api.jpeg" alt="QGIS API" loading="lazy">
-        <img src="/assets/img/Schermata-del-2024-04-01-19-21-05.png" alt="{{t 'G3W-Suite interface'}}" loading="lazy">
+        <img src="/img/site-qgis-api.jpeg" alt="QGIS API" loading="lazy">
+        <img src="/img/site-g3w-suite-interface-screenshot.png" alt="{{t 'G3W-Suite interface'}}" loading="lazy">
       </div>
     </div>
   </section>
@@ -377,8 +377,8 @@
           <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
             <div>
               <p>{{t 'Create your QGIS cartographic project defining all the aspects of interest: map content, symbology and labelling, legend structure, attribute query form, print layouts (free and atlas) and much more.'}}</p>
-              <p>{{t 'Remember to organize your projects and geographic data on your PC as illustrated and described in the'}} <a href="{{#en}}https://g3w-suite.readthedocs.io/en/v3.9.x/datamanagement.html#organization-of-data-and-projects{{/en}}{{#it}}https://g3w-suite.readthedocs.io/en/latest/datamanagement.html#organization-of-data-and-projects{{/it}}" target="_blank" rel="noopener">{{t 'manual'}}</a>.</p>
-              {{#en}}<img src="/assets/img/qgis.jpg" alt="{{t 'QGIS project'}}" style="margin-top:1rem;border-radius:4px;">{{/en}}{{#it}}<img src="/assets/img/qgis.jpg" alt="Progetto QGIS" class="img-rounded mt-3" loading="lazy">{{/it}}
+              <p>{{t 'Remember to organize your projects and geographic data on your PC as illustrated and described in the'}} <a href="/docs/datamanagement/#organization-of-data-and-projects">{{t 'manual'}}</a>.</p>
+              {{#en}}<img src="/img/site-qgis.jpg" alt="{{t 'QGIS project'}}" style="margin-top:1rem;border-radius:4px;">{{/en}}{{#it}}<img src="/img/site-qgis.jpg" alt="Progetto QGIS" class="img-rounded mt-3" loading="lazy">{{/it}}
             </div>
             <div>
               <iframe class="step__video" src="https://www.youtube.com/embed/-GV9xUoJKD4" title="G3W-SUITE Quick Start 1: create your QGIS project" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -399,7 +399,7 @@
             </div>
             <div>
               <p>{{t 'If your project is based on local files (Shp, GeoPackage, SpatiaLite, raster) it is necessary that such data is present on the server at the time of publication.'}}</p>
-              <p>{{t 'The'}} <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/datamanagement.html#geographical-data-synchronization-on-the-server" target="_blank" rel="noopener"><b>FileManager</b></a> {{t 'module will allow you to upload such data reconstructing the same organization set up locally.'}}</p>
+              <p>{{t 'The'}} <a href="/docs/datamanagement/#geographical-data-synchronization-on-the-server"><b>FileManager</b></a> {{t 'module will allow you to upload such data reconstructing the same organization set up locally.'}}</p>
               <p>{{t 'If your geographic data is on a PostGis or Oracle Spatial GeoDB, you simply need to allow access from the suite.'}}</p>
             </div>
           </div>
@@ -414,7 +414,7 @@
         <div class="step__body">
           <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
             <div>
-              <p>{{t 'In order to publish a QGIS project you need to'}} <a href="{{#en}}https://g3w-suite.readthedocs.io/en/v3.9.x/g3wsuite_administration.html#add-group{{/en}}{{#it}}https://g3w-suite.readthedocs.io/en/latest/g3wsuite_administration.html#add-group{{/it}}" target="_blank" rel="noopener">{{t 'create a Cartographic Group'}}</a>{{t ': these Groups are containers that allow you to thematically and functionally organize your WebGis services.'}}</p>
+              <p>{{t 'In order to publish a QGIS project you need to'}} <a href="/docs/g3wsuite_administration/#add-group">{{t 'create a Cartographic Group'}}</a>{{t ': these Groups are containers that allow you to thematically and functionally organize your WebGis services.'}}</p>
               <p>{{t 'You can publish multiple WebGis services within each Cartographic Group, but remember that they must have the same projection system associated with the Group when created.'}}</p>
             </div>
             <div>
@@ -435,9 +435,9 @@
               <iframe class="step__video" src="https://www.youtube.com/embed/gaxsTFC5uoo" title="G3W-SUITE Quick Start 4: publish your QGIS project as a WebGIS service" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
             <div>
-              <p><a href="{{#en}}https://g3w-suite.readthedocs.io/en/v3.9.x/g3wsuite_administration.html#publication-of-new-webgis-services{{/en}}{{#it}}https://g3w-suite.readthedocs.io/en/latest/g3wsuite_administration.html#publication-of-new-webgis-services{{/it}}" target="_blank" rel="noopener">{{t 'Publish your QGIS project'}}</a> {{t 'by uploading the file (.qgs or .qgz) within the created Cartographic Group.'}} <b>{{t 'No plugin needed!'}}</b></p>
+              <p><a href="/docs/g3wsuite_administration/#publication-of-new-webgis-services">{{t 'Publish your QGIS project'}}</a> {{t 'by uploading the file (.qgs or .qgz) within the created Cartographic Group.'}} <b>{{t 'No plugin needed!'}}</b></p>
               <p>{{t 'All the settings and functions activated on the project will be automatically inherited by the WebGis service.'}}</p>
-              <p>{{t 'If you want to customize and activate additional functions on the online map, consult the'}} <a href="{{#en}}https://g3w-suite.readthedocs.io/en/v3.9.x/g3wsuite_administration.html#update-manage-webgis-services{{/en}}{{#it}}https://g3w-suite.readthedocs.io/en/latest/g3wsuite_administration.html#update-manage-webgis-services{{/it}}" target="_blank" rel="noopener">{{t 'manual'}}</a> {{t 'and the'}} <a href="https://g3w-suite.readthedocs.io/en/v3.9.x/demo.html" target="_blank" rel="noopener">{{t 'online tutorial'}}</a>.</p>
+              <p>{{t 'If you want to customize and activate additional functions on the online map, consult the'}} <a href="/docs/g3wsuite_administration/#update-manage-webgis-services">{{t 'manual'}}</a> {{t 'and the'}} <a href="/docs/demo/">{{t 'online tutorial'}}</a>.</p>
             </div>
           </div>
         </div>

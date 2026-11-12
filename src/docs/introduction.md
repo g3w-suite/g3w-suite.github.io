@@ -1,0 +1,53 @@
+# Introduction
+
+**G3W-SUITE is a modular client-server application for the management and publication of interactive map projects.**
+
+The framework was born from the need to have a software capable of **publishing, in total autonomy and in a simple and fast way on a webgis client, cartographic projects realized with [QGIS](https://qgis.org).**
+
+The following aspects will be analyzed within the manual:
+* **organization and optimization of data and QGIS projects for web publishing**
+* **organization of cartographic contents in a hierarchical way: macro groups and cartographic groups**
+* **user management and access control systems for consultation and management of webgis services**
+* **management of the online editing function for the creation of web cartographic management systems**
+* **publishing and managing QGIS projects as WebGis services**
+* **creation of searches, visualization of graphics created with the DataPlotly plugin and definition of constraints (geographic and alphanumeric) on visualization and editing permissions**
+ 
+**The current release (3.11) is compatible with `QGIS 3.44.x LTR` (Server and Desktop).**
+
+![](/img/manual-english-demo-qgis-project.png)
+
+![](/img/manual-english-demo-webgis-project.png)
+
+### Version
+
+At the moment, the suite does not use a classic versioning system; these branches are available.
+
+| Branch   | Python version | Django version | QGIS        | QGIS API | Status                 |
+|----------|----------------|----------------|-------------|----------|------------------------|
+| dev      |                |                | 4.0         | Used     | Continuous development |
+| v3.11    | 3.12           | 4.2            | 3.44        | Used     | Bug fixing             |
+| v3.10    | 3.12           | 4.2            | 3.40        | Used     | Bug fixing             |
+| v3.9     | 3.12           | 4.2            | 3.34        | Used     | No longer supported   |
+| v3.8     | 3.10           | 3.2            | 3.34        | Used     | No longer supported   |
+| v3.7     | 3.10           | 3.2            | 3.28        | Used     | No longer supported   |
+| v3.6     | 3.10           | 3.2            | 3.22        | Used     | No longer supported   |
+| v3.5     | 3.10           | 2.2            | 3.22        | Used     | No longer supported   |
+| v3.4     | 3.8            | 2.2            | 3.22        | Used     | No longer supported   |
+| v3.3     | 3.6            | 2.2            | 3.16        | Used     | No longer supported   |
+| v3.2     | 3.6            | 2.2            | 3.16        | Used     | No longer supported   |
+| v3.1     | 3.6            | 2.2            | 3.10        | Used     | No longer supported   |
+| v3.0     | 3.6            | 2.2            | 3.10        | Used     | No longer supported   |
+
+### Main contributors
+* Walter Lorenzetti - Gis3W ([@wlorenzetti](https://github.com/wlorenzetti))
+* Leonardo Lami - Gis3W ([@leolami](https://github.com/leolami/))
+* Francesco Boccacci - Gis3W ([@volterra79](https://github.com/volterra79))
+* Matteo Tosi - Gis3W ([@raruto](https://github.com/raruto))
+* Andrea Antonello - Hidrologys ([@moovida](https://github.com/moovida))
+* Alessandro Pasotti - QCooperative ([@elpaso](https://github.com/elpaso))
+* Luigi Pirelli - QCooperative ([@luipir](https://github.com/luipir))
+* Mazano - Kartoza ([@NyakudyaA](https://github.com/NyakudyaA)) (Dockerization refactoring)
+* Tudor Barascu - QTIBIA Engineering/QCooperative ([@tudorbarascu](https://github.com/tudorbarascu))
+* Alexander Bruy ([@alexbruy](https://github.com/alexbruy))
+* David Mariscal Fernández ([davidxmariscalxfernandez@gmail.com](mailto:davidxmariscalxfernandez@gmail.com))
+

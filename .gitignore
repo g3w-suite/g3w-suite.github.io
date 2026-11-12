@@ -1,3 +1,7 @@
 node_modules/
 public/
 .dev/
+static/docs/
+static/en/
+static/it/
+static/index.html

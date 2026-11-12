@@ -7,7 +7,7 @@ const { spawnSync } = require('node:child_process');
 const { Given, Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 
-const publicDir = path.resolve('public');
+const staticDir = path.resolve('static');
 const languages = ['it', 'en'];
 
 function htmlFiles(dir) {
@@ -59,10 +59,10 @@ function readPage(file) {
 
 function localTarget(file, href) {
   if (!href) return null;
-  const pagePath = path.relative(publicDir, file).split(path.sep).join('/');
+  const pagePath = path.relative(staticDir, file).split(path.sep).join('/');
   const url = new URL(href, `https://www.g3wsuite.it/${pagePath}`);
   if (!['http:', 'https:'].includes(url.protocol) || !['g3wsuite.it', 'www.g3wsuite.it'].includes(url.hostname)) return null;
-  const target = path.join(publicDir, decodeURIComponent(url.pathname));
+  const target = path.join(staticDir, decodeURIComponent(url.pathname));
   return fs.existsSync(target) && fs.statSync(target).isDirectory() ? path.join(target, 'index.html') : target;
 }
 
@@ -78,15 +78,17 @@ function checkPages(pages, check) {
 }
 
 Then('source text is valid UTF-8 without corrupted character sequences', function () {
-  const sourceDir = path.resolve('src');
   const decoder = new TextDecoder('utf-8', { fatal: true });
   const corrupted = /[\u0080-\u009f\ufffd]|\u00c3[\u0080-\u00bf\u0192]|\u00c2[\u0080-\u00bf]|\u00e2[\u0080\u20ac]|\u00ef\u00bf\u00bd/;
-  for (const relative of fs.readdirSync(sourceDir, { recursive: true })) {
-    if (!/\.(?:html|css|js|svg)$/.test(relative)) continue;
-    const file = path.join(sourceDir, relative);
+  const files = [
+    ...filesIn(path.resolve('src')),
+    ...['app.js', 'style.css', 'icons.svg'].map(file => path.join(staticDir, file)),
+  ].filter(file => /\.(?:html|css|js|svg)$/.test(file));
+  for (const file of files) {
     let text;
+    const relative = path.relative(process.cwd(), file);
     assert.doesNotThrow(() => { text = decoder.decode(fs.readFileSync(file)); }, `${relative}: invalid UTF-8`);
-    if (relative.endsWith('.html')) text = load(text).html();
+    if (file.endsWith('.html')) text = load(text).html();
     assert.ok(!corrupted.test(text), `${relative}: corrupted character sequence`);
   }
 });
@@ -94,15 +96,15 @@ Then('source text is valid UTF-8 without corrupted character sequences', functio
 Then('translated text is rendered for each language', function () {
   const sourceFiles = htmlFiles(path.resolve('src'));
   const sourceHtml = sourceFiles.map(file => fs.readFileSync(file, 'utf8'));
-  const outputHtml = htmlFiles(publicDir).map(file => fs.readFileSync(file, 'utf8'));
+  const outputHtml = htmlFiles(staticDir).map(file => fs.readFileSync(file, 'utf8'));
   const pages = {
-    it: readPage(path.join(publicDir, 'it', 'index.html')).$,
-    en: readPage(path.join(publicDir, 'en', 'index.html')).$,
+    it: readPage(path.join(staticDir, 'it', 'index.html')).$,
+    en: readPage(path.join(staticDir, 'en', 'index.html')).$,
   };
   assert.equal(pages.it('.section-intro .section-label').first().text(), 'Inizia in pochi minuti');
   assert.equal(pages.en('.section-intro .section-label').first().text(), 'Get started in minutes');
   assert.equal(
-    readPage(path.join(publicDir, 'it', 'demo', 'index.html')).$('meta[name="description"]').attr('content'),
+    readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('meta[name="description"]').attr('content'),
     'Demo G3W-Suite relative ai branch attualmente supportati: stabile, bug fixing e sviluppo.',
     'explicit attribute translations must be rendered'
   );
@@ -129,22 +131,25 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(fs.existsSync(path.join(sourceDir, 'index.html')), 'missing shared homepage template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
-  const translations = require(path.join(sourceDir, 'assets', 'i18n', 'it.json'));
+  const translations = require(path.join(sourceDir, 'i18n', 'it.json'));
   assert.ok(Object.values(translations).every(value => typeof value === 'string'), 'Italian translations must be flat string values');
   assert.ok(Object.hasOwn(translations, 'Features'), 'translation keys must be source strings');
-  assert.ok(!fs.existsSync(path.join(sourceDir, 'i18n')), 'obsolete translation folder still exists');
+  assert.ok(fs.existsSync(path.join(sourceDir, 'i18n', 'it.json')), 'translation catalog must be stored in src/i18n/it.json');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'translations.json')), 'obsolete translation catalog still exists');
-  assert.ok(fs.existsSync(path.join(publicDir, 'assets', 'i18n', 'it.json')), 'translation catalog was not copied to the build output');
+  assert.ok(fs.existsSync(path.join(sourceDir, 'i18n', 'it.json')), 'translation catalog must be stored in src/i18n/it.json');
+  assert.ok(!fs.existsSync(path.resolve('i18n')), 'translation catalog must not use a root i18n/ folder');
+  assert.ok(!fs.existsSync(path.join(staticDir, 'i18n')), 'translation catalog must not be stored in static/');
+  assert.ok(!fs.existsSync(path.join(staticDir, 'assets')), 'static/assets must be merged into static root');
   for (const lang of languages) {
     assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
-    assert.ok(fs.existsSync(path.join(publicDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
+    assert.ok(fs.existsSync(path.join(staticDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
   }
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
 });
 
 Then('translation keys are unique, sorted, and used by the Italian build', function () {
   const sourceDir = path.resolve('src');
-  const catalogFile = path.join(sourceDir, 'assets', 'i18n', 'it.json');
+  const catalogFile = path.join(sourceDir, 'i18n', 'it.json');
   const catalogSource = fs.readFileSync(catalogFile, 'utf8');
   const catalogKeys = [...catalogSource.matchAll(/^\s*("(?:\\.|[^"\\])*")\s*:/gm)]
     .map(([, key]) => JSON.parse(key));
@@ -186,14 +191,14 @@ Then('translation keys are unique, sorted, and used by the Italian build', funct
   assert.deepEqual(unusedKeys, [], `translations not used by the Italian build: ${unusedKeys.join(', ')}`);
   assert.deepEqual(unmarked, [], `translatable strings missing {{t '...'}}: ${unmarked.join('\n')}`);
 
-  const outputFiles = htmlFiles(path.join(publicDir, 'it'));
+  const outputFiles = htmlFiles(path.join(staticDir, 'it'));
   const unexpanded = outputFiles.filter(file => /\{\{t\b|\{\{\/t\}\}/.test(fs.readFileSync(file, 'utf8')));
   assert.deepEqual(unexpanded, [], 'Italian build contains unexpanded translation helpers');
 });
 
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
-    const files = htmlFiles(path.join(publicDir, lang));
+    const files = htmlFiles(path.join(staticDir, lang));
     assert.ok(files.length, `No HTML pages found for ${lang}`);
     assert.ok(files.every(file => !path.basename(file).startsWith('_')), 'included files must not be published');
     return files.map(file => ({ ...readPage(file), lang }));
@@ -215,21 +220,23 @@ Then('every page declares its language, metadata, and main structure', function 
 });
 
 Then('every page uses the shared assets with root-relative paths', function () {
-  for (const asset of ['style.css', 'app.js']) {
-    assert.ok(fs.statSync(path.join(publicDir, 'assets', asset)).isFile(), `Missing shared asset ${asset}`);
+  for (const asset of ['style.css', 'app.js', 'icons.svg']) {
+    assert.ok(fs.statSync(path.join(staticDir, asset)).isFile(), `Missing shared asset ${asset}`);
   }
   checkPages(this.pages, ({ $ }, expect) => {
-    const stylesheet = '/assets/style.css';
-    const script = '/assets/app.js';
+    const stylesheet = '/style.css';
+    const script = '/app.js';
     expect($(`head link[rel="stylesheet"][href="${stylesheet}"]`).length === 1, `missing stylesheet ${stylesheet}`);
     expect($(`body script[src="${script}"]`).length === 1, `missing script ${script}`);
   });
 });
 
-Then('every published image is referenced by compiled code', function () {
-  const imageDir = path.join(publicDir, 'assets', 'img');
-  const images = filesIn(imageDir).filter(file => /\.(?:apng|avif|bmp|gif|ico|jpe?g|png|svg|tiff?|webp)$/i.test(file));
-  const compiledCode = filesIn(publicDir)
+Then('every published site image is referenced by compiled code', function () {
+  const imageDir = path.join(staticDir, 'img');
+  const images = filesIn(imageDir).filter(file =>
+    path.basename(file).startsWith('site-') && /\.(?:apng|avif|bmp|gif|ico|jpe?g|png|svg|tiff?|webp)$/i.test(file)
+  );
+  const compiledCode = filesIn(staticDir)
     .filter(file => !file.startsWith(imageDir + path.sep) && /\.(?:html|css|js|svg)$/i.test(file))
     .map(file => fs.readFileSync(file, 'utf8'))
     .join('\n');
@@ -254,7 +261,7 @@ Then('every page links consistently to the Italian and English versions', functi
       expect(switchLink.length === 1, `expected one ${targetLang} language switch link`);
       const target = localTarget(file, alternate.attr('href'));
       const switchTarget = localTarget(file, switchLink.attr('href'));
-      const languageDir = path.join(publicDir, targetLang) + path.sep;
+      const languageDir = path.join(staticDir, targetLang) + path.sep;
       expect(target && target.startsWith(languageDir) && target.endsWith('.html') && fs.existsSync(target) && fs.statSync(target).isFile(), `${targetLang} alternate must target an existing HTML page in its language folder`);
       expect(target && target === switchTarget, `${targetLang} alternate and switch link must target the same page`);
       if (target && targetLang !== lang && target.startsWith(languageDir) && target.endsWith('.html') && fs.existsSync(target) && fs.statSync(target).isFile()) {
@@ -320,9 +327,9 @@ Then('YouTube videos do not load before consent', function () {
 });
 
 Then('the root page redirects to the Italian version', function () {
-  const file = path.join(publicDir, 'index.html');
+  const file = path.join(staticDir, 'index.html');
   const { $ } = readPage(file);
-  const target = path.join(publicDir, 'it', 'index.html');
+  const target = path.join(staticDir, 'it', 'index.html');
   const refresh = $('meta[http-equiv]').filter((_, element) => $(element).attr('http-equiv').toLowerCase() === 'refresh');
   const match = /^\s*0\s*;\s*url\s*=\s*(.+?)\s*$/i.exec(refresh.attr('content') || '');
   assert.equal(refresh.length, 1, 'expected one redirect');
@@ -332,7 +339,7 @@ Then('the root page redirects to the Italian version', function () {
 });
 
 Then('every internal link and asset resolves without HTML extensions', function () {
-  const pages = [readPage(path.join(publicDir, 'index.html')), ...this.pages];
+  const pages = [readPage(path.join(staticDir, 'index.html')), ...this.pages];
   const cache = new Map(pages.map(page => [page.file, page.$]));
   checkPages(pages, ({ $, file }, expect) => {
     $('[href], [src]').each((_, element) => {
@@ -368,7 +375,7 @@ Then('the build supports a project base path without broken internal links', fun
   };
   try {
     build(prefix);
-    for (const file of htmlFiles(publicDir)) {
+    for (const file of htmlFiles(staticDir)) {
       const { $ } = readPage(file);
       $('[href], [src]').each((_, element) => {
         for (const attr of ['href', 'src']) {
@@ -379,13 +386,36 @@ Then('the build supports a project base path without broken internal links', fun
           assert.ok(target && fs.existsSync(target) && fs.statSync(target).isFile(), `${file}: broken ${href}`);
         }
       });
+
     }
-    const { $ } = readPage(path.join(publicDir, 'index.html'));
+    const { $ } = readPage(path.join(staticDir, 'index.html'));
     assert.equal($('meta[http-equiv="refresh"]').attr('content'), `0; url=${prefix}/it/`);
-    const demo = readPage(path.join(publicDir, 'en', 'demo', 'index.html')).$;
-    assert.equal(demo('link[rel="stylesheet"]').attr('href'), `${prefix}/assets/style.css`);
+    const demo = readPage(path.join(staticDir, 'en', 'demo', 'index.html')).$;
+    assert.equal(demo('link[rel="stylesheet"]').attr('href'), `${prefix}/style.css`);
     assert.ok(demo('a[href="https://v311.g3wsuite.it/"]').length, 'external URLs must remain unchanged');
   } finally {
     build('');
   }
+});
+
+Then('every documentation source is Markdown and has a generated page', function () {
+  const sourceDir = path.resolve('src/docs');
+  const sources = filesIn(sourceDir);
+  const pages = htmlFiles(path.join(staticDir, 'docs'));
+  assert.ok(sources.length > 0, 'expected Markdown documentation sources');
+  assert.ok(sources.every(file => file.endsWith('.md')), 'documentation sources must use Markdown');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'images')), 'documentation images must be stored outside src/docs');
+  assert.equal(pages.length, sources.length, 'every Markdown source must generate one page');
+
+  const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
+  assert.ok(index('main h1').text().includes('G3W-SUITE 3.11'), 'documentation landing page is missing');
+  assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
+  assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
+
+  const imagesDir = path.join(staticDir, 'img');
+  const images = filesIn(imagesDir);
+  assert.ok(images.length, 'static/img must contain documentation and site images');
+  assert.ok(images.every(file => path.dirname(file) === imagesDir), 'static/img must not contain subfolders');
+  assert.ok(!fs.existsSync(path.join(staticDir, 'images')), 'legacy static/images folder must not exist');
+  assert.ok(!fs.existsSync(path.join(staticDir, 'docs', 'images')), 'documentation images must not be copied under docs');
 });

@@ -10,7 +10,7 @@ Verifica che il sito generato abbia link di navigazione e hreflang corretti per 
 
 ### 1. Inventario pagine per lingua
 
-Esegui `npm run build`, poi inventaria le pagine HTML generate in `public/it/` e `public/en/`. Segnala pagine generate mancanti in una delle lingue.
+Esegui `npm run build`, poi inventaria le pagine HTML generate in `static/it/` e `static/en/`. Segnala pagine generate mancanti in una delle lingue.
 
 ### 2. Verifica language-switcher in ogni pagina
 
@@ -51,6 +51,6 @@ Se tutto è corretto, scrivi "Nessun problema trovato" per quella sezione.
 
 ### 5. Proponi azioni correttive
 
-Per ogni problema trovato, suggerisci l'azione correttiva specifica in `src/` o `src/assets/i18n/it.json`.
+Per ogni problema trovato, suggerisci l'azione correttiva specifica in `src/` o `src/i18n/it.json`.
 
 Non applicare automaticamente le correzioni — mostra solo il report e le proposte.

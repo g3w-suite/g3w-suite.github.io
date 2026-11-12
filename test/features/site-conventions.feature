@@ -34,8 +34,8 @@ Feature: Multilingual site conventions
     Given the HTML pages in the language folders
     Then every internal link and asset resolves without HTML extensions
 
-  Scenario: Published images are referenced
-    Then every published image is referenced by compiled code
+  Scenario: Published site images are referenced
+    Then every published site image is referenced by compiled code
 
   Scenario: The root page redirects to Italian
     Then the root page redirects to the Italian version
@@ -46,3 +46,6 @@ Feature: Multilingual site conventions
 
   Scenario: Deployment under a GitHub Pages project path
     Then the build supports a project base path without broken internal links
+
+  Scenario: Markdown documentation is compiled locally
+    Then every documentation source is Markdown and has a generated page
