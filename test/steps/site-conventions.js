@@ -413,6 +413,28 @@ Then('every documentation source is Markdown and has a generated page', function
 
   const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
   assert.ok(index('main h1').text().includes('G3W-SUITE 3.11'), 'documentation landing page is missing');
+  for (const file of pages) {
+    const page = readPage(file).$;
+    const outputRelative = path.relative(path.join(staticDir, 'docs'), file).split(path.sep).join('/');
+    const sourceRelative = outputRelative === 'index.html'
+      ? 'index.md'
+      : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
+    const sourcePath = sourceRelative.split('/').map(encodeURIComponent).join('/');
+    assert.equal(page('nav.docs-toolbar').length, 1, `${file}: documentation toolbar is missing`);
+    assert.ok(page('nav.docs-toolbar .docs-breadcrumb__home[href="/docs/"]').length, `${file}: documentation breadcrumb is missing its home link`);
+    assert.equal(
+      page('nav.docs-toolbar .docs-source-link').attr('href'),
+      `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`,
+      `${file}: GitHub edit link does not match the Markdown source`
+    );
+  }
+  const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
+  assert.ok(childPage('nav.docs-toolbar .docs-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
+  assert.equal(
+    childPage('main.docs-content a').filter((_, link) => childPage(link).text().startsWith('Back to')).length,
+    0,
+    'the breadcrumb must replace the duplicate back link'
+  );
   assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
   assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
   assert.equal(index('body > header.site-header').length, 1, 'documentation must use the shared site header');

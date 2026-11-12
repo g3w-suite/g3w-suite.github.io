@@ -170,7 +170,9 @@ function buildDocumentation(outputDir) {
     const relative = path.relative(docsDir, file);
     const source = fs.readFileSync(file, 'utf8');
     const title = /^#\s+(.+)$/m.exec(source)?.[1] || path.basename(file, '.md');
-    let content = marked.parse(source);
+    const parent = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(source);
+    const sourceBody = parent ? source.replace(parent[0], '') : source;
+    let content = marked.parse(sourceBody);
     content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
       `${name}="${documentationLink(href, file, docsDir)}"`
     );
@@ -192,6 +194,11 @@ function buildDocumentation(outputDir) {
     const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
     const siteHeader = renderComponent('header', 'en', componentPage, componentHtml);
     const siteFooter = renderComponent('footer', 'en', componentPage, componentHtml);
+    const parentBreadcrumb = parent
+      ? `<li><a href="${documentationLink(parent[2], file, docsDir)}">${parent[1]}</a></li>`
+      : '';
+    const sourcePath = relative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
+    const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
     const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -220,7 +227,17 @@ function buildDocumentation(outputDir) {
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
       ${documentationNavigation(index, pagePath, docsDir)}
     </nav>
-    <main id="main-content" class="docs-content">${content}</main>
+    <main id="main-content" class="docs-content">
+      <nav class="docs-toolbar" aria-label="Breadcrumb">
+        <ol class="docs-breadcrumb">
+          <li><a class="docs-breadcrumb__home" href="/docs/" aria-label="Documentation home"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 3 2 12h3v9h5v-6h4v6h5v-9h3z"></path></svg></a></li>
+          ${parentBreadcrumb}
+          <li aria-current="page">${title}</li>
+        </ol>
+        <a class="docs-source-link" href="${sourceUrl}">Edit this page</a>
+      </nav>
+      ${content}
+    </main>
   </div>
   ${siteFooter}
 </body>
