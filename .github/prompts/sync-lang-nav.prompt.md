@@ -51,6 +51,6 @@ Se tutto è corretto, scrivi "Nessun problema trovato" per quella sezione.
 
 ### 5. Proponi azioni correttive
 
-Per ogni problema trovato, suggerisci l'azione correttiva specifica in `src/` o `src/i18n/it.json`.
+Per ogni problema trovato, suggerisci l'azione correttiva specifica nella pagina o componente interessato in `src/`.
 
 Non applicare automaticamente le correzioni — mostra solo il report e le proposte.

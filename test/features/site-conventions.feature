@@ -15,8 +15,8 @@ Feature: Multilingual site conventions
   Scenario: Shared page templates
     Then both languages are generated from shared page templates
 
-  Scenario: Translation catalog keys are unique, ordered, and applied
-    Then translation keys are unique, sorted, and used by the Italian build
+  Scenario: Page-local translations are valid and applied
+    Then page-local translations are valid and used by the Italian build
 
   Scenario: Links between languages
     Given the HTML pages in the language folders

@@ -25,6 +25,22 @@ function translationHelperPattern() {
   return /\{\{t\s+'((?:\\.|[^'\\])*)'\s*\}\}/g;
 }
 
+function extractPageTranslations(html, file) {
+  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/g)];
+  assert.ok(blocks.length <= 1, `${file}: expected at most one data-i18n block`);
+  if (!blocks.length) return { html, translations: {} };
+
+  const translations = JSON.parse(blocks[0][1]);
+  assert.ok(translations && typeof translations === 'object' && !Array.isArray(translations), `${file}: data-i18n must be an object`);
+  for (const [lang, entries] of Object.entries(translations)) {
+    assert.ok(languages.includes(lang), `${file}: unsupported data-i18n language "${lang}"`);
+    assert.ok(entries && typeof entries === 'object' && !Array.isArray(entries), `${file}: ${lang} translations must be an object`);
+    assert.ok(Object.keys(entries).length > 0, `${file}: omit empty ${lang} translations`);
+    assert.ok(Object.values(entries).every(value => typeof value === 'string'), `${file}: ${lang} translations must be strings`);
+  }
+  return { html: html.replace(blocks[0][0], ''), translations };
+}
+
 function renderLanguageBlocks(html, lang) {
   return html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
     target === lang ? content : ''
@@ -131,12 +147,7 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(fs.existsSync(path.join(sourceDir, 'index.html')), 'missing shared homepage template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
-  const translations = require(path.join(sourceDir, 'i18n', 'it.json'));
-  assert.ok(Object.values(translations).every(value => typeof value === 'string'), 'Italian translations must be flat string values');
-  assert.ok(Object.hasOwn(translations, 'Features'), 'translation keys must be source strings');
-  assert.ok(fs.existsSync(path.join(sourceDir, 'i18n', 'it.json')), 'translation catalog must be stored in src/i18n/it.json');
-  assert.ok(!fs.existsSync(path.join(sourceDir, 'translations.json')), 'obsolete translation catalog still exists');
-  assert.ok(fs.existsSync(path.join(sourceDir, 'i18n', 'it.json')), 'translation catalog must be stored in src/i18n/it.json');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'i18n')), 'translation catalog directory must not exist');
   assert.ok(!fs.existsSync(path.resolve('i18n')), 'translation catalog must not use a root i18n/ folder');
   assert.ok(!fs.existsSync(path.join(staticDir, 'i18n')), 'translation catalog must not be stored in static/');
   assert.ok(!fs.existsSync(path.join(staticDir, 'assets')), 'static/assets must be merged into static root');
@@ -147,53 +158,51 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
 });
 
-Then('translation keys are unique, sorted, and used by the Italian build', function () {
+Then('page-local translations are valid and used by the Italian build', function () {
   const sourceDir = path.resolve('src');
-  const catalogFile = path.join(sourceDir, 'i18n', 'it.json');
-  const catalogSource = fs.readFileSync(catalogFile, 'utf8');
-  const catalogKeys = [...catalogSource.matchAll(/^\s*("(?:\\.|[^"\\])*")\s*:/gm)]
-    .map(([, key]) => JSON.parse(key));
-  const translations = require(catalogFile);
-  const seen = new Set();
-  const duplicates = catalogKeys.filter(key => {
-    if (seen.has(key)) return true;
-    seen.add(key);
-    return false;
-  });
-  assert.deepEqual(duplicates, [], `duplicate translation keys: ${duplicates.join(', ')}`);
-  assert.equal(catalogKeys.length, Object.keys(translations).length, 'every catalog key must be quoted');
-  assert.deepEqual(
-    catalogKeys,
-    [...catalogKeys].sort((a, b) => a < b ? -1 : a > b ? 1 : 0),
-    'translation keys must be sorted'
-  );
-  assert.deepEqual(
-    catalogKeys.filter(key => /^(?:\/|https?:\/\/|mailto:)/i.test(key)),
-    [],
-    'URLs must not be translated as whole strings'
-  );
-  assert.ok(catalogKeys.every(key => !key.includes('{{langRoot}}')), 'catalog keys must not include URL placeholders');
-
   const sourceFiles = htmlFiles(sourceDir);
-  const usedKeys = new Set();
   const unmarked = [];
   for (const file of sourceFiles) {
-    const html = fs.readFileSync(file, 'utf8');
-    const italianHtml = renderLanguageBlocks(html, 'it');
-    for (const [, literal] of italianHtml.matchAll(translationHelperPattern())) {
-      const key = literal.replace(/\\(['\\])/g, '$1');
-      assert.ok(Object.hasOwn(translations, key), `${file}: unknown translation key "${key}"`);
-      usedKeys.add(key);
+    const sourceHtml = fs.readFileSync(file, 'utf8');
+    const { html, translations: pageTranslations } = extractPageTranslations(sourceHtml, file);
+    const block = /<script type="application\/json" data-i18n>[\s\S]*?<\/script>/.exec(sourceHtml);
+    if (block) {
+      const trailingHtml = sourceHtml.slice(block.index + block[0].length);
+      assert.match(trailingHtml, /^\s*(?:<\/body>\s*)?(?:<\/html>\s*)?$/i, `${file}: data-i18n must be at the end of the file or before </body>`);
     }
-    unmarked.push(...findUnmarkedTranslations(path.relative(process.cwd(), file), html, translations));
+    const localUsage = new Map(languages.map(lang => [lang, new Set()]));
+    for (const [lang, entries] of Object.entries(pageTranslations)) {
+      const keys = Object.keys(entries);
+      assert.deepEqual(keys, [...keys].sort(), `${file}: ${lang} translations must be sorted`);
+    }
+    for (const lang of languages) {
+      const localizedHtml = renderLanguageBlocks(html, lang);
+      for (const [, literal] of localizedHtml.matchAll(translationHelperPattern())) {
+        const key = literal.replace(/\\(['\\])/g, '$1');
+        if (Object.hasOwn(pageTranslations[lang] || {}, key)) {
+          localUsage.get(lang).add(key);
+        } else if (lang === 'it') {
+          assert.fail(`${file}: missing page-local Italian translation for "${key}"`);
+        }
+      }
+    }
+    const unusedLocal = Object.entries(pageTranslations).flatMap(([lang, entries]) =>
+      Object.keys(entries).filter(key => !localUsage.get(lang).has(key)).map(key => `${lang}: ${key}`)
+    );
+    assert.deepEqual(unusedLocal, [], `${file}: unused page-local translations`);
+    unmarked.push(...findUnmarkedTranslations(
+      path.relative(process.cwd(), file),
+      html,
+      pageTranslations.it || {}
+    ));
   }
-  const unusedKeys = catalogKeys.filter(key => !usedKeys.has(key));
-  assert.deepEqual(unusedKeys, [], `translations not used by the Italian build: ${unusedKeys.join(', ')}`);
   assert.deepEqual(unmarked, [], `translatable strings missing {{t '...'}}: ${unmarked.join('\n')}`);
 
-  const outputFiles = htmlFiles(path.join(staticDir, 'it'));
+  const outputFiles = htmlFiles(staticDir);
   const unexpanded = outputFiles.filter(file => /\{\{t\b|\{\{\/t\}\}/.test(fs.readFileSync(file, 'utf8')));
-  assert.deepEqual(unexpanded, [], 'Italian build contains unexpanded translation helpers');
+  assert.deepEqual(unexpanded, [], 'generated site contains unexpanded translation helpers');
+  const leakedTranslations = outputFiles.filter(file => /data-i18n/.test(fs.readFileSync(file, 'utf8')));
+  assert.deepEqual(leakedTranslations, [], 'page-local translation data must not appear in generated HTML');
 });
 
 Given('the HTML pages in the language folders', function () {

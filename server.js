@@ -12,7 +12,6 @@ const projectRoot = __dirname;
 const staticDir = path.join(projectRoot, 'static');
 const sourceDir = path.join(projectRoot, 'src');
 const languages = ['it', 'en'];
-const translations = require(path.join(sourceDir, 'i18n', 'it.json'));
 const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
 const root = staticDir;
@@ -43,29 +42,52 @@ function renderLanguageBlocks(html, lang) {
   return output;
 }
 
-function translate(source, lang) {
-  if (lang === 'en') return source;
+function translate(source, lang, pageTranslations = {}) {
   const leading = /^\s*/.exec(source)[0];
   const trailing = /\s*$/.exec(source)[0];
   const text = source.slice(leading.length, source.length - trailing.length);
   const key = text.replace(/&amp;/g, '&');
-  if (!Object.hasOwn(translations, key)) throw new Error(`Missing Italian translation: ${text}`);
-  const translated = translations[key].replace(/&(?!#\d+;|#x[\da-f]+;|[a-z][\da-z]+;)|[<>"']/gi, char => ({
+  const translated = pageTranslations[lang]?.[key] ?? (lang === 'en' ? key : undefined);
+  if (typeof translated !== 'string') throw new Error(`Missing Italian translation: ${text}`);
+  const escaped = translated.replace(/&(?!#\d+;|#x[\da-f]+;|[a-z][\da-z]+;)|[<>"']/gi, char => ({
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
     "'": '&#39;',
   })[char]);
-  return `${leading}${translated}${trailing}`;
+  return `${leading}${escaped}${trailing}`;
 }
 
-function translateHtml(html, lang) {
+function translateHtml(html, lang, pageTranslations = {}) {
   const output = html.replace(/\{\{t\s+'((?:\\.|[^'\\])*)'\s*\}\}/g, (_, source) =>
-    translate(source.replace(/\\(['\\])/g, '$1'), lang)
+    translate(source.replace(/\\(['\\])/g, '$1'), lang, pageTranslations)
   );
   if (/\{\{t\b|\{\{\/t\}\}/.test(output)) throw new Error('Invalid or unclosed translation helper');
   return output;
+}
+
+function extractPageTranslations(html, file) {
+  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/g)];
+  if (blocks.length > 1) throw new Error(`${file} must contain at most one data-i18n block`);
+  if (!blocks.length) return { html, translations: {} };
+
+  let translations;
+  try {
+    translations = JSON.parse(blocks[0][1]);
+  } catch (error) {
+    throw new Error(`${file} has invalid data-i18n JSON: ${error.message}`);
+  }
+  if (!translations || typeof translations !== 'object' || Array.isArray(translations)) {
+    throw new Error(`${file} data-i18n must be an object keyed by language`);
+  }
+  for (const [lang, entries] of Object.entries(translations)) {
+    if (!languages.includes(lang) || !entries || typeof entries !== 'object' || Array.isArray(entries) ||
+      Object.values(entries).some(value => typeof value !== 'string')) {
+      throw new Error(`${file} has invalid ${lang} translations in data-i18n`);
+    }
+  }
+  return { html: html.replace(blocks[0][0], ''), translations };
 }
 
 function renderYoutubeVideos(html) {
@@ -275,9 +297,14 @@ function renderComponent(component, lang, page, html) {
   const name = `_${component}.html`;
   let output;
   try {
+    const componentTemplate = extractPageTranslations(
+      fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(),
+      `src/${name}`
+    );
     output = translateHtml(
-      renderLanguageBlocks(fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(), lang),
-      lang
+      renderLanguageBlocks(componentTemplate.html, lang),
+      lang,
+      componentTemplate.translations
     );
   } catch (e) {
     e.message = `src/${name}: ${e.message}`;
@@ -314,26 +341,27 @@ function build(outputDir) {
 
   for (const { file, page } of pages) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
+    const pageTemplate = extractPageTranslations(sourceHtml, path.relative(projectRoot, file));
     for (const lang of languages) {
       try {
-      const html = translateHtml(renderLanguageBlocks(sourceHtml, lang), lang);
-      const counts = { meta: 0, header: 0, footer: 0 };
-      const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
-      const output = renderYoutubeVideos(localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
-        const name = path.basename(include, '.html').replace(/^_/, '');
-        const componentPath = path.normalize(path.join(path.dirname(page), include));
-        if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
-          throw new Error(`Invalid component include in ${file}: ${include}`);
+        const html = translateHtml(renderLanguageBlocks(pageTemplate.html, lang), lang, pageTemplate.translations);
+        const counts = { meta: 0, header: 0, footer: 0 };
+        const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
+        const output = renderYoutubeVideos(localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
+          const name = path.basename(include, '.html').replace(/^_/, '');
+          const componentPath = path.normalize(path.join(path.dirname(page), include));
+          if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
+            throw new Error(`Invalid component include in ${file}: ${include}`);
+          }
+          counts[name]++;
+          return renderComponent(name, lang, page, localized);
+        }));
+        if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
+          throw new Error(`${file} must contain one meta, one header and one footer include`);
         }
-        counts[name]++;
-        return renderComponent(name, lang, page, localized);
-      }));
-      if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
-        throw new Error(`${file} must contain one meta, one header and one footer include`);
-      }
-      const target = path.join(outputDir, lang, outputPage(page, lang));
-      fs.mkdirSync(path.dirname(target), { recursive: true });
-      fs.writeFileSync(target, publishedHtml(output));
+        const target = path.join(outputDir, lang, outputPage(page, lang));
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        fs.writeFileSync(target, publishedHtml(output));
       } catch (e) {
         e.message = `${path.relative(projectRoot, file)} (${lang}): ${e.message}`;
         throw e;

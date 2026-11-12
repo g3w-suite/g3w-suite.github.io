@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 ## Verified Current State
 
 - `npm run build` generates the publishable site and Markdown documentation in `static/`; `npm run dev` serves the same folder and rebuilds when files in `src/` change.
-- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`, with the Italian translation catalog at `src/i18n/it.json`. Site and Markdown images share the flat `static/img/` directory. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
+- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`. Italian translations live in each page or component's `data-i18n` JSON block, placed at the file end or immediately before `</body>`; omit empty language maps. Site and Markdown images share the flat `static/img/` directory. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
 
 ## Run
 
@@ -52,7 +52,7 @@ static/
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - Keep `<main id="main-content">` on all pages.
 - Keep hreflang alternates and language switch links aligned between IT and EN pages.
-- Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. The source string must exist in `src/i18n/it.json`, whose keys stay unique and alphabetically sorted.
+- Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
 - For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
@@ -114,4 +114,3 @@ Edit shared navigation, footer and metadata in `src/_header.html`, `src/_footer.
 - `src/_header.html`
 - `src/_footer.html`
 - `src/_redirect.html`
-- `src/i18n/it.json`
