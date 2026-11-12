@@ -28,7 +28,14 @@ function renderLanguageBlocks(html, lang) {
   const output = html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
     target === lang ? content : ''
   );
-  if (/\{\{(?:#(?:it|en)|\/(?:it|en))\}\}/.test(output)) throw new Error('Unclosed language block');
+  const bad = /\{\{(?:#(?:it|en)|\/(?:it|en))\}\}/.exec(output);
+  if (bad) throw new Error(`Unclosed language block ${bad[0]}`);
+  // Typos like "{{#en}" never match the block regex above, so catch them here
+  const typo = /\{\{[#/](?:it|en)(?!\}\})/.exec(output);
+  if (typo) {
+    const line = html.slice(0, html.indexOf(typo[0])).split('\n').length;
+    throw new Error(`Malformed language tag "${typo[0]}" near line ${line} (expected {{#it}}/{{#en}} ... {{/it}}/{{/en}})`);
+  }
   return output;
 }
 
@@ -100,10 +107,16 @@ function renderComponent(component, lang, page, html) {
     siteRoot: '/',
   };
   const name = `_${component}.html`;
-  let output = translateHtml(
-    renderLanguageBlocks(fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(), lang),
-    lang
-  );
+  let output;
+  try {
+    output = translateHtml(
+      renderLanguageBlocks(fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(), lang),
+      lang
+    );
+  } catch (e) {
+    e.message = `src/${name}: ${e.message}`;
+    throw e;
+  }
   output = output.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (!(key in values)) throw new Error(`Unknown ${component} placeholder: ${key}`);
     return values[key];
@@ -138,6 +151,7 @@ function build(outputDir) {
   for (const { file, page } of pages) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
     for (const lang of languages) {
+      try {
       const html = translateHtml(renderLanguageBlocks(sourceHtml, lang), lang);
       const counts = { meta: 0, header: 0, footer: 0 };
       const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
@@ -156,12 +170,26 @@ function build(outputDir) {
       const target = path.join(outputDir, lang, outputPage(page, lang));
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.writeFileSync(target, publishedHtml(output));
+      } catch (e) {
+        e.message = `${path.relative(projectRoot, file)} (${lang}): ${e.message}`;
+        throw e;
+      }
     }
   }
 }
 
-if (buildOnly) build(publicDir);
-else if (devMode) build(root);
+function runBuild(dir) {
+  try {
+    build(dir);
+  } catch (e) {
+    // Short message (no stack) + GitHub annotation so the error shows in the run summary
+    console.error(process.env.GITHUB_ACTIONS ? `::error title=Build failed::${e.message}` : `Build failed: ${e.message}`);
+    process.exit(1);
+  }
+}
+
+if (buildOnly) runBuild(publicDir);
+else if (devMode) runBuild(root);
 
 if (!buildOnly) {
   http.createServer((req, res) => {
