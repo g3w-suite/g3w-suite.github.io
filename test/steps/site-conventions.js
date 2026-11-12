@@ -14,6 +14,18 @@ function htmlFiles(dir) {
   return filesIn(dir).filter(file => file.endsWith('.html'));
 }
 
+function pageBodyClass(route) {
+  const slug = route.split(path.sep).join('/')
+    .replace(/(^|\/)index\.html$/, '')
+    .replace(/\.html$/, '')
+    .split('/')
+    .filter(Boolean)
+    .join('-')
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, '-');
+  return `page-${slug || 'home'}`;
+}
+
 function filesIn(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
     const file = path.join(dir, entry.name);
@@ -271,9 +283,10 @@ Given('the HTML pages in the language folders', function () {
 });
 
 Then('every page declares its language, metadata, and main structure', function () {
-  checkPages(this.pages, ({ $, html, lang }, expect) => {
+  checkPages(this.pages, ({ $, html, file, lang }, expect) => {
     expect(/^<!doctype html>/i.test(html.trimStart()), 'missing HTML doctype');
     expect($('html').attr('lang') === lang, `html lang must be ${lang}`);
+    expect($('body').attr('class') === pageBodyClass(path.relative(path.join(staticDir, lang), file)), 'body must have a page-specific class');
     expect($('head meta[charset]').length === 1 && $('head meta[charset]').attr('charset')?.toLowerCase() === 'utf-8', 'expected one UTF-8 charset');
     expect($('head meta[name="viewport"]').length === 1, 'missing viewport');
     expect($('head title').text().trim().length > 0, 'missing title');
@@ -400,6 +413,7 @@ Then('the root page redirects to the Italian version', function () {
   assert.equal(refresh.length, 1, 'expected one redirect');
   assert.equal(localTarget(file, match && match[1]), target, 'redirect must target the Italian homepage');
   assert.ok($('a[href]').toArray().some(element => localTarget(file, $(element).attr('href')) === target), 'fallback link must target the Italian homepage');
+  assert.equal($('body').attr('class'), 'page-redirect', 'root redirect must have an identifying body class');
   assert.equal($('main').length, 0, 'the root page must remain a redirect');
 });
 
@@ -481,6 +495,7 @@ Then('every documentation source is Markdown and has a generated page', function
   for (const file of pages) {
     const page = readPage(file).$;
     const outputRelative = path.relative(path.join(staticDir, 'docs'), file).split(path.sep).join('/');
+    assert.equal(page('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${file}: body must have a page-specific class`);
     const sourceRelative = outputRelative === 'index.html'
       ? 'index.md'
       : `${outputRelative.replace(/\/index\.html$/, '')}.md`;

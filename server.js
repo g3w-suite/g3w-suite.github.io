@@ -283,7 +283,7 @@ function buildDocumentation(outputDir) {
     @media(max-width:760px){.docs-layout{grid-template-columns:1fr}.docs-nav{border-right:0;border-bottom:1px solid #d8e0e4;padding:0 0 1rem}}
   </style>
 </head>
-<body>
+<body class="${pageBodyClass(componentPage)}">
   ${siteHeader}
   <div class="docs-layout">
     <nav class="docs-nav" aria-label="Documentation navigation">
@@ -328,6 +328,12 @@ function languagePageUrl(page, lang) {
   return `/${lang}/${route}${route ? '/' : ''}`;
 }
 
+function pageBodyClass(page) {
+  const route = outputPage(page).split(path.sep).join('/').replace(/(^|\/)index\.html$/, '');
+  const slug = route.split('/').filter(Boolean).join('-').toLowerCase().replace(/[^a-z0-9-]/g, '-');
+  return `page-${slug || 'home'}`;
+}
+
 function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   const values = {
     itPage: pageUrls.it,
@@ -335,6 +341,7 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
     langRoot: `/${lang}/`,
     siteRoot: '/',
     lang,
+    pageClass: pageBodyClass(page),
     pageHead,
   };
   const name = `_${component}.html`;

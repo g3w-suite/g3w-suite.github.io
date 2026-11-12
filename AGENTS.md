@@ -48,6 +48,7 @@ static/
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - Keep `<main id="main-content">` on all pages.
+- Every generated page gets a route-based `page-*` class on `<body>`, shared by its Italian and English versions.
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
 - Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
 - Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
