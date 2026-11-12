@@ -663,6 +663,38 @@ section + .section--dark { border-top: none; }
 .step__title { font-size: 1.2rem; color: var(--color-dark); }
 .step__body p { margin-bottom: .5rem; }
 .step__video { aspect-ratio: 16/9; width: 100%; border-radius: var(--radius); overflow: hidden; border: 0; margin-top: .75rem; }
+.youtube-consent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16/9;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--color-light);
+}
+.youtube-consent iframe { display: none; position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.youtube-consent.is-loaded iframe { display: block; }
+.youtube-consent__dialog {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #171f2b;
+  color: var(--color-white);
+  text-align: center;
+}
+.youtube-consent__dialog h2 { color: inherit; font-size: 1.25rem; font-weight: 400; text-transform: uppercase; }
+.youtube-consent__dialog p { max-width: 36rem; margin: 0; font-size: 1.1rem; }
+.youtube-consent__dialog a { color: #58b7ff; text-decoration: underline; }
+.youtube-consent__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1em; }
+.youtube-consent__actions button { padding: .7rem 1rem; border: 0; border-radius: var(--radius); background: #0866c2; color: var(--color-white); font-size: .85rem; font-weight: 700; text-transform: uppercase; }
+.youtube-consent__actions button[data-youtube-consent="remember"] { background: #c7d2e2; color: #17202d; }
 
 /* ── 14. Demo grid ───────────────────────────────────────────── */
 .demo-header {

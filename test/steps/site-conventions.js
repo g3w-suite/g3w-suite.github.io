@@ -287,6 +287,38 @@ Then('the navigation controls retain their accessibility attributes', function (
   });
 });
 
+Then('YouTube videos do not load before consent', function () {
+  let videoCount = 0;
+  checkPages(this.pages, ({ $, lang }, expect) => {
+    const labels = lang === 'it'
+      ? ['Accetta e riproduci', 'Accetta e non chiedere più']
+      : ['Accept and play', "Accept and don't ask again"];
+    $('.youtube-consent').each((_, element) => {
+      videoCount++;
+      const video = $(element);
+      const iframe = video.children('iframe');
+      const buttons = video.find('[data-youtube-consent]');
+      expect(iframe.length === 1, 'video placeholder must contain one iframe');
+      expect(!iframe.attr('src'), 'YouTube iframe must not load before consent');
+      expect(/^https:\/\/www\.youtube\.com\/embed\//.test(iframe.attr('data-youtube-src') || ''), 'video URL must be stored until consent');
+      expect(buttons.length === 2 && buttons.eq(0).text().trim() === labels[0] && buttons.eq(1).text().trim() === labels[1], 'video consent buttons must be translated');
+      expect(video.find('.youtube-consent__dialog h2').text().trim() === (lang === 'it' ? 'Avviso privacy' : 'Privacy notice'), 'privacy notice must be translated');
+      const notice = video.find('.youtube-consent__dialog p').first().text().replace(/\s+/g, ' ').trim();
+      expect(lang === 'it'
+        ? notice.startsWith('Questo è un contenuto esterno ospitato su YouTube. Quando lo riproduci, può memorizzare cookie e trattare i tuoi dati.')
+        : notice.startsWith('This is external content hosted on YouTube. When you play it, it may store cookies and process your data.'),
+      'privacy notice must describe external content');
+      const privacyLink = video.find('a[href="https://policies.google.com/privacy"]');
+      const termsLink = video.find('a[href="https://www.youtube.com/t/terms"]');
+      expect(privacyLink.length === 1, 'privacy policy link must be present');
+      expect(termsLink.length === 1, 'terms link must be present');
+      expect(privacyLink.text().trim() === (lang === 'it' ? 'Informativa privacy' : 'Privacy policy'), 'privacy policy link must be translated');
+      expect(termsLink.text().trim() === (lang === 'it' ? 'Termini di servizio' : 'Terms of service'), 'terms link must be translated');
+    });
+  });
+  assert.ok(videoCount > 0, 'expected generated YouTube video placeholders');
+});
+
 Then('the root page redirects to the Italian version', function () {
   const file = path.join(publicDir, 'index.html');
   const { $ } = readPage(file);

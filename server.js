@@ -64,6 +64,19 @@ function translateHtml(html, lang) {
   return output;
 }
 
+function renderYoutubeVideos(html) {
+  const consentDialog = /<template id="youtube-consent-dialog">([\s\S]*?)<\/template>/.exec(html)?.[1];
+  if (!consentDialog) return html;
+  const output = html.replace(/<iframe\b(?=[^>]*\bsrc=["']https?:\/\/(?:www\.)?youtube(?:-nocookie)?\.com\/embed\/)[^>]*>\s*<\/iframe>/gi, iframe => {
+    const classes = /\bclass=(["'])(.*?)\1/i.exec(iframe)?.[2];
+    const frame = iframe
+      .replace(/\s+class=(["']).*?\1/i, '')
+      .replace(/\s+src=(["'])(.*?)\1/i, ' data-youtube-src="$2"');
+    return `<div class="youtube-consent${classes ? ` ${classes}` : ''}">${frame}${consentDialog}</div>`;
+  });
+  return output.replace(/<template id="youtube-consent-dialog">[\s\S]*?<\/template>/, '');
+}
+
 const mimeTypes = {
   '.html': 'text/html',
   '.css': 'text/css',
@@ -155,7 +168,7 @@ function build(outputDir) {
       const html = translateHtml(renderLanguageBlocks(sourceHtml, lang), lang);
       const counts = { meta: 0, header: 0, footer: 0 };
       const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
-      const output = localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
+      const output = renderYoutubeVideos(localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
         const name = path.basename(include, '.html').replace(/^_/, '');
         const componentPath = path.normalize(path.join(path.dirname(page), include));
         if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
@@ -163,7 +176,7 @@ function build(outputDir) {
         }
         counts[name]++;
         return renderComponent(name, lang, page, localized);
-      });
+      }));
       if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
         throw new Error(`${file} must contain one meta, one header and one footer include`);
       }
@@ -178,18 +191,31 @@ function build(outputDir) {
   }
 }
 
-function runBuild(dir) {
+function runBuild(dir, exitOnError = true) {
   try {
     build(dir);
+    return true;
   } catch (e) {
     // Short message (no stack) + GitHub annotation so the error shows in the run summary
     console.error(process.env.GITHUB_ACTIONS ? `::error title=Build failed::${e.message}` : `Build failed: ${e.message}`);
-    process.exit(1);
+    if (exitOnError) process.exit(1);
+    return false;
   }
 }
 
 if (buildOnly) runBuild(publicDir);
-else if (devMode) runBuild(root);
+else if (devMode) runBuild(root, false);
+
+if (devMode) {
+  let rebuildTimer;
+  const watcher = fs.watch(sourceDir, { recursive: true }, () => {
+    clearTimeout(rebuildTimer);
+    rebuildTimer = setTimeout(() => {
+      if (runBuild(root, false)) console.log('Sito aggiornato.');
+    }, 100);
+  });
+  watcher.on('error', error => console.error(`Source watcher failed: ${error.message}`));
+}
 
 if (!buildOnly) {
   http.createServer((req, res) => {

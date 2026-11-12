@@ -68,6 +68,31 @@ document.addEventListener('keydown', e => {
   }
 });
 
+function loadYoutubeVideo(container) {
+  const iframe = container.querySelector('iframe[data-youtube-src]');
+  iframe.src = iframe.dataset.youtubeSrc;
+  container.classList.add('is-loaded');
+  container.querySelector('.youtube-consent__dialog').remove();
+}
+
+const youtubeVideos = document.querySelectorAll('.youtube-consent');
+if (youtubeVideos.length) {
+  if (localStorage.getItem('youtube-cookie-consent') === 'accepted') {
+    youtubeVideos.forEach(loadYoutubeVideo);
+  } else {
+    document.querySelectorAll('[data-youtube-consent]').forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.dataset.youtubeConsent === 'remember') {
+          localStorage.setItem('youtube-cookie-consent', 'accepted');
+          youtubeVideos.forEach(loadYoutubeVideo);
+        } else {
+          loadYoutubeVideo(button.closest('.youtube-consent'));
+        }
+      });
+    });
+  }
+}
+
 // ── Filtro demo cards (sostituisce Isotope) ─────────────────────────────────
 const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
 const demoCards  = document.querySelectorAll('.demo-card[data-category]');

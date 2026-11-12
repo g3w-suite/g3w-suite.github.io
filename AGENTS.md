@@ -6,7 +6,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 
 ## Verified Current State (2026-05-18)
 
-- `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`.
+- `npm run build` generates the publishable site in ignored `public/`; `npm run dev` generates and serves ignored `.dev/`, rebuilding it when files in `src/` change.
 - Shared page templates and components are directly in `src/`; Italian text is in the flat JSON catalog `src/assets/i18n/it.json`, keyed by the exact source string. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
 
 ## Run

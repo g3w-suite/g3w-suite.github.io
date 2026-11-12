@@ -71,4 +71,14 @@
     </div>
   </div>
 </footer>
+<template id="youtube-consent-dialog">
+  <div class="youtube-consent__dialog">
+    <h2>{{t 'Privacy notice'}}</h2>
+    <p>{{t 'This is external content hosted on YouTube. When you play it, it may store cookies and process your data.'}} <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">{{t 'Privacy policy'}}</a> · <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">{{t 'Terms of service'}}</a></p>
+    <div class="youtube-consent__actions">
+      <button type="button" data-youtube-consent="once">{{t 'Accept and play'}}</button>
+      <button type="button" data-youtube-consent="remember">{{t 'Accept and don\'t ask again'}}</button>
+    </div>
+  </div>
+</template>
 <script src="{{siteRoot}}assets/app.js"></script>

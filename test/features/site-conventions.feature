@@ -26,6 +26,10 @@ Feature: Multilingual site conventions
     Given the HTML pages in the language folders
     Then the navigation controls retain their accessibility attributes
 
+  Scenario: YouTube videos require consent
+    Given the HTML pages in the language folders
+    Then YouTube videos do not load before consent
+
   Scenario: Internal links are extensionless and resolve
     Given the HTML pages in the language folders
     Then every internal link and asset resolves without HTML extensions

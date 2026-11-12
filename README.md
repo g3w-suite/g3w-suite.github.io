@@ -11,7 +11,7 @@ npm i
 npm run dev
 ```
 
-Open [http://localhost:8080/](http://localhost:8080/). Development output is generated in `.dev/`; port 8080 must be available and does not normally require elevated privileges on Linux.
+Open [http://localhost:8080/](http://localhost:8080/). Development output is generated in `.dev/`; the server watches `src/` and rebuilds when files change, so just reload the browser. Port 8080 must be available and does not normally require elevated privileges on Linux.
 
 Run `npm run build` to generate the published site in `public/`.
 
@@ -25,7 +25,7 @@ Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` an
 - **Appearance and interactions:** edit `src/assets/style.css` and `src/assets/app.js` (vanilla JavaScript, without libraries).
 - **Images:** add them to `src/assets/img/` and link them with `/assets/img/...`.
 
-Reload the browser to see changes. `src/_redirect.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
+`src/_redirect.html` only redirects to the Italian version. `public/` is generated for publishing and is not source.
 
 ## Add or update a page
 
