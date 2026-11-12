@@ -402,7 +402,9 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
 function build(outputDir) {
   const pageFiles = [
     ...htmlFiles(sourceDir),
-    ...markdownFiles(path.join(sourceDir, 'changelog')),
+    ...markdownFiles(sourceDir).filter(file =>
+      path.relative(sourceDir, file).split(path.sep)[0] !== 'docs'
+    ),
   ];
   const pages = pageFiles.map(file => ({
     file,
@@ -438,7 +440,10 @@ function build(outputDir) {
           ''
         );
         const pageContent = path.extname(file) === '.md'
-          ? renderChangelogMarkdown(content)
+          ? page.startsWith(`changelog${path.sep}`)
+            ? renderChangelogMarkdown(content)
+            // Remove source indentation so Marked doesn't treat nested HTML as code.
+            : marked.parse(content.replace(/^[\t ]+/gm, ''))
           : content;
         const header = renderComponent('header', lang, page, pageUrls, pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls);

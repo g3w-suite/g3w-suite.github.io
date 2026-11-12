@@ -15,7 +15,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 npm run dev
 ```
 
-`static/` contains tracked styles, scripts, fonts and images alongside generated pages. `src/index.html` is the shared homepage and `src/_redirect.html` supplies the root redirect.
+`static/` contains tracked styles, scripts, fonts and images alongside generated pages. `src/index.md` is the shared homepage and `src/_redirect.html` supplies the root redirect.
 
 ## Tests
 
@@ -27,7 +27,7 @@ for pushes and pull requests.
 
 ```
 src/
-|- index.html           # Shared homepage template, published as it/ and en/
+|- index.md             # Shared homepage template, published as it/ and en/
 |- _redirect.html       # Root redirect emitted as static/index.html
 |- _header.html          # Shared page components
 |- _footer.html
@@ -40,11 +40,11 @@ static/
 |- it/, en/, docs/        # Generated publishing output; ignored by Git
 ```
 
-`src/index.html` is the shared homepage template. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates static pages for publishing or local development, including the Markdown manual under `/docs/`.
+`src/index.md` is the shared homepage template. Site pages and changelog pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `server.js` also generates the Markdown manual under `/docs/`.
 
 ## Key Conventions
 
-- Internal page URLs use trailing-slash directories, never `.html`; `demo.html` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`.
+- Internal page URLs use trailing-slash directories, never `.html`; `demo.md` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`.
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - Keep `<main id="main-content">` on all pages.
@@ -52,14 +52,14 @@ static/
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
 - Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
 - Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
-- Changelog pages in `src/changelog/` are Markdown. Their first H1 and following paragraph become the page heading and intro; use raw HTML only for custom layout and media.
+- Site pages in `src/` and changelog pages in `src/changelog/` are Markdown; use raw HTML only for custom layout and media.
 - For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 
-## HTML Pattern
+## Page Source Pattern
 
-Page files are fragments: the build automatically injects the shared header before page content and the footer after it. Do not write header/footer include directives in page templates.
+Site page files are Markdown fragments compiled by JavaScript. Prefer Markdown for text and use raw HTML for custom layout and media. The build injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
 
 ```html
 <main id="main-content">...</main>
@@ -97,7 +97,7 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 - `AGENTS.md`
 - `package.json`
 - `server.js`
-- `src/index.html`
+- `src/index.md`
 - `static/style.css`
 - `static/app.js`
 - `src/_header.html`

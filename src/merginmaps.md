@@ -1,7 +1,9 @@
 <main id="main-content">
   <div class="page-header">
     <div class="container">
-      <h1>MerginMaps Partnership</h1>
+
+# MerginMaps Partnership
+
     </div>
   </div>
 
@@ -9,7 +11,9 @@
     <div class="container content-page">
       <div class="mm-header text-center">
         <img src="/img/site-mergin-maps-logo.jpg" alt="Mergin Maps" style="max-width:380px;margin:0 auto 1.5rem;display:block;">
-        <h2>MerginMaps partnership</h2>
+
+## MerginMaps partnership
+
         <p class="section-intro">
           Gis3W
           <a href="https://{{#it}}it.{{/it}}merginmaps.com/partners#gis3w" target="_blank" rel="noopener">{{t 'provides support'}}</a>
@@ -22,23 +26,24 @@
 
       <div class="mm-features grid-2" style="align-items:start;margin:3rem 0;">
         <div>
-          <h4>{{t 'With the OS solution'}} <b>Mergin Maps</b> {{t 'you can:'}}</h4>
-          <ul>
-            <li>{{t 'set up field data acquisition apps by defining features and functionality on QGIS projects'}}</li>
-            <li>{{t 'define data entry forms using QGIS modules, widgets and editing tools'}}</li>
-            <li>{{t 'easily synchronize your data to a centralized server, with conflict management'}}</li>
-            <li>{{t 'easily integrate your geospatial infrastructure'}}</li>
-            <li>{{t 'connect an external high-precision GPS for precision surveys'}}</li>
-          </ul>
+
+#### {{t 'With the OS solution'}} <b>Mergin Maps</b> {{t 'you can:'}}
+
+- {{t 'set up field data acquisition apps by defining features and functionality on QGIS projects'}}
+- {{t 'define data entry forms using QGIS modules, widgets and editing tools'}}
+- {{t 'easily synchronize your data to a centralized server, with conflict management'}}
+- {{t 'easily integrate your geospatial infrastructure'}}
+- {{t 'connect an external high-precision GPS for precision surveys'}}
 
           <h4 style="margin-top:2rem;">{{t 'Integration with G3W-SUITE'}}</h4>
-          <p><b>{{t 'Future developments will bring integration of QGIS projects published on G3W-SUITE with those available on Mergin Maps:'}}</b></p>
-          <ul>
-            <li>{{t 'a single administration point to publish on the web and on the app'}}</li>
-            <li>{{t 'user sharing'}}</li>
-            <li>{{t 'ease of use and management'}}</li>
-            <li>{{t 'API integration'}}</li>
-          </ul>
+
+<b>{{t 'Future developments will bring integration of QGIS projects published on G3W-SUITE with those available on Mergin Maps:'}}</b>
+
+- {{t 'a single administration point to publish on the web and on the app'}}
+- {{t 'user sharing'}}
+- {{t 'ease of use and management'}}
+- {{t 'API integration'}}
+
         </div>
         <div>
           <img src="/img/site-mergin-maps-on-devices.png" alt="{{t 'Mergin Maps on devices'}}" style="border-radius:6px;">
@@ -52,17 +57,17 @@
       </div>
 
       <div style="margin-top:2.5rem;">
-        <h4>Gis3W, <a href="https://{{#it}}it.{{/it}}merginmaps.com/partners" target="_blank" rel="noopener">{{t 'official partner'}}</a> {{t 'of Mergin Maps, provides:'}}</h4>
-        <ul>
-          <li><b>{{t 'Training'}}</b>{{t ': QGIS project preparation, creation and design of data entry forms, background maps, field data collection, synchronization and everything needed for the best results'}}</li>
-          <li><b>{{t 'Consulting and support'}}</b>{{t ': project structuring, connection and synchronization with centralized database, customized solutions'}}</li>
-          <li><b>{{t 'Development'}}</b>{{t ': thanks to collaboration with MerginMaps developers, we offer customization services, custom releases and addition of new features'}}</li>
-        </ul>
+
+#### Gis3W, <a href="https://{{#it}}it.{{/it}}merginmaps.com/partners" target="_blank" rel="noopener">{{t 'official partner'}}</a> {{t 'of Mergin Maps, provides:'}}
+
+- <b>{{t 'Training'}}</b>{{t ': QGIS project preparation, creation and design of data entry forms, background maps, field data collection, synchronization and everything needed for the best results'}}
+- <b>{{t 'Consulting and support'}}</b>{{t ': project structuring, connection and synchronization with centralized database, customized solutions'}}
+- <b>{{t 'Development'}}</b>{{t ': thanks to collaboration with MerginMaps developers, we offer customization services, custom releases and addition of new features'}}
+
       </div>
     </div>
   </section>
 </main>
-
 
 <script type="application/json" data-i18n>
   {

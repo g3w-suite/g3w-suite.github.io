@@ -5,7 +5,9 @@
     <div class="container">
       <div class="hero__content">
         <span class="section-label">Open Source WebGIS</span>
-        <h1>{{t 'Publish your QGIS projects on the Web'}}</h1>
+
+# {{t 'Publish your QGIS projects on the Web'}}
+
         <p class="hero__subtitle">{{t 'Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.'}}</p>
         <div class="btn-group">
           <a class="btn btn--primary" href="/{{t 'en'}}/changelog/v3.11/">{{t 'What\'s new in v3.11'}}</a>
@@ -26,22 +28,27 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Get started in minutes'}}</span>
-        <h2>{{t 'An open-source framework for the comprehensive management of your geospatial infrastructure'}}</h2>
-        <p>{{t 'It offers more than just the publication of WebGIS services; it also facilitates the development of collaborative mapping management systems, data analysis via interactive charts and temporal animations, online geospatial processing, metadata exposure as a CSW (Catalog Service for the Web) service, and much more.'}}</p>
-        <p>{{t 'All of this is built upon full integration with the open-source geospatial application QGIS.'}}</p>
+
+## {{t 'An open-source framework for the comprehensive management of your geospatial infrastructure'}}
+
+{{t 'It offers more than just the publication of WebGIS services; it also facilitates the development of collaborative mapping management systems, data analysis via interactive charts and temporal animations, online geospatial processing, metadata exposure as a CSW (Catalog Service for the Web) service, and much more.'}}
+
+{{t 'All of this is built upon full integration with the open-source geospatial application QGIS.'}}
+
       </div>
    </div>
   </section>
-
-
 
   <!-- 4 steps -->
   <section class="section">
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Get started in minutes'}}</span>
-        <h2>{{t 'Publish your QGIS project in 4 steps'}}</h2>
-        <p>{{t 'No QGIS plugin needed: upload your .qgs or .qgz file and your WebGIS service is immediately ready.'}}</p>
+
+## {{t 'Publish your QGIS project in 4 steps'}}
+
+{{t 'No QGIS plugin needed: upload your .qgs or .qgz file and your WebGIS service is immediately ready.'}}
+
       </div>
       <div class="grid-2 grid--top">
         <ol class="steps">
@@ -100,10 +107,15 @@
           <img src="/img/{{#it}}site-italian-webgis-editing-preview.jpg{{/it}}{{#en}}site-web-cartographic-management-preview.jpg{{/en}}" alt="{{t 'Web cartographic management with G3W-Suite'}}" class="img-rounded-lg img-shadow" loading="lazy">
         </div>
         <div>
-          <h2>{{t 'From desktop to web in a few clicks'}}</h2>
-          <p>{{t 'Publish a QGIS project as WebGIS while keeping styles, symbols, editing forms and print layouts, without reconfiguring the project.'}}</p>
-          <p>{{t 'The admin panel lets you manage users, roles and permissions per project, including multi-team scenarios.'}}</p>
-          <p>{{t 'Web editing supports collaborative workflows and field data collection, including mobile and offline use cases.'}}</p>
+
+## {{t 'From desktop to web in a few clicks'}}
+
+{{t 'Publish a QGIS project as WebGIS while keeping styles, symbols, editing forms and print layouts, without reconfiguring the project.'}}
+
+{{t 'The admin panel lets you manage users, roles and permissions per project, including multi-team scenarios.'}}
+
+{{t 'Web editing supports collaborative workflows and field data collection, including mobile and offline use cases.'}}
+
           <div class="btn-group btn-group--left mt-3">
             <a class="btn btn--primary" href="{{#en}}https://v310.g3wsuite.it/it/#/en/{{/en}}{{#it}}https://v311.g3wsuite.it{{/it}}" target="_blank" rel="noopener">{{t 'Try the demo'}}</a>
             <a class="btn btn--outline" href="/{{t 'en'}}/download/#quick-start">Quick Start</a>
@@ -118,8 +130,11 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Validated in production'}}</span>
-        <h2>{{t 'Used by public bodies, companies and universities'}}</h2>
-        <p>{{t 'From territorial planning to network management, with active projects in different operational contexts.'}}</p>
+
+## {{t 'Used by public bodies, companies and universities'}}
+
+{{t 'From territorial planning to network management, with active projects in different operational contexts.'}}
+
       </div>
       <div class="sponsors-grid sponsors-grid--compact">
         <a class="sponsor-logo" href="{{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan Area of Bari'}}"><img src="/img/site-bari.png" alt="{{t 'Metropolitan Area of Bari'}}" loading="lazy"></a>
@@ -142,28 +157,40 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Use cases'}}</span>
-        <h2>{{t 'One platform, three operational use cases'}}</h2>
-        <p>{{t 'WebGIS publishing, public-sector interoperability and advanced geospatial analysis: three paths based on project needs.'}}</p>
+
+## {{t 'One platform, three operational use cases'}}
+
+{{t 'WebGIS publishing, public-sector interoperability and advanced geospatial analysis: three paths based on project needs.'}}
+
       </div>
       <div class="feature-list">
         <article class="feature-item">
-          <h3>{{t 'WebGIS publishing and management'}}</h3>
-          <p>{{t 'Integrated map client and admin panel for multi-user projects, editing workflows and permission management.'}}</p>
+
+### {{t 'WebGIS publishing and management'}}
+
+{{t 'Integrated map client and admin panel for multi-user projects, editing workflows and permission management.'}}
+
           <div class="btn-group btn-group--left mt-2">
             <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/download/#cosa">{{t 'Full feature set'}}</a>
           </div>
         </article>
         <article class="feature-item feature-item--blue">
-          <h3>{{t 'Interoperability for public administration'}}</h3>
-          <p>{{t 'Supports digital transition scenarios with dedicated integrations and PDND workflows.'}}</p>
+
+### {{t 'Interoperability for public administration'}}
+
+{{t 'Supports digital transition scenarios with dedicated integrations and PDND workflows.'}}
+
           <div class="btn-group btn-group--left mt-2">
             <a class="btn btn--outline btn--sm" href="https://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener">{{t 'Public sector solutions'}}</a>
             <a class="btn btn--outline btn--sm" href="https://developers.italia.it/it/pdnd/" target="_blank" rel="noopener">PDND</a>
           </div>
         </article>
         <article class="feature-item">
-          <h3>{{t 'QGIS Processing in the browser'}}</h3>
-          <p>{{t 'Run QGIS Processing models directly from the web client to integrate analysis into operational workflows.'}}</p>
+
+### {{t 'QGIS Processing in the browser'}}
+
+{{t 'Run QGIS Processing models directly from the web client to integrate analysis into operational workflows.'}}
+
           <div class="btn-group btn-group--left mt-2">
             <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/model-builder-processing/">Processing API</a>
             <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/changelog/v3.11/">Changelog 3.11</a>
@@ -178,26 +205,33 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Open Source Ecosystem'}}</span>
-        <h2>{{t 'Partnerships and community supporting the project'}}</h2>
+
+## {{t 'Partnerships and community supporting the project'}}
+
       </div>
       <div class="grid-2 grid--top home-ecosystem">
         <div class="partnership-banner">
           <img src="/img/site-mergin-maps-logo.jpg" alt="MerginMaps" loading="lazy">
           <div>
-            <h3>G3W-SUITE + Mergin Maps</h3>
-            <p>{{t 'Field data collection and WebGIS publishing in one workflow, from survey to sharing.'}}</p>
+
+### G3W-SUITE + Mergin Maps
+
+{{t 'Field data collection and WebGIS publishing in one workflow, from survey to sharing.'}}
+
             <a class="btn btn--primary" href="/{{t 'en'}}/merginmaps/">{{t 'Discover the solutions'}}</a>
           </div>
         </div>
         <article class="feature-item feature-item--blue">
-          <h3>{{t 'Main contributors'}}</h3>
-          <p>{{t 'An active community keeps G3W-SUITE stable, up to date and continuously evolving.'}}</p>
-          <ul>
-            <li>Walter Lorenzetti (@wlorenzetti)</li>
-            <li>Matteo Tosi (@Raruto)</li>
-            <li>francesco Boccacci (@volterra79)</li>
-            <li>Alessandro Pasotti (@elpaso)</li>
-          </ul>
+
+### {{t 'Main contributors'}}
+
+{{t 'An active community keeps G3W-SUITE stable, up to date and continuously evolving.'}}
+
+- Walter Lorenzetti (@wlorenzetti)
+- Matteo Tosi (@Raruto)
+- francesco Boccacci (@volterra79)
+- Alessandro Pasotti (@elpaso)
+
           <div class="btn-group btn-group--left mt-2">
             <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/sponsor/">{{t 'Sponsors and contributors'}}</a>
           </div>

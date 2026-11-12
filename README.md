@@ -19,11 +19,11 @@ Run `npm run build` to generate the published site and documentation in `static/
 
 The English manual is maintained as Markdown in `src/docs/` and compiled with the site build to `/docs/`. Documentation pages reuse the site's shared header and footer and include client-side search across the manual. Images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
 
-Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` and `/en/demo/` (published as `it/demo/index.html` and `en/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. The shared homepage is `src/index.html`; `src/_redirect.html` generates the root redirect. Use these URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
+Page URLs use directories, never `.html`: `src/demo.md` becomes `/it/demo/` and `/en/demo/` (published as `it/demo/index.html` and `en/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. The shared homepage is `src/index.md`; `src/_redirect.html` generates the root redirect. Use these URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 
 ## Where to make changes
 
-- **Text and pages:** edit the shared HTML fragments in `src/` and the Markdown changelog pages in `src/changelog/`. English text is the default; wrap every text or attribute value that needs Italian translation in `{{t '...'}}` and define its Italian value in that file's `<script type="application/json" data-i18n>` block. Omit empty language maps such as `"en": {}`. Keep the data blocks at the end of the page. Changelog pages use Markdown for headings, paragraphs and lists; keep raw HTML for custom layout and media. Unmarked strings are left unchanged. In URLs, mark only the portion that changes between languages, not the entire URL. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
+- **Text and pages:** edit the shared HTML components in `src/` and the Markdown page sources directly in `src/` (including `src/changelog/`). Use Markdown for headings, paragraphs and lists; keep raw HTML for custom layout and media. English text is the default; wrap every text or attribute value that needs Italian translation in `{{t '...'}}` and define its Italian value in that file's `<script type="application/json" data-i18n>` block. Omit empty language maps such as `"en": {}`. Keep the data blocks at the end of the page. Unmarked strings are left unchanged. In URLs, mark only the portion that changes between languages, not the entire URL. Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only where the languages need different markup or content.
 - **Head metadata:** define the page `title`, optional `description`, and Open Graph title/description/type in a `<script type="application/json" data-i18n-meta>` block; the build inserts them into `<head>`. Italian text values belong in the same page's `data-i18n` block.
 - **Shared document shell:** page templates are fragments; the build injects `src/_header.html` before page content and `src/_footer.html` after it. Do not add header/footer include directives or document-level tags to page files. The header opens the doctype, `<html>`, `<head>` and `<body>` and contains common head tags; each body gets a route-based `page-*` class. The footer closes the document.
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
@@ -34,7 +34,7 @@ Page URLs use directories, never `.html`: `src/demo.html` becomes `/it/demo/` an
 
 ## Add or update a page
 
-1. Start from an existing page directly in `src/` or in `src/changelog/`, keeping its metadata and local translations. Changelog Markdown pages use the first H1 and following paragraph for their page heading and intro.
+1. Start from an existing Markdown page directly in `src/` or in `src/changelog/`, keeping its metadata and local translations. Keep raw HTML for page-specific layout and media.
 2. Add exact source-string translations to the page's `data-i18n` JSON block and mark translated strings with `{{t '...'}}`; shared components keep their translations in their own files. Use language blocks only for genuine differences. Check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
 3. Use site-root URLs for internal pages and assets, such as `/it/demo/` and `/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
@@ -48,7 +48,7 @@ npm test
 
 The Gherkin scenarios in `test/features/` check page structure, assets, language links, navigation accessibility and every internal `href`/`src` target (including HTML fragments) without contacting external sites; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.
 
-Source HTML, CSS, JavaScript and SVG must be saved as UTF-8. Tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities.
+Source Markdown, HTML, CSS, JavaScript and SVG must be saved as UTF-8. Tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities.
 
 A separate workflow deploys `static/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
 

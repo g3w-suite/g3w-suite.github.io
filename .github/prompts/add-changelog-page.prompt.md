@@ -21,7 +21,7 @@ Crea una nuova pagina changelog per G3W-Suite versione **$ARGUMENTS**.
    - Usa `{{#it}}...{{/it}}` o `{{#en}}...{{/en}}` solo per differenze di contenuto o markup non gestibili con le traduzioni
    - Inserisci un segnaposto Markdown se i dettagli della release non sono ancora disponibili
 
-3. **Aggiorna `src/_header.html`** solo se serve e `src/download.html` se la nuova versione deve apparire nella tabella dei download.
+3. **Aggiorna `src/_header.html`** solo se serve e `src/download.md` se la nuova versione deve apparire nella tabella dei download.
 
 ## Regole da rispettare
 

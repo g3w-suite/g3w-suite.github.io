@@ -1,7 +1,9 @@
 <main id="main-content">
   <div class="page-header">
     <div class="container">
-      <h1>Download</h1>
+
+# Download
+
     </div>
   </div>
 
@@ -9,7 +11,9 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Consult the documentation for each branch'}}</span>
-        <h2>{{t 'Documentation'}}</h2>
+
+## {{t 'Documentation'}}
+
       </div>
       <div class="docs-table">
         <table>
@@ -170,8 +174,11 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Hosted or on-premise'}}</span>
-        <h2>{{t 'Everything you need for your QGIS WebGIS'}}</h2>
-        <p>{{t 'From project publishing to collaborative web editing, G3W-SUITE automatically inherits styles, forms and relations from your QGIS file.'}}</p>
+
+## {{t 'Everything you need for your QGIS WebGIS'}}
+
+{{t 'From project publishing to collaborative web editing, G3W-SUITE automatically inherits styles, forms and relations from your QGIS file.'}}
+
       </div>
       <ul class="feature-list">
         <li class="feature-item">
@@ -235,8 +242,11 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-label">{{t 'Map client and administration'}}</span>
-        <h2>{{t 'Features in detail'}}</h2>
-        <p>{{t 'Two interfaces designed for end users and system managers.'}}</p>
+
+## {{t 'Features in detail'}}
+
+{{t 'Two interfaces designed for end users and system managers.'}}
+
       </div>
       <div class="features-cols">
         <div>
@@ -244,38 +254,74 @@
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Optimised map client'}}</p>
-              <p><b>{{t 'Graphic and functional optimization'}}</b> {{t 'for tablets and smartphones'}}</p>
-              <p><b>{{t 'Customizable graphic interface'}}</b> {{t 'with texts, logos and contact references'}}</p>
-              <p><b>{{t 'Geolocation functions'}}</b> {{t 'for field work'}}</p>
+
+<b>{{t 'Graphic and functional optimization'}}</b> {{t 'for tablets and smartphones'}}
+
+<b>{{t 'Customizable graphic interface'}}</b> {{t 'with texts, logos and contact references'}}
+
+<b>{{t 'Geolocation functions'}}</b> {{t 'for field work'}}
+
             </div>
           </div>
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Basic tools'}}</p>
-              {{#en}}<p><b>Geographic search</b> tools and auto-zoom functions</p>{{/en}}{{#it}}<p>Strumenti di <b>ricerca geografica</b> e funzioni di auto-zoom</p>{{/it}}
-              <p><b>{{t 'Base maps'}}</b> (OSM, GoogleMaps, Yahoo, Bing)</p>
-              <p><b>{{t 'Print'}}</b> {{t 'based on'}} <b>layout composer</b> {{t '(with'}} <b>{{t 'Atlas'}}</b> {{t 'support) linked to the'}} <b>{{t 'QGIS project'}}</b></p>
-              <p><b>{{t 'Metadata publication'}}</b> {{t 'defined on QGIS project'}}</p>
+              {{#en}}
+
+<b>Geographic search</b> tools and auto-zoom functions
+
+{{/en}}{{#it}}
+
+Strumenti di <b>ricerca geografica</b> e funzioni di auto-zoom
+
+{{/it}}
+
+<b>{{t 'Base maps'}}</b> (OSM, GoogleMaps, Yahoo, Bing)
+
+<b>{{t 'Print'}}</b> {{t 'based on'}} <b>layout composer</b> {{t '(with'}} <b>{{t 'Atlas'}}</b> {{t 'support) linked to the'}} <b>{{t 'QGIS project'}}</b>
+
+<b>{{t 'Metadata publication'}}</b> {{t 'defined on QGIS project'}}
+
             </div>
           </div>
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Advanced tools'}}</p>
-              <p><b>Query Builder</b> {{t 'for custom searches'}}</p>
-              <p>{{t 'Data visualization based on'}} <b>{{t 'join and 1:N and N:M relations'}}</b></p>
-              <p><b>{{t 'Chart visualization'}}</b> {{t 'created with the QGIS plugin'}} <b>DataPlotly</b></p>
-              <p>{{t 'Links to'}} <b>{{t 'web links and multimedia content'}}</b></p>
-              <p><b>{{t 'On-the-fly loading'}}</b> {{t 'of vector layers (.shp, .kml, .geojson, csv)'}}</p>
+
+<b>Query Builder</b> {{t 'for custom searches'}}
+
+{{t 'Data visualization based on'}} <b>{{t 'join and 1:N and N:M relations'}}</b>
+
+<b>{{t 'Chart visualization'}}</b> {{t 'created with the QGIS plugin'}} <b>DataPlotly</b>
+
+{{t 'Links to'}} <b>{{t 'web links and multimedia content'}}</b>
+
+<b>{{t 'On-the-fly loading'}}</b> {{t 'of vector layers (.shp, .kml, .geojson, csv)'}}
+
             </div>
           </div>
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Online editing'}}</p>
-              <p>{{t 'Online editing, also'}} <b>{{t 'relational'}}</b>{{t ', with'}} <b>{{t 'permission management'}}</b></p>
-              <p><b>{{t 'Form and widgets'}}</b> {{t 'for'}} <b>{{t 'simplified attribute compilation'}}</b></p>
-              {{#en}}<p><b>Feature-lock</b> functions for <b>multi-user editing</b></p>{{/en}}{{#it}}<p>Funzioni di <b>feature-lock</b> per l'editing multi-utente</p>{{/it}}
-              <p><b>{{t 'Alphanumeric and geographic constraints'}}</b> {{t 'definable for single users or groups'}}</p>
-              <p>{{t 'Editing also'}} <b>off line</b></p>
+
+{{t 'Online editing, also'}} <b>{{t 'relational'}}</b>{{t ', with'}} <b>{{t 'permission management'}}</b>
+
+<b>{{t 'Form and widgets'}}</b> {{t 'for'}} <b>{{t 'simplified attribute compilation'}}</b>
+
+              {{#en}}
+
+<b>Feature-lock</b> functions for <b>multi-user editing</b>
+
+{{/en}}{{#it}}
+
+Funzioni di <b>feature-lock</b> per l'editing multi-utente
+
+{{/it}}
+
+<b>{{t 'Alphanumeric and geographic constraints'}}</b> {{t 'definable for single users or groups'}}
+
+{{t 'Editing also'}} <b>off line</b>
+
             </div>
           </div>
         </div>
@@ -284,36 +330,80 @@
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Cartographic project publication'}}</p>
-              <p>{{t 'Ability to create'}} <b>{{t 'thematic cartographic containers'}}</b> {{t 'for'}} <b>{{t 'structured management'}}</b> {{t 'of WebGis services'}}</p>
-              <p>{{t 'Direct publication with'}} <b>{{t 'complete graphic correspondence with QGIS projects'}}</b></p>
-              <p><b>{{t 'Graphic search builder'}}</b> {{t 'activatable on individual services'}}</p>
-              <p><b>{{t 'Cache management'}}</b> {{t 'and'}} <b>{{t 'base layer creation'}}</b> {{t 'from WebGis services'}}</p>
+
+{{t 'Ability to create'}} <b>{{t 'thematic cartographic containers'}}</b> {{t 'for'}} <b>{{t 'structured management'}}</b> {{t 'of WebGis services'}}
+
+{{t 'Direct publication with'}} <b>{{t 'complete graphic correspondence with QGIS projects'}}</b>
+
+<b>{{t 'Graphic search builder'}}</b> {{t 'activatable on individual services'}}
+
+<b>{{t 'Cache management'}}</b> {{t 'and'}} <b>{{t 'base layer creation'}}</b> {{t 'from WebGis services'}}
+
             </div>
           </div>
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Data synchronization'}}</p>
-              <p>{{t 'Use data on your'}} <b>{{t 'PostGreSQL/PostGis, Oracle Spatial or MSSQL DB'}}</b></p>
-              {{#en}}<p>..but also <b>SQLite/SpatiaLite</b>, <b>GeoPackage, Shapefile, Virtual layer</b> and your <b>raster</b> data</p>{{/en}}{{#it}}<p>..ma anche <b>SQLite/SpatiaLite</b>, <b>GeoPackage, Shapefile, Virtual layer</b> e i tuoi dati <b>raster</b></p>{{/it}}
+
+{{t 'Use data on your'}} <b>{{t 'PostGreSQL/PostGis, Oracle Spatial or MSSQL DB'}}</b>
+
+              {{#en}}
+
+..but also <b>SQLite/SpatiaLite</b>, <b>GeoPackage, Shapefile, Virtual layer</b> and your <b>raster</b> data
+
+{{/en}}{{#it}}
+
+..ma anche <b>SQLite/SpatiaLite</b>, <b>GeoPackage, Shapefile, Virtual layer</b> e i tuoi dati <b>raster</b>
+
+{{/it}}
             </div>
           </div>
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Access and editing permissions management'}}</p>
-              <p><b>{{t 'User creation'}}</b> {{t '(individual and groups) and'}} <b>{{t 'access permissions management'}}</b></p>
-              <p>{{t 'Management of'}} <b>{{t 'online editing permissions'}}</b> {{t 'on individual layers'}}</p>
-              <p><b>{{t 'Alphanumeric constraints'}}</b> {{t 'based on'}} <b>{{t 'SQL and QGIS expressions'}}</b> {{t 'for creating'}} <b>{{t 'visualization and editing filters'}}</b></p>
-              <p><b>{{t 'Geographic constraints'}}</b> {{t 'for creating'}} <b>{{t 'visualization and editing filters'}}</b></p>
+
+<b>{{t 'User creation'}}</b> {{t '(individual and groups) and'}} <b>{{t 'access permissions management'}}</b>
+
+{{t 'Management of'}} <b>{{t 'online editing permissions'}}</b> {{t 'on individual layers'}}
+
+<b>{{t 'Alphanumeric constraints'}}</b> {{t 'based on'}} <b>{{t 'SQL and QGIS expressions'}}</b> {{t 'for creating'}} <b>{{t 'visualization and editing filters'}}</b>
+
+<b>{{t 'Geographic constraints'}}</b> {{t 'for creating'}} <b>{{t 'visualization and editing filters'}}</b>
+
             </div>
           </div>
           <div class="service-item">
             <div>
               <p class="service-item__title">{{t 'Dedicated modules for PA'}}</p>
-              {{#en}}<p><b>Land registry</b> connection and tax checks</p>{{/en}}{{#it}}<p>Collegamento <b>censuario catasto</b> e verifiche tributarie</p>{{/it}}
-              <p><b>{{t 'CDU and associated regulations'}}</b></p>
-              {{#en}}<p><b>Civic numbers and street directory</b> management</p>{{/en}}{{#it}}<p>Gestione <b>civici e stradario</b></p>{{/it}}
-              <p><b>{{t 'RNDT and INSPIRE metadata'}}</b></p>
-              {{#it}}<p><a href="http://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener"><b>Sei una PA? Approfondisci</b></a></p>{{/it}}
+              {{#en}}
+
+<b>Land registry</b> connection and tax checks
+
+{{/en}}{{#it}}
+
+Collegamento <b>censuario catasto</b> e verifiche tributarie
+
+{{/it}}
+
+<b>{{t 'CDU and associated regulations'}}</b>
+
+              {{#en}}
+
+<b>Civic numbers and street directory</b> management
+
+{{/en}}{{#it}}
+
+Gestione <b>civici e stradario</b>
+
+{{/it}}
+
+<b>{{t 'RNDT and INSPIRE metadata'}}</b>
+
+              {{#it}}
+
+<a href="http://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener"><b>Sei una PA? Approfondisci</b></a>
+
+{{/it}}
             </div>
           </div>
         </div>
@@ -327,8 +417,11 @@
       <div class="grid-2 grid--center">
         <div>
           <span class="section-label">{{t 'Alternative to self-hosting'}}</span>
-          <h2>{{t 'Don\'t want to manage the infrastructure?'}}</h2>
-          <p>{{t 'G3W-Suite is open source and you can self-host it following the Quick Start guide. If you prefer not to deal with servers, updates and backups,'}} <b>{{t 'GIS3W offers a managed hosting service'}}</b>{{t ': your QGIS WebGIS up and running in days, with SSL, daily backups and technical support included.'}}</p>
+
+## {{t 'Don\'t want to manage the infrastructure?'}}
+
+{{t 'G3W-Suite is open source and you can self-host it following the Quick Start guide. If you prefer not to deal with servers, updates and backups,'}} <b>{{t 'GIS3W offers a managed hosting service'}}</b>{{t ': your QGIS WebGIS up and running in days, with SSL, daily backups and technical support included.'}}
+
           <div class="btn-group" style="justify-content:flex-start;margin-top:1.5rem;">
             <a class="btn btn--primary" href="#footer-help-title">{{t 'Ask about managed hosting'}}</a>
             <a class="btn btn--outline" href="/{{t 'en'}}/download/#quick-start">Quick Start (self-hosted)</a>
@@ -348,13 +441,15 @@
     </div>
   </section>
 
-
   <!-- Quick Start -->
   <section id="quick-start" class="section section--alt">
     <div class="container content-page">
       <div class="intro-box">
-        <p><b>{{t 'Have you completed the installation of the suite on your server, or do you want to try publishing a project on the on-line demo?'}}</b></p>
-        <p>{{t 'Find out how easy it is to do it in four simple steps!'}}</p>
+
+<b>{{t 'Have you completed the installation of the suite on your server, or do you want to try publishing a project on the on-line demo?'}}</b>
+
+{{t 'Find out how easy it is to do it in four simple steps!'}}
+
       </div>
 
       <div class="step">
@@ -365,8 +460,11 @@
         <div class="step__body">
           <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
             <div>
-              <p>{{t 'Create your QGIS cartographic project defining all the aspects of interest: map content, symbology and labelling, legend structure, attribute query form, print layouts (free and atlas) and much more.'}}</p>
-              <p>{{t 'Remember to organize your projects and geographic data on your PC as illustrated and described in the'}} <a href="/docs/datamanagement/#organization-of-data-and-projects">{{t 'manual'}}</a>.</p>
+
+{{t 'Create your QGIS cartographic project defining all the aspects of interest: map content, symbology and labelling, legend structure, attribute query form, print layouts (free and atlas) and much more.'}}
+
+{{t 'Remember to organize your projects and geographic data on your PC as illustrated and described in the'}} <a href="/docs/datamanagement/#organization-of-data-and-projects">{{t 'manual'}}</a>.
+
               {{#en}}<img src="/img/site-qgis.jpg" alt="{{t 'QGIS project'}}" style="margin-top:1rem;border-radius:4px;">{{/en}}{{#it}}<img src="/img/site-qgis.jpg" alt="Progetto QGIS" class="img-rounded mt-3" loading="lazy">{{/it}}
             </div>
             <div>
@@ -387,9 +485,13 @@
               <iframe class="step__video" src="https://www.youtube.com/embed/8wKBoxxIs-4" title="G3W-SUITE Quick Start 2: upload your geo-data on the server" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
             <div>
-              <p>{{t 'If your project is based on local files (Shp, GeoPackage, SpatiaLite, raster) it is necessary that such data is present on the server at the time of publication.'}}</p>
-              <p>{{t 'The'}} <a href="/docs/datamanagement/#geographical-data-synchronization-on-the-server"><b>FileManager</b></a> {{t 'module will allow you to upload such data reconstructing the same organization set up locally.'}}</p>
-              <p>{{t 'If your geographic data is on a PostGis or Oracle Spatial GeoDB, you simply need to allow access from the suite.'}}</p>
+
+{{t 'If your project is based on local files (Shp, GeoPackage, SpatiaLite, raster) it is necessary that such data is present on the server at the time of publication.'}}
+
+{{t 'The'}} <a href="/docs/datamanagement/#geographical-data-synchronization-on-the-server"><b>FileManager</b></a> {{t 'module will allow you to upload such data reconstructing the same organization set up locally.'}}
+
+{{t 'If your geographic data is on a PostGis or Oracle Spatial GeoDB, you simply need to allow access from the suite.'}}
+
             </div>
           </div>
         </div>
@@ -403,8 +505,11 @@
         <div class="step__body">
           <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
             <div>
-              <p>{{t 'In order to publish a QGIS project you need to'}} <a href="/docs/admin-users/#add-group-users">{{t 'create a Cartographic Group'}}</a>{{t ': these Groups are containers that allow you to thematically and functionally organize your WebGis services.'}}</p>
-              <p>{{t 'You can publish multiple WebGis services within each Cartographic Group, but remember that they must have the same projection system associated with the Group when created.'}}</p>
+
+{{t 'In order to publish a QGIS project you need to'}} <a href="/docs/admin-users/#add-group-users">{{t 'create a Cartographic Group'}}</a>{{t ': these Groups are containers that allow you to thematically and functionally organize your WebGis services.'}}
+
+{{t 'You can publish multiple WebGis services within each Cartographic Group, but remember that they must have the same projection system associated with the Group when created.'}}
+
             </div>
             <div>
               <iframe class="step__video" src="https://www.youtube.com/embed/P7hKruymHj4" title="G3W-SUITE Quick Start 3: creation of Cartographic Group" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -424,18 +529,27 @@
               <iframe class="step__video" src="https://www.youtube.com/embed/gaxsTFC5uoo" title="G3W-SUITE Quick Start 4: publish your QGIS project as a WebGIS service" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
             <div>
-              <p><a href="/docs/g3wsuite_administration/#publication-of-new-webgis-services">{{t 'Publish your QGIS project'}}</a> {{t 'by uploading the file (.qgs or .qgz) within the created Cartographic Group.'}} <b>{{t 'No plugin needed!'}}</b></p>
-              <p>{{t 'All the settings and functions activated on the project will be automatically inherited by the WebGis service.'}}</p>
-              <p>{{t 'If you want to customize and activate additional functions on the online map, consult the'}} <a href="/docs/g3wsuite_administration/#update-manage-webgis-services">{{t 'manual'}}</a> {{t 'and the'}} <a href="/docs/demo/">{{t 'online tutorial'}}</a>.</p>
+
+<a href="/docs/g3wsuite_administration/#publication-of-new-webgis-services">{{t 'Publish your QGIS project'}}</a> {{t 'by uploading the file (.qgs or .qgz) within the created Cartographic Group.'}} <b>{{t 'No plugin needed!'}}</b>
+
+{{t 'All the settings and functions activated on the project will be automatically inherited by the WebGis service.'}}
+
+{{t 'If you want to customize and activate additional functions on the online map, consult the'}} <a href="/docs/g3wsuite_administration/#update-manage-webgis-services">{{t 'manual'}}</a> {{t 'and the'}} <a href="/docs/demo/">{{t 'online tutorial'}}</a>.
+
             </div>
           </div>
         </div>
       </div>{{#en}}<div class="cta-box">
-        <h2>Try the online demo and discover all the features!</h2>
+
+## Try the online demo and discover all the features!
+
         <a class="btn btn--primary" href="/{{t 'en'}}/demo/">Demo!</a>
       </div>{{/en}}{{#it}}<div class="cta-box">
-        <h2>Prova la demo online!</h2>
-        <p>Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.</p>
+
+## Prova la demo online!
+
+Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
+
         <a class="btn btn--primary" href="/it/demo/#demo-3-11">Vai alla demo</a>
       </div>{{/it}}
     </div>

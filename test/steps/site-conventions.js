@@ -15,10 +15,12 @@ function htmlFiles(dir) {
 }
 
 function pageSourceFiles(dir) {
-  const changelogDir = path.join(dir, 'changelog');
+  const markdownPages = filesIn(dir).filter(file =>
+    file.endsWith('.md') && path.relative(dir, file).split(path.sep)[0] !== 'docs'
+  );
   return [
     ...htmlFiles(dir).filter(file => !path.basename(file).startsWith('_')),
-    ...filesIn(changelogDir).filter(file => file.endsWith('.md')),
+    ...markdownPages,
   ];
 }
 
@@ -184,7 +186,8 @@ Then('translated text is rendered for each language', function () {
 
 Then('both languages are generated from shared page templates', function () {
   const sourceDir = path.resolve('src');
-  assert.ok(fs.existsSync(path.join(sourceDir, 'index.html')), 'missing shared homepage template');
+  assert.ok(fs.existsSync(path.join(sourceDir, 'index.md')), 'missing shared homepage template');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'index.html')), 'homepage source must be Markdown');
   assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'i18n')), 'translation catalog directory must not exist');
@@ -198,6 +201,28 @@ Then('both languages are generated from shared page templates', function () {
   const changelogFiles = filesIn(path.join(sourceDir, 'changelog'));
   assert.equal(changelogFiles.length, 13, 'expected all changelog sources to be present');
   assert.ok(changelogFiles.every(file => file.endsWith('.md')), 'changelog sources must be Markdown');
+  const markdownPages = ['demo', 'download', 'index', 'merginmaps', 'model-builder-processing', 'modules', 'sponsor'];
+  for (const name of markdownPages) {
+    assert.ok(fs.existsSync(path.join(sourceDir, `${name}.md`)), `${name} page source must be Markdown`);
+    assert.ok(!fs.existsSync(path.join(sourceDir, `${name}.html`)), `${name} HTML source must be removed`);
+  }
+  for (const lang of languages) {
+    const homepage = readPage(path.join(staticDir, lang, 'index.html')).$;
+    assert.equal(homepage('.hero__subtitle').length, 1, `${lang} homepage hero content must render as HTML`);
+    for (const name of markdownPages) {
+      const file = name === 'index'
+        ? path.join(staticDir, lang, 'index.html')
+        : path.join(staticDir, lang, name, 'index.html');
+      const page = readPage(file).$;
+      assert.equal(page('main#main-content').length, 1, `${lang} ${name} page must keep its main content`);
+      assert.equal(page('main pre code').length, 0, `${lang} ${name} page must not render HTML as a code block`);
+    }
+  }
+  assert.deepEqual(
+    htmlFiles(sourceDir).filter(file => !path.basename(file).startsWith('_')),
+    [],
+    'all source pages must use Markdown'
+  );
   for (const file of pageSourceFiles(sourceDir)) {
     const source = fs.readFileSync(file, 'utf8');
     assert.doesNotMatch(

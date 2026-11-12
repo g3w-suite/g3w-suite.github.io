@@ -1,37 +1,71 @@
 <main id="main-content">
   <div class="page-header">
     <div class="container">
-      <h1>{{t 'Partnership, sponsors and contributors'}}</h1>
+
+# {{t 'Partnership, sponsors and contributors'}}
+
     </div>
   </div>
 
   <section id="g3w-partners" class="section">
     <div class="container content-page text-center">
-      <h2>{{t 'Join the network of companies offering support and consulting on'}}</h2>
+
+## {{t 'Join the network of companies offering support and consulting on'}}
+
       <img src="/img/site-g3w-suite-logo-2024.png" alt="G3W-SUITE" class="img-centered" style="max-width:320px;">
-      <h3>{{t 'Let us grow together to offer innovative open source geospatial solutions'}}</h3>
+
+### {{t 'Let us grow together to offer innovative open source geospatial solutions'}}
+
       <img src="/img/site-g3w-suite-community-network.jpg" alt="Network" class="img-rounded mt-3" style="max-width:800px; margin-inline:auto;">
       <div class="grid-2 mt-4" style="text-align:left;">
         <div>
-          <h4><b>{{t 'G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.'}}</b></h4>
-          <p>{{t 'The suite allows collaborative web cartographic management thanks to deep integration with QGIS editing tools.'}}</p>
-          <p>{{t 'It is used by public administrations, parks, research institutions and private companies.'}}</p>
-          <p>{{t 'QGIS Processing API integration also enables advanced online geospatial analysis workflows.'}}</p>
+
+#### <b>{{t 'G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.'}}</b>
+
+{{t 'The suite allows collaborative web cartographic management thanks to deep integration with QGIS editing tools.'}}
+
+{{t 'It is used by public administrations, parks, research institutions and private companies.'}}
+
+{{t 'QGIS Processing API integration also enables advanced online geospatial analysis workflows.'}}
+
         </div>
         <div>
-          <h4><b>{{t 'We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.'}}</b></h4>
-          <p>{{t 'G3W-SUITE is highly adaptable and suitable for many operational contexts.'}}</p>
-          <p>{{t 'It is an ideal solution for consulting teams and system integrators.'}}</p>
-          <p>{{t 'Join our network and deliver high-value web mapping solutions.'}}</p>
+
+#### <b>{{t 'We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.'}}</b>
+
+{{t 'G3W-SUITE is highly adaptable and suitable for many operational contexts.'}}
+
+{{t 'It is an ideal solution for consulting teams and system integrators.'}}
+
+{{t 'Join our network and deliver high-value web mapping solutions.'}}
+
         </div>
       </div>
-      <h2>{{t 'Services for partners'}}</h2>
+
+## {{t 'Services for partners'}}
+
       <div class="grid-3 services-grid">
-        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Consulting and onboarding'}}</h4><p>{{t 'Professional support for deployment and optimization.'}}</p><img src="/img/site-icons8-consulenza-96.png" alt="" class="service-box__icon" loading="lazy"></div>
-        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Technical support'}}</h4><p>{{t 'Technical assistance for WebGIS implementations based on QGIS and G3W-SUITE.'}}</p><img src="/img/site-icons8-assistenza-clienti-96.png" alt="" class="service-box__icon" loading="lazy"></div>
-        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Custom development'}}</h4><p>{{t 'Tailored plugin-based solutions for specific needs.'}}</p><img src="/img/site-icons8-scatola-portautensili-completa-96.png" alt="" class="service-box__icon" loading="lazy"></div>
+        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Consulting and onboarding'}}</h4>
+
+{{t 'Professional support for deployment and optimization.'}}
+
+<img src="/img/site-icons8-consulenza-96.png" alt="" class="service-box__icon" loading="lazy"></div>
+        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Technical support'}}</h4>
+
+{{t 'Technical assistance for WebGIS implementations based on QGIS and G3W-SUITE.'}}
+
+<img src="/img/site-icons8-assistenza-clienti-96.png" alt="" class="service-box__icon" loading="lazy"></div>
+        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Custom development'}}</h4>
+
+{{t 'Tailored plugin-based solutions for specific needs.'}}
+
+<img src="/img/site-icons8-scatola-portautensili-completa-96.png" alt="" class="service-box__icon" loading="lazy"></div>
       </div>
-      <div class="cta-box"><p>{{t 'For partnership information'}}</p><a class="btn btn--primary" href="mailto:info@gis3w.it?subject=G3W-SUITE partnership">{{t 'Contact us'}}</a></div>
+      <div class="cta-box">
+
+{{t 'For partnership information'}}
+
+<a class="btn btn--primary" href="mailto:info@gis3w.it?subject=G3W-SUITE partnership">{{t 'Contact us'}}</a></div>
     </div>
   </section>
 
@@ -39,18 +73,21 @@
     <div class="container content-page">
       <div class="mm-header text-center">
         <img src="/img/site-mergin-maps-logo.jpg" alt="Mergin Maps" class="img-centered" style="max-width:380px;">
-        <h2>MerginMaps partnership</h2>
+
+## MerginMaps partnership
+
         <p class="section-intro">{{t 'Gis3W provides support for Mergin Maps, the field data collection solution based on QGIS.'}}</p>
       </div>
       <div class="mm-features grid-2 mt-4">
         <div>
-          <h4>{{t 'With Mergin Maps you can:'}}</h4>
-          <ul>
-            <li>{{t 'build field data collection apps from QGIS projects'}}</li>
-            <li>{{t 'design advanced data-entry forms'}}</li>
-            <li>{{t 'synchronize data with centralized infrastructure'}}</li>
-            <li>{{t 'integrate with existing geospatial systems'}}</li>
-          </ul>
+
+#### {{t 'With Mergin Maps you can:'}}
+
+- {{t 'build field data collection apps from QGIS projects'}}
+- {{t 'design advanced data-entry forms'}}
+- {{t 'synchronize data with centralized infrastructure'}}
+- {{t 'integrate with existing geospatial systems'}}
+
         </div>
         <div><img src="/img/site-mergin-maps-on-devices.png" alt="{{t 'Mergin Maps on devices'}}" class="img-rounded"></div>
       </div>
@@ -59,7 +96,11 @@
 
   <section id="{{t 'clients'}}" class="section">
     <div class="container">
-      <div class="section-intro"><span class="section-label">{{t 'Who chooses us'}}</span><h2>{{t 'Clients, sponsors and users'}}</h2></div>
+      <div class="section-intro"><span class="section-label">{{t 'Who chooses us'}}</span>
+
+## {{t 'Clients, sponsors and users'}}
+
+</div>
       <div class="sponsors-grid">
         <a class="sponsor-logo" href="{{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan Area of Bari'}}"><img src="/img/site-bari.png" alt="{{t 'Metropolitan Area of Bari'}}" loading="lazy"></a>
         <a class="sponsor-logo" href="https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan City of Rome'}}"><img src="/img/site-citta-metro-roma.jpg" alt="{{t 'Metropolitan City of Rome'}}" loading="lazy"></a>
@@ -75,7 +116,13 @@
 
   <section class="section section--alt">
     <div class="container">
-      <div class="section-intro"><span class="section-label">Community</span><h2>{{t 'Contributors'}}</h2><p>{{t 'GitHub profiles of project contributors.'}}</p></div>
+      <div class="section-intro"><span class="section-label">Community</span>
+
+## {{t 'Contributors'}}
+
+{{t 'GitHub profiles of project contributors.'}}
+
+</div>
       <div class="contributors-grid">
         <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/elpaso.png?size=200" alt="Alessandro Pasotti" loading="lazy"><h3 class="contributor-name">Alessandro Pasotti</h3><p class="contributor-handle">@elpaso</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/elpaso" target="_blank" rel="noopener">GitHub</a></div></article>
         <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/leolami.png?size=200" alt="Leonardo Lami" loading="lazy"><h3 class="contributor-name">Leonardo Lami</h3><p class="contributor-handle">@leolami</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/leolami" target="_blank" rel="noopener">GitHub</a></div></article>
@@ -89,7 +136,6 @@
     </div>
   </section>
 </main>
-
 
 <script type="application/json" data-i18n>
   {

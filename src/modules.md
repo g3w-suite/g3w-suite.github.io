@@ -1,8 +1,12 @@
 <main id="main-content">
   <div class="page-header">
     <div class="container">
-      <h1>{{t 'Open Source Ecosystem'}}</h1>
-      <p>{{t 'G3W-SUITE is made of modular components, all available on'}} <a href="https://github.com/g3w-suite" target="_blank" rel="noopener">GitHub</a> {{t 'under the MPL-2 licence.'}}</p>      <div class="feature-tags">
+
+# {{t 'Open Source Ecosystem'}}
+
+{{t 'G3W-SUITE is made of modular components, all available on'}} <a href="https://github.com/g3w-suite" target="_blank" rel="noopener">GitHub</a> {{t 'under the MPL-2 licence.'}}
+
+      <div class="feature-tags">
         <span class="feature-tag">{{t 'web map client'}}</span>
         <span class="feature-tag">{{t 'QGIS publishing'}}</span>
         <span class="feature-tag">{{t 'online editing'}}</span>
@@ -44,8 +48,11 @@
         </div>
         <div>
           <span class="section-label">{{t 'Server module - Python / Django'}}</span>
-          <h2>G3W-ADMIN</h2>
-          <p>{{t 'The server module of G3W-SUITE. Written in Python on Django LTS, it publishes QGIS projects as WebGIS services, preserving styles, forms and relations. Manages users, groups, access permissions and functional modules that can be activated per project.'}}</p>
+
+## G3W-ADMIN
+
+{{t 'The server module of G3W-SUITE. Written in Python on Django LTS, it publishes QGIS projects as WebGIS services, preserving styles, forms and relations. Manages users, groups, access permissions and functional modules that can be activated per project.'}}
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-suite/g3w-admin
@@ -61,8 +68,11 @@
       <div class="grid-2 grid--center">
         <div>
           <span class="section-label">{{t 'Map client - JavaScript / Vue'}}</span>
-          <h2>G3W-CLIENT</h2>
-          <p>{{t 'The WebGIS cartographic viewer. Written in JavaScript with Vue.js, it connects to the QGIS server and provides map navigation, custom searches, web editing (including offline mode), DataPlotly chart visualisation, print layouts and much more.'}}</p>
+
+## G3W-CLIENT
+
+{{t 'The WebGIS cartographic viewer. Written in JavaScript with Vue.js, it connects to the QGIS server and provides map navigation, custom searches, web editing (including offline mode), DataPlotly chart visualisation, print layouts and much more.'}}
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-client" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-suite/g3w-client
@@ -84,8 +94,11 @@
         </div>
         <div>
           <span class="section-label">{{t 'Optional module - Python'}}</span>
-          <h2>G3W-ADMIN-PROCESSING</h2>
-          <p>{{t 'Integrates QGIS Processing API directly into G3W-SUITE. Upload a'}} <code>.model3</code> {{t 'file in the administration panel and your geoprocessing algorithms become immediately available in the web client, with support for both synchronous and asynchronous (batch) execution.'}}</p>
+
+## G3W-ADMIN-PROCESSING
+
+{{t 'Integrates QGIS Processing API directly into G3W-SUITE. Upload a'}} <code>.model3</code> {{t 'file in the administration panel and your geoprocessing algorithms become immediately available in the web client, with support for both synchronous and asynchronous (batch) execution.'}}
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin-processing" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-suite/g3w-admin-processing
@@ -101,8 +114,11 @@
       <div class="grid-2 grid--center">
         <div>
           <span class="section-label">Deployment - Docker</span>
-          <h2>G3W-SUITE-DOCKER</h2>
-          <p>{{t 'The official Docker stack to run G3W-SUITE with a single command. Includes NGINX, PostgreSQL/PostGIS, QGIS Server and all required services, pre-configured and ready to use. This is the recommended installation method for both development and production.'}}</p>
+
+## G3W-SUITE-DOCKER
+
+{{t 'The official Docker stack to run G3W-SUITE with a single command. Includes NGINX, PostgreSQL/PostGIS, QGIS Server and all required services, pre-configured and ready to use. This is the recommended installation method for both development and production.'}}
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-suite-docker" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-suite/g3w-suite-docker
@@ -124,8 +140,11 @@
         </div>
         <div>
           <span class="section-label">{{t 'Optional module - CSS / JS'}}</span>
-          <h2>G3W-ADMIN-FRONTEND</h2>
-          <p>{{t 'A customisable public portal for G3W-SUITE. Replaces the default login screen with a branded landing page showing logo, title and the list of published cartographic groups - fully configurable per installation.'}}</p>
+
+## G3W-ADMIN-FRONTEND
+
+{{t 'A customisable public portal for G3W-SUITE. Replaces the default login screen with a branded landing page showing logo, title and the list of published cartographic groups - fully configurable per installation.'}}
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin-frontend" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-suite/g3w-admin-frontend
@@ -141,8 +160,11 @@
       <div class="grid-2 grid--center">
         <div>
           <span class="section-label">{{t 'Optional module - Python - MIT'}}</span>
-          <h2>G3W-ADMIN-PDND</h2>
-          <p>{{t 'G3W-SUITE integration with the Italian'}} <b>Piattaforma Digitale Nazionale Dati</b> {{t '(PDND). Adds voucher token authentication as required by the Italian interoperability guidelines, enabling WebGIS APIs compliant with AgID standards.'}}</p>
+
+## G3W-ADMIN-PDND
+
+{{t 'G3W-SUITE integration with the Italian'}} <b>Piattaforma Digitale Nazionale Dati</b> {{t '(PDND). Adds voucher token authentication as required by the Italian interoperability guidelines, enabling WebGIS APIs compliant with AgID standards.'}}
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin-pdnd" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-suite/g3w-admin-pdnd
@@ -164,8 +186,11 @@
         </div>
         <div>
           <span class="section-label">{{t 'Built-in plugin - JavaScript / Vue - MPL-2'}}</span>
-          <h2>G3W-CLIENT-PLUGIN-EDITING</h2>
-          <p>{{t 'A JavaScript plugin for'}} <b>{{t 'collaborative editing of geometries and attributes'}}</b> {{t 'directly in the map client. Authorised users can create, modify and delete vector features using advanced snap, split and multi-relation tools. The code is now maintained inside'}} <code>g3w-admin</code>.</p>
+
+## G3W-CLIENT-PLUGIN-EDITING
+
+{{t 'A JavaScript plugin for'}} <b>{{t 'collaborative editing of geometries and attributes'}}</b> {{t 'directly in the map client. Authorised users can create, modify and delete vector features using advanced snap, split and multi-relation tools. The code is now maintained inside'}} <code>g3w-admin</code>.
+
           <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin/tree/dev/g3w-admin/editing" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             g3w-admin / editing
@@ -179,8 +204,11 @@
   <section class="section">
     <div class="container">
       <div class="section-intro">
-        <h2>{{t 'Contribute to the project'}}</h2>
-        <p>{{t 'Check out the public roadmap, join the community discussions or sponsor G3W-SUITE development.'}}</p>
+
+## {{t 'Contribute to the project'}}
+
+{{t 'Check out the public roadmap, join the community discussions or sponsor G3W-SUITE development.'}}
+
       </div>
       <div class="btn-group">
         <a class="btn btn--github" href="https://github.com/g3w-suite" target="_blank" rel="noopener">

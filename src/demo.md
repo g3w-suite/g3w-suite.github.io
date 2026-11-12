@@ -1,5 +1,9 @@
 <main id="main-content">
-  <div class="page-header"><div class="container"><h1>{{t 'G3W-Suite Demo'}}</h1></div></div>
+  <div class="page-header"><div class="container">
+
+# {{t 'G3W-Suite Demo'}}
+
+</div></div>
 
   <section class="section">
     <div class="container">
@@ -39,23 +43,30 @@
 
   <section class="section">
     <div class="container content-page">
-      <h2>{{t 'How to access the demo'}}</h2>
-      <p>{{t 'The demo service is designed to show how it is possible to create a'}} <b>{{t 'WebGIS management application'}}</b> {{t 'starting from a simple'}} <b>{{t 'QGIS project'}}</b>.</p>
-      <p>{{t 'The demo is dedicated to'}} <b>{{t 'building management and associated maintenance operations'}}</b>.</p>
-      <p>{{t 'Log in to browse data, run searches, view charts and print reports based on geographic atlases.'}}</p>
-      <h3>{{t 'Online editing'}}</h3>
-      <p>{{t 'To test the'}} <b>{{t 'geometric and relational editing'}}</b> {{t 'features, log in as a demo user with the following credentials:'}}</p>
-      <ul>
-        <li>user: <b>viewer1</b></li>
-        <li>password: <b>G3wsuite123</b></li>
-      </ul>
-      <p><em>{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.'}}</em></p>
-      <h3>{{t 'Documentation'}}</h3>
-      <ul>
-        <li><a href="/docs/demo/">{{t 'Online tutorial'}}</a></li>
-        <li><a href="/docs/introduction/">{{t 'Introduction to G3W-SUITE'}}</a></li>
-        <li><a href="/docs/docker/">{{t 'Docker installation'}}</a></li>
-      </ul>
+
+## {{t 'How to access the demo'}}
+
+{{t 'The demo service is designed to show how it is possible to create a'}} <b>{{t 'WebGIS management application'}}</b> {{t 'starting from a simple'}} <b>{{t 'QGIS project'}}</b>.
+
+{{t 'The demo is dedicated to'}} <b>{{t 'building management and associated maintenance operations'}}</b>.
+
+{{t 'Log in to browse data, run searches, view charts and print reports based on geographic atlases.'}}
+
+### {{t 'Online editing'}}
+
+{{t 'To test the'}} <b>{{t 'geometric and relational editing'}}</b> {{t 'features, log in as a demo user with the following credentials:'}}
+
+- user: <b>viewer1</b>
+- password: <b>G3wsuite123</b>
+
+<em>{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.'}}</em>
+
+### {{t 'Documentation'}}
+
+- <a href="/docs/demo/">{{t 'Online tutorial'}}</a>
+- <a href="/docs/introduction/">{{t 'Introduction to G3W-SUITE'}}</a>
+- <a href="/docs/docker/">{{t 'Docker installation'}}</a>
+
     </div>
   </section>
 </main>
