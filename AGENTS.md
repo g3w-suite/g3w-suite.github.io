@@ -31,11 +31,8 @@ src/
 |- _redirect.html       # Root redirect emitted as static/index.html
 |- _header.html          # Shared page components
 |- _footer.html
-|- _meta.html
 |- changelog/            # Shared changelog pages
 |- docs/                 # Markdown source for the current English manual
-|- i18n/
-   |- it.json
 static/
 |- app.js, style.css, icons.svg
 |- fonts/                # Tracked fonts
@@ -51,37 +48,29 @@ static/
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - Keep `<main id="main-content">` on all pages.
-- Keep hreflang alternates and language switch links aligned between IT and EN pages.
+- The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
 - Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
+- Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
 - For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 
 ## HTML Pattern
 
-Most content pages follow:
+Page files are fragments: the shared header opens the document and the footer closes it. Keep the footer include last, after page-local JSON scripts.
 
 ```html
-<!doctype html>
-<html lang="it|en">
-<head>
-  <!--#include file="_meta.html"-->
-  <title>...</title>
-  <link rel="alternate" ...>
-</head>
-<body>
-  <!--#include file="_header.html"-->
-  <main id="main-content">...</main>
-  <!--#include file="_footer.html"-->
-</body>
-</html>
+<!--#include file="_header.html"-->
+<main id="main-content">...</main>
+<!-- data-i18n and data-i18n-meta scripts go here -->
+<!--#include file="_footer.html"-->
 ```
 
 ## Critical Pitfall
 
-`_meta.html` contains shared charset, viewport and stylesheet tags. Keep page-specific titles, descriptions, Open Graph tags and hreflang links in each page. Use `../_meta.html` from `changelog/`.
+`_header.html` provides the doctype, language, head and opening body, including common charset, viewport and stylesheet tags; it receives page metadata and generated hreflang links from the build. `_footer.html` closes the document. Declare titles, descriptions and page-specific Open Graph metadata in `data-i18n-meta`.
 
-Edit shared navigation, footer and metadata in `src/_header.html`, `src/_footer.html` and `src/_meta.html`; `server.js` expands the SSI include directives into static output. From `src/changelog/`, use `../_header.html`, `../_footer.html` and `../_meta.html`.
+Edit shared navigation, common head tags and footer in `src/_header.html` and `src/_footer.html`; `server.js` expands the SSI include directives into static output. From `src/changelog/`, use `../_header.html` and `../_footer.html`.
 
 ## CSS/JS Rules
 

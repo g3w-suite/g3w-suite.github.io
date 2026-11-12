@@ -13,10 +13,10 @@ Crea una nuova pagina changelog per G3W-Suite versione **$ARGUMENTS**.
 
 2. **Crea `src/changelog/v3.X.html`** (sostituisci X con la versione fornita):
    - Usa la pagina inglese come testo di base; aggiungi le traduzioni italiane desiderate in un blocco JSON `data-i18n` nella pagina, usando la stringa inglese esatta come chiave e marca i testi con `{{t '...'}}`
-   - `<title>Changelog 3.X - G3W-Suite</title>`
-   - Nel `<head>`, inserisci `<!--#include file="../_meta.html"-->` per charset, viewport e stylesheet condivisi
-   - Usa URL alternates dalla radice (`/it/changelog/v3.X/` per IT, `/en/changelog/v3.X/` per EN), senza `.html`
-   - Inserisci `<!--#include file="../_header.html"-->` e `<!--#include file="../_footer.html"-->`; non copiare il markup dei componenti
+   - Definisci il titolo in un blocco `data-i18n-meta` in fondo alla pagina; aggiungi la traduzione italiana corrispondente al blocco `data-i18n`
+   - La pagina è un frammento: inizia con `<!--#include file="../_header.html"-->` e non definire `doctype`, `html`, `head` o `body`
+   - Non inserire tag `rel="alternate"`: il build genera automaticamente gli URL hreflang dal percorso della pagina
+   - Inserisci `<!--#include file="../_footer.html"-->` dopo i blocchi JSON e come ultima riga; non copiare il markup dei componenti
    - Usa `{{#it}}...{{/it}}` o `{{#en}}...{{/en}}` solo per differenze di contenuto o markup non gestibili con le traduzioni
    - Body con segnaposto `<!-- TODO: insert changelog 3.X content -->`
 
@@ -24,7 +24,7 @@ Crea una nuova pagina changelog per G3W-Suite versione **$ARGUMENTS**.
 
 ## Regole da rispettare
 
-- Non usare `style="..."` inline nei contenuti — usa solo classi CSS o il blocco `<style>` già presente nel `<head>` delle pagine changelog
+- Non usare `style="..."` inline nei contenuti — usa solo classi CSS o gli stili già presenti nelle pagine changelog
 - Aggiungi `loading="lazy"` su tutte le immagini below-fold
 - Il blocco `<style>` specifico per il changelog (`.changelog__feature`, `.changelog__text h2`, ecc.) deve essere copiato identico dalle pagine esistenti
 - Esegui `npm test` per verificare la build e i collegamenti

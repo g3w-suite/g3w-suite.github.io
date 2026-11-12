@@ -41,6 +41,21 @@ function extractPageTranslations(html, file) {
   return { html: html.replace(blocks[0][0], ''), translations };
 }
 
+function extractPageMetadata(html, file) {
+  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n-meta>([\s\S]*?)<\/script>/g)];
+  assert.ok(blocks.length <= 1, `${file}: expected at most one data-i18n-meta block`);
+  if (!blocks.length) return { html, metadata: null };
+
+  const metadata = JSON.parse(blocks[0][1]);
+  assert.ok(metadata && typeof metadata === 'object' && !Array.isArray(metadata), `${file}: data-i18n-meta must be an object`);
+  assert.ok(Object.keys(metadata).length > 0, `${file}: data-i18n-meta must not be empty`);
+  assert.ok(Object.keys(metadata).every(key =>
+    ['title', 'description', 'ogTitle', 'ogDescription', 'ogType'].includes(key)
+  ), `${file}: unsupported data-i18n-meta key`);
+  assert.ok(Object.values(metadata).every(value => typeof value === 'string' && value.trim()), `${file}: metadata values must be non-empty strings`);
+  return { html: html.replace(blocks[0][0], ''), metadata };
+}
+
 function renderLanguageBlocks(html, lang) {
   return html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
     target === lang ? content : ''
@@ -117,16 +132,21 @@ Then('translated text is rendered for each language', function () {
     it: readPage(path.join(staticDir, 'it', 'index.html')).$,
     en: readPage(path.join(staticDir, 'en', 'index.html')).$,
   };
+  assert.equal(pages.it('meta[property="og:title"]').attr('content'), 'G3W-Suite - Open Source WebGIS da QGIS');
+  assert.equal(pages.it('meta[property="og:description"]').attr('content'), 'Pubblica i tuoi progetti QGIS come servizi WebGIS con un clic. Open source, licenza MPL.');
+  assert.equal(pages.it('meta[property="og:type"]').attr('content'), 'website');
   assert.equal(pages.it('.section-intro .section-label').first().text(), 'Inizia in pochi minuti');
   assert.equal(pages.en('.section-intro .section-label').first().text(), 'Get started in minutes');
+  assert.equal(readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('head title').text(), 'Demo - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'en', 'demo', 'index.html')).$('head title').text(), 'Demo - G3W-Suite');
   assert.equal(
     readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('meta[name="description"]').attr('content'),
     'Demo G3W-Suite relative ai branch attualmente supportati: stabile, bug fixing e sviluppo.',
     'explicit attribute translations must be rendered'
   );
   assert.ok(
-    sourceHtml.some(source => source.includes("{{t 'G3W-Suite demos for currently supported branches: stable, bug fixing and dev.'}}")),
-    'translated meta descriptions must use the translation helper'
+    sourceHtml.some(source => source.includes('"description": "G3W-Suite demos for currently supported branches: stable, bug fixing and dev."')),
+    'translated meta descriptions must use data-i18n-meta'
   );
   assert.ok(
     sourceHtml.some(source => /\b[\w:-]+=["'][^"']*\{\{t '(?:\\.|[^'\\])*'\s*\}\}[^"']*["']/.test(source)),
@@ -155,6 +175,16 @@ Then('both languages are generated from shared page templates', function () {
     assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
     assert.ok(fs.existsSync(path.join(staticDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
   }
+  for (const file of htmlFiles(sourceDir).filter(file => !path.basename(file).startsWith('_') && path.basename(file) !== '_redirect.html')) {
+    const source = fs.readFileSync(file, 'utf8');
+    assert.match(source, /<!--#include file="(?:\.\.\/)?_header\.html"-->/, `${file}: missing shared header include`);
+    const footerInclude = /<!--#include file="(?:\.\.\/)?_footer\.html"-->\s*$/.exec(source);
+    assert.ok(footerInclude, `${file}: shared footer include must be last`);
+    assert.ok(source.lastIndexOf('</script>') < footerInclude.index, `${file}: footer include must follow page scripts`);
+    assert.doesNotMatch(source, /<!doctype html>|<\/?html\b|<\/?head\b|<\/?body\b/i, `${file}: document shell must come from shared components`);
+  }
+  assert.ok(fs.existsSync(path.join(staticDir, 'it', 'modules', 'index.html')), 'Italian modules page must use /it/modules/');
+  assert.ok(!fs.existsSync(path.join(staticDir, 'it', 'moduli')), 'Italian modules page must not use /it/moduli/');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
 });
 
@@ -164,13 +194,38 @@ Then('page-local translations are valid and used by the Italian build', function
   const unmarked = [];
   for (const file of sourceFiles) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
-    const { html, translations: pageTranslations } = extractPageTranslations(sourceHtml, file);
-    const block = /<script type="application\/json" data-i18n>[\s\S]*?<\/script>/.exec(sourceHtml);
-    if (block) {
-      const trailingHtml = sourceHtml.slice(block.index + block[0].length);
-      assert.match(trailingHtml, /^\s*(?:<\/body>\s*)?(?:<\/html>\s*)?$/i, `${file}: data-i18n must be at the end of the file or before </body>`);
+    const { html: withoutMetadata, metadata } = extractPageMetadata(sourceHtml, file);
+    const { html, translations: pageTranslations } = extractPageTranslations(withoutMetadata, file);
+    if (!path.basename(file).startsWith('_')) {
+      assert.ok(metadata && metadata.title, `${file}: page title must be declared in data-i18n-meta`);
+    }
+    const trailingBlocks = [...sourceHtml.matchAll(/<script type="application\/json" data-i18n(?:-meta)?>([\s\S]*?)<\/script>/g)];
+    for (let index = 1; index < trailingBlocks.length; index++) {
+      const previous = trailingBlocks[index - 1];
+      assert.equal(
+        sourceHtml.slice(previous.index + previous[0].length, trailingBlocks[index].index).trim(),
+        '',
+        `${file}: translation scripts must be adjacent`
+      );
+    }
+    if (trailingBlocks.length) {
+      const last = trailingBlocks[trailingBlocks.length - 1];
+      const trailingHtml = sourceHtml.slice(last.index + last[0].length);
+      assert.match(
+        trailingHtml,
+        /^\s*(?:<!--#include file="(?:\.\.\/)?_footer\.html"-->\s*)?(?:<\/body>\s*)?(?:<\/html>\s*)?$/i,
+        `${file}: translation scripts must precede the footer include or document closing tags`
+      );
     }
     const localUsage = new Map(languages.map(lang => [lang, new Set()]));
+    for (const [key, value] of Object.entries(metadata || {})) {
+      if (key === 'ogType') continue;
+      if (Object.hasOwn(pageTranslations.it || {}, value)) {
+        localUsage.get('it').add(value);
+      } else {
+        assert.fail(`${file}: missing page-local Italian translation for metadata "${value}"`);
+      }
+    }
     for (const [lang, entries] of Object.entries(pageTranslations)) {
       const keys = Object.keys(entries);
       assert.deepEqual(keys, [...keys].sort(), `${file}: ${lang} translations must be sorted`);
@@ -201,7 +256,7 @@ Then('page-local translations are valid and used by the Italian build', function
   const outputFiles = htmlFiles(staticDir);
   const unexpanded = outputFiles.filter(file => /\{\{t\b|\{\{\/t\}\}/.test(fs.readFileSync(file, 'utf8')));
   assert.deepEqual(unexpanded, [], 'generated site contains unexpanded translation helpers');
-  const leakedTranslations = outputFiles.filter(file => /data-i18n/.test(fs.readFileSync(file, 'utf8')));
+  const leakedTranslations = outputFiles.filter(file => /data-i18n(?:-meta)?/.test(fs.readFileSync(file, 'utf8')));
   assert.deepEqual(leakedTranslations, [], 'page-local translation data must not appear in generated HTML');
 });
 

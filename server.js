@@ -90,6 +90,48 @@ function extractPageTranslations(html, file) {
   return { html: html.replace(blocks[0][0], ''), translations };
 }
 
+function extractPageMetadata(html, file) {
+  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n-meta>([\s\S]*?)<\/script>/g)];
+  if (blocks.length > 1) throw new Error(`${file} must contain at most one data-i18n-meta block`);
+  if (!blocks.length) return { html, metadata: null };
+
+  let metadata;
+  try {
+    metadata = JSON.parse(blocks[0][1]);
+  } catch (error) {
+    throw new Error(`${file} has invalid data-i18n-meta JSON: ${error.message}`);
+  }
+  const allowedFields = ['title', 'description', 'ogTitle', 'ogDescription', 'ogType'];
+  if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata) ||
+    !Object.keys(metadata).length || Object.keys(metadata).some(key => !allowedFields.includes(key)) ||
+    Object.entries(metadata).some(([key, value]) => typeof value !== 'string' || !value.trim() ||
+      key === 'ogType' && !/^[a-z][a-z\d.-]*$/i.test(value))) {
+    throw new Error(`${file} data-i18n-meta has invalid metadata fields`);
+  }
+  return { html: html.replace(blocks[0][0], ''), metadata };
+}
+
+function renderPageMetadata(metadata, lang, translations) {
+  if (!metadata) return '';
+  const tags = [];
+  if (metadata.title) tags.push(`<title>${translate(metadata.title, lang, translations)}</title>`);
+  if (metadata.description) {
+    tags.push(`<meta name="description" content="${translate(metadata.description, lang, translations)}">`);
+  }
+  if (metadata.ogTitle) tags.push(`<meta property="og:title" content="${translate(metadata.ogTitle, lang, translations)}">`);
+  if (metadata.ogDescription) {
+    tags.push(`<meta property="og:description" content="${translate(metadata.ogDescription, lang, translations)}">`);
+  }
+  if (metadata.ogType) tags.push(`<meta property="og:type" content="${metadata.ogType}">`);
+  return tags.join('\n');
+}
+
+function renderPageAlternates(pageUrls) {
+  return languages.map(lang =>
+    `<link rel="alternate" href="${pageUrls[lang]}" hreflang="${lang}">`
+  ).join('\n');
+}
+
 function renderYoutubeVideos(html) {
   const consentDialog = /<template id="youtube-consent-dialog">([\s\S]*?)<\/template>/.exec(html)?.[1];
   if (!consentDialog) return html;
@@ -212,10 +254,13 @@ function buildDocumentation(outputDir) {
       .replace(/\s+/g, ' ')
       .trim();
     searchIndex.push({ title, url: `${basePath}${pagePath}`, text });
-    const componentHtml = `<link rel="alternate" hreflang="it" href="/it/"><link rel="alternate" hreflang="en" href="${pagePath}">`;
     const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
-    const siteHeader = renderComponent('header', 'en', componentPage, componentHtml);
-    const siteFooter = renderComponent('footer', 'en', componentPage, componentHtml);
+    const pageUrls = { it: '/it/', en: pagePath };
+    const headerDocument = renderComponent('header', 'en', componentPage, pageUrls);
+    const siteHeader = /<header\b[\s\S]*?<\/header>/i.exec(headerDocument)?.[0];
+    if (!siteHeader) throw new Error('Shared header component has no <header> element');
+    const siteFooter = renderComponent('footer', 'en', componentPage, pageUrls)
+      .replace(/<\/body>\s*<\/html>\s*$/i, '');
     const parentBreadcrumb = parent
       ? `<li><a href="${documentationLink(parent[2], file, docsDir)}">${parent[1]}</a></li>`
       : '';
@@ -273,26 +318,24 @@ function buildDocumentation(outputDir) {
   fs.writeFileSync(path.join(targetDir, 'search-index.json'), JSON.stringify(searchIndex));
 }
 
-function alternateUrl(html, lang) {
-  const tag = html.match(/<link\b[^>]*>/gi)?.find(link =>
-    /\brel="alternate"/i.test(link) && new RegExp(`\\bhreflang="${lang}"`, 'i').test(link)
-  );
-  const href = tag && /\bhref="([^"]+)"/i.exec(tag)?.[1];
-  if (!href) throw new Error(`Missing ${lang} alternate link`);
-  return href;
-}
-
-function outputPage(page, lang) {
-  if (page === 'modules.html' && lang === 'it') page = 'moduli.html';
+function outputPage(page) {
   return path.basename(page) === 'index.html' ? page : page.replace(/\.html$/, `${path.sep}index.html`);
 }
 
-function renderComponent(component, lang, page, html) {
+function languagePageUrl(page, lang) {
+  const output = outputPage(page).split(path.sep).join('/');
+  const route = output.replace(/(^|\/)index\.html$/, '');
+  return `/${lang}/${route}${route ? '/' : ''}`;
+}
+
+function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   const values = {
-    itPage: alternateUrl(html, 'it'),
-    enPage: alternateUrl(html, 'en'),
+    itPage: pageUrls.it,
+    enPage: pageUrls.en,
     langRoot: `/${lang}/`,
     siteRoot: '/',
+    lang,
+    pageHead,
   };
   const name = `_${component}.html`;
   let output;
@@ -316,7 +359,7 @@ function renderComponent(component, lang, page, html) {
   });
   const active = page.startsWith(`changelog${path.sep}`)
     ? 'changelog'
-    : ({ moduli: 'modules', modules: 'modules' })[path.basename(page, '.html')] || path.basename(page, '.html');
+    : path.basename(page, '.html');
   output = output.replace(/<a\b([^>]*?)\sdata-nav-key="([^"]+)"([^>]*)>/g, (_, before, key, after) =>
     `<a${before}${after}${key === active ? ' aria-current="page"' : ''}>`
   );
@@ -342,24 +385,33 @@ function build(outputDir) {
   for (const { file, page } of pages) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
     const pageTemplate = extractPageTranslations(sourceHtml, path.relative(projectRoot, file));
+    const pageMetadata = extractPageMetadata(pageTemplate.html, path.relative(projectRoot, file));
+    const pageUrls = Object.fromEntries(languages.map(lang => [lang, languagePageUrl(page, lang)]));
     for (const lang of languages) {
       try {
-        const html = translateHtml(renderLanguageBlocks(pageTemplate.html, lang), lang, pageTemplate.translations);
-        const counts = { meta: 0, header: 0, footer: 0 };
-        const localized = html.replace(/<html\b([^>]*?)\blang="[^"]+"/i, `<html$1lang="${lang}"`);
+        const pageHead = [
+          renderPageMetadata(pageMetadata.metadata, lang, pageTemplate.translations),
+          renderPageAlternates(pageUrls),
+        ].filter(Boolean).join('\n  ');
+        const localized = translateHtml(
+          renderLanguageBlocks(pageMetadata.html, lang),
+          lang,
+          pageTemplate.translations
+        );
+        const counts = { header: 0, footer: 0 };
         const output = renderYoutubeVideos(localized.replace(/<!--#include file="([^"]+)"-->/g, (_, include) => {
           const name = path.basename(include, '.html').replace(/^_/, '');
           const componentPath = path.normalize(path.join(path.dirname(page), include));
-          if (!['meta', 'header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
+          if (!['header', 'footer'].includes(name) || componentPath !== `_${name}.html`) {
             throw new Error(`Invalid component include in ${file}: ${include}`);
           }
           counts[name]++;
-          return renderComponent(name, lang, page, localized);
+          return renderComponent(name, lang, page, pageUrls, name === 'header' ? pageHead : '');
         }));
-        if (counts.meta !== 1 || counts.header !== 1 || counts.footer !== 1) {
-          throw new Error(`${file} must contain one meta, one header and one footer include`);
+        if (counts.header !== 1 || counts.footer !== 1) {
+          throw new Error(`${file} must contain one header and one footer include`);
         }
-        const target = path.join(outputDir, lang, outputPage(page, lang));
+        const target = path.join(outputDir, lang, outputPage(page));
         fs.mkdirSync(path.dirname(target), { recursive: true });
         fs.writeFileSync(target, publishedHtml(output));
       } catch (e) {
