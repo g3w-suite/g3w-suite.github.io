@@ -1,74 +1,50 @@
 <main id="main-content">
-  <div class="page-header"><div class="container">
 
 # {{t 'G3W-Suite Demo'}}
 
-</div></div>
+## <span id="demo-3-11"></span>Branch 3.11
 
-  <section class="section">
-    <div class="container">
-      <ul class="demo-grid grid-3" role="list">
-        <li class="demo-card" id="demo-3-11">
-          <div class="demo-card__body">
-            <h2>Branch 3.11</h2>
-            <p>QGIS 3.44 LTR - Python 3.12 - Django 4.2 - Bug fixing</p>
-            <div class="btn-group demo-card__actions">
-              <a class="btn btn--outline btn--sm" href="https://v311.g3wsuite.it/" target="_blank" rel="noopener">{{t 'Access demo'}}</a>
-              <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/changelog/v3.11/">Changelog 3.11</a>
-            </div>
-          </div>
-        </li>
-        <li class="demo-card" id="demo-3-10">
-          <div class="demo-card__body">
-            <h2>Branch 3.10</h2>
-            <p>QGIS 3.40 LTR - Python 3.12 - Django 4.2 - Bug fixing</p>
-            <div class="btn-group demo-card__actions">
-              <a class="btn btn--outline btn--sm" href="https://v310.g3wsuite.it/it/map/demo-310/" target="_blank" rel="noopener">{{t 'Access demo'}}</a>
-              <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/changelog/v3.10/">Changelog 3.10</a>
-            </div>
-          </div>
-        </li>
-        <li class="demo-card">
-          <div class="demo-card__body">
-            <h2>Branch dev (4.0)</h2>
-            <p>{{t 'QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development'}}</p>
-            <div class="btn-group demo-card__actions">
-              <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/download/">{{t 'Track release status'}}</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+QGIS 3.44 LTR - Python 3.12 - Django 4.2 - Bug fixing
 
-  <section class="section">
-    <div class="container content-page">
+- [{{t 'Access demo'}}](https://v311.g3wsuite.it/)
+- [Changelog 3.11](/{{t 'en'}}/changelog/v3.11/)
+
+## <span id="demo-3-10"></span>Branch 3.10
+
+QGIS 3.40 LTR - Python 3.12 - Django 4.2 - Bug fixing
+
+- [{{t 'Access demo'}}](https://v310.g3wsuite.it/it/map/demo-310/)
+- [Changelog 3.10](/{{t 'en'}}/changelog/v3.10/)
+
+## Branch dev (4.0)
+
+{{t 'QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development'}}
+
+- [{{t 'Track release status'}}](/{{t 'en'}}/download/)
 
 ## {{t 'How to access the demo'}}
 
-{{t 'The demo service is designed to show how it is possible to create a'}} <b>{{t 'WebGIS management application'}}</b> {{t 'starting from a simple'}} <b>{{t 'QGIS project'}}</b>.
+{{t 'The demo service is designed to show how it is possible to create a'}} **{{t 'WebGIS management application'}}** {{t 'starting from a simple'}} **{{t 'QGIS project'}}**.
 
-{{t 'The demo is dedicated to'}} <b>{{t 'building management and associated maintenance operations'}}</b>.
+{{t 'The demo is dedicated to'}} **{{t 'building management and associated maintenance operations'}}**.
 
 {{t 'Log in to browse data, run searches, view charts and print reports based on geographic atlases.'}}
 
 ### {{t 'Online editing'}}
 
-{{t 'To test the'}} <b>{{t 'geometric and relational editing'}}</b> {{t 'features, log in as a demo user with the following credentials:'}}
+{{t 'To test the **geometric and relational editing** features, log in as a demo user with the following credentials:'}}
 
-- user: <b>viewer1</b>
-- password: <b>G3wsuite123</b>
+- user: **viewer1**
+- password: **G3wsuite123**
 
-<em>{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.'}}</em>
+_{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.'}}_
 
 ### {{t 'Documentation'}}
 
-- <a href="/docs/demo/">{{t 'Online tutorial'}}</a>
-- <a href="/docs/introduction/">{{t 'Introduction to G3W-SUITE'}}</a>
-- <a href="/docs/docker/">{{t 'Docker installation'}}</a>
+- [{{t 'Online tutorial'}}](/docs/demo/)
+- [{{t 'Introduction to G3W-SUITE'}}](/docs/introduction/)
+- [{{t 'Docker installation'}}](/docs/docker/)
 
-    </div>
-  </section>
 </main>
 
 <script type="application/json" data-i18n>
@@ -90,13 +66,11 @@
       "QGIS project": "progetto QGIS",
       "The demo is dedicated to": "La demo è dedicata alla",
       "The demo service is designed to show how it is possible to create a": "Il servizio di demo è progettato per illustrare come sia possibile creare un",
-      "To test the": "Per testare le funzionalità di",
+      "To test the **geometric and relational editing** features, log in as a demo user with the following credentials:": "Per testare le funzionalità di **editing geometrico e relazionale**, accedi come utente demo con le seguenti credenziali:",
       "Track release status": "Monitora lo stato delle release",
       "WebGIS management application": "gestionale cartografico WebGis",
       "building management and associated maintenance operations": "gestione di edifici e degli interventi di manutenzione associati",
       "en": "it",
-      "features, log in as a demo user with the following credentials:": "accedi come utente demo con le seguenti credenziali:",
-      "geometric and relational editing": "editing geometrico e relazionale",
       "starting from a simple": "partendo da un semplice"
     }
   }

@@ -1,33 +1,16 @@
 <main id="main-content">
-  <div class="page-header">
-    <div class="container">
 
 # MerginMaps Partnership
 
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container content-page">
-      <div class="mm-header text-center">
-        <img src="/img/site-mergin-maps-logo.jpg" alt="Mergin Maps" style="max-width:380px;margin:0 auto 1.5rem;display:block;">
-
 ## MerginMaps partnership
 
-        <p class="section-intro">
-          Gis3W
-          <a href="https://{{#it}}it.{{/it}}merginmaps.com/partners#gis3w" target="_blank" rel="noopener">{{t 'provides support'}}</a>
-          {{t ', at every level, for the'}}
-          <a href="https://{{#it}}it.{{/it}}merginmaps.com/" target="_blank" rel="noopener">Mergin Maps</a>
-          {{t 'solution dedicated to field data collection based on'}}
-          <a href="https://qgis.org" target="_blank" rel="noopener">QGIS</a>.
-        </p>
-      </div>
+![Mergin Maps](/img/site-mergin-maps-logo.jpg)
 
-      <div class="mm-features grid-2" style="align-items:start;margin:3rem 0;">
-        <div>
+Gis3W [{{t 'provides support'}}](https://{{#it}}it.{{/it}}merginmaps.com/partners#gis3w)
+{{t ', at every level, for the'}} [Mergin Maps](https://{{#it}}it.{{/it}}merginmaps.com/)
+{{t 'solution dedicated to field data collection based on'}} [QGIS](https://qgis.org).
 
-#### {{t 'With the OS solution'}} <b>Mergin Maps</b> {{t 'you can:'}}
+### {{t 'With the OS solution'}} **Mergin Maps** {{t 'you can:'}}
 
 - {{t 'set up field data acquisition apps by defining features and functionality on QGIS projects'}}
 - {{t 'define data entry forms using QGIS modules, widgets and editing tools'}}
@@ -35,38 +18,25 @@
 - {{t 'easily integrate your geospatial infrastructure'}}
 - {{t 'connect an external high-precision GPS for precision surveys'}}
 
-          <h4 style="margin-top:2rem;">{{t 'Integration with G3W-SUITE'}}</h4>
+![{{t 'Mergin Maps on devices'}}](/img/site-mergin-maps-on-devices.png)
 
-<b>{{t 'Future developments will bring integration of QGIS projects published on G3W-SUITE with those available on Mergin Maps:'}}</b>
+### {{t 'Integration with G3W-SUITE'}}
+
+**{{t 'Future developments will bring integration of QGIS projects published on G3W-SUITE with those available on Mergin Maps:'}}**
 
 - {{t 'a single administration point to publish on the web and on the app'}}
 - {{t 'user sharing'}}
 - {{t 'ease of use and management'}}
 - {{t 'API integration'}}
 
-        </div>
-        <div>
-          <img src="/img/site-mergin-maps-on-devices.png" alt="{{t 'Mergin Maps on devices'}}" style="border-radius:6px;">
-        </div>
-      </div>
+![Screenshot: Mergin Maps Screenshot 1](/img/site-mergin-maps-screenshot-1.jpg) ![Screenshot: Mergin Maps Screenshot 2](/img/site-mergin-maps-screenshot-2.jpg) ![Screenshot: Mergin Maps Screenshot 3](/img/site-mergin-maps-screenshot-3.jpg)
 
-      <div class="grid-3" style="gap:1rem;margin:2rem 0;">
-        <img src="/img/site-mergin-maps-screenshot-1.jpg" alt="" style="border-radius:4px;">
-        <img src="/img/site-mergin-maps-screenshot-2.jpg" alt="" style="border-radius:4px;">
-        <img src="/img/site-mergin-maps-screenshot-3.jpg" alt="" style="border-radius:4px;">
-      </div>
+### Gis3W, [{{t 'official partner'}}](https://merginmaps.com/partners) {{t 'of Mergin Maps, provides:'}}
 
-      <div style="margin-top:2.5rem;">
+- **{{t 'Training'}}**{{t ': QGIS project preparation, creation and design of data entry forms, background maps, field data collection, synchronization and everything needed for the best results'}}
+- **{{t 'Consulting and support'}}**{{t ': project structuring, connection and synchronization with centralized database, customized solutions'}}
+- **{{t 'Development'}}**{{t ': thanks to collaboration with MerginMaps developers, we offer customization services, custom releases and addition of new features'}}
 
-#### Gis3W, <a href="https://{{#it}}it.{{/it}}merginmaps.com/partners" target="_blank" rel="noopener">{{t 'official partner'}}</a> {{t 'of Mergin Maps, provides:'}}
-
-- <b>{{t 'Training'}}</b>{{t ': QGIS project preparation, creation and design of data entry forms, background maps, field data collection, synchronization and everything needed for the best results'}}
-- <b>{{t 'Consulting and support'}}</b>{{t ': project structuring, connection and synchronization with centralized database, customized solutions'}}
-- <b>{{t 'Development'}}</b>{{t ': thanks to collaboration with MerginMaps developers, we offer customization services, custom releases and addition of new features'}}
-
-      </div>
-    </div>
-  </section>
 </main>
 
 <script type="application/json" data-i18n>

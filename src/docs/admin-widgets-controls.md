@@ -4,23 +4,23 @@
 
 ## Widgets management
 
-### ![](/img/manual-english-icon-geoconstraints.png) ![](/img/manual-english-icon-alpha-constraints.png) Display and editing constraints
+### ![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.png) ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.png) Display and editing constraints
 
 Through the **Geo-constraints by user/group** and **Alphanumeric and QGIS expressions constraints by user/groups**  widgets it is possible to define editing and display filters for users authorized to consult/edit the project.
 
 See the dedicated paragraph in [Administration settings for editing](editing-administration-settings.md).
 
 
-### ![](/img/manual-english-icon-hide-columns.png) Hide columns by User/Groups
+### ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png) Hide columns by User/Groups
 **Thanks to this function it is possible to hide specific fields of a layer for consultation. This constraint can be differentiated for individual users or groups of users.**
 
 This setting is also available for the AnonymousUser user
 
-To activate this type of constraint, you must click, at the level of the layer of interest, on the Hide columns by User/Groups icon ![](/img/manual-english-icon-hide-columns.png).
+To activate this type of constraint, you must click, at the level of the layer of interest, on the Hide columns by User/Groups icon ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png).
 
 Clicking on the icon will show the list of any existing alphanumeric column constraints and the item `+ Create New Column Level constraints` to create a new one.
 
-![](/img/manual-english-g3wsuite-administration-hide-columns-new.png)
+![Screenshot: G3W-SUITE Administration Hide Columns New](/img/manual-english-g3wsuite-administration-hide-columns-new.png)
 
 Clicking on the item will open a modal window which will allow you to define:
  * list of fields to hide
@@ -31,7 +31,7 @@ Once all the constraints have been setted, click on the OK to confirm the rules.
 
 
 
-### ![](/img/manual-english-icon-widget.png) Widget setting - Search tools
+### ![Icon: Widget](/img/manual-english-icon-widget.png) Widget setting - Search tools
 
 **Using this icon it is possible to associate a series of widgets to the layer. The basic widget allows you to define search tools that will be available in the WebGis.**
 
@@ -50,9 +50,9 @@ Every search widget will be saved by referring to the layer identifiers (for exa
 
 This aspect allows, once a search widget for a layer has been created, to have it available on all the projects in which the layer is present, without having to rebuild the widget from scratch each time.
 
-In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![](/img/manual-english-icon-widget.png)
+In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.png)
 
-![](/img/manual-english-g3wsuite-administration-project-widget-list.png)
+![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.png)
 
 By clicking on the icon, the list of already active (or activatable) widgets associated with the layer will be shown.
 
@@ -66,7 +66,7 @@ To **create a new search**, click on the link **`New widget`**.
 
 In the pop-up that appears, the **`Search` type** have to be chosen.
 
-![](/img/manual-english-g3wsuite-administration-project-widget-choose.png)
+![Screenshot: G3W-SUITE Administration Project Widget Choose](/img/manual-english-g3wsuite-administration-project-widget-choose.png)
 
 In the related form we can define:
  * **Form Title**
@@ -88,10 +88,10 @@ In the related form we can define:
    * **`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.
    * **`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.   
 
-The button ![](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
+The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
 
 The example below shows the compilation of the form for creating a search widget with serveral options.
-![](/img/manual-english-g3wsuite-administration-project-search-form.png)
+![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.png)
 
 Once the form has been filled in, click on the **OK** button to save the settings.
 
@@ -99,7 +99,7 @@ Once the settings are saved, the created widget will appear in the list of Widge
 
 The widget will already be **`connected`** and therefore **available in the WebGis interface**.
 
-![](/img/manual-english-demo-search-result.png)
+![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.png)
 
 
 **IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.
@@ -138,7 +138,7 @@ The results will be differentiated according to the corresponding layer.
 
 Especially useful in the case of multi geometric layers.
 
-![](/img/manual-english-g3wsuite-administration-project-search-multilayers.png)
+![Screenshot: G3W-SUITE Administration Project Search Multilayers](/img/manual-english-g3wsuite-administration-project-search-multilayers.png)
 
 
 #### Search based on 1:N relation data
@@ -150,18 +150,18 @@ See [dedicated paragraph](settings#g3w-client-search-endpoint).
 The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.
 
 
-![](/img/manual-english-g3wsuite-administration-project-search-1-n.png)
+![Screenshot: G3W-SUITE Administration Project Search 1 N](/img/manual-english-g3wsuite-administration-project-search-1-n.png)
 
-### ![](/img/manual-english-icon-styles.png) Manage layer styles
+### ![Icon: Styles](/img/manual-english-icon-styles.png) Manage layer styles
 
 If **multi styles have been associated with the same layer** in the QGIS project, they will be exposed.
 
 It will be possible to associate new layers by **loading related QML files** and **set the style to be used as default**.
 
-![](/img/manual-english-g3wsuite-administration-styles.png)
+![Screenshot: G3W-SUITE Administration Styles](/img/manual-english-g3wsuite-administration-styles.png)
 
 ### Project layers actions
 At the top right, identified by the item "Project layers actions", there are icons dedicated to settings that act on multiple elements of the project:
-   * ![](/img/manual-english-icon-multi-editing.png) **`Editing layer`:** allows you to enable online editing on multiple layers at the same time, simplifying the definition of enabled users
-   * ![](/img/manual-english-icon-clone-users.png) **`Copy permissions`:** allows you to clone all the settings defined for a user (editing permissions, various constraints...), relating to the project being managed, and assign them to other users
-   * ![](/img/manual-english-icon-chart-order.png) **`Project’s Qplotly widget order`:** allows you to define the display order of active graphs at the client interface level
+   * ![Icon: Multi Editing](/img/manual-english-icon-multi-editing.png) **`Editing layer`:** allows you to enable online editing on multiple layers at the same time, simplifying the definition of enabled users
+   * ![Icon: Clone Users](/img/manual-english-icon-clone-users.png) **`Copy permissions`:** allows you to clone all the settings defined for a user (editing permissions, various constraints...), relating to the project being managed, and assign them to other users
+   * ![Icon: Chart Order](/img/manual-english-icon-chart-order.png) **`Project’s Qplotly widget order`:** allows you to define the display order of active graphs at the client interface level

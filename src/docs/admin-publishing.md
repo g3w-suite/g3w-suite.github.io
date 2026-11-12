@@ -5,8 +5,8 @@
 ## Publication of new WebGis services
 ### To publish a new QGIS cartographic project
 It is possible to publish new QGIS projects:
- * **from the list of cartographic groups:** click on the icon ![](/img/manual-english-icon-add.png) located under the box of the cartographic group in which you want to publish the project.
- * **from the list of cartographic projects published within a group:** by clicking on the the button ![](/img/manual-english-button-add-qgis-project.png)
+ * **from the list of cartographic groups:** click on the icon ![Icon: Add](/img/manual-english-icon-add.png) located under the box of the cartographic group in which you want to publish the project.
+ * **from the list of cartographic projects published within a group:** by clicking on the the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png)
 
 In the dedicated form we could define the characteristic of the project being published:
 
@@ -40,7 +40,7 @@ Let’s see in detail the various sub-sessions of the ACL Users session:
 
  * **`Viewer user groups`:** you define the **user groups (Viewer) which have the credentials to view the content of the service**.
 
-![](/img/manual-english-g3wsuite-administration-project-add-acl.png)
+![Screenshot: G3W-SUITE Administration Project Add ACL](/img/manual-english-g3wsuite-administration-project-add-acl.png)
 
 #### Default base layer
 **In this session you define which base layer should be active at startup.**
@@ -102,17 +102,17 @@ Enabling providers is carried out at the general application [settings level](se
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![](/img/manual-english-g3wsuite-administration-project-add-option.png)
+![Screenshot: G3W-SUITE Administration Project Add Option](/img/manual-english-g3wsuite-administration-project-add-option.png)
 
 After filling in the various form, click on the Save button to confirm your choices.
 
-![](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.png)
 
 **If the operation is successful we will see the new project appear in the list of projects in in the working Cartographic Group.**
 
-![](/img/manual-english-g3wsuite-administration-project-addproject-result.png)
+![Screenshot: G3W-SUITE Administration Project Addproject Result](/img/manual-english-g3wsuite-administration-project-addproject-result.png)
 
-![](/img/manual-english-g3wsuite-portal-groups.png)
+![Screenshot: G3W-SUITE Portal Groups](/img/manual-english-g3wsuite-portal-groups.png)
 
 
 ### Embedded project
@@ -130,15 +130,15 @@ It is possible to define a custom order by moving the published projects via dra
 
 Within each Cartographic Group, it is possible to view the list of projects published within it and interact with them.
 
-![](/img/manual-english-g3wsuite-administration-project-list.png)
+![Screenshot: G3W-SUITE Administration Project List](/img/manual-english-g3wsuite-administration-project-list.png)
 
 The first icon, to the left of each individual project, allows you to create bookmarks for your favorite projects. This will display them in the dashboard of the Administration session, so they're always within reach.
 
-![](/img/manual-english-g3wsuite-administration-dashboard.png)
+![Screenshot: G3W-SUITE Administration Dashboard](/img/manual-english-g3wsuite-administration-dashboard.png)
 
 To **update** a published WebGis service, access the list of projects in the Cartographic Group.
 
-Click on the **Edit** ![](/img/manual-english-iconsmall-edit.png) icon placed at the top of the WebGis service and reload the QGIS file with the changes made in the relevant form.
+Click on the **Edit** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) icon placed at the top of the WebGis service and reload the QGIS file with the changes made in the relevant form.
 
 Click on the **SAVE** button to confirm the change.
 
@@ -150,9 +150,9 @@ Always starting from the list of WebGis services, it is possible to manage numer
 **In this section it is therefore possible to view the list of cartographic projects present, view them, manage them and create new ones.**
 
 Through the single icons, placed at the level of each project, it is possible to:
- * ![](/img/manual-english-iconsmall-viewmap.png) **Display the cartographic project on the WebGis interface:** to check the display by the user
- * ![](/img/manual-english-iconsmall-layerlist.png) **Access the list of layers** present within the project and define their functional aspects
- * ![](/img/manual-english-iconsmall-view.png) **Show details**: for each WebGis service it will be possible to access a detailed summary that will list all the activated settings and widgets:
+ * ![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.png) **Display the cartographic project on the WebGis interface:** to check the display by the user
+ * ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) **Access the list of layers** present within the project and define their functional aspects
+ * ![Screenshot: Iconsmall View](/img/manual-english-iconsmall-view.png) **Show details**: for each WebGis service it will be possible to access a detailed summary that will list all the activated settings and widgets:
    *  access and modification permissions
    *  the list of active searches
    *  editing permissions on individual layers
@@ -160,17 +160,17 @@ Through the single icons, placed at the level of each project, it is possible to
    *  visibility constraints on layers
    *  visibility constraints on attribute fields
 
-  * ![](/img/manual-english-iconsmall-wms.png) **Test the WMS Capabilities** of the project
- * ![](/img/manual-english-iconsmall-edit.png) **Update a project:** update of the QGIS file and other options related to the project
- * ![](/img/manual-english-iconsmall-erase.png) **Remove a cartographic project**
+  * ![Screenshot: Iconsmall WMS](/img/manual-english-iconsmall-wms.png) **Test the WMS Capabilities** of the project
+ * ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) **Update a project:** update of the QGIS file and other options related to the project
+ * ![Screenshot: Iconsmall Erase](/img/manual-english-iconsmall-erase.png) **Remove a cartographic project**
    **Warning:** removing a project also removes all the widgets (e.g. searches) that would be orphaned after the project has been removed
- * ![](/img/manual-english-iconsmall-download.png) **Download of the QGIS project**
- * ![](/img/manual-english-iconsmall-ogc.png) **List of OGC services** associated with the project
-  * ![](/img/manual-english-iconsmall-message.png) **Messages** the tool allows you to define personalized (timed) messages visible when the WebGis service starts
+ * ![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.png) **Download of the QGIS project**
+ * ![Screenshot: Iconsmall OGC](/img/manual-english-iconsmall-ogc.png) **List of OGC services** associated with the project
+  * ![Screenshot: Iconsmall Message](/img/manual-english-iconsmall-message.png) **Messages** the tool allows you to define personalized (timed) messages visible when the WebGis service starts
  
 In case of request to delete the WebGis service, a popup will ask whether the deletion of the Webgis should be permanent or a simple deactivation, which can be restored from the **Trash** menu.
 
-![](/img/manual-english-projecet-delete.png)
+![Screenshot: Project Delete](/img/manual-english-projecet-delete.png)
 
  **Below are some insights into specific features**
 
@@ -178,7 +178,7 @@ In case of request to delete the WebGis service, a popup will ask whether the de
 
 A useful tool for having a summary of all the settings and functions connected to the project.
 
-![](/img/manual-english-tools-details.png)
+![Screenshot: Tools Details](/img/manual-english-tools-details.png)
 
 #### Messages
 
@@ -186,7 +186,7 @@ The tool allows you to define personalized (timed) messages visible when the Web
 
 By clicking on the icon, the messages associated with the service are displayed.
 
-![](/img/manual-english-messages-list.png)
+![Screenshot: Messages List](/img/manual-english-messages-list.png)
 
 Using the + Message key it is possible to create a new message by defining:
   * title
@@ -194,7 +194,7 @@ Using the + Message key it is possible to create a new message by defining:
   * message type (info, warning, error, critical)
   * validity period (optional)
 
- ![](/img/manual-english-messages-new.png)
+ ![Screenshot: Messages New](/img/manual-english-messages-new.png)
 
 
 #### Project Trash
@@ -204,7 +204,7 @@ The Project with all its related content (widgets and settings) is moved to the 
 
 It is possible to access the list of trashed Projects and the restore functions through the tab Trash positioned just above the list of published projects
 
-![](/img/manual-english-g3wadmin-trash-project.png)
+![Screenshot: G3W-ADMIN Trash Project](/img/manual-english-g3wadmin-trash-project.png)
 
 Restoring a Project involves restoring all the accessory settings/functions of  the project (permissions, searches, editing settings, downloads, etc...).
 

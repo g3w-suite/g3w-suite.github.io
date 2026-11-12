@@ -1,559 +1,190 @@
 <main id="main-content">
-  <div class="page-header">
-    <div class="container">
 
 # Download
 
-    </div>
-  </div>
+## **{{t 'Consult the documentation for each branch'}}** {{t 'Documentation'}}
 
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Consult the documentation for each branch'}}</span>
+| Branch | QGIS | QGIS API | Python | Django | Status | Release date | {{t 'Documentation ENG'}} | Change log |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **dev (4.0)** | 4.0 LTR | integrate | 3.12 | 4.2 | Continuing development | {{t 'November 2026'}} | - | - |
+| **{{#en}}3.10.x{{/en}}{{#it}}3.11.x{{/it}}** | **3.44 LTR** | integrate | 3.12 | 4.2 | Bug fixing | {{t '09 April 2026'}} | {{#en}}-{{/en}}{{#it}}[ENG](/docs/){{/it}} | [3.11](/{{t 'en'}}/changelog/v3.11/) |
+| **3.10.x** | **3.40 LTR** | integrate | 3.12 | 4.2 | Bug fixing | {{t '30 July 2025'}} | {{#en}}[ENG](/docs/){{/en}}{{#it}}[ENG](https://g3w-suite.readthedocs.io/en/v3.10.x/index.html){{/it}} | [3.10](/{{t 'en'}}/changelog/v3.10/) |
+| **3.9.x** | 3.34 LTR | integrate | 3.12 | 4.2 | {{t 'No longer supported'}} | {{t '23 January 2025'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.9.x/index.html) | [3.9](/{{t 'en'}}/changelog/v3.9/) |
+| **3.8.x** | **3.34 LTR** | integrate | 3.10 | 3.2 | {{t 'No longer supported'}} | {{t '18 June 2024'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.8.x/index.html) | [3.8](/{{t 'en'}}/changelog/v3.8/) |
+| **3.7.x** | 3.28 LTR | integrate | 3.10 | 3.2 | {{t 'No longer supported'}} | {{t '13 December 2023'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.7.x/) | [3.7](/{{t 'en'}}/changelog/v3.7/) |
+| **3.6** | **3.28 LTR** | integrate | 3.10 | 3.2 | {{t 'No longer supported'}} | {{t '17 May 2023'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.6.x/) | [3.6](/{{t 'en'}}/changelog/v3.6/) |
+| **3.5** | 3.22 LTR | integrate | 3.6 | 2.2 | {{t 'No longer supported'}} | {{t '15 November 2022'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.5.x/) | [3.5](/{{t 'en'}}/changelog/v3.5/) |
+| **3.4** | **3.22 LTR** | integrate | 3.6 | 2.2 | {{t 'No longer supported'}} | {{t '05 April 2022'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.4.x/index.html) | [3.4](/{{t 'en'}}/changelog/v3.4/) |
+| **3.3** | 3.16 LTR | integrate | 3.6 | 2.2 | {{t 'No longer supported'}} | {{t '07 October 2021'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.3.x/index.html) | [3.3](/{{t 'en'}}/changelog/v3.3/) |
+| **3.2** | **3.16 LTR** | integrate | 3.6 | 2.2 | {{t 'No longer supported'}} | {{t '07 April 2021'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.2.x/index.html) | [3.2](/{{t 'en'}}/changelog/v3.2/) |
+| **3.1** | 3.10 LTR | integrate | 3.6 | 2.2 | {{t 'No longer supported'}} | {{t '11 November 2020'}} | [ENG](https://g3w-suite.readthedocs.io/en/v3.1.x/index.html) | [3.1](/{{t 'en'}}/changelog/v3.1/) |
 
-## {{t 'Documentation'}}
-
-      </div>
-      <div class="docs-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Branch</th>
-              <th>QGIS</th>
-              <th>QGIS API</th>
-              <th>Python</th>
-              <th>Django</th>
-              <th>Status</th>
-              <th>Release date</th>
-              <th>{{t 'Documentation ENG'}}</th>
-              <th>Change log</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><b>dev (4.0)</b></td>
-              <td>4.0 LTR</td>
-              <td>integrate</td>
-              <td>3.12</td>
-              <td>4.2</td>
-              <td>Continuing development</td>
-              <td>{{t 'November 2026'}}</td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td><b>{{#en}}3.10.x{{/en}}{{#it}}3.11.x{{/it}}</b></td>
-              <td><b>3.44 LTR</b></td>
-              <td>integrate</td>
-              <td>3.12</td>
-              <td>4.2</td>
-              <td>Bug fixing</td>
-              <td>{{t '09 April 2026'}}</td>
-              <td>{{#en}}-{{/en}}{{#it}}<a href="/docs/">ENG</a>{{/it}}</td>
-              <td><a href="/{{t 'en'}}/changelog/v3.11/">3.11</a></td>
-            </tr>
-            <tr>
-              <td><b>3.10.x</b></td>
-              <td><b>3.40 LTR</b></td>
-              <td>integrate</td>
-              <td>3.12</td>
-              <td>4.2</td>
-              <td>Bug fixing</td>
-              <td>{{t '30 July 2025'}}</td>
-              <td>{{#en}}<a href="/docs/">ENG</a>{{/en}}{{#it}}<a href="https://g3w-suite.readthedocs.io/en/v3.10.x/index.html" target="_blank" rel="noopener">ENG</a>{{/it}}</td>
-              <td><a href="/{{t 'en'}}/changelog/v3.10/">3.10</a></td>
-            </tr>
-            <tr>
-              <td><b>3.9.x</b></td>
-              <td>3.34 LTR</td>
-              <td>integrate</td>
-              <td>3.12</td>
-              <td>4.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '23 January 2025'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v3.9.x/index.html" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.9/">3.9</a></td>
-            </tr>
-            <tr>
-              <td><b>3.8.x</b></td>
-              <td><b>3.34 LTR</b></td>
-              <td>integrate</td>
-              <td>3.10</td>
-              <td>3.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '18 June 2024'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v3.8.x/index.html" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.8/">3.8</a></td>
-            </tr>
-            <tr>
-              <td><b>3.7.x</b></td>
-              <td>3.28 LTR</td>
-              <td>integrate</td>
-              <td>3.10</td>
-              <td>3.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '13 December 2023'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v3.7.x/" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.7/">3.7</a></td>
-            </tr>
-            <tr>
-              <td><b>3.6</b></td>
-              <td><b>3.28 LTR</b></td>
-              <td>integrate</td>
-              <td>3.10</td>
-              <td>3.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '17 May 2023'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v3.6.x/" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.6/">3.6</a></td>
-            </tr>
-            <tr>
-              <td><b>3.5</b></td>
-              <td>3.22 LTR</td>
-              <td>integrate</td>
-              <td>3.6</td>
-              <td>2.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '15 November 2022'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v3.5.x/" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.5/">3.5</a></td>
-            </tr>
-            <tr>
-              <td><b>3.4</b></td>
-              <td><b>3.22 LTR</b></td>
-              <td>integrate</td>
-              <td>3.6</td>
-              <td>2.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '05 April 2022'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v.3.4.x/index.html" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.4/">3.4</a></td>
-            </tr>
-            <tr>
-              <td><b>3.3</b></td>
-              <td>3.16 LTR</td>
-              <td>integrate</td>
-              <td>3.6</td>
-              <td>2.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '07 October 2021'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v.3.3.x/index.html" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.3/">3.3</a></td>
-            </tr>
-            <tr>
-              <td><b>3.2</b></td>
-              <td><b>3.16 LTR</b></td>
-              <td>integrate</td>
-              <td>3.6</td>
-              <td>2.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '07 April 2021'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v.3.2.x/index.html" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.2/">3.2</a></td>
-            </tr>
-            <tr>
-              <td><b>3.1</b></td>
-              <td>3.10 LTR</td>
-              <td>integrate</td>
-              <td>3.6</td>
-              <td>2.2</td>
-              <td class="eol">{{t 'No longer supported'}}</td>
-              <td>{{t '11 November 2020'}}</td>
-              <td><a href="https://g3w-suite.readthedocs.io/en/v.3.1.x/index.html" target="_blank" rel="noopener">ENG</a></td>
-              <td><a href="/{{t 'en'}}/changelog/v3.1/">3.1</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- What G3W-Suite includes -->
-  <section id="cosa" class="section section--alt">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Hosted or on-premise'}}</span>
-
-## {{t 'Everything you need for your QGIS WebGIS'}}
+## <span id="cosa"></span>**{{t 'Hosted or on-premise'}}** {{t 'Everything you need for your QGIS WebGIS'}}
 
 {{t 'From project publishing to collaborative web editing, G3W-SUITE automatically inherits styles, forms and relations from your QGIS file.'}}
 
-      </div>
-      <ul class="feature-list">
-        <li class="feature-item">
-          <h3>{{t 'Simple and fast'}}</h3>
-          <ul>
-            <li>{{t 'Create your QGIS project'}}</li>
-            <li>{{t 'Use data on GeoDB or file system'}}</li>
-            <li>{{t 'Publish on WebGis'}}</li>
-          </ul>
-        </li>
-        <li class="feature-item">
-          <h3>{{t 'Users profiling'}}</h3>
-          <p>{{t 'Define users, groups and roles to differentiate management, access, online editing and functional modules'}}</p>
-        </li>
-        <li class="feature-item">
-          <h3>{{t 'Customising'}}</h3>
-          <ul>
-            <li>{{t 'Customize access portal and map client content'}}</li>
-            <li>{{t 'Create management environments and define their administrators'}}</li>
-            <li>{{t 'Activate the functional modules you need'}}</li>
-          </ul>
-        </li>
-        <li class="feature-item">
-          <h3>{{t 'Full of features'}}</h3>
-          <ul>
-            <li><b>{{t 'Integration with QGIS API'}}</b></li>
-            <li>{{t 'Customizable searches'}}</li>
-            <li>{{t 'Simple and Atlas print layout'}}</li>
-            <li>{{t 'Time series animation'}}</li>
-            <li>{{t 'WPS module integration'}}</li>
-            <li>{{t 'CSW service for INSPIRE metadating'}}</li>
-          </ul>
-        </li>
-        <li class="feature-item">
-          <h3>Editing on web</h3>
-          <ul>
-            <li>{{t 'Geometric and attribute editing also on 1:1 and 1:N relations'}}</li>
-            <li>{{t 'QGIS API based editing'}}</li>
-            <li>{{t 'Form and editing widgets inherited from QGIS project'}}</li>
-            <li>{{t 'Feature lock for multi-user editing'}}</li>
-            <li>{{t 'Geographical and alphanumeric constraints customizable for individual users'}}</li>
-          </ul>
-        </li>
-        <li class="feature-item">
-          <h3>{{t 'Desktop and mobile'}}</h3>
-          <ul>
-            <li>{{t 'Responsive client for desktop and tablet'}}</li>
-            <li>{{t 'Web editing also in offline mode'}}</li>
-          </ul>
-        </li>
-      </ul>
-      <div class="features-gallery">
-        <img src="/img/site-qgis-api.jpeg" alt="QGIS API" loading="lazy">
-        <img src="/img/site-g3w-suite-interface-screenshot.png" alt="{{t 'G3W-Suite interface'}}" loading="lazy">
-      </div>
-    </div>
-  </section>
+- **{{t 'Simple and fast'}}:** {{t 'Create your QGIS project'}}; {{t 'Use data on GeoDB or file system'}}; {{t 'Publish on WebGis'}}
+- **{{t 'Users profiling'}}:** {{t 'Define users, groups and roles to differentiate management, access, online editing and functional modules'}}
+- **{{t 'Customising'}}:** {{t 'Customize access portal and map client content'}}; {{t 'Create management environments and define their administrators'}}; {{t 'Activate the functional modules you need'}}
+- **{{t 'Full of features'}}:** **{{t 'Integration with QGIS API'}}**; {{t 'Customizable searches'}}; {{t 'Simple and Atlas print layout'}}; {{t 'Time series animation'}}; {{t 'WPS module integration'}}; {{t 'CSW service for INSPIRE metadating'}}
+- **Editing on web:** {{t 'Geometric and attribute editing also on 1:1 and 1:N relations'}}; {{t 'QGIS API based editing'}}; {{t 'Form and editing widgets inherited from QGIS project'}}; {{t 'Feature lock for multi-user editing'}}; {{t 'Geographical and alphanumeric constraints customizable for individual users'}}
+- **{{t 'Desktop and mobile'}}:** {{t 'Responsive client for desktop and tablet'}}; {{t 'Web editing also in offline mode'}}
 
-  <!-- Features in detail -->
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Map client and administration'}}</span>
+![QGIS API](/img/site-qgis-api.jpeg) ![{{t 'G3W-Suite interface'}}](/img/site-g3w-suite-interface-screenshot.png)
 
-## {{t 'Features in detail'}}
+## **{{t 'Map client and administration'}}** {{t 'Features in detail'}}
 
 {{t 'Two interfaces designed for end users and system managers.'}}
 
-      </div>
-      <div class="features-cols">
-        <div>
-          <h3 class="client-color">{{t 'Map client'}}</h3>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Optimised map client'}}</p>
+### {{t 'Map client'}}
 
-<b>{{t 'Graphic and functional optimization'}}</b> {{t 'for tablets and smartphones'}}
+#### {{t 'Optimised map client'}}
 
-<b>{{t 'Customizable graphic interface'}}</b> {{t 'with texts, logos and contact references'}}
+**{{t 'Graphic and functional optimization'}}** {{t 'for tablets and smartphones'}}
 
-<b>{{t 'Geolocation functions'}}</b> {{t 'for field work'}}
+**{{t 'Customizable graphic interface'}}** {{t 'with texts, logos and contact references'}}
 
-            </div>
-          </div>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Basic tools'}}</p>
-              {{#en}}
+**{{t 'Geolocation functions'}}** {{t 'for field work'}}
 
-<b>Geographic search</b> tools and auto-zoom functions
+#### {{t 'Basic tools'}}
 
-{{/en}}{{#it}}
+{{t '**Geographic search** tools and auto-zoom functions'}}
 
-Strumenti di <b>ricerca geografica</b> e funzioni di auto-zoom
+**{{t 'Base maps'}}** (OSM, GoogleMaps, Yahoo, Bing)
 
-{{/it}}
+**{{t 'Print'}}** {{t 'based on'}} **layout composer** {{t '(with'}} **{{t 'Atlas'}}** {{t 'support) linked to the'}} **{{t 'QGIS project'}}**
 
-<b>{{t 'Base maps'}}</b> (OSM, GoogleMaps, Yahoo, Bing)
+**{{t 'Metadata publication'}}** {{t 'defined on QGIS project'}}
 
-<b>{{t 'Print'}}</b> {{t 'based on'}} <b>layout composer</b> {{t '(with'}} <b>{{t 'Atlas'}}</b> {{t 'support) linked to the'}} <b>{{t 'QGIS project'}}</b>
+#### {{t 'Advanced tools'}}
 
-<b>{{t 'Metadata publication'}}</b> {{t 'defined on QGIS project'}}
+**Query Builder** {{t 'for custom searches'}}
 
-            </div>
-          </div>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Advanced tools'}}</p>
+{{t 'Data visualization based on'}} **{{t 'join and 1:N and N:M relations'}}**
 
-<b>Query Builder</b> {{t 'for custom searches'}}
+**{{t 'Chart visualization'}}** {{t 'created with the QGIS plugin'}} **DataPlotly**
 
-{{t 'Data visualization based on'}} <b>{{t 'join and 1:N and N:M relations'}}</b>
+{{t 'Links to'}} **{{t 'web links and multimedia content'}}**
 
-<b>{{t 'Chart visualization'}}</b> {{t 'created with the QGIS plugin'}} <b>DataPlotly</b>
+**{{t 'On-the-fly loading'}}** {{t 'of vector layers (.shp, .kml, .geojson, csv)'}}
 
-{{t 'Links to'}} <b>{{t 'web links and multimedia content'}}</b>
+#### {{t 'Online editing'}}
 
-<b>{{t 'On-the-fly loading'}}</b> {{t 'of vector layers (.shp, .kml, .geojson, csv)'}}
+{{t 'Online editing, also'}} **{{t 'relational'}}**{{t ', with'}} **{{t 'permission management'}}**
 
-            </div>
-          </div>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Online editing'}}</p>
+**{{t 'Form and widgets'}}** {{t 'for'}} **{{t 'simplified attribute compilation'}}**
 
-{{t 'Online editing, also'}} <b>{{t 'relational'}}</b>{{t ', with'}} <b>{{t 'permission management'}}</b>
+{{t '**Feature-lock** functions for **multi-user editing**'}}
 
-<b>{{t 'Form and widgets'}}</b> {{t 'for'}} <b>{{t 'simplified attribute compilation'}}</b>
+**{{t 'Alphanumeric and geographic constraints'}}** {{t 'definable for single users or groups'}}
 
-              {{#en}}
+{{t 'Editing also'}} **off line**
 
-<b>Feature-lock</b> functions for <b>multi-user editing</b>
+### {{t 'Administration'}}
 
-{{/en}}{{#it}}
+#### {{t 'Cartographic project publication'}}
 
-Funzioni di <b>feature-lock</b> per l'editing multi-utente
+{{t 'Ability to create'}} **{{t 'thematic cartographic containers'}}** {{t 'for'}} **{{t 'structured management'}}** {{t 'of WebGis services'}}
 
-{{/it}}
+{{t 'Direct publication with'}} **{{t 'complete graphic correspondence with QGIS projects'}}**
 
-<b>{{t 'Alphanumeric and geographic constraints'}}</b> {{t 'definable for single users or groups'}}
+**{{t 'Graphic search builder'}}** {{t 'activatable on individual services'}}
 
-{{t 'Editing also'}} <b>off line</b>
+**{{t 'Cache management'}}** {{t 'and'}} **{{t 'base layer creation'}}** {{t 'from WebGis services'}}
 
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="admin-color">{{t 'Administration'}}</h3>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Cartographic project publication'}}</p>
+#### {{t 'Data synchronization'}}
 
-{{t 'Ability to create'}} <b>{{t 'thematic cartographic containers'}}</b> {{t 'for'}} <b>{{t 'structured management'}}</b> {{t 'of WebGis services'}}
+{{t 'Use data on your'}} **{{t 'PostGreSQL/PostGis, Oracle Spatial or MSSQL DB'}}**
 
-{{t 'Direct publication with'}} <b>{{t 'complete graphic correspondence with QGIS projects'}}</b>
+..{{t 'but also **SQLite/SpatiaLite**, **GeoPackage, Shapefile, Virtual layer** and your **raster** data'}}
 
-<b>{{t 'Graphic search builder'}}</b> {{t 'activatable on individual services'}}
+#### {{t 'Access and editing permissions management'}}
 
-<b>{{t 'Cache management'}}</b> {{t 'and'}} <b>{{t 'base layer creation'}}</b> {{t 'from WebGis services'}}
+**{{t 'User creation'}}** {{t '(individual and groups) and'}} **{{t 'access permissions management'}}**
 
-            </div>
-          </div>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Data synchronization'}}</p>
+{{t 'Management of'}} **{{t 'online editing permissions'}}** {{t 'on individual layers'}}
 
-{{t 'Use data on your'}} <b>{{t 'PostGreSQL/PostGis, Oracle Spatial or MSSQL DB'}}</b>
+**{{t 'Alphanumeric constraints'}}** {{t 'based on'}} **{{t 'SQL and QGIS expressions'}}** {{t 'for creating'}} **{{t 'visualization and editing filters'}}**
 
-              {{#en}}
+**{{t 'Geographic constraints'}}** {{t 'for creating'}} **{{t 'visualization and editing filters'}}**
 
-..but also <b>SQLite/SpatiaLite</b>, <b>GeoPackage, Shapefile, Virtual layer</b> and your <b>raster</b> data
+#### {{t 'Dedicated modules for PA'}}
 
-{{/en}}{{#it}}
+{{t '**Land registry** connection and tax checks'}}
 
-..ma anche <b>SQLite/SpatiaLite</b>, <b>GeoPackage, Shapefile, Virtual layer</b> e i tuoi dati <b>raster</b>
+**{{t 'CDU and associated regulations'}}**
 
-{{/it}}
-            </div>
-          </div>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Access and editing permissions management'}}</p>
+{{t '**Civic numbers and street directory** management'}}
 
-<b>{{t 'User creation'}}</b> {{t '(individual and groups) and'}} <b>{{t 'access permissions management'}}</b>
+**{{t 'RNDT and INSPIRE metadata'}}**
 
-{{t 'Management of'}} <b>{{t 'online editing permissions'}}</b> {{t 'on individual layers'}}
+{{#it}}
 
-<b>{{t 'Alphanumeric constraints'}}</b> {{t 'based on'}} <b>{{t 'SQL and QGIS expressions'}}</b> {{t 'for creating'}} <b>{{t 'visualization and editing filters'}}</b>
-
-<b>{{t 'Geographic constraints'}}</b> {{t 'for creating'}} <b>{{t 'visualization and editing filters'}}</b>
-
-            </div>
-          </div>
-          <div class="service-item">
-            <div>
-              <p class="service-item__title">{{t 'Dedicated modules for PA'}}</p>
-              {{#en}}
-
-<b>Land registry</b> connection and tax checks
-
-{{/en}}{{#it}}
-
-Collegamento <b>censuario catasto</b> e verifiche tributarie
+[**Sei una PA? Approfondisci**](http://gis3w.it/webgis-pubbliche-amministrazioni/)
 
 {{/it}}
 
-<b>{{t 'CDU and associated regulations'}}</b>
+## **{{t 'Alternative to self-hosting'}}** {{t 'Don\'t want to manage the infrastructure?'}}
 
-              {{#en}}
+{{t 'G3W-Suite is open source and you can self-host it following the Quick Start guide. If you prefer not to deal with servers, updates and backups,'}} **{{t 'GIS3W offers a managed hosting service'}}**{{t ': your QGIS WebGIS up and running in days, with SSL, daily backups and technical support included.'}}
 
-<b>Civic numbers and street directory</b> management
+[{{t 'Ask about managed hosting'}}](#footer-help-title "primary-button") [Quick Start (self-hosted)](/{{t 'en'}}/download/#quick-start "outline-button")
 
-{{/en}}{{#it}}
+- {{t 'Dedicated Ubuntu Server LTS'}}
+- {{t 'Automatic SSL/HTTPS via Let\'s Encrypt'}}
+- {{t 'Daily backups (30-day retention)'}}
+- {{t 'G3W-Suite updates included'}}
+- {{t 'Dedicated and tuned PostgreSQL/PostGIS'}}
+- {{t 'GIS3W technical support'}}
 
-Gestione <b>civici e stradario</b>
+## {{#it}}<span id="quick-start"></span>{{/it}}{{t 'Quick Start'}}
 
-{{/it}}
-
-<b>{{t 'RNDT and INSPIRE metadata'}}</b>
-
-              {{#it}}
-
-<a href="http://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener"><b>Sei una PA? Approfondisci</b></a>
-
-{{/it}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GIS3W managed hosting -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <span class="section-label">{{t 'Alternative to self-hosting'}}</span>
-
-## {{t 'Don\'t want to manage the infrastructure?'}}
-
-{{t 'G3W-Suite is open source and you can self-host it following the Quick Start guide. If you prefer not to deal with servers, updates and backups,'}} <b>{{t 'GIS3W offers a managed hosting service'}}</b>{{t ': your QGIS WebGIS up and running in days, with SSL, daily backups and technical support included.'}}
-
-          <div class="btn-group" style="justify-content:flex-start;margin-top:1.5rem;">
-            <a class="btn btn--primary" href="#footer-help-title">{{t 'Ask about managed hosting'}}</a>
-            <a class="btn btn--outline" href="/{{t 'en'}}/download/#quick-start">Quick Start (self-hosted)</a>
-          </div>
-        </div>
-        <div>
-          <ul class="feature-list" style="grid-template-columns:1fr;gap:.5rem;">
-            <li class="feature-item" style="padding:.75rem 1rem;">{{t 'Dedicated Ubuntu Server LTS'}}</li>
-            <li class="feature-item" style="padding:.75rem 1rem;">{{t 'Automatic SSL/HTTPS via Let\'s Encrypt'}}</li>
-            <li class="feature-item" style="padding:.75rem 1rem;">{{t 'Daily backups (30-day retention)'}}</li>
-            <li class="feature-item" style="padding:.75rem 1rem;">{{t 'G3W-Suite updates included'}}</li>
-            <li class="feature-item" style="padding:.75rem 1rem;">{{t 'Dedicated and tuned PostgreSQL/PostGIS'}}</li>
-            <li class="feature-item" style="padding:.75rem 1rem;">{{t 'GIS3W technical support'}}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Start -->
-  <section id="quick-start" class="section section--alt">
-    <div class="container content-page">
-      <div class="intro-box">
-
-<b>{{t 'Have you completed the installation of the suite on your server, or do you want to try publishing a project on the on-line demo?'}}</b>
+**{{t 'Have you completed the installation of the suite on your server, or do you want to try publishing a project on the on-line demo?'}}**
 
 {{t 'Find out how easy it is to do it in four simple steps!'}}
 
-      </div>
-
-      <div class="step">
-        <div class="step-header">
-          <span class="step__number">1</span>
-          <h2 class="step__title">{{t 'Create your QGIS project'}}</h2>
-        </div>
-        <div class="step__body">
-          <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
-            <div>
+### {{t 'Create your QGIS project'}}
 
 {{t 'Create your QGIS cartographic project defining all the aspects of interest: map content, symbology and labelling, legend structure, attribute query form, print layouts (free and atlas) and much more.'}}
 
-{{t 'Remember to organize your projects and geographic data on your PC as illustrated and described in the'}} <a href="/docs/datamanagement/#organization-of-data-and-projects">{{t 'manual'}}</a>.
+{{t 'Remember to organize your projects and geographic data on your PC as illustrated and described in the'}} [{{t 'manual'}}](/docs/datamanagement/#organization-of-data-and-projects).
 
-              {{#en}}<img src="/img/site-qgis.jpg" alt="{{t 'QGIS project'}}" style="margin-top:1rem;border-radius:4px;">{{/en}}{{#it}}<img src="/img/site-qgis.jpg" alt="Progetto QGIS" class="img-rounded mt-3" loading="lazy">{{/it}}
-            </div>
-            <div>
-              <iframe class="step__video" src="https://www.youtube.com/embed/-GV9xUoJKD4" title="G3W-SUITE Quick Start 1: create your QGIS project" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
+{{#en}}![{{t 'QGIS project'}}](/img/site-qgis.jpg){{/en}}{{#it}}![Progetto QGIS](/img/site-qgis.jpg){{/it}}
+<iframe class="step__video" src="https://www.youtube.com/embed/-GV9xUoJKD4" title="G3W-SUITE Quick Start 1: create your QGIS project" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-      <div class="step">
-        <div class="step-header">
-          <span class="step__number">2</span>
-          <h2 class="step__title">{{t 'Upload your geographic data to the server'}}</h2>
-        </div>
-        <div class="step__body">
-          <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
-            <div>
-              <iframe class="step__video" src="https://www.youtube.com/embed/8wKBoxxIs-4" title="G3W-SUITE Quick Start 2: upload your geo-data on the server" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div>
+### {{t 'Upload your geographic data to the server'}}
+
+<iframe class="step__video" src="https://www.youtube.com/embed/8wKBoxxIs-4" title="G3W-SUITE Quick Start 2: upload your geo-data on the server" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 {{t 'If your project is based on local files (Shp, GeoPackage, SpatiaLite, raster) it is necessary that such data is present on the server at the time of publication.'}}
 
-{{t 'The'}} <a href="/docs/datamanagement/#geographical-data-synchronization-on-the-server"><b>FileManager</b></a> {{t 'module will allow you to upload such data reconstructing the same organization set up locally.'}}
+{{t 'The'}} [**FileManager**](/docs/datamanagement/#geographical-data-synchronization-on-the-server) {{t 'module will allow you to upload such data reconstructing the same organization set up locally.'}}
 
 {{t 'If your geographic data is on a PostGis or Oracle Spatial GeoDB, you simply need to allow access from the suite.'}}
 
-            </div>
-          </div>
-        </div>
-      </div>
+### {{t 'Access G3W-SUITE and create the container for publishing'}}
 
-      <div class="step">
-        <div class="step-header">
-          <span class="step__number">3</span>
-          <h2 class="step__title">{{t 'Access G3W-SUITE and create the container for publishing'}}</h2>
-        </div>
-        <div class="step__body">
-          <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
-            <div>
-
-{{t 'In order to publish a QGIS project you need to'}} <a href="/docs/admin-users/#add-group-users">{{t 'create a Cartographic Group'}}</a>{{t ': these Groups are containers that allow you to thematically and functionally organize your WebGis services.'}}
+{{t 'In order to publish a QGIS project you need to'}} [{{t 'create a Cartographic Group'}}](/docs/admin-users/#add-group-users){{t ': these Groups are containers that allow you to thematically and functionally organize your WebGis services.'}}
 
 {{t 'You can publish multiple WebGis services within each Cartographic Group, but remember that they must have the same projection system associated with the Group when created.'}}
 
-            </div>
-            <div>
-              <iframe class="step__video" src="https://www.youtube.com/embed/P7hKruymHj4" title="G3W-SUITE Quick Start 3: creation of Cartographic Group" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
+<iframe class="step__video" src="https://www.youtube.com/embed/P7hKruymHj4" title="G3W-SUITE Quick Start 3: creation of Cartographic Group" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-      <div class="step">
-        <div class="step-header">
-          <span class="step__number">4</span>
-          <h2 class="step__title">{{t 'Publish your QGIS project as a WebGis service'}}</h2>
-        </div>
-        <div class="step__body">
-          <div class="grid-2{{#it}} grid--top{{/it}}"{{#en}} style="align-items:start;"{{/en}}>
-            <div>
-              <iframe class="step__video" src="https://www.youtube.com/embed/gaxsTFC5uoo" title="G3W-SUITE Quick Start 4: publish your QGIS project as a WebGIS service" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div>
+### {{t 'Publish your QGIS project as a WebGis service'}}
 
-<a href="/docs/g3wsuite_administration/#publication-of-new-webgis-services">{{t 'Publish your QGIS project'}}</a> {{t 'by uploading the file (.qgs or .qgz) within the created Cartographic Group.'}} <b>{{t 'No plugin needed!'}}</b>
+<iframe class="step__video" src="https://www.youtube.com/embed/gaxsTFC5uoo" title="G3W-SUITE Quick Start 4: publish your QGIS project as a WebGIS service" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+[{{t 'Publish your QGIS project'}}](/docs/g3wsuite_administration/#publication-of-new-webgis-services) {{t 'by uploading the file (.qgs or .qgz) within the created Cartographic Group.'}} **{{t 'No plugin needed!'}}**
 
 {{t 'All the settings and functions activated on the project will be automatically inherited by the WebGis service.'}}
 
-{{t 'If you want to customize and activate additional functions on the online map, consult the'}} <a href="/docs/g3wsuite_administration/#update-manage-webgis-services">{{t 'manual'}}</a> {{t 'and the'}} <a href="/docs/demo/">{{t 'online tutorial'}}</a>.
+{{t 'If you want to customize and activate additional functions on the online map, consult the'}} [{{t 'manual'}}](/docs/g3wsuite_administration/#update-manage-webgis-services) {{t 'and the'}} [{{t 'online tutorial'}}](/docs/demo/).
 
-            </div>
-          </div>
-        </div>
-      </div>{{#en}}<div class="cta-box">
+## {{t 'Try the online demo and discover all the features!'}}
 
-## Try the online demo and discover all the features!
+{{t 'Explore all the features of G3W-SUITE directly in your browser.'}}
 
-        <a class="btn btn--primary" href="/{{t 'en'}}/demo/">Demo!</a>
-      </div>{{/en}}{{#it}}<div class="cta-box">
-
-## Prova la demo online!
-
-Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
-
-        <a class="btn btn--primary" href="/it/demo/#demo-3-11">Vai alla demo</a>
-      </div>{{/it}}
-    </div>
-  </section>
+[{{t 'Demo!'}}]({{#en}}/{{t 'en'}}/demo/{{/en}}{{#it}}/it/demo/#demo-3-11{{/it}})
 
 </main>
 
@@ -562,6 +193,10 @@ Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
     "it": {
       "(individual and groups) and": "(singoli e gruppi) e",
       "(with": "(con supporto degli",
+      "**Civic numbers and street directory** management": "Gestione **civici e stradario**",
+      "**Feature-lock** functions for **multi-user editing**": "Funzioni di **feature-lock** per l'editing multi-utente",
+      "**Geographic search** tools and auto-zoom functions": "Strumenti di **ricerca geografica** e funzioni di auto-zoom",
+      "**Land registry** connection and tax checks": "Collegamento **censuario catasto** e verifiche tributarie",
       ", with": ", con",
       "05 April 2022": "05 Aprile 2022",
       "07 April 2021": "07 Aprile 2021",
@@ -611,6 +246,7 @@ Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
       "Dedicated and tuned PostgreSQL/PostGIS": "PostgreSQL/PostGIS dedicato e ottimizzato",
       "Dedicated modules for PA": "Moduli dedicati alle PA",
       "Define users, groups and roles to differentiate management, access, online editing and functional modules": "Definisci utenti, gruppi e ruoli per differenziare gestione, accesso, editing on line e uso dei moduli funzionali",
+      "Demo!": "Vai alla demo",
       "Desktop and mobile": "Desktop e mobile",
       "Direct publication with": "Pubblicazione diretta e",
       "Documentation": "Documentazione",
@@ -619,6 +255,7 @@ Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
       "Download G3W-Suite": "Download G3W-Suite",
       "Editing also": "Editing anche",
       "Everything you need for your QGIS WebGIS": "Tutto quello che serve per i tuoi WebGIS QGIS",
+      "Explore all the features of G3W-SUITE directly in your browser.": "Esplora tutte le funzionalit&#224; di G3W-SUITE direttamente nel browser.",
       "Feature lock for multi-user editing": "Feature lock per l'editing multi utente",
       "Features in detail": "Funzionalità nel dettaglio",
       "Find out how easy it is to do it in four simple steps!": "Scopri come è semplice realizzarlo in quattro semplici passi!",
@@ -663,6 +300,7 @@ Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
       "Publish your QGIS project as a WebGis service": "Pubblica il tuo progetto QGIS come servizio WebGis",
       "QGIS API based editing": "Editing basato sulle API di QGIS",
       "QGIS project": "progetto QGIS",
+      "Quick Start": "Guida rapida",
       "RNDT and INSPIRE metadata": "Metadatazione RNDT e INSPIRE",
       "Remember to organize your projects and geographic data on your PC as illustrated and described in the": "Ricorda di organizzare sul tuo pc, progetti e dati geografici come illustrato e descritto nel",
       "Responsive client for desktop and tablet": "Client responsive per la consultazione desktop e tablet",
@@ -671,6 +309,7 @@ Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
       "Simple and fast": "Semplice e veloce",
       "The": "Il modulo",
       "Time series animation": "Visualizzazione grafici basati sul plugin DataPlotly",
+      "Try the online demo and discover all the features!": "Prova la demo online!",
       "Two interfaces designed for end users and system managers.": "Due interfacce progettate per utenti finali e gestori di sistema.",
       "Upload your geographic data to the server": "Carica i tuoi dati geografici sul server",
       "Use data on GeoDB or file system": "Usa dati su GeoDB o file system",
@@ -686,6 +325,7 @@ Esplora tutte le funzionalit&agrave; di G3W-SUITE direttamente nel browser.
       "and the": "ed il",
       "base layer creation": "creazione base layer",
       "based on": "basata sui",
+      "but also **SQLite/SpatiaLite**, **GeoPackage, Shapefile, Virtual layer** and your **raster** data": "ma anche **SQLite/SpatiaLite**, **GeoPackage, Shapefile, Virtual layer** e i tuoi dati **raster**",
       "by uploading the file (.qgs or .qgz) within the created Cartographic Group.": "caricando il file (.qgs o .qgz) all interno del Gruppo Cartografico creato.",
       "complete graphic correspondence with QGIS projects": "completa corrispondenza grafica con i progetti QGIS",
       "create a Cartographic Group": "creare un Gruppo Cartografico",

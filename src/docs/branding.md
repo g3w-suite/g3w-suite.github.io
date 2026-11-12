@@ -23,7 +23,7 @@ location /custom_static/ {
 
 **NOTE:** When testing this in development/debug mode, the static folder **custom_static** needs to be created in the static folder of the **core** package of the g3w-admin app. 
 
-![](/img/manual-english-branding-16-static-folder.png)
+![Screenshot: Branding 16 Static Folder](/img/manual-english-branding-16-static-folder.png)
 
 
 In this case the setting needs to be adjusted to contain the static folder (note the initial static folder):
@@ -39,7 +39,7 @@ The powered by setting, turned on by default, shows information about the suite 
 
 Without any interaction the section looks like this:
 
-![](/img/manual-english-branding-01-credits-on.png)
+![Screenshot: Branding 01 Credits On](/img/manual-english-branding-01-credits-on.png)
 
 Adding the following line to the ```local_settings.py``` file will turn off the *powered by* section and show only what has been set in the **Map CLient Data** section of the **General Suite Data**:
 
@@ -47,7 +47,7 @@ Adding the following line to the ```local_settings.py``` file will turn off the 
 G3WSUITE_POWERD_BY=False
 ```
 
-![](/img/manual-english-branding-02-credits-off.png)
+![Screenshot: Branding 02 Credits Off](/img/manual-english-branding-02-credits-off.png)
 
 
 ## Logos
@@ -70,21 +70,21 @@ G3WSUITE_LOGIN_LOGO = G3WSUITE_CUSTOM_STATIC_URL + 'logo_login.png'
 
 This will lead to a login page like this:
 
-![](/img/manual-english-branding-08-logos-login.png)
+![Screenshot: Branding 08 Logos Login](/img/manual-english-branding-08-logos-login.png)
 
 and to the following admin logo icon:
 
-![](/img/manual-english-branding-09-logos-main.png)
+![Screenshot: Branding 09 Logos Main](/img/manual-english-branding-09-logos-main.png)
 
 and its reduced form:
 
-![](/img/manual-english-branding-10-logos-reduced.png)
+![Screenshot: Branding 10 Logos Reduced](/img/manual-english-branding-10-logos-reduced.png)
 
 ## G3WSUITE_CUSTOM_TITLE
 
 The title of the html page of the suite. Usually the title defaults to **g3w-admin** for the admin section and **g3w-client** for the webgis client.
 
-![](/img/manual-english-branding-03-html-title-off.png)
+![Screenshot: Branding 03 Html Title Off](/img/manual-english-branding-03-html-title-off.png)
 
 By setting the following line in the ```local_settings.py``` file:
 
@@ -94,7 +94,7 @@ G3WSUITE_CUSTOM_TITLE = "The Etruscan Webgis for the masses"
 
 we get the following result:
 
-![](/img/manual-english-branding-04-html-title-on.png)
+![Screenshot: Branding 04 Html Title On](/img/manual-english-branding-04-html-title-on.png)
 
 
 
@@ -114,7 +114,7 @@ This custom css can be used to override some default suite css settings and allo
 
 Somethimes you do not need the metadata, print, bookmarks section:
 
-![](/img/manual-english-branding-11-css-remove-off.png)
+![Screenshot: Branding 11 Css Remove Off](/img/manual-english-branding-11-css-remove-off.png)
 
 Assume you want to remove everyting but the layer view. This can be done by adding the following css to the custom css file:
 
@@ -143,14 +143,14 @@ Assume you want to remove everyting but the layer view. This can be done by addi
 
 This results in the following view:
 
-![](/img/manual-english-branding-12-css-remove-on.png)
+![Screenshot: Branding 12 Css Remove On](/img/manual-english-branding-12-css-remove-on.png)
 
 
 The same goes for most of the elements you can check out with the browser's inspector.
 
 Do you want to remove the bottom map logo?
 
-![](/img/manual-english-branding-14-css-map-logo-on.png)
+![Logo: Branding 14 Css Map On](/img/manual-english-branding-14-css-map-logo-on.png)
 
 Then add the following css to the custom css file:
 
@@ -162,7 +162,7 @@ Then add the following css to the custom css file:
 
 This will remove the bottom map logo:
 
-![](/img/manual-english-branding-15-css-map-logo-off.png)
+![Logo: Branding 15 Css Map Off](/img/manual-english-branding-15-css-map-logo-off.png)
 
 #### Example: change the skin color
 
@@ -179,7 +179,7 @@ To change the skin color of the suite, you can add the following css to the cust
 
 This will change the skin color to red (HSL values tested prior in [inkscape](https://inkscape.org/)).
 
-![](/img/manual-english-branding-13-css-skin.png)
+![Screenshot: Branding 13 Css Skin](/img/manual-english-branding-13-css-skin.png)
 
 
 ### G3W_CLIENT_SEARCH_TITLE
@@ -192,7 +192,7 @@ G3W_CLIENT_SEARCH_TITLE = "Search for the Holy Grail"
 
 This will help user to search for the Holy Grail:
 
-![](/img/manual-english-branding-17-search-title.png)
+![Screenshot: Branding 17 Search Title](/img/manual-english-branding-17-search-title.png)
 
 ### G3W_CLIENT_HEADER_CUSTOM_LINKS
 
@@ -224,15 +224,15 @@ The **i18n** key is used to translate the title of the link. If set to True, the
 
 The above example creates changes the top bar from:
 
-![](/img/manual-english-branding-05-header-links-off.png)
+![Screenshot: Branding 05 Header Links Off](/img/manual-english-branding-05-header-links-off.png)
 
 to:
 
-![](/img/manual-english-branding-06-header-links-on.png)
+![Screenshot: Branding 06 Header Links On](/img/manual-english-branding-06-header-links-on.png)
 
 While ths first link opens a new tab with the Gis3W company website, the second link opens a modal dialog like this:
 
-![](/img/manual-english-branding-07-header-links-click.png)
+![Screenshot: Branding 07 Header Links Click](/img/manual-english-branding-07-header-links-click.png)
 
 
 ### G3W_CLIENT_RIGHT_PANEL
@@ -271,12 +271,12 @@ G3W_CLIENT_LEGEND = {
 
 This would change the legend from:
 
-![](/img/manual-english-branding-19-legend-off.png)
+![Screenshot: Branding 19 Legend Off](/img/manual-english-branding-19-legend-off.png)
 
 to:
 
 
-![](/img/manual-english-branding-18-legend.png)
+![Screenshot: Branding 18 Legend](/img/manual-english-branding-18-legend.png)
 
 
 

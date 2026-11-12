@@ -15,6 +15,6 @@ Through the tutorials it will be possible to:
 * add plots made with DataPlotly QGIS plugin
 * activate the editing functionality by customizing associated forms and widgets
  
-![](/img/manual-english-demo-qgis-project.png)
+![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.png)
 
-![](/img/manual-english-demo-webgis-project.png)
+![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.png)

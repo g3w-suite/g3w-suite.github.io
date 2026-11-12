@@ -4,14 +4,14 @@
 
 ## Download demo data
 
-The tutorial is based on predefined data and QGIS 3.44.x LTR project **downloadable from <a href="https://drive.google.com/file/d/1Xpx1FvTNWtx74maXe7jatU_GgyC8QlpB/view?usp=sharing" target="_blank">this link</a>**.
+The tutorial is based on predefined data and QGIS 3.44.x LTR project **downloadable from [this link](https://drive.google.com/file/d/1Xpx1FvTNWtx74maXe7jatU_GgyC8QlpB/view?usp=sharing)**.
 
 The .zip file contains the **`G3W-SUITE`** directory with three sub directories:
 * **`projects`:** containing a QGIS project (**`public-buildings-management-demo-310.qgs`**) already optimized for the tutorial
 * **`project_data/spatialite`**: containing a SpatiaLite DB with basic data (**`build_management_demo.sqlite`**)
 * **`plots`**: containing a a series of plots created with the **DataPlotly** plugin and saved in xml format
 
-![](/img/manual-english-demo-zip-file.png)
+![Screenshot: Demo Zip File](/img/manual-english-demo-zip-file.png)
 
 Inside the **`build_management_demo.sqlite` SpatiaLite DB** there are the following layers:
 * **`buildings` (polygon layer):** reference layer for editing aspects
@@ -31,7 +31,7 @@ The project (**based on QGIS LTR 3.44.x**) foresees:
 * two standard **print layout** and an two **atlas print layout** based on buildgs layer features
 
 
-![](/img/manual-english-demo-qgis-project.png)
+![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.png)
 
 ### Modify the QGIS project title
 
@@ -39,4 +39,4 @@ The publication system provides for the use of the **title of the project** as t
 
 **So, before publishing the project, it will be NECESSARY to change the title associated with the basic project (`Project -> Properties ... - Session: General`)**
 
-![](/img/manual-english-qgisserver-change-title.png)
+![Screenshot: Qgisserver Change Title](/img/manual-english-qgisserver-change-title.png)

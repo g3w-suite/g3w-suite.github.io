@@ -15,6 +15,15 @@ Feature: Multilingual site conventions
   Scenario: Shared page templates
     Then both languages are generated from shared page templates
 
+  Scenario: Site page sources use Markdown except for required HTML
+    Then site page sources contain only the allowed HTML elements
+
+  Scenario: Markdown button markers keep their page styles
+    Then generated buttons retain their styles and external-link behavior
+
+  Scenario: Homepage steps preserve Markdown paragraphs
+    Then homepage steps keep titles and descriptions in separate paragraphs
+
   Scenario: Page-local translations are valid and applied
     Then page-local translations are valid and used by the Italian build
 
@@ -36,6 +45,12 @@ Feature: Multilingual site conventions
 
   Scenario: Published site images are referenced
     Then every published site image is referenced by compiled code
+
+  Scenario: Generated images are lazy-loaded
+    Then every generated image uses lazy loading
+
+  Scenario: Generated images have alternative text
+    Then every generated image has non-empty alternative text
 
   Scenario: The root page redirects to Italian
     Then the root page redirects to the Italian version

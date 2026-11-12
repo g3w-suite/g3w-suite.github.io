@@ -14,7 +14,7 @@ The same structure will be used in the cartographic client when editing attribut
 
 The definition of the form structure can be managed, on QGIS, from the **`Properties of the vector`, in the `Attributes Form section`**.
 
-![](/img/manual-english-editing-qgis-form-widget.png)
+![Screenshot: Editing QGIS Form Widget](/img/manual-english-editing-qgis-form-widget.png)
 
 ##### Conditionals forms based on QGIS expressions
 
@@ -95,4 +95,4 @@ These configurations and tools will automatically available  on the webgis platf
 
 When working with layers with the same source (es. layer from the same PostGreSQL database), activate the **`Automatically create transaction groups where possible`** option in **`Project → Properties… → Data Sources`** to sync their behavior (enter or exit the edit mode, save or rollback changes at the same time).
 
-![](/img/manual-english-datasources.png)
+![Screenshot: Datasources](/img/manual-english-datasources.png)

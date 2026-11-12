@@ -20,15 +20,15 @@ In the Dashboard there will be the menu for access to the **Cartographic Groups*
 
 Click on the **`Show`** item in the ligth blue **Groups** box to acces at the list of available Cartographic Groups.
 
-![](/img/manual-english-demo-dashboard.png)
+![Screenshot: Demo Dashboard](/img/manual-english-demo-dashboard.png)
 
 Access the list of webgis in the Cartographic Group **`Demo Group`** clicking on the project number shown.
 
-![](/img/manual-english-demo-choose-group.png)
+![Screenshot: Demo Choose Group](/img/manual-english-demo-choose-group.png)
 
-![](/img/manual-english-demo-project-manage.png)
+![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.png)
 
-Now click on the button ![](/img/manual-english-button-add-qgis-project.png) to publish your **QGIS project**.
+Now click on the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png) to publish your **QGIS project**.
 
 Fill out the form defining the various aspects to be associated with the WebGis service being published:
 ### QGIS project
@@ -66,20 +66,20 @@ Choose your preferred options regarding the following options:
    * **Into TOC layers:** the legend is rendered inside layers toc
  * **`Automatic zoom to query result features:`** if in the results of a search there are only features of a layer, the webgis automatic zoom on their extension
 
-![](/img/manual-english-g3wsuite-administration-project-add-option.png)
+![Screenshot: G3W-SUITE Administration Project Add Option](/img/manual-english-g3wsuite-administration-project-add-option.png)
 
 After filling in the various form, click on the **`Save button`** to confirm your choices.
 
-![](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.png)
 
 **If the publication was successful, the QGIS project will appear in the list of projects in the Cartographic Group.**
 
-![](/img/manual-english-iconsmall-viewmap.png) Clicking on the **`View map`** icon will access the WebGis service in consultation.
+![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.png) Clicking on the **`View map`** icon will access the WebGis service in consultation.
 
-![](/img/manual-english-demo-webgis-project.png)
+![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.png)
 
 ## Update the published WebGis service
 
-If you want to modify some graphic-functional aspects of your WebGis service, modify your QGIS project and update the WebGis service by clicking on the **`Modify`** icon ![](/img/manual-english-iconsmall-edit.png).
+If you want to modify some graphic-functional aspects of your WebGis service, modify your QGIS project and update the WebGis service by clicking on the **`Modify`** icon ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png).
 
 Reupload the QGIS project with your changes, click on the **Save button** and see the resuts on the cartographic client.

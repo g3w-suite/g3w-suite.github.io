@@ -14,9 +14,9 @@ The following aspects will be analyzed within the manual:
  
 **The current release (3.11) is compatible with `QGIS 3.44.x LTR` (Server and Desktop).**
 
-![](/img/manual-english-demo-qgis-project.png)
+![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.png)
 
-![](/img/manual-english-demo-webgis-project.png)
+![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.png)
 
 ### Version
 

@@ -23,6 +23,12 @@ if (basePath && !/^\/[a-zA-Z0-9._/-]+$/.test(basePath)) {
 
 function publishedHtml(html) {
   return html
+    .replace(/<img\b[^>]*>/gi, image => {
+      const loading = /\sloading\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/i;
+      return loading.test(image)
+        ? image.replace(loading, ' loading="lazy"')
+        : image.replace(/(\s*\/?)>$/, ' loading="lazy"$1>');
+    })
     .replace(/(\b(?:href|src)=["'])\/(?!\/)/g, `$1${basePath}/`)
     .replace(/(\bcontent=["'][^"']*\burl=)\/(?!\/)/gi, `$1${basePath}/`);
 }
@@ -145,6 +151,28 @@ function renderYoutubeVideos(html) {
   return output.replace(/<template id="youtube-consent-dialog">[\s\S]*?<\/template>/, '');
 }
 
+function renderMarkdownButtonLinks(html) {
+  const buttonClasses = {
+    'github-button': 'btn btn--github',
+    'light-button': 'btn btn--light',
+    'outline-button': 'btn btn--outline',
+    'outline-small-button': 'btn btn--outline btn--sm',
+    'primary-button': 'btn btn--primary',
+  };
+  return html.replace(
+    /<a href="([^"]+)" title="(github-button|light-button|outline-button|outline-small-button|primary-button)">([\s\S]*?)<\/a>/g,
+    (_, href, type, label) => {
+      const github = type === 'github-button';
+      const external = /^https?:\/\//i.test(href);
+      const icon = github
+        ? '<svg class="icon" aria-hidden="true"><use href="/icons.svg#github"></use></svg>'
+        : '';
+      const target = external ? ' target="_blank" rel="noopener"' : '';
+      return `<a class="${buttonClasses[type]}" href="${href}"${target}>${icon}${label}</a>`;
+    }
+  );
+}
+
 function renderChangelogMarkdown(markdown) {
   const tokens = marked.lexer(markdown);
   const headerTokens = [];
@@ -158,6 +186,152 @@ function renderChangelogMarkdown(markdown) {
     : '';
   return `<main id="main-content">${pageHeader}<section class="section"><div class="container content-page"><div class="changelog">${marked.parser(tokens)}</div></div></section></main>`
     .replace(/(<h[1-6]\b[^>]*?)\s+id="[^"]+"/g, '$1');
+}
+
+function renderPageMarkdown(markdown, page) {
+  const main = /(<main\b[^>]*>)([\s\S]*?)(<\/main>)/i.exec(markdown);
+  let html = main
+    ? markdown.slice(0, main.index) +
+      main[1] +
+      renderMarkdownSections(main[2], page) +
+      main[3] +
+      markdown.slice(main.index + main[0].length)
+    : marked.parse(markdown.replace(/^[\t ]+/gm, ''));
+  if (page !== 'index.md' && !html.includes('class="page-header"')) {
+    const mainStart = html.indexOf('<main');
+    const mainEnd = mainStart === -1 ? -1 : html.indexOf('</main>', mainStart);
+    const headingStart = mainStart === -1 ? -1 : html.indexOf('<h1', mainStart);
+    if (mainEnd !== -1 && headingStart !== -1 && headingStart < mainEnd) {
+      const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(html.slice(headingStart, mainEnd));
+      if (heading) {
+        html = html.slice(0, headingStart) +
+          `<div class="page-header"><div class="container">${heading[0]}</div></div>` +
+          html.slice(headingStart + heading[0].length);
+      }
+    }
+  }
+  return renderDelimitedSections(html, page);
+}
+
+function renderMarkdownSections(markdown, page) {
+  const tokens = marked.lexer(markdown);
+  if (tokens.some(token => token.type === 'hr')) return marked.parser(tokens);
+
+  const root = { items: [] };
+  const stack = [{ depth: 1, items: root.items }];
+  for (const token of tokens) {
+    if (token.type !== 'heading' || token.depth < 2) {
+      stack[stack.length - 1].items.push(token);
+      continue;
+    }
+
+    while (stack.length > 1 && stack[stack.length - 1].depth >= token.depth) stack.pop();
+    const section = { section: true, depth: token.depth, heading: token, items: [] };
+    stack[stack.length - 1].items.push(section);
+    stack.push(section);
+  }
+
+  const firstSection = root.items.findIndex(item => item.section);
+  if (page === 'index.md' && firstSection !== -1) {
+    const hero = root.items.splice(0, firstSection);
+    return renderHomepageHero(hero) + renderItems(root.items, true);
+  }
+
+  if (firstSection !== -1 && page !== 'index.md' && !markdown.includes('class="page-header"')) {
+    const headingTokens = root.items.slice(0, firstSection).filter(
+      item => !item.section && item.type === 'heading' && item.depth === 1
+    );
+    const preamble = root.items.slice(0, firstSection).filter(
+      item => !item.section && !(item.type === 'heading' && item.depth === 1)
+    ).filter(item => item.raw.trim());
+    if (preamble.length) {
+      root.items.splice(0, firstSection, ...headingTokens, { section: true, depth: 1, items: preamble });
+    } else {
+      root.items.splice(0, firstSection, ...headingTokens);
+    }
+  }
+
+  function renderItems(items, topLevel = false) {
+    let html = '';
+    let buffered = [];
+    let sectionNumber = 0;
+    const flush = () => {
+      if (buffered.length) html += marked.parser(buffered);
+      buffered = [];
+    };
+
+    for (const item of items) {
+      if (!item.section) {
+        buffered.push(item);
+        continue;
+      }
+
+      flush();
+      if (topLevel) sectionNumber += 1;
+      const containerClasses = topLevel ? sectionContainerClasses[page]?.[sectionNumber] : '';
+      const heading = item.heading ? marked.parser([item.heading]) : '';
+      const content = `${heading}${renderItems(item.items)}`;
+      const demoCard = page === 'demo.md' && topLevel && sectionNumber <= 3;
+      html += topLevel
+        ? `<section class="section${demoCard ? ' demo-card' : ''}"><div class="container${containerClasses ? ` ${containerClasses}` : ''}">${content}</div></section>`
+        : `<section class="section">${content}</section>`;
+    }
+    flush();
+    return html;
+  }
+
+  return renderItems(root.items, true);
+}
+
+function renderHomepageHero(items) {
+  const tokens = items.filter(item => item.type !== 'space');
+  if (
+    tokens.length !== 5 ||
+    tokens[0].type !== 'paragraph' ||
+    tokens[1].type !== 'heading' ||
+    tokens[1].depth !== 1 ||
+    tokens.slice(2).some(item => item.type !== 'paragraph')
+  ) {
+    throw new Error('Homepage Markdown must start with a label, title, subtitle, buttons, and image');
+  }
+
+  const label = marked.parser([tokens[0]]).replace('<p>', '<p class="section-label">');
+  const title = marked.parser([tokens[1]]);
+  const subtitle = marked.parser([tokens[2]]).replace('<p>', '<p class="hero__subtitle">');
+  const buttons = marked.parser([tokens[3]]).replace(/^<p>|<\/p>\s*$/g, '');
+  const image = marked.parser([tokens[4]]);
+  return `<section class="hero hero--split"><div class="container"><div class="hero__content">${label}${title}${subtitle}<div class="btn-group">${buttons}</div></div><div class="hero__media">${image}</div></div></section>`;
+}
+
+const sectionContainerClasses = {
+  'demo.md': { 4: 'content-page' },
+  'download.md': { 5: 'content-page' },
+  'merginmaps.md': { 1: 'content-page' },
+  'model-builder-processing.md': { 1: 'content-page' },
+};
+
+function renderDelimitedSections(html, page) {
+  const mainStart = html.indexOf('<main');
+  if (mainStart === -1) return html;
+  const mainOpenEnd = html.indexOf('>', mainStart) + 1;
+  const mainEnd = html.indexOf('</main>', mainOpenEnd);
+  if (mainEnd === -1) return html;
+
+  const content = html.slice(mainOpenEnd, mainEnd);
+  const parts = content.split(/<hr\s*\/?>/gi);
+  if (parts.length === 1) return html;
+  if (parts.length < 3) throw new Error('A Markdown page section needs opening and closing separators');
+
+  let rendered = parts[0];
+  let sectionNumber = 0;
+  for (let index = 1; index < parts.length - 1; index += 1) {
+    if (!parts[index].trim()) throw new Error('Markdown section cannot be empty');
+    sectionNumber += 1;
+    const containerClasses = sectionContainerClasses[page]?.[sectionNumber];
+    rendered += `<section class="section"><div class="container${containerClasses ? ` ${containerClasses}` : ''}">${parts[index]}</div></section>`;
+  }
+  rendered += parts[parts.length - 1];
+  return html.slice(0, mainOpenEnd) + rendered + html.slice(mainEnd);
 }
 
 const mimeTypes = {
@@ -442,12 +616,11 @@ function build(outputDir) {
         const pageContent = path.extname(file) === '.md'
           ? page.startsWith(`changelog${path.sep}`)
             ? renderChangelogMarkdown(content)
-            // Remove source indentation so Marked doesn't treat nested HTML as code.
-            : marked.parse(content.replace(/^[\t ]+/gm, ''))
+            : renderPageMarkdown(content, page)
           : content;
         const header = renderComponent('header', lang, page, pageUrls, pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls);
-        const output = renderYoutubeVideos(`${header}\n${pageContent}\n${footer}`);
+        const output = renderMarkdownButtonLinks(renderYoutubeVideos(`${header}\n${pageContent}\n${footer}`));
         const target = path.join(outputDir, lang, outputPage(page));
         fs.mkdirSync(path.dirname(target), { recursive: true });
         fs.writeFileSync(target, publishedHtml(output));

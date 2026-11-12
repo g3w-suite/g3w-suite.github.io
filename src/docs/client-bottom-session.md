@@ -22,7 +22,7 @@ Clicking on Connect buttom, you can view the list of layers associated with the 
  * the **Opacity** of the layer
  * an alternatice **Name** respect the original
  
-![](/img/manual-english-g3wclient-add-wms.png)
+![Screenshot: G3wclient Add WMS](/img/manual-english-g3wclient-add-wms.png)
 
 The WMS layer will be added to the map and TOC after the project layer list.
 
@@ -38,7 +38,7 @@ The user can add one or more TSM service by defining:
  * **Position** (top or buttom) with respect to the other layers of the project
  * **Opacity** of the layer
 
-![](/img/manual-english-g3wclient-add-tms.png)
+![Screenshot: G3wclient Add Tms](/img/manual-english-g3wclient-add-tms.png)
 
 The TMS layer will be added to the map and TOC after the project layer list.
 
@@ -66,7 +66,7 @@ For each layer you need to specify:
  * **Label (optional):** the field to use to label the features
  * Layer **color** and **opacity**
 
-![](/img/manual-english-g3wclient-add-layer-local.png)
+![Screenshot: G3wclient Add Layer Local](/img/manual-english-g3wclient-add-layer-local.png)
 
 ### Change map
 
@@ -96,10 +96,10 @@ This panel will allow you to:
  * define the step of the animation
  * start and manage the temporal animation
 
-![](/img/manual-english-g3wclient-timeseries-tool.png)
+![Screenshot: G3wclient Timeseries Tool](/img/manual-english-g3wclient-timeseries-tool.png)
 
 The modification of the start date of the series will determine the updating of the map with the visualization of the layer in coherence with the chosen date.
 
 **Pay attention: to use the Time series function for raster data, it must also be activated at the level of the G3W-ADMIN layer properties.**
 
-![](/img/manual-english-g3wclient-timeseries-admin.png)
+![Screenshot: G3wclient Timeseries Admin](/img/manual-english-g3wclient-timeseries-admin.png)

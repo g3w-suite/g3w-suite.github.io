@@ -1,26 +1,16 @@
 <main id="main-content">
-  <div class="page-header">
-    <div class="container">
 
 # {{t 'Partnership, sponsors and contributors'}}
 
-    </div>
-  </div>
+## <span id="g3w-partners"></span>{{t 'Join the network of companies offering support and consulting on'}}
 
-  <section id="g3w-partners" class="section">
-    <div class="container content-page text-center">
-
-## {{t 'Join the network of companies offering support and consulting on'}}
-
-      <img src="/img/site-g3w-suite-logo-2024.png" alt="G3W-SUITE" class="img-centered" style="max-width:320px;">
+![G3W-SUITE](/img/site-g3w-suite-logo-2024.png)
 
 ### {{t 'Let us grow together to offer innovative open source geospatial solutions'}}
 
-      <img src="/img/site-g3w-suite-community-network.jpg" alt="Network" class="img-rounded mt-3" style="max-width:800px; margin-inline:auto;">
-      <div class="grid-2 mt-4" style="text-align:left;">
-        <div>
+![Network](/img/site-g3w-suite-community-network.jpg)
 
-#### <b>{{t 'G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.'}}</b>
+#### **{{t 'G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.'}}**
 
 {{t 'The suite allows collaborative web cartographic management thanks to deep integration with QGIS editing tools.'}}
 
@@ -28,10 +18,7 @@
 
 {{t 'QGIS Processing API integration also enables advanced online geospatial analysis workflows.'}}
 
-        </div>
-        <div>
-
-#### <b>{{t 'We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.'}}</b>
+#### **{{t 'We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.'}}**
 
 {{t 'G3W-SUITE is highly adaptable and suitable for many operational contexts.'}}
 
@@ -39,102 +26,69 @@
 
 {{t 'Join our network and deliver high-value web mapping solutions.'}}
 
-        </div>
-      </div>
-
 ## {{t 'Services for partners'}}
 
-      <div class="grid-3 services-grid">
-        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Consulting and onboarding'}}</h4>
+### {{t 'Consulting and onboarding'}}
 
 {{t 'Professional support for deployment and optimization.'}}
 
-<img src="/img/site-icons8-consulenza-96.png" alt="" class="service-box__icon" loading="lazy"></div>
-        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Technical support'}}</h4>
+![Screenshot: Icons8 Consulenza 96](/img/site-icons8-consulenza-96.png)
+
+### {{t 'Technical support'}}
 
 {{t 'Technical assistance for WebGIS implementations based on QGIS and G3W-SUITE.'}}
 
-<img src="/img/site-icons8-assistenza-clienti-96.png" alt="" class="service-box__icon" loading="lazy"></div>
-        <div class="service-box text-center"><h4 class="service-box__title">{{t 'Custom development'}}</h4>
+![Screenshot: Icons8 Assistenza Clienti 96](/img/site-icons8-assistenza-clienti-96.png)
+
+### {{t 'Custom development'}}
 
 {{t 'Tailored plugin-based solutions for specific needs.'}}
 
-<img src="/img/site-icons8-scatola-portautensili-completa-96.png" alt="" class="service-box__icon" loading="lazy"></div>
-      </div>
-      <div class="cta-box">
+![Screenshot: Icons8 Scatola Portautensili Completa 96](/img/site-icons8-scatola-portautensili-completa-96.png)
 
-{{t 'For partnership information'}}
+### {{t 'For partnership information'}}
 
-<a class="btn btn--primary" href="mailto:info@gis3w.it?subject=G3W-SUITE partnership">{{t 'Contact us'}}</a></div>
-    </div>
-  </section>
+[{{t 'Contact us'}}](mailto:info@gis3w.it?subject=G3W-SUITE%20partnership "primary-button")
 
-  <section id="merginmaps" class="section section--alt">
-    <div class="container content-page">
-      <div class="mm-header text-center">
-        <img src="/img/site-mergin-maps-logo.jpg" alt="Mergin Maps" class="img-centered" style="max-width:380px;">
+## <span id="merginmaps"></span>MerginMaps partnership
 
-## MerginMaps partnership
+![Mergin Maps](/img/site-mergin-maps-logo.jpg)
 
-        <p class="section-intro">{{t 'Gis3W provides support for Mergin Maps, the field data collection solution based on QGIS.'}}</p>
-      </div>
-      <div class="mm-features grid-2 mt-4">
-        <div>
+{{t 'Gis3W provides support for Mergin Maps, the field data collection solution based on QGIS.'}}
 
-#### {{t 'With Mergin Maps you can:'}}
+### {{t 'With Mergin Maps you can:'}}
 
 - {{t 'build field data collection apps from QGIS projects'}}
 - {{t 'design advanced data-entry forms'}}
 - {{t 'synchronize data with centralized infrastructure'}}
 - {{t 'integrate with existing geospatial systems'}}
 
-        </div>
-        <div><img src="/img/site-mergin-maps-on-devices.png" alt="{{t 'Mergin Maps on devices'}}" class="img-rounded"></div>
-      </div>
-    </div>
-  </section>
+![{{t 'Mergin Maps on devices'}}](/img/site-mergin-maps-on-devices.png)
 
-  <section id="{{t 'clients'}}" class="section">
-    <div class="container">
-      <div class="section-intro"><span class="section-label">{{t 'Who chooses us'}}</span>
+## <span id="{{t 'clients'}}"></span>**{{t 'Who chooses us'}}** {{t 'Clients, sponsors and users'}}
 
-## {{t 'Clients, sponsors and users'}}
+- [![{{t 'Metropolitan Area of Bari'}}](/img/site-bari.png)]({{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it)
+- [![{{t 'Metropolitan City of Rome'}}](/img/site-citta-metro-roma.jpg)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
+- [![{{t 'FVG Landscape Plan'}}](/img/site-fvg.jpg)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
+- [![{{t 'City of Trento'}}](/img/site-trento.png)](https://gis.comune.trento.it/it/#map=groups)
+- [![{{t 'City of Palermo'}}](/img/site-palermo.png)](https://geout.comune.palermo.it)
+- [![{{t 'Gran Paradiso National Park'}}](/img/site-pngp.jpg)](https://sit.parco.gran-paradiso.g3wsuite.it)
+- [![Suez](/img/site-suez.png)](https://www.suez.com)
+- [![Planetek Italia](/img/site-planetek-logo.jpg)](https://www.planetek.it)
 
-</div>
-      <div class="sponsors-grid">
-        <a class="sponsor-logo" href="{{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan Area of Bari'}}"><img src="/img/site-bari.png" alt="{{t 'Metropolitan Area of Bari'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan City of Rome'}}"><img src="/img/site-citta-metro-roma.jpg" alt="{{t 'Metropolitan City of Rome'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/" target="_blank" rel="noopener" aria-label="{{t 'FVG Landscape Plan'}}"><img src="/img/site-fvg.jpg" alt="{{t 'FVG Landscape Plan'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://gis.comune.trento.it/it/#map=groups" target="_blank" rel="noopener" aria-label="{{t 'City of Trento'}}"><img src="/img/site-trento.png" alt="{{t 'City of Trento'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://geout.comune.palermo.it" target="_blank" rel="noopener" aria-label="{{t 'City of Palermo'}}"><img src="/img/site-palermo.png" alt="{{t 'City of Palermo'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://sit.parco.gran-paradiso.g3wsuite.it" target="_blank" rel="noopener" aria-label="{{t 'Gran Paradiso National Park'}}"><img src="/img/site-pngp.jpg" alt="{{t 'Gran Paradiso National Park'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://www.suez.com" target="_blank" rel="noopener" aria-label="Suez"><img src="/img/site-suez.png" alt="Suez" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://www.planetek.it" target="_blank" rel="noopener" aria-label="Planetek Italia"><img src="/img/site-planetek-logo.jpg" alt="Planetek Italia" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-intro"><span class="section-label">Community</span>
-
-## {{t 'Contributors'}}
+## **Community** {{t 'Contributors'}}
 
 {{t 'GitHub profiles of project contributors.'}}
 
-</div>
-      <div class="contributors-grid">
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/elpaso.png?size=200" alt="Alessandro Pasotti" loading="lazy"><h3 class="contributor-name">Alessandro Pasotti</h3><p class="contributor-handle">@elpaso</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/elpaso" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/leolami.png?size=200" alt="Leonardo Lami" loading="lazy"><h3 class="contributor-name">Leonardo Lami</h3><p class="contributor-handle">@leolami</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/leolami" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/leonardolami.png?size=200" alt="Leonardo Lami" loading="lazy"><h3 class="contributor-name">Leonardo Lami</h3><p class="contributor-handle">@leonardolami</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/leonardolami" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/moovida.png?size=200" alt="Andrea Antonello" loading="lazy"><h3 class="contributor-name">Andrea Antonello</h3><p class="contributor-handle">@moovida</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/moovida" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/Raruto.png?size=200" alt="Matteo Tosi" loading="lazy"><h3 class="contributor-name">Matteo Tosi</h3><p class="contributor-handle">@Raruto</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/Raruto" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/tudorbarascu.png?size=200" alt="Tudor Barascu" loading="lazy"><h3 class="contributor-name">Tudor Barascu</h3><p class="contributor-handle">@tudorbarascu</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/tudorbarascu" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/volterra79.png?size=200" alt="Francesco Boccacci" loading="lazy"><h3 class="contributor-name">Francesco Boccacci</h3><p class="contributor-handle">@volterra79</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/volterra79" target="_blank" rel="noopener">GitHub</a></div></article>
-        <article class="contributor-card"><img class="contributor-avatar" src="https://github.com/wlorenzetti.png?size=200" alt="Walter Lorenzetti" loading="lazy"><h3 class="contributor-name">Walter Lorenzetti</h3><p class="contributor-handle">@wlorenzetti</p><div class="contributor-links"><a class="btn btn--outline btn--sm" href="https://github.com/wlorenzetti" target="_blank" rel="noopener">GitHub</a></div></article>
-      </div>
-    </div>
-  </section>
+- ![Alessandro Pasotti](https://github.com/elpaso.png?size=200) **Alessandro Pasotti** [@elpaso](https://github.com/elpaso)
+- ![Leonardo Lami](https://github.com/leolami.png?size=200) **Leonardo Lami** [@leolami](https://github.com/leolami)
+- ![Leonardo Lami](https://github.com/leonardolami.png?size=200) **Leonardo Lami** [@leonardolami](https://github.com/leonardolami)
+- ![Andrea Antonello](https://github.com/moovida.png?size=200) **Andrea Antonello** [@moovida](https://github.com/moovida)
+- ![Matteo Tosi](https://github.com/Raruto.png?size=200) **Matteo Tosi** [@Raruto](https://github.com/Raruto)
+- ![Tudor Barascu](https://github.com/tudorbarascu.png?size=200) **Tudor Barascu** [@tudorbarascu](https://github.com/tudorbarascu)
+- ![Francesco Boccacci](https://github.com/volterra79.png?size=200) **Francesco Boccacci** [@volterra79](https://github.com/volterra79)
+- ![Walter Lorenzetti](https://github.com/wlorenzetti.png?size=200) **Walter Lorenzetti** [@wlorenzetti](https://github.com/wlorenzetti)
+
 </main>
 
 <script type="application/json" data-i18n>

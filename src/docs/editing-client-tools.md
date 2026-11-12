@@ -10,7 +10,7 @@
 
 A click on the Editing layers item will allow you to go to the dedicated panel.
 
-![](/img/manual-english-editing-client-tool.png)
+![Screenshot: Editing Client Tool](/img/manual-english-editing-client-tool.png)
 
 If the editing function is activated at the Admin level, it is also possible to start the online editing also through the **Editing icon** that appears at the level of the **search and query results form** of a vector layer.
 
@@ -20,7 +20,7 @@ By clicking on the Edit layer icon associated with the layer of interest, the ed
 
 The available tools vary based on the powers/permissions of the logged in user.
 
-![](/img/manual-english-g3wclient-edit-tools.png)
+![Screenshot: G3wclient Edit Tools](/img/manual-english-g3wclient-edit-tools.png)
 
 In the case of many editable layers, a useful **filter** allows you to view only the layers of interest in the list.
 
@@ -28,7 +28,7 @@ If a layer has **1:N relations** with other layers, a specific icon will be show
 
 A click on this icon will allow you to filter, and therefore show in the list, only the layers involved in the relations
 
-![](/img/manual-english-g3wclient-edit-relation-filters.png)
+![Screenshot: G3wclient Edit Relation Filters](/img/manual-english-g3wclient-edit-relation-filters.png)
 
 If the logged in user is an Administrator, there will be a link in the panel to access the features unlock session
 
@@ -37,26 +37,26 @@ If the logged in user is an Administrator, there will be a link in the panel to 
 The tools available are the following:
 
 **Geometric layers**
- * ![](/img/manual-english-icon-feature-add.png) **Add feature:** to add a feature
-  * ![](/img/manual-english-icon-feature-attribute.png)**Update feature attribute:** to modify the attribute values associated with an existing feature
- * ![](/img/manual-english-icon-feature-modify.png) **Update feature vertex:** to modify the shape of a geometry
- * ![](/img/manual-english-icon-feature-remove.png) **Remove feature**
- * ![](/img/manual-english-icon-feature-multiattribute.png) **Update attributes for selected features:** to modify the attribute values associated with more than one features
- * ![](/img/manual-english-icon-feature-multiattribute-relations.png) **Add/Edit child records from one or more parent features:** if the layer being edited is the parent of one or more 1:N relations, it will be possible to select multiple parents and 
+ * ![Icon: Feature Add](/img/manual-english-icon-feature-add.png) **Add feature:** to add a feature
+  * ![Icon: Feature Attribute](/img/manual-english-icon-feature-attribute.png)**Update feature attribute:** to modify the attribute values associated with an existing feature
+ * ![Icon: Feature Modify](/img/manual-english-icon-feature-modify.png) **Update feature vertex:** to modify the shape of a geometry
+ * ![Icon: Feature Remove](/img/manual-english-icon-feature-remove.png) **Remove feature**
+ * ![Icon: Feature Multiattribute](/img/manual-english-icon-feature-multiattribute.png) **Update attributes for selected features:** to modify the attribute values associated with more than one features
+ * ![Icon: Feature Multiattribute Relations](/img/manual-english-icon-feature-multiattribute-relations.png) **Add/Edit child records from one or more parent features:** if the layer being edited is the parent of one or more 1:N relations, it will be possible to select multiple parents and
    * add one or more records to the child table (only if alphanumeric) associating them with all the selected parents
    * modify one or more fields of all the records of the child table, connected to the selected father geometries
- * ![](/img/manual-english-icon-feature-move.png) **Move feature:** to move a feature
- * ![](/img/manual-english-icon-feature-rotate.png) **Rotate feature:** to rotate a geoemtry. The rotation of point geometries is linked to the presence of a field called "rotation" in the attribute table, on which the direction of the symbology associated with the point is based. 
-  * ![](/img/manual-english-icon-feature-paste.png) **Paste features from other layers:** click on the icon, select a layer from those available in the drop-down menu (limited based on compatible geometry), select a feature,, fill in the attributes and press the green **Insert/Edit** button. The copy and paste operation can also be performed by referring to geometries deriving from local layers added by the user using the **AddLayer** tool.
+ * ![Icon: Feature Move](/img/manual-english-icon-feature-move.png) **Move feature:** to move a feature
+ * ![Icon: Feature Rotate](/img/manual-english-icon-feature-rotate.png) **Rotate feature:** to rotate a geoemtry. The rotation of point geometries is linked to the presence of a field called "rotation" in the attribute table, on which the direction of the symbology associated with the point is based.
+  * ![Icon: Feature Paste](/img/manual-english-icon-feature-paste.png) **Paste features from other layers:** click on the icon, select a layer from those available in the drop-down menu (limited based on compatible geometry), select a feature,, fill in the attributes and press the green **Insert/Edit** button. The copy and paste operation can also be performed by referring to geometries deriving from local layers added by the user using the **AddLayer** tool.
 
- * ![](/img/manual-english-icon-feature-copy.png) **Copy features:** to copy one or more features from the same layer
+ * ![Icon: Feature Copy](/img/manual-english-icon-feature-copy.png) **Copy features:** to copy one or more features from the same layer
 
- * ![](/img/manual-english-icon-feature-add-part.png) **Add part** of a multi-geometry
- * ![](/img/manual-english-icon-feature-delete-part.png) **Delete part** of a multi-geometry
+ * ![Icon: Feature Add Part](/img/manual-english-icon-feature-add-part.png) **Add part** of a multi-geometry
+ * ![Icon: Feature Delete Part](/img/manual-english-icon-feature-delete-part.png) **Delete part** of a multi-geometry
 
- * ![](/img/manual-english-icon-feature-split.png) **Split features:** to split one or more features
+ * ![Icon: Feature Split](/img/manual-english-icon-feature-split.png) **Split features:** to split one or more features
 
- * ![](/img/manual-english-icon-feature-dissolve.png) **Dissolve features:** to dissolve two or more features
+ * ![Icon: Feature Dissolve](/img/manual-english-icon-feature-dissolve.png) **Dissolve features:** to dissolve two or more features
 
 A help panel will describe the steps to take for copy, dissolve and split operations.
 
@@ -69,12 +69,12 @@ Activating the Add features and Update feature vertex tools allows you to:
  * activate the **interactive area and length measure** function
 
 **Alphanumeric layer**
- * ![](/img/manual-english-icon-record-add.png) **Add feature:** to add a record to the alphanumeric table
- * ![](/img/manual-english-icon-record-modify.png) **Modify features:** to modify the attributes of an existing record
+ * ![Icon: Record Add](/img/manual-english-icon-record-add.png) **Add feature:** to add a record to the alphanumeric table
+ * ![Icon: Record Modify](/img/manual-english-icon-record-modify.png) **Modify features:** to modify the attributes of an existing record
 
 Whenever a new feature/record is added or an existing feature/record is update, the attribute editing form and the respective editing widgets will be displayed as defined at the QGIS project level.
 
-![](/img/manual-english-editing-form.png)
+![Screenshot: Editing Form](/img/manual-english-editing-form.png)
 
 Any **mandatory fields will be marked with an asterisk**.
 
@@ -98,11 +98,11 @@ For this reason the green button **SAVE** will be disabled until all constraints
 
 After the editing has been activated on a record in the parent table, an editing icon (pen) will appear at the level of the relations references.
 
-![](/img/manual-english-editing-form2.png)
+![Screenshot: Editing Form2](/img/manual-english-editing-form2.png)
 
 Moving on the macro tab relating to one of the child layers, the list of records already associated with the edited feature will be displayed
 
-![](/img/manual-english-editing-form-relations.png)
+![Screenshot: Editing Form Relations](/img/manual-english-editing-form-relations.png)
 
 Clicking on it the form switch in a session dedicated to the edit of the relational table where it will be possible: **create and add a new records** related to the edited feature
  * **associate an existing records** (linked to other features or orphan) to the edited feature
@@ -112,7 +112,7 @@ Clicking on it the form switch in a session dedicated to the edit of the relatio
 
 To add a new record in the child layer, you first need to access the relations itself.
 
-By clicking on the icon **`Create and link a new relation`** ![](/img/manual-english-icon-plus.png)(located at the top right) it will be show the attribute form to insert a new record.
+By clicking on the icon **`Create and link a new relation`** ![Icon: Plus](/img/manual-english-icon-plus.png)(located at the top right) it will be show the attribute form to insert a new record.
 
 You can fill in the individual attributes and save the new record. **The change must be validated by clicking on the `Save` button at the bottom of the form.**
 
@@ -121,7 +121,7 @@ If the child layer is of the geometric type, it will be possible to add a new fe
  * **classic geometry editing**
  * **copy and paste a feature from other layers (WFS included)** present in the project and characterized by the same type of geometry
 
-![](/img/manual-english-editing-form-relations.png)
+![Screenshot: Editing Form Relations](/img/manual-english-editing-form-relations.png)
 
 To copy a geometry from another layer operate in this order:
  * choose the layer from which to copy the feature from the **Copy feature from other layer** drop-down menu
@@ -135,7 +135,7 @@ To copy a geometry from another layer operate in this order:
  * click on the green **Save and exit** button
 
 #### Association of an existing record
-By clicking on the icon **`Join a relation to this feature`** ![](/img/manual-english-icon-join.png) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.
+By clicking on the icon **`Join a relation to this feature`** ![Icon: Join](/img/manual-english-icon-join.png) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.
 
 In the new window displayed:
  * the list of all orphaned or already associated records will be displayed;
@@ -147,27 +147,27 @@ A series of icons appear to the right of each record associated with the edited 
 
 
 In the case of 1:N relations with alphanumeric layers:
- * ![](/img/manual-english-icon-record-attribute.png)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.
- * ![](/img/manual-english-icon-record-copy.png)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.
- * ![](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record
+ * ![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.
+ * ![Icon: Record Copy](/img/manual-english-icon-record-copy.png)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.
+ * ![Icon: Record Erase](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record
 
 
 In the case of 1:N relations with vectorial layers:
- * ![](/img/manual-english-icon-record-attribute.png) **Update feature attribute:** modify the values associated with the attributes of this feature; the change must be validated by clicking on the **Save** button at the bottom of the form.
- * ![](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record
- * ![](/img/manual-english-icon-feature-modify.png) **Update deature vertex:** modify the shape of the geometry
- * ![](/img/manual-english-icon-feature-move.png) **Move feature:** move the geometry
- * ![](/img/manual-english-icon-join-erase.png) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan
+ * ![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png) **Update feature attribute:** modify the values associated with the attributes of this feature; the change must be validated by clicking on the **Save** button at the bottom of the form.
+ * ![Icon: Record Erase](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record
+ * ![Icon: Feature Modify](/img/manual-english-icon-feature-modify.png) **Update deature vertex:** modify the shape of the geometry
+ * ![Icon: Feature Move](/img/manual-english-icon-feature-move.png) **Move feature:** move the geometry
+ * ![Icon: Join Erase](/img/manual-english-icon-join-erase.png) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan
 
 
 #### Saving changes
 Saving all the changes made in an editing session can be done in three ways:
- * by clicking on the **`diskette icon`** ![](/img/manual-english-icon-save-all.png) placed at the top right. This icon is very useful in the case of complex projects with related data on various levels as it allows you to **save any changes made regardless of the form on which you are at the time of saving.** You will not be asked to confirm the save.
-  * by clicking on the **`diskette icon`** ![](/img/manual-english-icon-disk.png) placed at the top left of the TOC. The icon will only be active once you exit the attribute editing form. The changes made will be saved and you can continue making new changes. You will not be asked to confirm the save.
- * exiting edit mode by clicking on the **`Edit layer icon`** ![](/img/manual-english-icon-editing.png). 
+ * by clicking on the **`diskette icon`** ![Icon: Save All](/img/manual-english-icon-save-all.png) placed at the top right. This icon is very useful in the case of complex projects with related data on various levels as it allows you to **save any changes made regardless of the form on which you are at the time of saving.** You will not be asked to confirm the save.
+  * by clicking on the **`diskette icon`** ![Icon: Disk](/img/manual-english-icon-disk.png) placed at the top left of the TOC. The icon will only be active once you exit the attribute editing form. The changes made will be saved and you can continue making new changes. You will not be asked to confirm the save.
+ * exiting edit mode by clicking on the **`Edit layer icon`** ![Icon: Editing](/img/manual-english-icon-editing.png).
  
 Exiting edit mode, a modal window will be displayed which will show the list of changes made and the request for confirmation or not of saving them.
 
-![](/img/manual-english-editing-client-save.png)
+![Screenshot: Editing Client Save](/img/manual-english-editing-client-save.png)
 
 Remember that during the editing phase the **undo/redo icons** allow you to delete/restore the latest changes made.

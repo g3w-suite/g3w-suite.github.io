@@ -10,9 +10,9 @@ The publishing system is based on a series of OS tools and software
 * The main libraries used for the management and the visualization of the geographical part and the interaction with the user are: **`OpenLayer, Boostrap, jQuery, Lodash` and `Vue.js`**. 
 * **`Gulp.js`** as task runner
 
-![](/img/manual-english-architecture.png)
+![Screenshot: Architecture](/img/manual-english-architecture.png)
 
 Below is a diagram relating to the standard workflow
 
-![](/img/manual-english-architecture-workflow.png)
+![Screenshot: Architecture Workflow](/img/manual-english-architecture-workflow.png)
 

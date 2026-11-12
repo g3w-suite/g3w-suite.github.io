@@ -7,36 +7,36 @@
 Once your project has been published, you can access the list of widgets and additional functions to enrich your WebGis service.
 
 ### Widget management
-Thougth the **`Layers list` icon** ![](/img/manual-english-iconsmall-layerlist.png) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
+Thougth the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
 
-![](/img/manual-english-demo-project-manage.png)
+![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.png)
 
 The new session will show you the **list of the layer** present in the published QGIS project
 
-![](/img/manual-english-g3wsuite-administration-project-layer-list.png)
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
 
  * **Label:** layer alias applied at the QGIS project level
-   * The blue eye icon![](/img/manual-english-icon-layerid.png) allows you to know the ID associated with the layer at the project level, this ID will be useful for creating parameterized URLs
+   * The blue eye icon![Icon: Layerid](/img/manual-english-icon-layerid.png) allows you to know the ID associated with the layer at the project level, this ID will be useful for creating parameterized URLs
  * **Name:** name of the layer (file or DB table)
- * ![](/img/manual-english-icon-layertype.png) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)
+ * ![Icon: Layertype](/img/manual-english-icon-layertype.png) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)
  * **WMS external:** to speed up loading, the WMS layers present in a QGIS project are managed directly by Django and not by QGIS-Server.
      * In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.
      * The external WMS option allows obtaining a response to the query (GetFeatureInfo) even if the response is not in GML but also in HTML or text/plain format.
      * The option is available only if the WMS loaded on the QGIS project is associated with the same projection system as the project.
  * **WFS:** a check mark shows whether the layer is published as a WFS service or not
  * **Actions:** a series of icons dedicated to various functions
-   * ![](/img/manual-english-icon-cache.png) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level
-   * ![](/img/manual-english-icon-editing.png) **Editing layer:** shows if the online editing function is active on the layer and allows you to activate and define it
-   * ![](/img/manual-english-icon-filter-layer.png) **Hide layer by user/groups:** hide specific layers from the TOC based on specific users or groups of users
-   * ![](/img/manual-english-icon-dataplotly.png) **QPlotly widget:** add or manage plots created with DataPlotly QGIS plugin
-   * ![](/img/manual-english-icon-geoconstraints.png) **Geo-constraints by user/group:** create or manage editing and visualization geo-constraints based on poligonal layers
-   * ![](/img/manual-english-icon-alpha-constraints.png) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions
-   * ![](/img/manual-english-icon-hide-columns.png) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s
-   * ![](/img/manual-english-icon-widget.png) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones
-   * ![](/img/manual-english-icon-styles.png) **Manage layer styles:** manage multi-style layer
+   * ![Icon: Cache](/img/manual-english-icon-cache.png) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level
+   * ![Icon: Editing](/img/manual-english-icon-editing.png) **Editing layer:** shows if the online editing function is active on the layer and allows you to activate and define it
+   * ![Icon: Filter Layer](/img/manual-english-icon-filter-layer.png) **Hide layer by user/groups:** hide specific layers from the TOC based on specific users or groups of users
+   * ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.png) **QPlotly widget:** add or manage plots created with DataPlotly QGIS plugin
+   * ![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.png) **Geo-constraints by user/group:** create or manage editing and visualization geo-constraints based on poligonal layers
+   * ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.png) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions
+   * ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s
+   * ![Icon: Widget](/img/manual-english-icon-widget.png) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones
+   * ![Icon: Styles](/img/manual-english-icon-styles.png) **Manage layer styles:** manage multi-style layer
 
-   * ![](/img/manual-english-icon-scale-visibility.png) **Scale visibility layer by Users/Groups:** allows you to define a visibility scale differentiated by user and/or user groups.  Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level
-   * ![](/img/manual-english-icon-fields-number.png) **Preview fields (max):** allows you to define the number of fields shown in the preview of the results of a search and query. HTML formatting and image previews are managed in the preview fields.
+   * ![Icon: Scale Visibility](/img/manual-english-icon-scale-visibility.png) **Scale visibility layer by Users/Groups:** allows you to define a visibility scale differentiated by user and/or user groups.  Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level
+   * ![Icon: Fields Number](/img/manual-english-icon-fields-number.png) **Preview fields (max):** allows you to define the number of fields shown in the preview of the results of a search and query. HTML formatting and image previews are managed in the preview fields.
 
  * **Download capabilities:** allows the download of the geographic and not geographic layers in various formats
    * **Download as shp/geotiff:** for vector and raster layers
@@ -56,13 +56,13 @@ The number above each Action icon shows if and how many related objects are pres
 
 ### Search widget creation
 
-To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![](/img/manual-english-icon-widget.png)** 
+To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.png)**
 
 **NB:** there may be a number of searches created by other users for the same layer.
 
 You can activate them by **clicking on the `Linked` chekbox**.
 
-![](/img/manual-english-g3wsuite-administration-project-widget-list.png)
+![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.png)
 
 The listed searches can be **modified, deleted or unlinked** using the appropriate icons.
 
@@ -95,12 +95,12 @@ In case of **strictly dependence**, the values of the dependent fields will be l
 Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.
 
 
-The button ![](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
+The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
 
 
 The example below shows the compilation of the form for creating a search widget dedicated to a cadastral cartography layer.
 
-![](/img/manual-english-g3wsuite-administration-project-search-form.png)
+![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.png)
 
 Once the form has been filled in, click on the **`OK button` to save** the settings.
 
@@ -108,7 +108,7 @@ Once the settings are saved, the created widget will appear in the list of Widge
 
 **The widget will already be **`linked`** and therefore available in the WebGis interface on the left panel.**
 
-![](/img/manual-english-demo-search-result.png)
+![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.png)
 
 ### Plots widget
 
@@ -122,19 +122,19 @@ For this reason, there may be some plots created by other users for the same lay
 You can activate them by **clicking on the `Linked` chekbox**.
 
 
-![](/img/manual-english-g3wsuite-administration-plots.png)
+![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.png)
 
 The title of the chart, defined at the plugin level, will be the unique identifier.
 
 Try to create your plots in the QGIS project, save them as .xml and upload them to view the resluts on the webgis.
 
-![](/img/manual-english-g3wsuite-qgis-plots.png)
+![Screenshot: G3W-SUITE QGIS Plots](/img/manual-english-g3wsuite-qgis-plots.png)
 
-![](/img/manual-english-g3wsuite-client-plots.png)
+![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.png)
 
 The graphs are filterable based on the:
-* ![](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map
-* ![](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features
+* ![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map
+* ![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features
  
 These **filters** are also **reflected on the plots associated to the related data** (in 1:N mode) based on the visible and/or selected parent features.
 
@@ -149,7 +149,7 @@ Appropriate **messages** at the single plots level will indicate the activation 
 
 If 1: N relations are associated with the interrogated layer and plots have been activated on the referencing tables, it will also be possible to consult these plots by querying the referenced layer and clicking on the **Show relation charts** icon present in the results form.
 
-![](/img/manual-english-g3wclient-attribute-view-plots.png)
+![Screenshot: G3wclient Attribute View Plots](/img/manual-english-g3wclient-attribute-view-plots.png)
 
 
 **Show relation charts:** display of graphs related to 1: N related data. Only if 1: N relations are associated with the interrogated layer and graphics have been activated on the boy tables.

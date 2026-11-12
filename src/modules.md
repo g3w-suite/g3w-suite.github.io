@@ -1,225 +1,101 @@
 <main id="main-content">
-  <div class="page-header">
-    <div class="container">
 
 # {{t 'Open Source Ecosystem'}}
 
-{{t 'G3W-SUITE is made of modular components, all available on'}} <a href="https://github.com/g3w-suite" target="_blank" rel="noopener">GitHub</a> {{t 'under the MPL-2 licence.'}}
+{{t 'G3W-SUITE is made of modular components, all available on'}} [GitHub](https://github.com/g3w-suite) {{t 'under the MPL-2 licence.'}}
 
-      <div class="feature-tags">
-        <span class="feature-tag">{{t 'web map client'}}</span>
-        <span class="feature-tag">{{t 'QGIS publishing'}}</span>
-        <span class="feature-tag">{{t 'online editing'}}</span>
-        <span class="feature-tag">{{t 'relational editing'}}</span>
-        <span class="feature-tag">{{t 'multi-user feature-lock'}}</span>
-        <span class="feature-tag">query builder</span>
-        <span class="feature-tag">{{t 'joins & relations 1:N / N:M'}}</span>
-        <span class="feature-tag">DataPlotly</span>
-        <span class="feature-tag">{{t 'QGIS print layouts'}}</span>
-        <span class="feature-tag">{{t 'atlases'}}</span>
-        <span class="feature-tag">{{t 'OSM base maps'}}</span>
-        <span class="feature-tag">{{t 'geolocation'}}</span>
-        <span class="feature-tag">{{t 'tablet & smartphone'}}</span>
-        <span class="feature-tag">{{t 'geographic constraints'}}</span>
-        <span class="feature-tag">{{t 'alphanumeric constraints'}}</span>
-        <span class="feature-tag">{{t 'permissions management'}}</span>
-        <span class="feature-tag">PostgreSQL / PostGIS</span>
-        <span class="feature-tag">Oracle Spatial</span>
-        <span class="feature-tag">SQLite / SpatiaLite</span>
-        <span class="feature-tag">GeoPackage</span>
-        <span class="feature-tag">Shapefile</span>
-        <span class="feature-tag">raster</span>
-        <span class="feature-tag">WMS / WFS</span>
-        <span class="feature-tag">{{t 'cadastre'}}</span>
-        <span class="feature-tag">CDU</span>
-        <span class="feature-tag">{{t 'civic address register'}}</span>
-        <span class="feature-tag">RNDT / INSPIRE</span>
-        <span class="feature-tag">PDND</span>
-        <span class="feature-tag">{{t 'public administration'}}</span>
-      </div>    </div>
-  </div>
+- {{t 'web map client'}}
+- {{t 'QGIS publishing'}}
+- {{t 'online editing'}}
+- {{t 'relational editing'}}
+- {{t 'multi-user feature-lock'}}
+- query builder
+- {{t 'joins & relations 1:N / N:M'}}
+- DataPlotly
+- {{t 'QGIS print layouts'}}
+- {{t 'atlases'}}
+- {{t 'OSM base maps'}}
+- {{t 'geolocation'}}
+- {{t 'tablet & smartphone'}}
+- {{t 'geographic constraints'}}
+- {{t 'alphanumeric constraints'}}
+- {{t 'permissions management'}}
+- PostgreSQL / PostGIS
+- Oracle Spatial
+- SQLite / SpatiaLite
+- GeoPackage
+- Shapefile
+- raster
+- WMS / WFS
+- {{t 'cadastre'}}
+- CDU
+- {{t 'civic address register'}}
+- RNDT / INSPIRE
+- PDND
+- {{t 'public administration'}}
 
-  <!-- G3W-ADMIN -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <img src="https://user-images.githubusercontent.com/9614886/189155796-6feff629-b500-4e38-b7c2-d98b53ae7564.png" alt="{{t 'G3W-ADMIN - administration panel'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-        <div>
-          <span class="section-label">{{t 'Server module - Python / Django'}}</span>
+## **{{t 'Server module - Python / Django'}}** G3W-ADMIN
 
-## G3W-ADMIN
+![{{t 'G3W-ADMIN - administration panel'}}](https://user-images.githubusercontent.com/9614886/189155796-6feff629-b500-4e38-b7c2-d98b53ae7564.png)
 
 {{t 'The server module of G3W-SUITE. Written in Python on Django LTS, it publishes QGIS projects as WebGIS services, preserving styles, forms and relations. Manages users, groups, access permissions and functional modules that can be activated per project.'}}
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-suite/g3w-admin
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+[g3w-suite/g3w-admin](https://github.com/g3w-suite/g3w-admin "github-button")
 
-  <!-- G3W-CLIENT -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <span class="section-label">{{t 'Map client - JavaScript / Vue'}}</span>
+## **{{t 'Map client - JavaScript / Vue'}}** G3W-CLIENT
 
-## G3W-CLIENT
+![{{t 'G3W-CLIENT - cartographic viewer interface'}}](https://g3w-suite.readthedocs.io/en/latest/_images/g3wclient_interface.png)
 
 {{t 'The WebGIS cartographic viewer. Written in JavaScript with Vue.js, it connects to the QGIS server and provides map navigation, custom searches, web editing (including offline mode), DataPlotly chart visualisation, print layouts and much more.'}}
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-client" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-suite/g3w-client
-          </a>
-        </div>
-        <div>
-          <img src="https://g3w-suite.readthedocs.io/en/latest/_images/g3wclient_interface.png" alt="{{t 'G3W-CLIENT - cartographic viewer interface'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
+[g3w-suite/g3w-client](https://github.com/g3w-suite/g3w-client "github-button")
 
-  <!-- G3W-ADMIN-PROCESSING -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <img src="https://raw.githubusercontent.com/g3w-suite/g3w-admin-processing/dev/doc/img/qprocessing_schema.png" alt="{{t 'G3W-ADMIN-PROCESSING - workflow schema'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-        <div>
-          <span class="section-label">{{t 'Optional module - Python'}}</span>
+## **{{t 'Optional module - Python'}}** G3W-ADMIN-PROCESSING
 
-## G3W-ADMIN-PROCESSING
+![{{t 'G3W-ADMIN-PROCESSING - workflow schema'}}](https://raw.githubusercontent.com/g3w-suite/g3w-admin-processing/dev/doc/img/qprocessing_schema.png)
 
-{{t 'Integrates QGIS Processing API directly into G3W-SUITE. Upload a'}} <code>.model3</code> {{t 'file in the administration panel and your geoprocessing algorithms become immediately available in the web client, with support for both synchronous and asynchronous (batch) execution.'}}
+{{t 'Integrates QGIS Processing API directly into G3W-SUITE. Upload a'}} `.model3` {{t 'file in the administration panel and your geoprocessing algorithms become immediately available in the web client, with support for both synchronous and asynchronous (batch) execution.'}}
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin-processing" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-suite/g3w-admin-processing
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+[g3w-suite/g3w-admin-processing](https://github.com/g3w-suite/g3w-admin-processing "github-button")
 
-  <!-- G3W-SUITE-DOCKER -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <span class="section-label">Deployment - Docker</span>
-
-## G3W-SUITE-DOCKER
+## **Deployment - Docker** G3W-SUITE-DOCKER
 
 {{t 'The official Docker stack to run G3W-SUITE with a single command. Includes NGINX, PostgreSQL/PostGIS, QGIS Server and all required services, pre-configured and ready to use. This is the recommended installation method for both development and production.'}}
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-suite-docker" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-suite/g3w-suite-docker
-          </a>
-        </div>
-        <div>
-          <img src="https://github.com/g3w-suite/g3w-suite-docker/raw/dev/docs/img/docker.png" alt="{{t 'G3W-SUITE-DOCKER - services structure'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
+![{{t 'G3W-SUITE-DOCKER - services structure'}}](https://github.com/g3w-suite/g3w-suite-docker/raw/dev/docs/img/docker.png)
 
-  <!-- G3W-ADMIN-FRONTEND -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <img src="https://raw.githubusercontent.com/g3w-suite/g3w-admin-frontend/dev/site-frontend.png" alt="{{t 'G3W-ADMIN-FRONTEND - public portal'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-        <div>
-          <span class="section-label">{{t 'Optional module - CSS / JS'}}</span>
+[g3w-suite/g3w-suite-docker](https://github.com/g3w-suite/g3w-suite-docker "github-button")
 
-## G3W-ADMIN-FRONTEND
+## **{{t 'Optional module - CSS / JS'}}** G3W-ADMIN-FRONTEND
+
+![{{t 'G3W-ADMIN-FRONTEND - public portal'}}](/img/site-frontend.png)
 
 {{t 'A customisable public portal for G3W-SUITE. Replaces the default login screen with a branded landing page showing logo, title and the list of published cartographic groups - fully configurable per installation.'}}
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin-frontend" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-suite/g3w-admin-frontend
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+[g3w-suite/g3w-admin-frontend](https://github.com/g3w-suite/g3w-admin-frontend "github-button")
 
-  <!-- G3W-ADMIN-PDND -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <span class="section-label">{{t 'Optional module - Python - MIT'}}</span>
+## **{{t 'Optional module - Python - MIT'}}** G3W-ADMIN-PDND
 
-## G3W-ADMIN-PDND
+{{t 'G3W-SUITE integration with the Italian'}} **Piattaforma Digitale Nazionale Dati** {{t '(PDND). Adds voucher token authentication as required by the Italian interoperability guidelines, enabling WebGIS APIs compliant with AgID standards.'}}
 
-{{t 'G3W-SUITE integration with the Italian'}} <b>Piattaforma Digitale Nazionale Dati</b> {{t '(PDND). Adds voucher token authentication as required by the Italian interoperability guidelines, enabling WebGIS APIs compliant with AgID standards.'}}
+![{{t 'G3W-ADMIN-PDND - PDND integration schema'}}](https://raw.githubusercontent.com/g3w-suite/g3w-admin-pdnd/dev/doc/img/pdnd_schema.png)
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin-pdnd" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-suite/g3w-admin-pdnd
-          </a>
-        </div>
-        <div>
-          <img src="https://raw.githubusercontent.com/g3w-suite/g3w-admin-pdnd/dev/doc/img/pdnd_schema.png" alt="{{t 'G3W-ADMIN-PDND - PDND integration schema'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
+[g3w-suite/g3w-admin-pdnd](https://github.com/g3w-suite/g3w-admin-pdnd "github-button")
 
-  <!-- G3W-CLIENT-PLUGIN-EDITING -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <img src="https://user-images.githubusercontent.com/9614886/218463168-a4bfb50d-214a-45e5-b1b6-1bfcbe146e5e.png" alt="{{t 'G3W-CLIENT-PLUGIN-EDITING - vector editing tools'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-        <div>
-          <span class="section-label">{{t 'Built-in plugin - JavaScript / Vue - MPL-2'}}</span>
+## **{{t 'Built-in plugin - JavaScript / Vue - MPL-2'}}** G3W-CLIENT-PLUGIN-EDITING
 
-## G3W-CLIENT-PLUGIN-EDITING
+![{{t 'G3W-CLIENT-PLUGIN-EDITING - vector editing tools'}}](https://user-images.githubusercontent.com/9614886/218463168-a4bfb50d-214a-45e5-b1b6-1bfcbe146e5e.png)
 
-{{t 'A JavaScript plugin for'}} <b>{{t 'collaborative editing of geometries and attributes'}}</b> {{t 'directly in the map client. Authorised users can create, modify and delete vector features using advanced snap, split and multi-relation tools. The code is now maintained inside'}} <code>g3w-admin</code>.
+{{t 'A JavaScript plugin for'}} **{{t 'collaborative editing of geometries and attributes'}}** {{t 'directly in the map client. Authorised users can create, modify and delete vector features using advanced snap, split and multi-relation tools. The code is now maintained inside'}} `g3w-admin`.
 
-          <a class="btn btn--github mt-3" href="https://github.com/g3w-suite/g3w-admin/tree/dev/g3w-admin/editing" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            g3w-admin / editing
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
+[g3w-admin / editing](https://github.com/g3w-suite/g3w-admin/tree/dev/g3w-admin/editing "github-button")
 
 ## {{t 'Contribute to the project'}}
 
 {{t 'Check out the public roadmap, join the community discussions or sponsor G3W-SUITE development.'}}
 
-      </div>
-      <div class="btn-group">
-        <a class="btn btn--github" href="https://github.com/g3w-suite" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-          {{t 'g3w-suite on GitHub'}}
-        </a>
-        <a class="btn btn--outline" href="https://github.com/orgs/g3w-suite/projects/12" target="_blank" rel="noopener">{{t 'Public roadmap'}}</a>
-        <a class="btn btn--outline" href="https://github.com/g3w-suite/community/discussions" target="_blank" rel="noopener">{{t 'Discussions'}}</a>
-      </div>
-    </div>
-  </section>
+[{{t 'g3w-suite on GitHub'}}](https://github.com/g3w-suite "github-button") [{{t 'Public roadmap'}}](https://github.com/orgs/g3w-suite/projects/12 "outline-button") [{{t 'Discussions'}}](https://github.com/g3w-suite/community/discussions "outline-button")
+
 </main>
 
 <script type="application/json" data-i18n>

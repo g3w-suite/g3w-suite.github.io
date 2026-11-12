@@ -11,7 +11,7 @@ The following image shows an example of the functional use of these organization
 
 Access policies and individual functional modules may be associated with each WebGis service.
 
-![](/img/manual-english-g3wsuite-administration-organization-containers-simple.png)
+![Screenshot: G3W-SUITE Administration Organization Containers Simple](/img/manual-english-g3wsuite-administration-organization-containers-simple.png)
 
 ## Types of Users (Roles)
 In G3W-SUITE you can create **Users** and **Users Groups** and associate them with specific roles:
@@ -58,7 +58,7 @@ When creating a cartographic group, the Admin user can define:
  * the eventual user (individual/group) **Editor 2** to associate the Group with
  * **Viewers** users (individuals/groups) who will have access to this container
 
-![](/img/manual-english-g3wsuite-administration-organization-containers-no-mg.png)
+![Screenshot: G3W-SUITE Administration Organization Containers No Mg](/img/manual-english-g3wsuite-administration-organization-containers-no-mg.png)
 
 In the event that the Cartographic Group is assigned to **Editor 2** (single or group users), they will may autonomously publish/update WebGis services inside in this container. 
 
@@ -78,7 +78,7 @@ In this way it will be possible to create totally independent entities, the Macr
 
 Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.
 
-![](/img/manual-english-g3wsuite-administration-organization-containers.png)
+![Screenshot: G3W-SUITE Administration Organization Containers](/img/manual-english-g3wsuite-administration-organization-containers.png)
 
 As previously specified, **Editor 1** user will be able to:
  * create **users** (single and/or groups) of type Editor2 and Viewer
@@ -109,7 +109,7 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
 ## Summary table of access/administration policies
 Below is a summary table of the powers associated with the different roles.
 
-![](/img/manual-english-roles-table.png)
+![Screenshot: Roles Table](/img/manual-english-roles-table.png)
 
 ## Examples of organization
 
@@ -118,10 +118,10 @@ In this case the main administrator (**Admin role**) manages users, containers a
 Access to Cartographic Groups and individual WebGis services can be limited to system users (**Viewer** role) or to free access (**Anonymous user**)
 
 **Contents organized on a single level (Cartographic goups)**
-![](/img/manual-english-organization-case-a1.png)
+![Screenshot: Organization Case A1](/img/manual-english-organization-case-a1.png)
 
 **Contents organized on two levels(Cartographic Macrooups and Cartographic goups)**
-![](/img/manual-english-organization-case-a2.png)
+![Screenshot: Organization Case A2](/img/manual-english-organization-case-a2.png)
 
 ### Medium organization
 In this case the main administrator (**Admin role**) wants to delegate some secondary administrators (**Editor2** role) in managing the contents (WebGis) of the individual Cartographic Groups.
@@ -131,10 +131,10 @@ User management will remain limited to the main administrator (**Admin** role)
 Access to Cartographic Groups and individual WebGis services can be limited to system users (**Viewer** role) or to free access (**Anonymous user**)
 
 **Contents organized on a single level (Cartographic goups)**
-![](/img/manual-english-organization-case-b1.png)
+![Screenshot: Organization Case B1](/img/manual-english-organization-case-b1.png)
 
 **Contents organized on two levels (Cartographic Macrooups and Cartographic goups)**
-![](/img/manual-english-organization-case-b2.png)
+![Screenshot: Organization Case B2](/img/manual-english-organization-case-b2.png)
 
 ### Advanced organization
 The case in question involves the need to create completely distinct and separate subsystems with regard to not only the contents but also the users.
@@ -149,4 +149,4 @@ Access to Cartographic Groups and individual WebGIS services can be limited to s
 
 In this case, usually, the main administrator (**Admin** role) only takes care of creating the Macrogroups, the **Editor1** users and associating them correctly
 
-![](/img/manual-english-organization-case-c.png)
+![Screenshot: Organization Case C](/img/manual-english-organization-case-c.png)

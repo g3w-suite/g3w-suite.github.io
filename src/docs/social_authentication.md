@@ -14,7 +14,7 @@ To be able to configure social account authentication, the user needs to have th
 priviledges of both superuser and staff (admin level 1). Make sure that the
 user's ACL look like this:
 
-![](/img/manual-english-socialauth-admin-settings.png)
+![Screenshot: Socialauth Admin Settings](/img/manual-english-socialauth-admin-settings.png)
 
 Let's have a look at the workflow to properly configure the social authentication in 
 the suite.
@@ -66,7 +66,7 @@ SITE_ID = 1
 While this can be fine for some cases, usually one needs to differentiate at least 
 two sites in development and production environments. 
 
-![](/img/manual-english-socialauth-site-settings.png)
+![Screenshot: Socialauth Site Settings](/img/manual-english-socialauth-site-settings.png)
 
 In these cases it is necessary to override the site setting with the currently used
 site id.
@@ -81,12 +81,12 @@ provider. [The example at this link](https://docs.allauth.org/en/latest/socialac
 using the Google provider can help the reader to understand the following 
 image.
 
-![](/img/manual-english-socialauth-applications-settings.png)
+![Screenshot: Socialauth Applications Settings](/img/manual-english-socialauth-applications-settings.png)
 
 Once the social application is (properly configured and) saved, the login button
 of the chosen provider will appear on the suite's login screen.
 
-![](/img/manual-english-socialauth-login-screen.png)
+![Screenshot: Socialauth Login Screen](/img/manual-english-socialauth-login-screen.png)
 
 ## Social account corner cases
 
@@ -145,6 +145,6 @@ USERSESSIONS_TRACK_ACTIVITY = True
 
 Once enabled the django admin will provide the following view:
 
-![](/img/manual-english-socialauth-user-sessions.png)
+![Screenshot: Socialauth User Sessions](/img/manual-english-socialauth-user-sessions.png)
 
 

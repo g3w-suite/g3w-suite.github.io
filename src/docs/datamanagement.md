@@ -38,7 +38,7 @@ Data on physical files and / or on GeoDB SpatiaLite and QGIS cartographic projec
    * a **`project_data` sub-directory** that must contain the **geographic data** used for the various cartographic projects, such data can also be organized in subdirectories with no nesting limits.
    * a **`projects` sub-directory** that must contain the **QGIS cartographic projects** (.qgz or .qgs files)
 
-![](/img/manual-english-datamanagement.png)
+![Screenshot: Datamanagement](/img/manual-english-datamanagement.png)
 
 **NB:** The name of the local directory dedicated to geographic data must correspond to the name defined for the **`DATASOURCE_PATH`** variable set during installation.
 [See dedicated paragraph.](settings#base-settings)
@@ -51,13 +51,13 @@ The data stored in the local **`project_data`** directory must be synchronized o
 
 The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.
 
-To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![](/img/manual-english-iconconfiguration.png) located in the upper right corner.
+To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located in the upper right corner.
 
 Choose the **`File Manager`** item in the linked menu.
 
-![](/img/manual-english-g3wclient-icon-config.png)
+![Icon: G3wclient Config](/img/manual-english-g3wclient-icon-config.png)
 
-![](/img/manual-english-g3wsuite-administration-configuration-menu.png)
+![Screenshot: G3W-SUITE Administration Configuration Menu](/img/manual-english-g3wsuite-administration-configuration-menu.png)
 
 Using this tool it is possible to manage the physical geographic data on the server in a simple and intuitive way.
 
@@ -75,7 +75,7 @@ All the directories can be organized in subdirectories with no nesting limits.
 **NB:** The names of these directories are defined by the basic settings set during the installation of the suite.
 [See dedicated paragraph.](settings#base-settings)
 
-![](/img/manual-english-g3wsuite-administration-file-manager.png)
+![Screenshot: G3W-SUITE Administration File Manager](/img/manual-english-g3wsuite-administration-file-manager.png)
 
 The example shows the case in which in the local **project_data** directory there are two directories (**geopackage** and **spatialite**) in addition to the two system directories (**svg** and **media_user**).
 

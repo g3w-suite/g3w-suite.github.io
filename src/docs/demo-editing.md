@@ -50,24 +50,24 @@ _**Forms and editing widgets are already defined on the project associated with 
 
 To activate the editing function on webgis, access the list of layers and identify the three layers shown above.
 
-![](/img/manual-english-g3wsuite-administration-project-layer-list.png)
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
 
-Clicking on the icon **Editing layer** ![](/img/manual-english-icon-editing.png) (placed at the left of each rows) will open a modal window that will allow you to:
+Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.png) (placed at the left of each rows) will open a modal window that will allow you to:
 * define the **`editing activation scale`** (only for geometric tables)
 * define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing
 
 With regard to the last aspect, it should be noted that **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**
 
-![](/img/manual-english-editing-setting.png)
+![Screenshot: Editing Setting](/img/manual-english-editing-setting.png)
 
 Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**
 
 **By activating the editing function it will be possible to edit the geometries and attributes of the Public Buildings layer and the related interventions.**
 
-![](/img/manual-english-editing-client-start.png) 
+![Screenshot: Editing Client Start](/img/manual-english-editing-client-start.png)
 
-![](/img/manual-english-demo-editing-web.png)
+![Screenshot: Demo Editing Web](/img/manual-english-demo-editing-web.png)
 
-![](/img/manual-english-editing-form2.png)
+![Screenshot: Editing Form2](/img/manual-english-editing-form2.png)
 
 For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).

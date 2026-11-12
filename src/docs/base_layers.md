@@ -4,11 +4,11 @@ Below are the instructions for adding, modifying, or deleting configurations for
 
 These operations are exclusively allowed to users with the `Admin level 1` role. Base layers can be configured from within the Django admin interface.
 
-![](/img/configuration-django-admin-access.png)
+![Screenshot: Configuration Django Admin Access](/img/configuration-django-admin-access.png)
 
-![](/img/configuration-django-admin-base-layers.png)
+![Screenshot: Configuration Django Admin Base Layers](/img/configuration-django-admin-base-layers.png)
 
-![](/img/configuration-django-admin-base-layers-form.png)
+![Screenshot: Configuration Django Admin Base Layers Form](/img/configuration-django-admin-base-layers-form.png)
 
 Form fields:
  - `Name`: an internal identifier for the base layer.

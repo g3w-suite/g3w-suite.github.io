@@ -73,7 +73,7 @@ The option **`Propagate viewers user (single and groups) permissions`** allows y
 
 **Be careful: this option cancels any differentiation in the access policies applied to the WebGis services contained in the Group.**
 
-![](/img/manual-english-g3wsuite-administration-group-add-acl.png)
+![Screenshot: G3W-SUITE Administration Group Add ACL](/img/manual-english-g3wsuite-administration-group-add-acl.png)
 
 #### MacroGroups
 **Possible definition of the belonging MacroGroup.**
@@ -117,7 +117,7 @@ In this box you can define:
 ***NB:** the security protocols prevent the creation of screenshots if WMS services with domains other than the publication one are present on the map. **In this case the icons will not be present on the client even if the MapControl is selected.**
 To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-widgets-setup.md) section.
 
-![](/img/manual-english-g3wsuite-administration-group-add-geodata.png)
+![Screenshot: G3W-SUITE Administration Group Add Geodata](/img/manual-english-g3wsuite-administration-group-add-geodata.png)
 
 With regard to the **Base Layers**, it is specified that the external services available by default are:
  * **OSM**
@@ -135,7 +135,7 @@ In this regard, consult the section on [**base layers**](admin-base-layers.md).
 
 After filling in the various form, click on the **Save** button to confirm your choices.
  
-![](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.png)
 
 
 
@@ -147,15 +147,15 @@ After filling in the various form, click on the **Save** button to confirm your 
 For each group, the Title and Subtitle defined at the time of creation are shown.
 
 There are also a series of icons to access specific functions:
- * ![](/img/manual-english-icon-add.png) **Add a new project (QGIS)** to be published as WebGis service
+ * ![Icon: Add](/img/manual-english-icon-add.png) **Add a new project (QGIS)** to be published as WebGis service
  * Number and links to projects published within the Group
- * ![](/img/manual-english-icon-view.png) **Show group details**
- * ![](/img/manual-english-icon-edit.png) **Change** group definitions
- * ![](/img/manual-english-icon-erase.png) **Delete** group
+ * ![Icon: View](/img/manual-english-icon-view.png) **Show group details**
+ * ![Icon: Edit](/img/manual-english-icon-edit.png) **Change** group definitions
+ * ![Icon: Erase](/img/manual-english-icon-erase.png) **Delete** group
 
  In case of request to delete the Cartographic Group, a popup will ask whether the deletion of the Group should be permanent or a simple deactivation, which can be restored from the Trash menu.
 
- ![](/img/manual-english-group-delete.png)
+ ![Screenshot: Group Delete](/img/manual-english-group-delete.png)
 
 **ATTENTION:** the permanent removal  of the cartographic group will involve:
  * the **removal of all the WebGis services** contained therein
@@ -163,7 +163,7 @@ There are also a series of icons to access specific functions:
 
 A large **+ icon** is available to access the form for creating a new group.
 
-![](/img/manual-english-g3wsuite-administration-group-list.png)
+![Screenshot: G3W-SUITE Administration Group List](/img/manual-english-g3wsuite-administration-group-list.png)
 
 A simple filter allows you to view only some cartographic groups based on:
  * the MacroGroup to which they belong
@@ -172,7 +172,7 @@ A simple filter allows you to view only some cartographic groups based on:
 
 The options of this last filter vary based on the type of logged in user.
 
-![](/img/manual-english-group-filter.png)
+![Screenshot: Group Filter](/img/manual-english-group-filter.png)
 
 #### Cartographic Group Trash
 
@@ -184,7 +184,7 @@ It is possible to access the list of trashed.
 
 Cartographic Groups and the restore functions through the menu on the left sidebar.
 
-![](/img/manual-english-g3wadmin-trash-group.png)
+![Screenshot: G3W-ADMIN Trash Group](/img/manual-english-g3wadmin-trash-group.png)
 
 Restoring a Cartographic Group involves restoring all the projects it contains and all the accessory settings/functions of both the group and the projects (permissions, searches, editing settings, downloads, etc...).
 

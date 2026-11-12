@@ -14,11 +14,11 @@ This session allows you to see the complete legend of the service.
 
 Check the plots in the list and consult them on the rigth panel.
 
-![](/img/manual-english-g3wclient-plots.png)
+![Screenshot: G3wclient Plots](/img/manual-english-g3wclient-plots.png)
 
 The graphs are filterable based on the:
- * ![](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map
- * ![](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features
+ * ![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map
+ * ![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features
  
 These **filters** are also **reflected on the plots associated to the related data** (in 1:N mode) based on the visible and/or selected parent features.
 
@@ -34,7 +34,7 @@ Appropriate **messages** at the single plots level will indicate the activation 
 
 If the **chart is linked to a child layer in a 1:N relation**, it can also be displayed at the information level of the individual parent features
 
-![](/img/manual-english-g3wclient-fomr-1-n-plots.png)
+![Screenshot: G3wclient Fomr 1 N Plots](/img/manual-english-g3wclient-fomr-1-n-plots.png)
 
 ### Metadata
 The metadata reported in this session derive from those set at the QGIS project level.
@@ -48,7 +48,7 @@ This content is divided into three sessions: **General, Data, Legend** and **Cre
  * **` Legend`:** reports the legend of the entire project
  * **`Credits`:** references to the G3W-SUITE project and application version information
 
-![](/img/manual-english-g3wclient-metadata-view.png)
+![Screenshot: G3wclient Metadata View](/img/manual-english-g3wclient-metadata-view.png)
 
 ### Bookmarks
 This tool will display the spatial bookmarks defined and associated with the QGIS project.
@@ -57,7 +57,7 @@ The user, even if not logged in, will be able to create new bookmarks by simply 
 
 These bookmarks will be saved in the browser cache and therefore always available until deleted.
 
-![](/img/manual-english-spatial-bookmarks.png)
+![Screenshot: Spatial Bookmarks](/img/manual-english-spatial-bookmarks.png)
 
 ### Print
 **Printing tool based on layouts defined on QGIS project.**
@@ -72,20 +72,20 @@ The tool allows you to choose:
 
 On the map, a light rectangular area will allow you to define the print area.
 
-![](/img/manual-english-g3wclient-print-tool.png)
+![Screenshot: G3wclient Print Tool](/img/manual-english-g3wclient-print-tool.png)
 
 If an **Atlas type print layout** is associated in the QGIS project, the layout reference will be available.
 The cards to be printed are defined by referring to the atlas identifier defined in the print layout.
 
-![](/img/manual-english-g3wclient-print-tool-atlas.png)
+![Screenshot: G3wclient Print Tool Atlas](/img/manual-english-g3wclient-print-tool-atlas.png)
 
  The same panel allows you to create a screenshot (PNG or GeoTiff) of the area displayed on the map.
  
-![](/img/manual-english-g3wclient-print-tool-screenshot.png)
+![Screenshot: G3wclient Print Tool Screenshot](/img/manual-english-g3wclient-print-tool-screenshot.png)
 
 ### Search and Advanced Search
 
-A classic ![](/img/manual-english-query-builder-icon.png) **Advanced Search** is present at the Search menu level.
+A classic ![Icon: Query Builder](/img/manual-english-query-builder-icon.png) **Advanced Search** is present at the Search menu level.
 Through this tool it is possible to:
  * carry out alphanumeric searches on geometric layers
  * save the query to reuse it until the end of the work session
@@ -95,16 +95,16 @@ The saved query will be available until the browser cache is cleared
 
 **NB:** fields not exposed as QGIS project-level WMS are not available for query building.
 
-![](/img/manual-english-g3wclient-querybuilder.png)
+![Screenshot: G3wclient Querybuilder](/img/manual-english-g3wclient-querybuilder.png)
 
 **The Search menu contains the list of search tools defined through the Administration panel and custom searches created with the Query Builder.**
 
-![](/img/manual-english-g3wclient-searc-list.png)
+![Screenshot: G3wclient Searc List](/img/manual-english-g3wclient-searc-list.png)
 
 
 You choose the search you are interested in, fill in the required fields and click on the **`Search`** button.
 
-![](/img/manual-english-g3wclient-search-example.png)
+![Screenshot: G3wclient Search Example](/img/manual-english-g3wclient-search-example.png)
 
 Additional information is displayed if you log in as Administrator
 
@@ -114,7 +114,7 @@ By positioning on the individual results, the corresponding features will be hig
 
 Zoom to features and download icons are available for results (single or cumulative)
 
-![](/img/manual-english-g3wclient-search-example.png)
+![Screenshot: G3wclient Search Example](/img/manual-english-g3wclient-search-example.png)
 
 ### Editing layer
 
@@ -138,7 +138,7 @@ The created themes will always be available to the user who defined them.
 
 Once created, the User Themes will be selectable, overwritable and editable using the icons shown next to each of them.
 
-![](/img/manual-english-g3wclient-theme.png)
+![Screenshot: G3wclient Theme](/img/manual-english-g3wclient-theme.png)
 
 ## TOC session
 
@@ -151,7 +151,7 @@ If the **`Show features count`** function is activated in the project, the layer
 
 In case of multi-style associated with the layer, the number of geometries reported will vary following the passage from one style to another.
 
-![](/img/manual-english-g3wclient-features-count.png)
+![Screenshot: G3wclient Features Count](/img/manual-english-g3wclient-features-count.png)
 
 In the list of layers, right click on the name of the single layer shows the following items:
  * **Name and geometry type** of the layer
@@ -166,7 +166,7 @@ In the list of layers, right click on the name of the single layer shows the fol
  * **Export:** download of the layer in different formats, based on what is defined in the Administration session
  * **Layer settings:** link to the layer administration section (available only if logged in as an administrator user)
 
-![](/img/manual-english-g3wclient-layer-function.png)
+![Screenshot: G3wclient Layer Function](/img/manual-english-g3wclient-layer-function.png)
 
 Double clicking on the layer or Layer Group zooms to the extent of the layer or Group content.
 
@@ -186,13 +186,13 @@ To the left of each record in the table there are two/three tools:
  * in the case of a layer editable by the user, an editing icon to allow direct modification of the feature
  * the ‘Show relations’ icon to open the list of 1:N relations (if present) of thath parent record
 
-![](/img/manual-english-g3wclient-table-view.png)
+![Screenshot: G3wclient Table View](/img/manual-english-g3wclient-table-view.png)
 
 A **generic filter**, positioned at the top right, is applied generically to the contents of all the fields, and it will allow you to filter the list of displayed records. 
 
 **Filters based on the contents of the individual fields** are available at the top of each column.
 
-The **Update results when map moves** icon ![](/img/manual-english-g3wclient-mapfilter-table.png), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.
+The **Update results when map moves** icon ![Screenshot: G3wclient Mapfilter Table](/img/manual-english-g3wclient-mapfilter-table.png), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.
 
 It is possible to **select the features of the individual layers and apply filters** that will affect:
  * on the map content
@@ -212,15 +212,15 @@ At the same time, additional icons appear:
  * at the level of the relevant plots
 
 The icons, palced in the left buttom corner of the attribute, table allow you to:
- * ![](/img/manual-english-g3wclient-selection-table-clear.png) Clear selection
- * ![](/img/manual-english-g3wclient-selection-table-invert.png) Invert selection
- * ![](/img/manual-english-g3wclient-selection-table-filter.png) Add/Remove filter
+ * ![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.png) Clear selection
+ * ![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.png) Invert selection
+ * ![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.png) Add/Remove filter
 
 The icons to the right of the layer on the TOC allow you to:
  * Clear selection
  * Enable/Disable  filter
 
-![](/img/manual-english-g3wclient-selection-icon-toc.png)
+![Icon: G3wclient Selection Toc](/img/manual-english-g3wclient-selection-icon-toc.png)
 
 When one or more features are selected, they appear highlighted in red on the map.
 Activation of the filter is reflected:
@@ -229,7 +229,7 @@ Activation of the filter is reflected:
  * on the data displayed by plots
  * on the print contents
 
- ![](/img/manual-english-g3wclient-table-select.png)
+ ![Screenshot: G3wclient Table Select](/img/manual-english-g3wclient-table-select.png)
 
 
 #### Filter users based
@@ -246,17 +246,17 @@ Following activation of the filter, a logged in user (not AnonymosUser) will be 
 
 Saving the filter occurs via the dedicated icon present at layer level in the legend and in the results form.
 
-![](/img/manual-english-filter-save.png)
+![Screenshot: Filter Save](/img/manual-english-filter-save.png)
 
 The saved filters can be recovered via the dedicated menu that can be viewed by right-clicking on the name of the layer
 
-![](/img/manual-english-filter-load.png)
+![Screenshot: Filter Load](/img/manual-english-filter-load.png)
 
 The presence of an active filter on the layer is highlighted by the red icon next to the layer name.
 
 To deactivate an active filter, simply click on the icon itself.
 
-![](/img/manual-english-filter-loaded.png)
+![Screenshot: Filter Loaded](/img/manual-english-filter-loaded.png)
 
 We remind you that activating a filter affects:
  * geometries visible on the map

@@ -52,14 +52,18 @@ static/
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
 - Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
 - Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
-- Site pages in `src/` and changelog pages in `src/changelog/` are Markdown; use raw HTML only for custom layout and media.
+- Site pages in `src/` and changelog pages in `src/changelog/` are Markdown; use Markdown for content and images. In site page sources, HTML is limited to `<main>`, translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings; generate other layout markup through JavaScript and style it with CSS.
+- Avoid HTML wrappers around Markdown used only for styling; target generated sections with the page body class and section position.
+- Keep separate paragraphs inside Markdown list items using blank lines and indented continuation paragraphs; the renderer preserves this indentation.
+- The first `#` heading inside a non-homepage Markdown page's `<main>` gets a `.page-header` wrapper automatically. Do not write that wrapper manually unless the page needs a custom header.
+- In site Markdown, each `##`–`######` heading starts a section; lower-level headings nest inside the previous section, while a heading at the same or higher level closes the previous section(s). The build adds section and container wrappers; `#` remains the page title. Prefer headings over standalone `---` section delimiters, which remain supported for existing custom layouts. Use the page's body class and section position for variant styling, and keep IDs as inline anchors when links target them.
 - For URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 
 ## Page Source Pattern
 
-Site page files are Markdown fragments compiled by JavaScript. Prefer Markdown for text and use raw HTML for custom layout and media. The build injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
+Site page files are Markdown fragments compiled by JavaScript. Use Markdown for content and images; source HTML is limited to `<main>`, translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings. The build injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
 
 ```html
 <main id="main-content">...</main>
@@ -85,6 +89,7 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 
 - Preserve aria attributes used by nav controls (`aria-expanded`, `aria-controls`, `aria-label`, `aria-haspopup`).
 - Keep keyboard behavior intact for menu/dropdowns (Escape handling is implemented in `app.js`).
+- Give every image non-empty alt text; the build adds `loading="lazy"` to generated images, and tests report missing or empty alt text.
 
 ## Working Guidance For Agents
 

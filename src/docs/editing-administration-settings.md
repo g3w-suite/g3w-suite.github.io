@@ -9,9 +9,9 @@
 #### Activation of on-line editing on a single layer
 To activate the online editing functions, access the **`Layer list`** section of the project within the administration panel of G3W-ADMIN.
 
-![](/img/manual-english-g3wsuite-administration-project-layer-list.png)
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
 
-Identify the layer on which you want to activate the editing function and click on the **`Editing layer` icon** ![](/img/manual-english-icon-editing.png) located on the left 
+Identify the layer on which you want to activate the editing function and click on the **`Editing layer` icon** ![Icon: Editing](/img/manual-english-icon-editing.png) located on the left
 
 **Attention:** check that the layer format is among those supported by QGIS for the editing function
 
@@ -31,7 +31,7 @@ I should be noted that:
  * **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**
  * **Editor1 and Editor2 users**, **owners** of the project, are **enabled by default** to the online editing function
 
-![](/img/manual-english-editing-setting.png)
+![Screenshot: Editing Setting](/img/manual-english-editing-setting.png)
 
 **NB: In case a user belongs to a user group, the permissions set will be added together.**
 
@@ -48,17 +48,17 @@ It is recommended that these fields be set as non-editable at the project level.
 #### Activation of online editing on multiple layers at the same time
 In the case of a project in which it is necessary to activate the online editing function on many layers, by defining the same options for each of them it is possible to use the Project layer action function.
 
-![](/img/manual-english-multi-layer-icon.png)
+![Icon: Multi Layer](/img/manual-english-multi-layer-icon.png)
 
-![](/img/manual-english-multi-layer-form.png)
+![Screenshot: Multi Layer Form](/img/manual-english-multi-layer-form.png)
 
 #### Copy editing permission from a user to the others
 
 In the case of complex projects with many users enabled for editing, it is possible to use this tool to duplicate the editing permissions defined for a user and apply them to other users (both individuals and groups).
 
-![](/img/manual-english-editing-clone-icon.png)
+![Icon: Editing Clone](/img/manual-english-editing-clone-icon.png)
 
-![](/img/manual-english-editing-clone-setting.png)
+![Screenshot: Editing Clone Setting](/img/manual-english-editing-clone-setting.png)
 
 #### 1:N relational editing
 To allow editing on the related table in mode 1: n , the **editing function must also be activated** (always in the same way) **also for the related table** present in the project layers list.
@@ -71,18 +71,18 @@ To allow editing on the related table in mode 1: n , the **editing function must
  
 Both work in terms of visualization and/or editing
 
-For each constraint, click the **Save icon** ![](/img/manual-english-icon-save.png) to validate its rules, then click **Close** to confirm.
+For each constraint, click the **Save icon** ![Icon: Save](/img/manual-english-icon-save.png) to validate its rules, then click **Close** to confirm.
 
 ##### Alphanumeric (SQL) / QGIS expressions Constraints
 **Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.**
 
 This setting is also available for the AnonymousUser user
 
-To activate this type of constraint, you must click, always at the level of the list of project layers, on the **`Alphanumeric constraints list` icon** ![](/img/manual-english-icon-alpha-constraints.png).
+To activate this type of constraint, you must click, always at the level of the list of project layers, on the **`Alphanumeric constraints list` icon** ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.png).
 
 Clicking on the icon will show the list of any existing alphanumeric constraints and the item **`+ New alphanumeric constraint`** to create a new constraints.
 
-![](/img/manual-english-editing-alpha-constrain-layer.png)
+![Screenshot: Editing Alpha Constrain Layer](/img/manual-english-editing-alpha-constrain-layer.png)
 
 Clicking on the item **`+ New constraint`** will open a modal window which will allow you to define a name and a description for the new constraint.
 
@@ -91,37 +91,37 @@ In the form it is possible to specify whether this filter will act at the level:
  * editing only
  * in both cases
  
-![](/img/manual-english-editing-alpha-constrain-layer-init.png)
+![Screenshot: Editing Alpha Constrain Layer Init](/img/manual-english-editing-alpha-constrain-layer-init.png)
 
 
 After clicking the OK button, the constraint will appear in the list and can be parameterized using two ways of defining the rules:  
 
- * ![](/img/manual-english-icon-alphaconstraints-setting.png) **Provider's language / SQL dialect**
- * ![](/img/manual-english-icon-qgisconstraints-setting.png) **QGIS Expression**
+ * ![Icon: Alphaconstraints Setting](/img/manual-english-icon-alphaconstraints-setting.png) **Provider's language / SQL dialect**
+ * ![Icon: Qgisconstraints Setting](/img/manual-english-icon-qgisconstraints-setting.png) **QGIS Expression**
 
 
 ###### Provider's language / SQL dialect Rules
-Clicking on the icon ![](/img/manual-english-icon-alphaconstraints-setting.png) will open a modal window which, by pressing the green button ![](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.
+Clicking on the icon ![Icon: Alphaconstraints Setting](/img/manual-english-icon-alphaconstraints-setting.png) will open a modal window which, by pressing the green button ![Button: Add](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.
 
 The individual rules must be defined via  the **`Provider's language`** or the **`SQL dialect Rules`** associated with the format of the geo-constraints layer (es. use standard SQL if your layer is a PostGis layer)
 
 The single rules must refer to the layer’s attributes and values.
 
-![](/img/manual-english-editing-alpha-constrain-setting.png)
+![Screenshot: Editing Alpha Constrain Setting](/img/manual-english-editing-alpha-constrain-setting.png)
 
 
 ###### QGIS Expressions Rules
-Clicking on the icon **QGIS expression rules** ![](/img/manual-english-icon-qgisconstraints-setting.png) will open a modal window which, by pressing the green button ![](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.
+Clicking on the icon **QGIS expression rules** ![Icon: Qgisconstraints Setting](/img/manual-english-icon-qgisconstraints-setting.png) will open a modal window which, by pressing the green button ![Button: Add](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.
 
 The individual rules must be defined via **`QGIS expression`** and this allows to have a great degree of freedom in the ways in which to set these rules.
 
 See the paragraph dedicated to the functions available directly on the [QGIS manual](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html).
 
-![](/img/manual-english-editing-qgisconstrain-setting.png)
+![Screenshot: Editing Qgisconstrain Setting](/img/manual-english-editing-qgisconstrain-setting.png)
 
 In the dedicated panel it will be possible to check, modify and delete the defined rules.
 
-![](/img/manual-english-alpha-constrain-list.png)
+![Screenshot: Alpha Constrain List](/img/manual-english-alpha-constrain-list.png)
 
 
 ##### Geo-constraints
@@ -129,11 +129,11 @@ In the dedicated panel it will be possible to check, modify and delete the defin
 
 This setting is also available for the AnonymousUser user
 
-To activate a geographical constraint, you must click, always at the level of the list of project layers, on the **`Manage Geo-Constraints` icon** ![](/img/manual-english-icon-constraints.png) which will appear once the online editing function is activated.
+To activate a geographical constraint, you must click, always at the level of the list of project layers, on the **`Manage Geo-Constraints` icon** ![Icon: Constraints](/img/manual-english-icon-constraints.png) which will appear once the online editing function is activated.
 
 Clicking on the icon will show the list of any existing constraints and the item **`+ New geo-constraint`** to create a new geo-constraints.
 
-![](/img/manual-english-editing-constrain-layer.png)
+![Screenshot: Editing Constrain Layer](/img/manual-english-editing-constrain-layer.png)
 
 Clicking on the item **`+ New geo-constraint`** will open a modal window which will allow you to **define the polygonal layer** (among those present in the project) **on which the constraint itself must be based**.
 
@@ -142,19 +142,19 @@ In the form it is possible to specify whether this filter will act at the level:
  * editing only
  * in both cases
 
-![](/img/manual-english-geo-constrain-layer-init.png)
+![Screenshot: Geo Constrain Layer Init](/img/manual-english-geo-constrain-layer-init.png)
 
 
-Once the layer has been defined, the constraint will appear in the list and can be parameterized using the **Rules icon** ![](/img/manual-english-icon-constraints-setting.png)
+Once the layer has been defined, the constraint will appear in the list and can be parameterized using the **Rules icon** ![Icon: Constraints Setting](/img/manual-english-icon-constraints-setting.png)
 
-Clicking on this icon will open a modal window which, by pressing the green button ![](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.
+Clicking on this icon will open a modal window which, by pressing the green button ![Button: Add](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.
 
 The individual rules must be defined via  the **`Provider's language`** or the **`SQL dialect Rules`** associated with the format of the geo-constraints layer (es. use standard SQL if your geo-constraint layer is a PostGis layer)
 
 The single rules must refer to the layer’s attributes and values.
 
-![](/img/manual-english-editing-geoconstrain-setting.png)
+![Screenshot: Editing Geoconstrain Setting](/img/manual-english-editing-geoconstrain-setting.png)
 
 In the alphanumeric constraints list you can see a summary of the setted rules.
 
-![](/img/manual-english-editing-geoconstrain-layer-summary.png)
+![Screenshot: Editing Geoconstrain Layer Summary](/img/manual-english-editing-geoconstrain-layer-summary.png)

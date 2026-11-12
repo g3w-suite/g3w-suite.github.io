@@ -9,7 +9,7 @@ The rendering style associated with the individual layers is replicated autonomo
 
 The suite allows the switching on/off of the individual categories linked to the various simbolgy methods (categorized, graduated, by rules …).
 
-![](/img/manual-english-g3wsuite-simbology-onoff.png)
+![Screenshot: G3W-SUITE Simbology Onoff](/img/manual-english-g3wsuite-simbology-onoff.png)
 
 If external SVG icons are used (added to the basic ones of QGIS, via the **`Settings -> Options -> System -> SVG paths`**), these must be uploaded to the server (through the **`File Manager`** tool) in order to be used by QGIS Server.
 
@@ -18,15 +18,15 @@ In the installation procedure of the G3W-SUITE application, an **`svg`** named d
 
 Within this directory it is therefore possible to store SVG icons, also organized in subdirecory.
 
-The **`Configurations icon`** ![](/img/manual-english-iconconfiguration.png), located in the upper right corner of the **Administration Panel**, allows you to access a menu that includes the **`File Manager`** item.
+The **`Configurations icon`** ![Icon: Configuration](/img/manual-english-iconconfiguration.png), located in the upper right corner of the **Administration Panel**, allows you to access a menu that includes the **`File Manager`** item.
 
-![](/img/manual-english-g3wclient-icon-config.png)
+![Icon: G3wclient Config](/img/manual-english-g3wclient-icon-config.png)
 
-![](/img/manual-english-g3wsuite-administration-configuration-menu.png)
+![Screenshot: G3W-SUITE Administration Configuration Menu](/img/manual-english-g3wsuite-administration-configuration-menu.png)
 
 Through this tool it is possible to manage SVG icons on the server in a simple and intuitive way.
 
-![](/img/manual-english-g3wsuite-administration-file-manager.png)
+![Screenshot: G3W-SUITE Administration File Manager](/img/manual-english-g3wsuite-administration-file-manager.png)
 
 The SVG folder on the server must reflect the structure in any subfolders present locally.
 
@@ -50,7 +50,7 @@ It will be possible to manage the styles associated with a layer from the Admini
 
 The display order of a layer's attribute table fields is inherited from the suite.
 
- ![](/img/manual-english-qgis-attribute-table-order.png)
+ ![Screenshot: QGIS Attribute Table Order](/img/manual-english-qgis-attribute-table-order.png)
 
 ### Definition of the fields that can be consulted for each layer
 Within the QGIS project it is also possible to define, for each layer, which fields are available following query on the WebGis service.
@@ -63,7 +63,7 @@ The last column (**Configuration**) allows you to define:
  * whether the field is available as a search object (this setting is not set by G3W-SUITE)
  * whether the field is exposed in the **WMS** service and, therefore, in the WebGis service
  * whether the field is exposed in the **WFS** service, if enabled
- ![](/img/manual-english-qgislayerproperties-wmsfields.png)
+ ![Screenshot: Qgislayerproperties Wmsfields](/img/manual-english-qgislayerproperties-wmsfields.png)
 
 
 ### Definition of the attribute display form
@@ -92,7 +92,7 @@ Time series functionality works on both vector and raster data, even in multi-la
 
 Time setting on vector data is limited to the **`Single Field with Date/Time`** case
 
-![](/img/manual-english-qgislayerproperties-displayform-relations.png)
+![Screenshot: Qgislayerproperties Displayform Relations](/img/manual-english-qgislayerproperties-displayform-relations.png)
 
 
 
@@ -117,7 +117,7 @@ Following queries at the cartographic client level, we will have different behav
  * **image**: preview display in the form, click on the preview to display the image in real size
  * **web link or other multimedia file**: display of an **Open** orange button to allow consultation of the content
 
- ![](/img/manual-english-qgis-form-attribute.png)
+ ![Screenshot: QGIS Form Attribute](/img/manual-english-qgis-form-attribute.png)
 
 
- ![](/img/manual-english-qgislayerproperties-displayform.png)
+ ![Screenshot: Qgislayerproperties Displayform](/img/manual-english-qgislayerproperties-displayform.png)

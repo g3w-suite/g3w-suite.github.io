@@ -23,7 +23,7 @@ This title will be used at the G3W-SUITE application level to uniquely identify 
 
 **We advise against using special characters, or numbers in the project name.**
 
-![](/img/manual-english-projecttitle.png)
+![Screenshot: Projecttitle](/img/manual-english-projecttitle.png)
 
 ### Data sources
 
@@ -40,7 +40,7 @@ The option **`Automatically create transaction group where possible`** is automa
 See [dedicated paragraph](settings#g3w-client-search-endpoint)
 
 
-![](/img/manual-english-datasources.png)
+![Screenshot: Datasources](/img/manual-english-datasources.png)
 
 ### QGIS Server
 
@@ -51,14 +51,14 @@ This information, together with info about the structure of the attribute tables
 
 See also the [client metadata section](client-tools-and-toc.md#metadata).
 
-![](/img/manual-english-qgisservercapabilities.png)
+![Screenshot: Qgisservercapabilities](/img/manual-english-qgisservercapabilities.png)
 
 ##### Capabilities WMS - Advertised extent
 **In this section it is possible to define the `geographical extension` displayed when the WebGis service starts.**
 
 To define it, set the desired geographical view on the map and then click on the **'Use Current Canvas Extent'** button.
 
-![](/img/manual-english-qgisserversetmapexpetent.png)
+![Screenshot: Qgisserversetmapexpetent](/img/manual-english-qgisserversetmapexpetent.png)
 
 ##### WMS Capabilities - CSR restrictions
 **In this section it is possible to define the `projection systems` for which the project is available in relation to `OGC services`.**
@@ -67,19 +67,19 @@ It is clearly necessary to insert the projection system on which the project was
 
 Other geographic reference systems can be implemented by clicking on the **'+'** button and choosing from the list of reference systems.
 
-![](/img/manual-english-qgisserversrisrestriction.png)
+![Screenshot: Qgisserversrisrestriction](/img/manual-english-qgisserversrisrestriction.png)
 
 ##### Capabilities WMS - Exclude layouts
 **In this section it is possible to `exclude some of the print layouts` that are associated with the cartographic project from the availability of the WebGis service.**
 
-![](/img/manual-english-qgisserverexludecompositions.png)
+![Screenshot: Qgisserverexludecompositions](/img/manual-english-qgisserverexludecompositions.png)
 
 ##### Capabilities WMS - General aspects
 Two further aspects are manageable with regard to WMS capabilities
  * in general it is recommended to check **`use the layer ids as names`** option
  * the option **`Add geometry to feature response`** must be checked to activate the **zoom to the features** on the WebGis service
 
-![](/img/manual-english-qgisservergeneralaspects.png)
+![Screenshot: Qgisservergeneralaspects](/img/manual-english-qgisservergeneralaspects.png)
 
 ##### WMTS Capabilities
 **In this section it is possible to define which `layers are exposed as WMTS services` defining the various options**
@@ -89,7 +89,7 @@ Two further aspects are manageable with regard to WMS capabilities
 
 It is sufficient to check only the **`Published`** column
 
- ![](/img/manual-english-qgisservergeneralaspectswfs.png)
+ ![Screenshot: Qgisservergeneralaspectswfs](/img/manual-english-qgisservergeneralaspectswfs.png)
  
  ##### WCS Capabilities
 **In this section it is possible to define which `rasters are exposed as WCS services`**
@@ -139,7 +139,7 @@ The suite also manages **relations based on multiple keys**.
 
 **ATTENTION:** to correctly manage these types of relations it is NECESSARY to insert the reference to the relations in the customized form
 
-![](/img/manual-english-qgislayerproperties-displayform-relations.png)
+![Screenshot: Qgislayerproperties Displayform Relations](/img/manual-english-qgislayerproperties-displayform-relations.png)
 
 
 ### Embedded project

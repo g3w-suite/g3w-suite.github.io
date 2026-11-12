@@ -1,114 +1,50 @@
 <main id="main-content">
 
-  <!-- Hero -->
-  <section class="hero hero--split">
-    <div class="container">
-      <div class="hero__content">
-        <span class="section-label">Open Source WebGIS</span>
+**Open Source WebGIS**
 
 # {{t 'Publish your QGIS projects on the Web'}}
 
-        <p class="hero__subtitle">{{t 'Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.'}}</p>
-        <div class="btn-group">
-          <a class="btn btn--primary" href="/{{t 'en'}}/changelog/v3.11/">{{t 'What\'s new in v3.11'}}</a>
-          <a class="btn btn--light" href="/{{t 'en'}}/demo/#demo-3-11">{{t 'Try the demo'}}</a>
-          <a class="btn btn--github" href="https://github.com/g3w-suite" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-      <div class="hero__media">
-        <img src="/img/{{#it}}site-g3w-suite-homepage-italian.jpg{{/it}}{{#en}}homepage_eng2.png{{/en}}" alt="{{t 'Publishing QGIS on web'}}" loading="eager">
-      </div>
-    </div>
-  </section>
+{{t 'Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.'}}
 
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Get started in minutes'}}</span>
+[{{t 'What\'s new in v3.11'}}](/{{t 'en'}}/changelog/v3.11/ "primary-button") [{{t 'Try the demo'}}](/{{t 'en'}}/demo/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
 
-## {{t 'An open-source framework for the comprehensive management of your geospatial infrastructure'}}
+![{{t 'Publishing QGIS on web'}}](/img/{{#it}}site-g3w-suite-homepage-italian.jpg{{/it}}{{#en}}homepage_eng2.png{{/en}})
+
+## **{{t 'Get started in minutes'}}** {{t 'An open-source framework for the comprehensive management of your geospatial infrastructure'}}
 
 {{t 'It offers more than just the publication of WebGIS services; it also facilitates the development of collaborative mapping management systems, data analysis via interactive charts and temporal animations, online geospatial processing, metadata exposure as a CSW (Catalog Service for the Web) service, and much more.'}}
 
 {{t 'All of this is built upon full integration with the open-source geospatial application QGIS.'}}
 
-      </div>
-   </div>
-  </section>
-
-  <!-- 4 steps -->
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Get started in minutes'}}</span>
-
-## {{t 'Publish your QGIS project in 4 steps'}}
+## **{{t 'Get started in minutes'}}** {{t 'Publish your QGIS project in 4 steps'}}
 
 {{t 'No QGIS plugin needed: upload your .qgs or .qgz file and your WebGIS service is immediately ready.'}}
 
-      </div>
-      <div class="grid-2 grid--top">
-        <ol class="steps">
-          <li class="step">
-            <div class="step-header">
-              <span class="step__number">1</span>
-              <h3 class="step__title">{{t 'Create your QGIS project'}}</h3>
-            </div>
-            <div class="step__body">
-              <p>{{t 'Create your QGIS cartographic project by using your data'}}</p>
-              <p>{{t 'Personalise your project by defining project structure, join and 1:N relations, editing form and widgets, interactive charts (DataPlotly integration), print layout and every other graphic and functional feature'}}</p>
-            </div>
-          </li>
-          <li class="step">
-            <div class="step-header">
-              <span class="step__number">2</span>
-              <h3 class="step__title">{{t 'Synchronise your geographic data'}}</h3>
-            </div>
-            <div class="step__body">
-              <p>{{t 'Upload and upgrade your data in your favourite format (SQLite/SpatiaLite, GeoPackage, Shapefile, Virtual layer)'}}</p>
-              <p>{{t 'Use PostGreSQL/PostGis, Oracle Spatial and MSSQL DB data'}}</p>
-            </div>
-          </li>
-          <li class="step">
-            <div class="step-header">
-              <span class="step__number">3</span>
-              <h3 class="step__title">{{t 'Publish your QGIS project'}}</h3>
-            </div>
-            <div class="step__body">
-              <p>{{t 'Access your own web portal to publish your projects as WebGis service'}}</p>
-            </div>
-          </li>
-          <li class="step">
-            <div class="step-header">
-              <span class="step__number">4</span>
-              <h3 class="step__title">{{t 'Manage access and activate extra functions'}}</h3>
-            </div>
-            <div class="step__body">
-              <p>{{t 'Manage your projects independently by defining users, editing permissions and constraints, interactive graphics, search methods and activating the most useful features for your management system'}}</p>
-            </div>
-          </li>
-        </ol>
-        <div class="steps-media">
-          <img src="/img/site-webgis-management-preview.jpg" alt="{{t 'WebGIS management'}}" class="img-rounded img-shadow-sm" loading="lazy">
-          <img src="/img/site-webgis-client-preview.jpg" alt="{{t 'Map client'}}" class="img-rounded img-shadow-sm" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
+1. **{{t 'Create your QGIS project'}}**
 
-  <!-- From desktop to web -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="grid-2 grid--center">
-        <div>
-          <img src="/img/{{#it}}site-italian-webgis-editing-preview.jpg{{/it}}{{#en}}site-web-cartographic-management-preview.jpg{{/en}}" alt="{{t 'Web cartographic management with G3W-Suite'}}" class="img-rounded-lg img-shadow" loading="lazy">
-        </div>
-        <div>
+   {{t 'Create your QGIS cartographic project by using your data'}}
+
+   {{t 'Personalise your project by defining project structure, join and 1:N relations, editing form and widgets, interactive charts (DataPlotly integration), print layout and every other graphic and functional feature'}}
+
+2. **{{t 'Synchronise your geographic data'}}**
+
+   {{t 'Upload and upgrade your data in your favourite format (SQLite/SpatiaLite, GeoPackage, Shapefile, Virtual layer)'}}
+
+   {{t 'Use PostGreSQL/PostGis, Oracle Spatial and MSSQL DB data'}}
+
+3. **{{t 'Publish your QGIS project'}}**
+
+   {{t 'Access your own web portal to publish your projects as WebGis service'}}
+
+4. **{{t 'Manage access and activate extra functions'}}**
+
+   {{t 'Manage your projects independently by defining users, editing permissions and constraints, interactive graphics, search methods and activating the most useful features for your management system'}}
+
+![{{t 'WebGIS management'}}](/img/site-webgis-management-preview.jpg) ![{{t 'Map client'}}](/img/site-webgis-client-preview.jpg)
 
 ## {{t 'From desktop to web in a few clicks'}}
+
+![{{t 'Web cartographic management with G3W-Suite'}}](/img/{{#it}}site-italian-webgis-editing-preview.jpg{{/it}}{{#en}}site-web-cartographic-management-preview.jpg{{/en}})
 
 {{t 'Publish a QGIS project as WebGIS while keeping styles, symbols, editing forms and print layouts, without reconfiguring the project.'}}
 
@@ -116,112 +52,52 @@
 
 {{t 'Web editing supports collaborative workflows and field data collection, including mobile and offline use cases.'}}
 
-          <div class="btn-group btn-group--left mt-3">
-            <a class="btn btn--primary" href="{{#en}}https://v310.g3wsuite.it/it/#/en/{{/en}}{{#it}}https://v311.g3wsuite.it{{/it}}" target="_blank" rel="noopener">{{t 'Try the demo'}}</a>
-            <a class="btn btn--outline" href="/{{t 'en'}}/download/#quick-start">Quick Start</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+[{{t 'Try the demo'}}]({{#en}}https://v310.g3wsuite.it/it/#/en/{{/en}}{{#it}}https://v311.g3wsuite.it{{/it}} "primary-button") [Quick Start](/{{t 'en'}}/download/#quick-start "outline-button")
 
-  <!-- Social proof -->
-  <section id="clienti" class="section">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Validated in production'}}</span>
-
-## {{t 'Used by public bodies, companies and universities'}}
+## <span id="clienti"></span>**{{t 'Validated in production'}}** {{t 'Used by public bodies, companies and universities'}}
 
 {{t 'From territorial planning to network management, with active projects in different operational contexts.'}}
 
-      </div>
-      <div class="sponsors-grid sponsors-grid--compact">
-        <a class="sponsor-logo" href="{{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan Area of Bari'}}"><img src="/img/site-bari.png" alt="{{t 'Metropolitan Area of Bari'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/" target="_blank" rel="noopener" aria-label="{{t 'Metropolitan City of Rome'}}"><img src="/img/site-citta-metro-roma.jpg" alt="{{t 'Metropolitan City of Rome'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/" target="_blank" rel="noopener" aria-label="{{t 'Friuli Venezia Giulia Landscape Plan'}}"><img src="/img/site-fvg.jpg" alt="{{t 'Friuli Venezia Giulia Landscape Plan'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://gis.comune.trento.it/it/#map=groups" target="_blank" rel="noopener" aria-label="{{t 'City of Trento'}}"><img src="/img/site-trento.png" alt="{{t 'City of Trento'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://sit.parco.gran-paradiso.g3wsuite.it" target="_blank" rel="noopener" aria-label="{{t 'Gran Paradiso National Park'}}"><img src="/img/site-pngp.jpg" alt="{{t 'Gran Paradiso National Park'}}" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://www.suez.com" target="_blank" rel="noopener" aria-label="Suez"><img src="/img/site-suez.png" alt="Suez" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://www.planetek.it" target="_blank" rel="noopener" aria-label="Planetek Italia"><img src="/img/site-planetek-logo.jpg" alt="Planetek Italia" loading="lazy"></a>
-        <a class="sponsor-logo" href="https://www.polito.it" target="_blank" rel="noopener" aria-label="Politecnico di Torino"><img src="/img/site-polito.jpg" alt="Politecnico di Torino" loading="lazy"></a>
-      </div>
-      <div class="btn-group mt-3">
-        <a class="btn btn--outline" href="/{{t 'en'}}/sponsor/">{{t 'See all sponsors and contributors'}}</a>
-      </div>
-    </div>
-  </section>
+- [![{{t 'Metropolitan Area of Bari'}}](/img/site-bari.png)]({{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it)
+- [![{{t 'Metropolitan City of Rome'}}](/img/site-citta-metro-roma.jpg)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
+- [![{{t 'Friuli Venezia Giulia Landscape Plan'}}](/img/site-fvg.jpg)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
+- [![{{t 'City of Trento'}}](/img/site-trento.png)](https://gis.comune.trento.it/it/#map=groups)
+- [![{{t 'Gran Paradiso National Park'}}](/img/site-pngp.jpg)](https://sit.parco.gran-paradiso.g3wsuite.it)
+- [![Suez](/img/site-suez.png)](https://www.suez.com)
+- [![Planetek Italia](/img/site-planetek-logo.jpg)](https://www.planetek.it)
+- [![Politecnico di Torino](/img/site-polito.jpg)](https://www.polito.it)
 
-  <!-- Main use cases -->
-  <section id="comefunziona" class="section section--alt">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Use cases'}}</span>
+[{{t 'See all sponsors and contributors'}}](/{{t 'en'}}/sponsor/ "outline-button")
 
-## {{t 'One platform, three operational use cases'}}
+## <span id="comefunziona"></span>**{{t 'Use cases'}}** {{t 'One platform, three operational use cases'}}
 
 {{t 'WebGIS publishing, public-sector interoperability and advanced geospatial analysis: three paths based on project needs.'}}
-
-      </div>
-      <div class="feature-list">
-        <article class="feature-item">
-
 ### {{t 'WebGIS publishing and management'}}
 
 {{t 'Integrated map client and admin panel for multi-user projects, editing workflows and permission management.'}}
 
-          <div class="btn-group btn-group--left mt-2">
-            <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/download/#cosa">{{t 'Full feature set'}}</a>
-          </div>
-        </article>
-        <article class="feature-item feature-item--blue">
+[{{t 'Full feature set'}}](/{{t 'en'}}/download/#cosa "outline-small-button")
 
 ### {{t 'Interoperability for public administration'}}
 
 {{t 'Supports digital transition scenarios with dedicated integrations and PDND workflows.'}}
 
-          <div class="btn-group btn-group--left mt-2">
-            <a class="btn btn--outline btn--sm" href="https://gis3w.it/webgis-pubbliche-amministrazioni/" target="_blank" rel="noopener">{{t 'Public sector solutions'}}</a>
-            <a class="btn btn--outline btn--sm" href="https://developers.italia.it/it/pdnd/" target="_blank" rel="noopener">PDND</a>
-          </div>
-        </article>
-        <article class="feature-item">
+[{{t 'Public sector solutions'}}](https://gis3w.it/webgis-pubbliche-amministrazioni/ "outline-small-button") [PDND](https://developers.italia.it/it/pdnd/ "outline-small-button")
 
 ### {{t 'QGIS Processing in the browser'}}
 
 {{t 'Run QGIS Processing models directly from the web client to integrate analysis into operational workflows.'}}
 
-          <div class="btn-group btn-group--left mt-2">
-            <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/model-builder-processing/">Processing API</a>
-            <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/changelog/v3.11/">Changelog 3.11</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+[Processing API](/{{t 'en'}}/model-builder-processing/ "outline-small-button") [Changelog 3.11](/{{t 'en'}}/changelog/v3.11/ "outline-small-button")
 
-  <!-- Ecosystem -->
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">{{t 'Open Source Ecosystem'}}</span>
-
-## {{t 'Partnerships and community supporting the project'}}
-
-      </div>
-      <div class="grid-2 grid--top home-ecosystem">
-        <div class="partnership-banner">
-          <img src="/img/site-mergin-maps-logo.jpg" alt="MerginMaps" loading="lazy">
-          <div>
-
+## **{{t 'Open Source Ecosystem'}}** {{t 'Partnerships and community supporting the project'}}
 ### G3W-SUITE + Mergin Maps
+
+![Mergin Maps](/img/site-mergin-maps-logo.jpg)
 
 {{t 'Field data collection and WebGIS publishing in one workflow, from survey to sharing.'}}
 
-            <a class="btn btn--primary" href="/{{t 'en'}}/merginmaps/">{{t 'Discover the solutions'}}</a>
-          </div>
-        </div>
-        <article class="feature-item feature-item--blue">
+[{{t 'Discover the solutions'}}](/{{t 'en'}}/merginmaps/ "primary-button")
 
 ### {{t 'Main contributors'}}
 
@@ -232,13 +108,9 @@
 - francesco Boccacci (@volterra79)
 - Alessandro Pasotti (@elpaso)
 
-          <div class="btn-group btn-group--left mt-2">
-            <a class="btn btn--outline btn--sm" href="/{{t 'en'}}/sponsor/">{{t 'Sponsors and contributors'}}</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+[{{t 'Sponsors and contributors'}}](/{{t 'en'}}/sponsor/ "outline-small-button")
+
+
 </main>
 
 <script type="application/json" data-i18n>

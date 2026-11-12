@@ -157,8 +157,8 @@ Then('translated text is rendered for each language', function () {
   assert.equal(pages.it('meta[property="og:title"]').attr('content'), 'G3W-Suite - Open Source WebGIS da QGIS');
   assert.equal(pages.it('meta[property="og:description"]').attr('content'), 'Pubblica i tuoi progetti QGIS come servizi WebGIS con un clic. Open source, licenza MPL.');
   assert.equal(pages.it('meta[property="og:type"]').attr('content'), 'website');
-  assert.equal(pages.it('.section-intro .section-label').first().text(), 'Inizia in pochi minuti');
-  assert.equal(pages.en('.section-intro .section-label').first().text(), 'Get started in minutes');
+  assert.equal(pages.it('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Inizia in pochi minuti');
+  assert.equal(pages.en('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Get started in minutes');
   assert.equal(readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('head title').text(), 'Demo - G3W-Suite');
   assert.equal(readPage(path.join(staticDir, 'en', 'demo', 'index.html')).$('head title').text(), 'Demo - G3W-Suite');
   assert.equal(
@@ -216,6 +216,44 @@ Then('both languages are generated from shared page templates', function () {
       const page = readPage(file).$;
       assert.equal(page('main#main-content').length, 1, `${lang} ${name} page must keep its main content`);
       assert.equal(page('main pre code').length, 0, `${lang} ${name} page must not render HTML as a code block`);
+      if (name === 'demo') {
+        const sections = page('main > section.section');
+        const demoCards = page('main > section.demo-card');
+        assert.equal(sections.length, 4, `${lang} demo page must create sections from headings`);
+        assert.equal(demoCards.length, 3, `${lang} demo cards must be generated sections`);
+        assert.equal(page('ul.demo-grid, li.demo-card').length, 0, `${lang} demo cards must not use list markup`);
+        for (const id of ['demo-3-11', 'demo-3-10']) {
+          assert.equal(page(`#${id}`).length, 1, `${lang} demo page must preserve #${id}`);
+        }
+        assert.ok(
+          demoCards.toArray().every(section =>
+            page(section).find('h2, p').length >= 2 && page(section).find('ul > li > a').length > 0),
+          `${lang} demo cards must keep their heading, description, and actions`
+        );
+        const content = sections.eq(3).children('.container');
+        assert.equal(content.children('h2').length, 1, `${lang} demo content section must start with its h2`);
+        const nestedSections = content.children('section.section');
+        assert.equal(nestedSections.length, 2, `${lang} demo h3 headings must create nested sections`);
+        assert.ok(
+          nestedSections.toArray().every(section => page(section).children('h3').length === 1),
+          `${lang} demo nested sections must each start with an h3`
+        );
+      }
+      if (name === 'index' || name === 'modules') {
+        const githubButtons = page('a.btn--github');
+        assert.ok(githubButtons.length, `${lang} ${name} page must keep its GitHub buttons`);
+        assert.equal(
+          page('a.btn--github svg use[href="/icons.svg#github"]').length,
+          githubButtons.length,
+          `${lang} ${name} page must reuse the GitHub icon sprite`
+        );
+      }
+      if (name === 'modules') {
+        assert.ok(
+          page('main > section.section').first().find('ul > li').length,
+          `${lang} modules page must render its feature tags as a list`
+        );
+      }
     }
   }
   assert.deepEqual(
@@ -235,6 +273,61 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(fs.existsSync(path.join(staticDir, 'it', 'modules', 'index.html')), 'Italian modules page must use /it/modules/');
   assert.ok(!fs.existsSync(path.join(staticDir, 'it', 'moduli')), 'Italian modules page must not use /it/moduli/');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
+});
+
+Then('site page sources contain only the allowed HTML elements', function () {
+  const sourceDir = path.resolve('src');
+  const pages = ['demo', 'download', 'index', 'merginmaps', 'model-builder-processing', 'modules', 'sponsor'];
+  for (const page of pages) {
+    const file = path.join(sourceDir, `${page}.md`);
+    const source = fs.readFileSync(file, 'utf8');
+    assert.equal((source.match(/<main\b[^>]*>/gi) || []).length, 1, `${file}: expected one main element`);
+    for (const [opening] of source.matchAll(/<script\b[^>]*>/gi)) {
+      assert.match(opening, /^<script type="application\/json" data-i18n(?:-meta)?>$/i, `${file}: only translation scripts are allowed`);
+    }
+
+    const markdown = source
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '')
+      .replace(/<\/?main\b[^>]*>/gi, '')
+      .replace(/^(#{1,6}\s.*)$/gm, heading => heading.replace(/<span id="[^"]+"><\/span>/g, ''));
+    assert.doesNotMatch(markdown, /<\/?[a-z][^>]*>/i, `${file}: use Markdown instead of other HTML elements`);
+  }
+});
+
+Then('homepage steps keep titles and descriptions in separate paragraphs', function () {
+  for (const lang of languages) {
+    const home = readPage(path.join(staticDir, lang, 'index.html')).$;
+    const steps = home('main > section > .container > ol > li');
+    assert.equal(steps.length, 4, `${lang}: expected four homepage steps`);
+    steps.each((index, element) => {
+      const step = home(element);
+      assert.equal(step.children('p').length, index < 2 ? 3 : 2, `${lang}: step ${index + 1} must preserve its paragraphs`);
+      assert.equal(step.children('p').first().children('strong').length, 1, `${lang}: step ${index + 1} must have a separate title`);
+      assert.equal(step.children().not('p').length, 0, `${lang}: step descriptions must stay inside their list item`);
+    });
+  }
+});
+
+Then('generated buttons retain their styles and external-link behavior', function () {
+  for (const lang of languages) {
+    const home = readPage(path.join(staticDir, lang, 'index.html')).$;
+    assert.ok(home('main a.btn--primary').length, `${lang} homepage must render primary buttons`);
+    assert.ok(home('main a.btn--light').length, `${lang} homepage must render light buttons`);
+    assert.ok(home('main a.btn--outline.btn--sm').length, `${lang} homepage must render small outline buttons`);
+    assert.equal(home('main a.btn--github svg use[href="/icons.svg#github"]').length, home('main a.btn--github').length);
+    assert.equal(home('main a[title$="-button"]').length, 0, `${lang} homepage must consume button markers`);
+
+    const download = readPage(path.join(staticDir, lang, 'download', 'index.html')).$;
+    assert.ok(download('main a.btn--primary').length, `${lang} download page must render primary buttons`);
+    assert.ok(download('main a.btn--outline').length, `${lang} download page must render outline buttons`);
+    assert.equal(download('main a[title$="-button"]').length, 0, `${lang} download page must consume button markers`);
+
+    const model = readPage(path.join(staticDir, lang, 'model-builder-processing', 'index.html')).$;
+    const demoButton = model('main a.btn--primary');
+    assert.equal(demoButton.attr('target'), '_blank', `${lang} external Markdown buttons must open in a new tab`);
+    assert.equal(demoButton.attr('rel'), 'noopener', `${lang} external Markdown buttons must be safe`);
+  }
 });
 
 Then('page-local translations are valid and used by the Italian build', function () {
@@ -330,6 +423,27 @@ Then('every page declares its language, metadata, and main structure', function 
     expect($('body > main#main-content').length === 1, 'missing main#main-content');
     expect($('body > footer').length === 1, 'missing footer');
     expect(!/<!--#include\b/.test(html) && !/\{\{(?:langRoot|siteRoot|itPage|enPage)\}\}/.test(html), 'unexpanded component');
+    const main = $('body > main#main-content');
+    const heading = main.find('h1').first();
+    for (const section of main.children('section').toArray()) {
+      expect($(section).children('.container').length === 1, 'main section must have one container');
+    }
+    const pagePath = path.relative(path.join(staticDir, lang), file).split(path.sep).join('/');
+    if (!pagePath.startsWith('changelog/')) {
+      expect(main.find('hr:not([style])').length === 0, 'Markdown section separators must be compiled');
+    }
+    if (heading.length && !main.hasClass('docs-content')) {
+      const homepage = path.relative(path.join(staticDir, lang), file) === 'index.html';
+      expect(
+        homepage ? !heading.closest('.page-header').length : heading.closest('.page-header').length === 1,
+        homepage ? 'homepage h1 must remain in the hero' : 'main h1 must use the generated page header'
+      );
+    }
+    if (path.relative(path.join(staticDir, lang), file) === path.join('download', 'index.html')) {
+      for (const id of ['cosa', 'quick-start']) {
+        expect(main.find(`[id="${id}"]`).length === 1, `missing section anchor #${id}`);
+      }
+    }
   });
 });
 
@@ -362,6 +476,42 @@ Then('every published site image is referenced by compiled code', function () {
     .map(file => path.relative(imageDir, file).split(path.sep).join('/'))
     .sort();
   assert.deepEqual(unreferenced, [], `unreferenced images: ${unreferenced.join(', ')}`);
+});
+
+Then('every generated image uses lazy loading', function () {
+  const missing = [];
+  for (const file of htmlFiles(staticDir)) {
+    const { $ } = readPage(file);
+    $('img').each((_, image) => {
+      if ($(image).attr('loading') !== 'lazy') {
+        missing.push(`${path.relative(staticDir, file)}: ${$(image).attr('src') || '<missing src>'}`);
+      }
+    });
+  }
+  assert.deepEqual(missing, [], `generated images without loading="lazy":\n${missing.join('\n')}`);
+});
+
+Then('every generated image has non-empty alternative text', function () {
+  const missing = [];
+  let count = 0;
+  for (const file of htmlFiles(staticDir)) {
+    const { $ } = readPage(file);
+    let pageCount = 0;
+    $('img').each((_, image) => {
+      if (!$(image).attr('alt')?.trim()) {
+        pageCount += 1;
+      }
+    });
+    if (pageCount) {
+      count += pageCount;
+      missing.push(`${path.relative(staticDir, file)} (${pageCount})`);
+    }
+  }
+  assert.equal(
+    missing.length,
+    0,
+    `generated images with missing alt text: ${count} images across ${missing.length} pages\n${missing.join('\n')}`
+  );
 });
 
 Then('every page links consistently to the Italian and English versions', function () {
