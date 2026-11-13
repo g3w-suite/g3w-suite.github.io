@@ -78,14 +78,14 @@ Gis3W provides support for Mergin Maps, the field data collection solution based
 
 GitHub profiles of project contributors.
 
-- ![Alessandro Pasotti](https://github.com/elpaso.png?size=200) **Alessandro Pasotti** [@elpaso](https://github.com/elpaso)
-- ![Leonardo Lami](https://github.com/leolami.png?size=200) **Leonardo Lami** [@leolami](https://github.com/leolami)
-- ![Leonardo Lami](https://github.com/leonardolami.png?size=200) **Leonardo Lami** [@leonardolami](https://github.com/leonardolami)
-- ![Andrea Antonello](https://github.com/moovida.png?size=200) **Andrea Antonello** [@moovida](https://github.com/moovida)
-- ![Matteo Tosi](https://github.com/Raruto.png?size=200) **Matteo Tosi** [@Raruto](https://github.com/Raruto)
-- ![Tudor Barascu](https://github.com/tudorbarascu.png?size=200) **Tudor Barascu** [@tudorbarascu](https://github.com/tudorbarascu)
-- ![Francesco Boccacci](https://github.com/volterra79.png?size=200) **Francesco Boccacci** [@volterra79](https://github.com/volterra79)
 - ![Walter Lorenzetti](https://github.com/wlorenzetti.png?size=200) **Walter Lorenzetti** [@wlorenzetti](https://github.com/wlorenzetti)
+- ![Francesco Boccacci](https://github.com/volterra79.png?size=200) **Francesco Boccacci** [@volterra79](https://github.com/volterra79)
+- ![Matteo Tosi](https://github.com/Raruto.png?size=200) **Matteo Tosi** [@Raruto](https://github.com/Raruto)
+- ![Leonardo Lami](https://github.com/leonardolami.png?size=200) **Leonardo Lami** [@leonardolami](https://github.com/leonardolami)
+- ![Alessandro Pasotti](https://github.com/elpaso.png?size=200) **Alessandro Pasotti** [@elpaso](https://github.com/elpaso)
+- ![Andrea Antonello](https://github.com/moovida.png?size=200) **Andrea Antonello** [@moovida](https://github.com/moovida)
+- ![Tudor Barascu](https://github.com/tudorbarascu.png?size=200) **Tudor Barascu** [@tudorbarascu](https://github.com/tudorbarascu)
+- ![Leonardo Lami](https://github.com/leolami.png?size=200) **Leonardo Lami** [@leolami](https://github.com/leolami)
 
 <script type="application/json" data-i18n>
   {
