@@ -1856,98 +1856,6 @@ section + .section--dark { border-top: none; }
   margin-bottom: 2rem;
   border-radius: 0 var(--radius) var(--radius) 0;
 }
-.page-model-builder-processing main > .page-header { padding-bottom: .5rem; border-bottom: 0; }
-.page-model-builder-processing main > section:first-of-type {
-  padding: 0;
-  background: var(--color-light);
-  border-bottom: 1px solid var(--color-border);
-  text-align: center;
-}
-.page-model-builder-processing main > section:first-of-type > .container {
-  max-width: none;
-  padding: .5rem 1rem 2rem;
-}
-.page-model-builder-processing main > section:first-of-type p { margin: 0; color: var(--color-muted); font-size: .9rem; }
-.page-model-builder-processing main > section > .container > section { margin-bottom: 2rem; }
-.page-model-builder-processing main > section > .container > section:has(> p:has(> img)) {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1rem 2rem;
-  align-items: start;
-}
-.page-model-builder-processing main > section > .container > section > h3 { grid-column: 1 / -1; }
-.page-model-builder-processing main > section > .container > section > p:has(> img) { grid-column: 2; }
-.page-model-builder-processing main > section > .container > section > p:has(> img) > img {
-  width: 100%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-}
-.page-model-builder-processing main > section > .container > section > p:has(> img + img) {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-.page-model-builder-processing main > section > .container > section > :not(h3):not(p:has(> img)) { grid-column: 1; }
-.page-model-builder-processing main > section > .container > section:has(> p:has(> img + img)) {
-  grid-template-columns: 1fr;
-}
-.page-model-builder-processing main > section > .container > section:has(> p:has(> img + img)) > p:has(> img + img) { grid-column: 1; }
-.page-model-builder-processing main ol {
-  margin: .75rem 0 1rem;
-  padding-left: 1.5rem;
-  list-style: decimal;
-}
-.page-model-builder-processing main ol li { margin-bottom: .35rem; }
-.page-model-builder-processing main p:has(> img + img) {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-.page-model-builder-processing main p:has(> img + img) > img {
-  width: 100%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-}
-.page-model-builder-processing main > section:last-of-type > .container { text-align: center; }
-
-/* ── 23. Mergin Maps / Partnership page ──────────────────────── */
-.mm-header { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; }
-.mm-header img { max-width: 300px; }
-.mm-features { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
-.page-merginmaps main > section:first-of-type > .container {
-  display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-  align-items: center;
-  gap: 0 2rem;
-}
-.page-merginmaps main > section:first-of-type > .container > p:has(> img):first-of-type {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  max-width: 380px;
-  margin: 0 auto 1.5rem;
-}
-.page-merginmaps main > section:first-of-type > .container > h2,
-.page-merginmaps main > section:first-of-type > .container > p:not(:has(> img)) { grid-column: 2; }
-.page-merginmaps main > section:first-of-type > .container > p:not(:has(> img)) { font-size: 1.05rem; color: var(--color-muted); }
-.page-merginmaps main > section:first-of-type > .container > section:has(> p:has(> img)) {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1rem 2rem;
-  align-items: start;
-  margin: 2rem 0;
-}
-.page-merginmaps main > section:first-of-type > .container > section > h3 { grid-column: 1 / -1; }
-.page-merginmaps main > section:first-of-type > .container > section > p:has(> img) { grid-column: 2; }
-.page-merginmaps main > section:first-of-type > .container > section > p:has(> img) > img { width: 100%; }
-.page-merginmaps main > section:first-of-type > .container > section > p:has(> img + img) {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-.page-merginmaps main > section:first-of-type > .container > section > :not(h3):not(p:has(> img)) { grid-column: 1; }
-.page-merginmaps .merginmaps-gallery { gap: 1rem; margin: 2rem 0; }
 
 /* ── 23b. Contributors ──────────────────────────────────────── */
 .page-sponsor main > section:nth-of-type(5) > .container > ul {
@@ -2083,12 +1991,6 @@ section + .section--dark { border-top: none; }
   .page-sponsor main > section:nth-of-type(3) > .container > section > h3,
   .page-sponsor main > section:nth-of-type(3) > .container > section > p:has(> img),
   .page-sponsor main > section:nth-of-type(3) > .container > section > :not(h3):not(p:has(> img)) { grid-column: 1; }
-  .page-model-builder-processing main > section > .container > section:has(> p:has(> img)) { grid-template-columns: 1fr; }
-  .page-model-builder-processing main > section > .container > section > h3,
-  .page-model-builder-processing main > section > .container > section > p:has(> img),
-  .page-model-builder-processing main > section > .container > section > :not(h3):not(p:has(> img)) { grid-column: 1; }
-  .page-model-builder-processing main p:has(> img + img),
-  .page-merginmaps main p:has(> img + img) { grid-template-columns: 1fr; }
   .page-modules main > section:nth-of-type(n+2):nth-of-type(-n+8) > .container { grid-template-columns: 1fr; }
   .page-modules main > section:nth-of-type(n+2):nth-of-type(-n+8) > .container > h2,
   .page-modules main > section:nth-of-type(n+2):nth-of-type(-n+8) > .container > p {
@@ -2102,14 +2004,6 @@ section + .section--dark { border-top: none; }
     grid-column: 1;
     grid-row: auto;
   }
-  .page-merginmaps main > section:first-of-type > .container { grid-template-columns: 1fr; text-align: center; }
-  .page-merginmaps main > section:first-of-type > .container > p:has(> img),
-  .page-merginmaps main > section:first-of-type > .container > h2,
-  .page-merginmaps main > section:first-of-type > .container > p { grid-column: 1; grid-row: auto; }
-  .page-merginmaps main > section:first-of-type > .container > section:has(> p:has(> img)) { grid-template-columns: 1fr; }
-  .page-merginmaps main > section:first-of-type > .container > section > h3,
-  .page-merginmaps main > section:first-of-type > .container > section > p:has(> img),
-  .page-merginmaps main > section:first-of-type > .container > section > :not(h3):not(p:has(> img)) { grid-column: 1; }
   .contributor-profile__hero { grid-template-columns: 1fr; text-align: center; }
   .contributor-profile__avatar { margin: 0 auto; }
 }

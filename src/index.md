@@ -86,7 +86,7 @@ Supports digital transition scenarios with dedicated integrations and PDND workf
 
 Run QGIS Processing models directly from the web client to integrate analysis into operational workflows.
 
-[Processing API](/en/model-builder-processing/ "outline-small-button") [Changelog 3.11](/en/changelog/v3.11/ "outline-small-button")
+[Processing API](/en/news/model-builder-processing/ "outline-small-button") [Changelog 3.11](/en/changelog/v3.11/ "outline-small-button")
 
 ## **Open Source Ecosystem** Partnerships and community supporting the project
 ### G3W-SUITE + Mergin Maps
@@ -95,7 +95,8 @@ Run QGIS Processing models directly from the web client to integrate analysis in
 
 Field data collection and WebGIS publishing in one workflow, from survey to sharing.
 
-[Discover the solutions](/en/merginmaps/ "primary-button")
+[Discover the solutions](/en/news/merginmaps/ "primary-button")
+[Explore the modules](/en/modules/ "outline-button")
 
 ### Main contributors
 
@@ -124,6 +125,7 @@ An active community keeps G3W-SUITE stable, up to date and continuously evolving
       "City of Trento": "Comune di Trento",
       "Create your QGIS cartographic project by using your data": "Crea il tuo progetto cartografico utilizzando i tuoi dati geografici",
       "Discover the solutions": "Scopri le soluzioni",
+      "Explore the modules": "Scopri i moduli",
       "Field data collection and WebGIS publishing in one workflow, from survey to sharing.": "Raccolta dati sul campo e pubblicazione WebGIS in un flusso unico, dal rilievo alla condivisione.",
       "Friuli Venezia Giulia Landscape Plan": "Piano Paesaggistico Regionale FVG",
       "From desktop to web in a few clicks": "Dal desktop al web in pochi clic",

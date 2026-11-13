@@ -4,7 +4,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const { marked } = require('marked');
-const { gfmHeadingId } = require('marked-gfm-heading-id');
+const { gfmHeadingId, getHeadingList } = require('marked-gfm-heading-id');
 
 marked.use(gfmHeadingId());
 
@@ -86,7 +86,15 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
     }
     if (inCodeFence) continue;
     let wholeBlockTranslated = false;
-    if (lang !== 'en' && !/^\s*\|/.test(line)) {
+    if (lang !== 'en' && /^\s*\|/.test(line)) {
+      lines[index] = line.split('|').map(cell => {
+        const leading = /^\s*/.exec(cell)[0];
+        const trailing = /\s*$/.exec(cell)[0];
+        const key = cell.slice(leading.length, cell.length - trailing.length);
+        return `${leading}${Object.hasOwn(entries, key) ? entries[key] : key}${trailing}`;
+      }).join('|');
+    }
+    if (lang !== 'en' && !wholeBlockTranslated && !/^\s*\|/.test(line)) {
       const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
       if (match && match[2] && !/[{}<>]/.test(match[2]) && Object.hasOwn(entries, match[2])) {
         lines[index] = `${match[1]}${entries[match[2]]}${match[3]}`;
@@ -343,8 +351,6 @@ function renderHomepageHero(items) {
 const sectionContainerClasses = {
   'demo.md': { 4: 'content-page' },
   'download.md': { 5: 'content-page' },
-  'merginmaps.md': { 1: 'content-page' },
-  'model-builder-processing.md': { 1: 'content-page' },
 };
 
 function renderDelimitedSections(html, page) {
@@ -408,12 +414,16 @@ function documentationFiles(dir) {
   });
 }
 
-function documentationLink(href, file, docsDir) {
+function documentationLink(href, file, docsDir, lang = 'en') {
   if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(href)) return href;
   const suffix = /([?#].*)$/.exec(href)?.[1] || '';
   const pathname = href.slice(0, href.length - suffix.length);
   if (!pathname) return href;
-  if (pathname.startsWith('/')) return href;
+  if (pathname.startsWith('/')) {
+    return pathname.startsWith('/docs/') && lang === 'it'
+      ? `/it${pathname}${suffix}`
+      : href;
+  }
 
   const target = path.resolve(path.dirname(file), decodeURIComponent(pathname));
   const relative = path.relative(docsDir, target);
@@ -423,16 +433,30 @@ function documentationLink(href, file, docsDir) {
   const page = path.join(docsDir, extension ? relative.slice(0, -extension.length) + '.md' : `${relative}.md`);
   if ((['.md', '.html', '.rst'].includes(extension) || !extension) && fs.existsSync(page)) {
     const pagePath = path.relative(docsDir, page).replace(/\\/g, '/').replace(/\.md$/, '');
+    const docsRoot = lang === 'it' ? '/it/docs' : '/docs';
     const route = pagePath === 'index'
-      ? '/docs/'
-      : `/docs/${pagePath.replace(/\/index$/, '')}/`;
+      ? `${docsRoot}/`
+      : `${docsRoot}/${pagePath.replace(/\/index$/, '')}/`;
     return `${route}${suffix}`;
   }
 
   return `/docs/${relative.replace(/\\/g, '/')}${suffix}`;
 }
 
-function documentationNavigation(index, currentPage, docsDir) {
+function addDocumentationHeadingAliases(html, sourceHeadings, localizedHeadings) {
+  const existingIds = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(([, id]) => id));
+  let headingIndex = 0;
+  return html.replace(/<h[1-6]\b[^>]*>/g, heading => {
+    const sourceId = sourceHeadings[headingIndex];
+    const localizedId = localizedHeadings[headingIndex]?.id;
+    headingIndex += 1;
+    if (!sourceId || sourceId === localizedId || existingIds.has(sourceId)) return heading;
+    existingIds.add(sourceId);
+    return `${heading}<span id="${sourceId}"></span>`;
+  });
+}
+
+function documentationNavigation(index, currentPage, docsDir, lang) {
   const groups = [];
   let group;
   for (const line of index.split(/\r?\n/)) {
@@ -444,7 +468,8 @@ function documentationNavigation(index, currentPage, docsDir) {
     }
     const link = /^\s*-\s+\[([^\]]+)\]\(([^)]+)\)/.exec(line);
     if (group && link) {
-      const href = documentationLink(link[2], path.join(docsDir, 'index.md'), docsDir);
+      const indexFile = path.join(docsDir, 'index.md');
+      const href = documentationLink(link[2], indexFile, docsDir, lang);
       group.links.push(`<a href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${link[1]}</a>`);
     }
   }
@@ -453,60 +478,101 @@ function documentationNavigation(index, currentPage, docsDir) {
   ).join('');
 }
 
+const documentationTranslations = {
+  en: {
+    breadcrumb: 'Breadcrumb',
+    description: 'G3W-SUITE documentation',
+    edit: 'Edit this page',
+    home: 'Documentation home',
+    navigation: 'Documentation navigation',
+    search: 'Search documentation',
+    searchPlaceholder: 'Search docs',
+    title: 'G3W-SUITE Documentation',
+  },
+  it: {
+    breadcrumb: 'Percorso di navigazione',
+    description: 'Documentazione di G3W-SUITE',
+    edit: 'Modifica questa pagina',
+    home: 'Pagina iniziale della documentazione',
+    navigation: 'Navigazione della documentazione',
+    search: 'Cerca nella documentazione',
+    searchPlaceholder: 'Cerca nella documentazione',
+    title: 'Documentazione G3W-SUITE',
+  },
+};
+
 function buildDocumentation(outputDir) {
   const docsDir = path.join(sourceDir, 'docs');
   const indexFile = path.join(docsDir, 'index.md');
-  const index = fs.readFileSync(indexFile, 'utf8');
-  const targetDir = path.join(outputDir, 'docs');
-  fs.mkdirSync(targetDir, { recursive: true });
-  for (const entry of fs.readdirSync(targetDir, { withFileTypes: true })) {
-    fs.rmSync(path.join(targetDir, entry.name), { recursive: true, force: true });
+  const indexSource = fs.readFileSync(indexFile, 'utf8');
+  const indexTranslations = extractPageTranslations(indexSource, path.relative(projectRoot, indexFile));
+  const searchIndexes = Object.fromEntries(languages.map(lang => [lang, []]));
+  for (const lang of languages) {
+    const targetDir = path.join(outputDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
+    fs.mkdirSync(targetDir, { recursive: true });
+    for (const entry of fs.readdirSync(targetDir, { withFileTypes: true })) {
+      fs.rmSync(path.join(targetDir, entry.name), { recursive: true, force: true });
+    }
   }
 
-  const searchIndex = [];
   for (const file of documentationFiles(docsDir)) {
     const relative = path.relative(docsDir, file);
     const source = fs.readFileSync(file, 'utf8');
-    const title = /^#\s+(.+)$/m.exec(source)?.[1] || path.basename(file, '.md');
-    const parent = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(source);
-    const sourceBody = parent ? source.replace(parent[0], '') : source;
-    let content = marked.parse(sourceBody);
-    content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
-      `${name}="${documentationLink(href, file, docsDir)}"`
-    );
-    const pagePath = relative === 'index.md'
-      ? '/docs/'
-      : `/docs/${relative.replace(/\.md$/, '').replace(/\\/g, '/')}/`;
-    const text = content
-      .replace(/<[^>]*>/g, ' ')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/\s+/g, ' ')
-      .trim();
-    searchIndex.push({ title, url: `${basePath}${pagePath}`, text });
-    const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
-    const pageUrls = { it: '/it/', en: pagePath };
-    const headerDocument = renderComponent('header', 'en', componentPage, pageUrls);
-    const siteHeader = /<header\b[\s\S]*?<\/header>/i.exec(headerDocument)?.[0];
-    if (!siteHeader) throw new Error('Shared header component has no <header> element');
-    const siteFooter = renderComponent('footer', 'en', componentPage, pageUrls)
-      .replace(/<\/body>\s*<\/html>\s*$/i, '');
-    const parentBreadcrumb = parent
-      ? `<li><a href="${documentationLink(parent[2], file, docsDir)}">${parent[1]}</a></li>`
-      : '';
-    const sourcePath = relative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
-    const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
-    const html = `<!doctype html>
-<html lang="en">
+    const extracted = extractPageTranslations(source, path.relative(projectRoot, file));
+    const parentMatch = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(extracted.html);
+    for (const lang of languages) {
+      const localizedSource = autoTranslateMarkdown(extracted.html, lang, extracted.translations);
+      const title = /^#\s+(.+)$/m.exec(localizedSource)?.[1] || path.basename(file, '.md');
+      const localizedParent = parentMatch && /^\[([^\]]+)\]\(([^)]+)\)/m.exec(localizedSource);
+      const parentTarget = parentMatch
+        ? path.resolve(path.dirname(file), parentMatch[2].split(/[?#]/)[0])
+        : null;
+      const parentFile = parentTarget && (path.extname(parentTarget) ? parentTarget : `${parentTarget}.md`);
+      let parentTitle = parentMatch?.[1];
+      if (parentFile && fs.existsSync(parentFile)) {
+        const parentSource = extractPageTranslations(
+          fs.readFileSync(parentFile, 'utf8'),
+          path.relative(projectRoot, parentFile)
+        );
+        parentTitle = parentSource.translations[lang]?.[parentTitle] || parentTitle;
+      }
+      const sourceBody = localizedParent ? localizedSource.replace(localizedParent[0], '') : localizedSource;
+      let sourceHeadings = [];
+      if (lang === 'it') {
+        marked.parse(parentMatch ? extracted.html.replace(parentMatch[0], '') : extracted.html);
+        sourceHeadings = getHeadingList().map(({ id }) => id);
+      }
+      let content = marked.parse(sourceBody);
+      if (lang === 'it') content = addDocumentationHeadingAliases(content, sourceHeadings, getHeadingList());
+      content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
+        `${name}="${documentationLink(href, file, docsDir, lang)}"`
+      );
+      const docsPath = relative === 'index.md'
+        ? '/docs/'
+        : `/docs/${relative.replace(/\.md$/, '').replace(/\\/g, '/')}/`;
+      const pagePath = lang === 'it' ? `/it${docsPath}` : docsPath;
+      const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
+      const pageUrls = { it: `/it${docsPath}`, en: docsPath };
+      const headerDocument = renderComponent('header', lang, componentPage, pageUrls);
+      const siteHeader = /<header\b[\s\S]*?<\/header>/i.exec(headerDocument)?.[0];
+      if (!siteHeader) throw new Error('Shared header component has no <header> element');
+      const siteFooter = renderComponent('footer', lang, componentPage, pageUrls)
+        .replace(/<\/body>\s*<\/html>\s*$/i, '');
+      const parentBreadcrumb = parentMatch
+        ? `<li><a href="${documentationLink(parentMatch[2], file, docsDir, lang)}">${parentTitle}</a></li>`
+        : '';
+      const sourcePath = relative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
+      const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
+      const ui = documentationTranslations[lang];
+      const html = `<!doctype html>
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="G3W-SUITE documentation">
-  <title>${title} - G3W-SUITE Documentation</title>
+  <meta name="description" content="${ui.description}">
+  <title>${title} - ${ui.title}</title>
+  <link rel="alternate" href="${pageUrls.it}" hreflang="it">
+  <link rel="alternate" href="${pageUrls.en}" hreflang="en">
   <link rel="stylesheet" href="/style.css">
   <style>
     .docs-layout{display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:2rem;max-width:1440px;margin:2rem auto;padding:0 1.5rem}
@@ -520,22 +586,22 @@ function buildDocumentation(outputDir) {
 <body class="${pageBodyClass(componentPage)}">
   ${siteHeader}
   <div class="docs-layout">
-    <nav class="docs-nav" aria-label="Documentation navigation">
-      <form class="docs-search" role="search" data-index-url="${basePath}/docs/search-index.json">
-        <label for="docs-search-input" class="sr-only">Search documentation</label>
-        <input id="docs-search-input" type="search" name="q" placeholder="Search docs" autocomplete="off" aria-controls="docs-search-results">
+    <nav class="docs-nav" aria-label="${ui.navigation}">
+      <form class="docs-search" role="search" data-index-url="${basePath}${lang === 'it' ? '/it/docs' : '/docs'}/search-index.json">
+        <label for="docs-search-input" class="sr-only">${ui.search}</label>
+        <input id="docs-search-input" type="search" name="q" placeholder="${ui.searchPlaceholder}" autocomplete="off" aria-controls="docs-search-results">
       </form>
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
-      ${documentationNavigation(index, pagePath, docsDir)}
+      ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), pagePath, docsDir, lang)}
     </nav>
     <main id="main-content" class="docs-content">
-      <nav class="docs-toolbar" aria-label="Breadcrumb">
+      <nav class="docs-toolbar" aria-label="${ui.breadcrumb}">
         <ol class="docs-breadcrumb">
-          <li><a class="docs-breadcrumb__home" href="/docs/" aria-label="Documentation home"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 3 2 12h3v9h5v-6h4v6h5v-9h3z"></path></svg></a></li>
+          <li><a class="docs-breadcrumb__home" href="${lang === 'it' ? '/it/docs/' : '/docs/'}" aria-label="${ui.home}"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 3 2 12h3v9h5v-6h4v6h5v-9h3z"></path></svg></a></li>
           ${parentBreadcrumb}
           <li aria-current="page">${title}</li>
         </ol>
-        <a class="docs-source-link" href="${sourceUrl}">Edit this page</a>
+        <a class="docs-source-link" href="${sourceUrl}">${ui.edit}</a>
       </nav>
       ${content}
     </main>
@@ -543,13 +609,30 @@ function buildDocumentation(outputDir) {
   ${siteFooter}
 </body>
 </html>`;
-    const target = relative === 'index.md'
-      ? path.join(targetDir, 'index.html')
-      : path.join(targetDir, relative.replace(/\.md$/, `${path.sep}index.html`));
-    fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, publishedHtml(html));
+      const targetDir = path.join(outputDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
+      const target = relative === 'index.md'
+        ? path.join(targetDir, 'index.html')
+        : path.join(targetDir, relative.replace(/\.md$/, `${path.sep}index.html`));
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, publishedHtml(html));
+
+      const text = content
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+      searchIndexes[lang].push({ title, url: `${basePath}${pagePath}`, text });
+    }
   }
-  fs.writeFileSync(path.join(targetDir, 'search-index.json'), JSON.stringify(searchIndex));
+  for (const lang of languages) {
+    const targetDir = path.join(outputDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
+    fs.writeFileSync(path.join(targetDir, 'search-index.json'), JSON.stringify(searchIndexes[lang]));
+  }
 }
 
 function outputPage(page) {
@@ -574,6 +657,7 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
     itPage: pageUrls.it,
     enPage: pageUrls.en,
     langRoot: `/${lang}/`,
+    documentationUrl: lang === 'it' ? '/it/docs/' : '/docs/',
     siteRoot: '/',
     lang,
     pageClass: pageBodyClass(page),
@@ -601,7 +685,11 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   });
   const active = page.startsWith(`changelog${path.sep}`)
     ? 'changelog'
-    : path.basename(page, '.html');
+    : page.startsWith(`news${path.sep}`)
+      ? 'news'
+    : page.startsWith(`docs${path.sep}`)
+      ? 'documentation'
+      : path.basename(page, path.extname(page));
   output = output.replace(/<a\b([^>]*?)\sdata-nav-key="([^"]+)"([^>]*)>/g, (_, before, key, after) =>
     `<a${before}${after}${key === active ? ' aria-current="page"' : ''}>`
   );
@@ -654,7 +742,7 @@ function build(outputDir) {
           ''
         );
         const pageContent = path.extname(file) === '.md'
-          ? page.startsWith(`changelog${path.sep}`)
+          ? page.startsWith(`changelog${path.sep}`) || page.startsWith(`news${path.sep}`)
             ? renderChangelogMarkdown(content)
             : renderPageMarkdown(content, page)
           : content;

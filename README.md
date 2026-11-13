@@ -17,7 +17,7 @@ Run `npm run build` to generate the published site and documentation in `static/
 
 ## Documentation
 
-The English manual is maintained as Markdown in `src/docs/` and compiled with the site build to `/docs/`. Documentation pages reuse the site's shared header and footer and include client-side search across the manual. Images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
+The manual is maintained in English Markdown in `src/docs/`, with Italian translations in each page's `data-i18n` block. The site build publishes it at `/docs/` and `/it/docs/`. Documentation pages reuse the site's shared header and footer and include language-specific client-side search. Images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
 
 Page URLs use directories, never `.html`: `src/demo.md` becomes `/it/demo/` and `/en/demo/` (published as `it/demo/index.html` and `en/demo/index.html`); language and changelog indexes stay `/it/` and `/it/changelog/`. The shared homepage is `src/index.md`; `src/_redirect.html` generates the root redirect. Use these URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 

@@ -18,14 +18,12 @@
     </button>
     <nav class="main-nav" id="main-nav" aria-label="{{t 'Main navigation'}}">
       <ul class="nav-list">
-        <li><a href="{{langRoot}}download/#cosa" data-nav-key="features">{{t 'Features'}}</a></li>
-        <li><a href="{{langRoot}}demo/" data-nav-key="demo">Demo</a></li>
-        <li><a href="{{siteRoot}}docs/">{{t 'Documentation'}}</a></li>
-        <li><a href="{{langRoot}}changelog/" data-nav-key="changelog">Changelog</a></li>
-        <li><a href="{{langRoot}}download/" data-nav-key="download">Download</a></li>
-        <li><a href="{{langRoot}}{{t 'modules'}}/" data-nav-key="modules">{{t 'Modules'}}</a></li>
-        <li><a href="{{langRoot}}merginmaps/" data-nav-key="merginmaps">MerginMaps</a></li>
+        <li><a href="{{langRoot}}" data-nav-key="index">{{t 'About'}}</a></li>
+        <li><a href="{{langRoot}}demo/" data-nav-key="demo">{{t 'Try it'}}</a></li>
+        <li><a href="{{documentationUrl}}" data-nav-key="documentation">{{t 'Documentation'}}</a></li>
         <li><a href="{{langRoot}}sponsor/" data-nav-key="sponsor">{{t 'Sponsors'}}</a></li>
+        <li><a href="{{langRoot}}news/" data-nav-key="news">{{t 'News'}}</a></li>
+        <li><a href="{{langRoot}}community/" data-nav-key="community">{{t 'Community'}}</a></li>
       </ul>
       <div class="lang-switcher">
         <a href="{{itPage}}" lang="it" hreflang="it" data-lang-key="it">IT</a>
@@ -38,13 +36,14 @@
 <script type="application/json" data-i18n>
   {
     "it": {
+      "About": "Il progetto",
+      "Community": "Community",
       "Documentation": "Documentazione",
-      "Features": "Funzionalità",
       "Main navigation": "Navigazione principale",
-      "Modules": "Moduli",
+      "News": "Novità",
       "Open menu": "Apri menu",
       "Sponsors": "Sponsor",
-      "modules": "modules"
+      "Try it": "Esplora"
     }
   }
 </script>

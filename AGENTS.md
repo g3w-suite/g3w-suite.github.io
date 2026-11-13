@@ -6,7 +6,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 
 ## Verified Current State
 
-- `npm run build` generates the publishable site and Markdown documentation in `static/`; `npm run dev` serves the same folder and rebuilds when files in `src/` change.
+- `npm run build` generates the publishable site and bilingual Markdown documentation in `static/`; English docs use `/docs/` and Italian docs use `/it/docs/`. `npm run dev` serves the same folder and rebuilds when files in `src/` change.
 - Shared page templates and components are directly in `src/`; tracked site assets are in `static/`. Italian translations live in each page or component's `data-i18n` JSON block, placed at the file end or immediately before `</body>`; omit empty language maps. Site and Markdown images share the flat `static/img/` directory. English uses the source strings directly.
 
 ## Run
@@ -31,8 +31,9 @@ src/
 |- _redirect.html       # Root redirect emitted as static/index.html
 |- _header.html          # Shared page components
 |- _footer.html
+|- news/                 # News index and articles
 |- changelog/            # Markdown release notes compiled by JavaScript
-|- docs/                 # Markdown source for the current English manual
+|- docs/                 # English Markdown manual with per-page Italian translations
 static/
 |- app.js, style.css, icons.svg
 |- fonts/                # Tracked fonts
@@ -40,7 +41,7 @@ static/
 |- it/, en/, docs/        # Generated publishing output; ignored by Git
 ```
 
-`src/index.md` is the shared homepage template. Site pages and changelog pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `server.js` also generates the Markdown manual under `/docs/`.
+`src/index.md` is the shared homepage template. Site pages, news articles, changelog pages, and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates the manual under `/docs/` and `/it/docs/`.
 
 ## Key Conventions
 
@@ -58,6 +59,7 @@ static/
 - The first `#` heading in a non-homepage Markdown page gets a `.page-header` wrapper automatically. Do not write that wrapper manually unless the page needs a custom header.
 - In site Markdown, each `##`–`######` heading starts a section; lower-level headings nest inside the previous section, while a heading at the same or higher level closes the previous section(s). The build adds section and container wrappers; `#` remains the page title. Prefer headings over standalone `---` section delimiters, which remain supported for existing custom layouts. Use the page's body class and section position for variant styling, and keep IDs as inline anchors when links target them.
 - In Markdown links, use `/en/<page>/` for internal pages; the build changes that language segment to the current language. For other URLs, mark only the segment that changes between languages, not the entire URL.
+- In `src/docs/`, keep English as the source text and add exact Italian line translations to each page's `data-i18n` block. The manual compiler publishes matching routes under `/docs/` and `/it/docs/`, and local documentation links follow the current language.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 

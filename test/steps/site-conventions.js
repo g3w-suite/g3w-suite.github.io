@@ -218,7 +218,9 @@ Then('both languages are generated from shared page templates', function () {
   const changelogFiles = filesIn(path.join(sourceDir, 'changelog'));
   assert.equal(changelogFiles.length, 13, 'expected all changelog sources to be present');
   assert.ok(changelogFiles.every(file => file.endsWith('.md')), 'changelog sources must be Markdown');
-  const markdownPages = ['demo', 'download', 'index', 'merginmaps', 'model-builder-processing', 'modules', 'sponsor'];
+  const newsFiles = filesIn(path.join(sourceDir, 'news')).map(file => path.basename(file)).sort();
+  assert.deepEqual(newsFiles, ['index.md', 'merginmaps.md', 'model-builder-processing.md']);
+  const markdownPages = ['community', 'demo', 'download', 'index', 'modules', 'sponsor'];
   for (const name of markdownPages) {
     assert.ok(fs.existsSync(path.join(sourceDir, `${name}.md`)), `${name} page source must be Markdown`);
     assert.ok(!fs.existsSync(path.join(sourceDir, `${name}.html`)), `${name} HTML source must be removed`);
@@ -272,6 +274,15 @@ Then('both languages are generated from shared page templates', function () {
         );
       }
     }
+    const newsIndex = readPage(path.join(staticDir, lang, 'news', 'index.html')).$;
+    for (const file of changelogFiles.filter(file => path.basename(file) !== 'index.md')) {
+      const version = path.basename(file, '.md');
+      assert.equal(newsIndex(`a[href="/${lang}/changelog/${version}/"]`).length, 1, `${lang} news must link to ${version}`);
+    }
+    for (const article of ['merginmaps', 'model-builder-processing']) {
+      const newsArticle = readPage(path.join(staticDir, lang, 'news', article, 'index.html')).$;
+      assert.equal(newsArticle('.changelog').length, 1, `${lang} ${article} must use the single-column article layout`);
+    }
   }
   assert.deepEqual(
     htmlFiles(sourceDir).filter(file => !path.basename(file).startsWith('_')),
@@ -294,9 +305,14 @@ Then('both languages are generated from shared page templates', function () {
 
 Then('site page sources contain only the allowed HTML elements', function () {
   const sourceDir = path.resolve('src');
-  const pages = ['demo', 'download', 'index', 'merginmaps', 'model-builder-processing', 'modules', 'sponsor'];
+  const pages = [
+    ...['community', 'demo', 'download', 'index', 'modules', 'sponsor'].map(page => `${page}.md`),
+    'news/index.md',
+    'news/merginmaps.md',
+    'news/model-builder-processing.md',
+  ];
   for (const page of pages) {
-    const file = path.join(sourceDir, `${page}.md`);
+    const file = path.join(sourceDir, page);
     const source = fs.readFileSync(file, 'utf8');
     assert.equal((source.match(/<main\b[^>]*>/gi) || []).length, 0, `${file}: main element is injected by the build`);
     for (const [opening] of source.matchAll(/<script\b[^>]*>/gi)) {
@@ -339,7 +355,7 @@ Then('generated buttons retain their styles and external-link behavior', functio
     assert.ok(download('main a.btn--outline').length, `${lang} download page must render outline buttons`);
     assert.equal(download('main a[title$="-button"]').length, 0, `${lang} download page must consume button markers`);
 
-    const model = readPage(path.join(staticDir, lang, 'model-builder-processing', 'index.html')).$;
+    const model = readPage(path.join(staticDir, lang, 'news', 'model-builder-processing', 'index.html')).$;
     const demoButton = model('main a.btn--primary');
     assert.equal(demoButton.attr('target'), '_blank', `${lang} external Markdown buttons must open in a new tab`);
     assert.equal(demoButton.attr('rel'), 'noopener', `${lang} external Markdown buttons must be safe`);
@@ -438,9 +454,9 @@ Then('page-local translations are valid and used by the Italian build', function
     'Get started in minutes An open-source framework for the comprehensive management of your geospatial infrastructure'
   );
   assert.ok(!homepageIt('main').text().includes('opit'), 'whole-block translation must not corrupt substrings');
-  assert.equal(homepageIt('main a[href="/it/merginmaps/"]').text().trim(), 'Scopri le soluzioni');
+  assert.equal(homepageIt('main a[href="/it/news/merginmaps/"]').text().trim(), 'Scopri le soluzioni');
   assert.equal(
-    readPage(path.join(staticDir, 'en', 'index.html')).$('main a[href="/en/merginmaps/"]').text().trim(),
+    readPage(path.join(staticDir, 'en', 'index.html')).$('main a[href="/en/news/merginmaps/"]').text().trim(),
     'Discover the solutions'
   );
   const demoIt = readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$;
@@ -449,7 +465,7 @@ Then('page-local translations are valid and used by the Italian build', function
     demoIt('main p').filter((_, element) => demoIt(element).text().includes('Il servizio demo mostra')).first().text().trim(),
     'Il servizio demo mostra come creare un sistema di gestione WebGIS partendo da un semplice progetto QGIS.'
   );
-  const merginMapsIt = readPage(path.join(staticDir, 'it', 'merginmaps', 'index.html')).$;
+  const merginMapsIt = readPage(path.join(staticDir, 'it', 'news', 'merginmaps', 'index.html')).$;
   assert.equal(
     merginMapsIt('main li').filter((_, element) => merginMapsIt(element).text().startsWith('Formazione')).first().text().trim(),
     'Formazione: preparazione del progetto QGIS, creazione e progettazione dei moduli di inserimento dati, mappe di sfondo, raccolta dati sul campo, sincronizzazione e tutto il necessario per ottenere i migliori risultati.'
@@ -495,7 +511,10 @@ Then('page-local translations are valid and used by the Italian build', function
 
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
-    const files = htmlFiles(path.join(staticDir, lang));
+    const languageDir = path.join(staticDir, lang);
+    const files = htmlFiles(languageDir).filter(file =>
+      !path.relative(languageDir, file).startsWith(`docs${path.sep}`)
+    );
     assert.ok(files.length, `No HTML pages found for ${lang}`);
     assert.ok(files.every(file => !path.basename(file).startsWith('_')), 'included files must not be published');
     return files.map(file => ({ ...readPage(file), lang }));
@@ -635,13 +654,60 @@ Then('every page links consistently to the Italian and English versions', functi
 });
 
 Then('the navigation controls retain their accessibility attributes', function () {
-  checkPages(this.pages, ({ $ }, expect) => {
+  checkPages(this.pages, ({ $, lang, file }, expect) => {
     const button = $('button.menu-toggle-btn');
     const nav = $('nav.main-nav');
     expect(button.length === 1 && button.attr('aria-expanded') === 'false', 'menu button must start collapsed');
     expect(button.attr('aria-label')?.trim(), 'menu button needs an accessible label');
     expect(button.attr('aria-controls') && button.attr('aria-controls') === nav.attr('id'), 'menu button must control the navigation');
     expect(nav.length === 1 && nav.attr('aria-label')?.trim(), 'navigation needs an accessible label');
+    const expectedNavigation = lang === 'it'
+      ? [
+          ['Il progetto', `/${lang}/`],
+          ['Esplora', `/${lang}/demo/`],
+          ['Documentazione', '/it/docs/'],
+          ['Sponsor', `/${lang}/sponsor/`],
+          ['Novità', `/${lang}/news/`],
+          ['Community', `/${lang}/community/`],
+        ]
+      : [
+          ['About', `/${lang}/`],
+          ['Try it', `/${lang}/demo/`],
+          ['Documentation', '/docs/'],
+          ['Sponsors', `/${lang}/sponsor/`],
+          ['News', `/${lang}/news/`],
+          ['Community', `/${lang}/community/`],
+        ];
+    expect(nav.find('.nav-list > li > a').toArray().every((link, index) =>
+      $(link).text().trim() === expectedNavigation[index]?.[0] &&
+      $(link).attr('href') === expectedNavigation[index]?.[1]
+    ) && nav.find('.nav-list > li').length === expectedNavigation.length, 'navigation must match the six top-level destinations');
+    const relativePage = path.relative(path.join(staticDir, lang), file);
+    const pageRoute = path.dirname(relativePage);
+    const expectedActiveKey = relativePage === 'index.html'
+      ? 'index'
+      : relativePage.startsWith(`news${path.sep}`)
+        ? 'news'
+      : relativePage.startsWith(`changelog${path.sep}`)
+        ? 'changelog'
+        : relativePage.startsWith(`docs${path.sep}`)
+          ? 'documentation'
+          : ['community', 'demo', 'sponsor'].includes(pageRoute)
+              ? pageRoute
+              : null;
+    const currentLinks = nav.find('a[aria-current="page"]');
+    const activeHref = {
+      index: `/${lang}/`,
+      demo: `/${lang}/demo/`,
+      documentation: lang === 'it' ? '/it/docs/' : '/docs/',
+      sponsor: `/${lang}/sponsor/`,
+      changelog: `/${lang}/changelog/`,
+      news: `/${lang}/news/`,
+      community: `/${lang}/community/`,
+    }[expectedActiveKey];
+    expect(expectedActiveKey
+      ? currentLinks.length === 1 && currentLinks.attr('href') === activeHref
+      : currentLinks.length === 0, 'only the current top-level page should be marked current');
     $('[aria-haspopup]').each((_, element) => {
       const control = $(element);
       expect(['false', 'true'].includes(control.attr('aria-expanded')), 'dropdown control needs aria-expanded');
@@ -753,6 +819,11 @@ Then('the build supports a project base path without broken internal links', fun
     assert.equal(docs('form.docs-search').attr('data-index-url'), `${prefix}/docs/search-index.json`);
     const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'docs', 'search-index.json'), 'utf8'));
     assert.ok(searchIndex.every(page => page.url.startsWith(`${prefix}/docs/`)), 'search results must include the project base path');
+    const italianDocs = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
+    assert.equal(italianDocs('html').attr('lang'), 'it');
+    assert.equal(italianDocs('form.docs-search').attr('data-index-url'), `${prefix}/it/docs/search-index.json`);
+    const italianSearch = JSON.parse(fs.readFileSync(path.join(staticDir, 'it', 'docs', 'search-index.json'), 'utf8'));
+    assert.ok(italianSearch.every(page => page.url.startsWith(`${prefix}/it/docs/`)), 'Italian search results must include the language route and project base path');
   } finally {
     build('');
   }
@@ -766,16 +837,45 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.ok(sources.every(file => file.endsWith('.md')), 'documentation sources must use Markdown');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'images')), 'documentation images must be stored outside src/docs');
   assert.equal(pages.length, sources.length, 'every Markdown source must generate one page');
+  for (const file of sources) {
+    const source = fs.readFileSync(file, 'utf8');
+    const block = /<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/.exec(source);
+    assert.ok(block, `${file}: Italian translations are missing`);
+    let translations;
+    assert.doesNotThrow(() => { translations = JSON.parse(block[1]); }, `${file}: translation JSON is invalid`);
+    assert.ok(translations.it && Object.keys(translations.it).length, `${file}: Italian translations are empty`);
+    const keys = Object.keys(translations.it);
+    assert.deepEqual(keys, [...keys].sort(), `${file}: Italian translations must be sorted`);
+  }
 
   const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
   assert.ok(index('main h1').text().includes('G3W-SUITE 3.11'), 'documentation landing page is missing');
+  const italianPages = htmlFiles(path.join(staticDir, 'it', 'docs'));
+  assert.equal(italianPages.length, sources.length, 'every Markdown source must generate an Italian page');
+  const italianIndex = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
+  assert.equal(italianIndex('html').attr('lang'), 'it');
+  assert.equal(italianIndex('main h1').text(), 'Manuale di distribuzione e amministrazione di G3W-SUITE 3.11');
+  assert.ok(italianIndex('nav.docs-nav a[href="/it/docs/settings/"]').length, 'Italian navigation must link to the localized settings page');
+  assert.equal(italianIndex('header.site-header .nav-list a[href="/it/docs/"]').length, 1, 'Italian documentation header must link to its localized home');
+  assert.equal(italianIndex('footer.site-footer a[href="/it/docs/"]').length, 1, 'Italian documentation footer must link to its localized home');
+  assert.equal(italianIndex('form.docs-search').attr('data-index-url'), '/it/docs/search-index.json');
+  const italianIntroduction = readPage(path.join(staticDir, 'it', 'docs', 'introduction', 'index.html')).$;
+  assert.equal(italianIntroduction('main h1').text(), 'Introduzione');
   for (const file of pages) {
     const page = readPage(file).$;
     const outputRelative = path.relative(path.join(staticDir, 'docs'), file).split(path.sep).join('/');
+    const italianFile = path.join(staticDir, 'it', 'docs', outputRelative);
+    const italianPage = readPage(italianFile).$;
     assert.equal(page('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${file}: body must have a page-specific class`);
+    assert.equal(italianPage('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${italianFile}: body must have a page-specific class`);
     const sourceRelative = outputRelative === 'index.html'
       ? 'index.md'
       : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
+    const docsRoute = sourceRelative === 'index.md'
+      ? ''
+      : sourceRelative.replace(/\.md$/, '').replace(/\/index$/, '');
+    const englishRoute = docsRoute ? `/docs/${docsRoute}/` : '/docs/';
+    const italianRoute = docsRoute ? `/it/docs/${docsRoute}/` : '/it/docs/';
     const sourcePath = sourceRelative.split('/').map(encodeURIComponent).join('/');
     assert.equal(page('nav.docs-toolbar').length, 1, `${file}: documentation toolbar is missing`);
     assert.ok(page('nav.docs-toolbar .docs-breadcrumb__home[href="/docs/"]').length, `${file}: documentation breadcrumb is missing its home link`);
@@ -784,6 +884,14 @@ Then('every documentation source is Markdown and has a generated page', function
       `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`,
       `${file}: GitHub edit link does not match the Markdown source`
     );
+    assert.equal(page('html').attr('lang'), 'en', `${file}: English docs must declare their language`);
+    assert.equal(italianPage('html').attr('lang'), 'it', `${italianFile}: Italian docs must declare their language`);
+    assert.equal(page('head link[rel="alternate"][hreflang="it"]').attr('href'), italianRoute);
+    assert.equal(page('head link[rel="alternate"][hreflang="en"]').attr('href'), englishRoute);
+    assert.equal(italianPage('head link[rel="alternate"][hreflang="it"]').attr('href'), italianRoute);
+    assert.equal(italianPage('head link[rel="alternate"][hreflang="en"]').attr('href'), englishRoute);
+    assert.equal(italianPage('.lang-switcher a[hreflang="it"][lang="it"]').attr('href'), italianRoute);
+    assert.equal(italianPage('.lang-switcher a[hreflang="en"][lang="en"]').attr('href'), englishRoute);
   }
   const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
   assert.ok(childPage('nav.docs-toolbar .docs-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
@@ -792,18 +900,52 @@ Then('every documentation source is Markdown and has a generated page', function
     0,
     'the breadcrumb must replace the duplicate back link'
   );
+  const italianChildPage = readPage(path.join(staticDir, 'it', 'docs', 'admin-users', 'index.html')).$;
+  assert.ok(italianChildPage('nav.docs-toolbar .docs-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').length, 'Italian child pages must link to their localized parent breadcrumb');
   assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
   assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
   assert.equal(index('body > header.site-header').length, 1, 'documentation must use the shared site header');
   assert.equal(index('body > footer.site-footer').length, 1, 'documentation must use the shared site footer');
-  assert.equal(index('header.site-header .nav-list a[href="/docs/"]').length, 1, 'shared header must link to documentation');
-  assert.equal(index('footer.site-footer a[href="/docs/"]').length, 1, 'shared footer must link to documentation');
+  assert.equal(index('header.site-header .nav-list a[href="/docs/"]').length, 1, 'shared English header must link to English documentation');
+  assert.equal(index('footer.site-footer a[href="/docs/"]').length, 1, 'shared English footer must link to English documentation');
   assert.equal(index('form.docs-search[role="search"] input[type="search"]').length, 1, 'documentation must include a search form');
   assert.equal(index('form.docs-search').attr('data-index-url'), '/docs/search-index.json');
   assert.equal(index('body > script[src="/app.js"]').length, 1, 'documentation must load the shared site script');
   const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'docs', 'search-index.json'), 'utf8'));
   assert.equal(searchIndex.length, sources.length, 'every documentation page must appear in the search index');
   assert.ok(searchIndex.every(page => page.title && page.text && page.url.startsWith('/docs/')), 'search index entries must include title, content and local URL');
+  const italianSearchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'it', 'docs', 'search-index.json'), 'utf8'));
+  assert.equal(italianSearchIndex.length, sources.length, 'every documentation page must appear in the Italian search index');
+  assert.ok(italianSearchIndex.every(page => page.title && page.text && page.url.startsWith('/it/docs/')), 'Italian search results must include localized page URLs');
+  const englishPages = new Map(searchIndex.map(page => [page.url, page]));
+  for (const page of italianSearchIndex) {
+    const englishPage = englishPages.get(page.url.replace('/it/docs/', '/docs/'));
+    assert.ok(englishPage, `${page.url}: missing English search entry`);
+    assert.notEqual(
+      `${page.title}\n${page.text}`,
+      `${englishPage.title}\n${englishPage.text}`,
+      `${page.url}: Italian content is not translated`
+    );
+  }
+
+  const linkedPages = new Map();
+  for (const file of [...pages, ...italianPages]) {
+    const page = readPage(file).$;
+    page('main.docs-content a[href*="#"]').each((_, link) => {
+      const href = page(link).attr('href');
+      const url = new URL(href, 'https://www.g3wsuite.it/');
+      if (!url.hash || !['g3wsuite.it', 'www.g3wsuite.it'].includes(url.hostname)) return;
+      const target = localTarget(file, href);
+      if (!target || !target.endsWith('.html')) return;
+      if (!linkedPages.has(target)) linkedPages.set(target, readPage(target).$);
+      const targetPage = linkedPages.get(target);
+      const fragment = decodeURIComponent(url.hash.slice(1));
+      const found = targetPage('[id], a[name]').toArray().some(element =>
+        targetPage(element).attr('id') === fragment || targetPage(element).attr('name') === fragment
+      );
+      assert.ok(found, `${path.relative(staticDir, file)}: missing documentation fragment ${href}`);
+    });
+  }
 
   const imagesDir = path.join(staticDir, 'img');
   const images = filesIn(imagesDir);

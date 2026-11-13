@@ -113,3 +113,53 @@ Default: 2.
 ### `FRONTEND`
 If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-suite/g3w-admin-frontend
 
+<script type="application/json" data-i18n>
+{
+  "it": {
+    "Database name of G3W-SUITE database connect to.": "Nome del database G3W-SUITE a cui connettersi.",
+    "Database host value connect to.": "Valore dell'host del database a cui connettersi.",
+    "Database port value connect to.": "Valore della porta del database a cui connettersi.",
+    "Database username password to connect to G3W-SUITE database.": "Password dell'utente per connettersi al database G3W-SUITE.",
+    "Database username to connect to G3W-SUITE database.": "Nome utente per connettersi al database G3W-SUITE.",
+    "Dafault value is: `/shared-volume/tile_cache/`.": "Il valore predefinito è: `/shared-volume/tile_cache/`.",
+    "Default value is : `374h5g96831hsgetvmkdel`.": "Il valore predefinito è: `374h5g96831hsgetvmkdel`.",
+    "Default value is: `256`.": "Il valore predefinito è: `256`.",
+    "Default value is: `200`.": "Il valore predefinito è: `200`.",
+    "Default value is: `8`.": "Il valore predefinito è: `8`.",
+    "Default: 'https://api.openrouteservice.org/v2'.": "Predefinito: 'https://api.openrouteservice.org/v2'.",
+    "Default: 2.": "Predefinito: 2.",
+    "Default: 6.": "Predefinito: 6.",
+    "Every QGIS environment variables available as specified on manual https://docs.qgis.org/3.22/en/docs/server_manual/config.html#environment-variables can be set, important is remember to add thy to `docker-compose.yml` o `docker-compose-consument.yml`.": "È possibile impostare tutte le variabili d'ambiente QGIS elencate nel manuale https://docs.qgis.org/3.22/en/docs/server_manual/config.html#environment-variables; ricordati di aggiungerle a `docker-compose.yml` o `docker-compose-consument.yml`.",
+    "G3W-SUITE with docker is deployed with Gunicorn.": "G3W-SUITE viene distribuito con Docker utilizzando Gunicorn.",
+    "If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-suite/g3w-admin-frontend": "Se impostato su `true`, installa e attiva il modulo G3W-SUITEfrontend https://github.com/g3w-suite/g3w-admin-frontend",
+    "If you are going to use docker postgis image, it'll be created on first run of container.": "Se utilizzi l'immagine Docker di PostGIS, verrà creato al primo avvio del container.",
+    "If you are going to use docker postgis image, it'll be set to `postgis`": "Se utilizzi l'immagine Docker di PostGIS, verrà impostato su `postgis`.",
+    "If you are going to use docker postgis image, it'll be set to `5432`": "Se utilizzi l'immagine Docker di PostGIS, verrà impostato su `5432`.",
+    "If the key is not required by the endpoint, it can be left blank.": "Se l'endpoint non richiede la chiave, il campo può essere lasciato vuoto.",
+    "Max number of locations(it depends on the server configuration)": "Numero massimo di posizioni (dipende dalla configurazione del server)",
+    "Max number of ranges (it depends on the server configuration)": "Numero massimo di intervalli (dipende dalla configurazione del server)",
+    "Number of requests after that gunicorn worker restart.": "Numero di richieste dopo il quale il worker Gunicorn viene riavviato.",
+    "Openrouteservice API end point.": "Endpoint dell'API Openrouteservice.",
+    "Openrouteservice API key": "Chiave API di Openrouteservice",
+    "Optional, can be blank if the key is not required by the endpoint": "Facoltativo; può essere lasciato vuoto se l'endpoint non richiede la chiave",
+    "The domain to which the application will respond.": "Il dominio a cui risponderà l'applicazione.",
+    "The follow variables re for set the connection to G3W-SUITE administration database.": "Le seguenti variabili servono a configurare la connessione al database di amministrazione di G3W-SUITE.",
+    "The login used for the superuser account. Only works when setup a new environment.": "Credenziali di accesso per l'account superutente. Funziona solo durante la configurazione di un nuovo ambiente.",
+    "The password used for the superuser account. It will also be used as default password for new accounts.": "Password dell'account superutente. Sarà utilizzata anche come password predefinita per i nuovi account.",
+    "The path on which the docker permanent volume will be mounted with the application data inside.": "Percorso in cui verrà montato il volume Docker permanente contenente i dati dell'applicazione.",
+    "The following environment variables used to deploy G3W-SUITE by docker (https://github.com/g3w-suite/g3w-suite-docker).": "Le seguenti variabili d'ambiente vengono utilizzate per distribuire G3W-SUITE con Docker (https://github.com/g3w-suite/g3w-suite-docker).",
+    "The following varaible are just set into docker-compose files:": "Le seguenti variabili sono impostate solo nei file docker-compose:",
+    "The number of workers Gunicorn has to start with.": "Numero di worker che Gunicorn deve avviare.",
+    "The tile width/height of the map dimension.": "Larghezza/altezza della tile della mappa.",
+    "This is used to compensate the python/gunicorn memory leaks.": "Serve a compensare le perdite di memoria di Python/Gunicorn.",
+    "They must added to `.env` deploy file.": "Devono essere aggiunte al file di distribuzione `.env`.",
+    "Tile width/height tile map dimension.": "Dimensioni in larghezza/altezza delle tile della mappa.",
+    "Internal path to folder to save tiles of map.": "Percorso interno della cartella in cui salvare le tile della mappa.",
+    "Number of workers Gunicorn has to start with.": "Numero di worker che Gunicorn deve avviare.",
+    "Settings variables for caching workflow": "Variabili di configurazione per la gestione della cache",
+    "The client language is set to the browser's default language.": "La lingua del client corrisponde a quella predefinita del browser.",
+    "The domain to which the application will respond.": "Il dominio a cui risponderà l'applicazione."
+  }
+}
+</script>
+

@@ -89,4 +89,33 @@ GUI.isReady().then(() => {
 
 Otherwise, edit one of that files and then submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) with appropriate changes.
 
-
+<script type="application/json" data-i18n>
+  {
+    "it": {
+      "1. Declare new language inside base settings": "1. Dichiarare la nuova lingua nelle impostazioni di base",
+      "2. Create Translation Files": "2. Creare i file di traduzione",
+      "4. Translate the Messages": "4. Tradurre i messaggi",
+      "5. Compile the Translations": "5. Compilare le traduzioni",
+      "After finishing (or updating) your translations, run:": "Al termine (o dopo aver aggiornato le traduzioni), eseguire:",
+      "By adding some of these lines (eg. into your `plugin.js` or `custom.js`) you can change or add custom translation entries:": "Aggiungendo alcune di queste righe (ad es. nel file `plugin.js` o `custom.js`) è possibile modificare o aggiungere voci di traduzione personalizzate:",
+      "Creates **.po** files in `locale/it/LC_MESSAGES/`.": "Crea i file **.po** in `locale/it/LC_MESSAGES/`.",
+      "Declare the new language to django setting `LANGUAGES` list inse the `base/settings/base.py`": "Dichiarare la nuova lingua nell'elenco `LANGUAGES` delle impostazioni Django in `base/settings/base.py`.",
+      "Directory structure:": "Struttura delle directory:",
+      "Example:": "Esempio:",
+      "From your project root (where manage.py is located), run:": "Dalla directory principale del progetto (dove si trova manage.py), eseguire:",
+      "G3W-ADMIN": "G3W-ADMIN",
+      "G3W-CLIENT": "G3W-CLIENT",
+      "G3W-SUITE is a modular Django application, so you may have multiple **django.po** files. For example, each module (e.g. `core`, `qdjango`, etc.) can contain its own `locale/<lang>/LC_MESSAGES/django.po` file.": "G3W-SUITE è un'applicazione Django modulare, quindi possono essere presenti più file **django.po**. Ad esempio, ogni modulo (come `core`, `qdjango` ecc.) può contenere il proprio file `locale/<lang>/LC_MESSAGES/django.po`.",
+      "How to Add a New Translation (i.e. Italian) to G3W-SUITE": "Come aggiungere una nuova traduzione (ad es. in italiano) a G3W-SUITE",
+      "Important": "Importante",
+      "Language files are stored into the [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales) folder.": "I file delle lingue sono archiviati nella cartella [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales).",
+      "Open the locale/it/LC_MESSAGES/django.po file and translate the strings.": "Aprire il file locale/it/LC_MESSAGES/django.po e tradurre le stringhe.",
+      "Open your settings.py file and make sure the following settings are present or correctly configured:": "Aprire il file settings.py e verificare che le seguenti impostazioni siano presenti o configurate correttamente:",
+      "Otherwise, edit one of that files and then submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) with appropriate changes.": "In alternativa, modificare uno di questi file e inviare una [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) con le modifiche appropriate.",
+      "Scans your codebase for marked translatable strings;": "Esamina il codice alla ricerca delle stringhe contrassegnate come traducibili;",
+      "This command:": "Questo comando:",
+      "This creates the compiled **.mo** files Django uses to load translations:": "Questo comando crea i file compilati **.mo** che Django utilizza per caricare le traduzioni:",
+      "This step-by-step guide shows you how to contribute to G3W-SUITE internationalization by adding new language translations to the project.": "Questa guida passo passo spiega come contribuire all'internazionalizzazione di G3W-SUITE aggiungendo nuove traduzioni al progetto."
+    }
+  }
+</script>

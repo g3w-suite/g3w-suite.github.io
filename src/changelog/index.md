@@ -1,6 +1,6 @@
-# G3W-Suite Changelog
+# News
 
-Choose a version to read release details and updates.
+Latest releases and project updates.
 
 <div class="feature-list">
   <div class="feature-item">
@@ -44,9 +44,9 @@ Choose a version to read release details and updates.
 <script type="application/json" data-i18n>
   {
     "it": {
-      "Changelog - G3W-Suite": "Changelog - G3W-Suite",
-      "Choose a version to read release details and updates.": "Seleziona una versione per leggere il dettaglio delle novita.",
-      "G3W-Suite Changelog": "Changelog G3W-Suite",
+      "G3W-Suite News": "Novità - G3W-Suite",
+      "Latest releases and project updates.": "Ultime release e aggiornamenti del progetto.",
+      "News": "Novità",
       "Version 3.0": "Versione 3.0",
       "Version 3.1": "Versione 3.1",
       "Version 3.10": "Versione 3.10",
@@ -66,6 +66,6 @@ Choose a version to read release details and updates.
 
 <script type="application/json" data-i18n-meta>
   {
-    "title": "Changelog - G3W-Suite"
+    "title": "G3W-Suite News"
   }
 </script>
