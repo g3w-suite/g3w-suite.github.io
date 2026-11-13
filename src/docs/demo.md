@@ -18,10 +18,10 @@ Follow these steps to prepare a project, publish it as a WebGIS service, and try
     "Customize the demo": "Personalizzare la demo",
     "Demo tutorial": "Tutorial della demo",
     "Download demo data": "Scaricare i dati della demo",
+    "Follow these steps to prepare a project, publish it as a WebGIS service, and try its main functions.": "Segui questi passaggi per preparare un progetto, pubblicarlo come servizio WebGIS e provarne le funzioni principali.",
     "Introduction": "Introduzione",
     "Online editing": "Modifica online",
     "Publish and update a service": "Pubblicare e aggiornare un servizio",
-    "Follow these steps to prepare a project, publish it as a WebGIS service, and try its main functions.": "Segui questi passaggi per preparare un progetto, pubblicarlo come servizio WebGIS e provarne le funzioni principali.",
     "Steps": "Passaggi"
   }
 }
