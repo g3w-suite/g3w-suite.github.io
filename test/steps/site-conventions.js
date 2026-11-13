@@ -10,6 +10,10 @@ const { load } = require('cheerio');
 const staticDir = path.resolve('static');
 const languages = ['it', 'en'];
 
+function newsSlug(file) {
+  return path.basename(file).replace(/^\d{4}-\d{2}-\d{2}-(?:changelog-)?/, '').replace(/\.md$/, '');
+}
+
 function htmlFiles(dir) {
   return filesIn(dir).filter(file => file.endsWith('.html'));
 }
@@ -176,15 +180,15 @@ Then('translated text is rendered for each language', function () {
   assert.equal(pages.it('meta[property="og:type"]').attr('content'), 'website');
   assert.equal(pages.it('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Inizia in pochi minuti');
   assert.equal(pages.en('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Get started in minutes');
-  assert.equal(readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('head title').text(), 'Demo - G3W-Suite');
-  assert.equal(readPage(path.join(staticDir, 'en', 'demo', 'index.html')).$('head title').text(), 'Demo - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('head title').text(), 'Esplora G3W-SUITE - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'en', 'demo', 'index.html')).$('head title').text(), 'Explore G3W-SUITE - G3W-Suite');
   assert.equal(
     readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$('meta[name="description"]').attr('content'),
-    'Demo G3W-Suite relative ai branch attualmente supportati: stabile, bug fixing e sviluppo.',
+    'G3W-SUITE pubblica servizi WebGIS da progetti QGIS e offre editing collaborativo, analisi e opzioni flessibili di distribuzione.',
     'explicit attribute translations must be rendered'
   );
   assert.ok(
-    sourceHtml.some(source => source.includes('"description": "G3W-Suite demos for currently supported branches: stable, bug fixing and dev."')),
+    sourceHtml.some(source => source.includes('"description": "G3W-SUITE publishes WebGIS services from QGIS projects and provides collaborative editing, analysis and flexible deployment options."')),
     'translated meta descriptions must use data-i18n-meta'
   );
   assert.ok(
@@ -215,12 +219,43 @@ Then('both languages are generated from shared page templates', function () {
     assert.ok(!fs.existsSync(path.join(sourceDir, lang)), `language-specific source folder still exists: src/${lang}`);
     assert.ok(fs.existsSync(path.join(staticDir, lang, 'index.html')), `missing generated homepage for ${lang}`);
   }
-  const changelogFiles = filesIn(path.join(sourceDir, 'changelog'));
-  assert.equal(changelogFiles.length, 13, 'expected all changelog sources to be present');
-  assert.ok(changelogFiles.every(file => file.endsWith('.md')), 'changelog sources must be Markdown');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'changelog')), 'changelog source folder must be removed');
   const newsFiles = filesIn(path.join(sourceDir, 'news')).map(file => path.basename(file)).sort();
-  assert.deepEqual(newsFiles, ['index.md', 'merginmaps.md', 'model-builder-processing.md']);
-  const markdownPages = ['community', 'demo', 'download', 'index', 'modules', 'sponsor'];
+  const datedNewsFiles = newsFiles.filter(file => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(file));
+  assert.deepEqual(newsFiles, [
+    '2020-06-30-changelog-v3.0.md',
+    '2020-11-18-changelog-v3.1.md',
+    '2021-04-07-changelog-v3.2.md',
+    '2021-10-07-changelog-v3.3.md',
+    '2022-04-05-changelog-v3.4.md',
+    '2022-11-15-changelog-v3.5.md',
+    '2023-05-17-changelog-v3.6.md',
+    '2023-12-13-changelog-v3.7.md',
+    '2023-12-13-model-builder-processing.md',
+    '2024-03-16-merginmaps.md',
+    '2024-06-17-changelog-v3.8.md',
+    '2025-01-23-changelog-v3.9.md',
+    '2025-07-30-changelog-v3.10.md',
+    '2026-04-08-changelog-v3.11.md',
+    '2026-11-13-geospatial-infrastructure.md',
+    'index.md',
+  ]);
+  const newsIndexSource = fs.readFileSync(path.join(sourceDir, 'news', 'index.md'), 'utf8').split('<script')[0];
+  const listedArticles = [...newsIndexSource.matchAll(/\]\(\/en\/news\/([^/]+)\/\)/g)].map(([, slug]) => slug);
+  assert.deepEqual(
+    listedArticles.slice().sort(),
+    datedNewsFiles.map(newsSlug).sort(),
+    'news must list every dated article exactly once'
+  );
+  const listedDates = listedArticles.map(slug =>
+    datedNewsFiles.find(file => newsSlug(file) === slug).slice(0, 10)
+  );
+  assert.deepEqual(
+    listedDates,
+    listedDates.slice().sort().reverse(),
+    'news articles must be listed newest first'
+  );
+  const markdownPages = ['community', 'demo', 'index', 'sponsors'];
   for (const name of markdownPages) {
     assert.ok(fs.existsSync(path.join(sourceDir, `${name}.md`)), `${name} page source must be Markdown`);
     assert.ok(!fs.existsSync(path.join(sourceDir, `${name}.html`)), `${name} HTML source must be removed`);
@@ -228,6 +263,7 @@ Then('both languages are generated from shared page templates', function () {
   for (const lang of languages) {
     const homepage = readPage(path.join(staticDir, lang, 'index.html')).$;
     assert.equal(homepage('.hero__subtitle').length, 1, `${lang} homepage hero content must render as HTML`);
+    assert.equal(homepage(`a[href="/${lang}/news/geospatial-infrastructure/"]`).length, 0, `${lang} homepage must not duplicate the News article`);
     for (const name of markdownPages) {
       const file = name === 'index'
         ? path.join(staticDir, lang, 'index.html')
@@ -238,7 +274,7 @@ Then('both languages are generated from shared page templates', function () {
       if (name === 'demo') {
         const sections = page('main > section.section');
         const demoCards = page('main > section.demo-card');
-        assert.equal(sections.length, 4, `${lang} demo page must create sections from headings`);
+        assert.equal(sections.length, 7, `${lang} demo page must create sections from headings`);
         assert.equal(demoCards.length, 3, `${lang} demo cards must be generated sections`);
         assert.equal(page('ul.demo-grid, li.demo-card').length, 0, `${lang} demo cards must not use list markup`);
         for (const id of ['demo-3-11', 'demo-3-10']) {
@@ -249,16 +285,14 @@ Then('both languages are generated from shared page templates', function () {
             page(section).find('h2, p').length >= 2 && page(section).find('ul > li > a').length > 0),
           `${lang} demo cards must keep their heading, description, and actions`
         );
-        const content = sections.eq(3).children('.container');
-        assert.equal(content.children('h2').length, 1, `${lang} demo content section must start with its h2`);
-        const nestedSections = content.children('section.section');
-        assert.equal(nestedSections.length, 2, `${lang} demo h3 headings must create nested sections`);
-        assert.ok(
-          nestedSections.toArray().every(section => page(section).children('h3').length === 1),
-          `${lang} demo nested sections must each start with an h3`
-        );
+        assert.equal(sections.eq(3).find('table th').length, 9, `${lang} demo compatibility section must render its table`);
+        const features = sections.eq(4).children('.container');
+        assert.equal(features.children('h2').length, 1, `${lang} feature section must start with its h2`);
+        assert.equal(features.children('section.section').length, 5, `${lang} feature section must group its h3 topics`);
+        assert.ok(!fs.existsSync(path.join(staticDir, lang, 'download')), `${lang} download route must be consolidated`);
+        assert.ok(!fs.existsSync(path.join(staticDir, lang, 'modules')), `${lang} modules route must be consolidated`);
       }
-      if (name === 'index' || name === 'modules') {
+      if (name === 'index') {
         const githubButtons = page('a.btn--github');
         assert.ok(githubButtons.length, `${lang} ${name} page must keep its GitHub buttons`);
         assert.equal(
@@ -267,21 +301,34 @@ Then('both languages are generated from shared page templates', function () {
           `${lang} ${name} page must reuse the GitHub icon sprite`
         );
       }
-      if (name === 'modules') {
-        assert.ok(
-          page('main > section.section').first().find('ul > li').length,
-          `${lang} modules page must render its feature tags as a list`
-        );
-      }
     }
     const newsIndex = readPage(path.join(staticDir, lang, 'news', 'index.html')).$;
-    for (const file of changelogFiles.filter(file => path.basename(file) !== 'index.md')) {
-      const version = path.basename(file, '.md');
-      assert.equal(newsIndex(`a[href="/${lang}/changelog/${version}/"]`).length, 1, `${lang} news must link to ${version}`);
-    }
-    for (const article of ['merginmaps', 'model-builder-processing']) {
+    assert.equal(newsIndex('main h2').length, 0, `${lang} news index must not add a section heading`);
+    assert.equal(
+      newsIndex('main > p').first().text().trim(),
+      lang === 'it' ? 'Ultime novità su G3W-SUITE' : 'Latest updates from G3W-SUITE',
+      `${lang} news index must keep its short introduction`
+    );
+    assert.deepEqual(
+      newsIndex(`main a[href^="/${lang}/news/"]`).map((_, link) => link.attribs.href).get(),
+      listedArticles.map(slug => `/${lang}/news/${slug}/`),
+      `${lang} news must list articles newest first`
+    );
+    for (const file of datedNewsFiles) {
+      const article = newsSlug(file);
+      assert.equal(newsIndex(`main a[href="/${lang}/news/${article}/"]`).length, 1, `${lang} news must link to ${article}`);
       const newsArticle = readPage(path.join(staticDir, lang, 'news', article, 'index.html')).$;
       assert.equal(newsArticle('.changelog').length, 1, `${lang} ${article} must use the single-column article layout`);
+      if (article === 'geospatial-infrastructure') {
+        assert.equal(
+          newsArticle('main h1').first().text(),
+          lang === 'it' ? 'Una piattaforma per gestire la tua infrastruttura geospaziale' : 'A platform for managing your geospatial infrastructure'
+        );
+        assert.equal(
+          newsArticle('main h2').first().text(),
+          lang === 'it' ? 'Parti dai progetti QGIS che hai già' : 'Start with the QGIS work you already have'
+        );
+      }
     }
   }
   assert.deepEqual(
@@ -298,18 +345,18 @@ Then('both languages are generated from shared page templates', function () {
     );
     assert.doesNotMatch(source, /<!doctype html>|<\/?html\b|<\/?head\b|<\/?body\b/i, `${file}: document shell must come from shared components`);
   }
-  assert.ok(fs.existsSync(path.join(staticDir, 'it', 'modules', 'index.html')), 'Italian modules page must use /it/modules/');
-  assert.ok(!fs.existsSync(path.join(staticDir, 'it', 'moduli')), 'Italian modules page must not use /it/moduli/');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'download.md')), 'download content must be consolidated into demo.md');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'modules.md')), 'module content must be consolidated into demo.md');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
 });
 
 Then('site page sources contain only the allowed HTML elements', function () {
   const sourceDir = path.resolve('src');
   const pages = [
-    ...['community', 'demo', 'download', 'index', 'modules', 'sponsor'].map(page => `${page}.md`),
+    ...['community', 'demo', 'index', 'sponsors'].map(page => `${page}.md`),
     'news/index.md',
-    'news/merginmaps.md',
-    'news/model-builder-processing.md',
+    'news/2024-03-16-merginmaps.md',
+    'news/2023-12-13-model-builder-processing.md',
   ];
   for (const page of pages) {
     const file = path.join(sourceDir, page);
@@ -350,10 +397,10 @@ Then('generated buttons retain their styles and external-link behavior', functio
     assert.equal(home('main a.btn--github svg use[href="/icons.svg#github"]').length, home('main a.btn--github').length);
     assert.equal(home('main a[title$="-button"]').length, 0, `${lang} homepage must consume button markers`);
 
-    const download = readPage(path.join(staticDir, lang, 'download', 'index.html')).$;
-    assert.ok(download('main a.btn--primary').length, `${lang} download page must render primary buttons`);
-    assert.ok(download('main a.btn--outline').length, `${lang} download page must render outline buttons`);
-    assert.equal(download('main a[title$="-button"]').length, 0, `${lang} download page must consume button markers`);
+    const demo = readPage(path.join(staticDir, lang, 'demo', 'index.html')).$;
+    assert.ok(demo('main a.btn--primary').length, `${lang} demo page must render primary buttons`);
+    assert.ok(demo('main a.btn--outline').length, `${lang} demo page must render outline buttons`);
+    assert.equal(demo('main a[title$="-button"]').length, 0, `${lang} demo page must consume button markers`);
 
     const model = readPage(path.join(staticDir, lang, 'news', 'model-builder-processing', 'index.html')).$;
     const demoButton = model('main a.btn--primary');
@@ -443,15 +490,15 @@ Then('page-local translations are valid and used by the Italian build', function
   const homepageIt = readPage(path.join(staticDir, 'it', 'index.html')).$;
   assert.equal(
     homepageIt('main > section > .container > h2').first().text().trim(),
-    'Inizia in pochi minuti Un framework open source per la gestione completa della tua infrastruttura geospaziale'
-  );
-  assert.equal(
-    homepageIt('main > section > .container > h2').eq(1).text().trim(),
     'Inizia in pochi minuti Pubblica il tuo progetto QGIS in 4 passi'
   );
   assert.equal(
+    homepageIt('main > section > .container > h2').eq(1).text().trim(),
+    'Dal desktop al web in pochi clic'
+  );
+  assert.equal(
     readPage(path.join(staticDir, 'en', 'index.html')).$('main > section > .container > h2').first().text().trim(),
-    'Get started in minutes An open-source framework for the comprehensive management of your geospatial infrastructure'
+    'Get started in minutes Publish your QGIS project in 4 steps'
   );
   assert.ok(!homepageIt('main').text().includes('opit'), 'whole-block translation must not corrupt substrings');
   assert.equal(homepageIt('main a[href="/it/news/merginmaps/"]').text().trim(), 'Scopri le soluzioni');
@@ -459,54 +506,23 @@ Then('page-local translations are valid and used by the Italian build', function
     readPage(path.join(staticDir, 'en', 'index.html')).$('main a[href="/en/news/merginmaps/"]').text().trim(),
     'Discover the solutions'
   );
+  assert.equal(homepageIt('main a[href="/it/docs/quick-start/"]').text().trim(), 'Guida rapida');
   const demoIt = readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$;
-  assert.equal(demoIt('main h1').first().text().trim(), 'Demo G3W-Suite');
-  assert.equal(
-    demoIt('main p').filter((_, element) => demoIt(element).text().includes('Il servizio demo mostra')).first().text().trim(),
-    'Il servizio demo mostra come creare un sistema di gestione WebGIS partendo da un semplice progetto QGIS.'
-  );
+  assert.equal(demoIt('main h1').first().text().trim(), 'Esplora G3W-SUITE');
+  const quickStartIt = readPage(path.join(staticDir, 'it', 'docs', 'quick-start', 'index.html')).$;
+  assert.equal(quickStartIt('main h1').first().text().trim(), 'Guida rapida');
+  assert.equal(quickStartIt('main iframe').length, 4);
+  assert.equal(quickStartIt('main iframe').first().attr('title'), 'Guida rapida 1: crea il tuo progetto QGIS');
   const merginMapsIt = readPage(path.join(staticDir, 'it', 'news', 'merginmaps', 'index.html')).$;
   assert.equal(
     merginMapsIt('main li').filter((_, element) => merginMapsIt(element).text().startsWith('Formazione')).first().text().trim(),
     'Formazione: preparazione del progetto QGIS, creazione e progettazione dei moduli di inserimento dati, mappe di sfondo, raccolta dati sul campo, sincronizzazione e tutto il necessario per ottenere i migliori risultati.'
   );
-  const changelogIt = readPage(path.join(staticDir, 'it', 'changelog', 'v3.0', 'index.html')).$;
+  const changelogIt = readPage(path.join(staticDir, 'it', 'news', 'v3.0', 'index.html')).$;
   assert.equal(
     changelogIt('main p').filter((_, element) => changelogIt(element).text().includes('funzionalità e le proprietà del server QGIS')).first().text().trim(),
     'Le funzionalità e le proprietà del server QGIS, come tutti i servizi da esso supportati (WMS, WFS, WCS ecc.), sono ora gestite e controllate da G3W-SUITE tramite la QGIS API.'
   );
-  const modulesIt = readPage(path.join(staticDir, 'it', 'modules', 'index.html')).$;
-  assert.equal(modulesIt('main h2').first().text().trim(), 'Componente server - Python / Django G3W-ADMIN');
-  assert.equal(
-    modulesIt('main p').first().text().trim(),
-    'G3W-SUITE è composto da componenti modulari, tutti disponibili su GitHub con licenza MPL-2.'
-  );
-  const processingParagraph = modulesIt('main p').filter((_, element) =>
-    modulesIt(element).text().includes('.model3')
-  );
-  assert.equal(
-    processingParagraph.text().trim(),
-    'Integra le API di QGIS Processing direttamente in G3W-SUITE. Carica un file .model3 nel pannello di amministrazione: gli algoritmi di geoprocessing diventano subito disponibili nel client web, sia con esecuzione sincrona sia asincrona (batch).'
-  );
-  const editingParagraph = modulesIt('main p').filter((_, element) =>
-    modulesIt(element).text().includes('Plugin JavaScript')
-  );
-  assert.equal(
-    editingParagraph.text().trim(),
-    "Plugin JavaScript per la modifica collaborativa delle geometrie e degli attributi direttamente nel client cartografico. Gli utenti autorizzati possono creare, modificare ed eliminare feature vettoriali usando strumenti avanzati di snap, split e multi-relazione. Il codice è ora mantenuto all'interno di g3w-admin."
-  );
-  const downloadIt = readPage(path.join(staticDir, 'it', 'download', 'index.html')).$;
-  assert.equal(downloadIt('main a[href="/it/demo/#demo-3-11"]').text().trim(), 'Vai alla demo');
-  assert.deepEqual(downloadIt('main ul').first().children('li').toArray().map(item =>
-    downloadIt(item).text().trim()
-  ), [
-    'Semplice e veloce: Crea il tuo progetto QGIS; Usa dati su GeoDB o file system; Pubblica su WebGis',
-    'Profilazione utenti: Definisci utenti, gruppi e ruoli per differenziare gestione, accesso, editing on line e uso dei moduli funzionali',
-    'Personalizzabile: Personalizza i contenuti del portale di accesso e del client cartografico; Crea ambienti gestionali e definisci i relativi amministratori; Attiva i moduli funzionali di interesse',
-    'Ricco di funzionalità: Integrazione con le API di QGIS; Ricerche personalizzabili; Layout di stampa standard o basati su atlanti geografici; Animazione delle serie temporali; Integrazione del modulo WPS; Servizio CSW per i metadati INSPIRE',
-    "Modifica via web: Modifica geometrica e degli attributi anche nelle relazioni 1:1 e 1:N; Modifica basata sulle API di QGIS; Form e widget di editing ereditati dal progetto QGIS; Blocco delle feature per l'editing multiutente; Vincoli geografici e alfanumerici personalizzabili per i singoli utenti",
-    'Desktop e mobile: Client responsive per desktop e tablet; Editing web anche in modalità offline',
-  ]);
 });
 
 Given('the HTML pages in the language folders', function () {
@@ -539,7 +555,7 @@ Then('every page declares its language, metadata, and main structure', function 
       expect($(section).children('.container').length === 1, 'main section must have one container');
     }
     const pagePath = path.relative(path.join(staticDir, lang), file).split(path.sep).join('/');
-    if (!pagePath.startsWith('changelog/')) {
+    if (!main.find('.changelog').length) {
       expect(main.find('hr:not([style])').length === 0, 'Markdown section separators must be compiled');
     }
     if (heading.length && !main.hasClass('docs-content')) {
@@ -549,8 +565,8 @@ Then('every page declares its language, metadata, and main structure', function 
         homepage ? 'homepage h1 must remain in the hero' : 'main h1 must use the generated page header'
       );
     }
-    if (path.relative(path.join(staticDir, lang), file) === path.join('download', 'index.html')) {
-      for (const id of ['cosa', 'quick-start']) {
+    if (path.relative(path.join(staticDir, lang), file) === path.join('demo', 'index.html')) {
+      for (const id of ['features', 'components', 'hosting']) {
         expect(main.find(`[id="${id}"]`).length === 1, `missing section anchor #${id}`);
       }
     }
@@ -666,7 +682,7 @@ Then('the navigation controls retain their accessibility attributes', function (
           ['Il progetto', `/${lang}/`],
           ['Esplora', `/${lang}/demo/`],
           ['Documentazione', '/it/docs/'],
-          ['Sponsor', `/${lang}/sponsor/`],
+          ['Sponsor', `/${lang}/sponsors/`],
           ['Novità', `/${lang}/news/`],
           ['Community', `/${lang}/community/`],
         ]
@@ -674,7 +690,7 @@ Then('the navigation controls retain their accessibility attributes', function (
           ['About', `/${lang}/`],
           ['Try it', `/${lang}/demo/`],
           ['Documentation', '/docs/'],
-          ['Sponsors', `/${lang}/sponsor/`],
+          ['Sponsors', `/${lang}/sponsors/`],
           ['News', `/${lang}/news/`],
           ['Community', `/${lang}/community/`],
         ];
@@ -688,20 +704,17 @@ Then('the navigation controls retain their accessibility attributes', function (
       ? 'index'
       : relativePage.startsWith(`news${path.sep}`)
         ? 'news'
-      : relativePage.startsWith(`changelog${path.sep}`)
-        ? 'changelog'
-        : relativePage.startsWith(`docs${path.sep}`)
-          ? 'documentation'
-          : ['community', 'demo', 'sponsor'].includes(pageRoute)
-              ? pageRoute
-              : null;
+      : relativePage.startsWith(`docs${path.sep}`)
+        ? 'documentation'
+        : ['community', 'demo', 'sponsors'].includes(pageRoute)
+            ? pageRoute
+            : null;
     const currentLinks = nav.find('a[aria-current="page"]');
     const activeHref = {
       index: `/${lang}/`,
       demo: `/${lang}/demo/`,
       documentation: lang === 'it' ? '/it/docs/' : '/docs/',
-      sponsor: `/${lang}/sponsor/`,
-      changelog: `/${lang}/changelog/`,
+      sponsors: `/${lang}/sponsors/`,
       news: `/${lang}/news/`,
       community: `/${lang}/community/`,
     }[expectedActiveKey];
@@ -829,6 +842,46 @@ Then('the build supports a project base path without broken internal links', fun
   }
 });
 
+Then('release links are generated before the documentation content', function () {
+  const releasePattern = /^(\d{4}-\d{2}-\d{2})-changelog-(v\d+\.\d+)\.md$/;
+  const releaseRoutes = filesIn(path.resolve('src/news'))
+    .map(file => releasePattern.exec(path.basename(file)))
+    .filter(Boolean)
+    .sort((a, b) => b[1].localeCompare(a[1]))
+    .map(([, , version]) => version);
+
+  for (const lang of languages) {
+    const docsRoot = path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
+    const index = readPage(path.join(docsRoot, 'index.html')).$;
+    const releaseSection = index('body > .docs-release-notes');
+    assert.equal(releaseSection.length, 1, `${lang} release links must be outside the documentation layout`);
+    assert.equal(releaseSection.next('.docs-layout').length, 1, `${lang} release links must precede the documentation layout`);
+    assert.equal(releaseSection.find('h2').text().trim(), 'Changelog');
+    assert.deepEqual(
+      releaseSection.find('a.btn--outline').map((_, link) => link.attribs.href).get(),
+      releaseRoutes.map(version => `/${lang}/news/${version}/`),
+      `${lang} documentation home must show each release`
+    );
+    assert.equal(releaseSection.find('main').length, 0, `${lang} release links must not be part of the manual content`);
+    assert.equal(
+      index('nav.docs-nav a[href^="/' + lang + '/news/"]').length,
+      0,
+      `${lang} release links must not appear in documentation navigation`
+    );
+    assert.equal(
+      releaseSection.find('a').first().text().trim(),
+      `${lang === 'it' ? 'Versione' : 'Version'} ${releaseRoutes[0].slice(1)}`,
+      `${lang} release buttons must use the localized label`
+    );
+
+    for (const file of htmlFiles(docsRoot)) {
+      if (path.relative(docsRoot, file) !== `index.html`) {
+        assert.equal(readPage(file).$('.docs-release-notes').length, 0, `${file}: release links must only appear on the documentation home`);
+      }
+    }
+  }
+});
+
 Then('every documentation source is Markdown and has a generated page', function () {
   const sourceDir = path.resolve('src/docs');
   const sources = filesIn(sourceDir);
@@ -855,6 +908,10 @@ Then('every documentation source is Markdown and has a generated page', function
   const italianIndex = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
   assert.equal(italianIndex('html').attr('lang'), 'it');
   assert.equal(italianIndex('main h1').text(), 'Manuale di distribuzione e amministrazione di G3W-SUITE 3.11');
+  assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
+  assert.equal(index('nav.docs-nav a').first().attr('href'), '/docs/quick-start/');
+  assert.equal(italianIndex('nav.docs-nav a').first().attr('href'), '/it/docs/quick-start/');
+  assert.equal(italianIndex('nav.docs-nav a').first().text(), 'Guida rapida');
   assert.ok(italianIndex('nav.docs-nav a[href="/it/docs/settings/"]').length, 'Italian navigation must link to the localized settings page');
   assert.equal(italianIndex('header.site-header .nav-list a[href="/it/docs/"]').length, 1, 'Italian documentation header must link to its localized home');
   assert.equal(italianIndex('footer.site-footer a[href="/it/docs/"]').length, 1, 'Italian documentation footer must link to its localized home');

@@ -46,7 +46,7 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     const response = await fetch(`http://localhost:${this.port}/`);
     assert.equal(response.status, 200);
     assert.match(await response.text(), /url=\/it\//i);
-    for (const url of ['/it/demo/', '/en/changelog/v3.11/']) {
+    for (const url of ['/it/demo/', '/en/news/v3.11/']) {
       const page = await fetch(`http://localhost:${this.port}${url}`);
       assert.equal(page.status, 200, url);
     }
@@ -54,7 +54,7 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
       ['/it/demo.html?test=1', '/it/demo/?test=1'],
       ['/it/demo/index.html', '/it/demo/'],
       ['/it/index.html', '/it/'],
-      ['/it/changelog/index.html', '/it/changelog/'],
+      ['/it/news/v3.11/index.html', '/it/news/v3.11/'],
       ['/it/demo?test=1', '/it/demo/?test=1'],
     ]) {
       const redirect = await fetch(`http://localhost:${this.port}${source}`, { redirect: 'manual' });

@@ -111,9 +111,12 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
         return `${before}[${translatedLabel}](${destination})`;
       });
     }
-    lines[index] = lines[index].replace(/(^|[^!])\[([^\[\]]+)\]\(([^)]*)\)/g, (_, before, label, destination) =>
-      `${before}[${label}](${destination.replace(/^\/?en\//, `/${lang}/`)})`
-    );
+    lines[index] = lines[index].replace(/(^|[^!])\[([^\[\]]+)\]\(([^)]*)\)/g, (_, before, label, destination) => {
+      const localizedDestination = destination
+        .replace(/^\/?en\/(docs\/.*)$/, (_, docsPath) => `/${lang === 'it' ? 'it/' : ''}${docsPath}`)
+        .replace(/^\/?en\//, `/${lang}/`);
+      return `${before}[${label}](${localizedDestination})`;
+    });
   }
   return lines.join('');
 }
@@ -349,8 +352,7 @@ function renderHomepageHero(items) {
 }
 
 const sectionContainerClasses = {
-  'demo.md': { 4: 'content-page' },
-  'download.md': { 5: 'content-page' },
+  'demo.md': { 8: 'content-page' },
 };
 
 function renderDelimitedSections(html, page) {
@@ -506,6 +508,12 @@ function buildDocumentation(outputDir) {
   const indexFile = path.join(docsDir, 'index.md');
   const indexSource = fs.readFileSync(indexFile, 'utf8');
   const indexTranslations = extractPageTranslations(indexSource, path.relative(projectRoot, indexFile));
+  const releasePattern = /^(\d{4}-\d{2}-\d{2})-changelog-(v\d+\.\d+)\.md$/;
+  const releaseVersions = fs.readdirSync(path.join(sourceDir, 'news'))
+    .map(file => releasePattern.exec(file))
+    .filter(Boolean)
+    .sort((a, b) => b[1].localeCompare(a[1]))
+    .map(([, , version]) => version);
   const searchIndexes = Object.fromEntries(languages.map(lang => [lang, []]));
   for (const lang of languages) {
     const targetDir = path.join(outputDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
@@ -521,7 +529,11 @@ function buildDocumentation(outputDir) {
     const extracted = extractPageTranslations(source, path.relative(projectRoot, file));
     const parentMatch = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(extracted.html);
     for (const lang of languages) {
-      const localizedSource = autoTranslateMarkdown(extracted.html, lang, extracted.translations);
+      const localizedSource = translateHtml(
+        autoTranslateMarkdown(extracted.html, lang, extracted.translations),
+        lang,
+        extracted.translations
+      );
       const title = /^#\s+(.+)$/m.exec(localizedSource)?.[1] || path.basename(file, '.md');
       const localizedParent = parentMatch && /^\[([^\]]+)\]\(([^)]+)\)/m.exec(localizedSource);
       const parentTarget = parentMatch
@@ -564,6 +576,11 @@ function buildDocumentation(outputDir) {
       const sourcePath = relative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
       const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
       const ui = documentationTranslations[lang];
+      const releaseNotes = relative === 'index.md' && releaseVersions.length
+        ? `<section class="docs-release-notes" aria-labelledby="docs-release-notes-title"><h2 id="docs-release-notes-title">Changelog</h2><div class="docs-release-notes__links">${releaseVersions.map(version =>
+            `<a class="btn btn--outline" href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
+          ).join('')}</div></section>`
+        : '';
       const html = `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -585,6 +602,7 @@ function buildDocumentation(outputDir) {
 </head>
 <body class="${pageBodyClass(componentPage)}">
   ${siteHeader}
+  ${releaseNotes}
   <div class="docs-layout">
     <nav class="docs-nav" aria-label="${ui.navigation}">
       <form class="docs-search" role="search" data-index-url="${basePath}${lang === 'it' ? '/it/docs' : '/docs'}/search-index.json">
@@ -636,7 +654,11 @@ function buildDocumentation(outputDir) {
 }
 
 function outputPage(page) {
-  const htmlPage = page.replace(/\.md$/, '.html');
+  let htmlPage = page.replace(/\.md$/, '.html');
+  const datedArticle = /^(\d{4}-\d{2}-\d{2})-(?:changelog-)?(.+)\.html$/.exec(path.basename(htmlPage));
+  if (htmlPage.startsWith(`news${path.sep}`) && datedArticle) {
+    htmlPage = path.join(path.dirname(htmlPage), `${datedArticle[2]}.html`);
+  }
   return path.basename(htmlPage) === 'index.html' ? htmlPage : htmlPage.replace(/\.html$/, `${path.sep}index.html`);
 }
 
@@ -683,10 +705,8 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
     if (!(key in values)) throw new Error(`Unknown ${component} placeholder: ${key}`);
     return values[key];
   });
-  const active = page.startsWith(`changelog${path.sep}`)
-    ? 'changelog'
-    : page.startsWith(`news${path.sep}`)
-      ? 'news'
+  const active = page.startsWith(`news${path.sep}`)
+    ? 'news'
     : page.startsWith(`docs${path.sep}`)
       ? 'documentation'
       : path.basename(page, path.extname(page));
@@ -742,9 +762,11 @@ function build(outputDir) {
           ''
         );
         const pageContent = path.extname(file) === '.md'
-          ? page.startsWith(`changelog${path.sep}`) || page.startsWith(`news${path.sep}`)
-            ? renderChangelogMarkdown(content)
-            : renderPageMarkdown(content, page)
+          ? page === path.join('news', 'index.md')
+            ? renderPageMarkdown(content, page)
+            : page.startsWith(`news${path.sep}`)
+              ? renderChangelogMarkdown(content)
+              : renderPageMarkdown(content, page)
           : content;
         const header = renderComponent('header', lang, page, pageUrls, pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls);

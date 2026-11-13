@@ -31,8 +31,7 @@ src/
 |- _redirect.html       # Root redirect emitted as static/index.html
 |- _header.html          # Shared page components
 |- _footer.html
-|- news/                 # News index and articles
-|- changelog/            # Markdown release notes compiled by JavaScript
+|- news/                 # News index, dated articles and release notes
 |- docs/                 # English Markdown manual with per-page Italian translations
 static/
 |- app.js, style.css, icons.svg
@@ -41,7 +40,7 @@ static/
 |- it/, en/, docs/        # Generated publishing output; ignored by Git
 ```
 
-`src/index.md` is the shared homepage template. Site pages, news articles, changelog pages, and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates the manual under `/docs/` and `/it/docs/`.
+`src/index.md` is the shared homepage template. Site pages, news articles and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates the manual under `/docs/` and `/it/docs/`.
 
 ## Key Conventions
 
@@ -53,7 +52,7 @@ static/
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
 - Markdown content can be translated without `{{t '...'}}` by adding the exact full line of text to that page's `data-i18n` block; include inline Markdown such as `**bold**` in the key and translate the whole line, never a partial substring. Markdown link labels can also use their exact `data-i18n` key without the helper. Use `{{t '...'}}` for image alt text, attributes, and other inline text. Keep keys alphabetically sorted.
 - Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
-- Site pages in `src/` and changelog pages in `src/changelog/` are Markdown; use Markdown for content and images. In site page sources, HTML is limited to translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings; the build adds the `<main>` wrapper and generates other layout markup through JavaScript.
+- Site pages in `src/` and news articles in `src/news/` are Markdown; use Markdown for content and images. News article filenames begin with their publication date (`YYYY-MM-DD-`), and `src/news/index.md` lists them newest first. Release notes use `YYYY-MM-DD-changelog-vX.Y.md`; the documentation homepage generates its version buttons from these filenames. In site page sources, HTML is limited to translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings; the build adds the `<main>` wrapper and generates other layout markup through JavaScript.
 - Avoid HTML wrappers around Markdown used only for styling; target generated sections with the page body class and section position.
 - Keep separate paragraphs inside Markdown list items using blank lines and indented continuation paragraphs; the renderer preserves this indentation.
 - The first `#` heading in a non-homepage Markdown page gets a `.page-header` wrapper automatically. Do not write that wrapper manually unless the page needs a custom header.
@@ -101,7 +100,7 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 ## Working Guidance For Agents
 
 - For nav/footer changes, edit the shared component instead of page files.
-- When adding or renaming pages directly in `src/` or in `src/changelog/`, verify generated links in both languages and hreflang tags.
+- When adding or renaming pages directly in `src/` or in `src/news/`, verify generated links in both languages and hreflang tags.
 - Keep content/language changes local to the correct folder and preserve existing URL conventions.
 
 ## Key Files

@@ -89,6 +89,11 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
   "it": {
     "![Button: Save](/img/manual-english-buttom-save.png)": "![Pulsante: salva](/img/manual-english-buttom-save.png)",
     "![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.png) Clicking on the **`View map`** icon will access the WebGis service in consultation.": "![Schermata: icona visualizza mappa](/img/manual-english-iconsmall-viewmap.png) Facendo clic sull'icona **`Visualizza mappa`** si accede al servizio WebGIS in consultazione.",
+    "**ATTENTION:** contents marked with * are mandatory.": "**ATTENZIONE:** i campi contrassegnati con * sono obbligatori.",
+    "**If the publication was successful, the QGIS project will appear in the list of projects in the Cartographic Group.**": "**Se la pubblicazione è riuscita, il progetto QGIS apparirà nell'elenco dei progetti del gruppo cartografico.**",
+    "**In a separate TAB:** default value, the legend is rendered into a separate tab": "**In una scheda separata:** valore predefinito; la legenda viene visualizzata in una scheda dedicata",
+    "**In case of login fails, report the problem to `info@gis3w.it`**": "**In caso di problemi di accesso, segnala il problema a `info@gis3w.it`**",
+    "**Into TOC layers:** the legend is rendered inside layers toc": "**Nell'indice dei contenuti:** la legenda viene visualizzata all'interno dell'indice dei layer",
     "**`Automatic zoom to query result features:`** if in the results of a search there are only features of a layer, the webgis automatic zoom on their extension": "**`Zoom automatico sulle entità dei risultati della ricerca:`** se i risultati di una ricerca contengono entità di un solo layer, il WebGIS esegue automaticamente lo zoom sulla loro estensione",
     "**`Description`:** Description of the project, it will appear at the public portal level.": "**`Description`:** descrizione del progetto, visualizzata nel portale pubblico.",
     "**`Legend position rendering:`** this option allows to set legend rendering position:": "**`Posizione di visualizzazione della legenda:`** questa opzione consente di impostare la posizione della legenda:",
@@ -100,14 +105,9 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
     "**`User QGIS project map start extent as webgis init extent:`** check this control if you want set initial extent from QGSI project initial extent, **Project properties -> QGIS Server -> WMS capabilities (Advertised extent)**": "**`User QGIS project map start extent as webgis init extent:`** seleziona questa casella per impostare l'estensione iniziale usando quella del progetto QGIS: **Project properties -> QGIS Server -> WMS capabilities (Advertised extent)**",
     "**`Viewer user groups`:** you define the user groups (Viewer) which have the credentials to view the content of the service.": "**`Viewer user groups`:** definisce i gruppi di utenti (Viewer) autorizzati a consultare il contenuto del servizio.",
     "**`Viewers users`:** define the individual users (Viewers) who have the credentials to view the WebGis service. By choosing the anonymous user (**AnonymusUser**) the group will be freely accessible.": "**`Viewers users`:** definisce gli utenti singoli (Viewer) autorizzati a consultare il servizio WebGIS. Scegliendo l'utente anonimo (**AnonymusUser**), il gruppo sarà accessibile liberamente.",
-    "**ATTENTION:** contents marked with * are mandatory.": "**ATTENZIONE:** i campi contrassegnati con * sono obbligatori.",
-    "**If the publication was successful, the QGIS project will appear in the list of projects in the Cartographic Group.**": "**Se la pubblicazione è riuscita, il progetto QGIS apparirà nell'elenco dei progetti del gruppo cartografico.**",
-    "**In a separate TAB:** default value, the legend is rendered into a separate tab": "**In una scheda separata:** valore predefinito; la legenda viene visualizzata in una scheda dedicata",
-    "**In case of login fails, report the problem to `info@gis3w.it`**": "**In caso di problemi di accesso, segnala il problema a `info@gis3w.it`**",
-    "**Into TOC layers:** the legend is rendered inside layers toc": "**Nell'indice dei contenuti:** la legenda viene visualizzata all'interno dell'indice dei layer",
+    "ACL Users": "Utenti ACL",
     "Access the list of webgis in the Cartographic Group **`Demo Group`** clicking on the project number shown.": "Accedi all'elenco dei WebGIS nel gruppo cartografico **`Demo Group`** facendo clic sul numero del progetto visualizzato.",
     "Access the online service": "Accedere al servizio online",
-    "ACL Users": "Utenti ACL",
     "After authentication it will be possible to access the **`Administration session`** and view the **Dashboard**.": "Dopo l'autenticazione sarà possibile accedere alla **sessione di amministrazione** e visualizzare la **Dashboard**.",
     "After filling in the various form, click on the **`Save button`** to confirm your choices.": "Dopo aver compilato il modulo, fai clic sul **pulsante Salva** per confermare le scelte.",
     "Back to Demo tutorial": "Torna al tutorial della demo",
@@ -124,7 +124,6 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
     "Management of access permissions": "Gestione delle autorizzazioni di accesso",
     "Now click on the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png) to publish your **QGIS project**.": "Ora fai clic sul pulsante ![Pulsante: aggiungi progetto QGIS](/img/manual-english-button-add-qgis-project.png) per pubblicare il tuo **progetto QGIS**.",
     "Options and actions": "Opzioni e azioni",
-    "password: **`G3wsuite123`**": "password: **`G3wsuite123`**",
     "Publish a WebGIS service": "Pubblicare un servizio WebGIS",
     "Publish the QGIS project as a WebGis service": "Pubblicare il progetto QGIS come servizio WebGIS",
     "QGIS project": "Progetto QGIS",
@@ -140,6 +139,7 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
     "To access the **Administration Panel** it is necessary to log in using the following credentials:": "Per accedere al **pannello di amministrazione** è necessario effettuare l'accesso con le seguenti credenziali:",
     "To publish the project, you can **access the G3W-SUITE test application** via the following URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)": "Per pubblicare il progetto, puoi **accedere all'applicazione di test G3W-SUITE** tramite il seguente URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)",
     "Update the published WebGis service": "Aggiornare il servizio WebGIS pubblicato",
+    "password: **`G3wsuite123`**": "password: **`G3wsuite123`**",
     "user: **`demo`**": "utente: **`demo`**"
   }
 }

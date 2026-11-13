@@ -64,3 +64,6 @@ Feature: Multilingual site conventions
 
   Scenario: Markdown documentation is compiled locally
     Then every documentation source is Markdown and has a generated page
+
+  Scenario: Documentation home lists release notes automatically
+    Then release links are generated before the documentation content

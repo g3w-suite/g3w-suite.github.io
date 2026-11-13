@@ -1,5 +1,7 @@
 # MerginMaps Partnership
 
+Published: **16 March 2024**
+
 ## MerginMaps partnership
 
 ![Mergin Maps](/img/site-mergin-maps-logo.jpg)
@@ -48,6 +50,7 @@ solution dedicated to field data collection based on [QGIS](https://qgis.org).
       "Integration with G3W-SUITE": "Integrazione con G3W-SUITE",
       "Mergin Maps on devices": "Mergin Maps su dispositivi",
       "MerginMaps Partnership - G3W-Suite": "MerginMaps Partnership - G3W-Suite",
+      "Published: **16 March 2024**": "Pubblicato il **16 marzo 2024**",
       "With the OS solution **Mergin Maps** you can:": "Con la soluzione OS **Mergin Maps** puoi:",
       "a single administration point to publish on the web and on the app": "un unico punto di amministrazione per pubblicare su web e su app",
       "connect an external high-precision GPS for precision surveys": "collegare un GPS esterno, ad alta precisione, per rilievi di precisione",

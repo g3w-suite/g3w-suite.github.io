@@ -118,7 +118,6 @@ If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-s
   "it": {
     "A custom unique token to use for internal caching request.": "Token univoco personalizzato da usare per le richieste interne alla cache.",
     "Caching system": "Sistema di cache",
-    "can be set, important is remember to add thy to `docker-compose.yml` o  `docker-compose-consument.yml`.": "Ricorda di aggiungerle a `docker-compose.yml` o `docker-compose-consument.yml`.",
     "Dafault value is: `/shared-volume/tile_cache/`.": "Il valore predefinito è: `/shared-volume/tile_cache/`.",
     "Database connections parameters": "Parametri di connessione al database",
     "Database host value connect to.": "Valore dell'host del database a cui connettersi.",
@@ -133,13 +132,11 @@ If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-s
     "Default: 6.": "Predefinito: 6.",
     "Default: `200`.": "Predefinito: `200`.",
     "Default: `8`.": "Predefinito: `8`.",
-    "docker container at runtime to PGSERVICEFILE path position.": "container Docker all'avvio, nel percorso indicato da PGSERVICEFILE.",
     "Docker environment variables": "Variabili d'ambiente di Docker",
     "Every QGIS environment variables available as specified on manual": "È possibile impostare tutte le variabili d'ambiente QGIS elencate nel manuale",
     "Frontend module": "Modulo frontend",
     "G3W-SUITE with docker is deployed with Gunicorn.": "G3W-SUITE viene distribuito con Docker utilizzando Gunicorn.",
     "Gunicorn settings": "Impostazioni di Gunicorn",
-    "https://docs.qgis.org/3.22/en/docs/server_manual/config.html#environment-variables": "https://docs.qgis.org/3.22/en/docs/server_manual/config.html#environment-variables",
     "If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-suite/g3w-admin-frontend": "Se impostato su `true`, installa e attiva il modulo G3W-SUITEfrontend https://github.com/g3w-suite/g3w-admin-frontend",
     "If you are going to use docker postgis image, it'll be created on first run of container.": "Se utilizzi l'immagine Docker di PostGIS, verrà creato al primo avvio del container.",
     "If you are going to use docker postgis image, it'll be set to `5432`": "Se utilizzi l'immagine Docker di PostGIS, verrà impostato su `5432`.",
@@ -167,7 +164,10 @@ If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-s
     "They must added to `.env` deploy file.": "Devono essere aggiunte al file di distribuzione `.env`.",
     "Thi is used to compensate the python/gunicorn memory leaks.": "Serve a compensare le perdite di memoria di Python/Gunicorn.",
     "Tile width/height tile map dimension.": "Dimensioni in larghezza/altezza delle tile della mappa.",
-    "Usually then number of workers is equal to number of processor x 2.": "Di solito il numero di worker corrisponde al numero di processori moltiplicato per 2."
+    "Usually then number of workers is equal to number of processor x 2.": "Di solito il numero di worker corrisponde al numero di processori moltiplicato per 2.",
+    "can be set, important is remember to add thy to `docker-compose.yml` o  `docker-compose-consument.yml`.": "Ricorda di aggiungerle a `docker-compose.yml` o `docker-compose-consument.yml`.",
+    "docker container at runtime to PGSERVICEFILE path position.": "container Docker all'avvio, nel percorso indicato da PGSERVICEFILE.",
+    "https://docs.qgis.org/3.22/en/docs/server_manual/config.html#environment-variables": "https://docs.qgis.org/3.22/en/docs/server_manual/config.html#environment-variables"
   }
 }
 </script>

@@ -75,13 +75,13 @@ For **further information** on the web editing function, read the [**dedicated s
 <script type="application/json" data-i18n>
 {
   "it": {
+    "**By activating the editing function it will be possible to edit the geometries and attributes of the Public Buildings layer and the related interventions.**": "**Attivando la funzione di modifica sarà possibile modificare le geometrie e gli attributi del layer Public Buildings e dei relativi interventi.**",
     "**`Buildings rating`**": "**`Buildings rating`**",
     "**`Buildings`**": "**`Buildings`**",
     "**`Maintenance_works`**": "**`Maintenance_works`**",
     "**address** (text): Value relation (roads layer - code/name fileds)": "**address** (testo): relazione dei valori (layer roads - campi code/name)",
     "**architectural_barriers** (text): Checkbox (Checked - Not checked)": "**architectural_barriers** (testo): casella di controllo (selezionata - non selezionata)",
     "**attachment** (integer): check box 1/0 (the visibility of the conditional form Documents is based on this field)": "**attachment** (intero): casella di controllo 1/0 (la visibilità del modulo condizionale Documents dipende da questo campo)",
-    "**By activating the editing function it will be possible to edit the geometries and attributes of the Public Buildings layer and the related interventions.**": "**Attivando la funzione di modifica sarà possibile modificare le geometrie e gli attributi del layer Public Buildings e dei relativi interventi.**",
     "**cost** (integer): range (1000-5000 step 1)": "**cost** (intero): intervallo (1000-5000, passo 1)",
     "**date** (date): date (yyyy/MM/dd)": "**date** (data): data (yyyy/MM/dd)",
     "**date_barriers** (date): date (yyyy/MM/dd)": "**date_barriers** (data): data (yyyy/MM/dd)",
@@ -110,11 +110,8 @@ For **further information** on the web editing function, read the [**dedicated s
     "**year** (integer NOT NULL): unique values (2015,2016,2017,2018,2019,2020)": "**year** (intero NOT NULL): valori univoci (2015,2016,2017,2018,2019,2020)",
     "**year** (integer): range (2018-2022 step 1)": "**year** (intero): intervallo (2018-2022, passo 1)",
     "**zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)": "**zone** (testo): modifica testo (con valori predefiniti basati su un'espressione QGIS per l'associazione all'area di lavoro intersecante)",
-    "_**Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.**_": "_**Nel progetto del tutorial sono già definiti moduli e widget di modifica per il layer geometrico degli edifici e per la tabella alfanumerica dei relativi interventi.**_",
     "Back to Demo tutorial": "Torna al tutorial della demo",
     "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.png) (placed at the left of each rows) will open a modal window that will allow you to:": "Facendo clic sull'icona **Layer di modifica** ![Icona: modifica](/img/manual-english-icon-editing.png) (a sinistra di ogni riga) si aprirà una finestra modale che consentirà di:",
-    "define the **`editing activation scale`** (only for geometric tables)": "definire la **scala di attivazione della modifica** (solo per le tabelle geometriche)",
-    "define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing": "definire gli **utenti Viewer** (singoli o gruppi) **abilitati** alla modifica online",
     "Editing on line": "Modifica online",
     "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).": "Per **ulteriori informazioni** sulla funzione di modifica sul web, consulta la [**sezione dedicata del manuale**](editing-client-tools.md).",
     "Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**": "Una volta attivata la funzione di modifica e aggiornato il servizio, nel pannello sinistro apparirà il **`menu Strumenti`**.",
@@ -125,7 +122,10 @@ For **further information** on the web editing function, read the [**dedicated s
     "Screenshot: G3W-SUITE Administration Project Layer List": "Schermata: elenco dei layer del progetto nell'amministrazione G3W-SUITE",
     "To activate the editing function on webgis, access the list of layers and identify the three layers shown above.": "Per attivare la funzione di modifica nel WebGIS, apri l'elenco dei layer e individua i tre layer mostrati sopra.",
     "Try online editing": "Provare la modifica online",
-    "With regard to the last aspect, it should be noted that **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**": "A questo proposito, si noti che gli **utenti Viewer** (singoli o gruppi) **disponibili** nel menu a discesa **saranno limitati a quelli autorizzati a consultare il progetto WebGIS**"
+    "With regard to the last aspect, it should be noted that **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**": "A questo proposito, si noti che gli **utenti Viewer** (singoli o gruppi) **disponibili** nel menu a discesa **saranno limitati a quelli autorizzati a consultare il progetto WebGIS**",
+    "_**Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.**_": "_**Nel progetto del tutorial sono già definiti moduli e widget di modifica per il layer geometrico degli edifici e per la tabella alfanumerica dei relativi interventi.**_",
+    "define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing": "definire gli **utenti Viewer** (singoli o gruppi) **abilitati** alla modifica online",
+    "define the **`editing activation scale`** (only for geometric tables)": "definire la **scala di attivazione della modifica** (solo per le tabelle geometriche)"
   }
 }
 </script>

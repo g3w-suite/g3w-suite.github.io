@@ -257,7 +257,7 @@ Using drag&drop in the ADMIN session it’s now possible to define the order of 
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
     <a class="btn btn--primary" href="/{{t 'en'}}/demo/">{{t 'Try the demo'}}</a>
-    <a class="btn btn--outline" href="/{{t 'en'}}/download/">Download</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>
 

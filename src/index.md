@@ -4,15 +4,9 @@
 
 Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.
 
-[What's new in v3.11](/en/changelog/v3.11/ "primary-button") [Try the demo](/en/demo/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
+[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/demo/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
 
 ![Publishing QGIS on web](/img/{{#it}}site-g3w-suite-homepage-italian.jpg{{/it}}{{#en}}homepage_eng2.png{{/en}})
-
-## **Get started in minutes** An open-source framework for the comprehensive management of your geospatial infrastructure
-
-It offers more than just the publication of WebGIS services; it also facilitates the development of collaborative mapping management systems, data analysis via interactive charts and temporal animations, online geospatial processing, metadata exposure as a CSW (Catalog Service for the Web) service, and much more.
-
-All of this is built upon full integration with the open-source geospatial application QGIS.
 
 ## **Get started in minutes** Publish your QGIS project in 4 steps
 
@@ -50,7 +44,7 @@ The admin panel lets you manage users, roles and permissions per project, includ
 
 Web editing supports collaborative workflows and field data collection, including mobile and offline use cases.
 
-[Try the demo]({{#en}}https://v310.g3wsuite.it/it/#/en/{{/en}}{{#it}}https://v311.g3wsuite.it{{/it}} "primary-button") [Quick Start](/en/download/#quick-start "outline-button")
+[Try the demo]({{#en}}https://v310.g3wsuite.it/it/#/en/{{/en}}{{#it}}https://v311.g3wsuite.it{{/it}} "primary-button") [Quick Start](/en/docs/quick-start/ "outline-button")
 
 ## <span id="clienti"></span>**Validated in production** Used by public bodies, companies and universities
 
@@ -65,7 +59,7 @@ From territorial planning to network management, with active projects in differe
 - [![Planetek Italia](/img/site-planetek-logo.jpg)](https://www.planetek.it)
 - [![Politecnico di Torino](/img/site-polito.jpg)](https://www.polito.it)
 
-[See all sponsors and contributors](/en/sponsor/ "outline-button")
+[See all sponsors and contributors](/en/sponsors/ "outline-button")
 
 ## <span id="comefunziona"></span>**Use cases** One platform, three operational use cases
 
@@ -74,7 +68,7 @@ WebGIS publishing, public-sector interoperability and advanced geospatial analys
 
 Integrated map client and admin panel for multi-user projects, editing workflows and permission management.
 
-[Full feature set](/en/download/#cosa "outline-small-button")
+[Full feature set](/en/demo/#features "outline-small-button")
 
 ### Interoperability for public administration
 
@@ -86,7 +80,7 @@ Supports digital transition scenarios with dedicated integrations and PDND workf
 
 Run QGIS Processing models directly from the web client to integrate analysis into operational workflows.
 
-[Processing API](/en/news/model-builder-processing/ "outline-small-button") [Changelog 3.11](/en/changelog/v3.11/ "outline-small-button")
+[Processing API](/en/news/model-builder-processing/ "outline-small-button") [Release notes 3.11](/en/news/v3.11/ "outline-small-button")
 
 ## **Open Source Ecosystem** Partnerships and community supporting the project
 ### G3W-SUITE + Mergin Maps
@@ -96,7 +90,7 @@ Run QGIS Processing models directly from the web client to integrate analysis in
 Field data collection and WebGIS publishing in one workflow, from survey to sharing.
 
 [Discover the solutions](/en/news/merginmaps/ "primary-button")
-[Explore the modules](/en/modules/ "outline-button")
+[Explore the components](/en/demo/#components "outline-button")
 
 ### Main contributors
 
@@ -107,25 +101,23 @@ An active community keeps G3W-SUITE stable, up to date and continuously evolving
 - Francesco Boccacci (@volterra79)
 - Alessandro Pasotti (@elpaso)
 
-[Sponsors and contributors](/en/sponsor/ "outline-small-button")
+[Sponsors and contributors](/en/sponsors/ "outline-small-button")
 
 
 <script type="application/json" data-i18n>
   {
     "it": {
-      "**Get started in minutes** An open-source framework for the comprehensive management of your geospatial infrastructure": "**Inizia in pochi minuti** Un framework open source per la gestione completa della tua infrastruttura geospaziale",
       "**Get started in minutes** Publish your QGIS project in 4 steps": "**Inizia in pochi minuti** Pubblica il tuo progetto QGIS in 4 passi",
       "**Open Source Ecosystem** Partnerships and community supporting the project": "**Ecosistema Open Source** Partnership e community a supporto del progetto",
       "**Open Source WebGIS**": "**WebGIS Open Source**",
       "**Use cases** One platform, three operational use cases": "**Casi d'uso** Una piattaforma, tre casi d'uso operativi",
       "**Validated in production** Used by public bodies, companies and universities": "**Validato sul campo** Utilizzato da enti pubblici, aziende e università",
       "Access your own web portal to publish your projects as WebGis service": "Accedi al tuo portale web dedicato per pubblicare i tuoi progetti come servizi WebGis",
-      "All of this is built upon full integration with the open-source geospatial application QGIS.": "Tutto questo è reso possibile dalla piena integrazione con QGIS, l’applicazione geospaziale open source.",
       "An active community keeps G3W-SUITE stable, up to date and continuously evolving.": "Una community attiva mantiene G3W-SUITE stabile, aggiornata e in continua evoluzione.",
       "City of Trento": "Comune di Trento",
       "Create your QGIS cartographic project by using your data": "Crea il tuo progetto cartografico utilizzando i tuoi dati geografici",
       "Discover the solutions": "Scopri le soluzioni",
-      "Explore the modules": "Scopri i moduli",
+      "Explore the components": "Scopri i componenti",
       "Field data collection and WebGIS publishing in one workflow, from survey to sharing.": "Raccolta dati sul campo e pubblicazione WebGIS in un flusso unico, dal rilievo alla condivisione.",
       "Friuli Venezia Giulia Landscape Plan": "Piano Paesaggistico Regionale FVG",
       "From desktop to web in a few clicks": "Dal desktop al web in pochi clic",
@@ -137,7 +129,6 @@ An active community keeps G3W-SUITE stable, up to date and continuously evolving
       "Gran Paradiso National Park": "Parco Nazionale Gran Paradiso",
       "Integrated map client and admin panel for multi-user projects, editing workflows and permission management.": "Client cartografico e pannello admin integrati per progetti multiutente, workflow di editing e gestione permessi.",
       "Interoperability for public administration": "Interoperabilità per la PA",
-      "It offers more than just the publication of WebGIS services; it also facilitates the development of collaborative mapping management systems, data analysis via interactive charts and temporal animations, online geospatial processing, metadata exposure as a CSW (Catalog Service for the Web) service, and much more.": "Oltre alla pubblicazione di servizi WebGIS, consente di realizzare sistemi collaborativi per la gestione cartografica, analizzare i dati con grafici interattivi e animazioni temporali, eseguire geoprocessi online, esporre metadati tramite il servizio CSW (Catalog Service for the Web) e molto altro.",
       "Main contributors": "Contributori principali",
       "Manage your projects independently by defining users, editing permissions and constraints, interactive graphics, search methods and activating the most useful features for your management system": "Gestisci autonomamente i tuoi progetti definendo utenti, permessi e vincoli di editing, grafici interattivi, metodi di ricerca e attivando le funzionalità più utili per il tuo gestionale",
       "Map client": "Client cartografico",
@@ -152,6 +143,8 @@ An active community keeps G3W-SUITE stable, up to date and continuously evolving
       "Publish your QGIS projects on the Web": "Pubblica i tuoi progetti QGIS sul Web",
       "Publishing QGIS on web": "Pubblicazione QGIS sul web",
       "QGIS Processing in the browser": "QGIS Processing nel browser",
+      "Quick Start": "Guida rapida",
+      "Release notes 3.11": "Note di rilascio 3.11",
       "Run QGIS Processing models directly from the web client to integrate analysis into operational workflows.": "Esegui modelli QGIS Processing direttamente dal client web per integrare l'analisi nei flussi operativi.",
       "See all sponsors and contributors": "Vedi tutti sponsor e contributori",
       "Sponsors and contributors": "Sponsor e contributori",

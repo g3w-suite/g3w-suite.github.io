@@ -15,6 +15,10 @@ Through the web interface, administrators can publish and organize QGIS projects
 ![G3W-SUITE administration panel](/img/installation-english-admin.jpg)
 ![G3W-SUITE cartographic client](/img/installation-english-client.jpg)
 
+## Getting started
+
+- [Quick Start](quick-start.md)
+
 ## Installation and deployment
 
 - [Installation](install.md)
@@ -68,12 +72,14 @@ Through the web interface, administrators can publish and organize QGIS projects
       "G3W-SUITE administration panel": "Pannello di amministrazione di G3W-SUITE",
       "G3W-SUITE cartographic client": "Client cartografico di G3W-SUITE",
       "G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.": "G3W-SUITE è un framework basato su Django e Python che integra componenti QGIS per creare un sistema informativo geografico e pubblicare progetti QGIS sul web.",
+      "Getting started": "Per iniziare",
       "Installation": "Installazione",
       "Installation and deployment": "Installazione e distribuzione",
       "Introduction": "Introduzione",
       "Manual": "Manuale",
       "Online editing": "Modifica online",
       "QGIS project settings": "Impostazioni dei progetti QGIS",
+      "Quick Start": "Guida rapida",
       "Settings": "Impostazioni",
       "Social authentication": "Autenticazione social",
       "Technological infrastructure": "Infrastruttura tecnologica",
