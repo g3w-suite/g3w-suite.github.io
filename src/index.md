@@ -105,7 +105,7 @@
 
 - Walter Lorenzetti (@wlorenzetti)
 - Matteo Tosi (@Raruto)
-- francesco Boccacci (@volterra79)
+- Francesco Boccacci (@volterra79)
 - Alessandro Pasotti (@elpaso)
 
 [{{t 'Sponsors and contributors'}}](/{{t 'en'}}/sponsor/ "outline-small-button")
