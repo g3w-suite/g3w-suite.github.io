@@ -15,3 +15,6 @@ Feature: Site content conventions
 
   Scenario: Markdown button markers keep their page styles
     Then generated buttons retain their styles and external-link behavior
+
+  Scenario: Sponsor profiles document release credits
+    Then sponsor profiles link to their credited releases in both languages

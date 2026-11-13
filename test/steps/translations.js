@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
+const { autoTranslateMarkdown } = require('../../utils/markdown');
 const {
   staticDir,
   languages,
@@ -19,6 +20,12 @@ const {
 } = require('../support/site');
 
 Then('translated text is rendered for each language', function () {
+  const imageLink = '[![Contributor](https://example.test/avatar.png) Contributor](/en/about/contributor/)';
+  assert.equal(
+    autoTranslateMarkdown(imageLink, 'it'),
+    '[![Contributor](https://example.test/avatar.png) Contributor](/it/about/contributor/)',
+    'internal links wrapping images must use the current language route'
+  );
   const sourceFiles = pageSourceFiles(path.resolve('src'));
   const sourceHtml = sourceFiles.map(file => fs.readFileSync(file, 'utf8'));
   const outputHtml = htmlFiles(staticDir).map(file => fs.readFileSync(file, 'utf8'));

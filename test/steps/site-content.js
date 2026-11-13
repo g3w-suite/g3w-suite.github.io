@@ -6,6 +6,46 @@ const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
 const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, newsSlug, readPage } = require('../support/site');
 
+Then('sponsor profiles link to their credited releases in both languages', function () {
+  const sponsors = {
+    'arpa-liguria': '3.3,3.10,3.11',
+    'arpa-piemonte': '3.4,3.5,3.7',
+    'bonifica-renana': '3.0,3.1,3.2,3.3,3.4,3.5,3.6,3.8,3.10,3.11',
+    'citta-metropolitana-roma': '3.5',
+    'cnr-irpi': '3.4,3.9',
+    'comune-bari': '3.3,3.4',
+    'comune-grosseto': '3.6,3.9',
+    'comune-palermo': '3.3',
+    'comune-trento': '3.3,3.4,3.6',
+    'comunita-carnia': '3.6,3.10',
+    'foca-management-partners': '3.8',
+    gis3w: '3.0,3.1,3.8,3.9,3.10',
+    intercad: '3.10',
+    lea: '3.10,3.11',
+    'museo-civico-rovereto': '3.9',
+    planetek: '3.1,3.2,3.3,3.4',
+    qmap: '3.8',
+    qtibia: '3.7',
+    'regione-lazio': '3.2,3.5',
+    risval: '3.0',
+    stantec: '3.10',
+  };
+  for (const lang of languages) {
+    const index = readPage(path.join(staticDir, lang, 'sponsors', 'index.html')).$;
+    for (const [slug, versions] of Object.entries(sponsors)) {
+      assert.equal(index(`main a[href="/${lang}/sponsors/${slug}/"]`).length, 1, `${lang}: missing ${slug}`);
+      const profile = readPage(path.join(staticDir, lang, 'sponsors', slug, 'index.html')).$;
+      assert.equal(profile(`main a[href="/${lang}/sponsors/"]`).length, 1, `${lang}: ${slug} must link back`);
+      assert.deepEqual(
+        profile(`main a[href^="/${lang}/news/v"]`).map((_, link) => link.attribs.href).get(),
+        versions.split(',').map(version => `/${lang}/news/v${version}/`),
+        `${lang}: ${slug} must link to its credited releases`
+      );
+      assert.equal(profile('main h2').first().text(), lang === 'it' ? 'Contributo a G3W-SUITE' : 'Contribution to G3W-SUITE');
+    }
+  }
+});
+
 Then('source text is valid UTF-8 without corrupted character sequences', function () {
   const decoder = new TextDecoder('utf-8', { fatal: true });
   const corrupted = /[\u0080-\u009f\ufffd]|\u00c3[\u0080-\u00bf\u0192]|\u00c2[\u0080-\u00bf]|\u00e2[\u0080\u20ac]|\u00ef\u00bf\u00bd/;

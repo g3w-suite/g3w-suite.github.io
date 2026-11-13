@@ -38,12 +38,12 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
         const translatedLabel = Object.hasOwn(entries, label) ? entries[label] : label;
         return `![${translatedLabel}](${destination})`;
       });
-      lines[index] = lines[index].replace(/(^|[^!])\[([^\[\]]+)\]\(([^)]*)\)/g, (_, before, label, destination) => {
+      lines[index] = lines[index].replace(/(^|[^!])\[((?:[^\[\]]|!\[[^\[\]]*\]\([^)]*\))*)\]\(([^)]*)\)/g, (_, before, label, destination) => {
         const translatedLabel = Object.hasOwn(entries, label) ? entries[label] : label;
         return `${before}[${translatedLabel}](${destination})`;
       });
     }
-    lines[index] = lines[index].replace(/(^|[^!])\[([^\[\]]+)\]\(([^)]*)\)/g, (_, before, label, destination) => {
+    lines[index] = lines[index].replace(/(^|[^!])\[((?:[^\[\]]|!\[[^\[\]]*\]\([^)]*\))*)\]\(([^)]*)\)/g, (_, before, label, destination) => {
       const localizedDestination = destination
         .replace(/^\/?en\/(docs\/.*)$/, (_, docsPath) => `/${lang === 'it' ? 'it/' : ''}${docsPath}`)
         .replace(/^\/?en\//, `/${lang}/`);

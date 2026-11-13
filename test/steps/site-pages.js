@@ -185,6 +185,8 @@ Then('the navigation controls retain their accessibility attributes', function (
           ? 'about'
         : relativePage.startsWith(`explore${path.sep}`)
           ? 'explore'
+        : relativePage.startsWith(`sponsors${path.sep}`)
+          ? 'sponsors'
         : ['community', 'sponsors'].includes(pageRoute)
             ? pageRoute
             : null;
