@@ -34,8 +34,8 @@
     "Generic aspects": "Aspetti generali",
     "Map navigation and queries": "Navigazione e interrogazione della mappa",
     "Navigation and interaction with the map": "Navigazione e interazione con la mappa",
-    "Time series": "Serie temporali",
     "TOC session": "Pannello TOC",
+    "Time series": "Serie temporali",
     "Tools panel": "Pannello degli strumenti",
     "Tools panel and table of contents": "Pannello degli strumenti e indice dei contenuti"
   }

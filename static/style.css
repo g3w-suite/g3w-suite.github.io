@@ -1215,89 +1215,84 @@ section + .section--dark { border-top: none; }
 }
 .filter-btn.active,
 .filter-btn:hover { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-white); }
-.page-explore main#main-content {
+.page-explore main > section:first-of-type > .container {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 360px)) minmax(0, 1fr);
-  gap: var(--gap);
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 1rem 3rem;
+  align-items: center;
 }
-.page-explore main > .page-header,
-.page-explore main > section:nth-of-type(n+4) { grid-column: 1 / -1; }
-.page-explore main > section.demo-card:nth-of-type(1) { grid-column: 2; }
-.page-explore main > section.demo-card:nth-of-type(2) { grid-column: 3; }
-.page-explore main > section.demo-card:nth-of-type(3) { grid-column: 4; }
-.page-explore main > section.demo-card {
-  width: 100%;
-  max-width: 360px;
-  justify-self: center;
-  padding: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+.page-explore main > section:first-of-type > .container > p:not(:has(> img)) { grid-column: 1; }
+.page-explore main > section:first-of-type > .container > p:first-child { align-self: end; font-size: 1.2rem; }
+.page-explore main > section:first-of-type > .container > p:has(> a.btn) { align-self: start; }
+.page-explore main > section:first-of-type > .container > p:has(> img) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+.page-explore main > section:first-of-type img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.page-explore main > section p:has(> a.btn) { display: flex; flex-wrap: wrap; gap: .75rem; }
+.page-explore main > section:has(> .container > h2 > #features) { background: var(--color-light); }
+.page-explore main > section:has(> .container > h2 > #features) > .container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.page-explore main > section:has(> .container > h2 > #features) h2 { grid-column: 1 / -1; }
+.page-explore main > section:has(> .container > h2 > #features) section {
+  padding: 1.5rem;
   background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius);
 }
-.page-explore main > section.demo-card > .container { height: 100%; max-width: none; padding: 0; }
-.page-explore main > section.demo-card h2 { font-size: 1rem; margin-bottom: .5rem; }
-.page-explore main > section.demo-card p { font-size: .85rem; color: var(--color-muted); }
-.page-explore main > section.demo-card > .container > ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin: .7rem 0 0;
-  padding: 0;
+.page-explore main > section:has(> .container > h2 > #features) section h3 { font-size: 1.1rem; }
+.page-explore main > section:has(> .container > h2 > #demo-3-11) > .container { max-width: 900px; }
+.page-explore main > section:has(> .container > h2 > #demo-3-11) ul {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.page-explore main > section:has(> .container > h2 > #demo-3-11) section { margin-top: 1.5rem; }
+.page-explore main > section:has(> .container > h2 > #components) { background: var(--color-light); }
+.page-explore main > section:has(> .container > h2 > #components) ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: .75rem;
+  margin: 1.5rem 0;
   list-style: none;
 }
-.page-explore main > section.demo-card > .container > ul > li { margin: 0; }
-.page-explore main > section.demo-card > .container > ul > li > a {
-  display: inline-block;
-  padding: .35rem .9rem;
-  border: 2px solid var(--color-primary);
-  border-radius: 2rem;
-  color: var(--color-primary);
-  font-size: .85rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background var(--transition), color var(--transition), border-color var(--transition);
-  white-space: nowrap;
+.page-explore main > section:has(> .container > h2 > #components) li {
+  padding: 1.25rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius);
 }
-.page-explore main > section.demo-card > .container > ul > li > a:hover,
-.page-explore main > section.demo-card > .container > ul > li > a:focus {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-.page-explore main > section:nth-of-type(4) > .container { overflow-x: auto; }
-.page-explore main > section:nth-of-type(4) table {
-  min-width: 900px;
+.page-explore-versions main > section > .container { overflow-x: auto; }
+.page-explore-versions main table {
+  min-width: 800px;
   font-size: .88rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
 }
-.page-explore main > section:nth-of-type(4) th {
+.page-explore-versions main th {
   padding: .6rem .9rem;
   background: var(--color-dark);
   color: var(--color-white);
   text-align: center;
   white-space: nowrap;
 }
-.page-explore main > section:nth-of-type(4) td {
+.page-explore-versions main td {
   padding: .55rem .9rem;
   text-align: center;
   border-bottom: 1px solid var(--color-border);
 }
-.page-explore main > section:nth-of-type(4) tr:nth-child(even) td { background: #fafafa; }
-.page-explore main > section:nth-of-type(6) > .container > ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: .75rem;
-  margin-top: 1.5rem;
-  list-style: none;
-}
-.page-explore main > section:nth-of-type(6) > .container > ul > li {
-  padding: 1rem 1.25rem;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius);
-}
+.page-explore-versions main tr:nth-child(even) td { background: #fafafa; }
+.page-explore-versions main table { margin: 1.5rem 0; }
 
 /* ── 15. Tabella documentazione ──────────────────────────────── */
 .page-download main > section > .container:has(> table) { overflow-x: auto; }
@@ -1946,53 +1941,12 @@ section + .section--dark { border-top: none; }
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
-/* ── 23b. Contributors ──────────────────────────────────────── */
-.page-community main > section:nth-of-type(5) > .container > ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  list-style: none;
-}
 .home-ecosystem {
   gap: 1.5rem;
 }
 .home-ecosystem .partnership-banner {
   height: 100%;
 }
-.page-community main > section:nth-of-type(5) > .container > ul > li {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem;
-  text-align: center;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-.page-community main > section:nth-of-type(5) > .container > ul > li:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
-}
-.page-community main > section:nth-of-type(5) > .container > ul > li > img {
-  display: block;
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--color-border);
-  margin: 0 auto .75rem;
-}
-.page-community main > section:nth-of-type(5) > .container > ul > li > strong {
-  font-size: 1.1rem;
-}
-.page-community main > section:nth-of-type(5) > .container > ul > li > a {
-  display: block;
-  font-size: .9rem;
-  color: var(--color-muted);
-  margin-top: .25rem;
-}
-
 .contributor-profile {
   max-width: 900px;
   margin: 0 auto;
@@ -2080,13 +2034,13 @@ section + .section--dark { border-top: none; }
 
 @media (max-width: 720px) {
   .page-sponsors main > section:nth-of-type(2) > .container { grid-template-columns: 1fr; }
-  .page-explore main#main-content { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .page-explore main > section.demo-card:nth-of-type(n) { grid-column: auto; }
+  .page-explore main > section:first-of-type > .container { grid-template-columns: 1fr; }
+  .page-explore main > section:first-of-type > .container > p:has(> img) { grid-column: 1; grid-row: auto; }
+  .page-explore main > section:has(> .container > h2 > #features) > .container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 480px) {
-  .page-explore main#main-content { grid-template-columns: 1fr; }
-  .page-explore main > section.demo-card { max-width: calc(100% - 2rem); }
+  .page-explore main > section:has(> .container > h2 > #features) > .container { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 980px) {

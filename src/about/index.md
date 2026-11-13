@@ -50,7 +50,6 @@ Follow the [project news](/en/news/). Articles without an individual byline are 
     "it": {
       "**G3W-SUITE helps teams bring the geographic knowledge they create in QGIS into the work of everyone who needs it. Publish existing projects as WebGIS, so people can explore, share and edit information together.**": "**G3W-SUITE aiuta i team a portare le conoscenze geografiche create in QGIS nel lavoro quotidiano di tutte le persone che ne hanno bisogno. Pubblica i progetti esistenti come WebGIS, così da esplorare, condividere e modificare le informazioni insieme.**",
       "A map is a starting point, not the end of the workflow. Search, editing, user roles and permissions, and field access help turn geographic information into tools people can use every day.": "Una mappa è il punto di partenza, non la fine del flusso di lavoro. Ricerca, modifica, ruoli e permessi utente e accesso dal campo aiutano a trasformare le informazioni geografiche in strumenti per il lavoro quotidiano.",
-      "Articles without an individual byline are published by the [G3W-SUITE team](/en/about/g3w-suite-team/).": "Gli articoli senza una firma individuale sono pubblicati dal [team G3W-SUITE](/en/about/g3w-suite-team/).",
       "Bring QGIS projects into everyday work with an open, modular WebGIS built for collaboration.": "Porta i progetti QGIS nel lavoro quotidiano con un WebGIS open source e modulare, pensato per la collaborazione.",
       "Build on QGIS projects, styles, forms, relations and print layouts teams already rely on—without rebuilding their mapping work from scratch.": "Valorizza i progetti QGIS, gli stili, i moduli, le relazioni e i layout di stampa su cui i team fanno già affidamento, senza ricostruire da zero il lavoro cartografico.",
       "Explore and take part": "Esplora e partecipa",
@@ -65,8 +64,8 @@ Follow the [project news](/en/news/). Articles without an individual byline are 
       "Make maps useful": "Rendi utili le mappe",
       "People behind the project": "Le persone dietro al progetto",
       "Start with the work you already have": "Parti dal lavoro che esiste già",
-      "What guides us": "Cosa ci guida",
       "We believe maps are most useful when they stay connected to the data and expertise behind them—and are ready to support real work and better decisions.": "Crediamo che le mappe siano davvero utili quando restano collegate ai dati e alle competenze che le hanno generate, e quando possono supportare attività concrete e decisioni migliori.",
+      "What guides us": "Cosa ci guida",
       "Why G3W-SUITE exists": "Perché esiste G3W-SUITE",
       "Why G3W-SUITE exists - G3W-Suite": "Perché esiste G3W-SUITE - G3W-Suite",
       "[Explore the components](/en/explore/#components \"primary-button\") [Read the documentation](/en/docs/ \"outline-button\") [Join the community](/en/community/ \"outline-button\")": "[Esplora i componenti](/en/explore/#components \"primary-button\") [Consulta la documentazione](/en/docs/ \"outline-button\") [Partecipa alla community](/en/community/ \"outline-button\")"

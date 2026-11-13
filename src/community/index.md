@@ -22,16 +22,9 @@ Track planned work and follow ongoing development on the public roadmap.
 
 ## Project contributors
 
-Meet some of the people who contribute to G3W-SUITE.
+Meet the people behind G3W-SUITE and learn about their contributions.
 
-- ![Alessandro Pasotti](https://github.com/elpaso.png?size=200) **Alessandro Pasotti** [@elpaso](https://github.com/elpaso)
-- ![Leonardo Lami](https://github.com/leolami.png?size=200) **Leonardo Lami** [@leolami](https://github.com/leolami)
-- ![Leonardo Lami](https://github.com/leonardolami.png?size=200) **Leonardo Lami** [@leonardolami](https://github.com/leonardolami)
-- ![Andrea Antonello](https://github.com/moovida.png?size=200) **Andrea Antonello** [@moovida](https://github.com/moovida)
-- ![Matteo Tosi](https://github.com/Raruto.png?size=200) **Matteo Tosi** [@Raruto](https://github.com/Raruto)
-- ![Tudor Barascu](https://github.com/tudorbarascu.png?size=200) **Tudor Barascu** [@tudorbarascu](https://github.com/tudorbarascu)
-- ![Francesco Boccacci](https://github.com/volterra79.png?size=200) **Francesco Boccacci** [@volterra79](https://github.com/volterra79)
-- ![Walter Lorenzetti](https://github.com/wlorenzetti.png?size=200) **Walter Lorenzetti** [@wlorenzetti](https://github.com/wlorenzetti)
+[Meet the contributors](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {
@@ -44,7 +37,8 @@ Meet some of the people who contribute to G3W-SUITE.
       "Follow the roadmap": "Segui la roadmap",
       "Join the G3W-SUITE community to ask questions, share ideas and help improve the project.": "Unisciti alla community di G3W-SUITE per fare domande, condividere idee e contribuire al miglioramento del progetto.",
       "Join the discussion": "Partecipa alla discussione",
-      "Meet some of the people who contribute to G3W-SUITE.": "Scopri alcune delle persone che contribuiscono a G3W-SUITE.",
+      "Meet the contributors": "Scopri i contributori",
+      "Meet the people behind G3W-SUITE and learn about their contributions.": "Conosci le persone dietro G3W-SUITE e scopri i loro contributi.",
       "Project contributors": "Contributori del progetto",
       "Questions and discussion": "Domande e discussioni",
       "Track planned work and follow ongoing development on the public roadmap.": "Consulta le attività pianificate e segui lo sviluppo nella roadmap pubblica.",

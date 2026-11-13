@@ -87,7 +87,7 @@ In this section it is possible to view the list of Cartographic Macrogroups, man
 
 **ATTENTION: use the Cartographic MacroGroups only if you need them.**
 
-See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization#hierarchical-organization-of-WebGis-services-and-types-of-users-roles) to learn more about this aspect.
+See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization#hierarchical-organization-of-webgis-services-and-types-of-users-roles) to learn more about this aspect.
 
 For example, you can create a **Macrogroup** to collect a series of **Cartographic Groups** belonging to the same Administration (single Municipality within a Union of Municipalities) or more simply to have main containers that contain second level groupings (Groups).
 
@@ -221,7 +221,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "Screenshot: G3W-SUITE Administration User List": "Schermata: elenco degli utenti nell'amministrazione di G3W-SUITE",
       "Screenshot: G3W-SUITE Administration Usergroup Add": "Schermata: aggiunta di un gruppo di utenti nell'amministrazione di G3W-SUITE",
       "Screenshot: G3W-SUITE Administration Usergroup List": "Schermata: elenco dei gruppi di utenti nell'amministrazione di G3W-SUITE",
-      "See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization#hierarchical-organization-of-WebGis-services-and-types-of-users-roles) to learn more about this aspect.": "Per ulteriori informazioni, consultare il capitolo [Organizzazione gerarchica dei servizi WebGis e tipi di utenti](user_groups_organization#hierarchical-organization-of-WebGis-services-and-types-of-users-roles).",
+      "See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization#hierarchical-organization-of-webgis-services-and-types-of-users-roles) to learn more about this aspect.": "Per ulteriori informazioni, consultare il capitolo [Organizzazione gerarchica dei servizi WebGis e tipi di utenti](user_groups_organization#hierarchical-organization-of-webgis-services-and-types-of-users-roles).",
       "State of user: active/deactivated": "Stato dell'utente: attivo/disattivato",
       "Super user and Staff privileges": "Privilegi di superutente e Staff",
       "The association between user and user groups can also be achieved at the individual user management level.": "L'associazione tra utenti e gruppi di utenti può essere effettuata anche dalla gestione del singolo utente.",

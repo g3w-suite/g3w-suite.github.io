@@ -383,14 +383,11 @@ Settings variables for *caching* workflow
     "it": {
       "**G3W-SUITE** html page title.": "Titolo della pagina HTML di **G3W-SUITE**.",
       "**Important**": "**Importante**",
+      "*QGIS project*:": "*Progetto QGIS*:",
       "*gpx*: download into GPS format (only for Point and Line layers)": "*gpx*: scarica in formato GPS (solo per layer di punti e linee)",
       "*local_settings.py*:": "*local_settings.py*:",
-      "*QGIS project*:": "*Progetto QGIS*:",
       "*shp*: download into Esri Shape format.": "*shp*: scarica in formato Esri Shapefile.",
       "*xls*: download into Excel format": "*xls*: scarica in formato Excel",
-      "`api`: by g3w-suite layer vector API.": "`api`: tramite l'API vettoriale dei layer di G3W-SUITE.",
-      "`i18n` (optional) set True if you want lent client try to translate title.": "`i18n` (facoltativo): impostare True per consentire al client di provare a tradurre il titolo.",
-      "`ows`: by wms search;": "`ows`: ricerca tramite WMS;",
       "A custom url from to load custom static files as images, css, etc..": "URL personalizzato da cui caricare file statici personalizzati, come immagini, CSS ecc.",
       "A dict to customize **QGIS-server** legend image generate with WMS `GetLegendGraphics` request.": "Dizionario per personalizzare l'immagine della legenda di **QGIS Server**, generata con una richiesta WMS `GetLegendGraphics`.",
       "A list of custom css files added to `admin` pages and to the `client`.": "Elenco di file CSS personalizzati aggiunti alle pagine `admin` e al `client`.",
@@ -417,8 +414,6 @@ Settings variables for *caching* workflow
       "Default is *False*, if *True* the activation of a self-signed user must be done by administrator user.": "Il valore predefinito è *False*; se impostato su *True*, un utente registrato autonomamente deve essere attivato da un amministratore.",
       "Default is 5, max number files to upload simultaneously.": "Il valore predefinito è 5: numero massimo di file caricabili contemporaneamente.",
       "Default is `'GET'`, set to `'POST'` to change default http call method.": "Il valore predefinito è `'GET'`; impostare `'POST'` per modificare il metodo predefinito delle richieste HTTP.",
-      "Default is `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`": "Il valore predefinito è `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`.",
-      "Default is `['shp', 'xls']`, set download data format. Values possible:": "Il valore predefinito è `['shp', 'xls']`; definisce il formato di download dei dati. I valori possibili sono:",
       "Default is `Disk` to save tile on a disk. Set to `Memcache` for to use *Memcached* caching framework (https://www.memcached.org/)": "Il valore predefinito è `Disk` per salvare le tile su disco. Impostare `Memcache` per usare il framework di caching *Memcached* (https://www.memcached.org/).",
       "Default is `False`, set to `True` for activate **G3W-SUITE** frontend portal like `g3w-admin-frontend`.": "Il valore predefinito è `False`; impostare `True` per attivare il portale front-end di **G3W-SUITE**, come `g3w-admin-frontend`.",
       "Default is `False`, set to `True` to import DataPlotly settings from QGIS project.": "Il valore predefinito è `False`; impostare `True` per importare le impostazioni di DataPlotly dal progetto QGIS.",
@@ -426,9 +421,11 @@ Settings variables for *caching* workflow
       "Default is `False`. Set to `True` for remove from webgis TOC vector layer empty, without data.": "Il valore predefinito è `False`. Impostare `True` per rimuovere dal TOC del WebGIS i layer vettoriali vuoti, privi di dati.",
       "Default is `False`. Set to `True` to log users editing action into database.": "Il valore predefinito è `False`. Impostare `True` per registrare nel database le azioni di modifica degli utenti.",
       "Default is `False`. Set to `True` to render possible give to `anonymous user` editing permissions.": "Il valore predefinito è `False`. Impostare `True` per poter concedere i permessi di modifica all'`utente anonimo`.",
-      "Default is `http://localhost:8080/ors/v2/`, this is the endpoint for Openrouteservice API.": "Il valore predefinito è `http://localhost:8080/ors/v2/`, l'endpoint dell'API Openrouteservice.",
       "Default is `True`, set to `False` for don't show bottom `attribution` informations.": "Il valore predefinito è `True`; impostare `False` per non mostrare le informazioni di `attribuzione` in fondo alla pagina.",
       "Default is `True`. Set to `False` for not show editing button activate/deactivate into layers project list.": "Il valore predefinito è `True`. Impostare `False` per non mostrare il pulsante di attivazione/disattivazione della modifica nell'elenco dei layer del progetto.",
+      "Default is `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`": "Il valore predefinito è `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`.",
+      "Default is `['shp', 'xls']`, set download data format. Values possible:": "Il valore predefinito è `['shp', 'xls']`; definisce il formato di download dei dati. I valori possibili sono:",
+      "Default is `http://localhost:8080/ors/v2/`, this is the endpoint for Openrouteservice API.": "Il valore predefinito è `http://localhost:8080/ors/v2/`, l'endpoint dell'API Openrouteservice.",
       "Editing settings": "Impostazioni di modifica",
       "Favorite icon image.": "Immagine dell'icona preferita.",
       "Filemanger settings": "Impostazioni di File Manager",
@@ -465,7 +462,6 @@ Settings variables for *caching* workflow
       "Required if RECAPTCHA is True, Google reCAPATCHA private key.": "Obbligatoria se RECAPTCHA è True: chiave privata Google reCAPTCHA.",
       "Required if RECAPTCHA is True, Google reCAPATCHA public key.": "Obbligatoria se RECAPTCHA è True: chiave pubblica Google reCAPTCHA.",
       "Search url endpoint for 'searches calling', default `ows`.": "Endpoint URL di ricerca per le chiamate di ricerca; il valore predefinito è `ows`.",
-      "service plus of `Nominatim` default service.": "oltre al servizio predefinito `Nominatim`.",
       "Set the geocoding providers available for webgis services:": "Imposta i provider di geocodifica disponibili per i servizi WebGIS:",
       "Settings": "Impostazioni",
       "Settings params for `caching` module": "Parametri di configurazione del modulo `caching`",
@@ -479,7 +475,11 @@ Settings variables for *caching* workflow
       "To activate it is sufficient add a new log `handler` inside Django `LOGGING` settings and use it for a `logger`:": "Per attivarla è sufficiente aggiungere un nuovo `handler` di log alle impostazioni `LOGGING` di Django e utilizzarlo per un `logger`:",
       "Vendors settings": "Impostazioni dei fornitori",
       "With v3.6.x version G3W-SUITE can save message logs inside the database.": "Dalla versione 3.6.x, G3W-SUITE può salvare i messaggi di log nel database.",
-      "You can also add custom providers (or edit the existing ones within `static/client/geocoding-providers` folder), just remember to use javascript file name as \"provider\" identifier:": "È possibile aggiungere provider personalizzati (o modificare quelli esistenti nella cartella `static/client/geocoding-providers`); ricordarsi di usare il nome del file JavaScript come identificatore del \"provider\":"
+      "You can also add custom providers (or edit the existing ones within `static/client/geocoding-providers` folder), just remember to use javascript file name as \"provider\" identifier:": "È possibile aggiungere provider personalizzati (o modificare quelli esistenti nella cartella `static/client/geocoding-providers`); ricordarsi di usare il nome del file JavaScript come identificatore del \"provider\":",
+      "`api`: by g3w-suite layer vector API.": "`api`: tramite l'API vettoriale dei layer di G3W-SUITE.",
+      "`i18n` (optional) set True if you want lent client try to translate title.": "`i18n` (facoltativo): impostare True per consentire al client di provare a tradurre il titolo.",
+      "`ows`: by wms search;": "`ows`: ricerca tramite WMS;",
+      "service plus of `Nominatim` default service.": "oltre al servizio predefinito `Nominatim`."
     }
   }
 </script>

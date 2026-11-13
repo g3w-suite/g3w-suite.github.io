@@ -2,7 +2,7 @@
 
 G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
 
-The current release (3.11) is compatible with QGIS 3.34 LTR (Server and Desktop). G3W-SUITE includes:
+The current release (3.11) is compatible with QGIS 3.44 LTR (Server and Desktop). G3W-SUITE includes:
 
 - **QGIS Desktop** for managing geographic data and creating cartographic projects.
 - **QGIS Server** for publishing QGIS projects as OGC services.
@@ -83,7 +83,7 @@ Through the web interface, administrators can publish and organize QGIS projects
       "Settings": "Impostazioni",
       "Social authentication": "Autenticazione social",
       "Technological infrastructure": "Infrastruttura tecnologica",
-      "The current release (3.11) is compatible with QGIS 3.34 LTR (Server and Desktop). G3W-SUITE includes:": "La versione attuale (3.11) è compatibile con QGIS 3.34 LTR (Server e Desktop). G3W-SUITE comprende:",
+      "The current release (3.11) is compatible with QGIS 3.44 LTR (Server and Desktop). G3W-SUITE includes:": "La versione attuale (3.11) è compatibile con QGIS 3.44 LTR (Server e Desktop). G3W-SUITE comprende:",
       "Through the web interface, administrators can publish and organize QGIS projects, manage users and roles, configure search tools, enable online editing and functional modules, and assign access permissions.": "Dall'interfaccia web gli amministratori possono pubblicare e organizzare progetti QGIS, gestire utenti e ruoli, configurare gli strumenti di ricerca, abilitare la modifica online e i moduli funzionali e assegnare i permessi di accesso.",
       "Translation": "Traduzione",
       "Tutorial": "Tutorial",

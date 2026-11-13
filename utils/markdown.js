@@ -1,6 +1,5 @@
 'use strict';
 
-const path = require('node:path');
 const { marked } = require('marked');
 const { gfmHeadingId, getHeadingList } = require('marked-gfm-heading-id');
 marked.use(gfmHeadingId());
@@ -169,7 +168,6 @@ function renderMarkdownSections(markdown, page) {
   function renderItems(items, topLevel = false) {
     let html = '';
     let buffered = [];
-    let sectionNumber = 0;
     const flush = () => {
       if (buffered.length) html += marked.parser(buffered);
       buffered = [];
@@ -182,12 +180,10 @@ function renderMarkdownSections(markdown, page) {
       }
 
       flush();
-      if (topLevel) sectionNumber += 1;
       const heading = item.heading ? marked.parser([item.heading]) : '';
       const content = `${heading}${renderItems(item.items)}`;
-      const demoCard = page === path.join('explore', 'index.md') && topLevel && sectionNumber <= 3;
       html += topLevel
-        ? `<section class="section${demoCard ? ' demo-card' : ''}"><div class="container">${content}</div></section>`
+        ? `<section class="section"><div class="container">${content}</div></section>`
         : `<section class="section">${content}</section>`;
     }
     flush();

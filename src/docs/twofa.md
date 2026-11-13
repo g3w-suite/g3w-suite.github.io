@@ -67,14 +67,10 @@ The login view also keeps alternative navigation and configured external provide
       "**Method selection**": "**Selezione del metodo**",
       "**Token generator configuration (TOTP)**": "**Configurazione del generatore di token (TOTP)**",
       "2FA Setup Wizard": "Procedura guidata di configurazione della 2FA",
-      "A fallback secret key for manual setup": "Una chiave segreta di riserva per la configurazione manuale",
       "A QR code for authenticator apps": "Un codice QR per le app di autenticazione",
+      "A fallback secret key for manual setup": "Una chiave segreta di riserva per la configurazione manuale",
       "A token input field to confirm activation": "Un campo per inserire il token e confermare l'attivazione",
       "Accessing 2FA Management": "Accedere alla gestione della 2FA",
-      "activate_2fa": "attiva_2fa",
-      "activate_2fa_step2": "attiva_2fa_passaggio2",
-      "activate_2fa_step3": "attiva_2fa_passaggio3",
-      "activate_2fa_step4": "attiva_2fa_passaggio4",
       "After entering a valid token, 2FA is linked to the account.": "Dopo aver inserito un token valido, la 2FA viene collegata all'account.",
       "Configuration-Driven Behavior": "Comportamento basato sulla configurazione",
       "Double Factor Authentication (2FA)": "Autenticazione a due fattori (2FA)",
@@ -96,7 +92,11 @@ The login view also keeps alternative navigation and configured external provide
       "Two-factor authentication is enabled through the application setting `ENABLE_TWO_FACTOR_AUTH` (default is False).": "L'autenticazione a due fattori si abilita tramite l'impostazione dell'applicazione `ENABLE_TWO_FACTOR_AUTH` (il valore predefinito è False).",
       "Username/password validation": "Verifica di nome utente e password",
       "When 2FA is enabled for a user, authentication is completed in two steps:": "Quando la 2FA è abilitata per un utente, l'autenticazione viene completata in due passaggi:",
-      "When a user with active 2FA signs in:": "Quando accede un utente con la 2FA attiva:"
+      "When a user with active 2FA signs in:": "Quando accede un utente con la 2FA attiva:",
+      "activate_2fa": "attiva_2fa",
+      "activate_2fa_step2": "attiva_2fa_passaggio2",
+      "activate_2fa_step3": "attiva_2fa_passaggio3",
+      "activate_2fa_step4": "attiva_2fa_passaggio4"
     }
   }
 </script>

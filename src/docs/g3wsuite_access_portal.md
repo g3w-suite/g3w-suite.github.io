@@ -60,9 +60,6 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "**`Info`**": "**`Informazioni`**",
       "**`Login`**": "**`Accedi`**",
       "**`Maps`**": "**`Mappe`**",
-      "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_**Questa sezione descrive le varie aree del portale di accesso e spiega come accedere al pannello di amministrazione**_",
-      "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.png) with the following items:": "un **menu in alto a destra** ![Schermata: menu in alto a destra del portale G3W-SUITE](/img/manual-english-g3wsuite-portal-menu-toprigth.png) con le seguenti voci:",
-      "a **panel menu on the right** with the following items:": "un **menu a pannello sulla destra** con le seguenti voci:",
       "By accessing the **Maps** session, the **Macrogroups** (if present) will be displayed, access to the Macrogroup will allow you to view the associated **Cartographic Groups** and from these access the list of individual **WebGis services**.": "Accedendo alla sezione **Mappe**, verranno visualizzati i **Macrogruppi** (se presenti); accedendo a un macrogruppo si potranno consultare i **Gruppi cartografici** associati e, da questi, l'elenco dei singoli **servizi WebGIS**.",
       "Following authentication, the **Maps** page will also show the MacroGroups, Groups and WebGis services with restricted access and on which the user has access permissions.": "Dopo l'autenticazione, la pagina **Mappe** mostrerà anche i Macrogruppi, i Gruppi e i servizi WebGIS ad accesso limitato per i quali l'utente dispone delle autorizzazioni.",
       "G3W-FRONTEND: the front end portal": "G3W-FRONTEND: il portale front-end",
@@ -84,10 +81,13 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "Screenshot: G3W-SUITE Portal Menu Toprigth": "Schermata: menu in alto a destra del portale G3W-SUITE",
       "The **Info** session can contains a small introduction and contact information for your company or public facility.": "La sezione **Informazioni** può contenere una breve introduzione e i recapiti della società o dell'ente pubblico.",
       "The G3W-SUITE application is accessible via any internet browser (FireFox and Chrome recommended) via the URL address defined during installation": "L'applicazione G3W-SUITE è accessibile da qualsiasi browser Internet (si consigliano Firefox e Chrome) tramite l'indirizzo URL definito durante l'installazione.",
+      "The MacroGroups, Groups and WebGis services listed will be those defined as free access.": "Saranno elencati i Macrogruppi, i Gruppi e i servizi WebGIS definiti ad accesso libero.",
       "The home page will contain, in addition to a brief and customizable presentation of the service, also:": "Oltre a una breve presentazione personalizzabile del servizio, la pagina iniziale conterrà:",
       "The login portal sessions": "Le sezioni del portale di accesso",
-      "The MacroGroups, Groups and WebGis services listed will be those defined as free access.": "Saranno elencati i Macrogruppi, i Gruppi e i servizi WebGIS definiti ad accesso libero.",
-      "Within G3W-SUITE it is possible to organize webgis services in hierarchical containers (**Cartographic Macrogroups and Cartographic Groups**)": "In G3W-SUITE è possibile organizzare i servizi WebGIS in contenitori gerarchici (**Macrogruppi cartografici e Gruppi cartografici**)."
+      "Within G3W-SUITE it is possible to organize webgis services in hierarchical containers (**Cartographic Macrogroups and Cartographic Groups**)": "In G3W-SUITE è possibile organizzare i servizi WebGIS in contenitori gerarchici (**Macrogruppi cartografici e Gruppi cartografici**).",
+      "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_**Questa sezione descrive le varie aree del portale di accesso e spiega come accedere al pannello di amministrazione**_",
+      "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.png) with the following items:": "un **menu in alto a destra** ![Schermata: menu in alto a destra del portale G3W-SUITE](/img/manual-english-g3wsuite-portal-menu-toprigth.png) con le seguenti voci:",
+      "a **panel menu on the right** with the following items:": "un **menu a pannello sulla destra** con le seguenti voci:"
     }
   }
 </script>

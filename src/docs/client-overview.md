@@ -114,7 +114,6 @@ These features are described in a dedicated paragraph below.
     "Generic aspects": "Aspetti generali",
     "Header": "Intestazione",
     "Main menù": "Menu principale",
-    "main title (set at General Data level) or MacroGroup name, according to the settings": "titolo principale (impostato in Dati generali) oppure nome del Macrogruppo, in base alle impostazioni",
     "Screenshot: G3wclient Header": "Schermata: intestazione G3wclient",
     "Screenshot: G3wclient Header Anonymus": "Schermata: intestazione G3wclient per utente anonimo",
     "Screenshot: G3wclient Header Signed": "Schermata: intestazione G3wclient per utente autenticato",
@@ -127,7 +126,8 @@ These features are described in a dedicated paragraph below.
     "The middle section containing the list of project layers organized into any groups as in a QGIS project.": "La sezione centrale contiene l’elenco dei layer del progetto, organizzati in gruppi come nel progetto QGIS.",
     "The upper section containing:": "La sezione superiore contiene:",
     "These features are described in a dedicated paragraph below.": "Queste funzioni sono descritte in un paragrafo dedicato più avanti.",
-    "WebGis service title": "titolo del servizio WebGIS"
+    "WebGis service title": "titolo del servizio WebGIS",
+    "main title (set at General Data level) or MacroGroup name, according to the settings": "titolo principale (impostato in Dati generali) oppure nome del Macrogruppo, in base alle impostazioni"
   }
 }
 </script>

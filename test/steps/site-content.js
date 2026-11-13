@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
+const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, newsSlug, readPage } = require('../support/site');
 
 Then('sponsor profiles link to their credited releases in both languages', function () {
@@ -150,23 +151,20 @@ Then('both languages are generated from shared page templates', function () {
       }
     }
     const explore = readPage(path.join(staticDir, lang, 'explore', 'index.html')).$;
-    const sections = explore('main > section.section');
-    const demoCards = explore('main > section.demo-card');
-    assert.equal(sections.length, 7, `${lang} Explore page must create sections from headings`);
-    assert.equal(demoCards.length, 3, `${lang} Explore page must preserve its demo cards`);
-    assert.equal(explore('ul.demo-grid, li.demo-card').length, 0, `${lang} demo cards must not use list markup`);
-    for (const id of ['demo-3-11', 'demo-3-10']) {
+    for (const id of ['features', 'demo-3-11', 'demo-3-10', 'demo-dev', 'components', 'hosting', 'branches']) {
       assert.equal(explore(`#${id}`).length, 1, `${lang} Explore page must preserve #${id}`);
     }
-    assert.ok(
-      demoCards.toArray().every(section =>
-        explore(section).find('h2, p').length >= 2 && explore(section).find('ul > li > a').length > 0),
-      `${lang} demo cards must keep their heading, description, and actions`
-    );
-    assert.equal(sections.eq(3).find('table th').length, 9, `${lang} Explore compatibility section must render its table`);
-    const features = sections.eq(4).children('.container');
-    assert.equal(features.children('h2').length, 1, `${lang} feature section must start with its h2`);
-    assert.equal(features.children('section.section').length, 5, `${lang} feature section must group its h3 topics`);
+    const features = explore('#features').closest('section').children('.container');
+    assert.equal(features.children('section.section').length, 4, `${lang} Explore must summarize four feature groups`);
+    assert.equal(explore(`main a[href="/${lang}/explore/versions/"]`).length, 1, `${lang} Explore must link to compatibility`);
+    assert.equal(explore('main table').length, 0, `${lang} Explore must keep technical compatibility on its own page`);
+    const versions = readPage(path.join(staticDir, lang, 'explore', 'versions', 'index.html')).$;
+    assert.equal(versions('main table th').length, 8, `${lang} compatibility page must render its table`);
+    assert.equal(versions(`main a[href="/${lang}/explore/"]`).length, 1, `${lang} compatibility page must link back`);
+    const community = readPage(path.join(staticDir, lang, 'community', 'index.html')).$;
+    assert.equal(community(`main a[href="/${lang}/about/"]`).length, 1, `${lang} community must link to contributor profiles`);
+    const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'index.html')).$;
+    assert.ok(manual('main').text().includes('QGIS 3.44 LTR'), `${lang} manual must match the current QGIS version`);
     assert.equal(explore('main a[href*="/explore/g3w-"]').length, 7, `${lang} Explore page must link to all component pages`);
     for (const component of [
       'g3w-admin',

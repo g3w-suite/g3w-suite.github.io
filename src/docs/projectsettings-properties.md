@@ -37,7 +37,7 @@ The option **`Automatically create transaction group where possible`** is automa
  
 
 **NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**
-See [dedicated paragraph](settings#g3w-client-search-endpoint)
+See [dedicated paragraph](settings#g3w_client_search_endpoint)
 
 
 ![Screenshot: Datasources](/img/manual-english-datasources.png)
@@ -183,11 +183,10 @@ The request to delete the basic embedded project causes a warning message as thi
       "Filter legend by Map content": "Filtrare la legenda in base al contenuto della mappa",
       "From the **`Project → Properties`** menu, you can access the **`Project Properties`** window and the three submenus of our interest:": "Dal menu **`Progetto → Proprietà`** è possibile aprire la finestra **`Proprietà progetto`** e le tre sottosezioni di interesse:",
       "General": "Generale",
-      "General aspects": "Aspetti generali",
       "General Settings": "Impostazioni generali",
+      "General aspects": "Aspetti generali",
       "If the **`Show features count`** function is activated in the QGIS project at vector layer level, the same information will be displayed on the web map.": "Se nel progetto QGIS si attiva la funzione **`Mostra il conteggio degli elementi`** per un layer vettoriale, la stessa informazione verrà mostrata nella mappa web.",
       "In case **`Spatial Bookmarks`** are saved at the QGIS project level, they will also be available on the web map.": "Se nel progetto QGIS sono salvati **`Segnalibri spaziali`**, saranno disponibili anche nella mappa web.",
-      "in general it is recommended to check **`use the layer ids as names`** option": "in generale, si consiglia di selezionare l'opzione **`usa gli ID dei layer come nomi`**",
       "Initial extension of the webGIS service": "Estensione iniziale del servizio WebGIS",
       "It is clearly necessary to insert the projection system on which the project was made, this SR is added by clicking on the **'Used'** button.": "È necessario aggiungere il sistema di proiezione utilizzato per creare il progetto, facendo clic sul pulsante **'Usato'**.",
       "It is clearly necessary to publish the embedded project first and then those derived from it.": "È necessario pubblicare prima il progetto incorporato e poi quelli che ne derivano.",
@@ -212,7 +211,7 @@ The request to delete the basic embedded project causes a warning message as thi
       "Screenshot: Qgisservergeneralaspectswfs": "Schermata: aspetti generali WFS di QGIS Server",
       "Screenshot: Qgisserversetmapexpetent": "Schermata: impostazione dell'estensione della mappa in QGIS Server",
       "Screenshot: Qgisserversrisrestriction": "Schermata: restrizioni CRS di QGIS Server",
-      "See [dedicated paragraph](settings#g3w-client-search-endpoint)": "Vedere il [paragrafo dedicato](settings#g3w-client-search-endpoint)",
+      "See [dedicated paragraph](settings#g3w_client_search_endpoint)": "Vedere il [paragrafo dedicato](settings#g3w_client_search_endpoint)",
       "See also the [client metadata section](client-tools-and-toc.md#metadata).": "Vedere anche la [sezione sui metadati del client](client-tools-and-toc.md#metadata).",
       "Service capabilities": "Capacità del servizio",
       "Show features count": "Mostrare il conteggio degli elementi",
@@ -222,7 +221,6 @@ The request to delete the basic embedded project causes a warning message as thi
       "The creation of **Themes** (combination of off / on layers and differentiated symbology styles) is managed at the WebGis service level.": "La creazione dei **Temi** (combinazioni di layer attivi/disattivi e stili di simbologia differenziati) viene gestita a livello del servizio WebGIS.",
       "The interface inherits the 1: and N:M relations defined in the **`Project Properties`** from the QGIS project.": "L'interfaccia eredita le relazioni 1:N e N:M definite nel **`Proprietà progetto`** del progetto QGIS.",
       "The number of features updates automatically based on the style associated with the layer.": "Il numero di elementi si aggiorna automaticamente in base allo stile associato al layer.",
-      "the option **`Add geometry to feature response`** must be checked to activate the **zoom to the features** on the WebGis service": "l'opzione **`Aggiungi geometria alla risposta dell'elemento`** deve essere selezionata per attivare lo **zoom sugli elementi** nel servizio WebGIS",
       "The option **`Automatically create transaction group where possible`** is automatically inherited in the online editing function.": "L'opzione **`Crea automaticamente un gruppo di transazioni, se possibile`** viene ereditata automaticamente dalla funzione di modifica online.",
       "The option to define the layer order different from the order in the TOC on the QGIS project is automatically supported.": "È supportata automaticamente l'opzione del progetto QGIS che definisce un ordine dei layer diverso da quello del TOC.",
       "The request to delete the basic embedded project causes a warning message as this operation will cause problems on all derived projects.": "La richiesta di eliminare il progetto incorporato di base genera un messaggio di avviso, poiché l'operazione causerebbe problemi a tutti i progetti derivati.",
@@ -236,7 +234,9 @@ The request to delete the basic embedded project causes a warning message as thi
       "WCS Capabilities": "Capacità WCS",
       "WFS Capabilities": "Capacità WFS",
       "WMS Capabilities - CSR restrictions": "Capacità WMS - Restrizioni CRS",
-      "WMTS Capabilities": "Capacità WMTS"
+      "WMTS Capabilities": "Capacità WMTS",
+      "in general it is recommended to check **`use the layer ids as names`** option": "in generale, si consiglia di selezionare l'opzione **`usa gli ID dei layer come nomi`**",
+      "the option **`Add geometry to feature response`** must be checked to activate the **zoom to the features** on the WebGis service": "l'opzione **`Aggiungi geometria alla risposta dell'elemento`** deve essere selezionata per attivare lo **zoom sugli elementi** nel servizio WebGIS"
     }
   }
 </script>
