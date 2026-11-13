@@ -1,6 +1,6 @@
-# {{t 'G3W-Suite Changelog'}}
+# G3W-Suite Changelog
 
-{{t 'Choose a version to read release details and updates.'}}
+Choose a version to read release details and updates.
 
 <div class="feature-list">
   <div class="feature-item">

@@ -1,51 +1,47 @@
-<main id="main-content">
-
-# {{t 'G3W-Suite Demo'}}
+# G3W-Suite Demo
 
 ## <span id="demo-3-11"></span>Branch 3.11
 
 QGIS 3.44 LTR - Python 3.12 - Django 4.2 - Bug fixing
 
-- [{{t 'Access demo'}}](https://v311.g3wsuite.it/)
-- [Changelog 3.11](/{{t 'en'}}/changelog/v3.11/)
+- [Access demo](https://v311.g3wsuite.it/)
+- [Changelog 3.11](/en/changelog/v3.11/)
 
 ## <span id="demo-3-10"></span>Branch 3.10
 
 QGIS 3.40 LTR - Python 3.12 - Django 4.2 - Bug fixing
 
-- [{{t 'Access demo'}}](https://v310.g3wsuite.it/it/map/demo-310/)
-- [Changelog 3.10](/{{t 'en'}}/changelog/v3.10/)
+- [Access demo](https://v310.g3wsuite.it/it/map/demo-310/)
+- [Changelog 3.10](/en/changelog/v3.10/)
 
 ## Branch dev (4.0)
 
-{{t 'QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development'}}
+QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development
 
-- [{{t 'Track release status'}}](/{{t 'en'}}/download/)
+- [Track release status](/en/download/)
 
-## {{t 'How to access the demo'}}
+## How to access the demo
 
-{{t 'The demo service is designed to show how it is possible to create a'}} **{{t 'WebGIS management application'}}** {{t 'starting from a simple'}} **{{t 'QGIS project'}}**.
+The demo service is designed to show how it is possible to create a **WebGIS management application** starting from a simple **QGIS project**.
 
-{{t 'The demo is dedicated to'}} **{{t 'building management and associated maintenance operations'}}**.
+The demo is dedicated to **building management and associated maintenance operations**.
 
-{{t 'Log in to browse data, run searches, view charts and print reports based on geographic atlases.'}}
+Log in to browse data, run searches, view charts and print reports based on geographic atlases.
 
-### {{t 'Online editing'}}
+### Online editing
 
-{{t 'To test the **geometric and relational editing** features, log in as a demo user with the following credentials:'}}
+To test the **geometric and relational editing** features, log in as a demo user with the following credentials:
 
 - user: **viewer1**
 - password: **G3wsuite123**
 
-_{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.'}}_
+_G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users._
 
-### {{t 'Documentation'}}
+### Documentation
 
-- [{{t 'Online tutorial'}}](/docs/demo/)
-- [{{t 'Introduction to G3W-SUITE'}}](/docs/introduction/)
-- [{{t 'Docker installation'}}](/docs/docker/)
-
-</main>
+- [Online tutorial](/docs/demo/)
+- [Introduction to G3W-SUITE](/docs/introduction/)
+- [Docker installation](/docs/docker/)
 
 <script type="application/json" data-i18n>
   {
@@ -54,7 +50,6 @@ _{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some
       "Demo - G3W-Suite": "Demo - G3W-Suite",
       "Docker installation": "Installazione con Docker",
       "Documentation": "Documentazione",
-      "G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users.": "G3W-SUITE permette l’editing multi utente basato su un sistema di feature-lock. Per questo alcune feature potrebbero risultare non editabili se lockate da altri utenti.",
       "G3W-Suite Demo": "Demo G3W-Suite",
       "G3W-Suite demos for currently supported branches: stable, bug fixing and dev.": "Demo G3W-Suite relative ai branch attualmente supportati: stabile, bug fixing e sviluppo.",
       "How to access the demo": "Come accedere alla demo",
@@ -63,15 +58,11 @@ _{{t 'G3W-SUITE supports multi-user editing based on a feature-lock system. Some
       "Online editing": "Editing on line",
       "Online tutorial": "Tutorial on line",
       "QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Continuing development": "QGIS 4.0 LTR - Python 3.12 - Django 4.2 - Sviluppo continuo",
-      "QGIS project": "progetto QGIS",
-      "The demo is dedicated to": "La demo è dedicata alla",
-      "The demo service is designed to show how it is possible to create a": "Il servizio di demo è progettato per illustrare come sia possibile creare un",
+      "The demo is dedicated to **building management and associated maintenance operations**.": "La demo è dedicata alla **gestione degli edifici e dei relativi interventi di manutenzione**.",
+      "The demo service is designed to show how it is possible to create a **WebGIS management application** starting from a simple **QGIS project**.": "Il servizio demo mostra come creare un **sistema di gestione WebGIS** partendo da un semplice **progetto QGIS**.",
       "To test the **geometric and relational editing** features, log in as a demo user with the following credentials:": "Per testare le funzionalità di **editing geometrico e relazionale**, accedi come utente demo con le seguenti credenziali:",
       "Track release status": "Monitora lo stato delle release",
-      "WebGIS management application": "gestionale cartografico WebGis",
-      "building management and associated maintenance operations": "gestione di edifici e degli interventi di manutenzione associati",
-      "en": "it",
-      "starting from a simple": "partendo da un semplice"
+      "_G3W-SUITE supports multi-user editing based on a feature-lock system. Some features may therefore be locked by other users._": "_G3W-SUITE permette l’editing multi utente basato su un sistema di feature-lock. Per questo alcune feature potrebbero risultare non editabili se lockate da altri utenti._"
     }
   }
 </script>

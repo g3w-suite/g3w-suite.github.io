@@ -73,6 +73,43 @@ function translateHtml(html, lang, pageTranslations = {}) {
   return output;
 }
 
+function autoTranslateMarkdown(markdown, lang, translations = {}) {
+  // ponytail: single-line blocks only; add token-aware parsing if multiline Markdown needs translation
+  const entries = translations[lang] || {};
+  const lines = markdown.split(/(\r?\n)/);
+  let inCodeFence = false;
+  for (let index = 0; index < lines.length; index += 2) {
+    const line = lines[index];
+    if (/^\s*(```|~~~)/.test(line)) {
+      inCodeFence = !inCodeFence;
+      continue;
+    }
+    if (inCodeFence) continue;
+    let wholeBlockTranslated = false;
+    if (lang !== 'en' && !/^\s*\|/.test(line)) {
+      const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
+      if (match && match[2] && !/[{}<>]/.test(match[2]) && Object.hasOwn(entries, match[2])) {
+        lines[index] = `${match[1]}${entries[match[2]]}${match[3]}`;
+        wholeBlockTranslated = true;
+      }
+    }
+    if (!wholeBlockTranslated && lang !== 'en') {
+      lines[index] = lines[index].replace(/!\[([^\[\]]+)\]\(([^)]*)\)/g, (_, label, destination) => {
+        const translatedLabel = Object.hasOwn(entries, label) ? entries[label] : label;
+        return `![${translatedLabel}](${destination})`;
+      });
+      lines[index] = lines[index].replace(/(^|[^!])\[([^\[\]]+)\]\(([^)]*)\)/g, (_, before, label, destination) => {
+        const translatedLabel = Object.hasOwn(entries, label) ? entries[label] : label;
+        return `${before}[${translatedLabel}](${destination})`;
+      });
+    }
+    lines[index] = lines[index].replace(/(^|[^!])\[([^\[\]]+)\]\(([^)]*)\)/g, (_, before, label, destination) =>
+      `${before}[${label}](${destination.replace(/^\/?en\//, `/${lang}/`)})`
+    );
+  }
+  return lines.join('');
+}
+
 function extractPageTranslations(html, file) {
   const blocks = [...html.matchAll(/<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/g)];
   if (blocks.length > 1) throw new Error(`${file} must contain at most one data-i18n block`);
@@ -196,7 +233,7 @@ function renderPageMarkdown(markdown, page) {
       renderMarkdownSections(main[2], page) +
       main[3] +
       markdown.slice(main.index + main[0].length)
-    : marked.parse(markdown.replace(/^[\t ]+/gm, ''));
+    : `<main id="main-content">${renderMarkdownSections(markdown, page)}</main>`;
   if (page !== 'index.md' && !html.includes('class="page-header"')) {
     const mainStart = html.indexOf('<main');
     const mainEnd = mainStart === -1 ? -1 : html.indexOf('</main>', mainStart);
@@ -604,11 +641,14 @@ function build(outputDir) {
           renderPageMetadata(pageMetadata.metadata, lang, pageTemplate.translations),
           renderPageAlternates(pageUrls),
         ].filter(Boolean).join('\n  ');
-        const localized = translateHtml(
+        let localized = translateHtml(
           renderLanguageBlocks(pageMetadata.html, lang),
           lang,
           pageTemplate.translations
         );
+        if (path.extname(file) === '.md') {
+          localized = autoTranslateMarkdown(localized, lang, pageTemplate.translations);
+        }
         const content = localized.replace(
           /<!--#include file="(?:\.\.\/)?_(?:header|footer)\.html"-->/g,
           ''

@@ -1,8 +1,6 @@
-<main id="main-content">
-
 # G3W-SUITE QPROCESSING: Model Builder & Processing
 
-Release date: **{{t '13 December 2023'}}**
+Release date: **13 December 2023**
 
 
 ### **The module dedicated to the creation of geographic analyzes on the web is based on the automated analysis models prepared on QGIS through the Processing ModelDesigner.**
@@ -88,13 +86,11 @@ Access the PROCESSING - MODEL session in the Administration session, choosing th
 [Try the demo!](https://v310.g3wsuite.it/it/#/it/group/30 "primary-button")
 
 
-</main>
-
 <script type="application/json" data-i18n>
   {
     "it": {
-      "13 December 2023": "13 Dicembre 2023",
-      "Model Builder Processing - G3W-Suite": "Model Builder Processing - G3W-Suite"
+      "Model Builder Processing - G3W-Suite": "Model Builder Processing - G3W-Suite",
+      "Release date: **13 December 2023**": "Data di rilascio: **13 dicembre 2023**"
     }
   }
 </script>

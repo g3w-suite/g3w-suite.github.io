@@ -1,84 +1,82 @@
-<main id="main-content">
+# Partnership, sponsors and contributors
 
-# {{t 'Partnership, sponsors and contributors'}}
-
-## <span id="g3w-partners"></span>{{t 'Join the network of companies offering support and consulting on'}}
+## <span id="g3w-partners"></span>Join the network of companies offering support and consulting on
 
 ![G3W-SUITE](/img/site-g3w-suite-logo-2024.png)
 
-### {{t 'Let us grow together to offer innovative open source geospatial solutions'}}
+### Let us grow together to offer innovative open source geospatial solutions
 
 ![Network](/img/site-g3w-suite-community-network.jpg)
 
-#### **{{t 'G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.'}}**
+#### **G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.**
 
-{{t 'The suite allows collaborative web cartographic management thanks to deep integration with QGIS editing tools.'}}
+The suite allows collaborative web cartographic management thanks to deep integration with QGIS editing tools.
 
-{{t 'It is used by public administrations, parks, research institutions and private companies.'}}
+It is used by public administrations, parks, research institutions and private companies.
 
-{{t 'QGIS Processing API integration also enables advanced online geospatial analysis workflows.'}}
+QGIS Processing API integration also enables advanced online geospatial analysis workflows.
 
-#### **{{t 'We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.'}}**
+#### **We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.**
 
-{{t 'G3W-SUITE is highly adaptable and suitable for many operational contexts.'}}
+G3W-SUITE is highly adaptable and suitable for many operational contexts.
 
-{{t 'It is an ideal solution for consulting teams and system integrators.'}}
+It is an ideal solution for consulting teams and system integrators.
 
-{{t 'Join our network and deliver high-value web mapping solutions.'}}
+Join our network and deliver high-value web mapping solutions.
 
-## {{t 'Services for partners'}}
+## Services for partners
 
-### {{t 'Consulting and onboarding'}}
+### Consulting and onboarding
 
-{{t 'Professional support for deployment and optimization.'}}
+Professional support for deployment and optimization.
 
 ![Screenshot: Icons8 Consulenza 96](/img/site-icons8-consulenza-96.png)
 
-### {{t 'Technical support'}}
+### Technical support
 
-{{t 'Technical assistance for WebGIS implementations based on QGIS and G3W-SUITE.'}}
+Technical assistance for WebGIS implementations based on QGIS and G3W-SUITE.
 
 ![Screenshot: Icons8 Assistenza Clienti 96](/img/site-icons8-assistenza-clienti-96.png)
 
-### {{t 'Custom development'}}
+### Custom development
 
-{{t 'Tailored plugin-based solutions for specific needs.'}}
+Tailored plugin-based solutions for specific needs.
 
 ![Screenshot: Icons8 Scatola Portautensili Completa 96](/img/site-icons8-scatola-portautensili-completa-96.png)
 
-### {{t 'For partnership information'}}
+### For partnership information
 
-[{{t 'Contact us'}}](mailto:info@gis3w.it?subject=G3W-SUITE%20partnership "primary-button")
+[Contact us](mailto:info@gis3w.it?subject=G3W-SUITE%20partnership "primary-button")
 
 ## <span id="merginmaps"></span>MerginMaps partnership
 
 ![Mergin Maps](/img/site-mergin-maps-logo.jpg)
 
-{{t 'Gis3W provides support for Mergin Maps, the field data collection solution based on QGIS.'}}
+Gis3W provides support for Mergin Maps, the field data collection solution based on QGIS.
 
-### {{t 'With Mergin Maps you can:'}}
+### With Mergin Maps you can:
 
-- {{t 'build field data collection apps from QGIS projects'}}
-- {{t 'design advanced data-entry forms'}}
-- {{t 'synchronize data with centralized infrastructure'}}
-- {{t 'integrate with existing geospatial systems'}}
+- build field data collection apps from QGIS projects
+- design advanced data-entry forms
+- synchronize data with centralized infrastructure
+- integrate with existing geospatial systems
 
-![{{t 'Mergin Maps on devices'}}](/img/site-mergin-maps-on-devices.png)
+![Mergin Maps on devices](/img/site-mergin-maps-on-devices.png)
 
-## <span id="{{t 'clients'}}"></span>**{{t 'Who chooses us'}}** {{t 'Clients, sponsors and users'}}
+## <span id="{{t 'clients'}}"></span>**Who chooses us** Clients, sponsors and users
 
-- [![{{t 'Metropolitan Area of Bari'}}](/img/site-bari.png)]({{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it)
-- [![{{t 'Metropolitan City of Rome'}}](/img/site-citta-metro-roma.jpg)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
-- [![{{t 'FVG Landscape Plan'}}](/img/site-fvg.jpg)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
-- [![{{t 'City of Trento'}}](/img/site-trento.png)](https://gis.comune.trento.it/it/#map=groups)
-- [![{{t 'City of Palermo'}}](/img/site-palermo.png)](https://geout.comune.palermo.it)
-- [![{{t 'Gran Paradiso National Park'}}](/img/site-pngp.jpg)](https://sit.parco.gran-paradiso.g3wsuite.it)
+- [![Metropolitan Area of Bari](/img/site-bari.png)]({{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it)
+- [![Metropolitan City of Rome](/img/site-citta-metro-roma.jpg)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
+- [![FVG Landscape Plan](/img/site-fvg.jpg)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
+- [![City of Trento](/img/site-trento.png)](https://gis.comune.trento.it/it/#map=groups)
+- [![City of Palermo](/img/site-palermo.png)](https://geout.comune.palermo.it)
+- [![Gran Paradiso National Park](/img/site-pngp.jpg)](https://sit.parco.gran-paradiso.g3wsuite.it)
 - [![Suez](/img/site-suez.png)](https://www.suez.com)
 - [![Planetek Italia](/img/site-planetek-logo.jpg)](https://www.planetek.it)
 
-## **Community** {{t 'Contributors'}}
+## **Community** Contributors
 
-{{t 'GitHub profiles of project contributors.'}}
+GitHub profiles of project contributors.
 
 - ![Alessandro Pasotti](https://github.com/elpaso.png?size=200) **Alessandro Pasotti** [@elpaso](https://github.com/elpaso)
 - ![Leonardo Lami](https://github.com/leolami.png?size=200) **Leonardo Lami** [@leolami](https://github.com/leolami)
@@ -89,21 +87,20 @@
 - ![Francesco Boccacci](https://github.com/volterra79.png?size=200) **Francesco Boccacci** [@volterra79](https://github.com/volterra79)
 - ![Walter Lorenzetti](https://github.com/wlorenzetti.png?size=200) **Walter Lorenzetti** [@wlorenzetti](https://github.com/wlorenzetti)
 
-</main>
-
 <script type="application/json" data-i18n>
   {
     "it": {
+      "**Community** Contributors": "**Community** Contributori",
+      "**G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.**": "**G3W-SUITE e un applicativo OS altamente integrato con le API di QGIS Server, dedicato alla pubblicazione di progetti QGIS come servizi WebGIS.**",
+      "**We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.**": "**Collaboriamo con aziende e professionisti GIS per fornire ai clienti il miglior supporto per i loro progetti.**",
+      "**Who chooses us** Clients, sponsors and users": "**Chi ci sceglie** Clienti, sponsor e utilizzatori",
       "City of Palermo": "Comune di Palermo",
       "City of Trento": "Comune di Trento",
-      "Clients, sponsors and users": "Clienti, sponsor e utilizzatori",
       "Consulting and onboarding": "Consulenza e attivazione servizi",
       "Contact us": "Contattaci per la partnership",
-      "Contributors": "Contributori",
       "Custom development": "Sviluppo",
       "FVG Landscape Plan": "Piano Paesaggistico Regionale FVG",
       "For partnership information": "Per informazioni sulla partnership",
-      "G3W-SUITE is an open source application integrated with QGIS Server APIs for publishing QGIS projects as WebGIS services.": "G3W-SUITE e un applicativo OS altamente integrato con le API di QGIS Server, dedicato alla pubblicazione di progetti QGIS come servizi WebGIS.",
       "G3W-SUITE is highly adaptable and suitable for many operational contexts.": "G3W-SUITE e uno strumento altamente adattabile, grazie a funzionalite estese e forte plasticite.",
       "G3W-SUITE partners, sponsors, users and contributors.": "Partner G3W-SUITE, sponsor, utilizzatori e contributori del progetto open source.",
       "Gis3W provides support for Mergin Maps, the field data collection solution based on QGIS.": "Gis3W fornisce supporto per la soluzione Mergin Maps dedicata alla raccolta dati su campo basata su QGIS.",
@@ -126,8 +123,6 @@
       "Technical assistance for WebGIS implementations based on QGIS and G3W-SUITE.": "Assistenza tecnica per l'implementazione di soluzioni WebGIS open source basate su QGIS e G3W-SUITE.",
       "Technical support": "Supporto tecnico",
       "The suite allows collaborative web cartographic management thanks to deep integration with QGIS editing tools.": "La suite, grazie alla forte integrazione con gli strumenti di editing di QGIS, permette di predisporre gestionali cartografici web anche ad accesso condiviso.",
-      "We collaborate with GIS companies and professionals to provide best-in-class support for customer projects.": "Collaboriamo con aziende e professionisti GIS per fornire ai clienti il miglior supporto per i loro progetti.",
-      "Who chooses us": "Chi ci sceglie",
       "With Mergin Maps you can:": "Con Mergin Maps puoi:",
       "build field data collection apps from QGIS projects": "predisporre app di acquisizione dati su campo",
       "clients": "clienti",

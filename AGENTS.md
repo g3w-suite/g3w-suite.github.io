@@ -7,7 +7,7 @@ Static multilingual marketing/documentation website for G3W-Suite. `server.js` e
 ## Verified Current State
 
 - `npm run build` generates the publishable site and Markdown documentation in `static/`; `npm run dev` serves the same folder and rebuilds when files in `src/` change.
-- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`. Italian translations live in each page or component's `data-i18n` JSON block, placed at the file end or immediately before `</body>`; omit empty language maps. Site and Markdown images share the flat `static/img/` directory. Only strings marked with `{{t '...'}}` are translated. English uses the source strings directly.
+- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`. Italian translations live in each page or component's `data-i18n` JSON block, placed at the file end or immediately before `</body>`; omit empty language maps. Site and Markdown images share the flat `static/img/` directory. English uses the source strings directly.
 
 ## Run
 
@@ -47,27 +47,32 @@ static/
 - Internal page URLs use trailing-slash directories, never `.html`; `demo.md` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`.
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
-- Keep `<main id="main-content">` on all pages.
+- The build wraps Markdown page content in `<main id="main-content">`; do not add a `<main>` wrapper to Markdown sources.
 - Every generated page gets a route-based `page-*` class on `<body>`, shared by its Italian and English versions.
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
-- Wrap every text or attribute value that needs Italian translation in `{{t '...'}}`; only marked strings are translated. Define its Italian translation in the same page or component's `data-i18n` JSON block, with keys alphabetically sorted.
+- Markdown content can be translated without `{{t '...'}}` by adding the exact full line of text to that page's `data-i18n` block; include inline Markdown such as `**bold**` in the key and translate the whole line, never a partial substring. Markdown link labels can also use their exact `data-i18n` key without the helper. Use `{{t '...'}}` for image alt text, attributes, and other inline text. Keep keys alphabetically sorted.
 - Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
-- Site pages in `src/` and changelog pages in `src/changelog/` are Markdown; use Markdown for content and images. In site page sources, HTML is limited to `<main>`, translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings; generate other layout markup through JavaScript and style it with CSS.
+- Site pages in `src/` and changelog pages in `src/changelog/` are Markdown; use Markdown for content and images. In site page sources, HTML is limited to translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings; the build adds the `<main>` wrapper and generates other layout markup through JavaScript.
 - Avoid HTML wrappers around Markdown used only for styling; target generated sections with the page body class and section position.
 - Keep separate paragraphs inside Markdown list items using blank lines and indented continuation paragraphs; the renderer preserves this indentation.
-- The first `#` heading inside a non-homepage Markdown page's `<main>` gets a `.page-header` wrapper automatically. Do not write that wrapper manually unless the page needs a custom header.
+- The first `#` heading in a non-homepage Markdown page gets a `.page-header` wrapper automatically. Do not write that wrapper manually unless the page needs a custom header.
 - In site Markdown, each `##`–`######` heading starts a section; lower-level headings nest inside the previous section, while a heading at the same or higher level closes the previous section(s). The build adds section and container wrappers; `#` remains the page title. Prefer headings over standalone `---` section delimiters, which remain supported for existing custom layouts. Use the page's body class and section position for variant styling, and keep IDs as inline anchors when links target them.
-- For URLs, mark only the segment that changes between languages, not the entire URL.
+- In Markdown links, use `/en/<page>/` for internal pages; the build changes that language segment to the current language. For other URLs, mark only the segment that changes between languages, not the entire URL.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 
 ## Page Source Pattern
 
-Site page files are Markdown fragments compiled by JavaScript. Use Markdown for content and images; source HTML is limited to `<main>`, translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings. The build injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
+Site page files are Markdown fragments compiled by JavaScript. Use Markdown for content and images; source HTML is limited to translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings. The build wraps content in `<main id="main-content">` and injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
 
-```html
-<main id="main-content">...</main>
-<!-- data-i18n and data-i18n-meta scripts go here -->
+```markdown
+# Page title
+
+Markdown page content
+
+<script type="application/json" data-i18n>
+  { "it": { "Markdown page content": "Contenuto della pagina" } }
+</script>
 ```
 
 ## Critical Pitfall

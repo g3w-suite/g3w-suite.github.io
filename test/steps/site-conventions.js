@@ -47,6 +47,23 @@ function translationHelperPattern() {
   return /\{\{t\s+'((?:\\.|[^'\\])*)'\s*\}\}/g;
 }
 
+function markdownTranslationKeys(markdown) {
+  const keys = new Set();
+  let inCodeFence = false;
+  for (const line of markdown.split(/\r?\n/)) {
+    if (/^\s*(```|~~~)/.test(line)) {
+      inCodeFence = !inCodeFence;
+      continue;
+    }
+    if (inCodeFence || /^\s*\|/.test(line)) continue;
+    const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
+    if (match && match[2] && !/[{}<>]/.test(match[2])) keys.add(match[2]);
+    for (const [, label] of line.matchAll(/!\[([^\[\]]+)\]\(/g)) keys.add(label);
+    for (const [, , label] of line.matchAll(/(^|[^!])\[([^\[\]]+)\]\(/g)) keys.add(label);
+  }
+  return keys;
+}
+
 function extractPageTranslations(html, file) {
   const blocks = [...html.matchAll(/<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/g)];
   assert.ok(blocks.length <= 1, `${file}: expected at most one data-i18n block`);
@@ -281,7 +298,7 @@ Then('site page sources contain only the allowed HTML elements', function () {
   for (const page of pages) {
     const file = path.join(sourceDir, `${page}.md`);
     const source = fs.readFileSync(file, 'utf8');
-    assert.equal((source.match(/<main\b[^>]*>/gi) || []).length, 1, `${file}: expected one main element`);
+    assert.equal((source.match(/<main\b[^>]*>/gi) || []).length, 0, `${file}: main element is injected by the build`);
     for (const [opening] of source.matchAll(/<script\b[^>]*>/gi)) {
       assert.match(opening, /^<script type="application\/json" data-i18n(?:-meta)?>$/i, `${file}: only translation scripts are allowed`);
     }
@@ -289,7 +306,6 @@ Then('site page sources contain only the allowed HTML elements', function () {
     const markdown = source
       .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
       .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '')
-      .replace(/<\/?main\b[^>]*>/gi, '')
       .replace(/^(#{1,6}\s.*)$/gm, heading => heading.replace(/<span id="[^"]+"><\/span>/g, ''));
     assert.doesNotMatch(markdown, /<\/?[a-z][^>]*>/i, `${file}: use Markdown instead of other HTML elements`);
   }
@@ -382,16 +398,23 @@ Then('page-local translations are valid and used by the Italian build', function
           assert.fail(`${file}: missing page-local Italian translation for "${key}"`);
         }
       }
+      if (file.endsWith('.md')) {
+        for (const key of markdownTranslationKeys(localizedHtml)) {
+          if (Object.hasOwn(pageTranslations[lang] || {}, key)) localUsage.get(lang).add(key);
+        }
+      }
     }
     const unusedLocal = Object.entries(pageTranslations).flatMap(([lang, entries]) =>
       Object.keys(entries).filter(key => !localUsage.get(lang).has(key)).map(key => `${lang}: ${key}`)
     );
     assert.deepEqual(unusedLocal, [], `${file}: unused page-local translations`);
-    unmarked.push(...findUnmarkedTranslations(
-      path.relative(process.cwd(), file),
-      html,
-      pageTranslations.it || {}
-    ));
+    if (!file.endsWith('.md')) {
+      unmarked.push(...findUnmarkedTranslations(
+        path.relative(process.cwd(), file),
+        html,
+        pageTranslations.it || {}
+      ));
+    }
   }
   assert.deepEqual(unmarked, [], `translatable strings missing {{t '...'}}: ${unmarked.join('\n')}`);
 
@@ -400,6 +423,74 @@ Then('page-local translations are valid and used by the Italian build', function
   assert.deepEqual(unexpanded, [], 'generated site contains unexpanded translation helpers');
   const leakedTranslations = outputFiles.filter(file => /data-i18n(?:-meta)?/.test(fs.readFileSync(file, 'utf8')));
   assert.deepEqual(leakedTranslations, [], 'page-local translation data must not appear in generated HTML');
+
+  const homepageIt = readPage(path.join(staticDir, 'it', 'index.html')).$;
+  assert.equal(
+    homepageIt('main > section > .container > h2').first().text().trim(),
+    'Inizia in pochi minuti Un framework open source per la gestione completa della tua infrastruttura geospaziale'
+  );
+  assert.equal(
+    homepageIt('main > section > .container > h2').eq(1).text().trim(),
+    'Inizia in pochi minuti Pubblica il tuo progetto QGIS in 4 passi'
+  );
+  assert.equal(
+    readPage(path.join(staticDir, 'en', 'index.html')).$('main > section > .container > h2').first().text().trim(),
+    'Get started in minutes An open-source framework for the comprehensive management of your geospatial infrastructure'
+  );
+  assert.ok(!homepageIt('main').text().includes('opit'), 'whole-block translation must not corrupt substrings');
+  assert.equal(homepageIt('main a[href="/it/merginmaps/"]').text().trim(), 'Scopri le soluzioni');
+  assert.equal(
+    readPage(path.join(staticDir, 'en', 'index.html')).$('main a[href="/en/merginmaps/"]').text().trim(),
+    'Discover the solutions'
+  );
+  const demoIt = readPage(path.join(staticDir, 'it', 'demo', 'index.html')).$;
+  assert.equal(demoIt('main h1').first().text().trim(), 'Demo G3W-Suite');
+  assert.equal(
+    demoIt('main p').filter((_, element) => demoIt(element).text().includes('Il servizio demo mostra')).first().text().trim(),
+    'Il servizio demo mostra come creare un sistema di gestione WebGIS partendo da un semplice progetto QGIS.'
+  );
+  const merginMapsIt = readPage(path.join(staticDir, 'it', 'merginmaps', 'index.html')).$;
+  assert.equal(
+    merginMapsIt('main li').filter((_, element) => merginMapsIt(element).text().startsWith('Formazione')).first().text().trim(),
+    'Formazione: preparazione del progetto QGIS, creazione e progettazione dei moduli di inserimento dati, mappe di sfondo, raccolta dati sul campo, sincronizzazione e tutto il necessario per ottenere i migliori risultati.'
+  );
+  const changelogIt = readPage(path.join(staticDir, 'it', 'changelog', 'v3.0', 'index.html')).$;
+  assert.equal(
+    changelogIt('main p').filter((_, element) => changelogIt(element).text().includes('funzionalità e le proprietà del server QGIS')).first().text().trim(),
+    'Le funzionalità e le proprietà del server QGIS, come tutti i servizi da esso supportati (WMS, WFS, WCS ecc.), sono ora gestite e controllate da G3W-SUITE tramite la QGIS API.'
+  );
+  const modulesIt = readPage(path.join(staticDir, 'it', 'modules', 'index.html')).$;
+  assert.equal(modulesIt('main h2').first().text().trim(), 'Componente server - Python / Django G3W-ADMIN');
+  assert.equal(
+    modulesIt('main p').first().text().trim(),
+    'G3W-SUITE è composto da componenti modulari, tutti disponibili su GitHub con licenza MPL-2.'
+  );
+  const processingParagraph = modulesIt('main p').filter((_, element) =>
+    modulesIt(element).text().includes('.model3')
+  );
+  assert.equal(
+    processingParagraph.text().trim(),
+    'Integra le API di QGIS Processing direttamente in G3W-SUITE. Carica un file .model3 nel pannello di amministrazione: gli algoritmi di geoprocessing diventano subito disponibili nel client web, sia con esecuzione sincrona sia asincrona (batch).'
+  );
+  const editingParagraph = modulesIt('main p').filter((_, element) =>
+    modulesIt(element).text().includes('Plugin JavaScript')
+  );
+  assert.equal(
+    editingParagraph.text().trim(),
+    "Plugin JavaScript per la modifica collaborativa delle geometrie e degli attributi direttamente nel client cartografico. Gli utenti autorizzati possono creare, modificare ed eliminare feature vettoriali usando strumenti avanzati di snap, split e multi-relazione. Il codice è ora mantenuto all'interno di g3w-admin."
+  );
+  const downloadIt = readPage(path.join(staticDir, 'it', 'download', 'index.html')).$;
+  assert.equal(downloadIt('main a[href="/it/demo/#demo-3-11"]').text().trim(), 'Vai alla demo');
+  assert.deepEqual(downloadIt('main ul').first().children('li').toArray().map(item =>
+    downloadIt(item).text().trim()
+  ), [
+    'Semplice e veloce: Crea il tuo progetto QGIS; Usa dati su GeoDB o file system; Pubblica su WebGis',
+    'Profilazione utenti: Definisci utenti, gruppi e ruoli per differenziare gestione, accesso, editing on line e uso dei moduli funzionali',
+    'Personalizzabile: Personalizza i contenuti del portale di accesso e del client cartografico; Crea ambienti gestionali e definisci i relativi amministratori; Attiva i moduli funzionali di interesse',
+    'Ricco di funzionalità: Integrazione con le API di QGIS; Ricerche personalizzabili; Layout di stampa standard o basati su atlanti geografici; Animazione delle serie temporali; Integrazione del modulo WPS; Servizio CSW per i metadati INSPIRE',
+    "Modifica via web: Modifica geometrica e degli attributi anche nelle relazioni 1:1 e 1:N; Modifica basata sulle API di QGIS; Form e widget di editing ereditati dal progetto QGIS; Blocco delle feature per l'editing multiutente; Vincoli geografici e alfanumerici personalizzabili per i singoli utenti",
+    'Desktop e mobile: Client responsive per desktop e tablet; Editing web anche in modalità offline',
+  ]);
 });
 
 Given('the HTML pages in the language folders', function () {
