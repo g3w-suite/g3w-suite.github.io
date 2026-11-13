@@ -2,7 +2,7 @@
 
 ## Scope
 
-Static multilingual marketing/documentation website for G3W-Suite. `server.js` expands reusable components into static HTML; there is no frontend framework.
+Static multilingual marketing/documentation website for G3W-Suite. `build/server.js` expands reusable components into static HTML; there is no frontend framework.
 
 ## Verified Current State
 
@@ -26,6 +26,16 @@ for pushes and pull requests.
 ## Project Structure
 
 ```
+build/
+|- config.js             # Shared paths and build settings
+|- server.js             # Build CLI and development server
+|- build.js              # Site page generation
+|- documentation.js      # Markdown manual generation
+|- markdown.js
+|- translations.js
+|- utils/
+   |- files.js
+   |- routes.js
 src/
 |- index.md             # Shared homepage template, published as it/ and en/
 |- _redirect.html       # Root redirect emitted as static/index.html
@@ -40,11 +50,11 @@ static/
 |- it/, en/, docs/        # Generated publishing output; ignored by Git
 ```
 
-`src/index.md` is the shared homepage template. Site pages, news articles and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `server.js` generates the manual under `/docs/` and `/it/docs/`.
+`src/index.md` is the shared homepage template. Site pages, news articles and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `build/` contains the site generator, server and build utilities.
 
 ## Key Conventions
 
-- Internal page URLs use trailing-slash directories, never `.html`; `demo.md` publishes as `demo/index.html`. Use site-root URLs (`/it/demo/`, `/img/...`) instead of `../` or `./`.
+- Internal page URLs use trailing-slash directories, never `.html`; `about/index.md` and `explore/index.md` publish as `/it/about/` and `/it/explore/` (and their English equivalents). Use site-root URLs (`/it/explore/`, `/img/...`) instead of `../` or `./`.
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
 - Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
 - The build wraps Markdown page content in `<main id="main-content">`; do not add a `<main>` wrapper to Markdown sources.
@@ -107,7 +117,7 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 
 - `AGENTS.md`
 - `package.json`
-- `server.js`
+- `build/server.js`
 - `src/index.md`
 - `static/style.css`
 - `static/app.js`

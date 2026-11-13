@@ -2,6 +2,8 @@
 
 Release date: **08 April 2026**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.11
 
 **Version 3.11 of G3W-SUITE is characterized by a great refactoring job.**
@@ -148,7 +150,7 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="/docs/">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/#demo-3-11">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/#demo-3-11">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

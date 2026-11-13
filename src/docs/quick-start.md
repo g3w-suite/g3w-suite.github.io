@@ -34,7 +34,7 @@ For further setup, see the [administration manual](/docs/g3wsuite_administration
 
 <iframe class="step__video" src="https://www.youtube.com/embed/gaxsTFC5uoo" title="{{t 'Quick Start step 4: publish your QGIS project'}}" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-[Try the online demo](/en/demo/#demo-3-11)
+[Try the online demo](/en/explore/#demo-3-11)
 
 <script type="application/json" data-i18n>
 {

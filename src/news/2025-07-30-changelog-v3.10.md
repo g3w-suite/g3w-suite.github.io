@@ -2,6 +2,8 @@
 
 Release date: **30 July 2025**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.10
 
 **Version 3.10 of G3W-SUITE is characterized by a great refactoring job.**
@@ -279,7 +281,7 @@ It is now possible to define whether these graphs should be displayed
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/#demo-3-10">Prova la demo</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/#demo-3-10">Prova la demo</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

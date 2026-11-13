@@ -79,12 +79,32 @@ G3W-SUITE uses multi-user feature locks, so a feature being edited by another us
 The core components are released under the MPL-2 licence, while optional integrations may use their own licence. All source repositories are available on [GitHub](https://github.com/g3w-suite).
 
 - **G3W-ADMIN** — the Python/Django server that publishes QGIS projects and manages users, groups, permissions and project modules. [Source code](https://github.com/g3w-suite/g3w-admin)
+
+  [Read about G3W-ADMIN](/en/explore/g3w-admin/)
+
 - **G3W-CLIENT** — the JavaScript/Vue map client for navigation, search, editing, charts and print layouts. [Source code](https://github.com/g3w-suite/g3w-client)
+
+  [Read about G3W-CLIENT](/en/explore/g3w-client/)
+
 - **G3W-ADMIN-PROCESSING** — an optional integration that runs uploaded `.model3` QGIS Processing models synchronously or in batches. [Source code](https://github.com/g3w-suite/g3w-admin-processing)
+
+  [Read about G3W-ADMIN-PROCESSING](/en/explore/g3w-admin-processing/)
+
 - **G3W-ADMIN-FRONTEND** — an optional branded public portal for published cartographic groups. [Source code](https://github.com/g3w-suite/g3w-admin-frontend)
+
+  [Read about G3W-ADMIN-FRONTEND](/en/explore/g3w-admin-frontend/)
+
 - **G3W-ADMIN-PDND** — an optional PDND integration for voucher-token authentication, released under the MIT licence. [Source code](https://github.com/g3w-suite/g3w-admin-pdnd)
+
+  [Read about G3W-ADMIN-PDND](/en/explore/g3w-admin-pdnd/)
+
 - **Collaborative editing** — editing tools are maintained inside `g3w-admin`, including snapping, splitting and multi-relation workflows.
+
+  [Read about collaborative editing](/en/explore/g3w-client-plugin-editing/)
+
 - **G3W-SUITE-DOCKER** — the official deployment stack with NGINX, PostgreSQL/PostGIS, QGIS Server and the services needed to run the platform. [Source code](https://github.com/g3w-suite/g3w-suite-docker)
+
+  [Read about G3W-SUITE-DOCKER](/en/explore/g3w-suite-docker/)
 
 ## <span id="hosting"></span>Choose how to run G3W-SUITE
 
@@ -144,6 +164,13 @@ If you prefer managed infrastructure, GIS3W offers a hosting service with a dedi
       "QGIS": "QGIS",
       "QGIS API": "API QGIS",
       "QGIS WebGIS publishing workflow": "Flusso di pubblicazione WebGIS da QGIS",
+      "Read about G3W-ADMIN": "Scopri G3W-ADMIN",
+      "Read about G3W-ADMIN-FRONTEND": "Scopri G3W-ADMIN-FRONTEND",
+      "Read about G3W-ADMIN-PDND": "Scopri G3W-ADMIN-PDND",
+      "Read about G3W-ADMIN-PROCESSING": "Scopri G3W-ADMIN-PROCESSING",
+      "Read about G3W-CLIENT": "Scopri G3W-CLIENT",
+      "Read about G3W-SUITE-DOCKER": "Scopri G3W-SUITE-DOCKER",
+      "Read about collaborative editing": "Scopri la modifica collaborativa",
       "Release date": "Data di rilascio",
       "Release notes": "Note di rilascio",
       "Search, analyze and share": "Cerca, analizza e condividi",

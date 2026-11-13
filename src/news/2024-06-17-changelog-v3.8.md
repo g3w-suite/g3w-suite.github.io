@@ -2,6 +2,8 @@
 
 Release date: **17 June 2024**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.8
 
 **G3W-SUITE 3.8 is characterized by refactoring work relating to the management aspects of the tools, the visualization of tabular data and the aspects of coherence in saving the changes made in editing in the case of 1:N cascade relations.**
@@ -204,7 +206,7 @@ WFS queries (QueryByBox, QueryByPolyon and QueryByDrawPolygon) are extended to l
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/">Prova la demo</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/">Prova la demo</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

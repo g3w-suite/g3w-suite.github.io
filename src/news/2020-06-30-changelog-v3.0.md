@@ -2,6 +2,8 @@
 
 Release date: **30 June 2020**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.0
 
 G3W-SUITE 3.0 brings an extensive list of new changes and a lot of **polishing of existing features** – the highlights of which we will try to cover here.
@@ -228,7 +230,7 @@ The return of the network connection will automatically save the changes made on
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/">Prova la demo</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/">Prova la demo</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

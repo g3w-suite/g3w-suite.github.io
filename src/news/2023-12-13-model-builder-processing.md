@@ -2,6 +2,8 @@
 
 Release date: **13 December 2023**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 
 ### **The module dedicated to the creation of geographic analyzes on the web is based on the automated analysis models prepared on QGIS through the Processing ModelDesigner.**
 

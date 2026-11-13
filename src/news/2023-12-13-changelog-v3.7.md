@@ -2,6 +2,8 @@
 
 Release date: **13 December 2023**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.7
 
 ### Version 3.7 of G3W-SUITE is characterized by the release of a module dedicated to the** integration of analysis models created on QGIS via ModelDesigner**.
@@ -219,7 +221,7 @@ In the case of a 1:N relation between layers, both geometric, it will be possibl
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

@@ -2,6 +2,8 @@
 
 Published: **16 March 2024**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## MerginMaps partnership
 
 ![Mergin Maps](/img/site-mergin-maps-logo.jpg)

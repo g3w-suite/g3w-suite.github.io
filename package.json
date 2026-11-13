@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "www.g3wsuite.it",
   "scripts": {
-    "build": "node server.js --build",
-    "dev": "node server.js --dev",
+    "build": "node build/server.js --build",
+    "dev": "node build/server.js --dev",
     "test": "npm run build && cucumber-js"
   },
   "dependencies": {

@@ -7,7 +7,7 @@ const { spawn } = require('node:child_process');
 const { When, Then } = require('@cucumber/cucumber');
 
 When('the development server starts with PORT set to another value', { timeout: 30000 }, async function () {
-  this.server = spawn(process.execPath, ['server.js', '--dev'], {
+  this.server = spawn(process.execPath, ['build/server.js', '--dev'], {
     env: { ...process.env, PORT: '0' },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
@@ -46,16 +46,16 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     const response = await fetch(`http://localhost:${this.port}/`);
     assert.equal(response.status, 200);
     assert.match(await response.text(), /url=\/it\//i);
-    for (const url of ['/it/demo/', '/en/news/v3.11/']) {
+    for (const url of ['/it/explore/', '/it/about/', '/en/news/v3.11/']) {
       const page = await fetch(`http://localhost:${this.port}${url}`);
       assert.equal(page.status, 200, url);
     }
     for (const [source, target] of [
-      ['/it/demo.html?test=1', '/it/demo/?test=1'],
-      ['/it/demo/index.html', '/it/demo/'],
+      ['/it/explore.html?test=1', '/it/explore/?test=1'],
+      ['/it/explore/index.html', '/it/explore/'],
       ['/it/index.html', '/it/'],
       ['/it/news/v3.11/index.html', '/it/news/v3.11/'],
-      ['/it/demo?test=1', '/it/demo/?test=1'],
+      ['/it/explore?test=1', '/it/explore/?test=1'],
     ]) {
       const redirect = await fetch(`http://localhost:${this.port}${source}`, { redirect: 'manual' });
       assert.equal(redirect.status, 301, source);

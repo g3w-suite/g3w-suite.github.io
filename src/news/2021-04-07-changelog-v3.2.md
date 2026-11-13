@@ -2,6 +2,8 @@
 
 Release date: **07 April 2021**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.2
 
 G3W-SUITE 3.2 offers an extensive list of **new and improved features** , among which we remember
@@ -213,7 +215,7 @@ Map client and administration panel are available in additional languages:
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

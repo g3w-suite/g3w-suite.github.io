@@ -4,6 +4,8 @@ Published: **13 November 2026**
 
 G3W-SUITE brings together QGIS project publishing and tools for managing web maps, collaborating with teams, and putting geospatial data to work.
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Start with the QGIS work you already have
 
 Publish existing QGIS projects as WebGIS services while keeping their styles, symbols, editing forms and print layouts. You can bring your cartography to the web without rebuilding the project in a separate mapping tool.
@@ -32,7 +34,7 @@ The platform integrates with QGIS and is available as open-source software under
 
 ## Explore G3W-SUITE
 
-[Try the demo](/en/demo/ "primary-button") [Explore the components](/en/demo/#components "outline-button") [Quick Start](/en/docs/quick-start/ "outline-button")
+[Try the demo](/en/explore/ "primary-button") [Explore the components](/en/explore/#components "outline-button") [Quick Start](/en/docs/quick-start/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

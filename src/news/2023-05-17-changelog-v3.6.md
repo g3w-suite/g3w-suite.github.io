@@ -2,6 +2,8 @@
 
 Release date: **17 May 2023**
 
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+
 ## Changelog for G3W-SUITE 3.6
 
 Version 3.6 of G3W-SUITE is characterized by greater stability and a greater number of functions and features inherited from the QGIS project.
@@ -199,7 +201,7 @@ It is now possible to create animations based on multiple temporal layers both r
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/demo/">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/explore/">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>
