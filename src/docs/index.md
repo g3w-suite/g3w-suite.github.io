@@ -33,6 +33,7 @@ Through the web interface, administrators can publish and organize QGIS projects
 
 ## Manual
 
+- [Overview](index.md)
 - [Introduction](introduction.md)
 - [Technological infrastructure](infrastructure.md)
 - [Data management](datamanagement.md)
@@ -78,6 +79,7 @@ Through the web interface, administrators can publish and organize QGIS projects
       "Introduction": "Introduzione",
       "Manual": "Manuale",
       "Online editing": "Modifica online",
+      "Overview": "Panoramica",
       "QGIS project settings": "Impostazioni dei progetti QGIS",
       "Quick Start": "Guida rapida",
       "Settings": "Impostazioni",

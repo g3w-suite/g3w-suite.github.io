@@ -28,9 +28,9 @@ function documentationLink(href, file, docsDir, lang = 'en') {
   if ((['.md', '.html', '.rst'].includes(extension) || !extension) && fs.existsSync(page)) {
     const pagePath = path.relative(docsDir, page).replace(/\\/g, '/').replace(/\.md$/, '');
     const docsRoot = lang === 'it' ? '/it/docs' : '/docs';
-    const route = pagePath === 'index'
+    const route = pagePath === 'quick-start'
       ? `${docsRoot}/`
-      : `${docsRoot}/${pagePath.replace(/\/index$/, '')}/`;
+      : `${docsRoot}/${pagePath === 'index' ? 'overview' : pagePath.replace(/\/index$/, '')}/`;
     return `${route}${suffix}`;
   }
 
@@ -115,8 +115,16 @@ function buildDocumentation(outputDir) {
     }
   }
 
-  for (const file of documentationFiles(docsDir)) {
-    const relative = path.relative(docsDir, file);
+  const pages = documentationFiles(docsDir).flatMap(file => {
+    const source = path.relative(docsDir, file);
+    if (source === 'index.md') return [{ file, source, relative: 'overview.md' }];
+    if (source === 'quick-start.md') return [
+      { file, source, relative: 'index.md' },
+      { file, source, relative: 'quick-start.md', alias: true },
+    ];
+    return [{ file, source, relative: source }];
+  });
+  for (const { file, source: sourceRelative, relative, alias } of pages) {
     const source = fs.readFileSync(file, 'utf8');
     const extracted = extractPageTranslations(source, path.relative(projectRoot, file));
     const parentMatch = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(extracted.html);
@@ -165,10 +173,10 @@ function buildDocumentation(outputDir) {
       const parentBreadcrumb = parentMatch
         ? `<li><a href="${documentationLink(parentMatch[2], file, docsDir, lang)}">${parentTitle}</a></li>`
         : '';
-      const sourcePath = relative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
+      const sourcePath = sourceRelative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
       const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
       const ui = documentationTranslations[lang];
-      const releaseNotes = relative === 'index.md' && releaseVersions.length
+      const releaseNotes = releaseVersions.length
         ? `<section class="docs-release-notes" aria-labelledby="docs-release-notes-title"><h2 id="docs-release-notes-title">Changelog</h2><div class="docs-release-notes__links">${releaseVersions.map(version =>
             `<a class="btn btn--outline" href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
           ).join('')}</div></section>`
@@ -182,6 +190,7 @@ function buildDocumentation(outputDir) {
   <title>${title} - ${ui.title}</title>
   <link rel="alternate" href="${pageUrls.it}" hreflang="it">
   <link rel="alternate" href="${pageUrls.en}" hreflang="en">
+  ${alias ? `<link rel="canonical" href="${lang === 'it' ? '/it/docs/' : '/docs/'}">` : ''}
   <link rel="stylesheet" href="/style.css">
   <style>
     .docs-layout{display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:2rem;max-width:1440px;margin:2rem auto;padding:0 1.5rem}
@@ -202,7 +211,7 @@ function buildDocumentation(outputDir) {
         <input id="docs-search-input" type="search" name="q" placeholder="${ui.searchPlaceholder}" autocomplete="off" aria-controls="docs-search-results">
       </form>
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
-      ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), pagePath, docsDir, lang)}
+      ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, docsDir, lang)}
     </nav>
     <main id="main-content" class="docs-content">
       <nav class="docs-toolbar" aria-label="${ui.breadcrumb}">
@@ -236,7 +245,7 @@ function buildDocumentation(outputDir) {
         .replace(/&#39;/g, "'")
         .replace(/\s+/g, ' ')
         .trim();
-      searchIndexes[lang].push({ title, url: `${basePath}${pagePath}`, text });
+      if (!alias) searchIndexes[lang].push({ title, url: `${basePath}${pagePath}`, text });
     }
   }
   for (const lang of languages) {

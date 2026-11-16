@@ -40,9 +40,15 @@ Then('release links are generated before the documentation content', function ()
     );
 
     for (const file of htmlFiles(docsRoot)) {
-      if (path.relative(docsRoot, file) !== `index.html`) {
-        assert.equal(readPage(file).$('.docs-release-notes').length, 0, `${file}: release links must only appear on the documentation home`);
-      }
+      const page = readPage(file).$;
+      const releases = page('body > .docs-release-notes');
+      assert.equal(releases.length, 1, `${file}: release links must appear on every documentation page`);
+      assert.equal(releases.next('.docs-layout').length, 1, `${file}: release links must precede the documentation layout`);
+      assert.deepEqual(
+        releases.find('a.btn--outline').map((_, link) => link.attribs.href).get(),
+        releaseRoutes.map(version => `/${lang}/news/${version}/`),
+        `${file}: release links must match the documentation home`
+      );
     }
   }
 });
@@ -53,7 +59,7 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.ok(sources.length > 0, 'expected Markdown documentation sources');
   assert.ok(sources.every(file => file.endsWith('.md')), 'documentation sources must use Markdown');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'images')), 'documentation images must be stored outside src/docs');
-  assert.equal(pages.length, sources.length, 'every Markdown source must generate one page');
+  assert.equal(pages.length, sources.length + 1, 'Quick Start must also retain its previous route');
   for (const file of sources) {
     const source = fs.readFileSync(file, 'utf8');
     const block = /<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/.exec(source);
@@ -66,16 +72,23 @@ Then('every documentation source is Markdown and has a generated page', function
   }
 
   const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
-  assert.ok(index('main h1').text().includes('G3W-SUITE 3.11'), 'documentation landing page is missing');
+  assert.equal(index('main h1').text(), 'Quick Start', 'documentation home must show Quick Start');
   const italianPages = htmlFiles(path.join(staticDir, 'it', 'docs'));
-  assert.equal(italianPages.length, sources.length, 'every Markdown source must generate an Italian page');
+  assert.equal(italianPages.length, sources.length + 1, 'Italian Quick Start must also retain its previous route');
   const italianIndex = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
   assert.equal(italianIndex('html').attr('lang'), 'it');
-  assert.equal(italianIndex('main h1').text(), 'Manuale di distribuzione e amministrazione di G3W-SUITE 3.11');
+  assert.equal(italianIndex('main h1').text(), 'Guida rapida');
   assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
-  assert.equal(index('nav.docs-nav a').first().attr('href'), '/docs/quick-start/');
-  assert.equal(italianIndex('nav.docs-nav a').first().attr('href'), '/it/docs/quick-start/');
+  assert.equal(index('nav.docs-nav a').first().attr('href'), '/docs/');
+  assert.equal(italianIndex('nav.docs-nav a').first().attr('href'), '/it/docs/');
   assert.equal(italianIndex('nav.docs-nav a').first().text(), 'Guida rapida');
+  assert.equal(index('nav.docs-nav a').first().attr('aria-current'), 'page');
+  assert.equal(italianIndex('nav.docs-nav a').first().attr('aria-current'), 'page');
+  assert.ok(index('nav.docs-nav a[href="/docs/overview/"]').length, 'navigation must retain the manual overview');
+  assert.ok(readPage(path.join(staticDir, 'docs', 'overview', 'index.html')).$('main h1').text().includes('G3W-SUITE 3.11'));
+  const oldQuickStart = readPage(path.join(staticDir, 'docs', 'quick-start', 'index.html')).$;
+  assert.equal(oldQuickStart('main h1').text(), 'Quick Start');
+  assert.equal(oldQuickStart('link[rel="canonical"]').attr('href'), '/docs/');
   assert.ok(italianIndex('nav.docs-nav a[href="/it/docs/settings/"]').length, 'Italian navigation must link to the localized settings page');
   assert.equal(italianIndex('header.site-header .nav-list a[href="/it/docs/"]').length, 1, 'Italian documentation header must link to its localized home');
   assert.equal(italianIndex('footer.site-footer a[href="/it/docs/"]').length, 1, 'Italian documentation footer must link to its localized home');
@@ -90,11 +103,11 @@ Then('every documentation source is Markdown and has a generated page', function
     assert.equal(page('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${file}: body must have a page-specific class`);
     assert.equal(italianPage('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${italianFile}: body must have a page-specific class`);
     const sourceRelative = outputRelative === 'index.html'
-      ? 'index.md'
-      : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
-    const docsRoute = sourceRelative === 'index.md'
-      ? ''
-      : sourceRelative.replace(/\.md$/, '').replace(/\/index$/, '');
+      ? 'quick-start.md'
+      : outputRelative === 'overview/index.html'
+        ? 'index.md'
+        : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
+    const docsRoute = outputRelative === 'index.html' ? '' : outputRelative.replace(/\/index\.html$/, '');
     const englishRoute = docsRoute ? `/docs/${docsRoute}/` : '/docs/';
     const italianRoute = docsRoute ? `/it/docs/${docsRoute}/` : '/it/docs/';
     const sourcePath = sourceRelative.split('/').map(encodeURIComponent).join('/');

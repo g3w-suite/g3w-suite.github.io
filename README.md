@@ -17,7 +17,7 @@ Run `npm run build` to generate the published site and documentation in `static/
 
 ## Documentation
 
-The manual is maintained in English Markdown in `src/docs/`, with Italian translations in each page's `data-i18n` block. The site build publishes it at `/docs/` and `/it/docs/`. Documentation pages reuse the site's shared header and footer and include language-specific client-side search. Images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
+The manual is maintained in English Markdown in `src/docs/`, with Italian translations in each page's `data-i18n` block. The site build publishes the Quick Start at `/docs/` and `/it/docs/`, while the manual overview is at `/docs/overview/` and `/it/docs/overview/`. The previous Quick Start URLs remain available. Documentation pages reuse the site's shared header and footer, show release links and include language-specific client-side search. Images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
 
 Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/about/` and `/en/about/`; member and component pages live under the same `about/` route. The news index is `/it/news/` or `/en/news/`, and release notes are published under `/it/news/v<version>/` and `/en/news/v<version>/`. Their source files use the `YYYY-MM-DD-changelog-vX.Y.md` pattern, which also generates the version buttons at the top of the documentation homepage. The shared homepage is `src/index.md`; `src/_redirect.html` generates the root redirect. Use these URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 
