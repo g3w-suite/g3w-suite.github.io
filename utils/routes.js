@@ -26,14 +26,17 @@ function pageBodyClass(page) {
   return `page-${slug || 'home'}`;
 }
 
-function renderBreadcrumb(lang, items) {
+function renderBreadcrumb(lang, items, sourcePage) {
   const label = lang === 'it' ? 'Percorso di navigazione' : 'Breadcrumb';
+  const editLabel = lang === 'it' ? 'Modifica' : 'Edit';
+  const sourcePath = sourcePage.split(path.sep).map(encodeURIComponent).join('/');
+  const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/${sourcePath}`;
   const links = [{ href: `/${lang}/`, label: 'Home' }, ...items];
   return `<nav class="site-breadcrumb" aria-label="${label}"><div class="container"><ol>${links.map(({ href, label: text }, index) =>
     index === links.length - 1
       ? `<li aria-current="page">${text}</li>`
       : `<li><a href="${href}">${text}</a></li>`
-  ).join('')}</ol></div></nav>`;
+  ).join('')}</ol><a class="site-edit-link" href="${sourceUrl}">${editLabel}</a></div></nav>`;
 }
 
 function renderComponent(component, lang, page, pageUrls, pageHead = '') {

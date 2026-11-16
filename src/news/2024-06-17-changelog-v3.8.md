@@ -206,7 +206,7 @@ WFS queries (QueryByBox, QueryByPolyon and QueryByDrawPolygon) are extended to l
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -282,7 +282,6 @@ WFS queries (QueryByBox, QueryByPolyon and QueryByDrawPolygon) are extended to l
       "Try the current demo": "Prova la demo attuale",
       "WFS queries (QueryByBox, QueryByPolyon and QueryByDrawPolygon) are extended to layers deriving from embedded projects": "Le interrogazioni WFS (QueryByBox, QueryByPolyon e QueryByDrawPolygon) sono estese ai layer provenienti da progetti incorporati.",
       "With this version it is also possible to export prints to **JPG**, **SVG** and **GeoPDF**": "Con questa versione è inoltre possibile esportare le stampe in **JPG**, **SVG** e **GeoPDF**.",
-      "en": "it",
       "export the map also in **SVG and GeoPDF format** by defining c**ustom scale and DPI values**": "esportazione della mappa anche in **formato SVG e GeoPDF**, con **scala e DPI personalizzati**",
       "official manual on ReadTheDocs": "manuale ufficiale su ReadTheDocs",
       "the MacroGroup to which they belong": "il macrogruppo di appartenenza",

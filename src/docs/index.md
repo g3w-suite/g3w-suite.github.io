@@ -18,6 +18,8 @@ Through the web interface, administrators can publish and organize QGIS projects
 ## Getting started
 
 - [Quick Start](quick-start.md)
+- [Demo](demos.md)
+- [Versions and compatibility](versions.md)
 
 ## Components
 
@@ -25,7 +27,7 @@ Through the web interface, administrators can publish and organize QGIS projects
 - [G3W-CLIENT](components/g3w-client.md)
 - [G3W-ADMIN-PROCESSING](components/g3w-admin-processing.md)
 - [G3W-SUITE-DOCKER](components/g3w-suite-docker.md)
-- [G3W-ADMIN-FRONTEND](components/g3w-admin-frontend.md)
+- [G3W-ADMIN-PORTAL](components/g3w-admin-portal.md)
 - [G3W-ADMIN-PDND](components/g3w-admin-pdnd.md)
 - [G3W-CLIENT-PLUGIN-EDITING](components/g3w-client-plugin-editing.md)
 
@@ -101,7 +103,8 @@ Through the web interface, administrators can publish and organize QGIS projects
       "Translation": "Traduzione",
       "Tutorial": "Tutorial",
       "Two-factor authentication": "Autenticazione a due fattori",
-      "User groups and organization": "Gruppi utenti e organizzazione"
+      "User groups and organization": "Gruppi utenti e organizzazione",
+      "Versions and compatibility": "Versioni e compatibilità"
     }
   }
 </script>

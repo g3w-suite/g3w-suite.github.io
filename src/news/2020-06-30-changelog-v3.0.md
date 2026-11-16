@@ -230,7 +230,7 @@ The return of the network connection will automatically save the changes made on
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -258,7 +258,6 @@ The return of the network connection will automatically save the changes made on
       "The **capabilities and properties of QGIS server** like all the services supported by him WMS WFS, WCS etc are **now managed and controlled by G3W-SUITE through the QGIS API.**": "Le **funzionalità e le proprietà del server QGIS**, come tutti i servizi da esso supportati (WMS, WFS, WCS ecc.), sono **ora gestite e controllate da G3W-SUITE tramite la QGIS API.**",
       "The **transaction group management** QGIS function is inherited in WebGis editing.": "La funzione QGIS di **gestione dei gruppi di transazioni** è disponibile nell’editing WebGIS.",
       "Try the current demo": "Prova la demo attuale",
-      "en": "it",
       "official manual on ReadTheDocs": "manuale ufficiale su ReadTheDocs"
     }
   }

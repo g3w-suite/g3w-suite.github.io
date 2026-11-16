@@ -32,7 +32,7 @@ G3W-SUITE is made of modular open source components, available on [GitHub](https
 - PDND
 - public administration
 
-[Features](/en/about/#features) · [Demo](/en/about/demos/) · [Components](/en/about/#components) · [People](/en/about/#people) · [Versions and compatibility](/en/about/versions/)
+[Features](/en/about/#features) · [Demo](/en/docs/demos/) · [Components](/en/about/#components) · [People](/en/about/#people) · [Versions and compatibility](/en/docs/versions/)
 
 ## <span id="components"></span>[G3W-ADMIN](/en/docs/components/g3w-admin/)
 
@@ -74,7 +74,7 @@ The official Docker stack to run G3W-SUITE with a single command. Includes NGINX
 
 [g3w-suite/g3w-suite-docker](https://github.com/g3w-suite/g3w-suite-docker "github-button") [Features](/en/docs/components/g3w-suite-docker/ "outline-button")
 
-## [G3W-ADMIN-FRONTEND](/en/docs/components/g3w-admin-frontend/)
+## [G3W-ADMIN-PORTAL](/en/docs/components/g3w-admin-portal/)
 
 ![{{t 'G3W-SUITE public portal'}}](/img/site-frontend.png)
 
@@ -82,7 +82,7 @@ The official Docker stack to run G3W-SUITE with a single command. Includes NGINX
 
 A customisable public portal for G3W-SUITE. Replaces the default login screen with a branded landing page showing logo, title and the list of published cartographic groups - fully configurable per installation.
 
-[g3w-suite/g3w-admin-frontend](https://github.com/g3w-suite/g3w-admin-frontend "github-button") [Features](/en/docs/components/g3w-admin-frontend/ "outline-button")
+[g3w-suite/g3w-admin-portal](https://github.com/g3w-suite/g3w-admin-portal "github-button") [Features](/en/docs/components/g3w-admin-portal/ "outline-button")
 
 ## [G3W-ADMIN-PDND](/en/docs/components/g3w-admin-pdnd/)
 

@@ -39,10 +39,22 @@ Then('every page declares its language, metadata, and main structure', function 
     const breadcrumb = main.children('nav.site-breadcrumb');
     if (pagePath === 'index.html') {
       expect(breadcrumb.length === 0, 'homepage must not have a breadcrumb');
+      expect(main.find('.site-edit-link').length === 0, 'homepage must not have an edit link');
     } else {
       expect(breadcrumb.length === 1, 'page must have one breadcrumb');
       expect(breadcrumb.find(`a[href="/${lang}/"]`).length === 1, 'breadcrumb must link to the localized home');
       expect(breadcrumb.find('[aria-current="page"]').text().trim() === heading.text().trim(), 'breadcrumb must identify the current page');
+      const edit = breadcrumb.find('> .container > a.site-edit-link');
+      expect(edit.length === 1, 'breadcrumb must contain one edit link');
+      expect(edit.text().trim() === (lang === 'it' ? 'Modifica' : 'Edit'), 'edit link must use the current language');
+      const examples = {
+        'about/index.html': 'about/index.md',
+        'about/francesco-boccacci/index.html': 'about/francesco-boccacci.md',
+        'news/v3.11/index.html': 'news/2026-04-08-changelog-v3.11.md',
+      };
+      if (examples[pagePath]) {
+        expect(edit.attr('href') === `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/${examples[pagePath]}`, 'edit link must point to the source file');
+      }
       const parent = pagePath.split('/').slice(0, -2).join('/');
       if (parent) expect(breadcrumb.find(`a[href="/${lang}/${parent}/"]`).length === 1, 'breadcrumb must link to the parent page');
     }

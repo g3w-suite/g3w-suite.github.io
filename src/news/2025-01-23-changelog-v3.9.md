@@ -204,7 +204,7 @@ If on the QGIS project I exclude a print layout from those available in the WMS 
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -287,7 +287,6 @@ If on the QGIS project I exclude a print layout from those available in the WMS 
       "Visibility management of conditional field groups has been implemented and improved, managing conditions based on Boolean fields or with multiple choices.": "La gestione della visibilità dei gruppi di campi condizionali è stata implementata e migliorata, supportando condizioni basate su campi booleani o a scelta multipla.",
       "With this version it is possible to allow the choice of more than one value among those associated with a field via the “value relation” widget.": "Questa versione permette di selezionare più valori tra quelli associati a un campo tramite il widget “relazione valore”.",
       "a complete **restyling** of the cartographic client": "un completo **restyling** del client cartografico",
-      "en": "it",
       "official manual on ReadTheDocs": "manuale ufficiale su ReadTheDocs"
     }
   }

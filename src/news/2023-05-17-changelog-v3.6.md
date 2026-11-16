@@ -201,7 +201,7 @@ It is now possible to create animations based on multiple temporal layers both r
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -224,7 +224,6 @@ It is now possible to create animations based on multiple temporal layers both r
       "Take advantage of all the news related to the preparation of QGIS projects with the new LTR version": "Sfrutta tutte le novità della nuova versione LTR nella preparazione dei progetti QGIS.",
       "Try the current demo": "Prova la demo attuale",
       "We remember in particular:": "In particolare:",
-      "en": "it",
       "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"
     }
   }

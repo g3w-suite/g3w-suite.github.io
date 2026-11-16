@@ -111,7 +111,7 @@ Default: 2.
 ### Frontend module
 
 ### `FRONTEND`
-If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-suite/g3w-admin-frontend
+If `true` install and activate G3W-ADMIN-PORTAL module https://github.com/g3w-suite/g3w-admin-portal
 
 <script type="application/json" data-i18n>
 {
@@ -137,7 +137,7 @@ If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-s
     "Frontend module": "Modulo frontend",
     "G3W-SUITE with docker is deployed with Gunicorn.": "G3W-SUITE viene distribuito con Docker utilizzando Gunicorn.",
     "Gunicorn settings": "Impostazioni di Gunicorn",
-    "If `true` install and activate G3W-SUITEfrontend module https://github.com/g3w-suite/g3w-admin-frontend": "Se impostato su `true`, installa e attiva il modulo G3W-SUITEfrontend https://github.com/g3w-suite/g3w-admin-frontend",
+    "If `true` install and activate G3W-ADMIN-PORTAL module https://github.com/g3w-suite/g3w-admin-portal": "Se impostato su `true`, installa e attiva il modulo G3W-ADMIN-PORTAL https://github.com/g3w-suite/g3w-admin-portal",
     "If you are going to use docker postgis image, it'll be created on first run of container.": "Se utilizzi l'immagine Docker di PostGIS, verrà creato al primo avvio del container.",
     "If you are going to use docker postgis image, it'll be set to `5432`": "Se utilizzi l'immagine Docker di PostGIS, verrà impostato su `5432`.",
     "If you are going to use docker postgis image, it'll be set to `postgis`": "Se utilizzi l'immagine Docker di PostGIS, verrà impostato su `postgis`.",

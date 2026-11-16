@@ -83,7 +83,7 @@ function build(outputDir) {
         if (titles.has(parentUrl)) items.push({ href: parentUrl, label: titles.get(parentUrl) });
       }
       items.push({ label: title });
-      result = output.replace(/(<main\b[^>]*>)/i, `$1${renderBreadcrumb(lang, items)}`);
+      result = output.replace(/(<main\b[^>]*>)/i, `$1${renderBreadcrumb(lang, items, page)}`);
     }
     const target = path.join(outputDir, lang, outputPage(page));
     fs.mkdirSync(path.dirname(target), { recursive: true });

@@ -221,7 +221,7 @@ In the case of a 1:N relation between layers, both geometric, it will be possibl
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -311,7 +311,6 @@ In the case of a 1:N relation between layers, both geometric, it will be possibl
       "attribute table contents": "contenuti della tabella degli attributi",
       "data underlying the charts": "dati alla base dei grafici",
       "editable geometries": "geometrie modificabili",
-      "en": "it",
       "features displayed on the map": "feature visualizzate sulla mappa",
       "in the editing phase of the related table": "durante la modifica della tabella collegata",
       "in the values shown on searches based on that layer/field": "tra i valori mostrati nelle ricerche basate su quel layer o campo",

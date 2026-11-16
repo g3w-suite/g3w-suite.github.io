@@ -105,18 +105,27 @@ Then('every documentation source is Markdown and has a generated page', function
     const englishRoute = docsRoute ? `/docs/${docsRoute}/` : '/docs/';
     const italianRoute = docsRoute ? `/it/docs/${docsRoute}/` : '/it/docs/';
     const sourcePath = sourceRelative.split('/').map(encodeURIComponent).join('/');
-    assert.equal(page('.docs-toolbar').length, 1, `${file}: documentation toolbar is missing`);
+    assert.equal(page('.docs-toolbar').length, 0, `${file}: the old documentation toolbar must not remain`);
     assert.ok(page('nav.site-breadcrumb a[href="/en/"]').length, `${file}: breadcrumb is missing the site home link`);
     assert.equal(page('main > .page-header h1').length, 1, `${file}: documentation page header is missing`);
     assert.equal(page('nav.site-breadcrumb [aria-current="page"]').text(), page('main > .page-header h1').text(), `${file}: breadcrumb must identify the current page`);
     assert.ok(italianPage('nav.site-breadcrumb a[href="/it/"]').length, `${italianFile}: breadcrumb is missing the localized site home link`);
+    if (outputRelative !== 'index.html') {
+      assert.equal(page('nav.site-breadcrumb a[href="/docs/"]').first().text(), 'Documentation');
+      assert.equal(italianPage('nav.site-breadcrumb a[href="/it/docs/"]').first().text(), 'Documentazione');
+    }
     assert.equal(italianPage('main > .page-header h1').length, 1, `${italianFile}: localized page header is missing`);
     assert.equal(italianPage('nav.site-breadcrumb [aria-current="page"]').text(), italianPage('main > .page-header h1').text(), `${italianFile}: breadcrumb must identify the current page`);
     assert.equal(
-      page('.docs-toolbar .docs-source-link').attr('href'),
+      page('nav.site-breadcrumb > .container > a.site-edit-link').attr('href'),
       `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`,
       `${file}: GitHub edit link does not match the Markdown source`
     );
+    assert.equal(page('.site-edit-link').length, 1, `${file}: expected one edit link`);
+    assert.equal(page('.site-edit-link').text(), 'Edit');
+    assert.equal(italianPage('.site-edit-link').length, 1, `${italianFile}: expected one localized edit link`);
+    assert.equal(italianPage('.site-edit-link').text(), 'Modifica');
+    assert.equal(italianPage('.site-edit-link').attr('href'), page('.site-edit-link').attr('href'), `${italianFile}: edit link must target the shared source`);
     assert.equal(page('html').attr('lang'), 'en', `${file}: English docs must declare their language`);
     assert.equal(italianPage('html').attr('lang'), 'it', `${italianFile}: Italian docs must declare their language`);
     assert.equal(page('head link[rel="alternate"][hreflang="it"]').attr('href'), italianRoute);

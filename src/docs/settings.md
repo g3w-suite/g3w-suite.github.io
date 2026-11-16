@@ -8,10 +8,10 @@ The following variables can be added to or edited in the project’s `local_sett
 Custom django map server module other than `qdjango` (QGIS-Server provider)
 
 ### `G3WADMIN_LOCAL_MORE_APPS`
-Custom django modules that is possible to add, i.e. `g3w-admin-frontend` (https://github.com/g3w-suite/g3w-admin-frontend) module and other third part django modules.
+Custom django modules that is possible to add, i.e. `g3w-admin-portal` (https://github.com/g3w-suite/g3w-admin-portal) module and other third part django modules.
 G3W-SUITE accessory modules:
 
-- `g3w-admin-frontend` (https://github.com/g3w-suite/g3w-admin-frontend)
+- `g3w-admin-portal` (https://github.com/g3w-suite/g3w-admin-portal)
 - `caching`
 - `filemanager`
 - `editing`
@@ -88,7 +88,7 @@ LOGGING = {
 ## Frontend portal setting
 
 ### `FRONTEND`
-Default is `False`, set to `True` for activate **G3W-SUITE** frontend portal like `g3w-admin-frontend`.
+Default is `False`, set to `True` for activate **G3W-SUITE** frontend portal like `g3w-admin-portal`.
 If it's set to `True` base url path for G3W-SUITE admin section become `/admin/`.
 
 ### `FRONTEND_APP`
@@ -401,7 +401,7 @@ Settings variables for *caching* workflow
       "Caching settings": "Impostazioni della cache",
       "Client layout settings": "Impostazioni del layout del client",
       "Custom django map server module other than `qdjango` (QGIS-Server provider)": "Modulo personalizzato per il server cartografico Django diverso da `qdjango` (provider QGIS Server)",
-      "Custom django modules that is possible to add, i.e. `g3w-admin-frontend` (https://github.com/g3w-suite/g3w-admin-frontend) module and other third part django modules.": "Moduli Django personalizzati che è possibile aggiungere, ad esempio `g3w-admin-frontend` (https://github.com/g3w-suite/g3w-admin-frontend) e altri moduli Django di terze parti.",
+      "Custom django modules that is possible to add, i.e. `g3w-admin-portal` (https://github.com/g3w-suite/g3w-admin-portal) module and other third part django modules.": "Moduli Django personalizzati che è possibile aggiungere, ad esempio `g3w-admin-portal` (https://github.com/g3w-suite/g3w-admin-portal) e altri moduli Django di terze parti.",
       "Custom properties settings for webgis right panel section (default, width 33%).": "Impostazioni personalizzate delle proprietà del pannello destro del WebGIS (larghezza predefinita: 33%).",
       "Custom webgis client `search` section title.": "Titolo personalizzato della sezione `search` del client WebGIS.",
       "Database logging": "Registrazione dei log nel database",
@@ -415,7 +415,7 @@ Settings variables for *caching* workflow
       "Default is 5, max number files to upload simultaneously.": "Il valore predefinito è 5: numero massimo di file caricabili contemporaneamente.",
       "Default is `'GET'`, set to `'POST'` to change default http call method.": "Il valore predefinito è `'GET'`; impostare `'POST'` per modificare il metodo predefinito delle richieste HTTP.",
       "Default is `Disk` to save tile on a disk. Set to `Memcache` for to use *Memcached* caching framework (https://www.memcached.org/)": "Il valore predefinito è `Disk` per salvare le tile su disco. Impostare `Memcache` per usare il framework di caching *Memcached* (https://www.memcached.org/).",
-      "Default is `False`, set to `True` for activate **G3W-SUITE** frontend portal like `g3w-admin-frontend`.": "Il valore predefinito è `False`; impostare `True` per attivare il portale front-end di **G3W-SUITE**, come `g3w-admin-frontend`.",
+      "Default is `False`, set to `True` for activate **G3W-SUITE** frontend portal like `g3w-admin-portal`.": "Il valore predefinito è `False`; impostare `True` per attivare il portale front-end di **G3W-SUITE**, come `g3w-admin-portal`.",
       "Default is `False`, set to `True` to import DataPlotly settings from QGIS project.": "Il valore predefinito è `False`; impostare `True` per importare le impostazioni di DataPlotly dal progetto QGIS.",
       "Default is `False`, set tot `True` to activate reset user password by email workflow.": "Il valore predefinito è `False`; impostare `True` per attivare la procedura di reimpostazione della password utente tramite e-mail.",
       "Default is `False`. Set to `True` for remove from webgis TOC vector layer empty, without data.": "Il valore predefinito è `False`. Impostare `True` per rimuovere dal TOC del WebGIS i layer vettoriali vuoti, privi di dati.",

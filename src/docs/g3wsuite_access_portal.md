@@ -4,7 +4,7 @@ _**This section describes the different sections of the access portal and how to
 ## The login portal sessions
 The G3W-SUITE application is accessible via any internet browser (FireFox and Chrome recommended) via the URL address defined during installation
 
-If you have also installed the front-end portal from the [GitHub repository](https://github.com/g3w-suite/g3w-admin-frontend), access to the application will be via the portal itself.
+If you have also installed the front-end portal from the [GitHub repository](https://github.com/g3w-suite/g3w-admin-portal), access to the application will be via the portal itself.
 
 The home page will contain, in addition to a brief and customizable presentation of the service, also:
 
@@ -67,7 +67,7 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "If you are an **Administrator** or **Editor** of 1 or 2 level, you can also access the Administration session.": "Se si è **Amministratore** o **Editor** di livello 1 o 2, è possibile accedere anche alla sezione di amministrazione.",
       "If you have a user for access, you can authenticate yourself through the **Login session**.": "Se si dispone di un account, è possibile autenticarsi tramite la sezione **Accedi**.",
       "If you have a user with login credentials, you can authenticate yourself through this session by entering your user and password.": "Se si dispone di un account, è possibile autenticarsi da questa sezione inserendo il nome utente e la password.",
-      "If you have also installed the front-end portal from the [GitHub repository](https://github.com/g3w-suite/g3w-admin-frontend), access to the application will be via the portal itself.": "Se è stato installato anche il portale front-end dal [repository GitHub](https://github.com/g3w-suite/g3w-admin-frontend), si accederà all'applicazione tramite il portale stesso.",
+      "If you have also installed the front-end portal from the [GitHub repository](https://github.com/g3w-suite/g3w-admin-portal), access to the application will be via the portal itself.": "Se è stato installato anche il portale front-end dal [repository GitHub](https://github.com/g3w-suite/g3w-admin-portal), si accederà all'applicazione tramite il portale stesso.",
       "Info": "Informazioni",
       "Login": "Accedi",
       "Maps": "Mappe",

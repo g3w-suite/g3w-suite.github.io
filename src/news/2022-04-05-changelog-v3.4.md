@@ -258,7 +258,7 @@ Using drag&drop in the ADMIN session it’s now possible to define the order of 
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -281,7 +281,6 @@ Using drag&drop in the ADMIN session it’s now possible to define the order of 
       "Sponsor and funder": "Sponsor e finanziatori",
       "Try the current demo": "Prova la demo attuale",
       "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
-      "en": "it",
       "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"
     }
   }

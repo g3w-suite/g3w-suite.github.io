@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { basePath, languages, projectRoot, sourceDir, publishedHtml } = require('./config');
-const { marked, getHeadingList, autoTranslateMarkdown } = require('./markdown');
+const { marked, getHeadingList, autoTranslateMarkdown, renderMarkdownButtonLinks } = require('./markdown');
 const { extractPageTranslations, translateHtml } = require('./translations');
 const { pageBodyClass, renderBreadcrumb, renderComponent } = require('./routes');
 const { documentationFiles } = require('./files');
@@ -74,16 +74,16 @@ function documentationNavigation(index, currentPage, docsDir, lang) {
 
 const documentationTranslations = {
   en: {
+    breadcrumb: 'Documentation',
     description: 'G3W-SUITE documentation',
-    edit: 'Edit this page',
     navigation: 'Documentation navigation',
     search: 'Search documentation',
     searchPlaceholder: 'Search docs',
     title: 'G3W-SUITE Documentation',
   },
   it: {
+    breadcrumb: 'Documentazione',
     description: 'Documentazione di G3W-SUITE',
-    edit: 'Modifica questa pagina',
     navigation: 'Navigazione della documentazione',
     search: 'Cerca nella documentazione',
     searchPlaceholder: 'Cerca nella documentazione',
@@ -156,7 +156,7 @@ function buildDocumentation(outputDir) {
         marked.parse(parentMatch ? extracted.html.replace(parentMatch[0], '') : extracted.html);
         sourceHeadings = getHeadingList().map(({ id }) => id);
       }
-      let content = marked.parse(sourceBody);
+      let content = renderMarkdownButtonLinks(marked.parse(sourceBody));
       if (lang === 'it') content = addDocumentationHeadingAliases(content, sourceHeadings, getHeadingList());
       content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
         `${name}="${documentationLink(href, file, docsDir, lang)}"`
@@ -172,17 +172,15 @@ function buildDocumentation(outputDir) {
       if (!siteHeader) throw new Error('Shared header component has no <header> element');
       const siteFooter = renderComponent('footer', lang, componentPage, pageUrls)
         .replace(/<\/body>\s*<\/html>\s*$/i, '');
-      const sourcePath = sourceRelative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
-      const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
       const ui = documentationTranslations[lang];
       const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(content);
       if (!heading) throw new Error(`${file}: documentation page has no heading`);
       content = content.replace(heading[0], '');
       const breadcrumbItems = [];
-      if (relative !== 'index.md') breadcrumbItems.push({ href: lang === 'it' ? '/it/docs/' : '/docs/', label: ui.title });
+      if (relative !== 'index.md') breadcrumbItems.push({ href: lang === 'it' ? '/it/docs/' : '/docs/', label: ui.breadcrumb });
       if (parentMatch) breadcrumbItems.push({ href: documentationLink(parentMatch[2], file, docsDir, lang), label: parentTitle });
       breadcrumbItems.push({ label: heading[0].replace(/<[^>]*>/g, '').trim() });
-      const breadcrumb = renderBreadcrumb(lang, breadcrumbItems);
+      const breadcrumb = renderBreadcrumb(lang, breadcrumbItems, path.join('docs', sourceRelative));
       const releaseNotes = releaseVersions.length
         ? `<details class="docs-release-notes"><summary>Changelog</summary>${releaseVersions.map(version =>
             `<a href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
@@ -224,9 +222,6 @@ function buildDocumentation(outputDir) {
       ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, docsDir, lang)}
     </nav>
     <div class="docs-content">
-      <div class="docs-toolbar">
-        <a class="docs-source-link" href="${sourceUrl}">${ui.edit}</a>
-      </div>
       ${content}
     </div>
   </div>

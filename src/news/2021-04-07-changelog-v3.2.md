@@ -215,7 +215,7 @@ Map client and administration panel are available in additional languages:
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the current demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -247,7 +247,6 @@ Map client and administration panel are available in additional languages:
       "Try the current demo": "Prova la demo attuale",
       "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
       "ability to **select layer records** and **filter the content on the map and on print**": "possibilità di **selezionare i record dei layer** e **filtrare i contenuti sulla mappa e nelle stampe**",
-      "en": "it",
       "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"
     }
   }

@@ -19,12 +19,9 @@ Compare supported branches and their QGIS, Python and Django requirements. Older
 | **3.2** | 3.16 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.2.x/index.html) | [3.2](/en/news/v3.2/) |
 | **3.1** | 3.10 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.1.x/) | [3.1](/en/news/v3.1/) |
 
-[Back to About](/en/about/ "outline-button")
-
 <script type="application/json" data-i18n>
   {
     "it": {
-      "Back to About": "Torna al progetto",
       "Branch": "Branch",
       "Branch compatibility": "Compatibilità dei branch",
       "Bug fixes": "Correzione bug",
@@ -39,14 +36,7 @@ Compare supported branches and their QGIS, Python and Django requirements. Older
       "QGIS API": "API QGIS",
       "Release notes": "Note di rilascio",
       "Status": "Stato",
-      "Versions and compatibility": "Versioni e compatibilità",
-      "Versions and compatibility - G3W-Suite": "Versioni e compatibilità - G3W-Suite"
+      "Versions and compatibility": "Versioni e compatibilità"
     }
-  }
-</script>
-<script type="application/json" data-i18n-meta>
-  {
-    "title": "Versions and compatibility - G3W-Suite",
-    "description": "Compare supported branches and their QGIS, Python and Django requirements. Older branches are listed for reference."
   }
 </script>

@@ -150,7 +150,7 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="/docs/">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/demos/#demo-3-11">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demos/{{/it}}{{#en}}/docs/demos/{{/en}}#demo-3-11">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
@@ -222,7 +222,6 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
       "You can now create bookmarks for your favorite projects so they always appear on top of your admin session dashboard.": "Ora puoi aggiungere i progetti preferiti ai segnalibri per averli sempre in cima alla dashboard di amministrazione.",
       "ability to test changes “live” directly on a remote server (few substantial differences between evelopment and production environments)": "possibilità di provare le modifiche in tempo reale su un server remoto, con poche differenze sostanziali tra sviluppo e produzione",
       "and much more.": "e molto altro.",
-      "en": "it",
       "increasingly “plug-and-play” architecture, meaning extensibility comes first (stable code = if it is easily modifiable via plugins/code snippets, without touching the core)": "architettura sempre più “plug-and-play”, che mette al primo posto l'estensibilità tramite plugin e frammenti di codice senza modificare il core",
       "new integrations with the QGIS API": "nuove integrazioni con le API di QGIS",
       "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs",
