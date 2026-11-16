@@ -48,8 +48,6 @@ Then('member profile headers show the portrait, name, introduction and personal 
       assert.ok(header.children('p').eq(1).children('strong').text().trim(), `${lang}: ${slug} introduction`);
       assert.ok(header.children('p').eq(2).children('a[href^="https://"]').length >= 2, `${lang}: ${slug} links`);
     }
-    const team = readPage(path.join(staticDir, lang, 'about', 'g3w-suite-team', 'index.html')).$;
-    assert.equal(team('main > .page-header > .contributor-profile__header').length, 0, `${lang}: team is not an individual profile`);
   }
 });
 
@@ -158,7 +156,7 @@ Then('both languages are generated from shared page templates', function () {
     listedDates.slice().sort().reverse(),
     'news articles must be listed newest first'
   );
-  for (const page of ['about/index', 'about/g3w-suite-team']) {
+  for (const page of ['about/index']) {
     assert.ok(fs.existsSync(path.join(sourceDir, `${page}.md`)), `${page} page source must be Markdown`);
     assert.ok(!fs.existsSync(path.join(sourceDir, `${page}.html`)), `${page} HTML source must be removed`);
   }

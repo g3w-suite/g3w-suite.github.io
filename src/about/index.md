@@ -112,7 +112,7 @@ Explore what G3W-SUITE can do: browse the components, read the documentation or 
 
 [Explore the components](/en/about/#components "primary-button") [Read the documentation](/en/docs/ "outline-button") [Join the community](/en/community/ "outline-button")
 
-Follow the [project news](/en/news/) and learn more about the [G3W-SUITE team](/en/about/g3w-suite-team/).
+Follow the [project news](/en/news/).
 
 <script type="application/json" data-i18n>
   {
@@ -140,7 +140,7 @@ Follow the [project news](/en/news/) and learn more about the [G3W-SUITE team](/
       "Features": "Funzionalità",
       "Features being edited by another user may be temporarily locked.": "Le feature in modifica da parte di un altro utente possono essere temporaneamente bloccate.",
       "Follow development of the next major version on [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).": "Segui lo sviluppo della prossima versione principale su [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).",
-      "Follow the [project news](/en/news/) and learn more about the [G3W-SUITE team](/en/about/g3w-suite-team/).": "Segui le [novità del progetto](/en/news/) e scopri di più sul [team G3W-SUITE](/en/about/g3w-suite-team/).",
+      "Follow the [project news](/en/news/).": "Segui le [novità del progetto](/en/news/).",
       "From QGIS to the web": "Da QGIS al web",
       "G3W-SUITE WebGIS client": "Client WebGIS di G3W-SUITE",
       "G3W-SUITE combines an administration server and a map client with optional integrations. Explore each component for its documentation and source code.": "G3W-SUITE combina un server di amministrazione e un client cartografico con integrazioni opzionali. Esplora ogni componente per la documentazione e il codice sorgente.",

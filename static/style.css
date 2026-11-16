@@ -1503,6 +1503,8 @@ section + .section--dark { border-top: none; }
   color: var(--color-muted);
   font-size: .9rem;
 }
+.docs-nav > section { padding: 0; }
+.docs-nav > section + section { padding-top: 1rem; }
 .docs-nav .docs-search-results li { margin: 0 0 .75rem; }
 .docs-nav .docs-search-results a { padding: .1rem 0; color: var(--color-primary-d); font-weight: 600; }
 .docs-search-results p { margin: .15rem 0 0; font-size: .82rem; line-height: 1.4; }
