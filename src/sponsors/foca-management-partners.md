@@ -1,16 +1,16 @@
 # SC FOCA MANAGEMENT PARTNERS SRL
 
-SC FOCA MANAGEMENT PARTNERS SRL is named in the G3W-SUITE 3.8 release notes.
+SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8.
 
 ## Contribution to G3W-SUITE
 
-The release notes recognize this organization or project among the funders of the following versions:
+Supported releases:
 
 [3.8](/en/news/v3.8/)
 
 Version 3.8 added QGIS 3.34 LTR compatibility and map export to SVG and GeoPDF.
 
-These are release-wide highlights; the release notes do not attribute individual features to a specific funder.
+The release also introduced saved map themes for signed-in users and PDF downloads of attributes from query or search results.
 
 [Back to sponsors](/en/sponsors/ "outline-button")
 
@@ -20,9 +20,9 @@ These are release-wide highlights; the release notes do not attribute individual
       "Back to sponsors": "Torna agli sponsor",
       "Contribution to G3W-SUITE": "Contributo a G3W-SUITE",
       "SC FOCA MANAGEMENT PARTNERS SRL - G3W-Suite": "SC FOCA MANAGEMENT PARTNERS SRL - G3W-Suite",
-      "SC FOCA MANAGEMENT PARTNERS SRL is named in the G3W-SUITE 3.8 release notes.": "SC FOCA MANAGEMENT PARTNERS SRL è citata nelle note di rilascio di G3W-SUITE 3.8.",
-      "The release notes recognize this organization or project among the funders of the following versions:": "Le note di rilascio riconoscono questa organizzazione o questo progetto tra i finanziatori delle seguenti versioni:",
-      "These are release-wide highlights; the release notes do not attribute individual features to a specific funder.": "Queste novità riguardano la release nel suo complesso; le note di rilascio non attribuiscono singole funzionalità a un finanziatore specifico.",
+      "SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8.": "SC FOCA MANAGEMENT PARTNERS SRL ha sostenuto G3W-SUITE 3.8.",
+      "Supported releases:": "Versioni sostenute:",
+      "The release also introduced saved map themes for signed-in users and PDF downloads of attributes from query or search results.": "La release ha introdotto anche temi cartografici salvabili dagli utenti autenticati e il download in PDF degli attributi risultanti da interrogazioni o ricerche.",
       "Version 3.8 added QGIS 3.34 LTR compatibility and map export to SVG and GeoPDF.": "La versione 3.8 ha aggiunto la compatibilità con QGIS 3.34 LTR e l'esportazione delle mappe in SVG e GeoPDF."
     }
   }
@@ -30,6 +30,6 @@ These are release-wide highlights; the release notes do not attribute individual
 <script type="application/json" data-i18n-meta>
   {
     "title": "SC FOCA MANAGEMENT PARTNERS SRL - G3W-Suite",
-    "description": "SC FOCA MANAGEMENT PARTNERS SRL is named in the G3W-SUITE 3.8 release notes."
+    "description": "SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8."
   }
 </script>
