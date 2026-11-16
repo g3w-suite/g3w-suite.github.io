@@ -15,7 +15,7 @@ Thanks to the integration with the APIs of QGIS it is now possible to manage the
   * SQL Server
   * Virtual layer
 
-The suite also allows you to manage the consultation and editing of:
+The suite also supports viewing and editing:
  * **simple join data with no nesting limits**
  * **1:N relation data**
  * **N:M relation data** with limitations
@@ -59,7 +59,7 @@ Choose the **`File Manager`** item in the linked menu.
 
 ![Screenshot: G3W-SUITE Administration Configuration Menu](/img/manual-english-g3wsuite-administration-configuration-menu.png)
 
-Using this tool it is possible to manage the physical geographic data on the server in a simple and intuitive way.
+Use this tool to manage geographic data stored on the server.
 
 **The root directory of the File Manager corresponds to the local **`project_data`** directory**
 
@@ -132,10 +132,10 @@ In the next chapter the powers and limits of the two roles will be described in 
       "The data stored in the local **`project_data`** directory must be synchronized on the server where the G3W-SUITE application is installed.": "I dati archiviati nella directory locale **`project_data`** devono essere sincronizzati sul server in cui è installata l'applicazione G3W-SUITE.",
       "The example shows the case in which in the local **project_data** directory there are two directories (**geopackage** and **spatialite**) in addition to the two system directories (**svg** and **media_user**).": "L'esempio mostra il caso in cui nella directory locale **project_data** sono presenti due directory (**geopackage** e **spatialite**), oltre alle due directory di sistema (**svg** e **media_user**).",
       "The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.": "I dati geografici archiviati nella cartella locale **`project_data`** devono essere caricati mantenendo la struttura delle eventuali sottodirectory.",
-      "The suite also allows you to manage the consultation and editing of:": "La suite consente inoltre di gestire la consultazione e la modifica di:",
+      "The suite also supports viewing and editing:": "La suite supporta anche la consultazione e la modifica di:",
       "To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located in the upper right corner.": "Per sincronizzare i dati, accedere al pannello di amministrazione di G3W-ADMIN e fare clic sull'**icona `Configurazioni`** ![Icona: configurazione](/img/manual-english-iconconfiguration.png) nell'angolo superiore destro.",
       "Two specific directories can also be created within the root directory of the File Manager:": "Nella directory radice di File Manager è inoltre possibile creare due directory specifiche:",
-      "Using this tool it is possible to manage the physical geographic data on the server in a simple and intuitive way.": "Questo strumento consente di gestire i dati geografici fisici sul server in modo semplice e intuitivo.",
+      "Use this tool to manage geographic data stored on the server.": "Usa questo strumento per gestire i dati geografici presenti sul server.",
       "Virtual layer": "Layer virtuale",
       "Which users can access and manage data on FileManager?": "Quali utenti possono accedere a File Manager e gestire i dati?",
       "[See dedicated paragraph.](settings#base-settings)": "[Vedere il paragrafo dedicato.](settings#base-settings)",

@@ -29,7 +29,7 @@ Follow development of the next major version on [GitHub](https://github.com/g3w-
 
 **_In addition to the geographical aspects, the project involves the management of numerous and diversified attributes and of the related maintenance interventions through a 1: n type relation._**
 
-Through the tutorials it will be possible to:
+In this tutorial you will:
 * customize the various graphic-functional aspects of the basic project
 * publish the project as a WebGis service
 * create personalized searches
@@ -110,6 +110,7 @@ The publication system provides for the use of the **title of the project** as t
     "Features being edited by another user may be temporarily locked.": "Le feature in modifica da parte di un altro utente possono essere temporaneamente bloccate.",
     "Follow development of the next major version on [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).": "Segui lo sviluppo della prossima versione principale su [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).",
     "Follow these steps to prepare a project, publish it as a WebGIS service, and try its main functions.": "Segui questi passaggi per preparare un progetto, pubblicarlo come servizio WebGIS e provarne le funzioni principali.",
+    "In this tutorial you will:": "In questo tutorial:",
     "Inside the **`build_management_demo.sqlite` SpatiaLite DB** there are the following layers:": "Nel **DB SpatiaLite `build_management_demo.sqlite`** sono presenti i seguenti layer:",
     "Introduction": "Introduzione",
     "Modify the QGIS project title": "Modificare il titolo del progetto QGIS",
@@ -132,7 +133,6 @@ The publication system provides for the use of the **title of the project** as t
     "The project (**based on QGIS LTR 3.44.x**) foresees:": "Il progetto (**basato su QGIS LTR 3.44.x**) prevede:",
     "The publication system provides for the use of the **title of the project** as the **unique identifier of the WebGis service**.": "Il sistema di pubblicazione utilizza il **titolo del progetto** come **identificativo univoco del servizio WebGIS**.",
     "The tutorial is based on predefined data and QGIS 3.44.x LTR project **downloadable from [this link](https://drive.google.com/file/d/1Xpx1FvTNWtx74maXe7jatU_GgyC8QlpB/view?usp=sharing)**.": "Il tutorial si basa su dati predefiniti e su un progetto QGIS 3.44.x LTR **scaricabile da [questo link](https://drive.google.com/file/d/1Xpx1FvTNWtx74maXe7jatU_GgyC8QlpB/view?usp=sharing)**.",
-    "Through the tutorials it will be possible to:": "Con questi tutorial sarà possibile:",
     "To try geometric and relational editing, sign in with the public demo account:": "Per provare la modifica geometrica e relazionale, accedi con l'account pubblico della demo:",
     "Try the live demo": "Prova la demo",
     "a **dressing categorized by the `buildings` layer** based on the categorical field **`type`**": "una **simbologia categorizzata del layer `buildings`** basata sul campo categoriale **`type`**",

@@ -1,8 +1,8 @@
 # Docker environment variables
 
-The following environment variables used to deploy G3W-SUITE by docker (https://github.com/g3w-suite/g3w-suite-docker).
+Set these environment variables when deploying G3W-SUITE with [Docker](https://github.com/g3w-suite/g3w-suite-docker).
 
-They must added to `.env` deploy file.
+Add them to the deployment `.env` file.
 
 ## Requirements variables
 
@@ -117,6 +117,7 @@ If `true` install and activate G3W-ADMIN-PORTAL module https://github.com/g3w-su
 {
   "it": {
     "A custom unique token to use for internal caching request.": "Token univoco personalizzato da usare per le richieste interne alla cache.",
+    "Add them to the deployment `.env` file.": "Aggiungile al file `.env` della distribuzione.",
     "Caching system": "Sistema di cache",
     "Dafault value is: `/shared-volume/tile_cache/`.": "Il valore predefinito è: `/shared-volume/tile_cache/`.",
     "Database connections parameters": "Parametri di connessione al database",
@@ -154,14 +155,13 @@ If `true` install and activate G3W-ADMIN-PORTAL module https://github.com/g3w-su
     "Put your pg services into `./scripts/pg_service.conf file`, the conf file will be mounted into": "Inserisci i servizi pg nel file `./scripts/pg_service.conf`; il file verrà montato nel",
     "QGIS server variables": "Variabili del server QGIS",
     "Requirements variables": "Variabili obbligatorie",
+    "Set these environment variables when deploying G3W-SUITE with [Docker](https://github.com/g3w-suite/g3w-suite-docker).": "Imposta queste variabili d'ambiente per distribuire G3W-SUITE con [Docker](https://github.com/g3w-suite/g3w-suite-docker).",
     "The domain to which the application will respond.": "Il dominio a cui risponderà l'applicazione.",
     "The follow variables re for set the connection to G3W-SUITE administration database.": "Le seguenti variabili servono a configurare la connessione al database di amministrazione di G3W-SUITE.",
-    "The following environment variables used to deploy G3W-SUITE by docker (https://github.com/g3w-suite/g3w-suite-docker).": "Le seguenti variabili d'ambiente vengono utilizzate per distribuire G3W-SUITE con Docker (https://github.com/g3w-suite/g3w-suite-docker).",
     "The following varaible are just set into docker-compose files:": "Le seguenti variabili sono impostate solo nei file docker-compose:",
     "The login used for the superuser account. Only works when setup a new environment.": "Credenziali di accesso per l'account superutente. Funziona solo durante la configurazione di un nuovo ambiente.",
     "The password used for the superuser account. It will also be used as default password for new accounts.": "Password dell'account superutente. Sarà utilizzata anche come password predefinita per i nuovi account.",
     "The path on which the docker permanent volume will be mounted with the application data inside.": "Percorso in cui verrà montato il volume Docker permanente contenente i dati dell'applicazione.",
-    "They must added to `.env` deploy file.": "Devono essere aggiunte al file di distribuzione `.env`.",
     "Thi is used to compensate the python/gunicorn memory leaks.": "Serve a compensare le perdite di memoria di Python/Gunicorn.",
     "Tile width/height tile map dimension.": "Dimensioni in larghezza/altezza delle tile della mappa.",
     "Usually then number of workers is equal to number of processor x 2.": "Di solito il numero di worker corrisponde al numero di processori moltiplicato per 2.",

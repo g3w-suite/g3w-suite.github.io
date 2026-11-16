@@ -4,7 +4,7 @@
 
 ## Constraints setting
 
-**G3W-SUITE allows you to manage two types of constraints:**
+**G3W-SUITE supports two types of constraints:**
  * **alphanumeric (SQL) / QGIS expressions constraints**
  * **geographic constraints**
  
@@ -25,7 +25,7 @@ Clicking on the icon will show the list of any existing alphanumeric constraints
 
 Clicking on the item **`+ New constraint`** will open a modal window which will allow you to define a name and a description for the new constraint.
 
-In the form it is possible to specify whether this filter will act at the level:
+Choose where the filter applies:
  * display only
  * editing only
  * in both cases
@@ -76,7 +76,7 @@ Clicking on the icon will show the list of any existing constraints and the item
 
 Clicking on the item **`+ New geo-constraint`** will open a modal window which will allow you to **define the polygonal layer** (among those present in the project) **on which the constraint itself must be based**.
 
-In the form it is possible to specify whether this filter will act at the level:
+Choose where the filter applies:
  * display only
  * editing only
  * in both cases
@@ -104,7 +104,7 @@ In the alphanumeric constraints list you can see a summary of the setted rules.
     "![Icon: Alphaconstraints Setting](/img/manual-english-icon-alphaconstraints-setting.png) **Provider's language / SQL dialect**": "![Icona: impostazioni vincoli alfanumerici](/img/manual-english-icon-alphaconstraints-setting.png) **Linguaggio del provider / dialetto SQL**",
     "![Icon: Qgisconstraints Setting](/img/manual-english-icon-qgisconstraints-setting.png) **QGIS Expression**": "![Icona: impostazioni vincoli QGIS](/img/manual-english-icon-qgisconstraints-setting.png) **Espressione QGIS**",
     "**Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.**": "**I vincoli alfanumerici (SQL) e basati su espressioni QGIS consentono di definire, per ogni layer pubblicato, il sottoinsieme di elementi che ciascun utente o gruppo può visualizzare e/o modificare.**",
-    "**G3W-SUITE allows you to manage two types of constraints:**": "**G3W-SUITE consente di gestire due tipi di vincoli:**",
+    "**G3W-SUITE supports two types of constraints:**": "**G3W-SUITE supporta due tipi di vincoli:**",
     "**The online editing function also allows you to manage geo-constraints that allow the user to view and/or edit features only if they intersect or are contained within specific features of a second polygonal layer.**": "**La funzione di modifica online consente di gestire vincoli geografici che permettono all’utente di visualizzare e/o modificare gli elementi solo se intersecano o sono contenuti in elementi specifici di un secondo layer poligonale.**",
     "**alphanumeric (SQL) / QGIS expressions constraints**": "**vincoli alfanumerici (SQL) / espressioni QGIS**",
     "**geographic constraints**": "**vincoli geografici**",
@@ -113,6 +113,7 @@ In the alphanumeric constraints list you can see a summary of the setted rules.
     "Back to Online editing": "Torna alle modifiche online",
     "Both work in terms of visualization and/or editing": "Entrambi possono agire sulla visualizzazione e/o sulla modifica.",
     "Button: Add": "Pulsante: aggiungi",
+    "Choose where the filter applies:": "Scegli dove applicare il filtro:",
     "Clicking on the icon ![Icon: Alphaconstraints Setting](/img/manual-english-icon-alphaconstraints-setting.png) will open a modal window which, by pressing the green button ![Button: Add](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.": "Facendo clic sull’icona ![Icona: impostazioni vincoli alfanumerici](/img/manual-english-icon-alphaconstraints-setting.png) si apre una finestra modale in cui, premendo il pulsante verde ![Pulsante: aggiungi](/img/manual-english-button-add.png), è possibile **definire le regole dei vincoli per ogni utente e/o gruppo di utenti**.",
     "Clicking on the icon **QGIS expression rules** ![Icon: Qgisconstraints Setting](/img/manual-english-icon-qgisconstraints-setting.png) will open a modal window which, by pressing the green button ![Button: Add](/img/manual-english-button-add.png), it will allow you to **define, for each user and/or group of users, the rules of the constraints**.": "Facendo clic sull’icona **Regole con espressioni QGIS** ![Icona: impostazioni vincoli QGIS](/img/manual-english-icon-qgisconstraints-setting.png) si apre una finestra modale in cui, premendo il pulsante verde ![Pulsante: aggiungi](/img/manual-english-button-add.png), è possibile **definire le regole dei vincoli per ogni utente e/o gruppo di utenti**.",
     "Clicking on the icon will show the list of any existing alphanumeric constraints and the item **`+ New alphanumeric constraint`** to create a new constraints.": "Facendo clic sull’icona viene mostrato l’elenco dei vincoli alfanumerici esistenti e la voce **`+ Nuovo vincolo alfanumerico`** per crearne uno.",
@@ -132,7 +133,6 @@ In the alphanumeric constraints list you can see a summary of the setted rules.
     "Icon: Save": "Icona: salva",
     "In the alphanumeric constraints list you can see a summary of the setted rules.": "Nell’elenco dei vincoli alfanumerici è possibile consultare un riepilogo delle regole impostate.",
     "In the dedicated panel it will be possible to check, modify and delete the defined rules.": "Nel pannello dedicato è possibile verificare, modificare ed eliminare le regole definite.",
-    "In the form it is possible to specify whether this filter will act at the level:": "Nel modulo è possibile specificare se il filtro agisce su:",
     "Once the layer has been defined, the constraint will appear in the list and can be parameterized using the **Rules icon** ![Icon: Constraints Setting](/img/manual-english-icon-constraints-setting.png)": "Dopo aver definito il layer, il vincolo appare nell’elenco e può essere configurato tramite l’**icona Regole** ![Icona: impostazioni dei vincoli](/img/manual-english-icon-constraints-setting.png)",
     "Provider's language / SQL dialect Rules": "Regole in linguaggio del provider / dialetto SQL",
     "QGIS Expressions Rules": "Regole basate su espressioni QGIS",

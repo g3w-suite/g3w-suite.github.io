@@ -9,10 +9,10 @@ In the left side menu there is the **Users** item with four sub-items:
  * **Add groups users**
  * **Groups users list**
 
- Please note that the Suite is equipped with a dedicated module for the integration of Active Directory users via **LDAP**.
+ A dedicated module integrates Active Directory users via **LDAP**.
  
 ### Add user
-Through this form it is possible to insert new users and define their characteristics.
+Use this form to add users and set their properties.
 
  * **`Anagraphic`**: first name, last name and email address
  * **`Login data`**: username and password
@@ -51,8 +51,8 @@ The icons at the head of each row, allow you to:
  * ![Icon: Erase](/img/manual-english-icon-erase.png) **Delete:** to permanently delete a user
  
 ### Add Group Users
-Through this form it is possible to create new user groups and define their role.
-Through this form it is possible to create new user groups and define their role.
+Use this form to create user groups and assign their roles.
+Use this form to create user groups and assign their roles.
 
 It is possible to create only two types of user groups:
  * **`Editor`:** in which only Editor2 users can be inserted
@@ -181,6 +181,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "**`User backend`**: info on user creation (G3W-SUITE or LDAP)": "**`User backend`**: informazioni sulla creazione dell'utente (G3W-SUITE o LDAP)",
       "**`User data`**:": "**`Dati utente`**:",
       "**`Viewer`:** in which only Viewer users can be inserted": "**`Viewer`:** possono includere solo utenti Viewer",
+      "A dedicated module integrates Active Directory users via **LDAP**.": "Un modulo dedicato integra gli utenti Active Directory tramite **LDAP**.",
       "ACL users": "Utenti ACL",
       "Add Group Users": "Aggiungere gruppi di utenti",
       "Add MacroGroups": "Aggiungere Macrogruppi",
@@ -214,7 +215,6 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "MacroGroups list": "Elenco dei Macrogruppi",
       "Main roles (**Editor1, Editor2 or Viewer**)": "Ruoli principali (**Editor1, Editor2 o Viewer**)",
       "On the left side menu there is the **MacroGroup Cartographic** item with two sub-items:": "Nel menu laterale è presente la voce **MacroGroup Cartographic**, con due sottovoci:",
-      "Please note that the Suite is equipped with a dedicated module for the integration of Active Directory users via **LDAP**.": "La Suite include un modulo dedicato all'integrazione degli utenti Active Directory tramite **LDAP**.",
       "Roles": "Ruoli",
       "Screenshot: G3W-SUITE Administration Macrogroup List": "Schermata: elenco dei Macrogruppi nell'amministrazione di G3W-SUITE",
       "Screenshot: G3W-SUITE Administration User Add": "Schermata: aggiunta di un utente nell'amministrazione di G3W-SUITE",
@@ -230,10 +230,10 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "There are a series of icons to access specific functions:": "Sono disponibili diverse icone per accedere a funzioni specifiche:",
       "Through the Drag & Drop function it is possible to define the order of the MacroGroups in the list. This order will be reflected in the FrontEnd.": "La funzione Drag & Drop consente di definire l'ordine dei Macrogruppi nell'elenco. L'ordine verrà mantenuto nel FrontEnd.",
       "Through this form it is possible to consult the list of enabled user groups, their characteristics and the individual users belonging to the group.": "Questo modulo consente di consultare l'elenco dei gruppi di utenti abilitati, le relative caratteristiche e gli utenti che ne fanno parte.",
-      "Through this form it is possible to create new user groups and define their role.": "Questo modulo consente di creare nuovi gruppi di utenti e definirne il ruolo.",
-      "Through this form it is possible to insert new users and define their characteristics.": "Questo modulo consente di inserire nuovi utenti e definirne le caratteristiche.",
       "Through this form you can consult the list of enabled users and their characteristics:": "Questo modulo consente di consultare l'elenco degli utenti abilitati e le relative caratteristiche:",
       "Through this item, available only for the **Admin** users, it will be possible to **create a new Cartographic MacroGroup.": "Questa voce, disponibile solo per gli utenti **Admin**, consente di **creare un nuovo Macrogruppo cartografico.",
+      "Use this form to add users and set their properties.": "Usa questo modulo per aggiungere utenti e definirne le proprietà.",
+      "Use this form to create user groups and assign their roles.": "Usa questo modulo per creare gruppi di utenti e assegnare i ruoli.",
       "User groups to which they belong": "Gruppi di utenti a cui appartengono",
       "Username": "Nome utente",
       "Users and Users Groups management": "Gestione degli utenti e dei gruppi di utenti",

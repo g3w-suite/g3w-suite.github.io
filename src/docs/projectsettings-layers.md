@@ -5,7 +5,7 @@
 ## Layers properties
 
 ### Simbology
-The rendering style associated with the individual layers is replicated autonomously on the WebGis service.
+The WebGIS service automatically reproduces each layer's rendering style.
 
 The suite allows the switching on/off of the individual categories linked to the various simbolgy methods (categorized, graduated, by rules …).
 
@@ -16,7 +16,7 @@ If external SVG icons are used (added to the basic ones of QGIS, via the **`Sett
 #### Manage custom SVG icons
 In the installation procedure of the G3W-SUITE application, an **`svg`** named directory is created on the server.
 
-Within this directory it is therefore possible to store SVG icons, also organized in subdirecory.
+Store SVG icons in this directory, using subdirectories if needed.
 
 The **`Configurations icon`** ![Icon: Configuration](/img/manual-english-iconconfiguration.png), located in the upper right corner of the **Administration Panel**, allows you to access a menu that includes the **`File Manager`** item.
 
@@ -167,14 +167,15 @@ Following queries at the cartographic client level, we will have different behav
       "Screenshot: Qgislayerproperties Wmsfields": "Schermata: campi WMS nelle proprietà del layer QGIS",
       "See also [dedicated paragraph](#viewing-multimedia-content)": "Vedere anche il [paragrafo dedicato](#viewing-multimedia-content)",
       "Simbology": "Simbologia",
+      "Store SVG icons in this directory, using subdirectories if needed.": "Salva le icone SVG in questa directory, anche in sottodirectory.",
       "Temporal settings": "Impostazioni temporali",
       "The **`Configurations icon`** ![Icon: Configuration](/img/manual-english-iconconfiguration.png), located in the upper right corner of the **Administration Panel**, allows you to access a menu that includes the **`File Manager`** item.": "L'**`icona Configurazioni`** ![Icona: configurazione](/img/manual-english-iconconfiguration.png), nell'angolo superiore destro del **pannello di amministrazione**, consente di aprire un menu che include la voce **`File Manager`**.",
       "The SVG folder on the server must reflect the structure in any subfolders present locally.": "La cartella SVG sul server deve rispecchiare la struttura delle eventuali sottocartelle presenti in locale.",
       "The Temporal Controller functions in QGIS are replicated on the webgis component": "Le funzioni del Controllore temporale di QGIS sono riprodotte nel componente WebGIS.",
+      "The WebGIS service automatically reproduces each layer's rendering style.": "Il servizio WebGIS riproduce automaticamente lo stile di rendering di ogni layer.",
       "The display order of a layer's attribute table fields is inherited from the suite.": "La suite eredita l'ordine di visualizzazione dei campi della tabella degli attributi del layer.",
       "The last column (**Configuration**) allows you to define:": "L'ultima colonna (**Configurazione**) consente di definire:",
       "The link to the file can be obtained in the following way:": "Il link al file può essere composto nel modo seguente:",
-      "The rendering style associated with the individual layers is replicated autonomously on the WebGis service.": "Lo stile di rendering associato ai singoli layer viene riprodotto automaticamente nel servizio WebGIS.",
       "The suite allows the switching on/off of the individual categories linked to the various simbolgy methods (categorized, graduated, by rules …).": "La suite consente di attivare o disattivare le singole categorie associate ai diversi metodi di simbologia (per categorie, graduata, basata su regole...).",
       "The suite inherits numerous settings from the QGIS project related to the attribute editing features that can be defined in the **Attribute form** section.": "La suite eredita dal progetto QGIS numerose impostazioni relative alle funzioni di modifica degli attributi, definibili nella sezione **Modulo attributi**.",
       "This structural organization will be replicated directly on the query form on the WebGis service.": "Questa organizzazione strutturale verrà riprodotta direttamente nel modulo di interrogazione del servizio WebGIS.",
@@ -185,7 +186,6 @@ Following queries at the cartographic client level, we will have different behav
       "To define these settings, you access the properties of one of the vectors previously defined as searchable and choose the **`Source Fields`** submenu in the **`Layer Properties`** window.": "Per definire queste impostazioni, aprire le proprietà di uno dei layer vettoriali precedentemente impostati come ricercabili e selezionare la sottosezione **`Campi sorgente`** nella finestra **`Proprietà layer`**.",
       "Viewing multimedia content": "Visualizzazione di contenuti multimediali",
       "Within the QGIS project it is also possible to define, for each layer, which fields are available following query on the WebGis service.": "Nel progetto QGIS è possibile definire, per ciascun layer, quali campi sono disponibili dopo un'interrogazione del servizio WebGIS.",
-      "Within this directory it is therefore possible to store SVG icons, also organized in subdirecory.": "In questa directory è possibile archiviare icone SVG, anche organizzate in sottodirectory.",
       "[See dedicated paragraph.](settings#base-settings)": "[Vedere il paragrafo dedicato.](settings#base-settings)",
       "application domain: **`https://dev.g3wsuite.it`**": "dominio dell'applicazione: **`https://dev.g3wsuite.it`**",
       "file **`file_A.pdf`** located in the folder **`/media_user/form/`**": "file **`file_A.pdf`** nella cartella **`/media_user/form/`**",

@@ -17,7 +17,7 @@ From the **`Project → Properties`** menu, you can access the **`Project Proper
 
 ### General
 #### General Settings
-**In this section it is possible to define the title of the project, consequently the `title of the WebGis service`.**
+**Set the project title, which also becomes the `WebGIS service title`.**
 
 This title will be used at the G3W-SUITE application level to uniquely identify the published project; for this reason **it will not be possible to assign the same name to different projects published on the WebGis service**.
 
@@ -45,7 +45,7 @@ See [dedicated paragraph](settings#g3w_client_search_endpoint)
 ### QGIS Server
 
 ##### Service capabilities
-**In this section it is possible to define the `capabilities of the service`**.
+**Set the `service capabilities`**.
 
 This information, together with info about the structure of the attribute tables of the layers present in the project, will be displayed in the **Metadata session** of the cartographic client.
 
@@ -156,16 +156,16 @@ The request to delete the basic embedded project causes a warning message as thi
       "**Data sources**": "**Sorgenti dati**",
       "**General**": "**Generale**",
       "**In this section it is possible to `exclude some of the print layouts` that are associated with the cartographic project from the availability of the WebGis service.**": "**In questa sezione è possibile `escludere dal servizio WebGIS alcuni layout di stampa` associati al progetto cartografico.**",
-      "**In this section it is possible to define the `capabilities of the service`**.": "**In questa sezione è possibile definire le `capacità del servizio`.**",
       "**In this section it is possible to define the `geographical extension` displayed when the WebGis service starts.**": "**In questa sezione è possibile definire l'`estensione geografica` visualizzata all'avvio del servizio WebGIS.**",
       "**In this section it is possible to define the `projection systems` for which the project is available in relation to `OGC services`.**": "**In questa sezione è possibile definire i `sistemi di proiezione` per i quali il progetto è disponibile in relazione ai `servizi OGC`.**",
-      "**In this section it is possible to define the title of the project, consequently the `title of the WebGis service`.**": "**In questa sezione è possibile definire il titolo del progetto e, di conseguenza, il `titolo del servizio WebGIS`.**",
       "**In this section it is possible to define which `layers are exposed as WFS services`.**": "**In questa sezione è possibile definire quali `layer esporre come servizi WFS`.**",
       "**In this section it is possible to define which `layers are exposed as WMTS services` defining the various options**": "**In questa sezione è possibile definire, tramite le diverse opzioni, quali `layer esporre come servizi WMTS`.**",
       "**In this section it is possible to define which `rasters are exposed as WCS services`**": "**In questa sezione è possibile definire quali `raster esporre come servizi WCS`.**",
       "**It is possible to publish QGIS projects that contain layers or groups of layers deriving from embedded projects.**": "**È possibile pubblicare progetti QGIS contenenti layer o gruppi di layer provenienti da progetti incorporati.**",
       "**NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**": "**Nota: questa distinzione è possibile solo utilizzando le API QGIS, ad esempio l'endpoint Search URL.**",
       "**QGIS server**": "**QGIS Server**",
+      "**Set the `service capabilities`**.": "**Imposta le `capacità del servizio`**.",
+      "**Set the project title, which also becomes the `WebGIS service title`.**": "**Imposta il titolo del progetto, che diventa anche il `titolo del servizio WebGIS`.**",
       "**This submenu defines the **querable and/or searchable layers** at the WebGis service level.**": "**Questa sottosezione definisce i **layer interrogabili e/o ricercabili** a livello del servizio WebGIS.**",
       "**We advise against using special characters, or numbers in the project name.**": "**Si consiglia di non usare caratteri speciali o numeri nel nome del progetto.**",
       "1:N and N:M relations": "Relazioni 1:N e N:M",

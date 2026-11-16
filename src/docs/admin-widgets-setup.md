@@ -9,7 +9,7 @@ Once a cartographic project has been published, thougth the icon ![Screenshot: I
 
 Next to each layer are a series of icons and checkboxes:
  * **Label:** layer alias applied at the QGIS project level
-   * The eye icon allows you to know the ID associated with the layer at the project level, this ID will be useful for creating parameterized URLs
+   * The eye icon shows the layer ID used in parameterized URLs.
  * **Name:** name of the layer (file or DB table)
  * ![Icon: Layertype](/img/manual-english-icon-layertype.png) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)
  * **Embedded:** If the layer comes from an embedded project, the cell displays the name of the embedded project. Clicking the link takes you to the project management page.
@@ -71,7 +71,7 @@ Learn more about how to create a new base layer in the [dedicated section](admin
 
 ### ![Icon: Editing](/img/manual-english-icon-editing.png) Editing layer
 
-Through this icon it is possible to activate the online editing function on the individual layers and define the permissions for individual / groups of users
+Use this icon to enable editing on individual layers and set permissions for users or groups.
 
 See the dedicated section on [editing administration settings](editing-administration-settings.md).
 
@@ -151,13 +151,13 @@ With this icon it will be possible to define the list of users (single and/or gr
     "Screenshot: Iconsmall Layerlist": "Icona piccola: elenco dei layer",
     "See the dedicated section on [editing administration settings](editing-administration-settings.md).": "Consultare la sezione dedicata alle [impostazioni di amministrazione della modifica](editing-administration-settings.md).",
     "The external WMS option allows obtaining a response to the query (GetFeatureInfo) even if the response is not in GML but also in HTML or text/plain format.": "L'opzione WMS esterno consente di ottenere una risposta alla query (GetFeatureInfo) anche in formato HTML o text/plain, oltre che GML.",
-    "The eye icon allows you to know the ID associated with the layer at the project level, this ID will be useful for creating parameterized URLs": "L'icona dell'occhio mostra l'ID associato al layer nel progetto; questo ID è utile per creare URL parametrizzati",
+    "The eye icon shows the layer ID used in parameterized URLs.": "L'icona dell'occhio mostra l'ID del layer usato negli URL parametrizzati.",
     "The form allows you to:": "Il modulo consente di:",
     "The functions present in the **Actions session** are described below.": "Di seguito sono descritte le funzioni disponibili nella sezione **Actions**.",
     "The newly created base layer will be available to be associated with those available for the various Cartographic Groups.": "Il nuovo Base Layer sarà disponibile per l'associazione ai vari Gruppi cartografici.",
     "The option is available only if the WMS loaded on the QGIS project is associated with the same projection system as the project.": "L'opzione è disponibile solo se il WMS caricato nel progetto QGIS usa lo stesso sistema di proiezione del progetto.",
-    "Through this icon it is possible to activate the online editing function on the individual layers and define the permissions for individual / groups of users": "Questa icona consente di attivare la modifica online dei singoli layer e definire i permessi per singoli utenti o gruppi",
     "To do this you need to activate the **Base layer option** form and fill in the second part of the form:": "Per farlo, attivare l'opzione **Base layer** nel modulo e compilare la seconda parte:",
+    "Use this icon to enable editing on individual layers and set permissions for users or groups.": "Usa questa icona per abilitare la modifica dei singoli layer e impostare i permessi per utenti o gruppi.",
     "Widget and layer setup": "Configurazione dei widget e dei layer",
     "Widgets management": "Gestione dei widget",
     "With this icon it is possible to **activate/manage the cache of the single layers** and **create XYZ Tiles layer** that you can use as **Base Layer** in your WebGis.": "Questa icona consente di **attivare e gestire la cache dei singoli layer** e di **creare layer XYZ Tiles** da usare come **Base Layer** nel WebGis.",

@@ -2,11 +2,11 @@
 
 ## Overview
 
-This section describes how to perform **online editing** when G3W-SUITE is embedded inside an `<iframe>` hosted by an external (parent) web application.
+Use **online editing** when G3W-SUITE is embedded in an `<iframe>` hosted by an external parent application.
 
 In this integration scenario, the parent application and the embedded G3W-SUITE client communicate through the browser's `postMessage` API, exchanging structured JSON messages. This channel allows the parent application to programmatically drive the standard editing operations exposed by G3W-SUITE — **add**, **update**, **delete**, and **draw** features — on the layers published in the QGIS project, and to receive back the results (success, errors, or the GeoJSON of the affected features).
 
-The documentation that follows defines the message format, the initial handshake between the two contexts, and the payloads used for each supported editing operation.
+The following sections cover the message format, initial handshake and payloads for each supported editing operation.
 
 Before sending editing requests, the parent application and the iframe can perform an initial handshake using `postMessage` to confirm that both contexts are ready.
 
@@ -296,11 +296,11 @@ Once the feature has been drawn, the iframe sends a message to the parent applic
     "Once the feature has been drawn, the iframe sends a message to the parent application containing the GeoJSON of the feature — without attributes, which will be added later by the application — and then calls the `add` method to save it to the database.": "Dopo aver disegnato l’elemento, l’iframe invia all’applicazione contenitore un messaggio con il GeoJSON dell’elemento — senza attributi, che saranno aggiunti successivamente dall’applicazione — e poi richiama il metodo `add` per salvarlo nel database.",
     "Overview": "Panoramica",
     "The QGIS layer ID": "ID del layer QGIS",
-    "The documentation that follows defines the message format, the initial handshake between the two contexts, and the payloads used for each supported editing operation.": "La documentazione seguente definisce il formato dei messaggi, la procedura iniziale di handshake tra i due contesti e i payload usati per ogni operazione di modifica supportata.",
+    "The following sections cover the message format, initial handshake and payloads for each supported editing operation.": "Le sezioni seguenti descrivono il formato dei messaggi, l'handshake iniziale e i payload delle operazioni di modifica supportate.",
     "The method/action to execute (see below)": "Metodo/azione da eseguire (vedi sotto)",
-    "This section describes how to perform **online editing** when G3W-SUITE is embedded inside an `<iframe>` hosted by an external (parent) web application.": "Questa sezione descrive come eseguire **modifiche online** quando G3W-SUITE è incorporato in un `<iframe>` ospitato da un’applicazione web esterna (contenitore).",
     "Update a Feature": "Aggiornare un elemento",
     "Update an existing feature": "Aggiorna un elemento esistente",
+    "Use **online editing** when G3W-SUITE is embedded in an `<iframe>` hosted by an external parent application.": "Usa la **modifica online** quando G3W-SUITE è incorporato in un `<iframe>` ospitato da un'applicazione esterna.",
     "`action`": "`action`",
     "`add`": "`add`",
     "`data.geojson`": "`data.geojson`",

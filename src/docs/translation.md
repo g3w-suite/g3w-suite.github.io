@@ -1,6 +1,6 @@
 # How to Add a New Translation (i.e. Italian) to G3W-SUITE
 
-This step-by-step guide shows you how to contribute to G3W-SUITE internationalization by adding new language translations to the project.
+Add a language to G3W-SUITE by following these steps.
 
 ## G3W-ADMIN
 
@@ -96,6 +96,7 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
       "2. Create Translation Files": "2. Creare i file di traduzione",
       "4. Translate the Messages": "4. Tradurre i messaggi",
       "5. Compile the Translations": "5. Compilare le traduzioni",
+      "Add a language to G3W-SUITE by following these steps.": "Segui questi passaggi per aggiungere una lingua a G3W-SUITE.",
       "After finishing (or updating) your translations, run:": "Al termine (o dopo aver aggiornato le traduzioni), eseguire:",
       "By adding some of these lines (eg. into your `plugin.js` or `custom.js`) you can change or add custom translation entries:": "Aggiungendo alcune di queste righe (ad es. nel file `plugin.js` o `custom.js`) è possibile modificare o aggiungere voci di traduzione personalizzate:",
       "Creates **.po** files in `locale/it/LC_MESSAGES/`.": "Crea i file **.po** in `locale/it/LC_MESSAGES/`.",
@@ -114,8 +115,7 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
       "Otherwise, edit one of that files and then submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) with appropriate changes.": "In alternativa, modificare uno di questi file e inviare una [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) con le modifiche appropriate.",
       "Scans your codebase for marked translatable strings;": "Esamina il codice alla ricerca delle stringhe contrassegnate come traducibili;",
       "This command:": "Questo comando:",
-      "This creates the compiled **.mo** files Django uses to load translations:": "Questo comando crea i file compilati **.mo** che Django utilizza per caricare le traduzioni:",
-      "This step-by-step guide shows you how to contribute to G3W-SUITE internationalization by adding new language translations to the project.": "Questa guida passo passo spiega come contribuire all'internazionalizzazione di G3W-SUITE aggiungendo nuove traduzioni al progetto."
+      "This creates the compiled **.mo** files Django uses to load translations:": "Questo comando crea i file compilati **.mo** che Django utilizza per caricare le traduzioni:"
     }
   }
 </script>

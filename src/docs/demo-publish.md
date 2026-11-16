@@ -6,7 +6,7 @@
 
 To publish the project, you can **access the G3W-SUITE test application** via the following URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)
 
-To access the **Administration Panel** it is necessary to log in using the following credentials:
+Log in to the **Administration Panel** with these credentials:
 * user: **`demo`**
 * password: **`G3wsuite123`**
  
@@ -14,7 +14,7 @@ To access the **Administration Panel** it is necessary to log in using the follo
 
 ## Publish the QGIS project as a WebGis service
 
-After authentication it will be possible to access the **`Administration session`** and view the **Dashboard**.
+After logging in, open the **`Administration session`** to view the **Dashboard**.
 
 In the Dashboard there will be the menu for access to the **Cartographic Groups** pertaining to your user and the menus relating to additional modules not active in this demo.
 
@@ -44,7 +44,7 @@ In this session you define which **`base layer` should be active at startup**.
 
 The choice is limited to the list of base layers activated for the cartographic group in which you work.
 
-It is also possible not to define any active base layer at startup.
+You can also start without an active base layer.
 
 ### Description data
  * **`Public title`:** Title to be associated with the project and displayed on the client header.
@@ -108,8 +108,8 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
     "ACL Users": "Utenti ACL",
     "Access the list of webgis in the Cartographic Group **`Demo Group`** clicking on the project number shown.": "Accedi all'elenco dei WebGIS nel gruppo cartografico **`Demo Group`** facendo clic sul numero del progetto visualizzato.",
     "Access the online service": "Accedere al servizio online",
-    "After authentication it will be possible to access the **`Administration session`** and view the **Dashboard**.": "Dopo l'autenticazione sarà possibile accedere alla **sessione di amministrazione** e visualizzare la **Dashboard**.",
     "After filling in the various form, click on the **`Save button`** to confirm your choices.": "Dopo aver compilato il modulo, fai clic sul **pulsante Salva** per confermare le scelte.",
+    "After logging in, open the **`Administration session`** to view the **Dashboard**.": "Dopo l'accesso, apri la **sessione di amministrazione** per visualizzare la **Dashboard**.",
     "Back to Demo tutorial": "Torna al tutorial della demo",
     "Choose your preferred options regarding the following options:": "Scegli le opzioni che preferisci tra le seguenti:",
     "Click on the **`Show`** item in the ligth blue **Groups** box to acces at the list of available Cartographic Groups.": "Fai clic su **`Mostra`** nel riquadro azzurro **Gruppi** per accedere all'elenco dei gruppi cartografici disponibili.",
@@ -120,7 +120,7 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
     "If you want to modify some graphic-functional aspects of your WebGis service, modify your QGIS project and update the WebGis service by clicking on the **`Modify`** icon ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png).": "Per modificare alcuni aspetti grafico-funzionali del servizio WebGIS, modifica il progetto QGIS e aggiorna il servizio facendo clic sull'icona **`Modifica`** ![Schermata: icona di modifica](/img/manual-english-iconsmall-edit.png).",
     "In the Dashboard there will be the menu for access to the **Cartographic Groups** pertaining to your user and the menus relating to additional modules not active in this demo.": "Nella Dashboard è disponibile il menu per accedere ai **Gruppi cartografici** associati all'utente e i menu relativi ai moduli aggiuntivi non attivi in questa demo.",
     "In this session you define which **`base layer` should be active at startup**.": "In questa sezione si definisce quale **layer di base deve essere attivo all'avvio**.",
-    "It is also possible not to define any active base layer at startup.": "È anche possibile non definire alcun layer di base attivo all'avvio.",
+    "Log in to the **Administration Panel** with these credentials:": "Accedi al **pannello di amministrazione** con queste credenziali:",
     "Management of access permissions": "Gestione delle autorizzazioni di accesso",
     "Now click on the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png) to publish your **QGIS project**.": "Ora fai clic sul pulsante ![Pulsante: aggiungi progetto QGIS](/img/manual-english-button-add-qgis-project.png) per pubblicare il tuo **progetto QGIS**.",
     "Options and actions": "Opzioni e azioni",
@@ -136,9 +136,9 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
     "Screenshot: Iconsmall Edit": "Schermata: icona di modifica",
     "Screenshot: Iconsmall Viewmap": "Schermata: icona di visualizzazione della mappa",
     "The choice is limited to the list of base layers activated for the cartographic group in which you work.": "La scelta è limitata all'elenco dei layer di base attivati per il gruppo cartografico in cui si opera.",
-    "To access the **Administration Panel** it is necessary to log in using the following credentials:": "Per accedere al **pannello di amministrazione** è necessario effettuare l'accesso con le seguenti credenziali:",
     "To publish the project, you can **access the G3W-SUITE test application** via the following URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)": "Per pubblicare il progetto, puoi **accedere all'applicazione di test G3W-SUITE** tramite il seguente URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)",
     "Update the published WebGis service": "Aggiornare il servizio WebGIS pubblicato",
+    "You can also start without an active base layer.": "Puoi anche avviare il progetto senza un layer di base attivo.",
     "password: **`G3wsuite123`**": "password: **`G3wsuite123`**",
     "user: **`demo`**": "utente: **`demo`**"
   }

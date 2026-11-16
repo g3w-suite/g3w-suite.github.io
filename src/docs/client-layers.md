@@ -32,7 +32,7 @@ In the list of layers, right click on the name of the single layer shows the fol
 
 Double clicking on the layer or Layer Group zooms to the extent of the layer or Group content.
 
-It is possible to hide, automatically, layers from the TOC when they have no records. 
+Hide layers with no records from the TOC automatically.
 
 Useful when using filters on layers or geographic views. 
 
@@ -157,6 +157,7 @@ We remind you that activating a filter affects:
     "Enable/Disable  filter": "Attiva/disattiva filtro",
     "Filter users based": "Filtri basati sull’utente",
     "Following activation of the filter, a logged in user (not AnonymosUser) will be able to save this filter to be recalled in subsequent work sessions.": "Dopo aver attivato il filtro, un utente autenticato (diverso da AnonymosUser) può salvarlo per richiamarlo nelle sessioni di lavoro successive.",
+    "Hide layers with no records from the TOC automatically.": "Nascondi automaticamente dalla TOC i layer senza record.",
     "Icon: G3wclient Selection Toc": "Icona: selezione TOC G3wclient",
     "If the **`Show features count`** function is activated in the project, the layer will show the number of total features and based on the subdivision linked to the symbology.": "Se nel progetto è attivata la funzione **`Show features count`**, il layer mostra il numero totale di elementi e la loro suddivisione in base alla simbologia.",
     "In case of multi-style associated with the layer, the number of geometries reported will vary following the passage from one style to another.": "Se al layer sono associati più stili, il numero di geometrie mostrato varia passando da uno stile all’altro.",
@@ -164,7 +165,6 @@ We remind you that activating a filter affects:
     "In the list of layers, right click on the name of the single layer shows the following items:": "Nell’elenco dei layer, facendo clic con il tasto destro sul nome di un layer vengono mostrate le seguenti voci:",
     "It is possible to **select the features of the individual layers and apply filters** that will affect:": "È possibile **selezionare gli elementi dei singoli layer e applicare filtri** che influiscono su:",
     "It is possible to activate a filter on a layer starting from:": "È possibile attivare un filtro su un layer partendo da:",
-    "It is possible to hide, automatically, layers from the TOC when they have no records.": "È possibile nascondere automaticamente dalla TOC i layer che non contengono record.",
     "Layers and attribute table": "Layer e tabella degli attributi",
     "Legend": "Legenda",
     "Metadata": "Metadati",

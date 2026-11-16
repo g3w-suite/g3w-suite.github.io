@@ -1,7 +1,7 @@
 # Raw installation
 
-The following instructions are for Ubuntu 24.04 LTS (Noble) with Python 3.12.3.
-This installation is useful for development but no for production deploy. 
+These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.
+Use this installation for development, not production.
 
 ## Install required packages
 First step is install dev libraries packages for python module
@@ -309,17 +309,17 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "Sync menu tree items (re-run this command in case you installed optional modules and they are not visible in the admin menu tree):": "Sincronizzare gli elementi del menu (eseguire di nuovo il comando se hai installato moduli opzionali che non compaiono nel menu di amministrazione):",
       "The Docker compose configuration used in the CI tests is available at [docker-compose.latest.yml](https://github.com/g3w-suite/g3w-admin/blob/dev/docker-compose.latest.yml).": "La configurazione Docker Compose utilizzata nei test è disponibile in [docker-compose.latest.yml](https://github.com/g3w-suite/g3w-admin/blob/dev/docker-compose.latest.yml).",
       "The dependency image is built from the [Dockerfile.deps](https://github.com/g3w-suite/g3w-admin/blob/dev/ci_scripts/Dockerfile.deps).": "L'immagine delle dipendenze viene creata a partire da [Dockerfile.deps](https://github.com/g3w-suite/g3w-admin/blob/dev/ci_scripts/Dockerfile.deps).",
-      "The following instructions are for Ubuntu 24.04 LTS (Noble) with Python 3.12.3.": "Le istruzioni seguenti si riferiscono a Ubuntu 24.04 LTS (Noble) con Python 3.12.3.",
       "The following instructions are for python 3.12": "Le istruzioni seguenti si riferiscono a Python 3.12.",
       "The preferred installation is by using the `paver` script as mentioned above, but in case you need to customize the installation process, here are the build and setup steps:": "Il metodo consigliato è utilizzare lo script `paver` descritto sopra. Se devi personalizzare il processo di installazione, segui questi passaggi di compilazione e configurazione:",
       "The simpler way is to use [Apache2](https://httpd.apache.org/) as server WEB and its [mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi) module.": "La soluzione più semplice consiste nell'utilizzare [Apache2](https://httpd.apache.org/) come server web e il relativo modulo [mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi).",
       "The testing image is built from the dependency image and it will run all install and build steps from the local repository.": "L'immagine di test viene creata a partire dall'immagine delle dipendenze ed esegue tutti i passaggi di installazione e compilazione del repository locale.",
-      "This installation is useful for development but no for production deploy.": "Questa installazione è adatta allo sviluppo, ma non alla distribuzione in produzione.",
+      "These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.": "Queste istruzioni usano Ubuntu 24.04 LTS (Noble) e Python 3.12.3.",
       "This last command just make active your new virtualenv environment, for the next times is possible use the follow command to activate the virtualenv environment:": "L'ultimo comando attiva il nuovo ambiente virtuale. Per attivarlo in seguito, puoi usare il comando seguente:",
       "To activate virtuenvwrapper on system login, add follow lines to 'bashrc' config file of your user": "Per attivare virtualenvwrapper all'accesso al sistema, aggiungi le righe seguenti al file di configurazione `.bashrc` del tuo utente.",
       "To create a virtualnenv is sufficient call mkvirtualenv follow by the identification name for virtualenv (to use QGIS API into a virtualenv only solution is to give access python system site-packages to it using *--system-site-packages* option)": "Per creare un ambiente virtuale, esegui `mkvirtualenv` seguito dal nome dell'ambiente. Per utilizzare l'API QGIS, abilita l'accesso ai pacchetti Python di sistema con l'opzione *--system-site-packages*.",
       "To run the application with paver (EXPERIMENTAL)": "Avviare l'applicazione con paver (SPERIMENTALE)",
       "Use of native `venv` Python3": "Uso del modulo nativo `venv` di Python 3",
+      "Use this installation for development, not production.": "Usa questa installazione per lo sviluppo, non per la produzione.",
       "Virtualenv creation": "Creazione dell'ambiente virtuale",
       "With paver commands": "Con i comandi paver",
       "and for stop": "Per arrestarla:",

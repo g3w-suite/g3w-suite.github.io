@@ -1,8 +1,8 @@
 # Branding the G3W-Suite
 
-The G3W-Suite is a web application that can be customized to match the look and feel of your organization. This section covers the branding options available.
+Customize the G3W-SUITE interface to match your organization's branding.
 
-It is beyond the scope of this section to explain how to customize the G3W-Suite's branding using the project UI options, since that is already covered in the relative section of the manual. This section will focus on how to customize the G3W-Suite's branding by editing the settings (```local_settings.py``` of the docker project) file in the source code and possibly some css settings.
+To customize branding in the source code, edit the Docker project's ```local_settings.py``` file and, if needed, its CSS. The manual also covers customization through the interface.
 
 
 ## G3WSUITE_CUSTOM_STATIC_URL
@@ -173,12 +173,12 @@ This is based on the following [gist](https://gist.github.com/vstoykov/1366794?p
     "Branding the G3W-Suite": "Personalizzare il marchio di G3W-Suite",
     "By setting the following line in the ```local_settings.py``` file:": "Impostando la riga seguente nel file ```local_settings.py```:",
     "Client appearance and customization": "Aspetto e personalizzazione del client",
+    "Customize the G3W-SUITE interface to match your organization's branding.": "Personalizza l'interfaccia di G3W-SUITE in base all'identità della tua organizzazione.",
     "First, inside the ```g3w-admin/base/settings/__init__.py``` file, we need to change the following line:": "Per prima cosa, nel file ```g3w-admin/base/settings/__init__.py```, è necessario modificare la riga seguente:",
     "G3WSUITE_CUSTOM_STATIC_URL": "G3WSUITE_CUSTOM_STATIC_URL",
     "G3WSUITE_CUSTOM_TITLE": "G3WSUITE_CUSTOM_TITLE",
     "G3WSUITE_POWERD_BY": "G3WSUITE_POWERD_BY",
     "In this case the setting needs to be adjusted to contain the static folder (note the initial static folder):": "In questo caso, l'impostazione deve includere la cartella statica (nota la cartella static iniziale):",
-    "It is beyond the scope of this section to explain how to customize the G3W-Suite's branding using the project UI options, since that is already covered in the relative section of the manual. This section will focus on how to customize the G3W-Suite's branding by editing the settings (```local_settings.py``` of the docker project) file in the source code and possibly some css settings.": "Esula dagli obiettivi di questa sezione spiegare come personalizzare il marchio di G3W-Suite tramite le opzioni dell'interfaccia del progetto, già descritte nella sezione corrispondente del manuale. Qui ci concentreremo sulla personalizzazione del marchio di G3W-Suite modificando nel codice sorgente il file delle impostazioni (```local_settings.py``` del progetto Docker) ed eventualmente alcune impostazioni CSS.",
     "Logos": "Loghi",
     "Most of the style related settings depend on the ```G3WSUITE_CUSTOM_STATIC_URL``` attribute. This setting is a string that represents the URL from which **custom** static files are served.": "La maggior parte delle impostazioni relative allo stile dipende dall'attributo ```G3WSUITE_CUSTOM_STATIC_URL```. Questa impostazione è una stringa che rappresenta l'URL da cui vengono serviti i file statici **personalizzati**.",
     "Screenshot: Branding 01 Credits On": "Schermata: branding 01, crediti attivi",
@@ -190,7 +190,6 @@ This is based on the following [gist](https://gist.github.com/vstoykov/1366794?p
     "Screenshot: Branding 10 Logos Reduced": "Schermata: branding 10, logo ridotto",
     "Screenshot: Branding 16 Static Folder": "Schermata: branding 16, cartella statica",
     "Setting a default language": "Impostare una lingua predefinita",
-    "The G3W-Suite is a web application that can be customized to match the look and feel of your organization. This section covers the branding options available.": "G3W-Suite è un'applicazione web che può essere personalizzata per adattarsi all'aspetto e allo stile della tua organizzazione. Questa sezione illustra le opzioni di branding disponibili.",
     "The following settings will force the suite to load as default language the one specified": "Le impostazioni seguenti forzano il caricamento della suite nella lingua predefinita specificata",
     "The powered by setting, turned on by default, shows information about the suite and the main developers behind it in the credits section, which is accessible from the top bar of the suite.": "L'impostazione powered by, attiva per impostazione predefinita, mostra le informazioni sulla suite e sui principali sviluppatori nella sezione dei crediti, accessibile dalla barra superiore.",
     "The settings for these images are strings that represent the path to the image, relative to the **G3WSUITE_CUSTOM_STATIC_URL** setting.": "Le impostazioni di queste immagini sono stringhe che rappresentano il percorso dell'immagine, relativo all'impostazione **G3WSUITE_CUSTOM_STATIC_URL**.",
@@ -201,6 +200,7 @@ This is based on the following [gist](https://gist.github.com/vstoykov/1366794?p
     "This is based on the following [gist](https://gist.github.com/vstoykov/1366794?permalink_comment_id=3649179#gistcomment-3649179).": "Questa soluzione si basa sul seguente [gist](https://gist.github.com/vstoykov/1366794?permalink_comment_id=3649179#gistcomment-3649179).",
     "This setting also needs a tweak in the ```config/nginx/locations``` file, when in production:": "In produzione è necessario modificare anche il file ```config/nginx/locations```:",
     "This will lead to a login page like this:": "Il risultato sarà una schermata di accesso come questa:",
+    "To customize branding in the source code, edit the Docker project's ```local_settings.py``` file and, if needed, its CSS. The manual also covers customization through the interface.": "Per personalizzare l'identità nel codice sorgente, modifica il file ```local_settings.py``` del progetto Docker e, se necessario, il CSS. Il manuale descrive anche la personalizzazione tramite interfaccia.",
     "To get this properly applied, we need to make a few changes g3w-admin code base.": "Per applicare correttamente questa configurazione, è necessario apportare alcune modifiche al codice di g3w-admin.",
     "When it comes to logos, 4 images can be customized:": "È possibile personalizzare quattro immagini relative ai loghi:",
     "When the suite is loaded, the client language is set to the browser's default language.": "Quando viene caricata, la lingua del client corrisponde a quella predefinita del browser.",

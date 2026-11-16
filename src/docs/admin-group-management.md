@@ -27,7 +27,7 @@ A large **+ icon** is available to access the form for creating a new group.
 
 ![Screenshot: G3W-SUITE Administration Group List](/img/manual-english-g3wsuite-administration-group-list.png)
 
-A simple filter allows you to view only some cartographic groups based on:
+Filter cartographic groups by:
  * the MacroGroup to which they belong
  * the associated EPSG
  * the different types of users (Editor, Editor and Viewer) associated with them
@@ -42,7 +42,7 @@ The operation of deleting a Cartographic Group is not definitive.
 
 The Group with all its related content (projects and widgets) is moved to the Trash session.
 
-It is possible to access the list of trashed.
+Open the list of deleted groups.
 
 Cartographic Groups and the restore functions through the menu on the left sidebar.
 
@@ -53,7 +53,7 @@ Restoring a Cartographic Group involves restoring all the projects it contains a
 **Deleting a Cartographic Group from the trash is an irreversible action.**
 
 ### Define the Groups order on the FrontEnd
-Using the Drag & Drop function it is possible to define the order of the Groups in the list.
+Drag and drop groups to change their order in the list.
 
 This order will be reflected within the belonging MacroGroups.
 
@@ -71,12 +71,13 @@ This order will be reflected within the belonging MacroGroups.
     "**From this item you can access the list of the created cartographic groups.**": "**Questa voce consente di accedere all'elenco dei Gruppi cartografici creati.**",
     "**NB:** currently in the list of Groups it is not present in the subdivision in the belonging MacroGroups but the fact that a Group can be associated with only one MacroGroup still allows you to manage intuitively what will be the complessive display order.": "**NB:** al momento l'elenco dei Gruppi non è suddiviso in base ai Macrogruppi di appartenenza; tuttavia, poiché un Gruppo può essere associato a un solo Macrogruppo, è comunque possibile gestire in modo intuitivo l'ordine complessivo di visualizzazione.",
     "A large **+ icon** is available to access the form for creating a new group.": "È disponibile una grande **icona +** per accedere al modulo di creazione di un nuovo gruppo.",
-    "A simple filter allows you to view only some cartographic groups based on:": "Un semplice filtro consente di visualizzare solo alcuni Gruppi cartografici in base a:",
     "Back to Administration panel": "Torna al pannello di amministrazione",
     "Cartographic Group Trash": "Cestino dei Gruppi cartografici",
     "Cartographic Groups": "Gruppi cartografici",
     "Cartographic Groups and the restore functions through the menu on the left sidebar.": "È possibile consultare i Gruppi cartografici eliminati e ripristinarli dal menu nella barra laterale sinistra.",
     "Define the Groups order on the FrontEnd": "Definire l'ordine dei Gruppi nel FrontEnd",
+    "Drag and drop groups to change their order in the list.": "Trascina i gruppi per cambiarne l'ordine nell'elenco.",
+    "Filter cartographic groups by:": "Filtra i gruppi cartografici per:",
     "For each group, the Title and Subtitle defined at the time of creation are shown.": "Per ciascun gruppo vengono mostrati il titolo e il sottotitolo definiti durante la creazione.",
     "General operations": "Operazioni generali",
     "Groups List": "Elenco dei gruppi",
@@ -85,10 +86,10 @@ This order will be reflected within the belonging MacroGroups.
     "Icon: Erase": "Icona: elimina",
     "Icon: View": "Icona: visualizza",
     "In case of request to delete the Cartographic Group, a popup will ask whether the deletion of the Group should be permanent or a simple deactivation, which can be restored from the Trash menu.": "Quando si richiede l'eliminazione del Gruppo cartografico, una finestra chiede se eliminarlo definitivamente o disattivarlo soltanto, consentendone il ripristino dal menu Trash.",
-    "It is possible to access the list of trashed.": "È possibile accedere all'elenco degli elementi eliminati.",
     "MacroGroups": "Macrogruppi",
     "Manage cartographic groups": "Gestire i gruppi cartografici",
     "Number and links to projects published within the Group": "Numero e collegamenti ai progetti pubblicati nel Gruppo",
+    "Open the list of deleted groups.": "Apri l'elenco dei gruppi eliminati.",
     "Restoring a Cartographic Group involves restoring all the projects it contains and all the accessory settings/functions of both the group and the projects (permissions, searches, editing settings, downloads, etc...).": "Il ripristino di un Gruppo cartografico ripristina tutti i progetti che contiene e le relative impostazioni/funzioni accessorie del gruppo e dei progetti (permessi, ricerche, impostazioni di modifica, download ecc.).",
     "Screenshot: G3W-ADMIN Trash Group": "Schermata: cestino dei Gruppi di G3W-ADMIN",
     "Screenshot: G3W-SUITE Administration Group List": "Schermata: elenco dei Gruppi nell'amministrazione di G3W-SUITE",
@@ -99,7 +100,6 @@ This order will be reflected within the belonging MacroGroups.
     "The options of this last filter vary based on the type of logged in user.": "Le opzioni di quest'ultimo filtro variano in base al tipo di utente che ha effettuato l'accesso.",
     "There are also a series of icons to access specific functions:": "Sono inoltre disponibili diverse icone per accedere a funzioni specifiche:",
     "This order will be reflected within the belonging MacroGroups.": "L'ordine verrà mantenuto all'interno dei Macrogruppi di appartenenza.",
-    "Using the Drag & Drop function it is possible to define the order of the Groups in the list.": "La funzione Drag & Drop consente di definire l'ordine dei Gruppi nell'elenco.",
     "the **removal of all the WebGis services** contained therein": "la **rimozione di tutti i servizi WebGis** contenuti nel gruppo",
     "the **removal of all widgets** (eg searches) that would be orphaned after the removal of the WebGis services contained in the group. See the Widget chapter for more information.": "la **rimozione di tutti i widget** (ad es. le ricerche) che resterebbero orfani dopo la rimozione dei servizi WebGis del gruppo. Per ulteriori informazioni, consultare il capitolo sui widget.",
     "the MacroGroup to which they belong": "Macrogruppo di appartenenza",

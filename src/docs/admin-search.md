@@ -4,11 +4,11 @@
 
 ## ![Icon: Widget](/img/manual-english-icon-widget.png) Widget setting - Search tools
 
-**Using this icon it is possible to associate a series of widgets to the layer. The basic widget allows you to define search tools that will be available in the WebGis.**
+**Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.**
 
 ### Basic settings
 
-In G3W-SUITE it is possible to create search widgets.
+Create search widgets in G3W-SUITE.
 
 By default, searches can be built on individual vector layers based on the fields of the table associated with the layer.
 
@@ -45,7 +45,7 @@ In the related form we can define:
    * **`Name`:** name that G3W-SUITE will use to internally register the search widget.
  * **General configuration of research and results**
    * **`Search title`:** title that will become available in the **'Research'** panel of the WebGis interface
-   * **`Paginate results`:** option to activate pagination for the results list in order to avoid timeout problems in the case of a large number of results
+   * **`Paginate results`:** paginate the results list to avoid timeouts when it is large
  * **Search fields settings**
    * **`Field`:** field on which to carry out the research
    * **`Widget`:** method of entering the value to be searched
@@ -79,7 +79,7 @@ The widget will already be **`connected`** and therefore **available in the WebG
 
 
 #### Dependency
-Now it is possible to **define the dependence more or less strong** (strictly).
+Set the **dependency level** (strict or not).
 
 In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.
 
@@ -136,7 +136,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "**NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**": "**NB: per creare ricerche basate su campi derivati da join semplici (1:1/N:1) o da relazioni 1:N, è necessario modificare il metodo usato (da WMS a QGIS API).**",
     "**Search fields settings**": "**Impostazioni dei campi di ricerca**",
     "**This will allow you not to have to recreate the widget several times and to decide in which projects to activate the search and in which not.**": "**In questo modo non sarà necessario ricreare più volte il widget e si potrà decidere in quali progetti attivare la ricerca.**",
-    "**Using this icon it is possible to associate a series of widgets to the layer. The basic widget allows you to define search tools that will be available in the WebGis.**": "**Questa icona consente di associare una serie di widget al layer. Il widget di base permette di definire strumenti di ricerca disponibili nel WebGis.**",
+    "**Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.**": "**Usa questa icona per aggiungere widget al layer. Il widget di base definisce gli strumenti di ricerca disponibili nel WebGIS.**",
     "**Warning: in the case of fields with more than 100 unique values, the WMS service does not allow to obtain the complete list of values. In this case it is recommended not to use the `SelectBox` method**": "**Attenzione: per i campi con più di 100 valori univoci, il servizio WMS non consente di ottenere l'elenco completo. In questo caso si consiglia di non usare il metodo `SelectBox`.**",
     "**`Alias`:** alias assigned to the field that will appear in the search form": "**`Alias`:** alias assegnato al campo e visualizzato nel modulo di ricerca",
     "**`Comparison operator`:** comparison operator (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) through which the search query will be carried out. The **IN** operator simplifies searches where a field must be associated with multiple values (OR operator)": "**`Comparison operator`:** operatore di confronto (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) usato per eseguire la ricerca. L'operatore **IN** semplifica le ricerche in cui a un campo devono essere associati più valori (operatore OR)",
@@ -144,7 +144,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "**`Description`:** description assigned to the field": "**`Description`:** descrizione assegnata al campo",
     "**`Field`:** field on which to carry out the research": "**`Field`:** campo su cui eseguire la ricerca",
     "**`Name`:** name that G3W-SUITE will use to internally register the search widget.": "**`Name`:** nome usato da G3W-SUITE per registrare internamente il widget di ricerca.",
-    "**`Paginate results`:** option to activate pagination for the results list in order to avoid timeout problems in the case of a large number of results": "**`Paginate results`:** opzione per attivare la paginazione dell'elenco dei risultati ed evitare timeout quando i risultati sono numerosi",
+    "**`Paginate results`:** paginate the results list to avoid timeouts when it is large": "**`Paginate results`:** suddividi i risultati in pagine per evitare timeout quando sono numerosi",
     "**`Search title`:** title that will become available in the **'Research'** panel of the WebGis interface": "**`Search title`:** titolo visualizzato nel pannello **'Research'** dell'interfaccia WebGis",
     "**`Type`:** \"Search\"": "**`Type`:** \"Search\"",
     "**`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.": "**`Use alternative unique values`** (per il widget SelectBox): possibilità di associare un layer del progetto QGIS che fornisce l'elenco dei valori univoci da mostrare nel campo di ricerca. Il campo che riporta i valori univoci deve avere lo stesso nome del campo impostato per la ricerca. Questo accelera notevolmente il caricamento del modulo di ricerca lato utente e migliora l'usabilità dello strumento, soprattutto quando sono presenti molti record con pochi valori univoci.",
@@ -154,18 +154,17 @@ The **Relations** option allows you to to define the relationship to be used (if
     "Button: Add": "Pulsante: aggiungi",
     "By clicking on the icon, the list of already active (or activatable) widgets associated with the layer will be shown.": "Facendo clic sull'icona viene mostrato l'elenco dei widget già attivi o attivabili associati al layer.",
     "By default, searches can be built on individual vector layers based on the fields of the table associated with the layer.": "Per impostazione predefinita, è possibile creare ricerche sui singoli layer vettoriali basandosi sui campi della tabella associata al layer.",
+    "Create search widgets in G3W-SUITE.": "Crea widget di ricerca in G3W-SUITE.",
     "Dependency": "Dipendenza",
     "Especially useful in the case of multi geometric layers.": "Particolarmente utile nel caso di layer con geometrie multiple.",
     "Every search widget will be saved by referring to the layer identifiers (for example the DB parameters: IP, DB name, schema, layer name).": "Ogni widget di ricerca viene salvato facendo riferimento agli identificatori del layer (ad esempio, i parametri del DB: IP, nome del DB, schema e nome del layer).",
     "If the additional layers have homologous fields (same name and type) the search will be extended to them.": "Se i layer aggiuntivi hanno campi omologhi (stesso nome e tipo), la ricerca verrà estesa anche a essi.",
-    "In G3W-SUITE it is possible to create search widgets.": "In G3W-SUITE è possibile creare widget di ricerca.",
     "In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.": "In caso di **dipendenza stretta**, i valori dei campi dipendenti verranno caricati **solo dopo** aver scelto il valore del campo da cui dipendono.",
     "In the event that, at QGIS project level, the following editing widgets are associated with a field:": "Se a livello di progetto QGIS a un campo sono associati i seguenti widget di modifica:",
     "In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.png)": "Nell'elenco dei layer del progetto, **individuare il layer a cui associare il widget di ricerca** e fare clic sull'icona ![Icon: Widget](/img/manual-english-icon-widget.png)",
     "In the pop-up that appears, the **`Search` type** have to be chosen.": "Nella finestra popup visualizzata, scegliere il tipo **`Search`**.",
     "In the related form we can define:": "Nel modulo corrispondente è possibile definire:",
     "Multiple layers search": "Ricerca su più layer",
-    "Now it is possible to **define the dependence more or less strong** (strictly).": "Ora è possibile **definire il grado di vincolo della dipendenza** (stretta o meno).",
     "Once the form has been filled in, click on the **OK** button to save the settings.": "Dopo aver compilato il modulo, fare clic sul pulsante **OK** per salvare le impostazioni.",
     "Once the settings are saved, the created widget will appear in the list of Widgets associated with the layer.": "Dopo aver salvato le impostazioni, il widget creato apparirà nell'elenco dei widget associati al layer.",
     "Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.": "Altrimenti sarà possibile impostare liberamente i valori dei singoli campi e **senza un ordine specifico**. I valori disponibili per gli altri campi dipenderanno comunque dalla scelta effettuata.",
@@ -179,6 +178,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "Search based on 1:N relation data": "Ricerca basata sui dati di una relazione 1:N",
     "Search widgets": "Widget di ricerca",
     "See [dedicated paragraph](settings#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](settings#g3w_client_search_endpoint).",
+    "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **Other searching layers** option allows you to extend the search carried out to other layers.": "L'opzione **Other searching layers** consente di estendere la ricerca ad altri layer.",
     "The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.": "L'opzione **Relations** consente di definire la relazione da usare (se presente) per individuare il layer padre di cui mostrare i risultati.",
     "The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Button: Add](/img/manual-english-button-add.png) consente di aggiungere altri campi alla query di ricerca, attualmente gestibile tramite operatori **AND/OR**.",

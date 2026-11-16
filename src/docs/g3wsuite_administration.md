@@ -30,7 +30,7 @@ _**This section describes how to manage the various aspects and features of the 
 
 ## Description of the interface
 
-The Administration Panel allows you to manage all aspects related to the publication of QGIS projects and configuration of related WebGis services
+Use the Administration Panel to publish QGIS projects and configure their WebGIS services.
 
 The main page of the Administration Panel shows:
  * **`a bar at the top`:**
@@ -62,7 +62,7 @@ The main page of the Administration Panel shows:
 ![Screenshot: G3W-SUITE Administration Desk](/img/manual-english-g3wsuite-administration-desk.png)
 
 ## Front end portal customization
-From the main page of the **Administration Panel** it is possible to customize the information shown on the Front End Portal.
+From the **Administration Panel**, customize the information shown on the front-end portal.
 
 Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.
 
@@ -173,7 +173,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Cartographic groups": "Gruppi cartografici",
     "Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.": "Fare clic sull'icona **Configurations** ![Icon: Configuration](/img/manual-english-iconconfiguration.png) in basso a destra e scegliere la voce **Edit general data** dal menu che apparirà.",
     "Description of the interface": "Descrizione dell'interfaccia",
-    "From the main page of the **Administration Panel** it is possible to customize the information shown on the Front End Portal.": "Dalla pagina principale del **pannello di amministrazione** è possibile personalizzare le informazioni mostrate nel portale front end.",
+    "From the **Administration Panel**, customize the information shown on the front-end portal.": "Dal **pannello di amministrazione**, personalizza le informazioni mostrate nel portale front end.",
     "Front End About Data": "Dati della sezione About del front end",
     "Front End Home Data": "Dati della pagina iniziale del front end",
     "Front End Login Data": "Dati di accesso del front end",
@@ -208,9 +208,9 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Screenshot: G3W-SUITE Administration Configuration Socialdata": "Schermata: configurazione dei dati social di G3W-SUITE",
     "Screenshot: G3W-SUITE Administration Configuration Socialdata Result": "Schermata: risultato della configurazione dei dati social di G3W-SUITE",
     "Screenshot: G3W-SUITE Administration Desk": "Schermata: dashboard di amministrazione di G3W-SUITE",
-    "The Administration Panel allows you to manage all aspects related to the publication of QGIS projects and configuration of related WebGis services": "Il pannello di amministrazione consente di gestire tutti gli aspetti relativi alla pubblicazione di progetti QGIS e alla configurazione dei servizi WebGIS corrispondenti.",
     "The main page of the Administration Panel shows:": "La pagina principale del pannello di amministrazione mostra:",
     "Update/ Manage WebGis services": "Aggiornamento e gestione dei servizi WebGis",
+    "Use the Administration Panel to publish QGIS projects and configure their WebGIS services.": "Usa il pannello di amministrazione per pubblicare progetti QGIS e configurare i relativi servizi WebGIS.",
     "Users and Users Groups management": "Gestione degli utenti e dei gruppi di utenti",
     "Users and cartographic macro-groups": "Utenti e macrogruppi cartografici",
     "Widget and layer setup": "Configurazione dei widget e dei layer",

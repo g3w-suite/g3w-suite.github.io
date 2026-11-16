@@ -3,11 +3,11 @@
 [Back to Administration panel](g3wsuite_administration.md)
 
 ## Cartographic Groups
-_**In this section it is possible to view the list of Cartographic Groups present, manage them and create new ones.**_
+_**Manage existing Cartographic Groups or create new ones.**_
 
 A Cartographic Group is create  to **collect a series of cartographic projects belonging, for example, to the same theme** (Urban Planning Regulations, tourist maps ...) and characterized by the same projection system.
 
-It should be remembered that it will be possible to switch from one WebGis service to another, leaving the same geographical extension and scale, only between the projects contained in the same cartographic group.
+You can switch between WebGIS services while keeping the map extent and scale only when their projects belong to the same cartographic group.
 
 In the left side menu there is the **Cartographic Groups** item with two sub-items:
  * **Add Group:** to create a new Cartographic Group
@@ -213,7 +213,6 @@ After filling in the various form, click on the **Save** button to confirm your 
     "In the left side menu there is the **Cartographic Groups** item with two sub-items:": "Nel menu laterale è presente la voce **Cartographic Groups**, con due sottovoci:",
     "In this box you can define:": "In questo riquadro è possibile definire:",
     "In this regard, consult the section on [**base layers**](admin-base-layers.md).": "A questo proposito, consultare la sezione sui [**livelli di base**](admin-base-layers.md).",
-    "It should be remembered that it will be possible to switch from one WebGis service to another, leaving the same geographical extension and scale, only between the projects contained in the same cartographic group.": "Si ricorda che è possibile passare da un servizio WebGis all'altro mantenendo la stessa estensione geografica e scala solo tra i progetti contenuti nello stesso Gruppo cartografico.",
     "Learn more about this in the [dedicated session](user_groups_organization).": "Per ulteriori informazioni, consultare la [sezione dedicata](user_groups_organization).",
     "Let's see in detail the various sub-sessions of the group creation form.": "Vediamo nel dettaglio le varie sottosezioni del modulo di creazione del gruppo.",
     "Let’s see in detail the various sub-sessions of the ACL Users session:": "Vediamo nel dettaglio le varie sottosezioni della sezione ACL Users:",
@@ -230,7 +229,8 @@ After filling in the various form, click on the **Save** button to confirm your 
     "To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-widgets-setup.md) section.": "Per evitarlo, impostare il WMS come **internal WMS** nella sezione [Gestione dei widget](admin-widgets-setup.md).",
     "With regard to the **Base Layers**, it is specified that the external services available by default are:": "Per quanto riguarda i **Base Layers**, i servizi esterni disponibili per impostazione predefinita sono:",
     "You can also access the list of groups by clicking on the **\"Show\"** button in the **Cartographic Groups** box on the **Dashboard**.": "È possibile accedere all'elenco dei gruppi anche facendo clic sul pulsante **\"Show\"** nel riquadro **Cartographic Groups** della **Dashboard**.",
-    "_**In this section it is possible to view the list of Cartographic Groups present, manage them and create new ones.**_": "_**In questa sezione è possibile consultare l'elenco dei Gruppi cartografici presenti, gestirli e crearne di nuovi.**_",
+    "You can switch between WebGIS services while keeping the map extent and scale only when their projects belong to the same cartographic group.": "Puoi passare da un servizio WebGIS all'altro mantenendo estensione e scala solo se i progetti appartengono allo stesso gruppo cartografico.",
+    "_**Manage existing Cartographic Groups or create new ones.**_": "_**Gestisci i Gruppi cartografici esistenti o creane di nuovi.**_",
     "logo and title associated with the **Cartographic Group**": "logo e titolo associati al **Gruppo cartografico**",
     "logo and title associated with the **Cartographic MacroGroup**": "logo e titolo associati al **Macrogruppo cartografico**",
     "logo associated with the **Cartographic Group** (if MacroGroup logo option is active this options takes precedence)": "logo associato al **Gruppo cartografico** (se l'opzione per il logo del Macrogruppo è attiva, questa opzione ha la precedenza)",

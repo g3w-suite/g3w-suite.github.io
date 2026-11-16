@@ -12,7 +12,7 @@ See the dedicated paragraph in [Administration settings for editing](editing-adm
 
 
 ### ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png) Hide columns by User/Groups
-**Thanks to this function it is possible to hide specific fields of a layer for consultation. This constraint can be differentiated for individual users or groups of users.**
+**Hide selected layer fields from individual users or groups during viewing.**
 
 This setting is also available for the AnonymousUser user
 
@@ -54,7 +54,7 @@ At the top right, identified by the item "Project layers actions", there are ico
     "![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png) Hide columns by User/Groups": "![Icona: nascondi colonne](/img/manual-english-icon-hide-columns.png) Nascondere le colonne per utente/gruppo",
     "![Icon: Multi Editing](/img/manual-english-icon-multi-editing.png) **`Editing layer`:** allows you to enable online editing on multiple layers at the same time, simplifying the definition of enabled users": "![Icona: modifica multipla](/img/manual-english-icon-multi-editing.png) **`Editing layer`:** consente di attivare la modifica online su più layer contemporaneamente, semplificando la definizione degli utenti abilitati",
     "![Icon: Styles](/img/manual-english-icon-styles.png) Manage layer styles": "![Icona: stili](/img/manual-english-icon-styles.png) Gestire gli stili del layer",
-    "**Thanks to this function it is possible to hide specific fields of a layer for consultation. This constraint can be differentiated for individual users or groups of users.**": "**Questa funzione consente di nascondere specifici campi di un layer durante la consultazione. Il vincolo può variare per singoli utenti o gruppi di utenti.**",
+    "**Hide selected layer fields from individual users or groups during viewing.**": "**Nascondi i campi selezionati del layer a singoli utenti o gruppi durante la consultazione.**",
     "At the top right, identified by the item \"Project layers actions\", there are icons dedicated to settings that act on multiple elements of the project:": "In alto a destra, sotto la voce \"Project layers actions\", sono presenti icone dedicate a impostazioni che agiscono su più elementi del progetto:",
     "Back to Administration panel": "Torna al pannello di amministrazione",
     "Clicking on the icon will show the list of any existing alphanumeric column constraints and the item `+ Create New Column Level constraints` to create a new one.": "Facendo clic sull'icona verrà mostrato l'elenco degli eventuali vincoli alfanumerici esistenti sulle colonne e la voce `+ Create New Column Level constraints` per crearne uno nuovo.",

@@ -4,7 +4,7 @@
 
 ## Add custom Base layers
 
-It is possible to add custom Base layers and make them available at the level of individual WebGis services.
+Add custom base layers and make them available to individual WebGIS services.
 
 ![Screenshot: G3W-ADMIN Django Administration](/img/manual-english-g3wadmin-django-administration.png)
 
@@ -72,7 +72,7 @@ On the top bar you can choose, through a drop-down menu, the language of the ent
 ![Screenshot: Language Client](/img/manual-english-language-client.png)
 
 ### Administration
-Also for the Administration panel, through the same drop-down menu, it is possible to define the language of the entire interface of the console.
+Use the same dropdown to set the administration panel language.
 
 ![Screenshot: Language Admin](/img/manual-english-language-admin.png)
 
@@ -118,9 +118,9 @@ Then:
       "**Title:** the descriptive, client-side visible name of the new Base Layer": "**Title:** il nome descrittivo del nuovo Base Layer visibile nel client",
       "**Titles and Descriptions of the various elements in the defined languages ​​will be available on the front.**": "**I titoli e le descrizioni dei vari elementi nelle lingue definite saranno disponibili nel front end.**",
       "Add custom Base layers": "Aggiungere livelli di base personalizzati",
+      "Add custom base layers and make them available to individual WebGIS services.": "Aggiungi layer di base personalizzati e rendili disponibili ai singoli servizi WebGIS.",
       "Administration": "Amministrazione",
       "After publishing, you will need to activate the cache on that specific layer and and activate the **Save as Base layer** option in the form option.": "Dopo la pubblicazione, è necessario attivare la cache su quel layer e selezionare l'opzione **Save as Base layer** nel modulo.",
-      "Also for the Administration panel, through the same drop-down menu, it is possible to define the language of the entire interface of the console.": "Anche per il pannello di amministrazione è possibile impostare la lingua dell'intera interfaccia della console tramite lo stesso menu a discesa.",
       "As a first step, you need to publish a new WebGis service based on a QGIS project containing a **single layer**, the layer that will need to be converted into a Base Layer.": "Per prima cosa, è necessario pubblicare un nuovo servizio WebGis basato su un progetto QGIS contenente un **solo layer**, quello da convertire in un Base Layer.",
       "As an example, remember that you can publish a set of orthophotos as a single VRT file produced in QGIS.": "Ad esempio, è possibile pubblicare un insieme di ortofoto come singolo file VRT creato con QGIS.",
       "Assuming you want to add the following WMST service [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/) you fill in the form as follows:": "Supponendo di voler aggiungere il seguente servizio WMST [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/), compilare il modulo come segue:",
@@ -137,7 +137,6 @@ Then:
       "French": "Francese",
       "Front end": "Front end",
       "In the **Django Administration** session, access the **Base Layers** sub-session and click on the **Add Base Layer** button.": "Nella sezione **Django Administration**, accedere alla sottosezione **Base Layers** e fare clic sul pulsante **Add Base Layer**.",
-      "It is possible to add custom Base layers and make them available at the level of individual WebGis services.": "È possibile aggiungere livelli di base personalizzati e renderli disponibili per i singoli servizi WebGis.",
       "Italian": "Italiano",
       "Map client": "Client cartografico",
       "Multilinguage": "Multilinguismo",
@@ -161,6 +160,7 @@ Then:
       "The suite is translated in this languages:": "La suite è tradotta nelle seguenti lingue:",
       "Then:": "Quindi:",
       "To carry out the translation of these contents, proceed as follows:": "Per tradurre questi contenuti, procedere come segue:",
+      "Use the same dropdown to set the administration panel language.": "Usa lo stesso menu a discesa per impostare la lingua del pannello di amministrazione.",
       "Variable contents, i.e. user-definable contents, are instead translated:": "I contenuti variabili, ovvero quelli definibili dagli utenti, vengono invece tradotti:",
       "access the form again in modification": "accedere nuovamente al modulo in modalità di modifica",
       "access to the form for creating the element (**MacroGroup, Group or WebGis Service**)": "accedere al modulo per creare l'elemento (**MacroGroup, Group o WebGis Service**)",

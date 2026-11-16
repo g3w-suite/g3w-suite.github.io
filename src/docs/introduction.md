@@ -1,10 +1,8 @@
 # Introduction
 
-**G3W-SUITE is a modular client-server application for the management and publication of interactive map projects.**
+**G3W-SUITE manages and publishes interactive map projects created with [QGIS](https://qgis.org) through a modular client-server application.**
 
-The framework was born from the need to have a software capable of **publishing, in total autonomy and in a simple and fast way on a webgis client, cartographic projects realized with [QGIS](https://qgis.org).**
-
-The following aspects will be analyzed within the manual:
+The manual covers:
 * **organization and optimization of data and QGIS projects for web publishing**
 * **organization of cartographic contents in a hierarchical way: macro groups and cartographic groups**
 * **user management and access control systems for consultation and management of webgis services**
@@ -56,7 +54,7 @@ Below is a diagram relating to the standard workflow
 <script type="application/json" data-i18n>
 {
   "it": {
-    "**G3W-SUITE is a modular client-server application for the management and publication of interactive map projects.**": "**G3W-SUITE è un'applicazione modulare client-server per la gestione e la pubblicazione di progetti cartografici interattivi.**",
+    "**G3W-SUITE manages and publishes interactive map projects created with [QGIS](https://qgis.org) through a modular client-server application.**": "**G3W-SUITE gestisce e pubblica progetti cartografici interattivi creati con [QGIS](https://qgis.org) tramite un'applicazione modulare client-server.**",
     "**The current release (3.11) is compatible with `QGIS 3.44.x LTR` (Server and Desktop).**": "**La versione attuale (3.11) è compatibile con `QGIS 3.44.x LTR` (Server e Desktop).**",
     "**`G3W-ADMIN` - the Administration component**: developed in **`Python`** using **`Django`**": "**`G3W-ADMIN` - il componente di amministrazione**: sviluppato in **`Python`** con **`Django`**",
     "**`G3W-CLIENT` - the Cartographic client**: based on **`OpenLayers3`** and developed with **reactive tecnology by `Vue.js`**": "**`G3W-CLIENT` - il client cartografico**: basato su **`OpenLayers3`** e sviluppato con la **tecnologia reattiva di `Vue.js`**",
@@ -88,9 +86,8 @@ Below is a diagram relating to the standard workflow
     "Screenshot: Demo Webgis Project": "Schermata: progetto WebGIS demo",
     "Status": "Stato",
     "Technological infrastructure": "Infrastruttura tecnologica",
-    "The following aspects will be analyzed within the manual:": "Nel manuale verranno approfonditi i seguenti aspetti:",
-    "The framework was born from the need to have a software capable of **publishing, in total autonomy and in a simple and fast way on a webgis client, cartographic projects realized with [QGIS](https://qgis.org).**": "La suite nasce dall'esigenza di disporre di un software capace di **pubblicare progetti cartografici realizzati con [QGIS](https://qgis.org) su un client WebGIS, in completa autonomia e in modo semplice e rapido.**",
     "The main libraries used for the management and the visualization of the geographical part and the interaction with the user are: **`OpenLayer, Boostrap, jQuery, Lodash` and `Vue.js`**.": "Le principali librerie utilizzate per gestire e visualizzare la componente geografica e per l'interazione con l'utente sono: **`OpenLayers, Bootstrap, jQuery, Lodash` e `Vue.js`**.",
+    "The manual covers:": "Il manuale tratta:",
     "The publishing system is based on a series of OS tools and software": "Il sistema di pubblicazione si basa su una serie di strumenti e software per sistemi operativi.",
     "Used": "Utilizzata",
     "Version": "Versione",

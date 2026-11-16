@@ -62,7 +62,7 @@ The formats currently managed are:
 For each layer you need to specify:
  * associated **Projection** system
  * **Position** (top or buttom) with respect to the other layers of the project
- * **Persistent data:** allows you to specify whether or not the layer should be deleted when the session is closed
+ * **Persistent data:** choose whether to delete the layer when the session closes
  * **Label (optional):** the field to use to label the features
  * Layer **color** and **opacity**
 
@@ -70,7 +70,7 @@ For each layer you need to specify:
 
 ### Change map
 
-The item allows you to switch to a different map, among those accessible to the user, referring to the current extension and scale.
+Switch to another accessible map while keeping the current extent and scale.
 
 Clicking this item will open a modal panel displaying other maps in the same Cartographic Group as the current map.
 
@@ -115,7 +115,7 @@ The modification of the start date of the series will determine the updating of 
     "**Name:** custom name to associate with the service": "**Nome:** nome personalizzato da associare al servizio",
     "**Opacity** of the layer": "**Opacità** del layer",
     "**Pay attention: to use the Time series function for raster data, it must also be activated at the level of the G3W-ADMIN layer properties.**": "**Attenzione: per usare la funzione Serie temporali con dati raster, è necessario attivarla anche nelle proprietà del layer in G3W-ADMIN.**",
-    "**Persistent data:** allows you to specify whether or not the layer should be deleted when the session is closed": "**Dati persistenti:** consente di specificare se il layer deve essere eliminato alla chiusura della sessione",
+    "**Persistent data:** choose whether to delete the layer when the session closes": "**Dati persistenti:** scegli se eliminare il layer alla chiusura della sessione",
     "**Position** (top or buttom) with respect to the other layers of the project": "**Posizione** (in alto o in basso) rispetto agli altri layer del progetto",
     "**Projection system** to be associated": "**Sistema di proiezione** da associare",
     "**URL:** the TMS service URL": "**URL:** l’URL del servizio TMS",
@@ -141,12 +141,12 @@ The modification of the start date of the series will determine the updating of 
     "Screenshot: G3wclient Add WMS": "Schermata: aggiunta WMS in G3wclient",
     "Screenshot: G3wclient Timeseries Admin": "Schermata: serie temporali in amministrazione G3wclient",
     "Screenshot: G3wclient Timeseries Tool": "Schermata: strumento serie temporali di G3wclient",
+    "Switch to another accessible map while keeping the current extent and scale.": "Passa a un'altra mappa accessibile mantenendo l'estensione e la scala correnti.",
     "TMS (URL)": "TMS (URL)",
     "The TMS layer will be added to the map and TOC after the project layer list.": "Il layer TMS verrà aggiunto alla mappa e alla TOC dopo l’elenco dei layer del progetto.",
     "The WMS layer will be added to the map and TOC after the project layer list.": "Il layer WMS verrà aggiunto alla mappa e alla TOC dopo l’elenco dei layer del progetto.",
     "The bottom part of the left bar contains the following items:": "La parte inferiore della barra a sinistra contiene i seguenti elementi:",
     "The formats currently managed are:": "I formati attualmente gestiti sono:",
-    "The item allows you to switch to a different map, among those accessible to the user, referring to the current extension and scale.": "Questa voce consente di passare a un’altra mappa accessibile all’utente, mantenendo l’estensione e la scala correnti.",
     "The list of TMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.": "L’elenco dei servizi TMS e dei relativi layer WMS aggiunti resterà disponibile finché non verrà svuotata la cache del browser.",
     "The list of WMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.": "L’elenco dei servizi WMS e dei relativi layer aggiunti resterà disponibile finché non verrà svuotata la cache del browser.",
     "The modification of the start date of the series will determine the updating of the map with the visualization of the layer in coherence with the chosen date.": "La modifica della data iniziale della serie aggiorna la mappa, mostrando il layer in base alla data selezionata.",

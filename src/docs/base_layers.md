@@ -1,8 +1,8 @@
 # G3W-SUITE base layers
 
-Below are the instructions for adding, modifying, or deleting configurations for `Base layers`, the base layers of webgis services that are independent of the project and configured at the Map Group level.
+Add, edit or delete `Base layers` for WebGIS services at the Cartographic Group level. These layers are independent of the project.
 
-These operations are exclusively allowed to users with the `Admin level 1` role. Base layers can be configured from within the Django admin interface.
+Only users with the `Admin level 1` role can configure base layers in the Django admin interface.
 
 ![Screenshot: Configuration Django Admin Access](/img/configuration-django-admin-access.png)
 
@@ -78,15 +78,15 @@ Below is a brief description of the parameters:
     "it": {
       "**IMPORTANT** the configurations shown above are not `JSON` but are `Python dict`": "**IMPORTANTE** le configurazioni mostrate sopra non sono `JSON`, ma `Python dict`",
       "**\\*** mandatory parameters": "**\\*** parametri obbligatori",
-      "Below are the instructions for adding, modifying, or deleting configurations for `Base layers`, the base layers of webgis services that are independent of the project and configured at the Map Group level.": "Di seguito sono riportate le istruzioni per aggiungere, modificare o eliminare le configurazioni dei `Base layers`, ovvero i livelli di base dei servizi WebGIS indipendenti dal progetto e configurati a livello di Gruppo cartografico.",
+      "Add, edit or delete `Base layers` for WebGIS services at the Cartographic Group level. These layers are independent of the project.": "Aggiungi, modifica o elimina i `Base layers` dei servizi WebGIS a livello di Gruppo cartografico. Questi layer sono indipendenti dal progetto.",
       "Below is a brief description of the parameters:": "Di seguito è riportata una breve descrizione dei parametri:",
       "Form fields:": "Campi del modulo:",
       "G3W-SUITE base layers": "Livelli di base di G3W-SUITE",
       "In the `Property` field, you can configure `TMS`, `WMS`, and `WMTS` services as base layers. Below are some examples:": "Nel campo `Property` è possibile configurare servizi `TMS`, `WMS` e `WMTS` come livelli di base. Di seguito sono riportati alcuni esempi:",
+      "Only users with the `Admin level 1` role can configure base layers in the Django admin interface.": "Solo gli utenti con ruolo `Admin level 1` possono configurare i layer di base nell'interfaccia di amministrazione Django.",
       "Screenshot: Configuration Django Admin Access": "Schermata: accesso alla configurazione di Django Admin",
       "Screenshot: Configuration Django Admin Base Layers": "Schermata: configurazione dei livelli di base in Django Admin",
       "Screenshot: Configuration Django Admin Base Layers Form": "Schermata: modulo dei livelli di base in Django Admin",
-      "These operations are exclusively allowed to users with the `Admin level 1` role. Base layers can be configured from within the Django admin interface.": "Queste operazioni sono consentite esclusivamente agli utenti con il ruolo `Admin level 1`. I livelli di base possono essere configurati dall'interfaccia di amministrazione di Django.",
       "`Description`: a descriptive field for the base layer.": "`Description`: un campo descrittivo del livello di base.",
       "`Name`: an internal identifier for the base layer.": "`Name`: un identificatore interno del livello di base.",
       "`Property`: the base layer configuration in the form of a *python dict*.": "`Property`: la configurazione del livello di base sotto forma di *python dict*.",

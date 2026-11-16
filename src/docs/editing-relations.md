@@ -3,7 +3,7 @@
 [Back to Online editing](g3wsuite_editing.md)
 
 ## 1:N and N:M related tables editing
-**G3W-SUITE allows for relational editing**; for this to be possible it is necessary that:
+**Relational editing** requires:
  * on the published QGIS project there are one or more geographic layers related (1:N) with one or more alphanumeric tables
  * on the administration panel the editing function has been activated both on the parent layer and on the child layers
  * the operator user is enabled for the editing function on these layers
@@ -98,8 +98,8 @@ Remember that during the editing phase the **undo/redo icons** allow you to dele
     "![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Attributi record](/img/manual-english-icon-record-attribute.png) **Aggiorna attributi dell’elemento:** modifica i valori degli attributi di questo record; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
     "![Icon: Record Copy](/img/manual-english-icon-record-copy.png)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Copia record](/img/manual-english-icon-record-copy.png) **Copia elemento:** duplica un record consentendo di modificarne i valori; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
     "![Icon: Record Erase](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record": "![Icona: Elimina record](/img/manual-english-icon-record-erase.png) **Elimina elemento:** elimina definitivamente il record",
-    "**G3W-SUITE allows for relational editing**; for this to be possible it is necessary that:": "**G3W-SUITE consente la modifica relazionale**; a tal fine è necessario che:",
     "**Important:** to be able to edit related data, the relations must be inserted in the form of the parent layer, defined using the Drag and Drop designer method in the Layer Properties.": "**Importante:** per modificare i dati correlati, le relazioni devono essere inserite nel modulo del layer padre, definito con il metodo Drag and Drop nelle Proprietà layer.",
+    "**Relational editing** requires:": "**La modifica relazionale** richiede:",
     "**The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.**": "**L’attivazione della modalità di modifica sul layer padre nel client cartografico consente automaticamente di gestire anche le informazioni della tabella correlata.**",
     "**associate an existing records** (linked to other features or orphan) to the edited feature": "**associare un record esistente** (collegato ad altri elementi o orfano) all’elemento in modifica",
     "**classic geometry editing**": "**modifica geometrica classica**",

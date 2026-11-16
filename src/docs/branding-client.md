@@ -154,7 +154,7 @@ The width is the percentage of the map view that will be dedicated to the right 
 
 ### G3W_CLIENT_LEGEND
 
-It is possible to customize the legend of the webgis client to some extent. The following settings are available:
+Customize the WebGIS client legend with these settings:
 
 ```python
 G3W_CLIENT_LEGEND = {
@@ -188,6 +188,7 @@ to:
     "Assume you want to remove everyting but the layer view. This can be done by adding the following css to the custom css file:": "Per rimuovere tutto tranne la vista dei layer, aggiungi il CSS seguente al file CSS personalizzato:",
     "Back to Branding": "Torna alla personalizzazione",
     "Client appearance and customization": "Aspetto e personalizzazione del client",
+    "Customize the WebGIS client legend with these settings:": "Personalizza la legenda del client WebGIS con queste impostazioni:",
     "Do you want to remove the bottom map logo?": "Vuoi rimuovere il logo in fondo alla mappa?",
     "Example: change the skin color": "Esempio: cambiare il colore del tema",
     "Example: remove sections form the main webgis view": "Esempio: rimuovere sezioni dalla vista principale del WebGIS",
@@ -197,7 +198,6 @@ to:
     "G3W_CLIENT_LEGEND": "G3W_CLIENT_LEGEND",
     "G3W_CLIENT_RIGHT_PANEL": "G3W_CLIENT_RIGHT_PANEL",
     "G3W_CLIENT_SEARCH_TITLE": "G3W_CLIENT_SEARCH_TITLE",
-    "It is possible to customize the legend of the webgis client to some extent. The following settings are available:": "È possibile personalizzare in parte la legenda del client WebGIS. Sono disponibili le seguenti impostazioni:",
     "Logo: Branding 14 Css Map On": "Logo: branding 14, logo della mappa CSS attivo",
     "Logo: Branding 15 Css Map Off": "Logo: branding 15, logo della mappa CSS disattivato",
     "Screenshot: Branding 05 Header Links Off": "Schermata: branding 05, link nell'intestazione disattivati",

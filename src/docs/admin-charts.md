@@ -37,7 +37,7 @@ It is also possible:
 
 The title of the chart, defined at the plugin level, will be the unique identifier.
 
-At client level, it will be possible to **filter plots based on the geometries visible on the map and/or selected by the user**.
+In the client, **filter charts by features visible on the map or selected by the user**.
 
 ![Screenshot: G3W-SUITE QGIS Plots](/img/manual-english-g3wsuite-qgis-plots.png)
 ![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.png)
@@ -104,7 +104,6 @@ You can use Drag&Drop to define the order on the widget list
     "Admin side, via the ‘Position’ drop-down menù, it is now possible to define whether these graphs should be displayed:": "Dal lato Admin, tramite il menu a discesa ‘Position’, è possibile definire se mostrare questi grafici:",
     "After loading the XML file, the loaded chart will be listed, and icons and checkboxes will allow you to select its display modes:": "Dopo aver caricato il file XML, il grafico apparirà nell'elenco; icone e caselle di controllo consentono di scegliere le modalità di visualizzazione:",
     "As with searches, the uploaded graph will now be available in all projects that contain the same layer. As with searches, to activate the graph in other projects, access the layer and check the **'Linked'** checkbox.": "Come le ricerche, il grafico caricato sarà disponibile in tutti i progetti che contengono lo stesso layer. Per attivarlo negli altri progetti, accedere al layer e selezionare la casella **'Linked'**.",
-    "At client level, it will be possible to **filter plots based on the geometries visible on the map and/or selected by the user**.": "Nel client sarà possibile **filtrare i grafici in base alle geometrie visibili sulla mappa e/o selezionate dall'utente**.",
     "At the level of the layer for which the charts has been prepared, click on the **QPlotly widgets** icon ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.png) and load the xml by clicking on the **'New Qplotly widget'** button.": "Nel layer per cui sono stati preparati i grafici, fare clic sull'icona **QPlotly widgets** ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.png) e caricare il file XML facendo clic sul pulsante **'New Qplotly widget'**.",
     "Back to Administration panel": "Torna al pannello di amministrazione",
     "Chart order": "Ordine dei grafici",
@@ -117,6 +116,7 @@ You can use Drag&Drop to define the order on the widget list
     "Icon: Dataplotly": "Icona: DataPlotly",
     "If the chart is linked to a child layer in a 1:N relation, it can also be displayed at the information level of the individual parent features and in the display of the table of related children.": "Se il grafico è collegato a un layer figlio in una relazione 1:N, può essere mostrato anche nelle informazioni dei singoli elementi del layer padre e nella tabella dei figli correlati.",
     "In G3W-SUITE, you can associate two or more graphs to display them as overlapping graphs on the client.": "In G3W-SUITE è possibile associare due o più grafici e mostrarli sovrapposti nel client.",
+    "In the client, **filter charts by features visible on the map or selected by the user**.": "Nel client, **filtra i grafici in base alle geometrie visibili sulla mappa o selezionate dall'utente**.",
     "It is also possible:": "È inoltre possibile:",
     "Multiple charts": "Grafici multipli",
     "On the Admin side it is possible to define the display order of the graphs, associated with the WebGis service, within the Charts panel of the cartographic client.": "Dal lato Admin è possibile definire l'ordine di visualizzazione dei grafici associati al servizio WebGis nel pannello Charts del client cartografico.",

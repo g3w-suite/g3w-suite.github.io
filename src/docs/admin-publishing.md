@@ -4,7 +4,7 @@
 
 ## Publication of new WebGis services
 ### To publish a new QGIS cartographic project
-It is possible to publish new QGIS projects:
+Publish new QGIS projects:
  * **from the list of cartographic groups:** click on the icon ![Icon: Add](/img/manual-english-icon-add.png) located under the box of the cartographic group in which you want to publish the project.
  * **from the list of cartographic projects published within a group:** by clicking on the the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png)
 
@@ -47,7 +47,7 @@ Let’s see in detail the various sub-sessions of the ACL Users session:
 
 The choice is limited to the list of base layers activated for the cartographic group in which you work.
 
-It is also possible not to define any active base layer at startup.
+You can also start without an active base layer.
 
 #### Description data
  * **`Public title`:** title of the WebGis service, it will appear at the font end level and in the header of the client.
@@ -183,10 +183,8 @@ It is possible to define a custom order by moving the published projects via dra
     "In the event that the WebGis service is published by a user created by a user associated with the Editor1 role this option is not visible and the, the WebGis service is associated directly with that user": "Se il servizio WebGis viene pubblicato da un utente associato al ruolo Editor1, questa opzione non è visibile e il servizio viene associato direttamente a tale utente",
     "In the event that the WebGis service is published by a user of Editor2 role, the WebGis service is associated directly with that user": "Se il servizio WebGis viene pubblicato da un utente con ruolo Editor2, il servizio viene associato direttamente a tale utente",
     "In the last box you have to define the providers to be associated with the Geocoding map control:": "Nell'ultimo riquadro è necessario definire i provider da associare al controllo di geocodifica della mappa:",
-    "It is also possible not to define any active base layer at startup.": "È anche possibile non impostare alcun livello di base attivo all'avvio.",
     "It is clearly necessary to publish the embedded project first and then those derived from it.": "È necessario pubblicare prima il progetto incorporato e successivamente quelli che ne derivano.",
     "It is possible to define a custom order by moving the published projects via drag&drop.": "È possibile definire un ordine personalizzato spostando i progetti pubblicati con il drag&drop.",
-    "It is possible to publish new QGIS projects:": "È possibile pubblicare nuovi progetti QGIS:",
     "Learn more about this in the [dedicated session](user_groups_organization).": "Per ulteriori informazioni, consultare la [sezione dedicata](user_groups_organization).",
     "Let’s see in detail the various sub-sessions of the ACL Users session:": "Vediamo nel dettaglio le varie sottosezioni della sezione ACL Users:",
     "Name of the QGIS project file": "nome del file del progetto QGIS",
@@ -195,6 +193,7 @@ It is possible to define a custom order by moving the published projects via dra
     "Public title: if set": "Public title: se impostato",
     "Publication of new WebGis services": "Pubblicazione di nuovi servizi WebGis",
     "Publish and update WebGIS services": "Pubblicare e aggiornare i servizi WebGIS",
+    "Publish new QGIS projects:": "Pubblica nuovi progetti QGIS:",
     "QGIS project": "Progetto QGIS",
     "QGIS project title: if set on the **General session** of **QGIS project properties**": "titolo del progetto QGIS: se impostato nella sezione **General** delle **proprietà del progetto QGIS**",
     "Screenshot: G3W-SUITE Administration Project Add ACL": "Schermata: ACL durante l'aggiunta di un progetto nell'amministrazione di G3W-SUITE",
@@ -211,6 +210,7 @@ It is possible to define a custom order by moving the published projects via dra
     "The title associated with the WebGis service is inherited by the following settings evaluated in the following order of priority:": "Il titolo associato al servizio WebGis viene ereditato dalle seguenti impostazioni, valutate in ordine di priorità:",
     "To publish a new QGIS cartographic project": "Pubblicare un nuovo progetto cartografico QGIS",
     "Update WebGIS services": "Aggiornare i servizi WebGIS",
+    "You can also start without an active base layer.": "Puoi anche avviare il progetto senza un layer di base attivo.",
     "title": "titolo"
   }
 }

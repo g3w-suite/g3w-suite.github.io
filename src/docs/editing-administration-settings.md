@@ -21,7 +21,7 @@ Clicking on the icon will open a modal window that will allow you to:
  * **Scale:** define the editing activation scale (only for geometric tables)
  * **define the Viewer users** (individuals or groups) **enabled** for online editing
 
-For each user (single or group) it is possible to discriminate the editing powers:
+Set editing permissions for each user or group:
  * **Add:** add feature, copy feature, add part to multipart
  * **Update geometry:** update vertex feature, move feature, add part to multipart, delete part from multipart, split features, dissolve features
  * **Update attributes:** update feature attributes, update attributes of selected features
@@ -92,7 +92,6 @@ To allow editing on the related table in mode 1: n , the **editing function must
     "Clicking on the icon will open a modal window that will allow you to:": "Facendo clic sull’icona si apre una finestra modale che consente di:",
     "Copy editing permission from a user to the others": "Copia dei permessi di modifica da un utente ad altri",
     "Editing constraints": "Vincoli per la modifica",
-    "For each user (single or group) it is possible to discriminate the editing powers:": "Per ogni utente, singolo o appartenente a un gruppo, è possibile specificare i permessi di modifica:",
     "I should be noted that:": "È importante notare che:",
     "Icon: Editing": "Icona: modifica",
     "Icon: Editing Clone": "Icona: duplica permessi di modifica",
@@ -105,6 +104,7 @@ To allow editing on the related table in mode 1: n , the **editing function must
     "Screenshot: Editing Setting": "Schermata: impostazioni di modifica",
     "Screenshot: G3W-SUITE Administration Project Layer List": "Schermata: elenco layer del progetto nell’amministrazione G3W-SUITE",
     "Screenshot: Multi Layer Form": "Schermata: modulo per layer multipli",
+    "Set editing permissions for each user or group:": "Imposta i permessi di modifica per ogni utente o gruppo:",
     "These fields will contain references to G3W-SUITE users and users group who creators or modifiers of the individual features edited.": "Questi campi conterranno i riferimenti agli utenti e ai gruppi di utenti G3W-SUITE che hanno creato o modificato i singoli elementi.",
     "Through these two optional settings it is possible to define four fields of the table of the layer being edited automatically filled in.": "Con queste due impostazioni facoltative è possibile definire quattro campi della tabella del layer in modifica da compilare automaticamente.",
     "To activate the online editing functions, access the **`Layer list`** section of the project within the administration panel of G3W-ADMIN.": "Per attivare le funzioni di modifica online, apri la sezione **`Elenco layer`** del progetto nel pannello di amministrazione di G3W-ADMIN.",

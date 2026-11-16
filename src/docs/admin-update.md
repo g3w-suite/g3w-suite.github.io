@@ -4,11 +4,11 @@
 
 ## Update/ Manage WebGis services
 
-Within each Cartographic Group, it is possible to view the list of projects published within it and interact with them.
+View and interact with published projects in each Cartographic Group.
 
 ![Screenshot: G3W-SUITE Administration Project List](/img/manual-english-g3wsuite-administration-project-list.png)
 
-The first icon, to the left of each individual project, allows you to create bookmarks for your favorite projects. This will display them in the dashboard of the Administration session, so they're always within reach.
+Use the first icon to bookmark a project and show it on the administration dashboard.
 
 ![Screenshot: G3W-SUITE Administration Dashboard](/img/manual-english-g3wsuite-administration-dashboard.png)
 
@@ -141,7 +141,6 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
     "Setting up the overview map for WebGis services": "Configurare la mappa panoramica per i servizi WebGis",
     "Show details": "Mostra i dettagli",
     "The Project with all its related content (widgets and settings) is moved to the Trash session.": "Il progetto e tutti i contenuti correlati (widget e impostazioni) vengono spostati nella sezione Trash.",
-    "The first icon, to the left of each individual project, allows you to create bookmarks for your favorite projects. This will display them in the dashboard of the Administration session, so they're always within reach.": "La prima icona a sinistra di ogni progetto consente di aggiungerlo ai preferiti. I progetti verranno mostrati nella dashboard della sezione Administration, così saranno sempre a portata di mano.",
     "The operation of deleting a Project is not definitive.": "L'eliminazione di un progetto non è definitiva.",
     "The tool allows you to define personalized (timed) messages visible when the WebGis service starts.": "Lo strumento consente di definire messaggi personalizzati (a tempo) visibili all'avvio del servizio WebGis.",
     "Through the single icons, placed at the level of each project, it is possible to:": "Le singole icone associate a ciascun progetto consentono di:",
@@ -149,8 +148,9 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
     "To set the panoramic map, choose the projects and tick the check box in the **`Overview`** column.": "Per impostare la mappa panoramica, selezionare i progetti e spuntare la casella nella colonna **`Overview`**.",
     "Update WebGIS services": "Aggiornare i servizi WebGIS",
     "Update/ Manage WebGis services": "Aggiornamento e gestione dei servizi WebGis",
+    "Use the first icon to bookmark a project and show it on the administration dashboard.": "Usa la prima icona per aggiungere un progetto ai preferiti e mostrarlo nella dashboard di amministrazione.",
     "Using the + Message key it is possible to create a new message by defining:": "Con il pulsante + Message è possibile creare un nuovo messaggio definendo:",
-    "Within each Cartographic Group, it is possible to view the list of projects published within it and interact with them.": "In ogni Gruppo cartografico è possibile consultare l'elenco dei progetti pubblicati e interagire con essi.",
+    "View and interact with published projects in each Cartographic Group.": "Consulta e gestisci i progetti pubblicati in ogni Gruppo cartografico.",
     "access and modification permissions": "permessi di accesso e modifica",
     "definition of alphanumeric and geographical constraints": "definizione dei vincoli alfanumerici e geografici",
     "editing permissions on individual layers": "permessi di modifica dei singoli layer",

@@ -7,11 +7,11 @@
 Once your project has been published, you can access the list of widgets and additional functions to enrich your WebGis service.
 
 ### Widget management
-Thougth the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
+Use the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) to view project layers and configure their client functions.
 
 ![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.png)
 
-The new session will show you the **list of the layer** present in the published QGIS project
+The panel lists the **layers** in the published QGIS project.
 
 ![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
 
@@ -98,10 +98,10 @@ The number above each Action icon shows if and how many related objects are pres
     "Search and charts in the demo": "Ricerche e grafici nella demo",
     "The blue eye icon![Icon: Layerid](/img/manual-english-icon-layerid.png) allows you to know the ID associated with the layer at the project level, this ID will be useful for creating parameterized URLs": "L'icona a forma di occhio blu ![Icona: ID del layer](/img/manual-english-icon-layerid.png) mostra l'ID associato al layer nel progetto; questo ID è utile per creare URL parametrizzati.",
     "The external WMS option allows obtaining a response to the query (GetFeatureInfo) even if the response is not in GML but also in HTML or text/plain format.": "L'opzione WMS esterno consente di ottenere una risposta alla richiesta (GetFeatureInfo) anche in formato HTML o text/plain, oltre che GML.",
-    "The new session will show you the **list of the layer** present in the published QGIS project": "La nuova schermata mostrerà l'**elenco dei layer** presenti nel progetto QGIS pubblicato",
     "The number above each Action icon shows if and how many related objects are present.": "Il numero sopra ogni icona delle azioni indica se sono presenti oggetti correlati e quanti.",
     "The option is available only if the WMS loaded on the QGIS project is associated with the same projection system as the project.": "L'opzione è disponibile solo se il WMS caricato nel progetto QGIS utilizza lo stesso sistema di proiezione del progetto.",
-    "Thougth the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Tramite l'**icona `Elenco dei layer`** ![Schermata: icona elenco layer](/img/manual-english-iconsmall-layerlist.png) è possibile accedere all'elenco dei layer geografici che compongono il progetto e definire alcune funzioni disponibili nel client cartografico.",
+    "The panel lists the **layers** in the published QGIS project.": "Il pannello elenca i **layer** del progetto QGIS pubblicato.",
+    "Use the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) to view project layers and configure their client functions.": "Usa l'**icona `Elenco dei layer`** ![Schermata: icona elenco layer](/img/manual-english-iconsmall-layerlist.png) per visualizzare i layer del progetto e configurarne le funzioni nel client.",
     "Widget management": "Gestione dei widget"
   }
 }

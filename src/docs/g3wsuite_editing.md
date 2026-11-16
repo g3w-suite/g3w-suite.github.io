@@ -32,8 +32,6 @@ This means that currently it is not possible to create new records in table M bu
  * modify the current relations present
  * create new relations between new elements of layer N and pre-existing records of layer M
 
-The **editing settings** are defined partly at the **QGIS project level** (**editing form structure, widgets associated with individual attributes, 1:n  and N:M relations**) and partly at the **Administration level** (users with editing power, activation scale, alpha and geo constraints).
-
 ### Multi-user editing
 G3W-SUITE manages **multi-user editing** through a **feature lock system**.
 
@@ -86,7 +84,6 @@ This block will be deactivated when the user exits the editing mode.
     "QGIS project settings for editing": "Impostazioni del progetto QGIS per le modifiche",
     "Thanks to the integration with the APIs of QGIS it is now possible to manage the main formats (geographically and not) supported by QGIS Server:": "Grazie all’integrazione con le API di QGIS è ora possibile gestire i principali formati, geografici e non, supportati da QGIS Server:",
     "The **editing settings** are defined partly at the **QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations)** and partly at the **Administration level** (users with editing power, activation scale, alpha and geo constraints).": "Le **impostazioni di modifica** sono definite in parte a **livello di progetto QGIS (struttura del modulo di modifica, widget associati ai singoli attributi, relazioni 1:n e, in parte, N:M)** e in parte a **livello di amministrazione** (utenti autorizzati alla modifica, scala di attivazione, vincoli alfanumerici e geografici).",
-    "The **editing settings** are defined partly at the **QGIS project level** (**editing form structure, widgets associated with individual attributes, 1:n  and N:M relations**) and partly at the **Administration level** (users with editing power, activation scale, alpha and geo constraints).": "Le **impostazioni di modifica** sono definite in parte a **livello di progetto QGIS** (**struttura del modulo di modifica, widget associati ai singoli attributi, relazioni 1:n e N:M**) e in parte a **livello di amministrazione** (utenti autorizzati alla modifica, scala di attivazione, vincoli alfanumerici e geografici).",
     "The editing function manages both direct editing on geometric and alphanumeric layers, and editing on layers in a 1:N or N:M (only in paert) relations, also both geometric and alphanumeric.": "La funzione di modifica gestisce sia la modifica diretta dei layer geometrici e alfanumerici, sia la modifica di layer con relazioni 1:N o N:M (solo in parte), anch’essi geometrici o alfanumerici.",
     "This block will be deactivated when the user exits the editing mode.": "Il blocco viene rimosso quando l’utente esce dalla modalità di modifica.",
     "This means that currently it is not possible to create new records in table M but only:": "Ciò significa che al momento non è possibile creare nuovi record nella tabella M, ma solo:",

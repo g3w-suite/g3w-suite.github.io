@@ -12,7 +12,7 @@ At the base of the map area there is an information bar showing:
  * **share map:** t icon to share the map bringing back various customizations
  * **display scale**
 
-**share map icon**: this tool allows you to share the WebGis service while maintaining the customizations defined by the user (map extension, layers on/off, styles associated with the layers...) including, if present, the annotations created.
+**Share map icon:** share the WebGIS service with its current extent, layer visibility, styles and annotations.
  
 ![Screenshot: G3wclient Footer2](/img/manual-english-g3wclient-footer2.png)
 
@@ -31,7 +31,7 @@ Map-controls available on the left side of the map:
  * ![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.png) **`Query layer`:** puntual query (all layer or only selected layer in the TOC))
  * ![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.png) **`Query area`:** areal query
 
-	The panel that appears at the top left allows you to choose:
+	In the top-left panel, choose:
    * geospatial operator
      * intersects
      * within
@@ -79,15 +79,16 @@ Map-controls available on the top left corner of the map:
     "![Icon: Navigation Zomme Lastnext](/img/manual-english-icon-navigation-zomme-lastnext.png) **`Zoom last/next`:** undo/redo tools to navigate previous and post visualization areas (icons in the down-left corner)": "![Icona: zoom precedente/successivo](/img/manual-english-icon-navigation-zomme-lastnext.png) **`Zoom precedente/successivo`:** strumenti Annulla/Ripristina per spostarsi tra le aree di visualizzazione precedenti e successive (icone nell’angolo inferiore sinistro)",
     "![Icon: Navigation Zoomin](/img/manual-english-icon-navigation-zoomin.png) **`Zoom in and out`:** zoom in and zoom out": "![Icona: ingrandisci e riduci](/img/manual-english-icon-navigation-zoomin.png) **`Ingrandisci e riduci`:** ingrandisce e riduce la mappa",
     "![Icon: Navigation Zoomtobox](/img/manual-english-icon-navigation-zoomtobox.png) **`Zoom to box`:** zoom tool based on drawing a rectangle": "![Icona: zoom su riquadro](/img/manual-english-icon-navigation-zoomtobox.png) **`Zoom su riquadro`:** strumento di zoom basato sul disegno di un rettangolo",
+    "**Share map icon:** share the WebGIS service with its current extent, layer visibility, styles and annotations.": "**Icona Condividi mappa:** condividi il servizio WebGIS con estensione, visibilità dei layer, stili e annotazioni correnti.",
     "**The icons and description of the functions of the various **`MapControls`** activated at the thematic group level are shown below.**": "**Di seguito sono mostrate le icone e le descrizioni delle funzioni dei diversi **`MapControls`** attivati a livello di gruppo tematico.**",
     "**display scale**": "**scala di visualizzazione**",
     "**mouse coordinates**: coordinates can be shown in project projection system and in WGS84 LatLong (ESPG: 4326)": "**coordinate del mouse**: le coordinate possono essere visualizzate nel sistema di proiezione del progetto e in WGS84 LatLong (ESPG: 4326)",
     "**project projection system**": "**sistema di proiezione del progetto**",
-    "**share map icon**: this tool allows you to share the WebGis service while maintaining the customizations defined by the user (map extension, layers on/off, styles associated with the layers...) including, if present, the annotations created.": "**icona Condividi mappa**: questo strumento consente di condividere il servizio WebGIS mantenendo le personalizzazioni definite dall’utente (estensione della mappa, layer attivati/disattivati, stili associati ai layer...) e, se presenti, le annotazioni create.",
     "**share map:** t icon to share the map bringing back various customizations": "**condividi mappa:** icona per condividere la mappa mantenendo le personalizzazioni",
     "At the base of the map area there is an information bar showing:": "Nella parte inferiore dell’area della mappa è presente una barra informativa che mostra:",
     "Back to Cartographic client": "Torna al client cartografico",
     "Here is an example of using the annotation tool": "Ecco un esempio di utilizzo dello strumento di annotazione.",
+    "In the top-left panel, choose:": "Nel pannello in alto a sinistra, scegli:",
     "Map area": "Area della mappa",
     "Map controls": "Controlli della mappa",
     "Map navigation and queries": "Navigazione e interrogazione della mappa",
@@ -98,7 +99,6 @@ Map-controls available on the top left corner of the map:
     "Navigation and interaction with the map": "Navigazione e interazione con la mappa",
     "Screenshot: Annotations Tool": "Schermata: strumento di annotazione",
     "Screenshot: G3wclient Footer2": "Schermata: barra inferiore di G3wclient",
-    "The panel that appears at the top left allows you to choose:": "Il pannello che appare in alto a sinistra consente di scegliere:",
     "circle, specifying the radius also manually": "cerchio, specificando anche manualmente il raggio",
     "circle/rectangle elements": "elementi circolari o rettangolari",
     "free linear and polygonal elements": "elementi lineari e poligonali liberi",

@@ -10,7 +10,7 @@ In the QGIS cartographic projects you can set some parameters and options that a
 * the **webgis service identification name**
 * the associated **basic metadata**
 * the **capabilities of the service**
-* the possibility to **exclude some associated print layouts** on the WebGis service
+* **exclude associated print layouts** from the WebGIS service
 * which layers are **queryable and searchable**
 * which layers to expose with the different **OGC services (WMTS, WFS, WCS)**
 * which **fields** (for each vector data) are exposed as WMS and/or WFS
@@ -63,6 +63,7 @@ See also the dedicated paragraph [Geographic data synchronization on the server]
     "**Atlas and report are also supported.**": "**Sono supportati anche atlanti e report.**",
     "**Print layouts can contain more than one `Map` items and panoramic maps.**": "**I layout di stampa possono contenere più elementi `Map` e mappe panoramiche.**",
     "**don't use commas for aliases** associated with layers": "**non usare virgole negli alias** associati ai layer",
+    "**exclude associated print layouts** from the WebGIS service": "**escludere layout di stampa associati** dal servizio WebGIS",
     "Any images present in the print layouts must be placed in the local **`project_data`** folder (in any subdirectory) and synchronized on the server.": "Tutte le immagini presenti nei layout di stampa devono essere inserite nella cartella locale **`project_data`** (in una qualsiasi sottocartella) e sincronizzate sul server.",
     "Any print layouts associated with the published QGIS project will automatically be associated with the published WebGis service.": "Tutti i layout di stampa associati al progetto QGIS pubblicato saranno associati automaticamente al servizio WebGIS pubblicato.",
     "Back to QGIS project settings": "Torna alle impostazioni del progetto QGIS",
@@ -96,7 +97,6 @@ See also the dedicated paragraph [Geographic data synchronization on the server]
     "the **webgis service identification name**": "il **nome identificativo del servizio WebGIS**",
     "the associated **basic metadata**": "i **metadati di base** associati",
     "the associated **print layouts, atlas included**": "i **layout di stampa associati, compresi gli atlanti**",
-    "the possibility to **exclude some associated print layouts** on the WebGis service": "la possibilità di **escludere dal servizio WebGIS alcuni layout di stampa associati**",
     "the primary key field and all fields involved in search, join, 1:n or N:M relations or editing function have to be **published as WMS**": "il campo chiave primaria e tutti i campi usati per ricerche, join, relazioni 1:n o N:M o funzioni di modifica devono essere **pubblicati come WMS**",
     "when using rule-based/categorized classification **create indexes on the column(s) involved** in the rule expression": "quando si usa una classificazione basata su regole o categorie, **creare indici sulle colonne coinvolte** nell'espressione della regola",
     "which **fields** (for each vector data) are exposed as WMS and/or WFS": "quali **campi** (per ciascun dato vettoriale) esporre come WMS e/o WFS",

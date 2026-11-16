@@ -23,7 +23,7 @@ The contents of the header differ for the public user and for the logged in user
  * **Sign** in (far cambiare in Log in)
    * **Sign in:** login in for registered users
    * **Embed map:** URL with the references to the extension currently displayed
-   * **Change map:** which allows you to switch from one WebGis service to another while maintaining extension and display scale
+   * **Change map:** switch WebGIS services while keeping the map extent and scale
  * **Language:** the choice of language is reflected in the individual menus of the map client and on the contents of the access portal. The languages available are those activated by the Administration.
 
 ![Screenshot: G3wclient Header Anonymus](/img/manual-english-g3wclient-header-anonymus.png)
@@ -40,7 +40,7 @@ The contents of the header differ for the public user and for the logged in user
    * **Admin:** access to the administration section
    * **Log out:** log out the user
    * **Embed map:** URL with the references to the extension currently displayed
-   * **Change map:** which allows you to switch from one WebGis service to another while maintaining extension and display scale
+   * **Change map:** switch WebGIS services while keeping the map extent and scale
  * **Language:** the choice of language is reflected in the individual menus of the map client and on the contents of the access portal. The languages available are those activated by the Administration.
 
  ![Screenshot: G3wclient Header Signed](/img/manual-english-g3wclient-header-signed.png)
@@ -97,8 +97,8 @@ These features are described in a dedicated paragraph below.
     "**Admin:** access to the administration section": "**Amministrazione:** accesso alla sezione di amministrazione",
     "**Alerts:** the Messages associated with the individual WebGis services and displayed when the services are started can be recalled by the user at any time. The message will be displayed on a resizable modal and can be consulted in overlay while continuing to interact with the various elements of the cartographic client.": "**Avvisi:** l’utente può richiamare in qualsiasi momento i messaggi associati ai singoli servizi WebGIS, mostrati all’avvio dei servizi. Il messaggio viene visualizzato in una finestra modale ridimensionabile e può essere consultato in sovrapposizione mentre si continua a interagire con gli elementi del client cartografico.",
     "**Bookmarks:** tool for using the Spatial Bookmarks associated with the QGIS project and allowing the user to create new ones for his exclusive use.": "**Segnalibri:** strumento per usare i segnalibri spaziali associati al progetto QGIS e crearne di nuovi per uso personale.",
+    "**Change map:** switch WebGIS services while keeping the map extent and scale": "**Cambia mappa:** passa da un servizio WebGIS all'altro mantenendo estensione e scala della mappa",
     "**Change map:** to switch from one WebGis service to another while maintaining extension and display scale": "**Cambia mappa:** consente di passare da un servizio WebGIS a un altro mantenendo l’estensione e la scala di visualizzazione",
-    "**Change map:** which allows you to switch from one WebGis service to another while maintaining extension and display scale": "**Cambia mappa:** consente di passare da un servizio WebGIS a un altro mantenendo l’estensione e la scala di visualizzazione",
     "**Charts:** visualization of the plots created on QGIS with the DataPlotly plugin": "**Grafici:** visualizzazione dei grafici creati in QGIS con il plugin DataPlotly",
     "**Credits:** references to the G3W-SUITE project": "**Crediti:** riferimenti al progetto G3W-SUITE",
     "**Editing layers:** open editing session": "**Layer modificabili:** apre la sessione di modifica",

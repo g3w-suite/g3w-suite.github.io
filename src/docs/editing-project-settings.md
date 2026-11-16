@@ -8,7 +8,7 @@
 
 #### Definition of editing widgets associated with individual attributes
 
-In the QGIS project, for each layer it is possible to **define the structure of the attribute display module**.
+In the QGIS project, **define the attribute display form structure** for each layer.
 
 The same structure will be used in the cartographic client when editing attributes.
 
@@ -31,7 +31,7 @@ The functionality can be used to implement “drill-down” within editing forms
 This function will be reflected in the consultation side.
 
 #### Definition of editing widgets associated with individual attributes
-At the QGIS project level (always from **`Vector Properties`**, **`Attribute Form`** section) it is possible to define an alias and an editing widget for each attribute.
+In the QGIS project's **`Vector Properties`** → **`Attribute Form`**, define an alias and editing widget for each attribute.
 
 The alias and editing widgets defined at the project level will be available during web editing with some limitations.
 
@@ -123,7 +123,6 @@ When working with layers with the same source (es. layer from the same PostGreSQ
     "Allow multiple selections supported": "è supportata la selezione multipla",
     "Also for the tables related in 1:n mode it will be possible to define the **attribute form structure, aliases and editing widgets** in the QGIS project.": "Anche per le tabelle correlate tramite relazioni 1:n è possibile definire nel progetto QGIS la **struttura del modulo attributi, gli alias e i widget di modifica**.",
     "As in QGIS the default values are displayed in the form during editing and not only after saving.": "Come in QGIS, i valori predefiniti sono mostrati nel modulo durante la modifica, non solo dopo il salvataggio.",
-    "At the QGIS project level (always from **`Vector Properties`**, **`Attribute Form`** section) it is possible to define an alias and an editing widget for each attribute.": "Nel progetto QGIS (sempre in **`Proprietà vettore`**, sezione **`Modulo attributi`**) è possibile definire un alias e un widget di modifica per ogni attributo.",
     "Back to Online editing": "Torna alle modifiche online",
     "Below are the available widgets and any limitations:": "Di seguito sono elencati i widget disponibili e le eventuali limitazioni:",
     "Conditional forms based on QGIS expressions are supported and implemented for online editing/consulting.": "I moduli condizionali basati su espressioni QGIS sono supportati e disponibili per la modifica e la consultazione online.",
@@ -133,7 +132,8 @@ When working with layers with the same source (es. layer from the same PostGreSQ
     "Drill-down (cascading) forms": "Moduli a cascata (drill-down)",
     "Drill-down (cascading) forms **based on QGIS expressions** are supported and implemented for online editing.": "I moduli a cascata (drill-down) **basati su espressioni QGIS** sono supportati per la modifica online.",
     "In the **`Attribute Form`** section of the **`Layer Properties`** it is also possible to define for every field:": "Nella sezione **`Modulo attributi`** delle **`Proprietà layer`** è inoltre possibile definire per ogni campo:",
-    "In the QGIS project, for each layer it is possible to **define the structure of the attribute display module**.": "Nel progetto QGIS è possibile **definire la struttura del modulo di visualizzazione degli attributi** per ogni layer.",
+    "In the QGIS project's **`Vector Properties`** → **`Attribute Form`**, define an alias and editing widget for each attribute.": "In **`Proprietà vettore`** → **`Modulo attributi`** del progetto QGIS, definisci un alias e un widget di modifica per ogni attributo.",
+    "In the QGIS project, **define the attribute display form structure** for each layer.": "Nel progetto QGIS, **definisci la struttura del modulo di visualizzazione degli attributi** per ogni layer.",
     "In the event that, at the QGIS project level, one or more 1: n type relationships have been associated with a layer (**`Project menu → Properties…`, `Relations` section**), it will be possible to carry out relational editing also on the webgis platform.": "Se nel progetto QGIS a un layer sono associate una o più relazioni di tipo 1:n (**menu `Progetto → Proprietà…`, sezione `Relazioni`**), sarà possibile modificare le relazioni anche sulla piattaforma WebGIS.",
     "In this case, at the online edit level, the form relating to the field thus defined will be self-calculated and can be set not editable by the user.": "In questo caso, durante la modifica online il valore del campo viene calcolato automaticamente e il campo può essere impostato come non modificabile dall’utente.",
     "It is therefore possible to define the visibility of a forms (form or group) and of the fields it contains, on the basis of the values defined on further fields when filling in the attributes.": "È quindi possibile definire la visibilità di un modulo (o di un gruppo) e dei campi che contiene in base ai valori inseriti negli altri campi durante la compilazione degli attributi.",

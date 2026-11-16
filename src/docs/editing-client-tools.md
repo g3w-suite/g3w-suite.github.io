@@ -6,17 +6,15 @@
 
 ### Geographic and alphanumeric editing
 
-**Once the online editing function has been activated and configured on one or more layers of a WebGis project, the `Editing layers` item, in the left bar of the cartographic client, will be shown.**
+**After enabling and configuring online editing for a project layer, `Editing layers` appears in the client's left sidebar.**
 
-A click on the Editing layers item will allow you to go to the dedicated panel.
+Select Editing layers to open its panel.
 
 ![Screenshot: Editing Client Tool](/img/manual-english-editing-client-tool.png)
 
-If the editing function is activated at the Admin level, it is also possible to start the online editing also through the **Editing icon** that appears at the level of the **search and query results form** of a vector layer.
+When editing is enabled in the administration panel, use the **Editing icon** in attribute tables or search and query results to edit a record.
 
-**N.B.** If the editing function is activated at the Admin level, it is also possible to start the online editing also through the **Editing icon** that appears at the level of the **attibute tables** (for every records) and in the **search and query results form** (for every results)
-
-By clicking on the Edit layer icon associated with the layer of interest, the editing tools will be displayed.
+Select the Edit layer icon to open its editing tools.
 
 The available tools vary based on the powers/permissions of the logged in user.
 
@@ -105,18 +103,15 @@ For this reason the green button **SAVE** will be disabled until all constraints
     "![Icon: Feature Split](/img/manual-english-icon-feature-split.png) **Split features:** to split one or more features": "![Icona: Dividi elementi](/img/manual-english-icon-feature-split.png) **Dividi elementi:** divide uno o più elementi",
     "![Icon: Record Add](/img/manual-english-icon-record-add.png) **Add feature:** to add a record to the alphanumeric table": "![Icona: Aggiungi record](/img/manual-english-icon-record-add.png) **Aggiungi elemento:** aggiunge un record alla tabella alfanumerica",
     "![Icon: Record Modify](/img/manual-english-icon-record-modify.png) **Modify features:** to modify the attributes of an existing record": "![Icona: Modifica record](/img/manual-english-icon-record-modify.png) **Modifica elementi:** modifica gli attributi di un record esistente",
+    "**After enabling and configuring online editing for a project layer, `Editing layers` appears in the client's left sidebar.**": "**Dopo aver abilitato e configurato la modifica online per un layer del progetto, `Editing layers` appare nella barra laterale sinistra del client.**",
     "**Alphanumeric layer**": "**Layer alfanumerico**",
     "**Geometric layers**": "**Layer geometrici**",
-    "**N.B.** If the editing function is activated at the Admin level, it is also possible to start the online editing also through the **Editing icon** that appears at the level of the **attibute tables** (for every records) and in the **search and query results form** (for every results)": "**N.B.** Se la funzione di modifica è attivata a livello di amministrazione, è possibile avviare la modifica online anche tramite l’**icona Modifica**, visualizzata nelle **tabelle attributi** (per ogni record) e nel **modulo dei risultati di ricerca e interrogazione** (per ogni risultato).",
-    "**Once the online editing function has been activated and configured on one or more layers of a WebGis project, the `Editing layers` item, in the left bar of the cartographic client, will be shown.**": "**Dopo aver attivato e configurato la funzione di modifica online su uno o più layer di un progetto WebGIS, nella barra a sinistra del client cartografico viene mostrata la voce `Editing layers`.**",
-    "A click on the Editing layers item will allow you to go to the dedicated panel.": "Facendo clic sulla voce Editing layers si apre il pannello dedicato.",
     "A click on this icon will allow you to filter, and therefore show in the list, only the layers involved in the relations": "Facendo clic su questa icona è possibile filtrare l’elenco e visualizzare solo i layer coinvolti nelle relazioni.",
     "A help panel will describe the steps to take for copy, dissolve and split operations.": "Un pannello di aiuto descrive i passaggi da seguire per copiare, fondere e dividere gli elementi.",
     "Activating the Add features and Update feature vertex tools allows you to:": "Attivando gli strumenti Aggiungi elemento e Aggiorna vertici dell’elemento è possibile:",
     "Any **mandatory fields will be marked with an asterisk**.": "I **campi obbligatori sono contrassegnati da un asterisco**.",
     "Any **unfulfilled constraints will be highlighted** with specific warning messages shown **in red**.": "Gli **eventuali vincoli non rispettati** sono evidenziati con messaggi di avviso specifici **in rosso**.",
     "Back to Online editing": "Torna alle modifiche online",
-    "By clicking on the Edit layer icon associated with the layer of interest, the editing tools will be displayed.": "Facendo clic sull’icona Modifica layer associata al layer desiderato, vengono mostrati gli strumenti di modifica.",
     "Create and edit features": "Creazione e modifica degli elementi",
     "Editing related records": "Modificare i record correlati",
     "For this reason the green button **SAVE** will be disabled until all constraints are met.": "Per questo motivo, il pulsante verde **SAVE** resta disabilitato finché non vengono soddisfatti tutti i vincoli.",
@@ -138,7 +133,6 @@ For this reason the green button **SAVE** will be disabled until all constraints
     "Icon: Record Add": "Icona: aggiungi record",
     "Icon: Record Modify": "Icona: modifica record",
     "If a layer has **1:N relations** with other layers, a specific icon will be shown to the left of its name.": "Se un layer ha **relazioni 1:N** con altri layer, a sinistra del suo nome viene mostrata un’icona specifica.",
-    "If the editing function is activated at the Admin level, it is also possible to start the online editing also through the **Editing icon** that appears at the level of the **search and query results form** of a vector layer.": "Se la funzione di modifica è attivata a livello di amministrazione, è possibile avviare la modifica online anche tramite l’**icona Modifica**, visualizzata nel **modulo dei risultati di ricerca e interrogazione** di un layer vettoriale.",
     "If the logged in user is an Administrator, there will be a link in the panel to access the features unlock session": "Se l’utente autenticato è un amministratore, nel pannello è disponibile un collegamento alla sezione di sblocco degli elementi.",
     "In case of interaction of the editing tools with overlapping geometries, an intermediate step will allow to select the effective geometry on which to operate.": "Quando gli strumenti di modifica interagiscono con geometrie sovrapposte, un passaggio intermedio consente di selezionare la geometria su cui operare.",
     "In the case of many editable layers, a useful **filter** allows you to view only the layers of interest in the list.": "Se sono presenti molti layer modificabili, un utile **filtro** consente di visualizzare nell’elenco solo quelli desiderati.",
@@ -148,10 +142,13 @@ For this reason the green button **SAVE** will be disabled until all constraints
     "Screenshot: Editing Form": "Schermata: modulo di modifica",
     "Screenshot: G3wclient Edit Relation Filters": "Schermata: filtri delle relazioni di modifica G3wclient",
     "Screenshot: G3wclient Edit Tools": "Schermata: strumenti di modifica G3wclient",
+    "Select Editing layers to open its panel.": "Seleziona Editing layers per aprire il relativo pannello.",
+    "Select the Edit layer icon to open its editing tools.": "Seleziona l'icona Modifica layer per aprire i relativi strumenti.",
     "Snap and other available function": "Snap e altre funzioni disponibili",
     "The available tools vary based on the powers/permissions of the logged in user.": "Gli strumenti disponibili dipendono dai permessi dell’utente autenticato.",
     "The changes made can be saved only after satisfying any constraints of mandatory and/or uniqueness.": "Le modifiche possono essere salvate solo dopo aver soddisfatto i vincoli di obbligatorietà e/o unicità.",
     "The tools available are the following:": "Sono disponibili i seguenti strumenti:",
+    "When editing is enabled in the administration panel, use the **Editing icon** in attribute tables or search and query results to edit a record.": "Quando la modifica è abilitata nel pannello di amministrazione, usa l'**icona Modifica** nelle tabelle attributi o nei risultati di ricerca e interrogazione per modificare un record.",
     "Whenever a new feature/record is added or an existing feature/record is update, the attribute editing form and the respective editing widgets will be displayed as defined at the QGIS project level.": "Quando si aggiunge un nuovo elemento/record o si aggiorna un elemento/record esistente, vengono mostrati il modulo di modifica degli attributi e i relativi widget definiti nel progetto QGIS.",
     "activate the **interactive area and length measure** function": "attivare la funzione di **misurazione interattiva di area e lunghezza**",
     "activate the **intralayer snap** function": "attivare la funzione di **snap all’interno del layer**",

@@ -22,7 +22,7 @@ In the related form we can define:
    * **`Name`:** name that G3W-SUITE will use to internally register the search widget.
  * **General configuration of research and results**
    * **`Search title`:** title that will become available in the **'Research'** panel of the WebGis interface
-   * **`Paginate results`:** option to activate pagination for the results list in order to avoid timeout problems in the case of a large number of results
+   * **`Paginate results`:** paginate the results list to avoid timeouts when it is large
  * **Search fields settings**
    * **`Field`:** field on which to carry out the research
    * **`Widget`:** method of entering the value to be searched
@@ -36,7 +36,7 @@ In the related form we can define:
    * **`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.
    * **`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.   
    
-Now it is possible to **define the dependence more or less strong** (strictly).
+Set the **dependency level** (strict or not).
 
 In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.
 
@@ -127,7 +127,7 @@ If 1: N relations are associated with the interrogated layer and plots have been
     "**`Description`:** description assigned to the field": "**`Description`:** descrizione assegnata al campo",
     "**`Field`:** field on which to carry out the research": "**`Field`:** campo su cui eseguire la ricerca",
     "**`Name`:** name that G3W-SUITE will use to internally register the search widget.": "**`Name`:** nome che G3W-SUITE utilizzerà per registrare internamente il widget di ricerca.",
-    "**`Paginate results`:** option to activate pagination for the results list in order to avoid timeout problems in the case of a large number of results": "**`Paginate results`:** opzione per attivare la paginazione dell'elenco dei risultati ed evitare timeout quando i risultati sono numerosi",
+    "**`Paginate results`:** paginate the results list to avoid timeouts when it is large": "**`Paginate results`:** suddividi i risultati in pagine per evitare timeout quando sono numerosi",
     "**`Search title`:** title that will become available in the **'Research'** panel of the WebGis interface": "**`Search title`:** titolo che apparirà nel pannello **'Ricerca'** dell'interfaccia WebGIS",
     "**`Type`:** \"Search\"": "**`Type`:** \"Search\"",
     "**`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.": "**`Use alternative unique values`** (per il widget SelectBox): possibilità di associare un layer del progetto QGIS che fornisce l'elenco dei valori univoci da mostrare nel campo di ricerca. Questo accelera notevolmente il caricamento del modulo di ricerca lato utente e migliora l'usabilità dello strumento, soprattutto quando sono presenti molti record con pochi valori univoci.",
@@ -139,13 +139,13 @@ If 1: N relations are associated with the interrogated layer and plots have been
     "If activated, the **filter based on the selected features** is automatically activated on all related plots (associated with the same layer and with the 1:N relationed tables)": "Se attivato, il **filtro basato sulle entità selezionate** viene applicato automaticamente a tutti i grafici correlati (associati allo stesso layer e alle tabelle in relazione 1:N)",
     "In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.": "In caso di **dipendenza stretta**, i valori dei campi dipendenti verranno caricati **solo dopo** aver scelto il valore del campo da cui dipendono.",
     "In the related form we can define:": "Nel modulo corrispondente è possibile definire:",
-    "Now it is possible to **define the dependence more or less strong** (strictly).": "Ora è possibile **definire il grado di dipendenza** (stretta o meno).",
     "Once the form has been filled in, click on the **`OK button` to save** the settings.": "Dopo aver compilato il modulo, fai clic su **`OK` per salvare** le impostazioni.",
     "Once the settings are saved, the created widget will appear in the list of Widgets associated with the layer.": "Dopo aver salvato le impostazioni, il widget creato apparirà nell'elenco dei widget associati al layer.",
     "Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.": "Altrimenti sarà possibile impostare liberamente i valori dei singoli campi e **senza un ordine specifico**. I valori disponibili per gli altri campi dipenderanno comunque dalla scelta effettuata.",
     "Plots widget": "Widget dei grafici",
     "Search and charts in the demo": "Ricerche e grafici nella demo",
     "Search widget creation": "Creazione di un widget di ricerca",
+    "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **filter based on the map content** can be activated globally on all plots (icon at the top of the panel dedicated to charts) or on only some specific plots (icon placed at the level of the individual plots).": "Il **filtro basato sul contenuto della mappa** può essere attivato globalmente su tutti i grafici (icona in cima al pannello dei grafici) oppure solo su alcuni grafici specifici (icona accanto al singolo grafico).",
     "The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Pulsante: aggiungi](/img/manual-english-button-add.png) consente di aggiungere altri campi alla query di ricerca, gestibile tramite operatori **AND/OR**.",
     "The example below shows the compilation of the form for creating a search widget dedicated to a cadastral cartography layer.": "L'esempio seguente mostra la compilazione del modulo per creare un widget di ricerca dedicato a un layer cartografico catastale.",

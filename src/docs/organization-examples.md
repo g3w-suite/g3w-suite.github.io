@@ -3,7 +3,7 @@
 [Back to Users and organization](user_groups_organization.md)
 
 ## Summary table of access/administration policies
-Below is a summary table of the powers associated with the different roles.
+This table summarizes permissions by role.
 
 ![Screenshot: Roles Table](/img/manual-english-roles-table.png)
 
@@ -61,7 +61,6 @@ In this case, usually, the main administrator (**Admin** role) only takes care o
     "Advanced organization": "Organizzazione avanzata",
     "Back to Users and organization": "Torna a utenti e organizzazione",
     "Basic organization": "Organizzazione di base",
-    "Below is a summary table of the powers associated with the different roles.": "Di seguito è riportata una tabella riepilogativa dei poteri associati ai diversi ruoli.",
     "Examples of organization": "Esempi di organizzazione",
     "In this case the main administrator (**Admin role**) manages users, containers and all WebGis services": "In questo caso l'amministratore principale (**ruolo Admin**) gestisce utenti, contenitori e tutti i servizi WebGIS.",
     "In this case the main administrator (**Admin role**) wants to delegate some secondary administrators (**Editor2** role) in managing the contents (WebGis) of the individual Cartographic Groups.": "In questo caso l'amministratore principale (**ruolo Admin**) desidera delegare ad alcuni amministratori secondari (**ruolo Editor2**) la gestione dei contenuti (WebGIS) dei singoli Gruppi cartografici.",
@@ -76,6 +75,7 @@ In this case, usually, the main administrator (**Admin** role) only takes care o
     "Screenshot: Roles Table": "Schermata: tabella dei ruoli",
     "Summary table of access/administration policies": "Tabella riepilogativa dei criteri di accesso e amministrazione",
     "The case in question involves the need to create completely distinct and separate subsystems with regard to not only the contents but also the users.": "In questo caso è necessario creare sottosistemi completamente distinti e separati, non solo per i contenuti ma anche per gli utenti.",
+    "This table summarizes permissions by role.": "Questa tabella riepiloga i permessi per ruolo.",
     "User management will remain limited to the main administrator (**Admin** role)": "La gestione degli utenti resterà di competenza esclusiva dell'amministratore principale (**ruolo Admin**)."
   }
 }

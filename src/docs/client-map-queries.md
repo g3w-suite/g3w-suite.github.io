@@ -8,7 +8,7 @@ Right-clicking on the map queries the map using the core sampling method, displa
 
 If a specific layer is selected in the TOC, the results are limited to that layer.
 
-A right click on the mouse allows you to access a series of functions related (but not limited to) to the point where you click.
+Right-click the map to access functions for the selected point and other actions.
 
 ![Screenshot: Right Click](/img/manual-english-right-click.png)
 
@@ -22,7 +22,7 @@ To query a single layer, it must be previously selected at the TOC level.
 
 ![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.png) **Area query**
 
-Area query allows you to query project layers based on polygonal geometry:
+Use an area query to search project layers with a polygon:
  * draw: rectangles, circles or free-form polygons
  * deriving from a feature of a polygonal layer present in the project or added by the user
 
@@ -167,12 +167,10 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
     "**ztf (Zoom to features defined on the basis of attribute values)**": "**ztf (zoom sugli elementi definiti in base ai valori degli attributi)**",
     "1:N relation data": "Dati di relazione 1:N",
     "A filter, applied generically to the contents of all fields, will allow you to filter the list of child records.": "Un filtro generico applicato al contenuto di tutti i campi consente di filtrare l’elenco dei record figli.",
-    "A right click on the mouse allows you to access a series of functions related (but not limited to) to the point where you click.": "Facendo clic con il tasto destro del mouse si accede a una serie di funzioni relative, ma non solo, al punto selezionato.",
     "A series of icons, relating to the list of resulting features, will allow you to:": "Una serie di icone relative all’elenco degli elementi risultanti consente di:",
     "Above the table, a dedicated section will report the main information of the parent feature (breadcrumps).": "Sopra la tabella, una sezione dedicata mostra le informazioni principali dell’elemento padre (percorso di navigazione).",
     "After accessing one of the existing relationships, the child records will be displayed in tabular format.": "Dopo aver aperto una delle relazioni esistenti, i record figli vengono visualizzati in formato tabellare.",
     "Any links to photos will determine the display of a clickable preview, any links to links or other multimedia content will determine the display of the Open button that will allow consultation of the link.": "I collegamenti alle foto mostrano un’anteprima cliccabile; i collegamenti ad altri contenuti multimediali mostrano il pulsante Open, che consente di consultare il contenuto.",
-    "Area query allows you to query project layers based on polygonal geometry:": "L’interrogazione per area consente di interrogare i layer del progetto in base a una geometria poligonale:",
     "Back to Cartographic client": "Torna al client cartografico",
     "By clicking on the icon you will access the **list of 1:N relations** present and, from these, the list of child records associated with the individual relationships.": "Facendo clic sull’icona si accede all’**elenco delle relazioni 1:N** e, per ciascuna, all’elenco dei record figli associati.",
     "Display 1:1 (join) and 1:N relation data": "Visualizzazione dei dati di relazione 1:1 (join) e 1:N",
@@ -193,6 +191,7 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
     "Multiple results": "Risultati multipli",
     "Parameterized URLs": "URL parametrizzati",
     "Query type": "Tipo di interrogazione",
+    "Right-click the map to access functions for the selected point and other actions.": "Fai clic destro sulla mappa per accedere alle funzioni relative al punto selezionato e ad altre azioni.",
     "Right-clicking on the map queries the map using the core sampling method, displaying results for all layers below the clicked point.": "Facendo clic con il tasto destro sulla mappa, questa viene interrogata con il metodo di campionamento centrale e vengono mostrati i risultati di tutti i layer sotto il punto selezionato.",
     "Screenshot: G3wclient Attribute Icons": "Schermata: icone degli attributi G3wclient",
     "Screenshot: G3wclient Attribute List": "Schermata: elenco attributi G3wclient",
@@ -214,6 +213,7 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
     "The result of these type of query can be based on the geometric operations intersection and containment.": "I risultati di questi tipi di interrogazione possono basarsi sulle operazioni geometriche di intersezione e contenimento.",
     "To query a single layer, it must be previously selected at the TOC level.": "Per interrogare un singolo layer, è necessario selezionarlo prima nella TOC.",
     "Upon querying a geometry, the form structure will be replicated at the client level.": "Quando si interroga una geometria, la struttura del modulo viene riprodotta nel client.",
+    "Use an area query to search project layers with a polygon:": "Usa un'interrogazione per area per cercare nei layer del progetto tramite un poligono:",
     "Viewing query results": "Visualizzazione dei risultati delle interrogazioni",
     "deriving from a feature of a polygonal layer present in the project or added by the user": "derivata da un elemento di un layer poligonale presente nel progetto o aggiunto dall’utente",
     "draw: rectangles, circles or free-form polygons": "disegnata: rettangoli, cerchi o poligoni a mano libera",

@@ -29,7 +29,7 @@ The **Info** session can contains a small introduction and contact information f
 ![Screenshot: G3W-SUITE Portal Aboutit](/img/manual-english-g3wsuite-portal-aboutit.png)
 
 ### Maps
-Within G3W-SUITE it is possible to organize webgis services in hierarchical containers (**Cartographic Macrogroups and Cartographic Groups**)
+Organize WebGIS services in **Cartographic Macrogroups and Cartographic Groups**.
 
 By accessing the **Maps** session, the **Macrogroups** (if present) will be displayed, access to the Macrogroup will allow you to view the associated **Cartographic Groups** and from these access the list of individual **WebGis services**.
 
@@ -73,6 +73,7 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "Maps": "Mappe",
       "Most of the information shown in the access portal can be defined from the **`Configurations -> Edit General Data` session**, accessible from the icon located in the upper right corner of the Administration Panel.": "La maggior parte delle informazioni mostrate nel portale di accesso può essere definita dalla schermata **`Configurazioni -> Modifica dati generali`**, accessibile tramite l'icona nell'angolo superiore destro del pannello di amministrazione.",
       "Once logged in, you access the **Admin** session and from here, via the **\"Backend\"** button to the Administration panel": "Dopo aver effettuato l'accesso, si entra nella sezione **Admin** e da qui, tramite il pulsante **\"Backend\"**, si accede al pannello di amministrazione.",
+      "Organize WebGIS services in **Cartographic Macrogroups and Cartographic Groups**.": "Organizza i servizi WebGIS in **Macrogruppi cartografici e Gruppi cartografici**.",
       "Screenshot: G3W-SUITE Portal Aboutit": "Schermata: sezione informazioni del portale G3W-SUITE",
       "Screenshot: G3W-SUITE Portal Frontend": "Schermata: portale front-end G3W-SUITE",
       "Screenshot: G3W-SUITE Portal Groups": "Schermata: gruppi del portale G3W-SUITE",
@@ -84,7 +85,6 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "The MacroGroups, Groups and WebGis services listed will be those defined as free access.": "Saranno elencati i Macrogruppi, i Gruppi e i servizi WebGIS definiti ad accesso libero.",
       "The home page will contain, in addition to a brief and customizable presentation of the service, also:": "Oltre a una breve presentazione personalizzabile del servizio, la pagina iniziale conterrà:",
       "The login portal sessions": "Le sezioni del portale di accesso",
-      "Within G3W-SUITE it is possible to organize webgis services in hierarchical containers (**Cartographic Macrogroups and Cartographic Groups**)": "In G3W-SUITE è possibile organizzare i servizi WebGIS in contenitori gerarchici (**Macrogruppi cartografici e Gruppi cartografici**).",
       "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_**Questa sezione descrive le varie aree del portale di accesso e spiega come accedere al pannello di amministrazione**_",
       "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.png) with the following items:": "un **menu in alto a destra** ![Schermata: menu in alto a destra del portale G3W-SUITE](/img/manual-english-g3wsuite-portal-menu-toprigth.png) con le seguenti voci:",
       "a **panel menu on the right** with the following items:": "un **menu a pannello sulla destra** con le seguenti voci:"

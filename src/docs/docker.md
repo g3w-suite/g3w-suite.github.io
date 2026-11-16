@@ -162,7 +162,7 @@ General rules (in no particular order: they are all mandatory):
 
 ## PostgreSQL administration
 
-Postgres is running into a Docker container, in order to access the container, you can follow the instruction below:
+PostgreSQL runs in a Docker container. To access it:
 
 ### Check the container name
 
@@ -244,7 +244,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Postgis": "PostGIS",
     "Postgis image can be built with:": "L'immagine PostGIS può essere creata con:",
     "PostgreSQL administration": "Amministrazione di PostgreSQL",
-    "Postgres is running into a Docker container, in order to access the container, you can follow the instruction below:": "PostgreSQL è in esecuzione in un container Docker. Per accedere al container, segui le istruzioni riportate di seguito:",
+    "PostgreSQL runs in a Docker container. To access it:": "PostgreSQL è in esecuzione in un container Docker. Per accedervi:",
     "Run": "Esecuzione",
     "Set the environment variable": "Imposta la variabile d'ambiente",
     "Setups": "Configurazioni",

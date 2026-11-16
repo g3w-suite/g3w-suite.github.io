@@ -7,7 +7,7 @@
 The upper part of the left bar contains, if activated, the following items:
 
 ### Legend
-This session allows you to see the complete legend of the service.
+View the service's complete legend.
 
 ### Charts
 **View graphs created using QGIS [DataPlotly](https://github.com/ghtmtt/DataPlotly) and activated at the admin session level.**
@@ -62,7 +62,7 @@ These bookmarks will be saved in the browser cache and therefore always availabl
 ### Print
 **Printing tool based on layouts defined on QGIS project.**
 
-The tool allows you to choose:
+Choose:
  * **Template:** print layout among those associated with the published QGIS project
  * **Scale:** print scale, with delfault values ​​list, but also manually customizable
  * **DPI:** print resolution, with delfault values ​​list, but also manually customizable
@@ -174,6 +174,7 @@ Once created, the User Themes will be selectable, overwritable and editable usin
     "Charts based on 1:N data relation (child layer)": "Grafici basati su una relazione 1:N (layer figlio)",
     "Check the plots in the list and consult them on the rigth panel.": "Seleziona i grafici nell’elenco e consultali nel pannello a destra.",
     "Choose Theme": "Scegli tema",
+    "Choose:": "Scegli:",
     "Depending on the settings defined at the QGIS project publication level, this session may not be shown to the user.": "In base alle impostazioni di pubblicazione del progetto QGIS, questa sezione potrebbe non essere mostrata all’utente.",
     "Editing layer": "Layer modificabile",
     "If activated, the **filter based on the selected features** is automatically activated on all related plots (associated with the same layer and with the 1:N relationed tables)": "Se attivato, il **filtro basato sugli elementi selezionati** viene applicato automaticamente a tutti i grafici correlati (associati allo stesso layer e alle tabelle correlate 1:N).",
@@ -211,18 +212,17 @@ Once created, the User Themes will be selectable, overwritable and editable usin
     "The plots will automatically update after pan and zoom operations on the map": "I grafici si aggiornano automaticamente dopo aver spostato o ingrandito la mappa.",
     "The same panel allows you to create a screenshot (PNG or GeoTiff) of the area displayed on the map.": "Lo stesso pannello consente di creare un’immagine (PNG o GeoTiff) dell’area visualizzata sulla mappa.",
     "The saved query will be available until the browser cache is cleared": "La query salvata resta disponibile finché non viene svuotata la cache del browser.",
-    "The tool allows you to choose:": "Lo strumento consente di scegliere:",
     "The upper part of the left bar contains, if activated, the following items:": "La parte superiore della barra a sinistra contiene, se attivati, i seguenti elementi:",
     "The user, even if not logged in, will be able to create new bookmarks by simply positioning them in an area of ​​the map and then clicking on the **`+`** button to define the **`Name`** to associate with the bookmark.": "Anche un utente non autenticato può creare nuovi segnalibri: è sufficiente posizionarsi su un’area della mappa, fare clic sul pulsante **`+`** e specificare il **`Nome`** da associare al segnalibro.",
     "These **filters** are also **reflected on the plots associated to the related data** (in 1:N mode) based on the visible and/or selected parent features.": "Questi **filtri** vengono applicati anche ai **grafici associati ai dati correlati** (in modalità 1:N), in base agli elementi padre visibili e/o selezionati.",
     "These bookmarks will be saved in the browser cache and therefore always available until deleted.": "Questi segnalibri vengono salvati nella cache del browser e restano disponibili fino alla loro eliminazione.",
     "This content is divided into three sessions: **General, Data, Legend** and **Credits**": "I contenuti sono suddivisi in quattro sezioni: **Generale, Dati, Legenda** e **Crediti**",
-    "This session allows you to see the complete legend of the service.": "Questa sezione consente di visualizzare la legenda completa del servizio.",
     "This tool will display the spatial bookmarks defined and associated with the QGIS project.": "Questo strumento mostra i segnalibri spaziali definiti e associati al progetto QGIS.",
     "Through this tool it is possible to:": "Questo strumento consente di:",
     "Tools panel": "Pannello degli strumenti",
     "Tools panel and table of contents": "Pannello degli strumenti e indice dei contenuti",
     "User themes": "Temi utente",
+    "View the service's complete legend.": "Consulta la legenda completa del servizio.",
     "You choose the search you are interested in, fill in the required fields and click on the **`Search`** button.": "Scegli la ricerca desiderata, compila i campi richiesti e fai clic sul pulsante **`Search`**.",
     "Zoom to features and download icons are available for results (single or cumulative)": "Per i risultati, singoli o complessivi, sono disponibili le icone per lo zoom sugli elementi e il download.",
     "carry out alphanumeric searches on geometric layers": "eseguire ricerche alfanumeriche sui layer geometrici",

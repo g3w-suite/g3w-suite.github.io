@@ -62,7 +62,7 @@ With regard to the last aspect, it should be noted that **Viewers users** (indiv
 
 Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**
 
-**By activating the editing function it will be possible to edit the geometries and attributes of the Public Buildings layer and the related interventions.**
+**Enable editing to modify the geometries and attributes of the Public Buildings layer and its related interventions.**
 
 ![Screenshot: Editing Client Start](/img/manual-english-editing-client-start.png)
 
@@ -83,8 +83,8 @@ Redefine attribute forms, aliases and editing widgets associated with the indivi
 <script type="application/json" data-i18n>
 {
   "it": {
-    "**By activating the editing function it will be possible to edit the geometries and attributes of the Public Buildings layer and the related interventions.**": "**Attivando la funzione di modifica sarà possibile modificare le geometrie e gli attributi del layer Public Buildings e dei relativi interventi.**",
     "**Do you want to test the online editing function more deeply?**": "**Vuoi approfondire la prova della funzione di modifica online?**",
+    "**Enable editing to modify the geometries and attributes of the Public Buildings layer and its related interventions.**": "**Abilita la modifica per aggiornare geometrie e attributi del layer Public Buildings e dei relativi interventi.**",
     "**It is advisable to consult the section on** [editing activation and configuration](g3wsuite_editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**": "**Si consiglia di consultare la sezione sulla** [attivazione e configurazione delle modifiche](g3wsuite_editing.md) **per l'elenco e i limiti dei singoli widget di modifica ereditati dal progetto QGIS.**",
     "**`Buildings rating`**": "**`Buildings rating`**",
     "**`Buildings`**": "**`Buildings`**",
