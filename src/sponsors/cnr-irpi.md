@@ -1,6 +1,6 @@
 # CNR IRPI
 
-![CNR IRPI](/img/site-cnr.png)
+![CNR IRPI](/img/site-cnr.avif)
 
 The CNR Research Institute for Geo-Hydrological Protection studied natural hazards and the protection of land and water. In 2026 it became part of CNR-GEO.
 

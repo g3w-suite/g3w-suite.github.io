@@ -24,27 +24,27 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-planetek.png" alt="Planetek Italia" loading="lazy">
+    <img src="/img/site-planetek.avif" alt="Planetek Italia" loading="lazy">
     <div class="sponsor-name"><a href="https://www.planetek.it/" target="_blank" rel="noopener noreferrer">Planetek Italia</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana-logo.jpg" alt="Consorzio della Bonifica Renana" loading="lazy">
+    <img src="/img/site-bonifica-renana-logo.avif" alt="Consorzio della Bonifica Renana" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Consorzio della Bonifica Renana</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-cnr.png" alt="CNR – IRPI" loading="lazy">
+    <img src="/img/site-cnr.avif" alt="CNR – IRPI" loading="lazy">
     <div class="sponsor-name"><a href="https://www.irpi.cnr.it/" target="_blank" rel="noopener noreferrer">CNR – IRPI</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-trento.png" alt="Comune di Trento" loading="lazy">
+    <img src="/img/site-trento.avif" alt="Comune di Trento" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.trento.it/" target="_blank" rel="noopener noreferrer">Comune di Trento</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpa-piemonte.png" alt="ARPA Piemonte" loading="lazy">
+    <img src="/img/site-arpa-piemonte.avif" alt="ARPA Piemonte" loading="lazy">
     <div class="sponsor-name"><a href="http://www.arpa.piemonte.it/" target="_blank" rel="noopener noreferrer">ARPA Piemonte</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bari-city-logo.png" alt="Comune di Bari" loading="lazy">
+    <img src="/img/site-bari-city-logo.avif" alt="Comune di Bari" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.bari.it/" target="_blank" rel="noopener noreferrer">Comune di Bari</a></div>
   </div>
 </div>
@@ -55,7 +55,7 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 **G3W-SUITE 3.4 is compatible with the new LTR of QGIS**
 
-<img src="/img/site-qgis-322.jpeg" alt="Screenshot: QGIS 322" loading="lazy">
+<img src="/img/site-qgis-322.avif" alt="Screenshot: QGIS 322" loading="lazy">
 
 ### Feature: Embedded projects
 
@@ -65,7 +65,7 @@ G3W-SUITE now manages the publication of projects with **embedded groups/layers 
 
 Updating the “parent” project will result in updating all projects with embedded layers.
 
-<img src="/img/site-embedded-project.png" alt="Screenshot: Embedded Project" loading="lazy">
+<img src="/img/site-embedded-project.avif" alt="Screenshot: Embedded Project" loading="lazy">
 
 ### Feature: Searches: new management of dependencies between fields
 
@@ -75,7 +75,7 @@ In case of **strictly dependence**, the values of the dependent fields will be l
 
 Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.
 
-<img src="/img/site-search-dependence.png" alt="Screenshot: Search Dependence" loading="lazy">
+<img src="/img/site-search-dependence.avif" alt="Screenshot: Search Dependence" loading="lazy">
 
 ### Feature: User-based fields filter
 
@@ -117,7 +117,7 @@ Now it is possible to allow the **download of raster data in GeoTiff format.**
 
 Entire layer or clipped to the extent of the canvas.
 
-<img src="/img/site-download-tiff.png" alt="Screenshot: Download Tiff" loading="lazy">
+<img src="/img/site-download-tiff.avif" alt="Screenshot: Download Tiff" loading="lazy">
 
 ## Print
 
@@ -161,7 +161,7 @@ This function will be reflected in the consultation side.
 
 Automatic compilation of fields of the attribute table with user creator/modifier of the features.
 
-<img src="/img/site-users.png" alt="Screenshot: Users" loading="lazy">
+<img src="/img/site-users.avif" alt="Screenshot: Users" loading="lazy">
 
 ### Feature: Start editing directly from query/search results
 
@@ -191,7 +191,7 @@ The management of N:M relations defined on QGIS project is now supported.
 
 Limitation in editing: non-direct changes on M table
 
-<img src="/img/site-nm-relations.png" alt="Screenshot: Nm Relations" loading="lazy">
+<img src="/img/site-nm-relations.avif" alt="Screenshot: Nm Relations" loading="lazy">
 
 ### Feature: Measurement tools on editing
 
@@ -245,7 +245,7 @@ Implemented a **generic method for using the Processing API for geographic data 
 
 The use of the individual Porcessing modules requires the implementation of dedicated client/server modules for use on the cartographic client side.
 
-<img src="/img/site-geographical-analysis.png" alt="Screenshot: Geographical Analysis" loading="lazy">
+<img src="/img/site-geographical-analysis.avif" alt="Screenshot: Geographical Analysis" loading="lazy">
 
 ## Minor improvements
 
@@ -253,7 +253,7 @@ The use of the individual Porcessing modules requires the implementation of dedi
 
 Using drag&drop in the ADMIN session it’s now possible to define the order of the WebGis services at the FrontEnd level.
 
-<img src="/img/site-frontend.png" alt="Screenshot: Frontend" loading="lazy">
+<img src="/img/site-frontend.avif" alt="Screenshot: Frontend" loading="lazy">
 
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>

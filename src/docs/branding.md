@@ -23,7 +23,7 @@ location /custom_static/ {
 
 **NOTE:** When testing this in development/debug mode, the static folder **custom_static** needs to be created in the static folder of the **core** package of the g3w-admin app. 
 
-![Screenshot: Branding 16 Static Folder](/img/manual-english-branding-16-static-folder.png)
+![Screenshot: Branding 16 Static Folder](/img/manual-english-branding-16-static-folder.avif)
 
 
 In this case the setting needs to be adjusted to contain the static folder (note the initial static folder):
@@ -39,7 +39,7 @@ The powered by setting, turned on by default, shows information about the suite 
 
 Without any interaction the section looks like this:
 
-![Screenshot: Branding 01 Credits On](/img/manual-english-branding-01-credits-on.png)
+![Screenshot: Branding 01 Credits On](/img/manual-english-branding-01-credits-on.avif)
 
 Adding the following line to the ```local_settings.py``` file will turn off the *powered by* section and show only what has been set in the **Map CLient Data** section of the **General Suite Data**:
 
@@ -47,7 +47,7 @@ Adding the following line to the ```local_settings.py``` file will turn off the 
 G3WSUITE_POWERD_BY=False
 ```
 
-![Screenshot: Branding 02 Credits Off](/img/manual-english-branding-02-credits-off.png)
+![Screenshot: Branding 02 Credits Off](/img/manual-english-branding-02-credits-off.avif)
 
 
 ## Logos
@@ -70,21 +70,21 @@ G3WSUITE_LOGIN_LOGO = G3WSUITE_CUSTOM_STATIC_URL + 'logo_login.png'
 
 This will lead to a login page like this:
 
-![Screenshot: Branding 08 Logos Login](/img/manual-english-branding-08-logos-login.png)
+![Screenshot: Branding 08 Logos Login](/img/manual-english-branding-08-logos-login.avif)
 
 and to the following admin logo icon:
 
-![Screenshot: Branding 09 Logos Main](/img/manual-english-branding-09-logos-main.png)
+![Screenshot: Branding 09 Logos Main](/img/manual-english-branding-09-logos-main.avif)
 
 and its reduced form:
 
-![Screenshot: Branding 10 Logos Reduced](/img/manual-english-branding-10-logos-reduced.png)
+![Screenshot: Branding 10 Logos Reduced](/img/manual-english-branding-10-logos-reduced.avif)
 
 ## G3WSUITE_CUSTOM_TITLE
 
 The title of the html page of the suite. Usually the title defaults to **g3w-admin** for the admin section and **g3w-client** for the webgis client.
 
-![Screenshot: Branding 03 Html Title Off](/img/manual-english-branding-03-html-title-off.png)
+![Screenshot: Branding 03 Html Title Off](/img/manual-english-branding-03-html-title-off.avif)
 
 By setting the following line in the ```local_settings.py``` file:
 
@@ -94,7 +94,7 @@ G3WSUITE_CUSTOM_TITLE = "The Etruscan Webgis for the masses"
 
 we get the following result:
 
-![Screenshot: Branding 04 Html Title On](/img/manual-english-branding-04-html-title-on.png)
+![Screenshot: Branding 04 Html Title On](/img/manual-english-branding-04-html-title-on.avif)
 
 [Client appearance and customization](branding-client.md)
 

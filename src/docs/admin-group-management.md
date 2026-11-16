@@ -9,15 +9,15 @@
 For each group, the Title and Subtitle defined at the time of creation are shown.
 
 There are also a series of icons to access specific functions:
- * ![Icon: Add](/img/manual-english-icon-add.png) **Add a new project (QGIS)** to be published as WebGis service
+ * ![Icon: Add](/img/manual-english-icon-add.avif) **Add a new project (QGIS)** to be published as WebGis service
  * Number and links to projects published within the Group
- * ![Icon: View](/img/manual-english-icon-view.png) **Show group details**
- * ![Icon: Edit](/img/manual-english-icon-edit.png) **Change** group definitions
- * ![Icon: Erase](/img/manual-english-icon-erase.png) **Delete** group
+ * ![Icon: View](/img/manual-english-icon-view.avif) **Show group details**
+ * ![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** group definitions
+ * ![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** group
 
  In case of request to delete the Cartographic Group, a popup will ask whether the deletion of the Group should be permanent or a simple deactivation, which can be restored from the Trash menu.
 
- ![Screenshot: Group Delete](/img/manual-english-group-delete.png)
+ ![Screenshot: Group Delete](/img/manual-english-group-delete.avif)
 
 **ATTENTION:** the permanent removal  of the cartographic group will involve:
  * the **removal of all the WebGis services** contained therein
@@ -25,7 +25,7 @@ There are also a series of icons to access specific functions:
 
 A large **+ icon** is available to access the form for creating a new group.
 
-![Screenshot: G3W-SUITE Administration Group List](/img/manual-english-g3wsuite-administration-group-list.png)
+![Screenshot: G3W-SUITE Administration Group List](/img/manual-english-g3wsuite-administration-group-list.avif)
 
 Filter cartographic groups by:
  * the MacroGroup to which they belong
@@ -34,7 +34,7 @@ Filter cartographic groups by:
 
 The options of this last filter vary based on the type of logged in user.
 
-![Screenshot: Group Filter](/img/manual-english-group-filter.png)
+![Screenshot: Group Filter](/img/manual-english-group-filter.avif)
 
 ### Cartographic Group Trash
 
@@ -46,7 +46,7 @@ Open the list of deleted groups.
 
 Cartographic Groups and the restore functions through the menu on the left sidebar.
 
-![Screenshot: G3W-ADMIN Trash Group](/img/manual-english-g3wadmin-trash-group.png)
+![Screenshot: G3W-ADMIN Trash Group](/img/manual-english-g3wadmin-trash-group.avif)
 
 Restoring a Cartographic Group involves restoring all the projects it contains and all the accessory settings/functions of both the group and the projects (permissions, searches, editing settings, downloads, etc...).
 
@@ -62,10 +62,10 @@ This order will be reflected within the belonging MacroGroups.
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Icon: Add](/img/manual-english-icon-add.png) **Add a new project (QGIS)** to be published as WebGis service": "![Icona: aggiungi](/img/manual-english-icon-add.png) **Aggiungi un nuovo progetto (QGIS)** da pubblicare come servizio WebGis",
-    "![Icon: Edit](/img/manual-english-icon-edit.png) **Change** group definitions": "![Icona: modifica](/img/manual-english-icon-edit.png) **Modifica** le definizioni del gruppo",
-    "![Icon: Erase](/img/manual-english-icon-erase.png) **Delete** group": "![Icona: elimina](/img/manual-english-icon-erase.png) **Elimina** il gruppo",
-    "![Icon: View](/img/manual-english-icon-view.png) **Show group details**": "![Icona: visualizza](/img/manual-english-icon-view.png) **Mostra i dettagli del gruppo**",
+    "![Icon: Add](/img/manual-english-icon-add.avif) **Add a new project (QGIS)** to be published as WebGis service": "![Icona: aggiungi](/img/manual-english-icon-add.avif) **Aggiungi un nuovo progetto (QGIS)** da pubblicare come servizio WebGis",
+    "![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** group definitions": "![Icona: modifica](/img/manual-english-icon-edit.avif) **Modifica** le definizioni del gruppo",
+    "![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** group": "![Icona: elimina](/img/manual-english-icon-erase.avif) **Elimina** il gruppo",
+    "![Icon: View](/img/manual-english-icon-view.avif) **Show group details**": "![Icona: visualizza](/img/manual-english-icon-view.avif) **Mostra i dettagli del gruppo**",
     "**ATTENTION:** the permanent removal  of the cartographic group will involve:": "**ATTENZIONE:** la rimozione definitiva del Gruppo cartografico comporta:",
     "**Deleting a Cartographic Group from the trash is an irreversible action.**": "**L'eliminazione di un Gruppo cartografico dal cestino è irreversibile.**",
     "**From this item you can access the list of the created cartographic groups.**": "**Questa voce consente di accedere all'elenco dei Gruppi cartografici creati.**",

@@ -14,11 +14,11 @@ View the service's complete legend.
 
 Check the plots in the list and consult them on the rigth panel.
 
-![Screenshot: G3wclient Plots](/img/manual-english-g3wclient-plots.png)
+![Screenshot: G3wclient Plots](/img/manual-english-g3wclient-plots.avif)
 
 The graphs are filterable based on the:
- * ![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map
- * ![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features
+ * ![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.avif) features visible on the map
+ * ![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.avif) filter based on the selected features
  
 These **filters** are also **reflected on the plots associated to the related data** (in 1:N mode) based on the visible and/or selected parent features.
 
@@ -34,7 +34,7 @@ Appropriate **messages** at the single plots level will indicate the activation 
 
 If the **chart is linked to a child layer in a 1:N relation**, it can also be displayed at the information level of the individual parent features
 
-![Screenshot: G3wclient Fomr 1 N Plots](/img/manual-english-g3wclient-fomr-1-n-plots.png)
+![Screenshot: G3wclient Fomr 1 N Plots](/img/manual-english-g3wclient-fomr-1-n-plots.avif)
 
 ### Metadata
 The metadata reported in this session derive from those set at the QGIS project level.
@@ -48,7 +48,7 @@ This content is divided into three sessions: **General, Data, Legend** and **Cre
  * **` Legend`:** reports the legend of the entire project
  * **`Credits`:** references to the G3W-SUITE project and application version information
 
-![Screenshot: G3wclient Metadata View](/img/manual-english-g3wclient-metadata-view.png)
+![Screenshot: G3wclient Metadata View](/img/manual-english-g3wclient-metadata-view.avif)
 
 ### Bookmarks
 This tool will display the spatial bookmarks defined and associated with the QGIS project.
@@ -57,7 +57,7 @@ The user, even if not logged in, will be able to create new bookmarks by simply 
 
 These bookmarks will be saved in the browser cache and therefore always available until deleted.
 
-![Screenshot: Spatial Bookmarks](/img/manual-english-spatial-bookmarks.png)
+![Screenshot: Spatial Bookmarks](/img/manual-english-spatial-bookmarks.avif)
 
 ### Print
 **Printing tool based on layouts defined on QGIS project.**
@@ -72,20 +72,20 @@ Choose:
 
 On the map, a light rectangular area will allow you to define the print area.
 
-![Screenshot: G3wclient Print Tool](/img/manual-english-g3wclient-print-tool.png)
+![Screenshot: G3wclient Print Tool](/img/manual-english-g3wclient-print-tool.avif)
 
 If an **Atlas type print layout** is associated in the QGIS project, the layout reference will be available.
 The cards to be printed are defined by referring to the atlas identifier defined in the print layout.
 
-![Screenshot: G3wclient Print Tool Atlas](/img/manual-english-g3wclient-print-tool-atlas.png)
+![Screenshot: G3wclient Print Tool Atlas](/img/manual-english-g3wclient-print-tool-atlas.avif)
 
  The same panel allows you to create a screenshot (PNG or GeoTiff) of the area displayed on the map.
  
-![Screenshot: G3wclient Print Tool Screenshot](/img/manual-english-g3wclient-print-tool-screenshot.png)
+![Screenshot: G3wclient Print Tool Screenshot](/img/manual-english-g3wclient-print-tool-screenshot.avif)
 
 ### Search and Advanced Search
 
-A classic ![Icon: Query Builder](/img/manual-english-query-builder-icon.png) **Advanced Search** is present at the Search menu level.
+A classic ![Icon: Query Builder](/img/manual-english-query-builder-icon.avif) **Advanced Search** is present at the Search menu level.
 Through this tool it is possible to:
  * carry out alphanumeric searches on geometric layers
  * save the query to reuse it until the end of the work session
@@ -95,16 +95,16 @@ The saved query will be available until the browser cache is cleared
 
 **NB:** fields not exposed as QGIS project-level WMS are not available for query building.
 
-![Screenshot: G3wclient Querybuilder](/img/manual-english-g3wclient-querybuilder.png)
+![Screenshot: G3wclient Querybuilder](/img/manual-english-g3wclient-querybuilder.avif)
 
 **The Search menu contains the list of search tools defined through the Administration panel and custom searches created with the Query Builder.**
 
-![Screenshot: G3wclient Searc List](/img/manual-english-g3wclient-searc-list.png)
+![Screenshot: G3wclient Searc List](/img/manual-english-g3wclient-searc-list.avif)
 
 
 You choose the search you are interested in, fill in the required fields and click on the **`Search`** button.
 
-![Screenshot: G3wclient Search Example](/img/manual-english-g3wclient-search-example.png)
+![Screenshot: G3wclient Search Example](/img/manual-english-g3wclient-search-example.avif)
 
 Additional information is displayed if you log in as Administrator
 
@@ -114,7 +114,7 @@ By positioning on the individual results, the corresponding features will be hig
 
 Zoom to features and download icons are available for results (single or cumulative)
 
-![Screenshot: G3wclient Search Example](/img/manual-english-g3wclient-search-example.png)
+![Screenshot: G3wclient Search Example](/img/manual-english-g3wclient-search-example.avif)
 
 ### Editing layer
 
@@ -138,15 +138,15 @@ The created themes will always be available to the user who defined them.
 
 Once created, the User Themes will be selectable, overwritable and editable using the icons shown next to each of them.
 
-![Screenshot: G3wclient Theme](/img/manual-english-g3wclient-theme.png)
+![Screenshot: G3wclient Theme](/img/manual-english-g3wclient-theme.avif)
 
 [Layers and attribute table](client-layers.md)
 
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map": "![Schermata: filtro mappa dei grafici G3wclient](/img/manual-english-g3wclient-plots-map-filter.png) elementi visibili sulla mappa",
-    "![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features": "![Schermata: filtro selezione dei grafici G3wclient](/img/manual-english-g3wclient-plots-selection-filter.png) filtro basato sugli elementi selezionati",
+    "![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.avif) features visible on the map": "![Schermata: filtro mappa dei grafici G3wclient](/img/manual-english-g3wclient-plots-map-filter.avif) elementi visibili sulla mappa",
+    "![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.avif) filter based on the selected features": "![Schermata: filtro selezione dei grafici G3wclient](/img/manual-english-g3wclient-plots-selection-filter.avif) filtro basato sugli elementi selezionati",
     "**Custom title:** using the **ItemIDs** at the print layout level of the QGIS project it is possible to insert one or more labels with **customized content in the print** from WebGis": "**Titolo personalizzato:** usando gli **ItemID** del layout di stampa nel progetto QGIS, è possibile inserire dal WebGIS una o più etichette con **contenuto personalizzato nella stampa**",
     "**DPI:** print resolution, with delfault values ​​list, but also manually customizable": "**DPI:** risoluzione di stampa, selezionabile da un elenco di valori predefiniti o personalizzabile manualmente",
     "**Format:** print to PNG, JPG, SVG, PDF or GeoPDF": "**Formato:** stampa in PNG, JPG, SVG, PDF o GeoPDF",
@@ -161,7 +161,7 @@ Once created, the User Themes will be selectable, overwritable and editable usin
     "**`Credits`:** references to the G3W-SUITE project and application version information": "**`Credits`:** riferimenti al progetto G3W-SUITE e informazioni sulla versione dell’applicazione",
     "**`Data`:** reports **simple metadata associated with the individual layers**.": "**`Data`:** mostra i **metadati semplici associati ai singoli layer**.",
     "**`General`:** reports the **metadata defined on the QGIS project** in the item: **`Project →  Properties (QGIS Server session, Service Capabilities)`**.": "**`General`:** mostra i **metadati definiti nel progetto QGIS** alla voce **`Project →  Properties (QGIS Server session, Service Capabilities)`**.",
-    "A classic ![Icon: Query Builder](/img/manual-english-query-builder-icon.png) **Advanced Search** is present at the Search menu level.": "Nel menu Ricerca è disponibile una **Ricerca avanzata** classica con ![Icona: Query Builder](/img/manual-english-query-builder-icon.png).",
+    "A classic ![Icon: Query Builder](/img/manual-english-query-builder-icon.avif) **Advanced Search** is present at the Search menu level.": "Nel menu Ricerca è disponibile una **Ricerca avanzata** classica con ![Icona: Query Builder](/img/manual-english-query-builder-icon.avif).",
     "Activation of editing session.": "Attiva la sessione di modifica.",
     "Additional information is displayed if you log in as Administrator": "Se accedi come amministratore vengono mostrate informazioni aggiuntive.",
     "Appropriate **messages** at the single plots level will indicate the activation of these filters.": "Messaggi appropriati accanto ai singoli grafici indicano l’attivazione di questi filtri.",

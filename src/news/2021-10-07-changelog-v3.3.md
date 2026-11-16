@@ -37,27 +37,27 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-planetek.png" alt="Planetek Italia" loading="lazy">
+    <img src="/img/site-planetek.avif" alt="Planetek Italia" loading="lazy">
     <div class="sponsor-name"><a href="https://www.planetek.it/" target="_blank" rel="noopener noreferrer">Planetek Italia</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana.png" alt="Consorzio Bonifica Renana" loading="lazy">
+    <img src="/img/site-bonifica-renana.avif" alt="Consorzio Bonifica Renana" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Consorzio Bonifica Renana</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpal.png" alt="ARPA Liguria" loading="lazy">
+    <img src="/img/site-arpal.avif" alt="ARPA Liguria" loading="lazy">
     <div class="sponsor-name"><a href="https://www.arpal.liguria.it/" target="_blank" rel="noopener noreferrer">ARPA Liguria</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-palermo.png" alt="Comune di Palermo" loading="lazy">
+    <img src="/img/site-palermo.avif" alt="Comune di Palermo" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.palermo.it/" target="_blank" rel="noopener noreferrer">Comune di Palermo</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-trento.png" alt="Comune di Trento" loading="lazy">
+    <img src="/img/site-trento.avif" alt="Comune di Trento" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.trento.it/" target="_blank" rel="noopener noreferrer">Comune di Trento</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bari.png" alt="Comune di Bari" loading="lazy">
+    <img src="/img/site-bari.avif" alt="Comune di Bari" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.bari.it/" target="_blank" rel="noopener noreferrer">Comune di Bari</a></div>
   </div>
 </div>
@@ -70,7 +70,7 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 The definition on the **QGIS project** of the **order of the layers in the map**, **independent of the order of the layers in the TOC**, is now managed.
 
-<img src="/img/site-layer-order.png" alt="Screenshot: Layer Order" loading="lazy">
+<img src="/img/site-layer-order.avif" alt="Screenshot: Layer Order" loading="lazy">
 
 ### Feature: 1:N relation based on multi fields**  **
 
@@ -78,7 +78,7 @@ The definition on the **QGIS project** of the **order of the layers in the map**
 
 The ability to create **relations based on more than one field** is now managed but **limited to the data consultation aspects** (no searches and no editing)
 
-<img src="/img/site-multi-fields-relation.png" alt="Screenshot: Multi Fields Relation" loading="lazy">
+<img src="/img/site-multi-fields-relation.avif" alt="Screenshot: Multi Fields Relation" loading="lazy">
 
 ## Filters and constraints
 
@@ -98,7 +98,7 @@ It is possible to base the **various filters also on the anonymous user** (publi
 - **geo-constraints** (visualization and editing)
 - **alphanumeric constraints** based on **SQL** and **QGIS expressions** (visualization and editing)
 
-<img src="/img/site-anonymous-user-filter.png" alt="Screenshot: Anonymous User Filter" loading="lazy">
+<img src="/img/site-anonymous-user-filter.avif" alt="Screenshot: Anonymous User Filter" loading="lazy">
 
 ### Feature: Filters on empity layers
 
@@ -106,7 +106,7 @@ It is possible to** hide, automatically, layers from the TOC when they have no r
 
 **Useful** when **using filters on layers or geographic views**.
 
-<img src="/img/site-mappa.png" alt="Screenshot: Mappa" loading="lazy">
+<img src="/img/site-mappa.avif" alt="Screenshot: Mappa" loading="lazy">
 
 ### Feature: Hide attributes table**  **
 
@@ -136,7 +136,7 @@ The results will be differentiated according to the corresponding layer.
 
 **Especially useful in the case of multigeometric layers**.
 
-<img src="/img/site-search-multi-layer.png" alt="Screenshot: Search Multi Layer" loading="lazy">
+<img src="/img/site-search-multi-layer.avif" alt="Screenshot: Search Multi Layer" loading="lazy">
 
 ## Data providers
 
@@ -144,7 +144,7 @@ The results will be differentiated according to the corresponding layer.
 
 Reading/**editing** support on **Oracle Spatial DB** is extended
 
-<img src="/img/site-oracle-spatial.png" alt="Screenshot: Oracle Spatial" loading="lazy">
+<img src="/img/site-oracle-spatial.avif" alt="Screenshot: Oracle Spatial" loading="lazy">
 
 ## Cartographic Client
 
@@ -171,13 +171,13 @@ The **Add layer** tool now support:
 
 It is also possible to **define a field** in the imported file to be used for **labels**,
 
-<img src="/img/site-add-layer-from-csv.png" alt="Screenshot: Add Layer From CSV" loading="lazy">
+<img src="/img/site-add-layer-from-csv.avif" alt="Screenshot: Add Layer From CSV" loading="lazy">
 
 ### Feature: Add GeoTIFF export tool
 
 The tools permits to **export canvas area as GeoTIFF**.
 
-<img src="/img/site-geotiff.png" alt="Screenshot: Geotiff" loading="lazy">
+<img src="/img/site-geotiff.avif" alt="Screenshot: Geotiff" loading="lazy">
 
 ### Feature: Legend position
 
@@ -186,7 +186,7 @@ An option, at the publication level of the QGIS project, allows to set **legend 
 - **TAB** (default value, legend is rendered into a separate tab)
 - **TOC** (legend is rendered inside layers toc)
 
-<img src="/img/site-legend-toc.png" alt="Screenshot: Legend Toc" loading="lazy">
+<img src="/img/site-legend-toc.avif" alt="Screenshot: Legend Toc" loading="lazy">
 
 ### Feature: Manually defining the content of a search results****
 
@@ -249,13 +249,13 @@ Map client and administration panel are available in additional languages:
 
 - **French**
 
-<img src="/img/site-french-flag.png" alt="Screenshot: French Flag" loading="lazy">
+<img src="/img/site-french-flag.avif" alt="Screenshot: French Flag" loading="lazy">
 
 ### Feature: Search system for project and cartographic groups
 
 In the administration session, a search tool will** allow you to find projects and cartographic groups** without having to manually consult all the contents.
 
-<img src="/img/site-search-project.png" alt="Screenshot: Search Project" loading="lazy">
+<img src="/img/site-search-project.avif" alt="Screenshot: Search Project" loading="lazy">
 
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>

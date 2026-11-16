@@ -2,6 +2,10 @@
 
 Latest updates from G3W-SUITE
 
+- **16 November 2026** — [A new website for G3W-SUITE](/en/news/new-website/)
+
+  Discover the new website and how its pages, translations and documentation are prepared.
+
 - **13 November 2026** — [A platform for managing your geospatial infrastructure](/en/news/geospatial-infrastructure/)
 
   G3W-SUITE brings together QGIS publishing, team collaboration, geospatial analysis and metadata sharing.
@@ -74,12 +78,14 @@ Latest updates from G3W-SUITE
       "**13 November 2026** — [A platform for managing your geospatial infrastructure](/en/news/geospatial-infrastructure/)": "**13 novembre 2026** — [Una piattaforma per gestire la tua infrastruttura geospaziale](/en/news/geospatial-infrastructure/)",
       "**15 November 2022** — [Version 3.5](/en/news/v3.5/)": "**15 novembre 2022** — [Versione 3.5](/en/news/v3.5/)",
       "**16 March 2024** — [MerginMaps Partnership](/en/news/merginmaps/)": "**16 marzo 2024** — [Partnership con Mergin Maps](/en/news/merginmaps/)",
+      "**16 November 2026** — [A new website for G3W-SUITE](/en/news/new-website/)": "**16 novembre 2026** — [Un nuovo sito per G3W-SUITE](/en/news/new-website/)",
       "**17 June 2024** — [Version 3.8](/en/news/v3.8/)": "**17 giugno 2024** — [Versione 3.8](/en/news/v3.8/)",
       "**17 May 2023** — [Version 3.6](/en/news/v3.6/)": "**17 maggio 2023** — [Versione 3.6](/en/news/v3.6/)",
       "**18 November 2020** — [Version 3.1](/en/news/v3.1/)": "**18 novembre 2020** — [Versione 3.1](/en/news/v3.1/)",
       "**23 January 2025** — [Version 3.9](/en/news/v3.9/)": "**23 gennaio 2025** — [Versione 3.9](/en/news/v3.9/)",
       "**30 July 2025** — [Version 3.10](/en/news/v3.10/)": "**30 luglio 2025** — [Versione 3.10](/en/news/v3.10/)",
       "**30 June 2020** — [Version 3.0](/en/news/v3.0/)": "**30 giugno 2020** — [Versione 3.0](/en/news/v3.0/)",
+      "Discover the new website and how its pages, translations and documentation are prepared.": "Scopri il nuovo sito e come vengono preparati pagine, traduzioni e documentazione.",
       "G3W-SUITE brings together QGIS publishing, team collaboration, geospatial analysis and metadata sharing.": "G3W-SUITE riunisce la pubblicazione con QGIS, la collaborazione tra team, l'analisi geospaziale e la condivisione dei metadati.",
       "G3W-Suite News": "Novità - G3W-Suite",
       "Gis3W is an official Mergin Maps partner, supporting field data collection workflows built on QGIS.": "Gis3W è partner ufficiale di Mergin Maps e supporta i flussi di raccolta dati sul campo basati su QGIS.",

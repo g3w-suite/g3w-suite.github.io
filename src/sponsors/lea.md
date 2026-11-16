@@ -1,6 +1,6 @@
 # LEA
 
-![LEA](/img/site-lea-logo.png)
+![LEA](/img/site-lea-logo.avif)
 
 LEA provides utility services in the Locarno area of Switzerland, including drinking water.
 

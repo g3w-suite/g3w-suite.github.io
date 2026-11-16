@@ -38,7 +38,7 @@ Data on physical files and / or on GeoDB SpatiaLite and QGIS cartographic projec
    * a **`project_data` sub-directory** that must contain the **geographic data** used for the various cartographic projects, such data can also be organized in subdirectories with no nesting limits.
    * a **`projects` sub-directory** that must contain the **QGIS cartographic projects** (.qgz or .qgs files)
 
-![Screenshot: Datamanagement](/img/manual-english-datamanagement.png)
+![Screenshot: Datamanagement](/img/manual-english-datamanagement.avif)
 
 **NB:** The name of the local directory dedicated to geographic data must correspond to the name defined for the **`DATASOURCE_PATH`** variable set during installation.
 [See dedicated paragraph.](settings#base-settings)
@@ -51,13 +51,13 @@ The data stored in the local **`project_data`** directory must be synchronized o
 
 The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.
 
-To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located in the upper right corner.
+To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located in the upper right corner.
 
 Choose the **`File Manager`** item in the linked menu.
 
-![Icon: G3wclient Config](/img/manual-english-g3wclient-icon-config.png)
+![Icon: G3wclient Config](/img/manual-english-g3wclient-icon-config.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Menu](/img/manual-english-g3wsuite-administration-configuration-menu.png)
+![Screenshot: G3W-SUITE Administration Configuration Menu](/img/manual-english-g3wsuite-administration-configuration-menu.avif)
 
 Use this tool to manage geographic data stored on the server.
 
@@ -75,7 +75,7 @@ All the directories can be organized in subdirectories with no nesting limits.
 **NB:** The names of these directories are defined by the basic settings set during the installation of the suite.
 [See dedicated paragraph.](settings#base-settings)
 
-![Screenshot: G3W-SUITE Administration File Manager](/img/manual-english-g3wsuite-administration-file-manager.png)
+![Screenshot: G3W-SUITE Administration File Manager](/img/manual-english-g3wsuite-administration-file-manager.avif)
 
 The example shows the case in which in the local **project_data** directory there are two directories (**geopackage** and **spatialite**) in addition to the two system directories (**svg** and **media_user**).
 
@@ -133,7 +133,7 @@ In the next chapter the powers and limits of the two roles will be described in 
       "The example shows the case in which in the local **project_data** directory there are two directories (**geopackage** and **spatialite**) in addition to the two system directories (**svg** and **media_user**).": "L'esempio mostra il caso in cui nella directory locale **project_data** sono presenti due directory (**geopackage** e **spatialite**), oltre alle due directory di sistema (**svg** e **media_user**).",
       "The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.": "I dati geografici archiviati nella cartella locale **`project_data`** devono essere caricati mantenendo la struttura delle eventuali sottodirectory.",
       "The suite also supports viewing and editing:": "La suite supporta anche la consultazione e la modifica di:",
-      "To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located in the upper right corner.": "Per sincronizzare i dati, accedere al pannello di amministrazione di G3W-ADMIN e fare clic sull'**icona `Configurazioni`** ![Icona: configurazione](/img/manual-english-iconconfiguration.png) nell'angolo superiore destro.",
+      "To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located in the upper right corner.": "Per sincronizzare i dati, accedere al pannello di amministrazione di G3W-ADMIN e fare clic sull'**icona `Configurazioni`** ![Icona: configurazione](/img/manual-english-iconconfiguration.avif) nell'angolo superiore destro.",
       "Two specific directories can also be created within the root directory of the File Manager:": "Nella directory radice di File Manager è inoltre possibile creare due directory specifiche:",
       "Use this tool to manage geographic data stored on the server.": "Usa questo strumento per gestire i dati geografici presenti sul server.",
       "Virtual layer": "Layer virtuale",

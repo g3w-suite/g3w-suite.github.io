@@ -12,8 +12,8 @@ The current release (3.11) is compatible with QGIS 3.44 LTR (Server and Desktop)
 
 Through the web interface, administrators can publish and organize QGIS projects, manage users and roles, configure search tools, enable online editing and functional modules, and assign access permissions.
 
-![G3W-SUITE administration panel](/img/installation-english-admin.jpg)
-![G3W-SUITE cartographic client](/img/installation-english-client.jpg)
+![G3W-SUITE administration panel](/img/installation-english-admin.avif)
+![G3W-SUITE cartographic client](/img/installation-english-client.avif)
 
 ## Getting started
 

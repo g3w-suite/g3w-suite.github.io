@@ -34,15 +34,15 @@ Among the **main funder of this version** we remember:
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-irpi-logo.png" alt="IRPI CNR" loading="lazy">
+    <img src="/img/site-irpi-logo.avif" alt="IRPI CNR" loading="lazy">
     <div class="sponsor-name"><a href="https://www.irpi.cnr.it/" target="_blank" rel="noopener noreferrer">IRPI CNR</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-grosseto-logo.png" alt="{{t 'Public Administration of Grosseto'}}" loading="lazy">
+    <img src="/img/site-grosseto-logo.avif" alt="{{t 'Public Administration of Grosseto'}}" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.grosseto.it/" target="_blank" rel="noopener noreferrer">{{t 'Public Administration of Grosseto'}}</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-logomcr.png" alt="{{t 'Rovereto Civic Museum Foundation'}}" loading="lazy">
+    <img src="/img/site-logomcr.avif" alt="{{t 'Rovereto Civic Museum Foundation'}}" loading="lazy">
     <div class="sponsor-name"><a href="https://www.fondazionemcr.it/" target="_blank" rel="noopener noreferrer">{{t 'Rovereto Civic Museum Foundation'}}</a></div>
   </div>
 </div>
@@ -53,13 +53,13 @@ Among the **main funder of this version** we remember:
 
 The cartographic client has undergone a major restyling to make the interface cleaner, more functional and eliminate some problems with the correct display of the various contextual menus.
 
-<img src="/img/site-new-client2.png" alt="{{t 'Screenshot: New Client2'}}" loading="lazy">
+<img src="/img/site-new-client2.avif" alt="{{t 'Screenshot: New Client2'}}" loading="lazy">
 
 ### Feature: Upgrade to Django 4.2
 
 Migration to Django 4.2 and integration of new features in the release
 
-<img src="/img/site-g3wsuite-django-4-2-admin-screen.jpg" alt="{{t 'Screenshot: G3W-SUITE Django 4 2 Admin Screen'}}" loading="lazy">
+<img src="/img/site-g3wsuite-django-4-2-admin-screen.avif" alt="{{t 'Screenshot: G3W-SUITE Django 4 2 Admin Screen'}}" loading="lazy">
 
 ## Administration
 
@@ -69,7 +69,7 @@ This function helps in the management of complex projects where users must be ab
 
 Through this function it is possible to clone the editing settings of a user and automatically apply the same settings to other users and/or groups of users.
 
-<img src="/img/site-user-copy-permissions.png" alt="{{t 'Screenshot: User Copy Permissions'}}" loading="lazy">
+<img src="/img/site-user-copy-permissions.avif" alt="{{t 'Screenshot: User Copy Permissions'}}" loading="lazy">
 
 ### Feature: Definition of the layers visible in the list of editable layers
 
@@ -77,7 +77,7 @@ In the case of layers with many 1:N relations (even cascade ones), it could be u
 
 This function allows you not to make the child layers visible in the list of editable layers, simplifying the interface and forcing the workflow's user in this direction.
 
-<img src="/img/site-visibility-layers-editable.png" alt="{{t 'Screenshot: Visibility Layers Editable'}}" loading="lazy">
+<img src="/img/site-visibility-layers-editable.avif" alt="{{t 'Screenshot: Visibility Layers Editable'}}" loading="lazy">
 
 ## Cartographic client and interaction with the map
 
@@ -85,13 +85,13 @@ This function allows you not to make the child layers visible in the list of edi
 
 The client has undergone extensive refactoring work in order to improve the graphic appearance, standardize the operational flows and eliminate small bugs present in previous versions.
 
-<img src="/img/site-new-client.png" alt="{{t 'Screenshot: New Client'}}" loading="lazy">
+<img src="/img/site-new-client.avif" alt="{{t 'Screenshot: New Client'}}" loading="lazy">
 
 ### Feature: Pagination of records of the child layer of 1:N relation
 
 In order to allow the management of large amounts of data, the list of records of a layer related in 1:N mode is displayed on the basis of a pagination system.
 
-<img src="/img/site-webgis-related-records-pagination.png" alt="{{t 'Screenshot: Webgis Related Records Pagination'}}" loading="lazy">
+<img src="/img/site-webgis-related-records-pagination.avif" alt="{{t 'Screenshot: Webgis Related Records Pagination'}}" loading="lazy">
 
 ### Feature: Pagination of search and query results
 
@@ -149,7 +149,7 @@ Not only that, it is also possible to select multiple parent features and modify
 
 The list of values listed in the drop-down menu can be sorted both by key and by value, defining this aspect on the QGIS project.
 
-<img src="/img/site-editing-order-value-key.png" alt="{{t 'Screenshot: Editing Order Value Key'}}" loading="lazy">
+<img src="/img/site-editing-order-value-key.avif" alt="{{t 'Screenshot: Editing Order Value Key'}}" loading="lazy">
 
 ### Feature: Copy and paste between layers
 
@@ -175,7 +175,7 @@ Visibility management of conditional field groups has been implemented and impro
 
 During the editing phase, not only the individual user can be traced, but also the groups of users associated with him, differentiating the creation and modification of features
 
-<img src="/img/site-editing-user-group-log.png" alt="{{t 'Screenshot: Editing User Group Log'}}" loading="lazy">
+<img src="/img/site-editing-user-group-log.avif" alt="{{t 'Screenshot: Editing User Group Log'}}" loading="lazy">
 
 ## Print
 
@@ -185,7 +185,7 @@ During the editing phase, not only the individual user can be traced, but also t
 
 If on the QGIS project I exclude a print layout from those available in the WMS service, this is excluded also from the WebGis service
 
-<img src="/img/site-exclude-map-layouts.png" alt="{{t 'Screenshot: Exclude Map Layouts'}}" loading="lazy">
+<img src="/img/site-exclude-map-layouts.avif" alt="{{t 'Screenshot: Exclude Map Layouts'}}" loading="lazy">
 
 ## Minor improvements
 

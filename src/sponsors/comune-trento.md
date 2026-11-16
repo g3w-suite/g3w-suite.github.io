@@ -1,6 +1,6 @@
 # Comune di Trento
 
-![Comune di Trento](/img/site-trento.png)
+![Comune di Trento](/img/site-trento.avif)
 
 The Municipality of Trento is the local government of Trento, in northern Italy.
 

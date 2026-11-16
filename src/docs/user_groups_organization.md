@@ -11,7 +11,7 @@ The following image shows an example of the functional use of these organization
 
 Access policies and individual functional modules may be associated with each WebGis service.
 
-![Screenshot: G3W-SUITE Administration Organization Containers Simple](/img/manual-english-g3wsuite-administration-organization-containers-simple.png)
+![Screenshot: G3W-SUITE Administration Organization Containers Simple](/img/manual-english-g3wsuite-administration-organization-containers-simple.avif)
 
 ## Types of Users (Roles)
 In G3W-SUITE you can create **Users** and **Users Groups** and associate them with specific roles:
@@ -58,7 +58,7 @@ When creating a cartographic group, the Admin user can define:
  * the eventual user (individual/group) **Editor 2** to associate the Group with
  * **Viewers** users (individuals/groups) who will have access to this container
 
-![Screenshot: G3W-SUITE Administration Organization Containers No Mg](/img/manual-english-g3wsuite-administration-organization-containers-no-mg.png)
+![Screenshot: G3W-SUITE Administration Organization Containers No Mg](/img/manual-english-g3wsuite-administration-organization-containers-no-mg.avif)
 
 In the event that the Cartographic Group is assigned to **Editor 2** (single or group users), they will may autonomously publish/update WebGis services inside in this container. 
 
@@ -78,7 +78,7 @@ In this way it will be possible to create totally independent entities, the Macr
 
 Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.
 
-![Screenshot: G3W-SUITE Administration Organization Containers](/img/manual-english-g3wsuite-administration-organization-containers.png)
+![Screenshot: G3W-SUITE Administration Organization Containers](/img/manual-english-g3wsuite-administration-organization-containers.avif)
 
 As previously specified, **Editor 1** user will be able to:
  * create **users** (single and/or groups) of type Editor2 and Viewer

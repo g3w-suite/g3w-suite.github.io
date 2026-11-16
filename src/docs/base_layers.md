@@ -4,11 +4,11 @@ Add, edit or delete `Base layers` for WebGIS services at the Cartographic Group 
 
 Only users with the `Admin level 1` role can configure base layers in the Django admin interface.
 
-![Screenshot: Configuration Django Admin Access](/img/configuration-django-admin-access.png)
+![Screenshot: Configuration Django Admin Access](/img/configuration-django-admin-access.avif)
 
-![Screenshot: Configuration Django Admin Base Layers](/img/configuration-django-admin-base-layers.png)
+![Screenshot: Configuration Django Admin Base Layers](/img/configuration-django-admin-base-layers.avif)
 
-![Screenshot: Configuration Django Admin Base Layers Form](/img/configuration-django-admin-base-layers-form.png)
+![Screenshot: Configuration Django Admin Base Layers Form](/img/configuration-django-admin-base-layers-form.avif)
 
 Form fields:
  - `Name`: an internal identifier for the base layer.

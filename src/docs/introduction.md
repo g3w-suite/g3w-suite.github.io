@@ -12,9 +12,9 @@ The manual covers:
 
 **The current release (3.11) is compatible with `QGIS 3.44.x LTR` (Server and Desktop).**
 
-![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.png)
+![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.avif)
 
-![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.png)
+![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.avif)
 
 ## Versions and compatibility
 
@@ -32,11 +32,11 @@ The publishing system is based on a series of OS tools and software
 * The main libraries used for the management and the visualization of the geographical part and the interaction with the user are: **`OpenLayer, Boostrap, jQuery, Lodash` and `Vue.js`**.
 * **`Gulp.js`** as task runner
 
-![Screenshot: Architecture](/img/manual-english-architecture.png)
+![Screenshot: Architecture](/img/manual-english-architecture.avif)
 
 Below is a diagram relating to the standard workflow
 
-![Screenshot: Architecture Workflow](/img/manual-english-architecture-workflow.png)
+![Screenshot: Architecture Workflow](/img/manual-english-architecture-workflow.avif)
 
 ### Main contributors
 * Walter Lorenzetti - Gis3W ([@wlorenzetti](https://github.com/wlorenzetti))

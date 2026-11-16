@@ -18,7 +18,7 @@ This custom css can be used to override some default suite css settings and allo
 
 Somethimes you do not need the metadata, print, bookmarks section:
 
-![Screenshot: Branding 11 Css Remove Off](/img/manual-english-branding-11-css-remove-off.png)
+![Screenshot: Branding 11 Css Remove Off](/img/manual-english-branding-11-css-remove-off.avif)
 
 Assume you want to remove everyting but the layer view. This can be done by adding the following css to the custom css file:
 
@@ -47,14 +47,14 @@ Assume you want to remove everyting but the layer view. This can be done by addi
 
 This results in the following view:
 
-![Screenshot: Branding 12 Css Remove On](/img/manual-english-branding-12-css-remove-on.png)
+![Screenshot: Branding 12 Css Remove On](/img/manual-english-branding-12-css-remove-on.avif)
 
 
 The same goes for most of the elements you can check out with the browser's inspector.
 
 Do you want to remove the bottom map logo?
 
-![Logo: Branding 14 Css Map On](/img/manual-english-branding-14-css-map-logo-on.png)
+![Logo: Branding 14 Css Map On](/img/manual-english-branding-14-css-map-logo-on.avif)
 
 Then add the following css to the custom css file:
 
@@ -66,7 +66,7 @@ Then add the following css to the custom css file:
 
 This will remove the bottom map logo:
 
-![Logo: Branding 15 Css Map Off](/img/manual-english-branding-15-css-map-logo-off.png)
+![Logo: Branding 15 Css Map Off](/img/manual-english-branding-15-css-map-logo-off.avif)
 
 #### Example: change the skin color
 
@@ -83,7 +83,7 @@ To change the skin color of the suite, you can add the following css to the cust
 
 This will change the skin color to red (HSL values tested prior in [inkscape](https://inkscape.org/)).
 
-![Screenshot: Branding 13 Css Skin](/img/manual-english-branding-13-css-skin.png)
+![Screenshot: Branding 13 Css Skin](/img/manual-english-branding-13-css-skin.avif)
 
 
 ### G3W_CLIENT_SEARCH_TITLE
@@ -96,7 +96,7 @@ G3W_CLIENT_SEARCH_TITLE = "Search for the Holy Grail"
 
 This will help user to search for the Holy Grail:
 
-![Screenshot: Branding 17 Search Title](/img/manual-english-branding-17-search-title.png)
+![Screenshot: Branding 17 Search Title](/img/manual-english-branding-17-search-title.avif)
 
 ### G3W_CLIENT_HEADER_CUSTOM_LINKS
 
@@ -128,15 +128,15 @@ The **i18n** key is used to translate the title of the link. If set to True, the
 
 The above example creates changes the top bar from:
 
-![Screenshot: Branding 05 Header Links Off](/img/manual-english-branding-05-header-links-off.png)
+![Screenshot: Branding 05 Header Links Off](/img/manual-english-branding-05-header-links-off.avif)
 
 to:
 
-![Screenshot: Branding 06 Header Links On](/img/manual-english-branding-06-header-links-on.png)
+![Screenshot: Branding 06 Header Links On](/img/manual-english-branding-06-header-links-on.avif)
 
 While ths first link opens a new tab with the Gis3W company website, the second link opens a modal dialog like this:
 
-![Screenshot: Branding 07 Header Links Click](/img/manual-english-branding-07-header-links-click.png)
+![Screenshot: Branding 07 Header Links Click](/img/manual-english-branding-07-header-links-click.avif)
 
 
 ### G3W_CLIENT_RIGHT_PANEL
@@ -175,12 +175,12 @@ G3W_CLIENT_LEGEND = {
 
 This would change the legend from:
 
-![Screenshot: Branding 19 Legend Off](/img/manual-english-branding-19-legend-off.png)
+![Screenshot: Branding 19 Legend Off](/img/manual-english-branding-19-legend-off.avif)
 
 to:
 
 
-![Screenshot: Branding 18 Legend](/img/manual-english-branding-18-legend.png)
+![Screenshot: Branding 18 Legend](/img/manual-english-branding-18-legend.avif)
 
 <script type="application/json" data-i18n>
 {

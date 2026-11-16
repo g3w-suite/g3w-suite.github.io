@@ -1,6 +1,6 @@
 # Comune di Grosseto
 
-![Comune di Grosseto](/img/site-grosseto-logo.png)
+![Comune di Grosseto](/img/site-grosseto-logo.avif)
 
 The Municipality of Grosseto is the local government of Grosseto, in Tuscany.
 

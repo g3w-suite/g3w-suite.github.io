@@ -41,7 +41,7 @@ docker-compose up -d
 
 If all went well, G3W-SUITE run on http://localhost:8080
 
-![Login Page](/img/installation-english-login-page.png)
+![Login Page](/img/installation-english-login-page.avif)
 
 ## G3W-SUITE with consumer image
 G3W-SUITE use `huey` for bach processing (https://github.com/coleifer/huey), so if you want to use it,
@@ -209,7 +209,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Login Page](/img/installation-english-login-page.png)": "![Pagina di accesso](/img/installation-english-login-page.png)",
+    "![Login Page](/img/installation-english-login-page.avif)": "![Pagina di accesso](/img/installation-english-login-page.avif)",
     "A custom CSS is added to the pages, the file is located in `config/g3w-suite/overrides/static/style.css` and can be modified directly, changes are effective immediately.": "Alle pagine viene aggiunto un CSS personalizzato; il file si trova in `config/g3w-suite/overrides/static/style.css` e può essere modificato direttamente. Le modifiche sono applicate immediatamente.",
     "Become postgres user": "Passare all'utente postgres",
     "Builds": "Build",

@@ -1,6 +1,6 @@
 # Planetek Italia
 
-![Planetek Italia](/img/site-planetek.png)
+![Planetek Italia](/img/site-planetek.avif)
 
 Planetek Italia works with geospatial information and Earth observation for applications including environmental and infrastructure monitoring.
 

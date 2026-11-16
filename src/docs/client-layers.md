@@ -13,7 +13,7 @@ If the **`Show features count`** function is activated in the project, the layer
 
 In case of multi-style associated with the layer, the number of geometries reported will vary following the passage from one style to another.
 
-![Screenshot: G3wclient Features Count](/img/manual-english-g3wclient-features-count.png)
+![Screenshot: G3wclient Features Count](/img/manual-english-g3wclient-features-count.avif)
 
 In the list of layers, right click on the name of the single layer shows the following items:
  * **Name and geometry type** of the layer
@@ -28,7 +28,7 @@ In the list of layers, right click on the name of the single layer shows the fol
  * **Export:** download of the layer in different formats, based on what is defined in the Administration session
  * **Layer settings:** link to the layer administration section (available only if logged in as an administrator user)
 
-![Screenshot: G3wclient Layer Function](/img/manual-english-g3wclient-layer-function.png)
+![Screenshot: G3wclient Layer Function](/img/manual-english-g3wclient-layer-function.avif)
 
 Double clicking on the layer or Layer Group zooms to the extent of the layer or Group content.
 
@@ -48,13 +48,13 @@ To the left of each record in the table there are two/three tools:
  * in the case of a layer editable by the user, an editing icon to allow direct modification of the feature
  * the ‘Show relations’ icon to open the list of 1:N relations (if present) of thath parent record
 
-![Screenshot: G3wclient Table View](/img/manual-english-g3wclient-table-view.png)
+![Screenshot: G3wclient Table View](/img/manual-english-g3wclient-table-view.avif)
 
 A **generic filter**, positioned at the top right, is applied generically to the contents of all the fields, and it will allow you to filter the list of displayed records. 
 
 **Filters based on the contents of the individual fields** are available at the top of each column.
 
-The **Update results when map moves** icon ![Screenshot: G3wclient Mapfilter Table](/img/manual-english-g3wclient-mapfilter-table.png), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.
+The **Update results when map moves** icon ![Screenshot: G3wclient Mapfilter Table](/img/manual-english-g3wclient-mapfilter-table.avif), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.
 
 It is possible to **select the features of the individual layers and apply filters** that will affect:
  * on the map content
@@ -74,15 +74,15 @@ At the same time, additional icons appear:
  * at the level of the relevant plots
 
 The icons, palced in the left buttom corner of the attribute, table allow you to:
- * ![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.png) Clear selection
- * ![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.png) Invert selection
- * ![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.png) Add/Remove filter
+ * ![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.avif) Clear selection
+ * ![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.avif) Invert selection
+ * ![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.avif) Add/Remove filter
 
 The icons to the right of the layer on the TOC allow you to:
  * Clear selection
  * Enable/Disable  filter
 
-![Icon: G3wclient Selection Toc](/img/manual-english-g3wclient-selection-icon-toc.png)
+![Icon: G3wclient Selection Toc](/img/manual-english-g3wclient-selection-icon-toc.avif)
 
 When one or more features are selected, they appear highlighted in red on the map.
 Activation of the filter is reflected:
@@ -91,7 +91,7 @@ Activation of the filter is reflected:
  * on the data displayed by plots
  * on the print contents
 
- ![Screenshot: G3wclient Table Select](/img/manual-english-g3wclient-table-select.png)
+ ![Screenshot: G3wclient Table Select](/img/manual-english-g3wclient-table-select.avif)
 
 
 #### Filter users based
@@ -108,17 +108,17 @@ Following activation of the filter, a logged in user (not AnonymosUser) will be 
 
 Saving the filter occurs via the dedicated icon present at layer level in the legend and in the results form.
 
-![Screenshot: Filter Save](/img/manual-english-filter-save.png)
+![Screenshot: Filter Save](/img/manual-english-filter-save.avif)
 
 The saved filters can be recovered via the dedicated menu that can be viewed by right-clicking on the name of the layer
 
-![Screenshot: Filter Load](/img/manual-english-filter-load.png)
+![Screenshot: Filter Load](/img/manual-english-filter-load.avif)
 
 The presence of an active filter on the layer is highlighted by the red icon next to the layer name.
 
 To deactivate an active filter, simply click on the icon itself.
 
-![Screenshot: Filter Loaded](/img/manual-english-filter-loaded.png)
+![Screenshot: Filter Loaded](/img/manual-english-filter-loaded.avif)
 
 We remind you that activating a filter affects:
  * geometries visible on the map
@@ -130,9 +130,9 @@ We remind you that activating a filter affects:
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.png) Clear selection": "![Schermata: cancella selezione tabella G3wclient](/img/manual-english-g3wclient-selection-table-clear.png) Cancella selezione",
-    "![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.png) Add/Remove filter": "![Schermata: filtro selezione tabella G3wclient](/img/manual-english-g3wclient-selection-table-filter.png) Aggiungi/Rimuovi filtro",
-    "![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.png) Invert selection": "![Schermata: inverti selezione tabella G3wclient](/img/manual-english-g3wclient-selection-table-invert.png) Inverti selezione",
+    "![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.avif) Clear selection": "![Schermata: cancella selezione tabella G3wclient](/img/manual-english-g3wclient-selection-table-clear.avif) Cancella selezione",
+    "![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.avif) Add/Remove filter": "![Schermata: filtro selezione tabella G3wclient](/img/manual-english-g3wclient-selection-table-filter.avif) Aggiungi/Rimuovi filtro",
+    "![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.avif) Invert selection": "![Schermata: inverti selezione tabella G3wclient](/img/manual-english-g3wclient-selection-table-invert.avif) Inverti selezione",
     "**Edit layer:** menu available following activation and based on user permissions": "**Modifica layer:** menu disponibile dopo l’attivazione e in base ai permessi dell’utente",
     "**Export:** download of the layer in different formats, based on what is defined in the Administration session": "**Esporta:** scarica il layer in diversi formati, in base alle impostazioni di amministrazione",
     "**Filters based on the contents of the individual fields** are available at the top of each column.": "Nella parte superiore di ogni colonna sono disponibili **filtri basati sul contenuto dei singoli campi**.",
@@ -177,7 +177,7 @@ We remind you that activating a filter affects:
     "Screenshot: G3wclient Table Select": "Schermata: selezione nella tabella G3wclient",
     "Screenshot: G3wclient Table View": "Schermata: visualizzazione tabellare G3wclient",
     "TOC session": "Pannello TOC",
-    "The **Update results when map moves** icon ![Screenshot: G3wclient Mapfilter Table](/img/manual-english-g3wclient-mapfilter-table.png), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.": "L’icona **Aggiorna i risultati quando la mappa si sposta** ![Schermata: filtro mappa della tabella G3wclient](/img/manual-english-g3wclient-mapfilter-table.png), nell’angolo inferiore sinistro, consente di filtrare i record della tabella in base agli elementi visibili sulla mappa.",
+    "The **Update results when map moves** icon ![Screenshot: G3wclient Mapfilter Table](/img/manual-english-g3wclient-mapfilter-table.avif), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.": "L’icona **Aggiorna i risultati quando la mappa si sposta** ![Schermata: filtro mappa della tabella G3wclient](/img/manual-english-g3wclient-mapfilter-table.avif), nell’angolo inferiore sinistro, consente di filtrare i record della tabella in base agli elementi visibili sulla mappa.",
     "The attribute table (resizable) is equipped with **paging function, highlight function and zooming** to the associated features.": "La tabella attributi (ridimensionabile) dispone di **paginazione, evidenziazione e zoom** sugli elementi associati.",
     "The icons to the right of the layer on the TOC allow you to:": "Le icone a destra del layer nella TOC consentono di:",
     "The icons, palced in the left buttom corner of the attribute, table allow you to:": "Le icone nell’angolo inferiore sinistro della tabella attributi consentono di:",

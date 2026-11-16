@@ -26,11 +26,11 @@ Use this form to add users and set their properties.
  * **`User data`**:
    * Departments and image to be associated with the profile
 
-![Screenshot: G3W-SUITE Administration User Add](/img/manual-english-g3wsuite-administration-user-add.png)
+![Screenshot: G3W-SUITE Administration User Add](/img/manual-english-g3wsuite-administration-user-add.avif)
 
 After filling in the various form, click on the Save button to confirm your choices.
 
-![Button: Save](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.avif)
 
 ### Users list
 Through this form you can consult the list of enabled users and their characteristics:
@@ -44,11 +44,11 @@ Through this form you can consult the list of enabled users and their characteri
  * Created: creation date
  * Backend: info on user creation (G3W-SUITE or LDAP)
  
-![Screenshot: G3W-SUITE Administration User List](/img/manual-english-g3wsuite-administration-user-list.png)
+![Screenshot: G3W-SUITE Administration User List](/img/manual-english-g3wsuite-administration-user-list.avif)
 
 The icons at the head of each row, allow you to:
- * ![Icon: Edit](/img/manual-english-icon-edit.png) **Modify:** to modify the characteristics of the user
- * ![Icon: Erase](/img/manual-english-icon-erase.png) **Delete:** to permanently delete a user
+ * ![Icon: Edit](/img/manual-english-icon-edit.avif) **Modify:** to modify the characteristics of the user
+ * ![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete:** to permanently delete a user
  
 ### Add Group Users
 Use this form to create user groups and assign their roles.
@@ -66,21 +66,21 @@ In the specific form for creating user groups, the following info are defined:
  * **Role:** Editor or Viewer
  * **Users:** list of users belonging to the group
 
-![Screenshot: G3W-SUITE Administration Usergroup Add](/img/manual-english-g3wsuite-administration-usergroup-add.png)
+![Screenshot: G3W-SUITE Administration Usergroup Add](/img/manual-english-g3wsuite-administration-usergroup-add.avif)
  
 After filling in the from, click on the **Save** button to confirm your choices.
 
-![Button: Save](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.avif)
 
 ### Groups users list
 Through this form it is possible to consult the list of enabled user groups, their characteristics and the individual users belonging to the group.
 
-![Screenshot: G3W-SUITE Administration Usergroup List](/img/manual-english-g3wsuite-administration-usergroup-list.png)
+![Screenshot: G3W-SUITE Administration Usergroup List](/img/manual-english-g3wsuite-administration-usergroup-list.avif)
 
 Using the icons at the head of each row, you can:
- * ![Icon: View](/img/manual-english-icon-view.png) **Show details:** to consult the characteristics of the user group
- * ![Icon: Edit](/img/manual-english-icon-edit.png) **Modify:** to modify the characteristics of the group
- * ![Icon: Erase](/img/manual-english-icon-erase.png) **Delete:** to permanently delete a group and therefore association with users belonging to the group itself
+ * ![Icon: View](/img/manual-english-icon-view.avif) **Show details:** to consult the characteristics of the user group
+ * ![Icon: Edit](/img/manual-english-icon-edit.avif) **Modify:** to modify the characteristics of the group
+ * ![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete:** to permanently delete a group and therefore association with users belonging to the group itself
 
 ## Macro Cartographic Groups
 In this section it is possible to view the list of Cartographic Macrogroups, manage them and create new ones.
@@ -117,18 +117,18 @@ Client header composition follows the [Cartographic Group logo settings](admin-c
 
 After compiling the form, click on the **Save button** to confirm your choices.
 
-![Button: Save](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.avif)
 
 
 ### MacroGroups list
 The menu provides access to the list of cartographic macro-groups present.
 
-![Screenshot: G3W-SUITE Administration Macrogroup List](/img/manual-english-g3wsuite-administration-macrogroup-list.png)
+![Screenshot: G3W-SUITE Administration Macrogroup List](/img/manual-english-g3wsuite-administration-macrogroup-list.avif)
 
 There are a series of icons to access specific functions:
- * ![Icon: View](/img/manual-english-icon-view.png) **Show the details** of the MacroGroup
- * ![Icon: Edit](/img/manual-english-icon-edit.png) **Change** characteristics of the MacroGroup
- * ![Icon: Erase](/img/manual-english-icon-erase.png) **Delete** MacroGroup
+ * ![Icon: View](/img/manual-english-icon-view.avif) **Show the details** of the MacroGroup
+ * ![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** characteristics of the MacroGroup
+ * ![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** MacroGroup
 
 **ATTENTION:** the removal of the Cartographic MacroGroup group will result in:
  * the **removal of all the Cartographic Groups** contained in it
@@ -145,14 +145,14 @@ Through the Drag & Drop function it is possible to define the order of the Macro
 <script type="application/json" data-i18n>
   {
     "it": {
-      "![Icon: Edit](/img/manual-english-icon-edit.png) **Change** characteristics of the MacroGroup": "![Icona: modifica](/img/manual-english-icon-edit.png) **Modifica** le caratteristiche del Macrogruppo",
-      "![Icon: Edit](/img/manual-english-icon-edit.png) **Modify:** to modify the characteristics of the group": "![Icona: modifica](/img/manual-english-icon-edit.png) **Modifica:** modificare le caratteristiche del gruppo",
-      "![Icon: Edit](/img/manual-english-icon-edit.png) **Modify:** to modify the characteristics of the user": "![Icona: modifica](/img/manual-english-icon-edit.png) **Modifica:** modificare le caratteristiche dell'utente",
-      "![Icon: Erase](/img/manual-english-icon-erase.png) **Delete** MacroGroup": "![Icona: elimina](/img/manual-english-icon-erase.png) **Elimina** il Macrogruppo",
-      "![Icon: Erase](/img/manual-english-icon-erase.png) **Delete:** to permanently delete a group and therefore association with users belonging to the group itself": "![Icona: elimina](/img/manual-english-icon-erase.png) **Elimina:** eliminare definitivamente un gruppo e la relativa associazione con gli utenti che ne fanno parte",
-      "![Icon: Erase](/img/manual-english-icon-erase.png) **Delete:** to permanently delete a user": "![Icona: elimina](/img/manual-english-icon-erase.png) **Elimina:** eliminare definitivamente l'utente",
-      "![Icon: View](/img/manual-english-icon-view.png) **Show details:** to consult the characteristics of the user group": "![Icona: visualizza](/img/manual-english-icon-view.png) **Mostra dettagli:** consultare le caratteristiche del gruppo di utenti",
-      "![Icon: View](/img/manual-english-icon-view.png) **Show the details** of the MacroGroup": "![Icona: visualizza](/img/manual-english-icon-view.png) **Mostra i dettagli** del Macrogruppo",
+      "![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** characteristics of the MacroGroup": "![Icona: modifica](/img/manual-english-icon-edit.avif) **Modifica** le caratteristiche del Macrogruppo",
+      "![Icon: Edit](/img/manual-english-icon-edit.avif) **Modify:** to modify the characteristics of the group": "![Icona: modifica](/img/manual-english-icon-edit.avif) **Modifica:** modificare le caratteristiche del gruppo",
+      "![Icon: Edit](/img/manual-english-icon-edit.avif) **Modify:** to modify the characteristics of the user": "![Icona: modifica](/img/manual-english-icon-edit.avif) **Modifica:** modificare le caratteristiche dell'utente",
+      "![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** MacroGroup": "![Icona: elimina](/img/manual-english-icon-erase.avif) **Elimina** il Macrogruppo",
+      "![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete:** to permanently delete a group and therefore association with users belonging to the group itself": "![Icona: elimina](/img/manual-english-icon-erase.avif) **Elimina:** eliminare definitivamente un gruppo e la relativa associazione con gli utenti che ne fanno parte",
+      "![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete:** to permanently delete a user": "![Icona: elimina](/img/manual-english-icon-erase.avif) **Elimina:** eliminare definitivamente l'utente",
+      "![Icon: View](/img/manual-english-icon-view.avif) **Show details:** to consult the characteristics of the user group": "![Icona: visualizza](/img/manual-english-icon-view.avif) **Mostra dettagli:** consultare le caratteristiche del gruppo di utenti",
+      "![Icon: View](/img/manual-english-icon-view.avif) **Show the details** of the MacroGroup": "![Icona: visualizza](/img/manual-english-icon-view.avif) **Mostra i dettagli** del Macrogruppo",
       "**ATTENTION: use the Cartographic MacroGroups only if you need them.**": "**ATTENZIONE: utilizzare i Macrogruppi cartografici solo se necessario.**",
       "**ATTENTION:** the removal of the Cartographic MacroGroup group will result in:": "**ATTENZIONE:** la rimozione del Macrogruppo cartografico comporta:",
       "**Add MacroGroups:** to create a new Cartographic MacroGroup": "**Add MacroGroups:** creare un nuovo Macrogruppo cartografico",

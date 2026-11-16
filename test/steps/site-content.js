@@ -142,6 +142,7 @@ Then('both languages are generated from shared page templates', function () {
     '2025-07-30-changelog-v3.10.md',
     '2026-04-08-changelog-v3.11.md',
     '2026-11-13-geospatial-infrastructure.md',
+    '2026-11-16-new-website.md',
     'index.md',
   ]);
   const newsIndexSource = fs.readFileSync(path.join(sourceDir, 'news', 'index.md'), 'utf8').split('<script')[0];
@@ -290,6 +291,17 @@ Then('both languages are generated from shared page templates', function () {
       assert.equal(newsIndex(`main a[href="/${lang}/news/${article}/"]`).length, 1, `${lang} news must link to ${article}`);
       const newsArticle = readPage(path.join(staticDir, lang, 'news', article, 'index.html')).$;
       assert.equal(newsArticle('.changelog').length, 1, `${lang} ${article} must use the single-column article layout`);
+      if (article === 'new-website') {
+        assert.equal(newsArticle(`main a[href="/${lang}/about/matteo-tosi/"]`).text(), 'Matteo Tosi');
+        assert.ok(newsArticle(`main a[href="${docsRoot}/"]`).length, `${lang} announcement must link to the documentation`);
+        const images = newsArticle('main img').map((_, image) => newsArticle(image).attr('src')).get();
+        assert.equal(images.length, 4, `${lang} announcement must have two screenshots and two diagrams`);
+        assert.equal(images[0], `/img/site-new-website-home-${lang}.avif`);
+        assert.equal(images[2], `/img/site-new-website-docs-${lang}.avif`);
+        for (const index of [1, 3]) {
+          assert.match(images[index], /^\/img\/mermaid-[a-f0-9]{64}\.avif$/, `${lang} diagram must be generated from Mermaid`);
+        }
+      }
       if (article === 'geospatial-infrastructure') {
         assert.equal(
           newsArticle('main h1').first().text(),

@@ -26,7 +26,7 @@ We remember in particular:
 
 ### **Happy mapping!**
 
-<img src="/img/site-g3wsuite-3-6.png" alt="Screenshot: G3W-SUITE 3 6" loading="lazy">
+<img src="/img/site-g3wsuite-3-6.avif" alt="Screenshot: G3W-SUITE 3 6" loading="lazy">
 
 ## Sponsor and funder
 
@@ -34,19 +34,19 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-carnia-mountain-community-logo.png" alt="Mountain Community of Carnia" loading="lazy">
+    <img src="/img/site-carnia-mountain-community-logo.avif" alt="Mountain Community of Carnia" loading="lazy">
     <div class="sponsor-name"><a href="https://www.carnia.comunitafvg.it/" target="_blank" rel="noopener noreferrer">Mountain Community of Carnia</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana-logo.jpg" alt="Reno Reclamation Consortium" loading="lazy">
+    <img src="/img/site-bonifica-renana-logo.avif" alt="Reno Reclamation Consortium" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Reno Reclamation Consortium</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-grosseto-municipality-logo.jpeg" alt="Municipality of Grosseto" loading="lazy">
+    <img src="/img/site-grosseto-municipality-logo.avif" alt="Municipality of Grosseto" loading="lazy">
     <div class="sponsor-name"><a href="https://new.comune.grosseto.it/web/" target="_blank" rel="noopener noreferrer">Municipality of Grosseto</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-trento-municipality-logo.jpeg" alt="Municipality of Trento" loading="lazy">
+    <img src="/img/site-trento-municipality-logo.avif" alt="Municipality of Trento" loading="lazy">
     <div class="sponsor-name"><a href="https://www.comune.trento.it/" target="_blank" rel="noopener noreferrer">Municipality of Trento</a></div>
   </div>
 </div>
@@ -59,7 +59,7 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 Take advantage of all the news related to the preparation of QGIS projects with the new LTR version
 
-<img src="/img/site-qgis-3-28.png" alt="Screenshot: QGIS 3 28" loading="lazy">
+<img src="/img/site-qgis-3-28.avif" alt="Screenshot: QGIS 3 28" loading="lazy">
 
 ### Feature: Project and group trash management****
 
@@ -106,7 +106,7 @@ In the specific Django administration section, the logs deriving from:
 - QGIS Server
 - PostGreSQL/PostGis
 
-<img src="/img/site-database-event-logs.png" alt="Screenshot: Database Event Logs" loading="lazy">
+<img src="/img/site-database-event-logs.avif" alt="Screenshot: Database Event Logs" loading="lazy">
 
 ## Cartographic Client
 

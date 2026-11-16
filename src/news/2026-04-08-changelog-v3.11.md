@@ -31,17 +31,17 @@ Among the **main funder of this version** we remember:
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-lea-logo.png" alt="LEA" loading="lazy">
+    <img src="/img/site-lea-logo.avif" alt="LEA" loading="lazy">
     <div class="sponsor-name"><a href="https://lea-ti.ch/it/" target="_blank" rel="noopener noreferrer">LEA</a></div>
     <div class="sponsor-country">{{t 'Swiss'}}</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana.png" alt="Consorzio Bonifica Renana" loading="lazy">
+    <img src="/img/site-bonifica-renana.avif" alt="Consorzio Bonifica Renana" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it/" target="_blank" rel="noopener noreferrer">Consorzio Bonifica Renana</a></div>
     <div class="sponsor-country">{{t 'Italy'}}</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpa-liguria-project.jpg" alt="ARPA Liguria" loading="lazy">
+    <img src="/img/site-arpa-liguria-project.avif" alt="ARPA Liguria" loading="lazy">
     <div class="sponsor-name"><a href="https://www.arpal.liguria.it/" target="_blank" rel="noopener noreferrer">ARPA Liguria</a></div>
     <div class="sponsor-country">{{t 'Italy'}}</div>
   </div>
@@ -55,7 +55,7 @@ Among the **main funder of this version** we remember:
 
 Take advantage of all the news related to the preparation of QGIS projects with the new LTR version
 
-<img src="/img/site-qgis-3-44.jpg" alt="{{t 'Screenshot: QGIS 3 44'}}" loading="lazy">
+<img src="/img/site-qgis-3-44.avif" alt="{{t 'Screenshot: QGIS 3 44'}}" loading="lazy">
 
 ## Administration
 
@@ -63,7 +63,7 @@ Take advantage of all the news related to the preparation of QGIS projects with 
 
 You can now create bookmarks for your favorite projects so they always appear on top of your admin session dashboard.
 
-<img src="/img/site-bookmarks-projects.png" alt="{{t 'Screenshot: Bookmarks Projects'}}" loading="lazy">
+<img src="/img/site-bookmarks-projects.avif" alt="{{t 'Screenshot: Bookmarks Projects'}}" loading="lazy">
 
 ### Feature: Managing filters on fields
 
@@ -71,7 +71,7 @@ A simpler system for managing filters on attribute fields based on users or user
 
 The filter setting is aligned with the modes used for the other widgets.
 
-<img src="/img/site-fields-user-filters.png" alt="{{t 'Screenshot: Fields User Filters'}}" loading="lazy">
+<img src="/img/site-fields-user-filters.avif" alt="{{t 'Screenshot: Fields User Filters'}}" loading="lazy">
 
 ## Cartographic client and interaction with the map
 
@@ -81,7 +81,7 @@ Numerous changes to the client interface.
 
 Improved management of all features without disrupting the end user experience.
 
-<img src="/img/site-new-client.png" alt="{{t 'Screenshot: New Client'}}" loading="lazy">
+<img src="/img/site-new-client.avif" alt="{{t 'Screenshot: New Client'}}" loading="lazy">
 
 ### Feature: 1:N relation parent information
 
@@ -89,19 +89,19 @@ References to the parent are visible when accessing the list of records in the c
 
 This function can also be set for cascading 1:N relations.
 
-<img src="/img/site-parent-relation-info.png" alt="{{t 'Screenshot: Parent Relation Info'}}" loading="lazy">
+<img src="/img/site-parent-relation-info.avif" alt="{{t 'Screenshot: Parent Relation Info'}}" loading="lazy">
 
 ### Feature: Breadcrump improvment
 
 A reorganization of breadcrumbs allows you to better manage situations with multiple caching relationships
 
-<img src="/img/site-breadcrumbs-navigation.png" alt="{{t 'Screenshot: Breadcrumbs Navigation'}}" loading="lazy">
+<img src="/img/site-breadcrumbs-navigation.avif" alt="{{t 'Screenshot: Breadcrumbs Navigation'}}" loading="lazy">
 
 ### Feature: Right click option
 
 A right click on the mouse allows you to access a series of functions related (but not limited to) to the point where you click
 
-<img src="/img/site-right-click.png" alt="{{t 'Screenshot: Right Click'}}" loading="lazy">
+<img src="/img/site-right-click.avif" alt="{{t 'Screenshot: Right Click'}}" loading="lazy">
 
 ## Editing on line
 
@@ -135,7 +135,7 @@ This tool allows you to perform comprehensive searches based on a subset of the 
 
 With the new version it is possible to merge multiple graphs from the DataPlotly plugin to create multiple overlapping graphs
 
-<img src="/img/site-multi-plot.png" alt="{{t 'Screenshot: Multi Plot'}}" loading="lazy">
+<img src="/img/site-multi-plot.avif" alt="{{t 'Screenshot: Multi Plot'}}" loading="lazy">
 
 ## Complete list of improvements
 

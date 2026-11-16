@@ -8,8 +8,10 @@ const { renderLanguageBlocks, translateHtml, extractPageTranslations, extractPag
 const { autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
 const { outputPage, languagePageUrl, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
+const { prepareMermaid, renderMermaid } = require('../utils/mermaid');
 
 function build(outputDir) {
+  const diagrams = new Map();
   const pageFiles = [
     ...htmlFiles(sourceDir),
     ...markdownFiles(sourceDir).filter(file =>
@@ -48,6 +50,7 @@ function build(outputDir) {
         );
         if (path.extname(file) === '.md') {
           localized = autoTranslateMarkdown(localized, lang, pageTemplate.translations);
+          localized = prepareMermaid(localized, diagrams, `${page} (${lang})`);
         }
         const content = localized.replace(
           /<!--#include file="(?:\.\.\/)?_(?:header|footer)\.html"-->/g,
@@ -89,7 +92,8 @@ function build(outputDir) {
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, publishedHtml(result));
   }
-  buildDocumentation(outputDir);
+  buildDocumentation(outputDir, diagrams);
+  renderMermaid(diagrams, outputDir);
 }
 
 function runBuild(dir, exitOnError = true) {

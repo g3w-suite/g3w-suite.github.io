@@ -16,7 +16,7 @@ When 2FA is enabled for a user, authentication is completed in two steps:
 From the **User Profile** page, users can open **Manage two factor authentication**.  
 This entry point is available for existing users and starts the 2FA setup wizard.
 
-![activate_2fa](/img/two-factor-authentication-activate-2fa.png)
+![activate_2fa](/img/two-factor-authentication-activate-2fa.avif)
 
 ### 2FA Setup Wizard
 
@@ -25,7 +25,7 @@ The setup process is guided and split into sequential steps:
 1. **Introduction step**  
    The wizard explains that enabling 2FA increases account security.
 
-![activate_2fa_step2](/img/two-factor-authentication-activate-2fa-step2.png)
+![activate_2fa_step2](/img/two-factor-authentication-activate-2fa-step2.avif)
 
 
 2. **Method selection**  
@@ -33,7 +33,7 @@ The setup process is guided and split into sequential steps:
    - Token generator (TOTP)
    - Email
   
-![activate_2fa_step3](/img/two-factor-authentication-activate-2fa-step3.png)
+![activate_2fa_step3](/img/two-factor-authentication-activate-2fa-step3.avif)
 
 
 3. **Token generator configuration (TOTP)**  
@@ -44,7 +44,7 @@ The setup process is guided and split into sequential steps:
 
 After entering a valid token, 2FA is linked to the account.
 
-![activate_2fa_step4](/img/two-factor-authentication-activate-2fa-step4.png)
+![activate_2fa_step4](/img/two-factor-authentication-activate-2fa-step4.avif)
 
 
 ### Login Flow with 2FA Enabled
@@ -57,7 +57,7 @@ When a user with active 2FA signs in:
 
 The login view also keeps alternative navigation and configured external provider options visible.
 
-![activate_2fa_step4](/img/two-factor-authentication-activate-2fa-token-login.png)
+![activate_2fa_step4](/img/two-factor-authentication-activate-2fa-token-login.avif)
 
 <script type="application/json" data-i18n>
   {

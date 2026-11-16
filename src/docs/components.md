@@ -2,7 +2,7 @@
 
 ## G3W-ADMIN
 
-![G3W-ADMIN administration interface](/img/manual-english-g3wadmin-django-administration.png)
+![G3W-ADMIN administration interface](/img/manual-english-g3wadmin-django-administration.avif)
 
 G3W-ADMIN is the Django server application at the core of G3W-SUITE. It publishes web maps from QGIS projects and provides the administration tools to manage them.
 
@@ -18,7 +18,7 @@ Optional modules add capabilities such as QGIS Processing integration and authen
 
 ## G3W-CLIENT
 
-![G3W-CLIENT web map interface](/img/manual-english-g3wclient-interface.png)
+![G3W-CLIENT web map interface](/img/manual-english-g3wclient-interface.avif)
 
 G3W-CLIENT is the browser-based map application for exploring and working with data published by G3W-SUITE.
 
@@ -34,7 +34,7 @@ The client uses the QGIS project configuration for layers, forms, styles and map
 
 ## G3W-ADMIN-PROCESSING
 
-![QGIS Processing model builder](/img/site-g3wsuite-processing.png)
+![QGIS Processing model builder](/img/site-g3wsuite-processing.avif)
 
 G3W-ADMIN-PROCESSING integrates QGIS Processing models with G3W-SUITE, making selected geoprocessing workflows available through the web client.
 
@@ -48,7 +48,7 @@ The module is an optional extension and requires a compatible G3W-SUITE installa
 
 ## G3W-SUITE-DOCKER
 
-![G3W-SUITE deployment workflow](/img/manual-english-architecture-workflow.png)
+![G3W-SUITE deployment workflow](/img/manual-english-architecture-workflow.avif)
 
 G3W-SUITE-DOCKER provides a Docker-based deployment stack for running G3W-SUITE and its supporting services.
 
@@ -62,7 +62,7 @@ Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project an
 
 ## G3W-ADMIN-PORTAL
 
-![G3W-SUITE public portal](/img/manual-english-g3wsuite-portal-frontend.png)
+![G3W-SUITE public portal](/img/manual-english-g3wsuite-portal-frontend.avif)
 
 G3W-ADMIN-PORTAL is an optional portal for presenting published cartographic groups through a public-facing interface.
 
@@ -76,7 +76,7 @@ It complements the G3W-ADMIN publishing tools and can be adapted to the identity
 
 ## G3W-ADMIN-PDND
 
-![G3W-SUITE login screen](/img/manual-english-socialauth-login-screen.png)
+![G3W-SUITE login screen](/img/manual-english-socialauth-login-screen.avif)
 
 G3W-ADMIN-PDND is an optional integration for connecting G3W-SUITE to Italy's Public Digital Data Platform (PDND) authentication services.
 
@@ -90,7 +90,7 @@ This component is released under the MIT licence. Check its repository for insta
 
 ## <span id="g3w-client-plugin-editing"></span>Collaborative editing
 
-![G3W-CLIENT editing tools](/img/manual-english-editing-client-tool.png)
+![G3W-CLIENT editing tools](/img/manual-english-editing-client-tool.avif)
 
 G3W-SUITE's editing tools let authorized users update geographic features and related records from the web client, using forms and rules configured in QGIS.
 

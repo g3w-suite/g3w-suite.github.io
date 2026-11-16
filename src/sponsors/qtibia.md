@@ -1,6 +1,6 @@
 # QTIBIA Engineering
 
-![QTIBIA Engineering](/img/site-qtibia-long.png)
+![QTIBIA Engineering](/img/site-qtibia-long.avif)
 
 QTIBIA Engineering shares QGIS and open-source GIS training and resources in Romania.
 

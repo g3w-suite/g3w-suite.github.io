@@ -6,7 +6,7 @@ Open source solution to publish and manage WebGIS services directly from your QG
 
 [What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/docs/demo/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
 
-![Publishing QGIS on web](/img/{{#it}}site-g3w-suite-homepage-italian.jpg{{/it}}{{#en}}homepage_eng2.png{{/en}})
+![Publishing QGIS on web](/img/{{#it}}site-g3w-suite-homepage-italian.avif{{/it}}{{#en}}homepage_eng2.avif{{/en}})
 
 ## **Get started in minutes** Publish your QGIS project in 4 steps
 
@@ -32,11 +32,11 @@ No QGIS plugin needed: upload your .qgs or .qgz file and your WebGIS service is 
 
    Manage your projects independently by defining users, editing permissions and constraints, interactive graphics, search methods and activating the most useful features for your management system
 
-![WebGIS management](/img/site-webgis-management-preview.jpg) ![Map client](/img/site-webgis-client-preview.jpg)
+![WebGIS management](/img/site-webgis-management-preview.avif) ![Map client](/img/site-webgis-client-preview.avif)
 
 ## From desktop to web in a few clicks
 
-![Web cartographic management with G3W-Suite](/img/{{#it}}site-italian-webgis-editing-preview.jpg{{/it}}{{#en}}site-web-cartographic-management-preview.jpg{{/en}})
+![Web cartographic management with G3W-Suite](/img/{{#it}}site-italian-webgis-editing-preview.avif{{/it}}{{#en}}site-web-cartographic-management-preview.avif{{/en}})
 
 Publish a QGIS project as WebGIS while keeping styles, symbols, editing forms and print layouts, without reconfiguring the project.
 
@@ -50,14 +50,14 @@ Web editing supports collaborative workflows and field data collection, includin
 
 From territorial planning to network management, with active projects in different operational contexts.
 
-- [![Metropolitan Area of Bari](/img/site-bari.png)]({{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it)
-- [![Metropolitan City of Rome](/img/site-citta-metro-roma.jpg)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
-- [![Friuli Venezia Giulia Landscape Plan](/img/site-fvg.jpg)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
-- [![City of Trento](/img/site-trento.png)](https://gis.comune.trento.it/it/#map=groups)
-- [![Gran Paradiso National Park](/img/site-pngp.jpg)](https://sit.parco.gran-paradiso.g3wsuite.it)
-- [![Suez](/img/site-suez.png)](https://www.suez.com)
-- [![Planetek Italia](/img/site-planetek-logo.jpg)](https://www.planetek.it)
-- [![Politecnico di Torino](/img/site-polito.jpg)](https://www.polito.it)
+- [![Metropolitan Area of Bari](/img/site-bari.avif)]({{#it}}http{{/it}}{{#en}}https{{/en}}://sit.egov.ba.it)
+- [![Metropolitan City of Rome](/img/site-citta-metro-roma.avif)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
+- [![Friuli Venezia Giulia Landscape Plan](/img/site-fvg.avif)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
+- [![City of Trento](/img/site-trento.avif)](https://gis.comune.trento.it/it/#map=groups)
+- [![Gran Paradiso National Park](/img/site-pngp.avif)](https://sit.parco.gran-paradiso.g3wsuite.it)
+- [![Suez](/img/site-suez.avif)](https://www.suez.com)
+- [![Planetek Italia](/img/site-planetek-logo.avif)](https://www.planetek.it)
+- [![Politecnico di Torino](/img/site-polito.avif)](https://www.polito.it)
 
 [See all sponsors and contributors](/en/sponsors/ "outline-button")
 
@@ -85,7 +85,7 @@ Run QGIS Processing models directly from the web client to integrate analysis in
 ## **Open Source Ecosystem** Partnerships and community supporting the project
 ### G3W-SUITE + Mergin Maps
 
-![Mergin Maps](/img/site-mergin-maps-logo.jpg)
+![Mergin Maps](/img/site-mergin-maps-logo.avif)
 
 Field data collection and WebGIS publishing in one workflow, from survey to sharing.
 

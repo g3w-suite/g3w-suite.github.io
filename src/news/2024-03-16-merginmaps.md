@@ -6,7 +6,7 @@ Published: **16 March 2024**
 
 ## MerginMaps partnership
 
-![Mergin Maps](/img/site-mergin-maps-logo.jpg)
+![Mergin Maps](/img/site-mergin-maps-logo.avif)
 
 Gis3W [provides support](https://{{#it}}it.{{/it}}merginmaps.com/partners#gis3w)
 {{t ', at every level, for the'}} [Mergin Maps](https://{{#it}}it.{{/it}}merginmaps.com/)
@@ -20,7 +20,7 @@ solution dedicated to field data collection based on [QGIS](https://qgis.org).
 - easily integrate your geospatial infrastructure
 - connect an external high-precision GPS for precision surveys
 
-![Mergin Maps on devices](/img/site-mergin-maps-on-devices.png)
+![Mergin Maps on devices](/img/site-mergin-maps-on-devices.avif)
 
 ### Integration with G3W-SUITE
 
@@ -31,7 +31,7 @@ solution dedicated to field data collection based on [QGIS](https://qgis.org).
 - ease of use and management
 - API integration
 
-![Screenshot: Mergin Maps Screenshot 1](/img/site-mergin-maps-screenshot-1.jpg) ![Screenshot: Mergin Maps Screenshot 2](/img/site-mergin-maps-screenshot-2.jpg) ![Screenshot: Mergin Maps Screenshot 3](/img/site-mergin-maps-screenshot-3.jpg)
+![Screenshot: Mergin Maps Screenshot 1](/img/site-mergin-maps-screenshot-1.avif) ![Screenshot: Mergin Maps Screenshot 2](/img/site-mergin-maps-screenshot-2.avif) ![Screenshot: Mergin Maps Screenshot 3](/img/site-mergin-maps-screenshot-3.avif)
 
 ### Gis3W, [official partner](https://merginmaps.com/partners) of Mergin Maps, provides:
 

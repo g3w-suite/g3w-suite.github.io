@@ -37,7 +37,7 @@ The main page of the Administration Panel shows:
    * **Frontend:** to return the landing page portal
    * **Username:** to edit your profile and log out
    * **Language:** to choose the interface language
-   * **A gear icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.png): to access a menu with:
+   * **A gear icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif): to access a menu with:
 
        **-->  Sistem Information**: information on operating system versions, QGIS Server, DB management, geographic libraries and anything else related to the suite
 
@@ -59,14 +59,14 @@ The main page of the Administration Panel shows:
    * **Dashboard:** to access to list of Cartographic Groups
    * **Module list:** to access the respective settings
 
-![Screenshot: G3W-SUITE Administration Desk](/img/manual-english-g3wsuite-administration-desk.png)
+![Screenshot: G3W-SUITE Administration Desk](/img/manual-english-g3wsuite-administration-desk.avif)
 
 ## Front end portal customization
 From the **Administration Panel**, customize the information shown on the front-end portal.
 
-Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.
+Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.
 
-![Screenshot: G3W-SUITE Administration Configuration](/img/manual-english-g3wsuite-administration-configuration.png)
+![Screenshot: G3W-SUITE Administration Configuration](/img/manual-english-g3wsuite-administration-configuration.avif)
 
 In the **`General suite data`** form you can define all the informations that will appear on the portal home page
  * **`Home data`:** info that will appear on the front end landing page
@@ -81,58 +81,58 @@ Informations that will appear on the front end landing page
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![Screenshot: G3W-SUITE Administration Configuration Homedata](/img/manual-english-g3wsuite-administration-configuration-homedata.png)
+![Screenshot: G3W-SUITE Administration Configuration Homedata](/img/manual-english-g3wsuite-administration-configuration-homedata.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Homedata Result](/img/manual-english-g3wsuite-administration-configuration-homedata-result.jpg)
+![Screenshot: G3W-SUITE Administration Configuration Homedata Result](/img/manual-english-g3wsuite-administration-configuration-homedata-result.avif)
 
 ### Front End About Data
 Informations that will appear in the **Info** session
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![Screenshot: G3W-SUITE Administration Configuration Aboutusdata](/img/manual-english-g3wsuite-administration-configuration-aboutusdata.png)
+![Screenshot: G3W-SUITE Administration Configuration Aboutusdata](/img/manual-english-g3wsuite-administration-configuration-aboutusdata.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Aboutusdata Result](/img/manual-english-g3wsuite-administration-configuration-aboutusdata-result.jpg)
+![Screenshot: G3W-SUITE Administration Configuration Aboutusdata Result](/img/manual-english-g3wsuite-administration-configuration-aboutusdata-result.avif)
 
 ### Frontend Groups Map Data
 Information that will be displayed in the **Maps** session
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![Screenshot: G3W-SUITE Administration Configuration Mapgroupsdata](/img/manual-english-g3wsuite-administration-configuration-mapgroupsdata.png)
+![Screenshot: G3W-SUITE Administration Configuration Mapgroupsdata](/img/manual-english-g3wsuite-administration-configuration-mapgroupsdata.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Mapgroupsdata Result](/img/manual-english-g3wsuite-administration-configuration-mapgroupsdata-result.jpg)
+![Screenshot: G3W-SUITE Administration Configuration Mapgroupsdata Result](/img/manual-english-g3wsuite-administration-configuration-mapgroupsdata-result.avif)
 
 ### Front End Login Data
 Information that will be displayed in the **Login/Administration** session
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![Screenshot: G3W-SUITE Administration Configuration Logindata](/img/manual-english-g3wsuite-administration-configuration-logindata.png)
+![Screenshot: G3W-SUITE Administration Configuration Logindata](/img/manual-english-g3wsuite-administration-configuration-logindata.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Logindata Result](/img/manual-english-g3wsuite-administration-configuration-logindata-result.jpg)
+![Screenshot: G3W-SUITE Administration Configuration Logindata Result](/img/manual-english-g3wsuite-administration-configuration-logindata-result.avif)
 
 ### Front End Social Data
 Links to the social channels that will be displayed in the **About it** it session
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![Screenshot: G3W-SUITE Administration Configuration Socialdata](/img/manual-english-g3wsuite-administration-configuration-socialdata.png)
+![Screenshot: G3W-SUITE Administration Configuration Socialdata](/img/manual-english-g3wsuite-administration-configuration-socialdata.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Socialdata Result](/img/manual-english-g3wsuite-administration-configuration-socialdata-result.jpg)
+![Screenshot: G3W-SUITE Administration Configuration Socialdata Result](/img/manual-english-g3wsuite-administration-configuration-socialdata-result.avif)
 
 ### Map client data
 Main title to be displayed in the cartographic client bar
 
-![Screenshot: G3W-SUITE Administration Configuration Mapclientdata](/img/manual-english-g3wsuite-administration-configuration-mapclientdata.png)
+![Screenshot: G3W-SUITE Administration Configuration Mapclientdata](/img/manual-english-g3wsuite-administration-configuration-mapclientdata.avif)
 
-![Screenshot: G3W-SUITE Administration Configuration Mapclientdata Result](/img/manual-english-g3wsuite-administration-configuration-mapclientdata-result.jpg)
+![Screenshot: G3W-SUITE Administration Configuration Mapclientdata Result](/img/manual-english-g3wsuite-administration-configuration-mapclientdata-result.avif)
 
 In the **Credits** subsection it is possible to define additional text for the publishing aspects.
 
 After filling in the various form, click on the **Save button** to confirm your choices.
 
-![Button: Save](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.avif)
 
 <script type="application/json" data-i18n>
 {
@@ -142,7 +142,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "**-->  Files:** to access the File Manager tool": "**--> Files:** accedere allo strumento File Manager",
     "**-->  Images:** to define the main images of the FrontEnd home page": "**--> Images:** definire le immagini principali della pagina iniziale del FrontEnd",
     "**-->  Sistem Information**: information on operating system versions, QGIS Server, DB management, geographic libraries and anything else related to the suite": "**--> Sistem Information**: informazioni sulle versioni del sistema operativo, su QGIS Server, sulla gestione del DB, sulle librerie geografiche e su altri aspetti della suite",
-    "**A gear icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.png): to access a menu with:": "**Un'icona a forma di ingranaggio** ![Icona: configurazione](/img/manual-english-iconconfiguration.png): per accedere a un menu con:",
+    "**A gear icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif): to access a menu with:": "**Un'icona a forma di ingranaggio** ![Icona: configurazione](/img/manual-english-iconconfiguration.avif): per accedere a un menu con:",
     "**ATTENTION:** contents marked with * are mandatory.": "**ATTENZIONE:** i campi contrassegnati con * sono obbligatori.",
     "**Cartographic Groups:** to create/manage cartographic groups": "**Cartographic Groups:** creare e gestire i Gruppi cartografici",
     "**Dashboard:** Administration dashboard": "**Dashboard:** pannello di amministrazione",
@@ -171,7 +171,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Button: Save": "Pulsante: salva",
     "Cartographic Groups": "Gruppi cartografici",
     "Cartographic groups": "Gruppi cartografici",
-    "Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.png) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.": "Fare clic sull'icona **Configurations** ![Icon: Configuration](/img/manual-english-iconconfiguration.png) in basso a destra e scegliere la voce **Edit general data** dal menu che apparirà.",
+    "Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.": "Fare clic sull'icona **Configurations** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) in basso a destra e scegliere la voce **Edit general data** dal menu che apparirà.",
     "Description of the interface": "Descrizione dell'interfaccia",
     "From the **Administration Panel**, customize the information shown on the front-end portal.": "Dal **pannello di amministrazione**, personalizza le informazioni mostrate nel portale front end.",
     "Front End About Data": "Dati della sezione About del front end",

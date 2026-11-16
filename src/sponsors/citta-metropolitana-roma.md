@@ -1,6 +1,6 @@
 # Città Metropolitana di Roma Capitale
 
-![Città Metropolitana di Roma Capitale](/img/site-rome-metropolitan-city-logo.jpg)
+![Città Metropolitana di Roma Capitale](/img/site-rome-metropolitan-city-logo.avif)
 
 The Metropolitan City of Rome Capital is a local authority whose geoportal publishes geographic information about its territory.
 

@@ -2,7 +2,7 @@
 
 [Back to Administration panel](g3wsuite_administration.md)
 
-## ![Icon: Widget](/img/manual-english-icon-widget.png) Widget setting - Search tools
+## ![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools
 
 **Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.**
 
@@ -21,9 +21,9 @@ Every search widget will be saved by referring to the layer identifiers (for exa
 
 This aspect allows, once a search widget for a layer has been created, to have it available on all the projects in which the layer is present, without having to rebuild the widget from scratch each time.
 
-In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.png)
+In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.avif)
 
-![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.png)
+![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.avif)
 
 By clicking on the icon, the list of already active (or activatable) widgets associated with the layer will be shown.
 
@@ -37,7 +37,7 @@ To **create a new search**, click on the link **`New widget`**.
 
 In the pop-up that appears, the **`Search` type** have to be chosen.
 
-![Screenshot: G3W-SUITE Administration Project Widget Choose](/img/manual-english-g3wsuite-administration-project-widget-choose.png)
+![Screenshot: G3W-SUITE Administration Project Widget Choose](/img/manual-english-g3wsuite-administration-project-widget-choose.avif)
 
 In the related form we can define:
  * **Form Title**
@@ -59,10 +59,10 @@ In the related form we can define:
    * **`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.
    * **`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.   
 
-The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
+The button ![Button: Add](/img/manual-english-button-add.avif) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
 
 The example below shows the compilation of the form for creating a search widget with serveral options.
-![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.png)
+![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.avif)
 
 Once the form has been filled in, click on the **OK** button to save the settings.
 
@@ -70,7 +70,7 @@ Once the settings are saved, the created widget will appear in the list of Widge
 
 The widget will already be **`connected`** and therefore **available in the WebGis interface**.
 
-![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.png)
+![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)
 
 
 **IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.
@@ -109,7 +109,7 @@ The results will be differentiated according to the corresponding layer.
 
 Especially useful in the case of multi geometric layers.
 
-![Screenshot: G3W-SUITE Administration Project Search Multilayers](/img/manual-english-g3wsuite-administration-project-search-multilayers.png)
+![Screenshot: G3W-SUITE Administration Project Search Multilayers](/img/manual-english-g3wsuite-administration-project-search-multilayers.avif)
 
 
 ### Search based on 1:N relation data
@@ -121,12 +121,12 @@ See [dedicated paragraph](settings#g3w_client_search_endpoint).
 The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.
 
 
-![Screenshot: G3W-SUITE Administration Project Search 1 N](/img/manual-english-g3wsuite-administration-project-search-1-n.png)
+![Screenshot: G3W-SUITE Administration Project Search 1 N](/img/manual-english-g3wsuite-administration-project-search-1-n.avif)
 
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Icon: Widget](/img/manual-english-icon-widget.png) Widget setting - Search tools": "![Icona: widget](/img/manual-english-icon-widget.png) Impostazioni dei widget - strumenti di ricerca",
+    "![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools": "![Icona: widget](/img/manual-english-icon-widget.avif) Impostazioni dei widget - strumenti di ricerca",
     "**ATTENTION: deleting a search** will delete it from all projects in which that search is active.": "**ATTENZIONE: eliminando una ricerca** la si rimuove da tutti i progetti in cui è attiva.",
     "**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](settings#g3w_client_search_endpoint).": "**In alternativa, è possibile usare QGIS API come metodo di ricerca per superare questo limite. Consultare il** [paragrafo dedicato](settings#g3w_client_search_endpoint).",
     "**Form Title**": "**Titolo del modulo**",
@@ -161,7 +161,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "If the additional layers have homologous fields (same name and type) the search will be extended to them.": "Se i layer aggiuntivi hanno campi omologhi (stesso nome e tipo), la ricerca verrà estesa anche a essi.",
     "In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.": "In caso di **dipendenza stretta**, i valori dei campi dipendenti verranno caricati **solo dopo** aver scelto il valore del campo da cui dipendono.",
     "In the event that, at QGIS project level, the following editing widgets are associated with a field:": "Se a livello di progetto QGIS a un campo sono associati i seguenti widget di modifica:",
-    "In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.png)": "Nell'elenco dei layer del progetto, **individuare il layer a cui associare il widget di ricerca** e fare clic sull'icona ![Icon: Widget](/img/manual-english-icon-widget.png)",
+    "In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.avif)": "Nell'elenco dei layer del progetto, **individuare il layer a cui associare il widget di ricerca** e fare clic sull'icona ![Icon: Widget](/img/manual-english-icon-widget.avif)",
     "In the pop-up that appears, the **`Search` type** have to be chosen.": "Nella finestra popup visualizzata, scegliere il tipo **`Search`**.",
     "In the related form we can define:": "Nel modulo corrispondente è possibile definire:",
     "Multiple layers search": "Ricerca su più layer",
@@ -181,7 +181,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **Other searching layers** option allows you to extend the search carried out to other layers.": "L'opzione **Other searching layers** consente di estendere la ricerca ad altri layer.",
     "The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.": "L'opzione **Relations** consente di definire la relazione da usare (se presente) per individuare il layer padre di cui mostrare i risultati.",
-    "The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Button: Add](/img/manual-english-button-add.png) consente di aggiungere altri campi alla query di ricerca, attualmente gestibile tramite operatori **AND/OR**.",
+    "The button ![Button: Add](/img/manual-english-button-add.avif) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Button: Add](/img/manual-english-button-add.avif) consente di aggiungere altri campi alla query di ricerca, attualmente gestibile tramite operatori **AND/OR**.",
     "The example below shows the compilation of the form for creating a search widget with serveral options.": "L'esempio seguente mostra la compilazione del modulo per creare un widget di ricerca con diverse opzioni.",
     "The option allows you to create a search based on the fields of a table (child in a 1:N relation) and obtain results relating to the parent layer of the relation.": "L'opzione consente di creare una ricerca basata sui campi di una tabella (figlia in una relazione 1:N) e ottenere risultati relativi al layer padre della relazione.",
     "The results will be differentiated according to the corresponding layer.": "I risultati saranno distinti in base al layer corrispondente.",

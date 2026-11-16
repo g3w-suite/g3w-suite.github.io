@@ -104,6 +104,25 @@ Then('every published site image is referenced by compiled code', function () {
     .sort();
   assert.deepEqual(unreferenced, [], `unreferenced images: ${unreferenced.join(', ')}`);
 });
+Then('uploaded images are valid AVIF files', function () {
+  const imageDir = path.join(staticDir, 'img');
+  const misplaced = filesIn(staticDir).filter(file =>
+    !file.startsWith(imageDir + path.sep) &&
+    file !== path.join(staticDir, 'icons.svg') &&
+    /\.(?:apng|avif|bmp|gif|ico|jpe?g|png|svg|tiff?|webp)$/i.test(file)
+  );
+  assert.deepEqual(misplaced, [], `images must be stored in static/img: ${misplaced.join(', ')}`);
+  for (const file of filesIn(imageDir)) {
+    assert.equal(path.extname(file), '.avif', `${file}: images must use the .avif extension`);
+    const data = fs.readFileSync(file);
+    const boxSize = data.length >= 16 ? data.readUInt32BE(0) : 0;
+    const brands = boxSize >= 16 && boxSize <= data.length
+      ? [data.toString('ascii', 8, 12), ...Array.from({ length: Math.floor((boxSize - 16) / 4) }, (_, index) =>
+        data.toString('ascii', 16 + index * 4, 20 + index * 4))]
+      : [];
+    assert.ok(data.toString('ascii', 4, 8) === 'ftyp' && brands.some(brand => brand === 'avif' || brand === 'avis'), `${file}: invalid AVIF signature`);
+  }
+});
 Then('every generated image uses lazy loading', function () {
   const missing = [];
   for (const file of htmlFiles(staticDir)) {

@@ -3,15 +3,15 @@
 [Back to Administration panel](g3wsuite_administration.md)
 
 ## Widgets management
-Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
+Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
 
-![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)
 
 Next to each layer are a series of icons and checkboxes:
  * **Label:** layer alias applied at the QGIS project level
    * The eye icon shows the layer ID used in parameterized URLs.
  * **Name:** name of the layer (file or DB table)
- * ![Icon: Layertype](/img/manual-english-icon-layertype.png) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)
+ * ![Icon: Layertype](/img/manual-english-icon-layertype.avif) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)
  * **Embedded:** If the layer comes from an embedded project, the cell displays the name of the embedded project. Clicking the link takes you to the project management page.
  * **WMS external:** to speed up loading, the WMS layers present in a QGIS project are managed directly by Django and not by QGIS-Server.
      * In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.
@@ -19,17 +19,17 @@ Next to each layer are a series of icons and checkboxes:
      * The option is available only if the WMS loaded on the QGIS project is associated with the same projection system as the project.
  * **WFS:** a check mark shows whether the layer is published as a WFS service or not
  * **Actions:** a series of icons dedicated to various functions
-   * ![Icon: Cache](/img/manual-english-icon-cache.png) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level
-   * ![Icon: Editing](/img/manual-english-icon-editing.png) **Editing layer:** shows if the online editing function is active on the layer and allows you to activate and define it
-   * ![Icon: Filter Layer](/img/manual-english-icon-filter-layer.png) **Hide layer by user/groups:** hide specific layers from the TOC based on specific users or groups of users
-   * ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.png) **QPlotly widget:** add or manage plots created with DataPlotly QGIS plugin
-   * ![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.png) **Geo-constraints by user/group:** create or manage editing and visualization geo-constraints based on poligonal layers
-   * ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.png) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions
-   * ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s
-   * ![Icon: Widget](/img/manual-english-icon-widget.png) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones
-   * ![Icon: Styles](/img/manual-english-icon-styles.png) **Manage layer styles:** manage multi-style layer
-   * ![Icon: Scale Visibility](/img/manual-english-icon-scale-visibility.png) **Scale visibility layer by Users/Groups:** allows you to define a visibility scale differentiated by user and/or user groups.  Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level
-   * ![Icon: Fields Number](/img/manual-english-icon-fields-number.png) **Preview fields (max):** allows you to define the number of fields shown in the preview of the results of a search and query. HTML formatting and image previews are managed in the preview fields.
+   * ![Icon: Cache](/img/manual-english-icon-cache.avif) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level
+   * ![Icon: Editing](/img/manual-english-icon-editing.avif) **Editing layer:** shows if the online editing function is active on the layer and allows you to activate and define it
+   * ![Icon: Filter Layer](/img/manual-english-icon-filter-layer.avif) **Hide layer by user/groups:** hide specific layers from the TOC based on specific users or groups of users
+   * ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) **QPlotly widget:** add or manage plots created with DataPlotly QGIS plugin
+   * ![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.avif) **Geo-constraints by user/group:** create or manage editing and visualization geo-constraints based on poligonal layers
+   * ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.avif) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions
+   * ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.avif) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s
+   * ![Icon: Widget](/img/manual-english-icon-widget.avif) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones
+   * ![Icon: Styles](/img/manual-english-icon-styles.avif) **Manage layer styles:** manage multi-style layer
+   * ![Icon: Scale Visibility](/img/manual-english-icon-scale-visibility.avif) **Scale visibility layer by Users/Groups:** allows you to define a visibility scale differentiated by user and/or user groups.  Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level
+   * ![Icon: Fields Number](/img/manual-english-icon-fields-number.avif) **Preview fields (max):** allows you to define the number of fields shown in the preview of the results of a search and query. HTML formatting and image previews are managed in the preview fields.
 
  * **Download capabilities:** allows the download of the geographic and not geographic layers in various formats
    * **Download as shp/geotiff:** for vector and raster layers
@@ -47,7 +47,7 @@ Next to each layer are a series of icons and checkboxes:
 
 The functions present in the **Actions session** are described below.
 
-### ![Icon: Cache](/img/manual-english-icon-cache.png) Caching layer
+### ![Icon: Cache](/img/manual-english-icon-cache.avif) Caching layer
 
 With this icon it is possible to **activate/manage the cache of the single layers** and **create XYZ Tiles layer** that you can use as **Base Layer** in your WebGis.
 
@@ -69,39 +69,39 @@ The newly created base layer will be available to be associated with those avail
 Learn more about how to create a new base layer in the [dedicated section](admin-base-layers.md).
 
 
-### ![Icon: Editing](/img/manual-english-icon-editing.png) Editing layer
+### ![Icon: Editing](/img/manual-english-icon-editing.avif) Editing layer
 
 Use this icon to enable editing on individual layers and set permissions for users or groups.
 
 See the dedicated section on [editing administration settings](editing-administration-settings.md).
 
 
-### ![Icon: Filter Layer](/img/manual-english-icon-filter-layer.png) Hide layer by user/groups
+### ![Icon: Filter Layer](/img/manual-english-icon-filter-layer.avif) Hide layer by user/groups
 
 With this icon it will be possible to define the list of users (single and/or groups) who will be enabled to view this layer at the TOC and map level.
 
-![Screenshot: G3W-SUITE Administration Hide Layer](/img/manual-english-g3wsuite-administration-hide-layer.png)
+![Screenshot: G3W-SUITE Administration Hide Layer](/img/manual-english-g3wsuite-administration-hide-layer.avif)
 
 [Configure charts](admin-charts.md)
 
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.png) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions": "![Icona: vincoli alfanumerici](/img/manual-english-icon-alpha-constraints.png) **Alphanumeric and QGIS expressions constraints by user/groups:** creare o gestire vincoli di modifica e visualizzazione basati sul linguaggio SQL o su espressioni QGIS",
-    "![Icon: Cache](/img/manual-english-icon-cache.png) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level": "![Icona: cache](/img/manual-english-icon-cache.png) **Caching Layer:** consente di attivare e gestire la cache del singolo layer a livello di progetto",
-    "![Icon: Cache](/img/manual-english-icon-cache.png) Caching layer": "![Icona: cache](/img/manual-english-icon-cache.png) Cache del layer",
-    "![Icon: Dataplotly](/img/manual-english-icon-dataplotly.png) **QPlotly widget:** add or manage plots created with DataPlotly QGIS plugin": "![Icona: DataPlotly](/img/manual-english-icon-dataplotly.png) **QPlotly widget:** aggiungere o gestire grafici creati con il plugin DataPlotly per QGIS",
-    "![Icon: Editing](/img/manual-english-icon-editing.png) **Editing layer:** shows if the online editing function is active on the layer and allows you to activate and define it": "![Icona: modifica](/img/manual-english-icon-editing.png) **Editing layer:** indica se la modifica online è attiva per il layer e consente di attivarla e configurarla",
-    "![Icon: Editing](/img/manual-english-icon-editing.png) Editing layer": "![Icona: modifica](/img/manual-english-icon-editing.png) Modifica del layer",
-    "![Icon: Fields Number](/img/manual-english-icon-fields-number.png) **Preview fields (max):** allows you to define the number of fields shown in the preview of the results of a search and query. HTML formatting and image previews are managed in the preview fields.": "![Icona: numero di campi](/img/manual-english-icon-fields-number.png) **Preview fields (max):** consente di definire il numero di campi mostrati nell'anteprima dei risultati di ricerca e interrogazione. La formattazione HTML e le anteprime delle immagini si gestiscono nei campi di anteprima.",
-    "![Icon: Filter Layer](/img/manual-english-icon-filter-layer.png) **Hide layer by user/groups:** hide specific layers from the TOC based on specific users or groups of users": "![Icona: filtro del layer](/img/manual-english-icon-filter-layer.png) **Hide layer by user/groups:** nasconde layer specifici dalla TOC per determinati utenti o gruppi di utenti",
-    "![Icon: Filter Layer](/img/manual-english-icon-filter-layer.png) Hide layer by user/groups": "![Icona: filtro del layer](/img/manual-english-icon-filter-layer.png) Nascondere i layer per utente/gruppo",
-    "![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.png) **Geo-constraints by user/group:** create or manage editing and visualization geo-constraints based on poligonal layers": "![Icona: vincoli geografici](/img/manual-english-icon-geoconstraints.png) **Geo-constraints by user/group:** creare o gestire vincoli geografici di modifica e visualizzazione basati su layer poligonali",
-    "![Icon: Hide Columns](/img/manual-english-icon-hide-columns.png) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s": "![Icona: nascondi colonne](/img/manual-english-icon-hide-columns.png) **Hide columns by User/Groups:** creare o gestire vincoli su uno o più campi di un layer per singoli utenti o gruppi",
-    "![Icon: Layertype](/img/manual-english-icon-layertype.png) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)": "![Icona: tipo di layer](/img/manual-english-icon-layertype.png) **Type:** indica il tipo di dati (WMS, PostGis, SpatiaLite, GDAL/OGR...)",
-    "![Icon: Scale Visibility](/img/manual-english-icon-scale-visibility.png) **Scale visibility layer by Users/Groups:** allows you to define a visibility scale differentiated by user and/or user groups.  Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level": "![Icona: visibilità in base alla scala](/img/manual-english-icon-scale-visibility.png) **Scale visibility layer by Users/Groups:** consente di definire scale di visibilità diverse per utente e/o gruppi di utenti. L'attivazione sovrascrive, per i layer interessati, le scale di visualizzazione definite nel progetto QGIS",
-    "![Icon: Styles](/img/manual-english-icon-styles.png) **Manage layer styles:** manage multi-style layer": "![Icona: stili](/img/manual-english-icon-styles.png) **Manage layer styles:** gestire layer con più stili",
-    "![Icon: Widget](/img/manual-english-icon-widget.png) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones": "![Icona: widget](/img/manual-english-icon-widget.png) **Widgets list:** mostra quanti widget (ad es. ricerche) sono associati al layer e consente di attivarne di nuovi",
+    "![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.avif) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions": "![Icona: vincoli alfanumerici](/img/manual-english-icon-alpha-constraints.avif) **Alphanumeric and QGIS expressions constraints by user/groups:** creare o gestire vincoli di modifica e visualizzazione basati sul linguaggio SQL o su espressioni QGIS",
+    "![Icon: Cache](/img/manual-english-icon-cache.avif) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level": "![Icona: cache](/img/manual-english-icon-cache.avif) **Caching Layer:** consente di attivare e gestire la cache del singolo layer a livello di progetto",
+    "![Icon: Cache](/img/manual-english-icon-cache.avif) Caching layer": "![Icona: cache](/img/manual-english-icon-cache.avif) Cache del layer",
+    "![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) **QPlotly widget:** add or manage plots created with DataPlotly QGIS plugin": "![Icona: DataPlotly](/img/manual-english-icon-dataplotly.avif) **QPlotly widget:** aggiungere o gestire grafici creati con il plugin DataPlotly per QGIS",
+    "![Icon: Editing](/img/manual-english-icon-editing.avif) **Editing layer:** shows if the online editing function is active on the layer and allows you to activate and define it": "![Icona: modifica](/img/manual-english-icon-editing.avif) **Editing layer:** indica se la modifica online è attiva per il layer e consente di attivarla e configurarla",
+    "![Icon: Editing](/img/manual-english-icon-editing.avif) Editing layer": "![Icona: modifica](/img/manual-english-icon-editing.avif) Modifica del layer",
+    "![Icon: Fields Number](/img/manual-english-icon-fields-number.avif) **Preview fields (max):** allows you to define the number of fields shown in the preview of the results of a search and query. HTML formatting and image previews are managed in the preview fields.": "![Icona: numero di campi](/img/manual-english-icon-fields-number.avif) **Preview fields (max):** consente di definire il numero di campi mostrati nell'anteprima dei risultati di ricerca e interrogazione. La formattazione HTML e le anteprime delle immagini si gestiscono nei campi di anteprima.",
+    "![Icon: Filter Layer](/img/manual-english-icon-filter-layer.avif) **Hide layer by user/groups:** hide specific layers from the TOC based on specific users or groups of users": "![Icona: filtro del layer](/img/manual-english-icon-filter-layer.avif) **Hide layer by user/groups:** nasconde layer specifici dalla TOC per determinati utenti o gruppi di utenti",
+    "![Icon: Filter Layer](/img/manual-english-icon-filter-layer.avif) Hide layer by user/groups": "![Icona: filtro del layer](/img/manual-english-icon-filter-layer.avif) Nascondere i layer per utente/gruppo",
+    "![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.avif) **Geo-constraints by user/group:** create or manage editing and visualization geo-constraints based on poligonal layers": "![Icona: vincoli geografici](/img/manual-english-icon-geoconstraints.avif) **Geo-constraints by user/group:** creare o gestire vincoli geografici di modifica e visualizzazione basati su layer poligonali",
+    "![Icon: Hide Columns](/img/manual-english-icon-hide-columns.avif) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s": "![Icona: nascondi colonne](/img/manual-english-icon-hide-columns.avif) **Hide columns by User/Groups:** creare o gestire vincoli su uno o più campi di un layer per singoli utenti o gruppi",
+    "![Icon: Layertype](/img/manual-english-icon-layertype.avif) **Type:** illustrates the type of data (WMS, PostGis, SpatiaLite, GDAL / OGR ...)": "![Icona: tipo di layer](/img/manual-english-icon-layertype.avif) **Type:** indica il tipo di dati (WMS, PostGis, SpatiaLite, GDAL/OGR...)",
+    "![Icon: Scale Visibility](/img/manual-english-icon-scale-visibility.avif) **Scale visibility layer by Users/Groups:** allows you to define a visibility scale differentiated by user and/or user groups.  Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level": "![Icona: visibilità in base alla scala](/img/manual-english-icon-scale-visibility.avif) **Scale visibility layer by Users/Groups:** consente di definire scale di visibilità diverse per utente e/o gruppi di utenti. L'attivazione sovrascrive, per i layer interessati, le scale di visualizzazione definite nel progetto QGIS",
+    "![Icon: Styles](/img/manual-english-icon-styles.avif) **Manage layer styles:** manage multi-style layer": "![Icona: stili](/img/manual-english-icon-styles.avif) **Manage layer styles:** gestire layer con più stili",
+    "![Icon: Widget](/img/manual-english-icon-widget.avif) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones": "![Icona: widget](/img/manual-english-icon-widget.avif) **Widgets list:** mostra quanti widget (ad es. ricerche) sono associati al layer e consente di attivarne di nuovi",
     "**Action**:": "**Action**:",
     "**Actions:** a series of icons dedicated to various functions": "**Actions:** una serie di icone dedicate a diverse funzioni",
     "**Active**: enable cache on the layer": "**Active**: attivare la cache sul layer",
@@ -145,7 +145,7 @@ With this icon it will be possible to define the list of users (single and/or gr
     "In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.": "Nel caso di WMS non esterni, il servizio viene gestito da Django, evitando problemi cross-domain; l'unico formato di risposta GetFeatureInfo gestito è GML.",
     "Learn more about how to create a new base layer in the [dedicated section](admin-base-layers.md).": "Per ulteriori informazioni su come creare un Base Layer, consultare la [sezione dedicata](admin-base-layers.md).",
     "Next to each layer are a series of icons and checkboxes:": "Accanto a ogni layer sono disponibili diverse icone e caselle di controllo:",
-    "Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Dopo aver pubblicato un progetto cartografico, tramite l'icona ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) è possibile accedere all'elenco dei layer geografici che lo compongono e definirne alcuni aspetti funzionali disponibili nel client cartografico.",
+    "Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Dopo aver pubblicato un progetto cartografico, tramite l'icona ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) è possibile accedere all'elenco dei layer geografici che lo compongono e definirne alcuni aspetti funzionali disponibili nel client cartografico.",
     "Screenshot: G3W-SUITE Administration Hide Layer": "Schermata: nascondere un layer nell'amministrazione di G3W-SUITE",
     "Screenshot: G3W-SUITE Administration Project Layer List": "Schermata: elenco dei layer del progetto nell'amministrazione di G3W-SUITE",
     "Screenshot: Iconsmall Layerlist": "Icona piccola: elenco dei layer",

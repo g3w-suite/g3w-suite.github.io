@@ -6,15 +6,15 @@
 
 View and interact with published projects in each Cartographic Group.
 
-![Screenshot: G3W-SUITE Administration Project List](/img/manual-english-g3wsuite-administration-project-list.png)
+![Screenshot: G3W-SUITE Administration Project List](/img/manual-english-g3wsuite-administration-project-list.avif)
 
 Use the first icon to bookmark a project and show it on the administration dashboard.
 
-![Screenshot: G3W-SUITE Administration Dashboard](/img/manual-english-g3wsuite-administration-dashboard.png)
+![Screenshot: G3W-SUITE Administration Dashboard](/img/manual-english-g3wsuite-administration-dashboard.avif)
 
 To **update** a published WebGis service, access the list of projects in the Cartographic Group.
 
-Click on the **Edit** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) icon placed at the top of the WebGis service and reload the QGIS file with the changes made in the relevant form.
+Click on the **Edit** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) icon placed at the top of the WebGis service and reload the QGIS file with the changes made in the relevant form.
 
 Click on the **SAVE** button to confirm the change.
 
@@ -26,9 +26,9 @@ Always starting from the list of WebGis services, it is possible to manage numer
 **In this section it is therefore possible to view the list of cartographic projects present, view them, manage them and create new ones.**
 
 Through the single icons, placed at the level of each project, it is possible to:
- * ![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.png) **Display the cartographic project on the WebGis interface:** to check the display by the user
- * ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) **Access the list of layers** present within the project and define their functional aspects
- * ![Screenshot: Iconsmall View](/img/manual-english-iconsmall-view.png) **Show details**: for each WebGis service it will be possible to access a detailed summary that will list all the activated settings and widgets:
+ * ![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.avif) **Display the cartographic project on the WebGis interface:** to check the display by the user
+ * ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) **Access the list of layers** present within the project and define their functional aspects
+ * ![Screenshot: Iconsmall View](/img/manual-english-iconsmall-view.avif) **Show details**: for each WebGis service it will be possible to access a detailed summary that will list all the activated settings and widgets:
    *  access and modification permissions
    *  the list of active searches
    *  editing permissions on individual layers
@@ -36,17 +36,17 @@ Through the single icons, placed at the level of each project, it is possible to
    *  visibility constraints on layers
    *  visibility constraints on attribute fields
 
-  * ![Screenshot: Iconsmall WMS](/img/manual-english-iconsmall-wms.png) **Test the WMS Capabilities** of the project
- * ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) **Update a project:** update of the QGIS file and other options related to the project
- * ![Screenshot: Iconsmall Erase](/img/manual-english-iconsmall-erase.png) **Remove a cartographic project**
+  * ![Screenshot: Iconsmall WMS](/img/manual-english-iconsmall-wms.avif) **Test the WMS Capabilities** of the project
+ * ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) **Update a project:** update of the QGIS file and other options related to the project
+ * ![Screenshot: Iconsmall Erase](/img/manual-english-iconsmall-erase.avif) **Remove a cartographic project**
    **Warning:** removing a project also removes all the widgets (e.g. searches) that would be orphaned after the project has been removed
- * ![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.png) **Download of the QGIS project**
- * ![Screenshot: Iconsmall OGC](/img/manual-english-iconsmall-ogc.png) **List of OGC services** associated with the project
-  * ![Screenshot: Iconsmall Message](/img/manual-english-iconsmall-message.png) **Messages** the tool allows you to define personalized (timed) messages visible when the WebGis service starts
+ * ![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.avif) **Download of the QGIS project**
+ * ![Screenshot: Iconsmall OGC](/img/manual-english-iconsmall-ogc.avif) **List of OGC services** associated with the project
+  * ![Screenshot: Iconsmall Message](/img/manual-english-iconsmall-message.avif) **Messages** the tool allows you to define personalized (timed) messages visible when the WebGis service starts
  
 In case of request to delete the WebGis service, a popup will ask whether the deletion of the Webgis should be permanent or a simple deactivation, which can be restored from the **Trash** menu.
 
-![Screenshot: Project Delete](/img/manual-english-projecet-delete.png)
+![Screenshot: Project Delete](/img/manual-english-projecet-delete.avif)
 
  **Below are some insights into specific features**
 
@@ -54,7 +54,7 @@ In case of request to delete the WebGis service, a popup will ask whether the de
 
 A useful tool for having a summary of all the settings and functions connected to the project.
 
-![Screenshot: Tools Details](/img/manual-english-tools-details.png)
+![Screenshot: Tools Details](/img/manual-english-tools-details.avif)
 
 #### Messages
 
@@ -62,7 +62,7 @@ The tool allows you to define personalized (timed) messages visible when the Web
 
 By clicking on the icon, the messages associated with the service are displayed.
 
-![Screenshot: Messages List](/img/manual-english-messages-list.png)
+![Screenshot: Messages List](/img/manual-english-messages-list.avif)
 
 Using the + Message key it is possible to create a new message by defining:
   * title
@@ -70,7 +70,7 @@ Using the + Message key it is possible to create a new message by defining:
   * message type (info, warning, error, critical)
   * validity period (optional)
 
- ![Screenshot: Messages New](/img/manual-english-messages-new.png)
+ ![Screenshot: Messages New](/img/manual-english-messages-new.avif)
 
 
 #### Project Trash
@@ -80,7 +80,7 @@ The Project with all its related content (widgets and settings) is moved to the 
 
 It is possible to access the list of trashed Projects and the restore functions through the tab Trash positioned just above the list of published projects
 
-![Screenshot: G3W-ADMIN Trash Project](/img/manual-english-g3wadmin-trash-project.png)
+![Screenshot: G3W-ADMIN Trash Project](/img/manual-english-g3wadmin-trash-project.avif)
 
 Restoring a Project involves restoring all the accessory settings/functions of  the project (permissions, searches, editing settings, downloads, etc...).
 
@@ -95,15 +95,15 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.png) **Download of the QGIS project**": "![Icona piccola: scarica](/img/manual-english-iconsmall-download.png) **Scarica il progetto QGIS**",
-    "![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) **Update a project:** update of the QGIS file and other options related to the project": "![Icona piccola: modifica](/img/manual-english-iconsmall-edit.png) **Aggiorna un progetto:** aggiornare il file QGIS e le altre opzioni relative al progetto",
-    "![Screenshot: Iconsmall Erase](/img/manual-english-iconsmall-erase.png) **Remove a cartographic project**": "![Icona piccola: elimina](/img/manual-english-iconsmall-erase.png) **Rimuovi un progetto cartografico**",
-    "![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.png) **Access the list of layers** present within the project and define their functional aspects": "![Icona piccola: elenco dei layer](/img/manual-english-iconsmall-layerlist.png) **Accedi all'elenco dei layer** del progetto e definiscine gli aspetti funzionali",
-    "![Screenshot: Iconsmall Message](/img/manual-english-iconsmall-message.png) **Messages** the tool allows you to define personalized (timed) messages visible when the WebGis service starts": "![Icona piccola: messaggio](/img/manual-english-iconsmall-message.png) **Messaggi**: lo strumento consente di definire messaggi personalizzati (a tempo) visibili all'avvio del servizio WebGis",
-    "![Screenshot: Iconsmall OGC](/img/manual-english-iconsmall-ogc.png) **List of OGC services** associated with the project": "![Icona piccola: OGC](/img/manual-english-iconsmall-ogc.png) **Elenco dei servizi OGC** associati al progetto",
-    "![Screenshot: Iconsmall View](/img/manual-english-iconsmall-view.png) **Show details**: for each WebGis service it will be possible to access a detailed summary that will list all the activated settings and widgets:": "![Icona piccola: visualizza](/img/manual-english-iconsmall-view.png) **Mostra dettagli**: per ogni servizio WebGis è possibile accedere a un riepilogo dettagliato di tutte le impostazioni e i widget attivi:",
-    "![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.png) **Display the cartographic project on the WebGis interface:** to check the display by the user": "![Icona piccola: visualizza mappa](/img/manual-english-iconsmall-viewmap.png) **Visualizza il progetto cartografico nell'interfaccia WebGis:** verificare la visualizzazione lato utente",
-    "![Screenshot: Iconsmall WMS](/img/manual-english-iconsmall-wms.png) **Test the WMS Capabilities** of the project": "![Icona piccola: WMS](/img/manual-english-iconsmall-wms.png) **Verifica le capacità WMS** del progetto",
+    "![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.avif) **Download of the QGIS project**": "![Icona piccola: scarica](/img/manual-english-iconsmall-download.avif) **Scarica il progetto QGIS**",
+    "![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) **Update a project:** update of the QGIS file and other options related to the project": "![Icona piccola: modifica](/img/manual-english-iconsmall-edit.avif) **Aggiorna un progetto:** aggiornare il file QGIS e le altre opzioni relative al progetto",
+    "![Screenshot: Iconsmall Erase](/img/manual-english-iconsmall-erase.avif) **Remove a cartographic project**": "![Icona piccola: elimina](/img/manual-english-iconsmall-erase.avif) **Rimuovi un progetto cartografico**",
+    "![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) **Access the list of layers** present within the project and define their functional aspects": "![Icona piccola: elenco dei layer](/img/manual-english-iconsmall-layerlist.avif) **Accedi all'elenco dei layer** del progetto e definiscine gli aspetti funzionali",
+    "![Screenshot: Iconsmall Message](/img/manual-english-iconsmall-message.avif) **Messages** the tool allows you to define personalized (timed) messages visible when the WebGis service starts": "![Icona piccola: messaggio](/img/manual-english-iconsmall-message.avif) **Messaggi**: lo strumento consente di definire messaggi personalizzati (a tempo) visibili all'avvio del servizio WebGis",
+    "![Screenshot: Iconsmall OGC](/img/manual-english-iconsmall-ogc.avif) **List of OGC services** associated with the project": "![Icona piccola: OGC](/img/manual-english-iconsmall-ogc.avif) **Elenco dei servizi OGC** associati al progetto",
+    "![Screenshot: Iconsmall View](/img/manual-english-iconsmall-view.avif) **Show details**: for each WebGis service it will be possible to access a detailed summary that will list all the activated settings and widgets:": "![Icona piccola: visualizza](/img/manual-english-iconsmall-view.avif) **Mostra dettagli**: per ogni servizio WebGis è possibile accedere a un riepilogo dettagliato di tutte le impostazioni e i widget attivi:",
+    "![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.avif) **Display the cartographic project on the WebGis interface:** to check the display by the user": "![Icona piccola: visualizza mappa](/img/manual-english-iconsmall-viewmap.avif) **Visualizza il progetto cartografico nell'interfaccia WebGis:** verificare la visualizzazione lato utente",
+    "![Screenshot: Iconsmall WMS](/img/manual-english-iconsmall-wms.avif) **Test the WMS Capabilities** of the project": "![Icona piccola: WMS](/img/manual-english-iconsmall-wms.avif) **Verifica le capacità WMS** del progetto",
     "**Below are some insights into specific features**": "**Di seguito sono approfondite alcune funzioni specifiche**",
     "**Deleting a project from the trash is an irreversible action.**": "**L'eliminazione di un progetto dal cestino è irreversibile.**",
     "**In this section it is therefore possible to view the list of cartographic projects present, view them, manage them and create new ones.**": "**In questa sezione è possibile consultare l'elenco dei progetti cartografici, visualizzarli, gestirli e crearne di nuovi.**",
@@ -113,7 +113,7 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
     "Back to Administration panel": "Torna al pannello di amministrazione",
     "Basic tools": "Strumenti di base",
     "By clicking on the icon, the messages associated with the service are displayed.": "Facendo clic sull'icona vengono visualizzati i messaggi associati al servizio.",
-    "Click on the **Edit** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) icon placed at the top of the WebGis service and reload the QGIS file with the changes made in the relevant form.": "Fare clic sull'icona **Modifica** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.png) in alto nel servizio WebGis e ricaricare il file QGIS con le modifiche apportate nel modulo corrispondente.",
+    "Click on the **Edit** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) icon placed at the top of the WebGis service and reload the QGIS file with the changes made in the relevant form.": "Fare clic sull'icona **Modifica** ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) in alto nel servizio WebGis e ricaricare il file QGIS con le modifiche apportate nel modulo corrispondente.",
     "Click on the **SAVE** button to confirm the change.": "Fare clic sul pulsante **SAVE** per confermare la modifica.",
     "In case of request to delete the WebGis service, a popup will ask whether the deletion of the Webgis should be permanent or a simple deactivation, which can be restored from the **Trash** menu.": "Quando si richiede l'eliminazione del servizio WebGis, una finestra chiede se eliminarlo definitivamente o disattivarlo soltanto, consentendone il ripristino dal menu **Trash**.",
     "In this session it is also possible to define which of the cartographic projects loaded within the group will be used as a panoramic map.": "In questa sezione è inoltre possibile definire quale dei progetti cartografici caricati nel gruppo verrà usato come mappa panoramica.",

@@ -26,11 +26,11 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpa-piemonte-logo.png" alt="{{t 'Progetto RISVAL “Rischio Sisismico e Vulnerabilita Alpina” – Programma Inerreg V Italia-Francia – ALCOTRA 2014-2020'}}" loading="lazy">
+    <img src="/img/site-arpa-piemonte-logo.avif" alt="{{t 'Progetto RISVAL “Rischio Sisismico e Vulnerabilita Alpina” – Programma Inerreg V Italia-Francia – ALCOTRA 2014-2020'}}" loading="lazy">
     <div class="sponsor-name"><a href="http://www.interreg-alcotra.eu/it/decouvrir-alcotra/les-projets-finances/risvalrischio-sismico-e-vulnerabilita-alpina" target="_blank" rel="noopener noreferrer">{{t 'Progetto RISVAL “Rischio Sisismico e Vulnerabilita Alpina” – Programma Inerreg V Italia-Francia – ALCOTRA 2014-2020'}}</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana-logo.jpg" alt="Consorzio della Bonifica Renana" loading="lazy">
+    <img src="/img/site-bonifica-renana-logo.avif" alt="Consorzio della Bonifica Renana" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Consorzio della Bonifica Renana</a></div>
   </div>
 </div>
@@ -51,7 +51,7 @@ The **capabilities and properties of QGIS server** like all the services support
 
 From this version, G3W-SUITE no longer acts as a proxy to the FCGI instance of QGIS Server, but works itself as an OGC Server.
 
-<img src="/img/site-qgis-api.jpeg" alt="Screenshot: QGIS API" loading="lazy">
+<img src="/img/site-qgis-api.avif" alt="Screenshot: QGIS API" loading="lazy">
 
 ### Feature: Caching layer modules
 
@@ -105,7 +105,7 @@ Thanks to the integration with the APIs of QGIS it is now possible to **manage t
 
 - SQL Server
 
-<img src="/img/site-qgis-format.png" alt="Screenshot: QGIS Format" loading="lazy">
+<img src="/img/site-qgis-format.avif" alt="Screenshot: QGIS Format" loading="lazy">
 
 ## Cartographic Client
 
@@ -211,7 +211,7 @@ The **transaction group management** QGIS function is inherited in WebGis editin
 
 Use transaction group to** edit, save or rollback multiple layers changes at once**.
 
-<img src="/img/site-transaction-group-editing.jpg" alt="Screenshot: Transaction Group Editing" loading="lazy">
+<img src="/img/site-transaction-group-editing.avif" alt="Screenshot: Transaction Group Editing" loading="lazy">
 
 ### Feature: Editing off line
 
@@ -225,7 +225,7 @@ Changes made to the data are **temporarily saved in the browser’s storage syst
 
 The return of the network connection will automatically save the changes made on the server.
 
-<img src="/img/site-editing-offline.png" alt="Screenshot: Editing Offline" loading="lazy">
+<img src="/img/site-editing-offline.avif" alt="Screenshot: Editing Offline" loading="lazy">
 
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>

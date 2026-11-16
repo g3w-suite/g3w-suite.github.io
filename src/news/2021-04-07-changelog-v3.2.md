@@ -24,11 +24,11 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <a href="https://www.planetek.it/" target="_blank" rel="noopener noreferrer">Planetek Italia</a>
 
-<img src="/img/site-bonifica-renana-logo.jpg" alt="Logo: Bonifica Renana" loading="lazy">
+<img src="/img/site-bonifica-renana-logo.avif" alt="Logo: Bonifica Renana" loading="lazy">
 
 <a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Consorzio della Bonifica Renana</a>
 
-<img src="/img/site-logo-regione-lazio.png" alt="Logo: Regione Lazio" loading="lazy">
+<img src="/img/site-logo-regione-lazio.avif" alt="Logo: Regione Lazio" loading="lazy">
 
 <a href="https://www.regione.lazio.it" target="_blank" rel="noopener noreferrer">Regione Lazio</a>
 
@@ -40,7 +40,7 @@ Version 3.2 is compatible with the new LTR version of **QGIS 3.16.**
 
 The filter function (based on features selection) at the print level is supported only with **QGIS 3.18**
 
-<img src="/img/site-qgis-3-16.png" alt="Screenshot: QGIS 3 16" loading="lazy">
+<img src="/img/site-qgis-3-16.avif" alt="Screenshot: QGIS 3 16" loading="lazy">
 
 ### Feature: QGIS AuthCFG authentication system support**  **
 
@@ -48,7 +48,7 @@ The **QGIS AuthCFG system** is managed by the suite.
 
 **To manage access to your DB data more securely.**
 
-<img src="/img/site-qgis-auth-1.png" alt="Screenshot: QGIS Auth 1" loading="lazy">
+<img src="/img/site-qgis-auth-1.avif" alt="Screenshot: QGIS Auth 1" loading="lazy">
 
 ### Feature: Geographical and alphanumeric constraints improvements**  **
 
@@ -68,7 +68,7 @@ Geographic and alphanumeric constraints, based on users (individuals or groups),
 
 Reading/editing support on **Oracle Spatial D**B is extended
 
-<img src="/img/site-oracle-spatial.png" alt="Screenshot: Oracle Spatial" loading="lazy">
+<img src="/img/site-oracle-spatial.avif" alt="Screenshot: Oracle Spatial" loading="lazy">
 
 ## Cartographic Client
 
@@ -122,7 +122,7 @@ The plots are** better organized and easier to understand.**
 
 Warning messages indicate the activation of filters based on the map content and/or on the presence of active filters on the layers
 
-<img src="/img/site-plots-better1.png" alt="Screenshot: Plots Better1" loading="lazy">
+<img src="/img/site-plots-better1.avif" alt="Screenshot: Plots Better1" loading="lazy">
 
 ### Feature: Improvements in plots management
 
@@ -187,21 +187,21 @@ When you publish a webgis service it is possible to define:
 - the **panel** (Layer, Base layer, Legend) **active at startup in the TOC**
 - **automatic zoom to search results** (only for single layer results)
 
-<img src="/img/site-panel-toc-1.png" alt="Screenshot: Panel Toc 1" loading="lazy">
+<img src="/img/site-panel-toc-1.avif" alt="Screenshot: Panel Toc 1" loading="lazy">
 
-<img src="/img/site-zoom-results.png" alt="Screenshot: Zoom Results" loading="lazy">
+<img src="/img/site-zoom-results.avif" alt="Screenshot: Zoom Results" loading="lazy">
 
 ### Feature: Data export
 
 It is now possible to **export** geographic and non-geographic layers in **GPK** format.
 
-<img src="/img/site-geopkg.png" alt="Screenshot: Geopkg" loading="lazy">
+<img src="/img/site-geopkg.avif" alt="Screenshot: Geopkg" loading="lazy">
 
 ### Feature: Cartogrhapic group logo option
 
 It is possible to use the **logo associated with a cartographic grou**p at the **header level of all the webgis contained in the group**
 
-<img src="/img/site-logo-group.png" alt="Logo: Group" loading="lazy">
+<img src="/img/site-logo-group.avif" alt="Logo: Group" loading="lazy">
 
 ### Feature: More languages support
 
@@ -210,7 +210,7 @@ Map client and administration panel are available in additional languages:
 - **Finnish **
 - **Swedish**
 
-<img src="/img/site-language.png" alt="Screenshot: Language" loading="lazy">
+<img src="/img/site-language.avif" alt="Screenshot: Language" loading="lazy">
 
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>

@@ -5,7 +5,7 @@
 ## Summary table of access/administration policies
 This table summarizes permissions by role.
 
-![Screenshot: Roles Table](/img/manual-english-roles-table.png)
+![Screenshot: Roles Table](/img/manual-english-roles-table.avif)
 
 ## Examples of organization
 
@@ -14,10 +14,10 @@ In this case the main administrator (**Admin role**) manages users, containers a
 Access to Cartographic Groups and individual WebGis services can be limited to system users (**Viewer** role) or to free access (**Anonymous user**)
 
 **Contents organized on a single level (Cartographic goups)**
-![Screenshot: Organization Case A1](/img/manual-english-organization-case-a1.png)
+![Screenshot: Organization Case A1](/img/manual-english-organization-case-a1.avif)
 
 **Contents organized on two levels(Cartographic Macrooups and Cartographic goups)**
-![Screenshot: Organization Case A2](/img/manual-english-organization-case-a2.png)
+![Screenshot: Organization Case A2](/img/manual-english-organization-case-a2.avif)
 
 ### Medium organization
 In this case the main administrator (**Admin role**) wants to delegate some secondary administrators (**Editor2** role) in managing the contents (WebGis) of the individual Cartographic Groups.
@@ -27,10 +27,10 @@ User management will remain limited to the main administrator (**Admin** role)
 Access to Cartographic Groups and individual WebGis services can be limited to system users (**Viewer** role) or to free access (**Anonymous user**)
 
 **Contents organized on a single level (Cartographic goups)**
-![Screenshot: Organization Case B1](/img/manual-english-organization-case-b1.png)
+![Screenshot: Organization Case B1](/img/manual-english-organization-case-b1.avif)
 
 **Contents organized on two levels (Cartographic Macrooups and Cartographic goups)**
-![Screenshot: Organization Case B2](/img/manual-english-organization-case-b2.png)
+![Screenshot: Organization Case B2](/img/manual-english-organization-case-b2.avif)
 
 ### Advanced organization
 The case in question involves the need to create completely distinct and separate subsystems with regard to not only the contents but also the users.
@@ -45,7 +45,7 @@ Access to Cartographic Groups and individual WebGIS services can be limited to s
 
 In this case, usually, the main administrator (**Admin** role) only takes care of creating the Macrogroups, the **Editor1** users and associating them correctly
 
-![Screenshot: Organization Case C](/img/manual-english-organization-case-c.png)
+![Screenshot: Organization Case C](/img/manual-english-organization-case-c.avif)
 
 <script type="application/json" data-i18n>
 {

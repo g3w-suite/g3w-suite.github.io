@@ -36,32 +36,32 @@ Among the **main funder of this version** we remember:
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-lea-logo.png" alt="LEA" loading="lazy">
+    <img src="/img/site-lea-logo.avif" alt="LEA" loading="lazy">
     <div class="sponsor-name"><a href="https://lea-ti.ch/it/" target="_blank" rel="noopener noreferrer">LEA</a></div>
     <div class="sponsor-country">{{t 'Switzerland'}}</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-stanec.png" alt="Stantec" loading="lazy">
+    <img src="/img/site-stanec.avif" alt="Stantec" loading="lazy">
     <div class="sponsor-name"><a href="https://www.stantec.com/" target="_blank" rel="noopener noreferrer">Stantec</a></div>
     <div class="sponsor-country">Canada</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpa-liguria-project.jpg" alt="ARPA Liguria" loading="lazy">
+    <img src="/img/site-arpa-liguria-project.avif" alt="ARPA Liguria" loading="lazy">
     <div class="sponsor-name"><a href="https://www.arpal.liguria.it/" target="_blank" rel="noopener noreferrer">ARPA Liguria</a></div>
     <div class="sponsor-country">{{t 'Italy'}}</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-intercad.png" alt="InterCad" loading="lazy">
+    <img src="/img/site-intercad.avif" alt="InterCad" loading="lazy">
     <div class="sponsor-name"><a href="https://www.intercad.ch/it/" target="_blank" rel="noopener noreferrer">InterCad</a></div>
     <div class="sponsor-country">{{t 'Switzerland'}}</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana.png" alt="Consorzio Bonifica Renana" loading="lazy">
+    <img src="/img/site-bonifica-renana.avif" alt="Consorzio Bonifica Renana" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it/" target="_blank" rel="noopener noreferrer">Consorzio Bonifica Renana</a></div>
     <div class="sponsor-country">{{t 'Italy'}}</div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-carnia.jpg" alt="{{t 'Comunita di Montagna della Carnia'}}" loading="lazy">
+    <img src="/img/site-carnia.avif" alt="{{t 'Comunita di Montagna della Carnia'}}" loading="lazy">
     <div class="sponsor-name"><a href="https://www.carnia.comunitafvg.it/" target="_blank" rel="noopener noreferrer">{{t 'Comunita di Montagna della Carnia'}}</a></div>
     <div class="sponsor-country">{{t 'Italy'}}</div>
   </div>
@@ -75,13 +75,13 @@ Among the **main funder of this version** we remember:
 
 Take advantage of all the news related to the preparation of QGIS projects with the new LTR version
 
-<img src="/img/site-qgis-340.png" alt="{{t 'Screenshot: QGIS 340'}}" loading="lazy">
+<img src="/img/site-qgis-340.avif" alt="{{t 'Screenshot: QGIS 340'}}" loading="lazy">
 
 ### Feature: ArcGisFeatureServer support
 
 ArcGisFeatureServer data type is now supported
 
-<img src="/img/site-arcgis.jpg" alt="{{t 'Screenshot: ArcGIS'}}" loading="lazy">
+<img src="/img/site-arcgis.avif" alt="{{t 'Screenshot: ArcGIS'}}" loading="lazy">
 
 ## Administration
 
@@ -91,7 +91,7 @@ On the Admin side, it is possible to define, for each layer of a WebGis service,
 
 Activating this option will overwrite, for the layers involved, any display scales defined at QGIS project level
 
-<img src="/img/site-scale-visibility-user.png" alt="{{t 'Screenshot: Scale Visibility User'}}" loading="lazy">
+<img src="/img/site-scale-visibility-user.avif" alt="{{t 'Screenshot: Scale Visibility User'}}" loading="lazy">
 
 ### Feature: Customize search/query results preview
 
@@ -159,9 +159,9 @@ The preview now also manages HTML content
 
 Export of 1:N related tables is available for both the complete parent layer and a selection of its features
 
-<img src="/img/site-relation-download-features.png" alt="{{t 'Screenshot: Relation Download Features'}}" loading="lazy">
+<img src="/img/site-relation-download-features.avif" alt="{{t 'Screenshot: Relation Download Features'}}" loading="lazy">
 
-<img src="/img/site-relation-download.png" alt="{{t 'Screenshot: Relation Download'}}" loading="lazy">
+<img src="/img/site-relation-download.avif" alt="{{t 'Screenshot: Relation Download'}}" loading="lazy">
 
 ## Editing on line
 
@@ -230,7 +230,7 @@ On the Admin side, it is now possible to associate a table/view of the QGIS proj
 
 This possibility greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool.
 
-<img src="/img/site-search-based-table.png" alt="{{t 'Screenshot: Search Based Table'}}" loading="lazy">
+<img src="/img/site-search-based-table.avif" alt="{{t 'Screenshot: Search Based Table'}}" loading="lazy">
 
 ## Charts
 

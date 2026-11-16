@@ -1,6 +1,6 @@
 # Comune di Palermo
 
-![Comune di Palermo](/img/site-palermo.png)
+![Comune di Palermo](/img/site-palermo.avif)
 
 The Municipality of Palermo is the local government of Palermo, Sicily.
 

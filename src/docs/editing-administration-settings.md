@@ -9,9 +9,9 @@
 #### Activation of on-line editing on a single layer
 To activate the online editing functions, access the **`Layer list`** section of the project within the administration panel of G3W-ADMIN.
 
-![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)
 
-Identify the layer on which you want to activate the editing function and click on the **`Editing layer` icon** ![Icon: Editing](/img/manual-english-icon-editing.png) located on the left
+Identify the layer on which you want to activate the editing function and click on the **`Editing layer` icon** ![Icon: Editing](/img/manual-english-icon-editing.avif) located on the left
 
 **Attention:** check that the layer format is among those supported by QGIS for the editing function
 
@@ -31,7 +31,7 @@ I should be noted that:
  * **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**
  * **Editor1 and Editor2 users**, **owners** of the project, are **enabled by default** to the online editing function
 
-![Screenshot: Editing Setting](/img/manual-english-editing-setting.png)
+![Screenshot: Editing Setting](/img/manual-english-editing-setting.avif)
 
 **NB: In case a user belongs to a user group, the permissions set will be added together.**
 
@@ -48,17 +48,17 @@ It is recommended that these fields be set as non-editable at the project level.
 #### Activation of online editing on multiple layers at the same time
 In the case of a project in which it is necessary to activate the online editing function on many layers, by defining the same options for each of them it is possible to use the Project layer action function.
 
-![Icon: Multi Layer](/img/manual-english-multi-layer-icon.png)
+![Icon: Multi Layer](/img/manual-english-multi-layer-icon.avif)
 
-![Screenshot: Multi Layer Form](/img/manual-english-multi-layer-form.png)
+![Screenshot: Multi Layer Form](/img/manual-english-multi-layer-form.avif)
 
 #### Copy editing permission from a user to the others
 
 In the case of complex projects with many users enabled for editing, it is possible to use this tool to duplicate the editing permissions defined for a user and apply them to other users (both individuals and groups).
 
-![Icon: Editing Clone](/img/manual-english-editing-clone-icon.png)
+![Icon: Editing Clone](/img/manual-english-editing-clone-icon.avif)
 
-![Screenshot: Editing Clone Setting](/img/manual-english-editing-clone-setting.png)
+![Screenshot: Editing Clone Setting](/img/manual-english-editing-clone-setting.avif)
 
 #### 1:N relational editing
 To allow editing on the related table in mode 1: n , the **editing function must also be activated** (always in the same way) **also for the related table** present in the project layers list.
@@ -96,7 +96,7 @@ To allow editing on the related table in mode 1: n , the **editing function must
     "Icon: Editing": "Icona: modifica",
     "Icon: Editing Clone": "Icona: duplica permessi di modifica",
     "Icon: Multi Layer": "Icona: layer multipli",
-    "Identify the layer on which you want to activate the editing function and click on the **`Editing layer` icon** ![Icon: Editing](/img/manual-english-icon-editing.png) located on the left": "Individua il layer su cui vuoi attivare la funzione di modifica e fai clic sull’**icona `Modifica layer`** ![Icona: modifica](/img/manual-english-icon-editing.png) a sinistra",
+    "Identify the layer on which you want to activate the editing function and click on the **`Editing layer` icon** ![Icon: Editing](/img/manual-english-icon-editing.avif) located on the left": "Individua il layer su cui vuoi attivare la funzione di modifica e fai clic sull’**icona `Modifica layer`** ![Icona: modifica](/img/manual-english-icon-editing.avif) a sinistra",
     "In the case of a project in which it is necessary to activate the online editing function on many layers, by defining the same options for each of them it is possible to use the Project layer action function.": "Se in un progetto è necessario attivare la modifica online su molti layer con le stesse opzioni, è possibile usare la funzione Azione sui layer del progetto.",
     "In the case of complex projects with many users enabled for editing, it is possible to use this tool to duplicate the editing permissions defined for a user and apply them to other users (both individuals and groups).": "Nei progetti complessi con molti utenti abilitati alla modifica, questo strumento consente di duplicare i permessi di un utente e applicarli ad altri utenti, singoli o appartenenti a gruppi.",
     "It is recommended that these fields be set as non-editable at the project level.": "Si consiglia di impostare questi campi come non modificabili a livello di progetto.",

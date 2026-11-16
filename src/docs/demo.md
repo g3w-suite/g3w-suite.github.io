@@ -36,7 +36,7 @@ In this tutorial you will:
 * add plots made with DataPlotly QGIS plugin
 * activate the editing functionality by customizing associated forms and widgets
 
-![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.png)
+![Screenshot: Demo Webgis Project](/img/manual-english-demo-webgis-project.avif)
 
 ## Download demo data
 
@@ -47,7 +47,7 @@ The .zip file contains the **`G3W-SUITE`** directory with three sub directories:
 * **`project_data/spatialite`**: containing a SpatiaLite DB with basic data (**`build_management_demo.sqlite`**)
 * **`plots`**: containing a a series of plots created with the **DataPlotly** plugin and saved in xml format
 
-![Screenshot: Demo Zip File](/img/manual-english-demo-zip-file.png)
+![Screenshot: Demo Zip File](/img/manual-english-demo-zip-file.avif)
 
 Inside the **`build_management_demo.sqlite` SpatiaLite DB** there are the following layers:
 * **`buildings` (polygon layer):** reference layer for editing aspects
@@ -67,7 +67,7 @@ The project (**based on QGIS LTR 3.44.x**) foresees:
 * two standard **print layout** and an two **atlas print layout** based on buildgs layer features
 
 
-![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.png)
+![Screenshot: Demo QGIS Project](/img/manual-english-demo-qgis-project.avif)
 
 ### Modify the QGIS project title
 
@@ -75,7 +75,7 @@ The publication system provides for the use of the **title of the project** as t
 
 **So, before publishing the project, it will be NECESSARY to change the title associated with the basic project (`Project -> Properties ... - Session: General`)**
 
-![Screenshot: Qgisserver Change Title](/img/manual-english-qgisserver-change-title.png)
+![Screenshot: Qgisserver Change Title](/img/manual-english-qgisserver-change-title.avif)
 
 ## Next steps
 

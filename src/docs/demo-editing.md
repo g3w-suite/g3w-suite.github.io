@@ -50,25 +50,25 @@ _**Forms and editing widgets are already defined on the project associated with 
 
 To activate the editing function on webgis, access the list of layers and identify the three layers shown above.
 
-![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.png)
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)
 
-Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.png) (placed at the left of each rows) will open a modal window that will allow you to:
+Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.avif) (placed at the left of each rows) will open a modal window that will allow you to:
 * define the **`editing activation scale`** (only for geometric tables)
 * define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing
 
 With regard to the last aspect, it should be noted that **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**
 
-![Screenshot: Editing Setting](/img/manual-english-editing-setting.png)
+![Screenshot: Editing Setting](/img/manual-english-editing-setting.avif)
 
 Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**
 
 **Enable editing to modify the geometries and attributes of the Public Buildings layer and its related interventions.**
 
-![Screenshot: Editing Client Start](/img/manual-english-editing-client-start.png)
+![Screenshot: Editing Client Start](/img/manual-english-editing-client-start.avif)
 
-![Screenshot: Demo Editing Web](/img/manual-english-demo-editing-web.png)
+![Screenshot: Demo Editing Web](/img/manual-english-demo-editing-web.avif)
 
-![Screenshot: Editing Form2](/img/manual-english-editing-form2.png)
+![Screenshot: Editing Form2](/img/manual-english-editing-form2.avif)
 
 For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).
 
@@ -121,7 +121,7 @@ Redefine attribute forms, aliases and editing widgets associated with the indivi
     "**year** (integer): range (2018-2022 step 1)": "**year** (intero): intervallo (2018-2022, passo 1)",
     "**zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)": "**zone** (testo): modifica testo (con valori predefiniti basati su un'espressione QGIS per l'associazione all'area di lavoro intersecante)",
     "Back to Demo tutorial": "Torna al tutorial della demo",
-    "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.png) (placed at the left of each rows) will open a modal window that will allow you to:": "Facendo clic sull'icona **Layer di modifica** ![Icona: modifica](/img/manual-english-icon-editing.png) (a sinistra di ogni riga) si aprirà una finestra modale che consentirà di:",
+    "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.avif) (placed at the left of each rows) will open a modal window that will allow you to:": "Facendo clic sull'icona **Layer di modifica** ![Icona: modifica](/img/manual-english-icon-editing.avif) (a sinistra di ogni riga) si aprirà una finestra modale che consentirà di:",
     "Customize the demo": "Personalizzare la demo",
     "Editing on line": "Modifica online",
     "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).": "Per **ulteriori informazioni** sulla funzione di modifica sul web, consulta la [**sezione dedicata del manuale**](editing-client-tools.md).",

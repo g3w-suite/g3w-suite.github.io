@@ -1,6 +1,6 @@
 # InterCad
 
-![InterCad](/img/site-intercad.png)
+![InterCad](/img/site-intercad.avif)
 
 InterCad is a Swiss technology company working with digital solutions for GIS and infrastructure; it is now part of the NTI Group.
 

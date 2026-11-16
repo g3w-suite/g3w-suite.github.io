@@ -6,13 +6,13 @@
 
 Add custom base layers and make them available to individual WebGIS services.
 
-![Screenshot: G3W-ADMIN Django Administration](/img/manual-english-g3wadmin-django-administration.png)
+![Screenshot: G3W-ADMIN Django Administration](/img/manual-english-g3wadmin-django-administration.avif)
 
 ### Create new Base Layers starting from external services
 
 In the **Django Administration** session, access the **Base Layers** sub-session and click on the **Add Base Layer** button.
 
-![Screenshot: Django Base Layers](/img/manual-english-django-base-layers.png)
+![Screenshot: Django Base Layers](/img/manual-english-django-base-layers.avif)
 
 Assuming you want to add the following WMST service [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/) you fill in the form as follows:
 
@@ -33,7 +33,7 @@ Assuming you want to add the following WMST service [http://qgistiles.webmapp.it
  "servertype": "TMS"
 }
 
-![Screenshot: G3W-ADMIN Django Administration Add](/img/manual-english-g3wadmin-django-administration-add.png)
+![Screenshot: G3W-ADMIN Django Administration Add](/img/manual-english-g3wadmin-django-administration-add.avif)
 
 The new Base Layer will then be available and can be activated at the level of individual Cartographic Groups.
 
@@ -45,7 +45,7 @@ As an example, remember that you can publish a set of orthophotos as a single VR
 
 After publishing, you will need to activate the cache on that specific layer and and activate the **Save as Base layer** option in the form option.
 
-![Screenshot: G3W-SUITE Administration Base Layer Cache](/img/manual-english-g3wsuite-administration-base-layer-cache.png)
+![Screenshot: G3W-SUITE Administration Base Layer Cache](/img/manual-english-g3wsuite-administration-base-layer-cache.avif)
 
 Automatically a new **Base Layer** will be inserted into those present in the Base Layer subsession of the **Django Administration** session and it will be available and can be activated at the level of individual Cartographic Groups.
 
@@ -69,12 +69,12 @@ Other languages ​​can be added.
 ### Map client
 On the top bar you can choose, through a drop-down menu, the language of the entire client interface.
 
-![Screenshot: Language Client](/img/manual-english-language-client.png)
+![Screenshot: Language Client](/img/manual-english-language-client.avif)
 
 ### Administration
 Use the same dropdown to set the administration panel language.
 
-![Screenshot: Language Admin](/img/manual-english-language-admin.png)
+![Screenshot: Language Admin](/img/manual-english-language-admin.avif)
 
 ### Front end
 Fixed front end content is already available in the four basic languages.
@@ -92,7 +92,7 @@ To carry out the translation of these contents, proceed as follows:
  * fill in the form in the chosen language
  * save the settings
 
-![Screenshot: Language Form](/img/manual-english-language-form.png)
+![Screenshot: Language Form](/img/manual-english-language-form.avif)
 
 Then:
  * access the form again in modification

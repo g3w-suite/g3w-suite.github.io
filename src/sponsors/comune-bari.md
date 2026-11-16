@@ -1,6 +1,6 @@
 # Comune di Bari
 
-![Comune di Bari](/img/site-bari-city-logo.png)
+![Comune di Bari](/img/site-bari-city-logo.avif)
 
 The Municipality of Bari is the local government of Bari, in southern Italy.
 

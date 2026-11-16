@@ -35,11 +35,11 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-qmap-logo.png" alt="QMAP" loading="lazy">
+    <img src="/img/site-qmap-logo.avif" alt="QMAP" loading="lazy">
     <div class="sponsor-name"><a href="https://qmap.ro/" target="_blank" rel="noopener noreferrer">QMAP</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana-logo.jpg" alt="{{t 'Reno Reclamation Consortium'}}" loading="lazy">
+    <img src="/img/site-bonifica-renana-logo.avif" alt="{{t 'Reno Reclamation Consortium'}}" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">{{t 'Reno Reclamation Consortium'}}</a></div>
   </div>
   <div class="changelog-sponsor-card">
@@ -55,7 +55,7 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 Take advantage of all the news related to the preparation of QGIS projects with the new LTR version
 
-<img src="/img/site-qgis-3-34.png" alt="{{t 'Screenshot: QGIS 3 34'}}" loading="lazy">
+<img src="/img/site-qgis-3-34.avif" alt="{{t 'Screenshot: QGIS 3 34'}}" loading="lazy">
 
 ## Administration
 
@@ -101,7 +101,7 @@ For more information:
 
 [https://docs.qgis.org/3.34/en/docs/server_manual/services/ogcapif.html](https://docs.qgis.org/3.34/en/docs/server_manual/services/ogcapif.html)
 
-<img src="/img/site-wfs3.png" alt="{{t 'Screenshot: Wfs3'}}" loading="lazy">
+<img src="/img/site-wfs3.avif" alt="{{t 'Screenshot: Wfs3'}}" loading="lazy">
 
 ## Cartographic client and interaction with the map
 
@@ -157,7 +157,7 @@ It is also possible to easily switch from displaying data in a table to that in 
 
 The recognition of field types (integer, double, text…) allows you to avoid entering incorrect values on the various fields in order to avoid errors when saving
 
-<img src="/img/site-field-type-constraints.png" alt="{{t 'Screenshot: Field Type Constraints'}}" loading="lazy">
+<img src="/img/site-field-type-constraints.avif" alt="{{t 'Screenshot: Field Type Constraints'}}" loading="lazy">
 
 ## Print
 
@@ -183,7 +183,7 @@ The user can manually define the scale and DPI values for the the print outputs
 
 If on the QGIS project I exclude a print layout from those available in the WMS service, this is excluded also from the WebGis service
 
-<img src="/img/site-exclude-map-layouts.png" alt="{{t 'Screenshot: Exclude Map Layouts'}}" loading="lazy">
+<img src="/img/site-exclude-map-layouts.avif" alt="{{t 'Screenshot: Exclude Map Layouts'}}" loading="lazy">
 
 ## FrontEnd
 
@@ -191,7 +191,7 @@ If on the QGIS project I exclude a print layout from those available in the WMS 
 
 For each published WebGis service, the associated OGC services can be consulted
 
-<img src="/img/site-frontend-ogc.png" alt="{{t 'Screenshot: Frontend OGC'}}" loading="lazy">
+<img src="/img/site-frontend-ogc.avif" alt="{{t 'Screenshot: Frontend OGC'}}" loading="lazy">
 
 ## Minor improvements
 

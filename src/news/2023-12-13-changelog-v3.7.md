@@ -23,13 +23,13 @@ Among the main innovations we also remember:
 - **PostGis ratser supported**
 - **…and much more!**
 
-<img src="/img/site-g3wsuite-3-7.png" alt="Screenshot: G3W-SUITE 3 7" loading="lazy">
+<img src="/img/site-g3wsuite-3-7.avif" alt="Screenshot: G3W-SUITE 3 7" loading="lazy">
 
 ### **We hope you enjoy this great work!**
 
 ### **Happy mapping!**
 
-<img src="/img/site-qprocessing-logo.png" alt="Logo: Qprocessing" loading="lazy">
+<img src="/img/site-qprocessing-logo.avif" alt="Logo: Qprocessing" loading="lazy">
 
 ## Sponsor and funder
 
@@ -39,11 +39,11 @@ Among the **main funder of this version** we remember:
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpa-piemonte.png" alt="Piemonte Regional Environmental Protection Agency" loading="lazy">
+    <img src="/img/site-arpa-piemonte.avif" alt="Piemonte Regional Environmental Protection Agency" loading="lazy">
     <div class="sponsor-name"><a href="https://www.arpa.piemonte.it/" target="_blank" rel="noopener noreferrer">Piemonte Regional Environmental Protection Agency</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-qtibia-long.png" alt="QTIBIA Engineering" loading="lazy">
+    <img src="/img/site-qtibia-long.avif" alt="QTIBIA Engineering" loading="lazy">
     <div class="sponsor-name"><a href="https://qtibia.ro/" target="_blank" rel="noopener noreferrer">QTIBIA Engineering</a></div>
   </div>
 </div>
@@ -72,7 +72,7 @@ It is possible to activate the following functions at user log level:
 
 Recovery is carried out via the email associated with the individual user
 
-<img src="/img/site-recovery-pwd.png" alt="Screenshot: Recovery Pwd" loading="lazy">
+<img src="/img/site-recovery-pwd.avif" alt="Screenshot: Recovery Pwd" loading="lazy">
 
 ### Feature: External user registration system**  **
 
@@ -82,13 +82,13 @@ On the Administration side it will be possible to define which user groups to wh
 
 Recovery is carried out via the email associated with the individual user
 
-<img src="/img/site-external-user.png" alt="Screenshot: External User" loading="lazy">
+<img src="/img/site-external-user.avif" alt="Screenshot: External User" loading="lazy">
 
 ### Feature: Creation of user groups****
 
 **From this version it is possible to define the users belonging to a user group directly when creating the group**
 
-<img src="/img/site-users-group.png" alt="Screenshot: Users Group" loading="lazy">
+<img src="/img/site-users-group.avif" alt="Screenshot: Users Group" loading="lazy">
 
 ### Feature: Give permission to upload geo-data into FileManager section to Editor Level 1 users****
 
@@ -98,7 +98,7 @@ Until now, only the Admin user could upload and manage geographic data on a phys
 
 **With this version, Editor1 will also be able to manage cartographic contents on FileManager in a folder dedicated to it, simplifying content management in situations where it is necessary to set up administrator users of different levels.**
 
-<img src="/img/site-webgis-mobile-editing-screen.png" alt="Screenshot: Webgis Mobile Editing Screen" loading="lazy">
+<img src="/img/site-webgis-mobile-editing-screen.avif" alt="Screenshot: Webgis Mobile Editing Screen" loading="lazy">
 
 ### Feature: Format of WMS GetMap response definition****
 
@@ -106,13 +106,13 @@ Until now, only the Admin user could upload and manage geographic data on a phys
 
 The value available will be the standard formats that QGIS server can manage.
 
-<img src="/img/site-wmsgetmap.png" alt="Screenshot: Wmsgetmap" loading="lazy">
+<img src="/img/site-wmsgetmap.avif" alt="Screenshot: Wmsgetmap" loading="lazy">
 
 ### Feature: Set geocoding provide for gecoding map control****
 
 **In the publication form of the webgis service it is possible to define the geocoding endpoints if the project groups have the ‘geocoding’ mapcontrol (ex ‘nominatim’) active.**
 
-<img src="/img/site-webgis-group-switcher-screen.png" alt="Screenshot: Webgis Group Switcher Screen" loading="lazy">
+<img src="/img/site-webgis-group-switcher-screen.avif" alt="Screenshot: Webgis Group Switcher Screen" loading="lazy">
 
 ## Supported data types
 
@@ -120,7 +120,7 @@ The value available will be the standard formats that QGIS server can manage.
 
 **PostGis rasters join the other geographic formats supported by the suite.**
 
-<img src="/img/site-postgis-raster.png" alt="Screenshot: PostGIS Raster" loading="lazy">
+<img src="/img/site-postgis-raster.avif" alt="Screenshot: PostGIS Raster" loading="lazy">
 
 ## General
 
@@ -137,7 +137,7 @@ The expression will be displayed:
 - in the editing phase of the related table
 - in the values shown on searches based on that layer/field
 
-<img src="/img/site-relation-reference.png" alt="Screenshot: Relation Reference" loading="lazy">
+<img src="/img/site-relation-reference.avif" alt="Screenshot: Relation Reference" loading="lazy">
 
 ### Feature: 1:N relations based on multi fields
 
@@ -145,7 +145,7 @@ The expression will be displayed:
 
 **From this version the suite also manages 1:N relations based on multiple key fields**
 
-<img src="/img/site-multi-fields-relation.png" alt="Screenshot: Multi Fields Relation" loading="lazy">
+<img src="/img/site-multi-fields-relation.avif" alt="Screenshot: Multi Fields Relation" loading="lazy">
 
 ## Editing on line
 
@@ -189,7 +189,7 @@ The preparation of a search based on a field of a layer on which one of these wi
 - **Value map**
 - **Relation reference**
 
-<img src="/img/site-search-widget-relation.png" alt="Screenshot: Search Widget Relation" loading="lazy">
+<img src="/img/site-search-widget-relation.avif" alt="Screenshot: Search Widget Relation" loading="lazy">
 
 ## Interaction with the map
 

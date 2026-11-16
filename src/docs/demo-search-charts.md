@@ -4,13 +4,13 @@
 
 ## Search widget creation
 
-To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.png)**
+To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.avif)**
 
 **NB:** there may be a number of searches created by other users for the same layer.
 
 You can activate them by **clicking on the `Linked` chekbox**.
 
-![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.png)
+![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.avif)
 
 The listed searches can be **modified, deleted or unlinked** using the appropriate icons.
 
@@ -43,12 +43,12 @@ In case of **strictly dependence**, the values of the dependent fields will be l
 Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.
 
 
-The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
+The button ![Button: Add](/img/manual-english-button-add.avif) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
 
 
 The example below shows the compilation of the form for creating a search widget dedicated to a cadastral cartography layer.
 
-![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.png)
+![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.avif)
 
 Once the form has been filled in, click on the **`OK button` to save** the settings.
 
@@ -56,7 +56,7 @@ Once the settings are saved, the created widget will appear in the list of Widge
 
 **The widget will already be **`linked`** and therefore available in the WebGis interface on the left panel.**
 
-![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.png)
+![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)
 
 ## Plots widget
 
@@ -70,19 +70,19 @@ For this reason, there may be some plots created by other users for the same lay
 You can activate them by **clicking on the `Linked` chekbox**.
 
 
-![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.png)
+![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)
 
 The title of the chart, defined at the plugin level, will be the unique identifier.
 
 Try to create your plots in the QGIS project, save them as .xml and upload them to view the resluts on the webgis.
 
-![Screenshot: G3W-SUITE QGIS Plots](/img/manual-english-g3wsuite-qgis-plots.png)
+![Screenshot: G3W-SUITE QGIS Plots](/img/manual-english-g3wsuite-qgis-plots.avif)
 
-![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.png)
+![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.avif)
 
 The graphs are filterable based on the:
-* ![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map
-* ![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features
+* ![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.avif) features visible on the map
+* ![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.avif) filter based on the selected features
  
 These **filters** are also **reflected on the plots associated to the related data** (in 1:N mode) based on the visible and/or selected parent features.
 
@@ -97,7 +97,7 @@ Appropriate **messages** at the single plots level will indicate the activation 
 
 If 1: N relations are associated with the interrogated layer and plots have been activated on the referencing tables, it will also be possible to consult these plots by querying the referenced layer and clicking on the **Show relation charts** icon present in the results form.
 
-![Screenshot: G3wclient Attribute View Plots](/img/manual-english-g3wclient-attribute-view-plots.png)
+![Screenshot: G3wclient Attribute View Plots](/img/manual-english-g3wclient-attribute-view-plots.avif)
 
 
 **Show relation charts:** display of graphs related to 1: N related data. Only if 1: N relations are associated with the interrogated layer and graphics have been activated on the boy tables.
@@ -105,15 +105,15 @@ If 1: N relations are associated with the interrogated layer and plots have been
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.png)": "![Schermata: risultato della ricerca nella demo](/img/manual-english-demo-search-result.png)",
-    "![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.png)": "![Schermata: grafici nell'amministrazione G3W-SUITE](/img/manual-english-g3wsuite-administration-plots.png)",
-    "![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.png)": "![Schermata: modulo di ricerca del progetto nell'amministrazione G3W-SUITE](/img/manual-english-g3wsuite-administration-project-search-form.png)",
-    "![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.png)": "![Schermata: elenco dei widget del progetto nell'amministrazione G3W-SUITE](/img/manual-english-g3wsuite-administration-project-widget-list.png)",
-    "![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.png)": "![Schermata: grafici del client G3W-SUITE](/img/manual-english-g3wsuite-client-plots.png)",
-    "![Screenshot: G3W-SUITE QGIS Plots](/img/manual-english-g3wsuite-qgis-plots.png)": "![Schermata: grafici QGIS di G3W-SUITE](/img/manual-english-g3wsuite-qgis-plots.png)",
-    "![Screenshot: G3wclient Attribute View Plots](/img/manual-english-g3wclient-attribute-view-plots.png)": "![Schermata: vista attributi e grafici di G3W Client](/img/manual-english-g3wclient-attribute-view-plots.png)",
-    "![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.png) features visible on the map": "![Schermata: filtro mappa dei grafici di G3W Client](/img/manual-english-g3wclient-plots-map-filter.png) entità visibili sulla mappa",
-    "![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.png) filter based on the selected features": "![Schermata: filtro di selezione dei grafici di G3W Client](/img/manual-english-g3wclient-plots-selection-filter.png) filtro basato sulle entità selezionate",
+    "![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)": "![Schermata: risultato della ricerca nella demo](/img/manual-english-demo-search-result.avif)",
+    "![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)": "![Schermata: grafici nell'amministrazione G3W-SUITE](/img/manual-english-g3wsuite-administration-plots.avif)",
+    "![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.avif)": "![Schermata: modulo di ricerca del progetto nell'amministrazione G3W-SUITE](/img/manual-english-g3wsuite-administration-project-search-form.avif)",
+    "![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.avif)": "![Schermata: elenco dei widget del progetto nell'amministrazione G3W-SUITE](/img/manual-english-g3wsuite-administration-project-widget-list.avif)",
+    "![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.avif)": "![Schermata: grafici del client G3W-SUITE](/img/manual-english-g3wsuite-client-plots.avif)",
+    "![Screenshot: G3W-SUITE QGIS Plots](/img/manual-english-g3wsuite-qgis-plots.avif)": "![Schermata: grafici QGIS di G3W-SUITE](/img/manual-english-g3wsuite-qgis-plots.avif)",
+    "![Screenshot: G3wclient Attribute View Plots](/img/manual-english-g3wclient-attribute-view-plots.avif)": "![Schermata: vista attributi e grafici di G3W Client](/img/manual-english-g3wclient-attribute-view-plots.avif)",
+    "![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.avif) features visible on the map": "![Schermata: filtro mappa dei grafici di G3W Client](/img/manual-english-g3wclient-plots-map-filter.avif) entità visibili sulla mappa",
+    "![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.avif) filter based on the selected features": "![Schermata: filtro di selezione dei grafici di G3W Client](/img/manual-english-g3wclient-plots-selection-filter.avif) filtro basato sulle entità selezionate",
     "**Add plots created using QGIS [DataPlotly](https://github.com/ghtmtt/DataPlotly) (a great plugin developed by [Matteo Ghetta](https://github.com/ghtmtt)) in the cartographic client.**": "**Aggiungi al client cartografico i grafici creati con QGIS [DataPlotly](https://github.com/ghtmtt/DataPlotly) (un ottimo plugin sviluppato da [Matteo Ghetta](https://github.com/ghtmtt)).**",
     "**Form Title**": "**Titolo del modulo**",
     "**General configuration of research and results**": "**Configurazione generale della ricerca e dei risultati**",
@@ -147,7 +147,7 @@ If 1: N relations are associated with the interrogated layer and plots have been
     "Search widget creation": "Creazione di un widget di ricerca",
     "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **filter based on the map content** can be activated globally on all plots (icon at the top of the panel dedicated to charts) or on only some specific plots (icon placed at the level of the individual plots).": "Il **filtro basato sul contenuto della mappa** può essere attivato globalmente su tutti i grafici (icona in cima al pannello dei grafici) oppure solo su alcuni grafici specifici (icona accanto al singolo grafico).",
-    "The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Pulsante: aggiungi](/img/manual-english-button-add.png) consente di aggiungere altri campi alla query di ricerca, gestibile tramite operatori **AND/OR**.",
+    "The button ![Button: Add](/img/manual-english-button-add.avif) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Pulsante: aggiungi](/img/manual-english-button-add.avif) consente di aggiungere altri campi alla query di ricerca, gestibile tramite operatori **AND/OR**.",
     "The example below shows the compilation of the form for creating a search widget dedicated to a cadastral cartography layer.": "L'esempio seguente mostra la compilazione del modulo per creare un widget di ricerca dedicato a un layer cartografico catastale.",
     "The graphs are filterable based on the:": "È possibile filtrare i grafici in base a:",
     "The listed searches can be **modified, deleted or unlinked** using the appropriate icons.": "Le ricerche elencate possono essere **modificate, eliminate o scollegate** tramite le icone corrispondenti.",
@@ -157,7 +157,7 @@ If 1: N relations are associated with the interrogated layer and plots have been
     "The title of the chart, defined at the plugin level, will be the unique identifier.": "Il titolo del grafico, definito nel plugin, sarà il suo identificativo univoco.",
     "These **filters** are also **reflected on the plots associated to the related data** (in 1:N mode) based on the visible and/or selected parent features.": "Questi **filtri** si **riflettono anche sui grafici associati ai dati correlati** (in modalità 1:N), in base alle entità padre visibili e/o selezionate.",
     "To **create a new search**, click on the blue link **`New widget`**.": "Per **creare una nuova ricerca**, fai clic sul collegamento blu **`Nuovo widget`**.",
-    "To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.png)**": "Per creare uno strumento di ricerca disponibile nel WebGIS, **scegli il layer vettoriale** a cui applicarlo e **fai clic sull'icona `Elenco dei widget` ![Icona: widget](/img/manual-english-icon-widget.png)**",
+    "To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.avif)**": "Per creare uno strumento di ricerca disponibile nel WebGIS, **scegli il layer vettoriale** a cui applicarlo e **fai clic sull'icona `Elenco dei widget` ![Icona: widget](/img/manual-english-icon-widget.avif)**",
     "Try to create your plots in the QGIS project, save them as .xml and upload them to view the resluts on the webgis.": "Prova a creare i grafici nel progetto QGIS, salvali in formato .xml e caricali per visualizzarli nel WebGIS.",
     "You can activate them by **clicking on the `Linked` chekbox**.": "Puoi attivarli **selezionando la casella `Collegato`**.",
     "`AutoCompleteBox`: values ​​shown through auto-complete mode": "`AutoCompleteBox`: valori mostrati tramite completamento automatico",

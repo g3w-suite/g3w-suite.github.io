@@ -1,6 +1,6 @@
 # Consorzio della Bonifica Renana
 
-![Consorzio della Bonifica Renana](/img/site-bonifica-renana.png)
+![Consorzio della Bonifica Renana](/img/site-bonifica-renana.avif)
 
 The Consorzio della Bonifica Renana manages drainage channels and works to reduce hydrogeological risk in its territory.
 

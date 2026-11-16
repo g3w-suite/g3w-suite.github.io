@@ -1,6 +1,6 @@
 # Comunità di Montagna della Carnia
 
-![Comunità di Montagna della Carnia](/img/site-carnia-mountain-community-logo.png)
+![Comunità di Montagna della Carnia](/img/site-carnia-mountain-community-logo.avif)
 
 The Mountain Community of Carnia brings together municipalities in the Carnia area of Friuli Venezia Giulia.
 

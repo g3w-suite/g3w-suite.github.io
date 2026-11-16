@@ -10,17 +10,17 @@ If a specific layer is selected in the TOC, the results are limited to that laye
 
 Right-click the map to access functions for the selected point and other actions.
 
-![Screenshot: Right Click](/img/manual-english-right-click.png)
+![Screenshot: Right Click](/img/manual-english-right-click.avif)
 
 ### Query type
 
-![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.png) **Point query**
+![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.avif) **Point query**
 
 The point quey acts, by default, with the coring method, providing information relating to all the layers (setted as querable in the QGIS project) underlying the point where you click with the mouse or draw a box.
 
 To query a single layer, it must be previously selected at the TOC level.
 
-![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.png) **Area query**
+![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.avif) **Area query**
 
 Use an area query to search project layers with a polygon:
  * draw: rectangles, circles or free-form polygons
@@ -30,7 +30,7 @@ The result of these type of query can be based on the geometric operations inter
 
 The choice made via the drop-down menu allows you to move from one result to another dynamically.
 
-![Screenshot: Query Intersect Within](/img/manual-english-query-intersect-within.png)
+![Screenshot: Query Intersect Within](/img/manual-english-query-intersect-within.avif)
 
 The Query area tool works also on the layers added using the AddLayer tool
 
@@ -43,7 +43,7 @@ The display of the attributes of the queried geometries is by default structured
 
 Upon querying a geometry, the form structure will be replicated at the client level.
 
-![Screenshot: G3wclient Attribute View](/img/manual-english-g3wclient-attribute-view.png)
+![Screenshot: G3wclient Attribute View](/img/manual-english-g3wclient-attribute-view.avif)
 
 Any links to photos will determine the display of a clickable preview, any links to links or other multimedia content will determine the display of the Open button that will allow consultation of the link.
 
@@ -53,11 +53,11 @@ For further information on this point, see the [**dedicated paragraph**](project
 
 In case the query provides one single result, the attributes will be displayed according to the form defined in the QGIS project or as a column list
 
- ![Screenshot: G3wclient Fomr 1 N Plots](/img/manual-english-g3wclient-fomr-1-n-plots.png)
+ ![Screenshot: G3wclient Fomr 1 N Plots](/img/manual-english-g3wclient-fomr-1-n-plots.avif)
 
 
 The bar above the query results shows the following icons:
-![Screenshot: G3wclient Attribute Icons](/img/manual-english-g3wclient-attribute-icons.png)
+![Screenshot: G3wclient Attribute Icons](/img/manual-english-g3wclient-attribute-icons.avif)
 
  * **Zoom to feature:** if the function is activated on the Properties of the QGIS project
  * **Show relations (1: N):** if present on the QGIS project
@@ -74,10 +74,10 @@ The bar above the query results shows the following icons:
 
 In case the query provides more results these will be listed as a list with the possibility to expand the detailed information.
 
-![Screenshot: G3wclient Attribute List](/img/manual-english-g3wclient-attribute-list.png)
+![Screenshot: G3wclient Attribute List](/img/manual-english-g3wclient-attribute-list.avif)
 
 A series of icons, relating to the list of resulting features, will allow you to:
- ![Screenshot: G3wclient Attribute List Icons](/img/manual-english-g3wclient-attribute-list-icons.png)
+ ![Screenshot: G3wclient Attribute List Icons](/img/manual-english-g3wclient-attribute-list-icons.avif)
 
  * **Zoom to features result extent:** if the function is activated on the Properties of the QGIS project
  * **Print Atlas:** prints the reports (atlas) (if set on QGIS project) related to all the features result
@@ -96,13 +96,13 @@ The fields resulting from a join (created in QGIS) with a third layer will autom
 
 In the event that, at the QGIS project level, **one or more type 1:n relations** have been associated with a layer, the icon **Show Relationships**  will be shown in the attribute form.
 
-![Icon: Relations](/img/manual-english-icon-relations.png)
+![Icon: Relations](/img/manual-english-icon-relations.avif)
 
 By clicking on the icon you will access the **list of 1:N relations** present and, from these, the list of child records associated with the individual relationships. 
 
 If the relations are inserted in a custom form dedicated to displaying attributes (QGIS Attributes form), then the link to them will be displayed directly in the parent attributes form.
 
-![Screenshot: G3wclient Relations Records View](/img/manual-english-g3wclient-relations-records-view.png)
+![Screenshot: G3wclient Relations Records View](/img/manual-english-g3wclient-relations-records-view.avif)
 
 
 After accessing one of the existing relationships, the child records will be displayed in tabular format.
@@ -110,7 +110,7 @@ After accessing one of the existing relationships, the child records will be dis
 Above the table, a dedicated section will report the main information of the parent feature (breadcrumps).
 
 
-![Screenshot: G3wclient Relations Records View](/img/manual-english-g3wclient-relations-records-view.png)
+![Screenshot: G3wclient Relations Records View](/img/manual-english-g3wclient-relations-records-view.avif)
 
 
 A filter, applied generically to the contents of all fields, will allow you to filter the list of child records.
@@ -121,7 +121,7 @@ In the case of **links to multimedia contents**, the previews of the images and/
 
 In case of **active plots** on the related table, these will be displayed through **`Show charts`** at the top right.
 
-![Screenshot: G3wclient Relations View](/img/manual-english-g3wclient-relations-view.png)
+![Screenshot: G3wclient Relations View](/img/manual-english-g3wclient-relations-view.avif)
 
 ## Parameterized URLs
 
@@ -144,8 +144,8 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.png) **Area query**": "![Icona: interrogazione per area](/img/manual-english-icon-navigation-query-area-icon.png) **Interrogazione per area**",
-    "![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.png) **Point query**": "![Icona: interroga layer](/img/manual-english-icon-navigation-querylayer.png) **Interrogazione puntuale**",
+    "![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.avif) **Area query**": "![Icona: interrogazione per area](/img/manual-english-icon-navigation-query-area-icon.avif) **Interrogazione per area**",
+    "![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.avif) **Point query**": "![Icona: interroga layer](/img/manual-english-icon-navigation-querylayer.avif) **Interrogazione puntuale**",
     "**Add feature on result:** add features (clicking on the map) to the current list of results (useful to choose manually the list of objects to select/download)": "**Aggiungi elemento ai risultati:** aggiunge elementi all’elenco corrente facendo clic sulla mappa (utile per scegliere manualmente gli oggetti da selezionare o scaricare)",
     "**Add/Remove selection:** add/remove the features to the current selection": "**Aggiungi/Rimuovi dalla selezione:** aggiunge o rimuove gli elementi dalla selezione corrente",
     "**Add/Remove selection:** add/remove the list of features result to the current selection": "**Aggiungi/Rimuovi dalla selezione:** aggiunge o rimuove l’elenco degli elementi risultanti dalla selezione corrente",

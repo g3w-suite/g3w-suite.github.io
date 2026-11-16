@@ -43,7 +43,7 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 [Planetek Italia](https://www.planetek.it/)
 
-<img src="/img/site-bonifica-renana-logo.jpg" alt="Logo: Bonifica Renana" loading="lazy">
+<img src="/img/site-bonifica-renana-logo.avif" alt="Logo: Bonifica Renana" loading="lazy">
 
 [Consorzio della Bonifica Renana](https://www.bonificarenana.it)
 
@@ -55,7 +55,7 @@ In the Administration panel, it is possible to consult the list of OGC services 
 
 The **access mode** is specified for each service (free or with credentials)
 
-<img src="/img/site-ogc-services.jpg" alt="Screenshot: OGC Services" loading="lazy">
+<img src="/img/site-ogc-services.avif" alt="Screenshot: OGC Services" loading="lazy">
 
 ### Feature: XYZ Tiles and Base Layers creation**  **
 
@@ -71,7 +71,7 @@ So **you can create new base layers** starting **from cached layers** of any web
 
 A simple pwd recovery / variation system dedicated to users has been added.
 
-<img src="/img/site-recovery-pwd.png" alt="Screenshot: Recovery Pwd" loading="lazy">
+<img src="/img/site-recovery-pwd.avif" alt="Screenshot: Recovery Pwd" loading="lazy">
 
 ## Data providers
 
@@ -79,7 +79,7 @@ A simple pwd recovery / variation system dedicated to users has been added.
 
 ****Virtual layers**** **are now supported**
 
-<img src="/img/site-virtual-layer.png" alt="Screenshot: Virtual Layer" loading="lazy">
+<img src="/img/site-virtual-layer.avif" alt="Screenshot: Virtual Layer" loading="lazy">
 
 ## Plots
 
@@ -184,7 +184,7 @@ Atlas prints are **available** both **from the generic print session** and **fro
 
 Print layouts with **multiple map items** and **panoramic maps** are now supported
 
-<img src="/img/site-print-multimap.jpg" alt="Screenshot: Print Multimap" loading="lazy">
+<img src="/img/site-print-multimap.avif" alt="Screenshot: Print Multimap" loading="lazy">
 
 ## Editing
 

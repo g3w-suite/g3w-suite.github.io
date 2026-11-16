@@ -188,12 +188,12 @@ Then('page-local translations are valid and used by the Italian build', function
   );
   const latestChangelogIt = readPage(path.join(staticDir, 'it', 'news', 'v3.11', 'index.html')).$;
   assert.equal(latestChangelogIt('main .sponsor-country').first().text(), 'Svizzera');
-  assert.equal(latestChangelogIt('main img[src="/img/site-bookmarks-projects.png"]').attr('alt'), 'Schermata: progetti preferiti');
+  assert.equal(latestChangelogIt('main img[src="/img/site-bookmarks-projects.avif"]').attr('alt'), 'Schermata: progetti preferiti');
   assert.ok(latestChangelogIt('main').text().includes('riduzione superiore al 90% dei tempi di compilazione'));
   const changelog38It = readPage(path.join(staticDir, 'it', 'news', 'v3.8', 'index.html')).$;
   assert.ok(changelog38It('main').text().includes("L'elenco dei gruppi cartografici può essere filtrato"));
   const changelog39It = readPage(path.join(staticDir, 'it', 'news', 'v3.9', 'index.html')).$;
-  assert.equal(changelog39It('main img[src="/img/site-grosseto-logo.png"]').attr('alt'), 'Comune di Grosseto');
+  assert.equal(changelog39It('main img[src="/img/site-grosseto-logo.avif"]').attr('alt'), 'Comune di Grosseto');
   const changelog310It = readPage(path.join(staticDir, 'it', 'news', 'v3.10', 'index.html')).$;
   const changelog310En = readPage(path.join(staticDir, 'en', 'news', 'v3.10', 'index.html')).$;
   assert.equal(changelog310It('main .sponsor-country').first().text(), 'Svizzera');

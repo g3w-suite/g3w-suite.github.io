@@ -1,6 +1,6 @@
 # ARPA Piemonte
 
-![ARPA Piemonte](/img/site-arpa-piemonte.png)
+![ARPA Piemonte](/img/site-arpa-piemonte.avif)
 
 ARPA Piemonte is the regional agency for environmental protection in Piedmont, Italy.
 

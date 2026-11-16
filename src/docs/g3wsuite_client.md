@@ -4,11 +4,11 @@
 
 The application has a responsive interface consisting of expandable and reducible sessions.
 
-![Screenshot: G3wclient Interface](/img/manual-english-g3wclient-interface.png)
+![Screenshot: G3wclient Interface](/img/manual-english-g3wclient-interface.avif)
 
 ### Header
 
-![Screenshot: G3wclient Header](/img/manual-english-g3wclient-header.png)
+![Screenshot: G3wclient Header](/img/manual-english-g3wclient-header.avif)
 
 The contents of the header differ for the public user and for the logged in user
 
@@ -26,7 +26,7 @@ The contents of the header differ for the public user and for the logged in user
    * **Change map:** switch WebGIS services while keeping the map extent and scale
  * **Language:** the choice of language is reflected in the individual menus of the map client and on the contents of the access portal. The languages available are those activated by the Administration.
 
-![Screenshot: G3wclient Header Anonymus](/img/manual-english-g3wclient-header-anonymus.png)
+![Screenshot: G3wclient Header Anonymus](/img/manual-english-g3wclient-header-anonymus.avif)
 
 **Logged user**
 
@@ -43,7 +43,7 @@ The contents of the header differ for the public user and for the logged in user
    * **Change map:** switch WebGIS services while keeping the map extent and scale
  * **Language:** the choice of language is reflected in the individual menus of the map client and on the contents of the access portal. The languages available are those activated by the Administration.
 
- ![Screenshot: G3wclient Header Signed](/img/manual-english-g3wclient-header-signed.png)
+ ![Screenshot: G3wclient Header Signed](/img/manual-english-g3wclient-header-signed.avif)
 
 ### Main menù
 
@@ -59,18 +59,18 @@ The upper section containing:
  * **Editing layers:** open editing session
  * **Theme:** a session to define which theme (among those defined in the QGIS project) to activate; the user (not anonymous) can create and save his own themes to recall them as needed
 
-![Screenshot: G3wclient Header Anonymus](/img/manual-english-g3wclient-header-anonymus.png)
+![Screenshot: G3wclient Header Anonymus](/img/manual-english-g3wclient-header-anonymus.avif)
 
 The middle section containing the list of project layers organized into any groups as in a QGIS project.
 
 Depending on the settings defined at the QGIS project publication level, the legend can be inserted in a dedicated tab or integrated into the layer list as in QGIS.
 
-![Screenshot: G3wclient Tool Panel](/img/manual-english-g3wclient-tool-panel.png)
+![Screenshot: G3wclient Tool Panel](/img/manual-english-g3wclient-tool-panel.avif)
 
 
 Base Layer management is now handled by a map control at map level
 
-![Screenshot: G3wclient Tool Panel](/img/manual-english-g3wclient-tool-panel.png)
+![Screenshot: G3wclient Tool Panel](/img/manual-english-g3wclient-tool-panel.avif)
 
 The lower section containing:
    * **Add layer:** session to add local vector layers or custom WMS services to the map

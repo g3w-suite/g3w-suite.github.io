@@ -4,9 +4,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { basePath, languages, projectRoot, sourceDir, publishedHtml } = require('./config');
 const { marked, getHeadingList, autoTranslateMarkdown, renderMarkdownButtonLinks } = require('./markdown');
-const { extractPageTranslations, translateHtml, renderPageAlternates } = require('./translations');
+const { extractPageTranslations, translateHtml, renderLanguageBlocks, renderPageAlternates } = require('./translations');
 const { renderBreadcrumb, renderComponent } = require('./routes');
 const { documentationFiles } = require('./files');
+const { prepareMermaid } = require('./mermaid');
 
 function documentationLink(href, file, docsDir, lang = 'en') {
   if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(href)) return href;
@@ -94,7 +95,7 @@ const documentationTranslations = {
   },
 };
 
-function buildDocumentation(outputDir) {
+function buildDocumentation(outputDir, diagrams) {
   const docsDir = path.join(sourceDir, 'docs');
   const indexFile = path.join(docsDir, 'index.md');
   const indexSource = fs.readFileSync(indexFile, 'utf8');
@@ -129,7 +130,7 @@ function buildDocumentation(outputDir) {
     const parentMatch = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(extracted.html);
     for (const lang of languages) {
       const localizedSource = translateHtml(
-        autoTranslateMarkdown(extracted.html, lang, extracted.translations),
+        autoTranslateMarkdown(renderLanguageBlocks(extracted.html, lang), lang, extracted.translations),
         lang,
         extracted.translations
       );
@@ -153,7 +154,11 @@ function buildDocumentation(outputDir) {
         const parentHeading = /^#\s+(.+)$/m.exec(localizedParentSource)?.[1];
         if (parentHeading) parentTitle = marked.parseInline(parentHeading).replace(/<[^>]*>/g, '');
       }
-      const sourceBody = localizedParent ? localizedSource.replace(localizedParent[0], '') : localizedSource;
+      const sourceBody = prepareMermaid(
+        localizedParent ? localizedSource.replace(localizedParent[0], '') : localizedSource,
+        diagrams,
+        `${sourceRelative} (${lang})`
+      );
       let sourceHeadings = [];
       if (lang === 'it') {
         marked.parse(parentMatch ? extracted.html.replace(parentMatch[0], '') : extracted.html);

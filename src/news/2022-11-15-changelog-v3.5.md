@@ -24,19 +24,19 @@ G3W-SUITE is an **open source project** and if you are able to, consider support
 
 <div class="changelog-sponsors">
   <div class="changelog-sponsor-card">
-    <img src="/img/site-lazio-regional-administration-logo.png" alt="Lazio Regional Administration" loading="lazy">
+    <img src="/img/site-lazio-regional-administration-logo.avif" alt="Lazio Regional Administration" loading="lazy">
     <div class="sponsor-name"><a href="https://www.regione.lazio.it/" target="_blank" rel="noopener noreferrer">Lazio Regional Administration</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-bonifica-renana-logo.jpg" alt="Consortium of Renan Reclamation" loading="lazy">
+    <img src="/img/site-bonifica-renana-logo.avif" alt="Consortium of Renan Reclamation" loading="lazy">
     <div class="sponsor-name"><a href="https://www.bonificarenana.it" target="_blank" rel="noopener noreferrer">Consortium of Renan Reclamation</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-arpa-piemonte.png" alt="Piemonte Regional Agency for Environmental Protection" loading="lazy">
+    <img src="/img/site-arpa-piemonte.avif" alt="Piemonte Regional Agency for Environmental Protection" loading="lazy">
     <div class="sponsor-name"><a href="http://www.arpa.piemonte.it/" target="_blank" rel="noopener noreferrer">Piemonte Regional Agency for Environmental Protection</a></div>
   </div>
   <div class="changelog-sponsor-card">
-    <img src="/img/site-rome-metropolitan-city-logo.jpg" alt="Metropolitan City Rome Capital" loading="lazy">
+    <img src="/img/site-rome-metropolitan-city-logo.avif" alt="Metropolitan City Rome Capital" loading="lazy">
     <div class="sponsor-name"><a href="https://geoportale.cittametropolitanaroma.it/" target="_blank" rel="noopener noreferrer">Metropolitan City Rome Capital</a></div>
   </div>
 </div>
@@ -176,7 +176,7 @@ in case of numerous editable layers, a compact filter allows to reduce the list 
 
 The use of the disk icon to save the editing changes will not ask for confirmation but will proceed directly to the saving as on QGIS.
 
-<img src="/img/site-save-step.png" alt="Screenshot: Save Step" loading="lazy">
+<img src="/img/site-save-step.avif" alt="Screenshot: Save Step" loading="lazy">
 
 ### Feature: Featurelock warning
 
@@ -218,7 +218,7 @@ The WMS URLs added by the user can be associated with a customized noem in order
 
 The fields exposed on the Query Builder tool are now filtered according to the settings on QGIS related to the WMS exposure.
 
-<img src="/img/site-query-builder-filter.png" alt="Screenshot: Query Builder Filter" loading="lazy">
+<img src="/img/site-query-builder-filter.avif" alt="Screenshot: Query Builder Filter" loading="lazy">
 
 ### Feature: StreetView map control
 

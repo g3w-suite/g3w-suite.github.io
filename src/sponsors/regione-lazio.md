@@ -1,6 +1,6 @@
 # Regione Lazio
 
-![Regione Lazio](/img/site-logo-regione-lazio.png)
+![Regione Lazio](/img/site-logo-regione-lazio.avif)
 
 Regione Lazio is the regional government of Lazio, in central Italy.
 

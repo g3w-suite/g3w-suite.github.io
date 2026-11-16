@@ -25,26 +25,26 @@ Contributions to code, documentation and translations make the project more acce
 These organizations and projects have supported G3W-SUITE over the years. Explore their profiles and the releases they helped make possible.
 
 - [Gis3W](/en/sponsors/gis3w/)
-- [![ARPA Liguria](/img/site-arpal.png) ARPA Liguria](/en/sponsors/arpa-liguria/)
-- [![ARPA Piemonte](/img/site-arpa-piemonte.png) ARPA Piemonte](/en/sponsors/arpa-piemonte/)
-- [![CNR IRPI](/img/site-cnr.png) CNR IRPI](/en/sponsors/cnr-irpi/)
-- [![Metropolitan City of Rome](/img/site-rome-metropolitan-city-logo.jpg) Città Metropolitana di Roma Capitale](/en/sponsors/citta-metropolitana-roma/)
-- [![Comune di Bari](/img/site-bari-city-logo.png) Comune di Bari](/en/sponsors/comune-bari/)
-- [![Comune di Grosseto](/img/site-grosseto-logo.png) Comune di Grosseto](/en/sponsors/comune-grosseto/)
-- [![Comune di Palermo](/img/site-palermo.png) Comune di Palermo](/en/sponsors/comune-palermo/)
-- [![Comune di Trento](/img/site-trento.png) Comune di Trento](/en/sponsors/comune-trento/)
-- [![Comunità di Montagna della Carnia](/img/site-carnia-mountain-community-logo.png) Comunità di Montagna della Carnia](/en/sponsors/comunita-carnia/)
-- [![Consorzio della Bonifica Renana](/img/site-bonifica-renana.png) Consorzio della Bonifica Renana](/en/sponsors/bonifica-renana/)
-- [![Fondazione Museo Civico di Rovereto](/img/site-logomcr.png) Fondazione Museo Civico di Rovereto](/en/sponsors/museo-civico-rovereto/)
-- [![InterCad](/img/site-intercad.png) InterCad](/en/sponsors/intercad/)
-- [![LEA](/img/site-lea-logo.png) LEA](/en/sponsors/lea/)
-- [![Planetek Italia](/img/site-planetek.png) Planetek Italia](/en/sponsors/planetek/)
-- [![QMAP](/img/site-qmap-logo.png) QMAP](/en/sponsors/qmap/)
-- [![QTIBIA Engineering](/img/site-qtibia-long.png) QTIBIA Engineering](/en/sponsors/qtibia/)
-- [![Regione Lazio](/img/site-logo-regione-lazio.png) Regione Lazio](/en/sponsors/regione-lazio/)
+- [![ARPA Liguria](/img/site-arpal.avif) ARPA Liguria](/en/sponsors/arpa-liguria/)
+- [![ARPA Piemonte](/img/site-arpa-piemonte.avif) ARPA Piemonte](/en/sponsors/arpa-piemonte/)
+- [![CNR IRPI](/img/site-cnr.avif) CNR IRPI](/en/sponsors/cnr-irpi/)
+- [![Metropolitan City of Rome](/img/site-rome-metropolitan-city-logo.avif) Città Metropolitana di Roma Capitale](/en/sponsors/citta-metropolitana-roma/)
+- [![Comune di Bari](/img/site-bari-city-logo.avif) Comune di Bari](/en/sponsors/comune-bari/)
+- [![Comune di Grosseto](/img/site-grosseto-logo.avif) Comune di Grosseto](/en/sponsors/comune-grosseto/)
+- [![Comune di Palermo](/img/site-palermo.avif) Comune di Palermo](/en/sponsors/comune-palermo/)
+- [![Comune di Trento](/img/site-trento.avif) Comune di Trento](/en/sponsors/comune-trento/)
+- [![Comunità di Montagna della Carnia](/img/site-carnia-mountain-community-logo.avif) Comunità di Montagna della Carnia](/en/sponsors/comunita-carnia/)
+- [![Consorzio della Bonifica Renana](/img/site-bonifica-renana.avif) Consorzio della Bonifica Renana](/en/sponsors/bonifica-renana/)
+- [![Fondazione Museo Civico di Rovereto](/img/site-logomcr.avif) Fondazione Museo Civico di Rovereto](/en/sponsors/museo-civico-rovereto/)
+- [![InterCad](/img/site-intercad.avif) InterCad](/en/sponsors/intercad/)
+- [![LEA](/img/site-lea-logo.avif) LEA](/en/sponsors/lea/)
+- [![Planetek Italia](/img/site-planetek.avif) Planetek Italia](/en/sponsors/planetek/)
+- [![QMAP](/img/site-qmap-logo.avif) QMAP](/en/sponsors/qmap/)
+- [![QTIBIA Engineering](/img/site-qtibia-long.avif) QTIBIA Engineering](/en/sponsors/qtibia/)
+- [![Regione Lazio](/img/site-logo-regione-lazio.avif) Regione Lazio](/en/sponsors/regione-lazio/)
 - [RISVAL](/en/sponsors/risval/)
 - [SC FOCA MANAGEMENT PARTNERS SRL](/en/sponsors/foca-management-partners/)
-- [![Stantec](/img/site-stanec.png) Stantec](/en/sponsors/stantec/)
+- [![Stantec](/img/site-stanec.avif) Stantec](/en/sponsors/stantec/)
 
 ## <span id="g3w-partners"></span>Work with us
 
@@ -62,14 +62,14 @@ Gis3W is an official Mergin Maps partner and provides support for field data col
 
 These examples show organizations using G3W-SUITE; use of the platform does not necessarily mean sponsorship.
 
-- [![Metropolitan Area of Bari](/img/site-bari.png)](https://sit.egov.ba.it)
-- [![Metropolitan City of Rome](/img/site-citta-metro-roma.jpg)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
-- [![FVG Landscape Plan](/img/site-fvg.jpg)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
-- [![City of Trento](/img/site-trento.png)](https://gis.comune.trento.it/it/#map=groups)
-- [![City of Palermo](/img/site-palermo.png)](https://geout.comune.palermo.it)
-- [![Gran Paradiso National Park](/img/site-pngp.jpg)](https://sit.parco.gran-paradiso.g3wsuite.it)
-- [![Suez](/img/site-suez.png)](https://www.suez.com)
-- [![Planetek Italia](/img/site-planetek-logo.jpg)](https://www.planetek.it)
+- [![Metropolitan Area of Bari](/img/site-bari.avif)](https://sit.egov.ba.it)
+- [![Metropolitan City of Rome](/img/site-citta-metro-roma.avif)](https://geoportale.cittametropolitanaroma.it/catalogo-cartografico/)
+- [![FVG Landscape Plan](/img/site-fvg.avif)](https://webgiscarnia.regione.fvg.it/it/map/ppr_fvg/)
+- [![City of Trento](/img/site-trento.avif)](https://gis.comune.trento.it/it/#map=groups)
+- [![City of Palermo](/img/site-palermo.avif)](https://geout.comune.palermo.it)
+- [![Gran Paradiso National Park](/img/site-pngp.avif)](https://sit.parco.gran-paradiso.g3wsuite.it)
+- [![Suez](/img/site-suez.avif)](https://www.suez.com)
+- [![Planetek Italia](/img/site-planetek-logo.avif)](https://www.planetek.it)
 
 <script type="application/json" data-i18n>
   {

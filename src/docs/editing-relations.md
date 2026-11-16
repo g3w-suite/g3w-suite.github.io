@@ -14,11 +14,11 @@
 
 After the editing has been activated on a record in the parent table, an editing icon (pen) will appear at the level of the relations references.
 
-![Screenshot: Editing Form2](/img/manual-english-editing-form2.png)
+![Screenshot: Editing Form2](/img/manual-english-editing-form2.avif)
 
 Moving on the macro tab relating to one of the child layers, the list of records already associated with the edited feature will be displayed
 
-![Screenshot: Editing Form Relations](/img/manual-english-editing-form-relations.png)
+![Screenshot: Editing Form Relations](/img/manual-english-editing-form-relations.avif)
 
 Clicking on it the form switch in a session dedicated to the edit of the relational table where it will be possible: **create and add a new records** related to the edited feature
  * **associate an existing records** (linked to other features or orphan) to the edited feature
@@ -28,7 +28,7 @@ Clicking on it the form switch in a session dedicated to the edit of the relatio
 
 To add a new record in the child layer, you first need to access the relations itself.
 
-By clicking on the icon **`Create and link a new relation`** ![Icon: Plus](/img/manual-english-icon-plus.png)(located at the top right) it will be show the attribute form to insert a new record.
+By clicking on the icon **`Create and link a new relation`** ![Icon: Plus](/img/manual-english-icon-plus.avif)(located at the top right) it will be show the attribute form to insert a new record.
 
 You can fill in the individual attributes and save the new record. **The change must be validated by clicking on the `Save` button at the bottom of the form.**
 
@@ -37,7 +37,7 @@ If the child layer is of the geometric type, it will be possible to add a new fe
  * **classic geometry editing**
  * **copy and paste a feature from other layers (WFS included)** present in the project and characterized by the same type of geometry
 
-![Screenshot: Editing Form Relations](/img/manual-english-editing-form-relations.png)
+![Screenshot: Editing Form Relations](/img/manual-english-editing-form-relations.avif)
 
 To copy a geometry from another layer operate in this order:
  * choose the layer from which to copy the feature from the **Copy feature from other layer** drop-down menu
@@ -51,7 +51,7 @@ To copy a geometry from another layer operate in this order:
  * click on the green **Save and exit** button
 
 ### Association of an existing record
-By clicking on the icon **`Join a relation to this feature`** ![Icon: Join](/img/manual-english-icon-join.png) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.
+By clicking on the icon **`Join a relation to this feature`** ![Icon: Join](/img/manual-english-icon-join.avif) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.
 
 In the new window displayed:
  * the list of all orphaned or already associated records will be displayed;
@@ -63,41 +63,41 @@ A series of icons appear to the right of each record associated with the edited 
 
 
 In the case of 1:N relations with alphanumeric layers:
- * ![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.
- * ![Icon: Record Copy](/img/manual-english-icon-record-copy.png)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.
- * ![Icon: Record Erase](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record
+ * ![Icon: Record Attribute](/img/manual-english-icon-record-attribute.avif)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.
+ * ![Icon: Record Copy](/img/manual-english-icon-record-copy.avif)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.
+ * ![Icon: Record Erase](/img/manual-english-icon-record-erase.avif) **Delete feature:** permanently delete the record
 
 
 In the case of 1:N relations with vectorial layers:
- * ![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png) **Update feature attribute:** modify the values associated with the attributes of this feature; the change must be validated by clicking on the **Save** button at the bottom of the form.
- * ![Icon: Record Erase](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record
- * ![Icon: Feature Modify](/img/manual-english-icon-feature-modify.png) **Update deature vertex:** modify the shape of the geometry
- * ![Icon: Feature Move](/img/manual-english-icon-feature-move.png) **Move feature:** move the geometry
- * ![Icon: Join Erase](/img/manual-english-icon-join-erase.png) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan
+ * ![Icon: Record Attribute](/img/manual-english-icon-record-attribute.avif) **Update feature attribute:** modify the values associated with the attributes of this feature; the change must be validated by clicking on the **Save** button at the bottom of the form.
+ * ![Icon: Record Erase](/img/manual-english-icon-record-erase.avif) **Delete feature:** permanently delete the record
+ * ![Icon: Feature Modify](/img/manual-english-icon-feature-modify.avif) **Update deature vertex:** modify the shape of the geometry
+ * ![Icon: Feature Move](/img/manual-english-icon-feature-move.avif) **Move feature:** move the geometry
+ * ![Icon: Join Erase](/img/manual-english-icon-join-erase.avif) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan
 
 
 ### Saving changes
 Saving all the changes made in an editing session can be done in three ways:
- * by clicking on the **`diskette icon`** ![Icon: Save All](/img/manual-english-icon-save-all.png) placed at the top right. This icon is very useful in the case of complex projects with related data on various levels as it allows you to **save any changes made regardless of the form on which you are at the time of saving.** You will not be asked to confirm the save.
-  * by clicking on the **`diskette icon`** ![Icon: Disk](/img/manual-english-icon-disk.png) placed at the top left of the TOC. The icon will only be active once you exit the attribute editing form. The changes made will be saved and you can continue making new changes. You will not be asked to confirm the save.
- * exiting edit mode by clicking on the **`Edit layer icon`** ![Icon: Editing](/img/manual-english-icon-editing.png).
+ * by clicking on the **`diskette icon`** ![Icon: Save All](/img/manual-english-icon-save-all.avif) placed at the top right. This icon is very useful in the case of complex projects with related data on various levels as it allows you to **save any changes made regardless of the form on which you are at the time of saving.** You will not be asked to confirm the save.
+  * by clicking on the **`diskette icon`** ![Icon: Disk](/img/manual-english-icon-disk.avif) placed at the top left of the TOC. The icon will only be active once you exit the attribute editing form. The changes made will be saved and you can continue making new changes. You will not be asked to confirm the save.
+ * exiting edit mode by clicking on the **`Edit layer icon`** ![Icon: Editing](/img/manual-english-icon-editing.avif).
  
 Exiting edit mode, a modal window will be displayed which will show the list of changes made and the request for confirmation or not of saving them.
 
-![Screenshot: Editing Client Save](/img/manual-english-editing-client-save.png)
+![Screenshot: Editing Client Save](/img/manual-english-editing-client-save.avif)
 
 Remember that during the editing phase the **undo/redo icons** allow you to delete/restore the latest changes made.
 
 <script type="application/json" data-i18n>
 {
   "it": {
-    "![Icon: Feature Modify](/img/manual-english-icon-feature-modify.png) **Update deature vertex:** modify the shape of the geometry": "![Icona: Modifica elemento](/img/manual-english-icon-feature-modify.png) **Aggiorna vertici dell’elemento:** modifica la forma della geometria",
-    "![Icon: Feature Move](/img/manual-english-icon-feature-move.png) **Move feature:** move the geometry": "![Icona: Sposta elemento](/img/manual-english-icon-feature-move.png) **Sposta elemento:** sposta la geometria",
-    "![Icon: Join Erase](/img/manual-english-icon-join-erase.png) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan": "![Icona: Rimuovi collegamento](/img/manual-english-icon-join-erase.png) **Scollega relazione:** dissocia il record dall’elemento in modifica senza eliminarlo; il record diventerà orfano",
-    "![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png) **Update feature attribute:** modify the values associated with the attributes of this feature; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Attributi record](/img/manual-english-icon-record-attribute.png) **Aggiorna attributi dell’elemento:** modifica i valori degli attributi dell’elemento; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
-    "![Icon: Record Attribute](/img/manual-english-icon-record-attribute.png)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Attributi record](/img/manual-english-icon-record-attribute.png) **Aggiorna attributi dell’elemento:** modifica i valori degli attributi di questo record; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
-    "![Icon: Record Copy](/img/manual-english-icon-record-copy.png)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Copia record](/img/manual-english-icon-record-copy.png) **Copia elemento:** duplica un record consentendo di modificarne i valori; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
-    "![Icon: Record Erase](/img/manual-english-icon-record-erase.png) **Delete feature:** permanently delete the record": "![Icona: Elimina record](/img/manual-english-icon-record-erase.png) **Elimina elemento:** elimina definitivamente il record",
+    "![Icon: Feature Modify](/img/manual-english-icon-feature-modify.avif) **Update deature vertex:** modify the shape of the geometry": "![Icona: Modifica elemento](/img/manual-english-icon-feature-modify.avif) **Aggiorna vertici dell’elemento:** modifica la forma della geometria",
+    "![Icon: Feature Move](/img/manual-english-icon-feature-move.avif) **Move feature:** move the geometry": "![Icona: Sposta elemento](/img/manual-english-icon-feature-move.avif) **Sposta elemento:** sposta la geometria",
+    "![Icon: Join Erase](/img/manual-english-icon-join-erase.avif) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan": "![Icona: Rimuovi collegamento](/img/manual-english-icon-join-erase.avif) **Scollega relazione:** dissocia il record dall’elemento in modifica senza eliminarlo; il record diventerà orfano",
+    "![Icon: Record Attribute](/img/manual-english-icon-record-attribute.avif) **Update feature attribute:** modify the values associated with the attributes of this feature; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Attributi record](/img/manual-english-icon-record-attribute.avif) **Aggiorna attributi dell’elemento:** modifica i valori degli attributi dell’elemento; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
+    "![Icon: Record Attribute](/img/manual-english-icon-record-attribute.avif)**Update feature attribute:** modify the values associated with the attributes of this record; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Attributi record](/img/manual-english-icon-record-attribute.avif) **Aggiorna attributi dell’elemento:** modifica i valori degli attributi di questo record; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
+    "![Icon: Record Copy](/img/manual-english-icon-record-copy.avif)**Copy feature:** duplicate a record with the possibility to change the values in the new record; the change must be validated by clicking on the **Save** button at the bottom of the form.": "![Icona: Copia record](/img/manual-english-icon-record-copy.avif) **Copia elemento:** duplica un record consentendo di modificarne i valori; per confermare la modifica, fai clic sul pulsante **Save** in fondo al modulo.",
+    "![Icon: Record Erase](/img/manual-english-icon-record-erase.avif) **Delete feature:** permanently delete the record": "![Icona: Elimina record](/img/manual-english-icon-record-erase.avif) **Elimina elemento:** elimina definitivamente il record",
     "**Important:** to be able to edit related data, the relations must be inserted in the form of the parent layer, defined using the Drag and Drop designer method in the Layer Properties.": "**Importante:** per modificare i dati correlati, le relazioni devono essere inserite nel modulo del layer padre, definito con il metodo Drag and Drop nelle Proprietà layer.",
     "**Relational editing** requires:": "**La modifica relazionale** richiede:",
     "**The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.**": "**L’attivazione della modalità di modifica sul layer padre nel client cartografico consente automaticamente di gestire anche le informazioni della tabella correlata.**",
@@ -110,8 +110,8 @@ Remember that during the editing phase the **undo/redo icons** allow you to dele
     "After the editing has been activated on a record in the parent table, an editing icon (pen) will appear at the level of the relations references.": "Dopo aver attivato la modifica di un record nella tabella padre, accanto ai riferimenti delle relazioni appare un’icona di modifica (matita).",
     "Association of an existing record": "Associazione di un record esistente",
     "Back to Online editing": "Torna alle modifiche online",
-    "By clicking on the icon **`Create and link a new relation`** ![Icon: Plus](/img/manual-english-icon-plus.png)(located at the top right) it will be show the attribute form to insert a new record.": "Facendo clic sull’icona **`Crea e collega una nuova relazione`** ![Icona: aggiungi](/img/manual-english-icon-plus.png) (in alto a destra), viene mostrato il modulo attributi per inserire un nuovo record.",
-    "By clicking on the icon **`Join a relation to this feature`** ![Icon: Join](/img/manual-english-icon-join.png) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.": "Facendo clic sull’icona **`Collega una relazione a questo elemento`** ![Icona: collega](/img/manual-english-icon-join.png) (in alto a destra), è possibile associare all’elemento in modifica un record già collegato ad altri elementi o orfano.",
+    "By clicking on the icon **`Create and link a new relation`** ![Icon: Plus](/img/manual-english-icon-plus.avif)(located at the top right) it will be show the attribute form to insert a new record.": "Facendo clic sull’icona **`Crea e collega una nuova relazione`** ![Icona: aggiungi](/img/manual-english-icon-plus.avif) (in alto a destra), viene mostrato il modulo attributi per inserire un nuovo record.",
+    "By clicking on the icon **`Join a relation to this feature`** ![Icon: Join](/img/manual-english-icon-join.avif) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.": "Facendo clic sull’icona **`Collega una relazione a questo elemento`** ![Icona: collega](/img/manual-english-icon-join.avif) (in alto a destra), è possibile associare all’elemento in modifica un record già collegato ad altri elementi o orfano.",
     "Clicking on it the form switch in a session dedicated to the edit of the relational table where it will be possible: **create and add a new records** related to the edited feature": "Facendo clic su di essa, il modulo passa alla sezione dedicata alla modifica della tabella relazionale, dove è possibile **creare e aggiungere nuovi record** associati all’elemento in modifica",
     "Creation of a new related child records": "Creazione di un nuovo record figlio correlato",
     "Editing related records": "Modificare i record correlati",
@@ -144,13 +144,13 @@ Remember that during the editing phase the **undo/redo icons** allow you to dele
     "To copy a geometry from another layer operate in this order:": "Per copiare una geometria da un altro layer, procedi nell’ordine seguente:",
     "You can fill in the individual attributes and save the new record. **The change must be validated by clicking on the `Save` button at the bottom of the form.**": "È possibile compilare i singoli attributi e salvare il nuovo record. **Per confermare la modifica, fai clic sul pulsante `Save` in fondo al modulo.**",
     "a generic filter will allow you to locate the record of interest;": "un filtro generico consente di trovare il record desiderato;",
-    "by clicking on the **`diskette icon`** ![Icon: Disk](/img/manual-english-icon-disk.png) placed at the top left of the TOC. The icon will only be active once you exit the attribute editing form. The changes made will be saved and you can continue making new changes. You will not be asked to confirm the save.": "facendo clic sull’**`icona del dischetto`** ![Icona: dischetto](/img/manual-english-icon-disk.png) in alto a sinistra nella TOC. L’icona si attiva solo dopo essere usciti dal modulo di modifica degli attributi. Le modifiche vengono salvate ed è possibile continuare a modificarle. Non viene richiesta conferma.",
-    "by clicking on the **`diskette icon`** ![Icon: Save All](/img/manual-english-icon-save-all.png) placed at the top right. This icon is very useful in the case of complex projects with related data on various levels as it allows you to **save any changes made regardless of the form on which you are at the time of saving.** You will not be asked to confirm the save.": "facendo clic sull’**`icona del dischetto`** ![Icona: salva tutto](/img/manual-english-icon-save-all.png) in alto a destra. Questa icona è molto utile nei progetti complessi con dati correlati su più livelli, perché consente di **salvare tutte le modifiche apportate indipendentemente dal modulo aperto al momento del salvataggio.** Non viene richiesta conferma.",
+    "by clicking on the **`diskette icon`** ![Icon: Disk](/img/manual-english-icon-disk.avif) placed at the top left of the TOC. The icon will only be active once you exit the attribute editing form. The changes made will be saved and you can continue making new changes. You will not be asked to confirm the save.": "facendo clic sull’**`icona del dischetto`** ![Icona: dischetto](/img/manual-english-icon-disk.avif) in alto a sinistra nella TOC. L’icona si attiva solo dopo essere usciti dal modulo di modifica degli attributi. Le modifiche vengono salvate ed è possibile continuare a modificarle. Non viene richiesta conferma.",
+    "by clicking on the **`diskette icon`** ![Icon: Save All](/img/manual-english-icon-save-all.avif) placed at the top right. This icon is very useful in the case of complex projects with related data on various levels as it allows you to **save any changes made regardless of the form on which you are at the time of saving.** You will not be asked to confirm the save.": "facendo clic sull’**`icona del dischetto`** ![Icona: salva tutto](/img/manual-english-icon-save-all.avif) in alto a destra. Questa icona è molto utile nei progetti complessi con dati correlati su più livelli, perché consente di **salvare tutte le modifiche apportate indipendentemente dal modulo aperto al momento del salvataggio.** Non viene richiesta conferma.",
     "by clicking on the individual records these will be associated with the edited features and, possibly, dissociated from other features": "facendo clic sui singoli record, questi vengono associati all’elemento in modifica e, se necessario, dissociati dagli altri elementi",
     "choose the layer from which to copy the feature from the **Copy feature from other layer** drop-down menu": "scegli il layer da cui copiare l’elemento dal menu a discesa **Copia elemento da un altro layer**",
     "click on the **Copy** button below": "fai clic sul pulsante **Copy** sottostante",
     "click on the green **Save and exit** button": "fai clic sul pulsante verde **Save and exit**",
-    "exiting edit mode by clicking on the **`Edit layer icon`** ![Icon: Editing](/img/manual-english-icon-editing.png).": "uscendo dalla modalità di modifica facendo clic sull’**`icona Modifica layer`** ![Icona: modifica](/img/manual-english-icon-editing.png).",
+    "exiting edit mode by clicking on the **`Edit layer icon`** ![Icon: Editing](/img/manual-english-icon-editing.avif).": "uscendo dalla modalità di modifica facendo clic sull’**`icona Modifica layer`** ![Icona: modifica](/img/manual-english-icon-editing.avif).",
     "fill in the attributes associated with the new feature created": "compila gli attributi associati al nuovo elemento creato",
     "neither the layer being edited (child of the relation) nor the parent layer of the relation will be shown in the list": "nell’elenco non saranno mostrati né il layer in modifica (figlio della relazione) né il layer padre della relazione",
     "on the administration panel the editing function has been activated both on the parent layer and on the child layers": "nel pannello di amministrazione la funzione di modifica sia attivata sia sul layer padre sia sui layer figli",

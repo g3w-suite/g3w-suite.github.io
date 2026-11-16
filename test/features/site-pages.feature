@@ -25,6 +25,9 @@ Feature: Generated site pages
   Scenario: Published site images are referenced
     Then every published site image is referenced by compiled code
 
+  Scenario: Local images use AVIF
+    Then uploaded images are valid AVIF files
+
   Scenario: Generated images are lazy-loaded
     Then every generated image uses lazy loading
 

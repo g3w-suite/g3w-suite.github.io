@@ -73,7 +73,7 @@ The option **`Propagate viewers user (single and groups) permissions`** allows y
 
 **Be careful: this option cancels any differentiation in the access policies applied to the WebGis services contained in the Group.**
 
-![Screenshot: G3W-SUITE Administration Group Add ACL](/img/manual-english-g3wsuite-administration-group-add-acl.png)
+![Screenshot: G3W-SUITE Administration Group Add ACL](/img/manual-english-g3wsuite-administration-group-add-acl.avif)
 
 #### MacroGroups
 **Possible definition of the belonging MacroGroup.**
@@ -117,7 +117,7 @@ In this box you can define:
 ***NB:** the security protocols prevent the creation of screenshots if WMS services with domains other than the publication one are present on the map. **In this case the icons will not be present on the client even if the MapControl is selected.**
 To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-widgets-setup.md) section.
 
-![Screenshot: G3W-SUITE Administration Group Add Geodata](/img/manual-english-g3wsuite-administration-group-add-geodata.png)
+![Screenshot: G3W-SUITE Administration Group Add Geodata](/img/manual-english-g3wsuite-administration-group-add-geodata.avif)
 
 With regard to the **Base Layers**, it is specified that the external services available by default are:
  * **OSM**
@@ -135,7 +135,7 @@ In this regard, consult the section on [**base layers**](admin-base-layers.md).
 
 After filling in the various form, click on the **Save** button to confirm your choices.
  
-![Button: Save](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.avif)
 
 [Manage cartographic groups](admin-group-management.md)
 

@@ -1,6 +1,6 @@
 # QMAP
 
-![QMAP](/img/site-qmap-logo.png)
+![QMAP](/img/site-qmap-logo.avif)
 
 QMAP provides GIS services for territorial digitalization and management of geospatial data.
 

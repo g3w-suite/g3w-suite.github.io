@@ -1,6 +1,6 @@
 # Fondazione Museo Civico di Rovereto
 
-![Fondazione Museo Civico di Rovereto](/img/site-logomcr.png)
+![Fondazione Museo Civico di Rovereto](/img/site-logomcr.avif)
 
 The Rovereto Civic Museum Foundation works across science, archaeology, education and the history of the city.
 

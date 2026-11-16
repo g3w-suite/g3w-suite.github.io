@@ -30,7 +30,17 @@ Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/abou
 - **Shared document shell:** page templates and documentation use `src/_header.html` before page content and `src/_footer.html` after it. Do not add header/footer include directives or document-level tags to page files. The header opens the doctype, `<html>`, `<head>` and `<body>` and contains common head tags; each body gets a route-based `page-*` class. The footer closes the document.
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
 - **Appearance and interactions:** edit `static/app.css` and `static/app.js` (vanilla JavaScript, without libraries).
-- **Images:** add them to the flat `static/img/` directory and link them with `/img/...`.
+- **Images:** add AVIF files to the flat `static/img/` directory and link them with `/img/...`. GitHub profile portraits remain external and dynamic; `static/icons.svg` is the shared icon sprite.
+- **Diagrams:** write top-level fenced Mermaid blocks in Markdown, with alternative text after `mermaid`. The build generates AVIF images automatically; use language blocks inside the diagram when labels differ. Generated `mermaid-*.avif` files in `static/img/` are ignored by Git.
+
+````markdown
+```mermaid {{t 'Diagram description'}}
+flowchart LR
+  source["Source"] --> page["Published page"]
+```
+````
+
+Add the alternative text to the page's Italian translations. Puppeteer downloads Chrome during `npm install`. To skip that download, set `PUPPETEER_SKIP_DOWNLOAD=true` during installation; the build then uses an installed Chrome or the browser specified by `PUPPETEER_EXECUTABLE_PATH`.
 
 `src/_redirect.html` only redirects to the Italian version. Assets in `static/` are tracked; generated pages are ignored by Git.
 
@@ -38,7 +48,7 @@ Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/abou
 
 1. Start from an existing Markdown page directly in `src/` or `src/news/`, keeping its metadata and local translations. Release-note filenames use `YYYY-MM-DD-changelog-vX.Y.md`; other news articles start with `YYYY-MM-DD-`. Keep raw HTML for page-specific layout and media.
 2. Add exact full-line Markdown translations or inline `{{t '...'}}` translations to the page's `data-i18n` JSON block; shared components keep their translations in their own files. Use language blocks only for genuine differences. Check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Use site-root URLs for internal pages and assets, such as `/it/about/` and `/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
+3. Use site-root URLs for internal pages and assets, such as `/it/about/` and `/img/logo.avif`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 

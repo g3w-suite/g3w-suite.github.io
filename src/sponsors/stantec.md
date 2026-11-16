@@ -1,6 +1,6 @@
 # Stantec
 
-![Stantec](/img/site-stanec.png)
+![Stantec](/img/site-stanec.avif)
 
 Stantec is an international engineering and design company based in Canada.
 

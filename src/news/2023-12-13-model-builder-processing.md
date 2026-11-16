@@ -7,7 +7,7 @@ Release date: **13 December 2023**
 
 ### **The module dedicated to the creation of geographic analyzes on the web is based on the automated analysis models prepared on QGIS through the Processing ModelDesigner.**
 
-![G3W-Suite Processing](/img/site-g3wsuite-processing.png)
+![G3W-Suite Processing](/img/site-g3wsuite-processing.avif)
 
 #### The setup flow is very simple:
 
@@ -19,7 +19,7 @@ The analyzes are performed in "on line" mode. At the end of the analysis flow, t
 
 Even if the analysis operations to be performed are limited to those performed by a single analysis module, it is necessary to implement a model using the ModelDesigner. This is also to distinguish the options set beforehand from those available to the user.
 
-![Screenshot: Model Builder Overview](/img/site-model-builder-overview.png) ![Screenshot: Model Output](/img/site-model-output.png)
+![Screenshot: Model Builder Overview](/img/site-model-builder-overview.avif) ![Screenshot: Model Output](/img/site-model-output.avif)
 
 ## QGIS Model Builder features and settings
 
@@ -39,19 +39,19 @@ This option limits the use of the model to a specific project or to projects con
 
 **Additional input types will be integrated into the next version of the module!**
 
-![Screenshot: Inputs](/img/site-inputs.png)
+![Screenshot: Inputs](/img/site-inputs.avif)
 
 ### Managed algorithms
 
 **All QGIS modules, considering limitations in handling options/inputs associated with managed type of inputs**
 
-![Screenshot: Algoritmi](/img/site-algoritmi.png)
+![Screenshot: Algoritmi](/img/site-algoritmi.avif)
 
 ### Further settings
 
 - **input order in the model form**
 
-![Screenshot: Reorder Model Inputs](/img/site-reorder-model-inputs.png)
+![Screenshot: Reorder Model Inputs](/img/site-reorder-model-inputs.avif)
 
 ## G3W-SUITE: features and settings
 
@@ -63,7 +63,7 @@ Access the PROCESSING - MODEL session in the Administration session, choosing th
 - **Choose the projects to associate the model with**
 - **Choose the users (among those who have permission to access the selected projects) who will be able to use the model on WebGis**
 
-![Screenshot: Model Builder Model Import Settings](/img/site-model-builder-model-import-settings.png)
+![Screenshot: Model Builder Model Import Settings](/img/site-model-builder-model-import-settings.avif)
 
 ### Input layer type supported
 
@@ -71,7 +71,7 @@ Access the PROCESSING - MODEL session in the Administration session, choosing th
 - **Layers loaded on the fly**
 - **Geometries drawn on the map**
 
-![Screenshot: Model Builder Project Input Settings](/img/site-model-builder-project-input-settings.png)
+![Screenshot: Model Builder Project Input Settings](/img/site-model-builder-project-input-settings.avif)
 
 ### Output types supported
 
@@ -81,7 +81,7 @@ Access the PROCESSING - MODEL session in the Administration session, choosing th
 - **PDF export (print layout simple and atlas)**
 - **HTML plots**
 
-![Screenshot: Model Output](/img/site-model-output.png)
+![Screenshot: Model Output](/img/site-model-output.avif)
 
 ## Try to run a QGIS Processing Model on the web!
 

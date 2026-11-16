@@ -36,7 +36,7 @@ G3W-SUITE is made of modular open source components, available on [GitHub](https
 
 ## <span id="components"></span>[G3W-ADMIN](/en/docs/components/#g3w-admin)
 
-![{{t 'G3W-ADMIN administration interface'}}](/img/site-webgis-management-preview.jpg)
+![{{t 'G3W-ADMIN administration interface'}}](/img/site-webgis-management-preview.avif)
 
 **Server component · Python / Django**
 
@@ -46,7 +46,7 @@ The server module of G3W-SUITE. Written in Python on Django LTS, it publishes QG
 
 ## [G3W-CLIENT](/en/docs/components/#g3w-client)
 
-![{{t 'G3W-CLIENT web map interface'}}](/img/site-webgis-client-preview.jpg)
+![{{t 'G3W-CLIENT web map interface'}}](/img/site-webgis-client-preview.avif)
 
 **Map client · JavaScript / Vue**
 
@@ -56,7 +56,7 @@ The WebGIS cartographic viewer. Written in JavaScript with Vue.js, it connects t
 
 ## [G3W-ADMIN-PROCESSING](/en/docs/components/#g3w-admin-processing)
 
-![{{t 'QGIS Processing model builder'}}](/img/site-model-builder-overview.png)
+![{{t 'QGIS Processing model builder'}}](/img/site-model-builder-overview.avif)
 
 **Optional module · Python**
 
@@ -66,7 +66,7 @@ Integrates QGIS Processing API directly into G3W-SUITE. Upload a `.model3` file 
 
 ## [G3W-SUITE-DOCKER](/en/docs/components/#g3w-suite-docker)
 
-![{{t 'G3W-SUITE Docker services diagram'}}](/img/site-g3w-suite-docker.png)
+![{{t 'G3W-SUITE Docker services diagram'}}](/img/site-g3w-suite-docker.avif)
 
 **Deployment · Docker**
 
@@ -76,7 +76,7 @@ The official Docker stack to run G3W-SUITE with a single command. Includes NGINX
 
 ## [G3W-ADMIN-PORTAL](/en/docs/components/#g3w-admin-portal)
 
-![{{t 'G3W-SUITE public portal'}}](/img/site-frontend.png)
+![{{t 'G3W-SUITE public portal'}}](/img/site-frontend.avif)
 
 **Optional module · CSS / JavaScript**
 
@@ -86,7 +86,7 @@ A customisable public portal for G3W-SUITE. Replaces the default login screen wi
 
 ## [G3W-ADMIN-PDND](/en/docs/components/#g3w-admin-pdnd)
 
-![{{t 'PDND interoperability diagram'}}](/img/site-g3w-admin-pdnd.png)
+![{{t 'PDND interoperability diagram'}}](/img/site-g3w-admin-pdnd.avif)
 
 **Optional module · Python · MIT**
 
@@ -96,7 +96,7 @@ G3W-SUITE integration with the Italian **Piattaforma Digitale Nazionale Dati** (
 
 ## [G3W-CLIENT-PLUGIN-EDITING](/en/docs/components/#g3w-client-plugin-editing)
 
-![{{t 'G3W-CLIENT editing tools'}}](/img/manual-english-demo-editing-web.png)
+![{{t 'G3W-CLIENT editing tools'}}](/img/manual-english-demo-editing-web.avif)
 
 **Built-in plugin · JavaScript / Vue · MPL-2**
 

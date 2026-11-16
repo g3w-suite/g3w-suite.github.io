@@ -10,7 +10,7 @@ Create a cartographic project with the layers, symbology, forms and print layout
 
 Organize your projects and geographic data on your computer as described in the [manual](/docs/datamanagement/#organization-of-data-and-projects).
 
-![QGIS project](/img/site-qgis.jpg)
+![QGIS project](/img/site-qgis.avif)
 
 <iframe class="step__video" src="https://www.youtube.com/embed/-GV9xUoJKD4" title="{{t 'Quick Start step 1: create your QGIS project'}}" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
 

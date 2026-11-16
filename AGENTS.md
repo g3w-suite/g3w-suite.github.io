@@ -56,7 +56,8 @@ static/
 
 - Internal page URLs use trailing-slash directories, never `.html`; `about/index.md` publishes as `/it/about/` and `/en/about/`, with member and component pages under `about/`. Use site-root URLs (`/it/about/`, `/img/...`) instead of `../` or `./`.
 - The build prefixes internal URLs and the root redirect with `SITE_BASE_PATH`; the deploy workflow obtains it from `configure-pages` so project Pages and custom domains both work.
-- Reference Markdown manual images from `/img/<filename>`; keep all images directly in `static/img/`.
+- Store local images as AVIF files directly in `static/img/` and reference them from `/img/<filename>`; GitHub profile portraits remain external and `static/icons.svg` is the shared icon sprite.
+- Write Mermaid diagrams as top-level fenced Markdown blocks with translated alternative text after `mermaid`; the build generates and caches AVIF images in `static/img/`.
 - The build wraps Markdown page content in `<main id="main-content">`; do not add a `<main>` wrapper to Markdown sources.
 - Every generated page gets a route-based `page-*` class on `<body>`, shared by its Italian and English versions.
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.

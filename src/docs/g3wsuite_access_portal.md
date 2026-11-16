@@ -8,7 +8,7 @@ If you have also installed the front-end portal from the [GitHub repository](htt
 
 The home page will contain, in addition to a brief and customizable presentation of the service, also:
 
- * a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.png) with the following items:
+ * a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) with the following items:
    * **`Change language`**
    * **`Go back to the home page`**
    * **`Login`**
@@ -17,16 +17,16 @@ The home page will contain, in addition to a brief and customizable presentation
    * **`Info`**
 
 
-![Screenshot: G3W-SUITE Portal Frontend](/img/manual-english-g3wsuite-portal-frontend.png)
+![Screenshot: G3W-SUITE Portal Frontend](/img/manual-english-g3wsuite-portal-frontend.avif)
 
 Most of the information shown in the access portal can be defined from the **`Configurations -> Edit General Data` session**, accessible from the icon located in the upper right corner of the Administration Panel.
 
-![Icon: G3wclient Config](/img/manual-english-g3wclient-icon-config.png)
+![Icon: G3wclient Config](/img/manual-english-g3wclient-icon-config.avif)
 
 ### Info
 The **Info** session can contains a small introduction and contact information for your company or public facility.
 
-![Screenshot: G3W-SUITE Portal Aboutit](/img/manual-english-g3wsuite-portal-aboutit.png)
+![Screenshot: G3W-SUITE Portal Aboutit](/img/manual-english-g3wsuite-portal-aboutit.avif)
 
 ### Maps
 Organize WebGIS services in **Cartographic Macrogroups and Cartographic Groups**.
@@ -39,9 +39,9 @@ If you have a user for access, you can authenticate yourself through the **Login
 
 Following authentication, the **Maps** page will also show the MacroGroups, Groups and WebGis services with restricted access and on which the user has access permissions.
 
-![Screenshot: G3W-SUITE Portal Macrogroups](/img/manual-english-g3wsuite-portal-macrogroups.png)
+![Screenshot: G3W-SUITE Portal Macrogroups](/img/manual-english-g3wsuite-portal-macrogroups.avif)
 
-![Screenshot: G3W-SUITE Portal Groups](/img/manual-english-g3wsuite-portal-groups.png)
+![Screenshot: G3W-SUITE Portal Groups](/img/manual-english-g3wsuite-portal-groups.avif)
 
 ### Login
 If you have a user with login credentials, you can authenticate yourself through this session by entering your user and password.
@@ -50,7 +50,7 @@ If you are an **Administrator** or **Editor** of 1 or 2 level, you can also acce
 
 Once logged in, you access the **Admin** session and from here, via the **"Backend"** button to the Administration panel
 
-![Screenshot: G3W-SUITE Portal Login](/img/manual-english-g3wsuite-portal-login.png)
+![Screenshot: G3W-SUITE Portal Login](/img/manual-english-g3wsuite-portal-login.avif)
 
 <script type="application/json" data-i18n>
   {
@@ -86,7 +86,7 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "The home page will contain, in addition to a brief and customizable presentation of the service, also:": "Oltre a una breve presentazione personalizzabile del servizio, la pagina iniziale conterrà:",
       "The login portal sessions": "Le sezioni del portale di accesso",
       "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_**Questa sezione descrive le varie aree del portale di accesso e spiega come accedere al pannello di amministrazione**_",
-      "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.png) with the following items:": "un **menu in alto a destra** ![Schermata: menu in alto a destra del portale G3W-SUITE](/img/manual-english-g3wsuite-portal-menu-toprigth.png) con le seguenti voci:",
+      "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) with the following items:": "un **menu in alto a destra** ![Schermata: menu in alto a destra del portale G3W-SUITE](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) con le seguenti voci:",
       "a **panel menu on the right** with the following items:": "un **menu a pannello sulla destra** con le seguenti voci:"
     }
   }

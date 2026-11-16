@@ -1,6 +1,6 @@
 # ARPA Liguria
 
-![ARPA Liguria](/img/site-arpal.png)
+![ARPA Liguria](/img/site-arpal.avif)
 
 ARPA Liguria is the regional agency for environmental protection in Liguria, Italy.
 

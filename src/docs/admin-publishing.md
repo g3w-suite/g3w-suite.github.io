@@ -5,8 +5,8 @@
 ## Publication of new WebGis services
 ### To publish a new QGIS cartographic project
 Publish new QGIS projects:
- * **from the list of cartographic groups:** click on the icon ![Icon: Add](/img/manual-english-icon-add.png) located under the box of the cartographic group in which you want to publish the project.
- * **from the list of cartographic projects published within a group:** by clicking on the the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png)
+ * **from the list of cartographic groups:** click on the icon ![Icon: Add](/img/manual-english-icon-add.avif) located under the box of the cartographic group in which you want to publish the project.
+ * **from the list of cartographic projects published within a group:** by clicking on the the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.avif)
 
 In the dedicated form we could define the characteristic of the project being published:
 
@@ -40,7 +40,7 @@ Let’s see in detail the various sub-sessions of the ACL Users session:
 
  * **`Viewer user groups`:** you define the **user groups (Viewer) which have the credentials to view the content of the service**.
 
-![Screenshot: G3W-SUITE Administration Project Add ACL](/img/manual-english-g3wsuite-administration-project-add-acl.png)
+![Screenshot: G3W-SUITE Administration Project Add ACL](/img/manual-english-g3wsuite-administration-project-add-acl.avif)
 
 #### Default base layer
 **In this session you define which base layer should be active at startup.**
@@ -102,17 +102,17 @@ Enabling providers is carried out at the general application [settings level](se
 
 **ATTENTION:** contents marked with * are mandatory.
 
-![Screenshot: G3W-SUITE Administration Project Add Option](/img/manual-english-g3wsuite-administration-project-add-option.png)
+![Screenshot: G3W-SUITE Administration Project Add Option](/img/manual-english-g3wsuite-administration-project-add-option.avif)
 
 After filling in the various form, click on the Save button to confirm your choices.
 
-![Button: Save](/img/manual-english-buttom-save.png)
+![Button: Save](/img/manual-english-buttom-save.avif)
 
 **If the operation is successful we will see the new project appear in the list of projects in in the working Cartographic Group.**
 
-![Screenshot: G3W-SUITE Administration Project Addproject Result](/img/manual-english-g3wsuite-administration-project-addproject-result.png)
+![Screenshot: G3W-SUITE Administration Project Addproject Result](/img/manual-english-g3wsuite-administration-project-addproject-result.avif)
 
-![Screenshot: G3W-SUITE Portal Groups](/img/manual-english-g3wsuite-portal-groups.png)
+![Screenshot: G3W-SUITE Portal Groups](/img/manual-english-g3wsuite-portal-groups.avif)
 
 
 ### Embedded project
@@ -166,8 +166,8 @@ It is possible to define a custom order by moving the published projects via dra
     "**`Viewer user groups`:** you define the **user groups (Viewer) which have the credentials to view the content of the service**.": "**`Viewer user groups`:** definisce i **gruppi di utenti Viewer autorizzati a visualizzare i contenuti del servizio**.",
     "**`Viewers users`:** define the individual **users (Viewers) who have the credentials to view the WebGis service**. By choosing the anonymous user (**AnonymusUser**) the group will be freely accessible.": "**`Viewers users`:** definisce i singoli **utenti Viewer autorizzati a visualizzare il servizio WebGis**. Scegliendo l'utente anonimo (**AnonymusUser**), il gruppo sarà accessibile liberamente.",
     "**`WMS GeMap image format`***: definition of the image format associated to WMS service in the map (PNG 16bit raccomaned for best managment of transaprency)": "**`WMS GeMap image format`***: formato dell'immagine associata al servizio WMS sulla mappa (PNG a 16 bit consigliato per una migliore gestione della trasparenza)",
-    "**from the list of cartographic groups:** click on the icon ![Icon: Add](/img/manual-english-icon-add.png) located under the box of the cartographic group in which you want to publish the project.": "**dall'elenco dei Gruppi cartografici:** fare clic sull'icona ![Icon: Add](/img/manual-english-icon-add.png) sotto il riquadro del Gruppo cartografico in cui si desidera pubblicare il progetto.",
-    "**from the list of cartographic projects published within a group:** by clicking on the the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png)": "**dall'elenco dei progetti cartografici pubblicati in un Gruppo:** facendo clic sul pulsante ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.png)",
+    "**from the list of cartographic groups:** click on the icon ![Icon: Add](/img/manual-english-icon-add.avif) located under the box of the cartographic group in which you want to publish the project.": "**dall'elenco dei Gruppi cartografici:** fare clic sull'icona ![Icon: Add](/img/manual-english-icon-add.avif) sotto il riquadro del Gruppo cartografico in cui si desidera pubblicare il progetto.",
+    "**from the list of cartographic projects published within a group:** by clicking on the the button ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.avif)": "**dall'elenco dei progetti cartografici pubblicati in un Gruppo:** facendo clic sul pulsante ![Button: Add QGIS Project](/img/manual-english-button-add-qgis-project.avif)",
     "ACL Users": "Utenti ACL",
     "After filling in the various form, click on the Save button to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante Save per confermare le scelte.",
     "An update of the embedded project will result in a consequent modification of all derived projects.": "L'aggiornamento del progetto incorporato comporta la conseguente modifica di tutti i progetti derivati.",
