@@ -4,7 +4,7 @@ Published: **13 November 2026**
 
 G3W-SUITE brings together QGIS project publishing and tools for managing web maps, collaborating with teams, and putting geospatial data to work.
 
-{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [Francesco Boccacci](/en/about/francesco-boccacci/) ? [Leonardo Lami](/en/about/leonardo-lami/) ? [Matteo Tosi](/en/about/matteo-tosi/) ? [Walter Lorenzetti](/en/about/walter-lorenzetti/)
 
 ## Start with the QGIS work you already have
 

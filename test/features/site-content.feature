@@ -21,3 +21,6 @@ Feature: Site content conventions
 
   Scenario: Member profiles introduce people and their links
     Then member profile headers show the portrait, name, introduction and personal links
+
+  Scenario: Project members and article credits
+    Then the governing board and team are listed separately and news credits link to the board

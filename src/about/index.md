@@ -93,13 +93,18 @@ Check supported branches, QGIS compatibility, documentation and release notes.
 
 G3W-SUITE grows through the people who use, support and contribute to it. Its development is shared openly, shaped by real needs and improved through collaboration.
 
-- [![Alessandro Pasotti](https://github.com/elpaso.png?size=240) Alessandro Pasotti (@elpaso)](/en/about/alessandro-pasotti/)
-- [![Andrea Antonello](https://github.com/moovida.png?size=240) Andrea Antonello (@moovida)](/en/about/andrea-antonello/)
+### <span id="governing-board"></span>Governing board
+
 - [![Francesco Boccacci](https://github.com/volterra79.png?size=240) Francesco Boccacci (@volterra79)](/en/about/francesco-boccacci/)
 - [![Leonardo Lami](https://github.com/leolami.png?size=240) Leonardo Lami](/en/about/leonardo-lami/)
 - [![Matteo Tosi](https://github.com/Raruto.png?size=240) Matteo Tosi (@Raruto)](/en/about/matteo-tosi/)
-- [![Tudor Barascu](https://github.com/tudorbarascu.png?size=240) Tudor Barascu (@tudorbarascu)](/en/about/tudor-barascu/)
 - [![Walter Lorenzetti](https://github.com/wlorenzetti.png?size=240) Walter Lorenzetti (@wlorenzetti)](/en/about/walter-lorenzetti/)
+
+### <span id="team"></span>Team
+
+- [![Alessandro Pasotti](https://github.com/elpaso.png?size=240) Alessandro Pasotti (@elpaso)](/en/about/alessandro-pasotti/)
+- [![Andrea Antonello](https://github.com/moovida.png?size=240) Andrea Antonello (@moovida)](/en/about/andrea-antonello/)
+- [![Tudor Barascu](https://github.com/tudorbarascu.png?size=240) Tudor Barascu (@tudorbarascu)](/en/about/tudor-barascu/)
 
 ## <span id="participate"></span>Explore and take part
 
@@ -107,7 +112,7 @@ Explore what G3W-SUITE can do: browse the components, read the documentation or 
 
 [Explore the components](/en/about/#components "primary-button") [Read the documentation](/en/docs/ "outline-button") [Join the community](/en/community/ "outline-button")
 
-Follow the [project news](/en/news/). Articles without an individual byline are published by the [G3W-SUITE team](/en/about/g3w-suite-team/).
+Follow the [project news](/en/news/) and learn more about the [G3W-SUITE team](/en/about/g3w-suite-team/).
 
 <script type="application/json" data-i18n>
   {
@@ -135,12 +140,13 @@ Follow the [project news](/en/news/). Articles without an individual byline are 
       "Features": "Funzionalità",
       "Features being edited by another user may be temporarily locked.": "Le feature in modifica da parte di un altro utente possono essere temporaneamente bloccate.",
       "Follow development of the next major version on [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).": "Segui lo sviluppo della prossima versione principale su [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).",
-      "Follow the [project news](/en/news/). Articles without an individual byline are published by the [G3W-SUITE team](/en/about/g3w-suite-team/).": "Segui le [novità del progetto](/en/news/). Gli articoli senza una firma individuale sono pubblicati dal [team G3W-SUITE](/en/about/g3w-suite-team/).",
+      "Follow the [project news](/en/news/) and learn more about the [G3W-SUITE team](/en/about/g3w-suite-team/).": "Segui le [novità del progetto](/en/news/) e scopri di più sul [team G3W-SUITE](/en/about/g3w-suite-team/).",
       "From QGIS to the web": "Da QGIS al web",
       "G3W-SUITE WebGIS client": "Client WebGIS di G3W-SUITE",
       "G3W-SUITE combines an administration server and a map client with optional integrations. Explore each component for its documentation and source code.": "G3W-SUITE combina un server di amministrazione e un client cartografico con integrazioni opzionali. Esplora ogni componente per la documentazione e il codice sorgente.",
       "G3W-SUITE grows through the people who use, support and contribute to it. Its development is shared openly, shaped by real needs and improved through collaboration.": "G3W-SUITE cresce grazie alle persone che la usano, la sostengono e vi contribuiscono. Il suo sviluppo è condiviso apertamente, parte da esigenze reali e migliora attraverso la collaborazione.",
       "G3W-SUITE is open source under the MPL 2.0 licence and developed in the open. Its modular architecture lets teams choose the components they need and gives contributors room to improve the project together.": "G3W-SUITE è open source con licenza MPL 2.0 e viene sviluppato apertamente. La sua architettura modulare permette ai team di scegliere i componenti di cui hanno bisogno e ai contributori di migliorare insieme il progetto.",
+      "Governing board": "Governing board",
       "Install the open-source platform yourself with Docker, or contact Gis3W about managed hosting and professional support.": "Installa autonomamente la piattaforma open source con Docker, oppure contatta Gis3W per hosting gestito e supporto professionale.",
       "Keep the ecosystem open": "Mantieni aperto l'ecosistema",
       "Make maps useful": "Rendi utili le mappe",

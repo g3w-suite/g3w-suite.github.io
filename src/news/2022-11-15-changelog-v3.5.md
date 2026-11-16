@@ -2,7 +2,7 @@
 
 Release date: **15 November 2022**
 
-{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [G3W-SUITE team](/en/about/g3w-suite-team/)
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [Francesco Boccacci](/en/about/francesco-boccacci/) ? [Leonardo Lami](/en/about/leonardo-lami/) ? [Matteo Tosi](/en/about/matteo-tosi/) ? [Walter Lorenzetti](/en/about/walter-lorenzetti/)
 
 ## Changelog for G3W-SUITE 3.5
 

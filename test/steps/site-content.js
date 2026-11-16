@@ -7,6 +7,36 @@ const { Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, newsSlug, readPage } = require('../support/site');
 
+Then('the governing board and team are listed separately and news credits link to the board', function () {
+  const groups = {
+    'governing-board': ['francesco-boccacci', 'leonardo-lami', 'matteo-tosi', 'walter-lorenzetti'],
+    team: ['alessandro-pasotti', 'andrea-antonello', 'tudor-barascu'],
+  };
+  const news = fs.readdirSync(path.resolve('src', 'news')).filter(file => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(file));
+  for (const lang of languages) {
+    const about = readPage(path.join(staticDir, lang, 'about', 'index.html')).$;
+    for (const [id, members] of Object.entries(groups)) {
+      const section = about(`#${id}`).closest('section');
+      assert.deepEqual(
+        section.find('li a').map((_, link) => about(link).attr('href')).get(),
+        members.map(member => `/${lang}/about/${member}/`),
+        `${lang}: ${id} members`
+      );
+      assert.equal(section.find('li img[alt]').length, members.length, `${lang}: ${id} portraits`);
+    }
+    for (const file of news) {
+      const article = readPage(path.join(staticDir, lang, 'news', newsSlug(file), 'index.html')).$;
+      const byline = article('main p').filter((_, p) => article(p).find(`a[href="/${lang}/about/francesco-boccacci/"]`).length);
+      assert.equal(byline.length, 1, `${lang}: ${file} board byline`);
+      assert.deepEqual(
+        byline.find('a').map((_, link) => article(link).attr('href')).get(),
+        groups['governing-board'].map(member => `/${lang}/about/${member}/`),
+        `${lang}: ${file} must link to every board member`
+      );
+    }
+  }
+});
+
 Then('member profile headers show the portrait, name, introduction and personal links', function () {
   const members = ['alessandro-pasotti', 'andrea-antonello', 'francesco-boccacci', 'leonardo-lami', 'matteo-tosi', 'tudor-barascu', 'walter-lorenzetti'];
   for (const lang of languages) {
@@ -128,10 +158,6 @@ Then('both languages are generated from shared page templates', function () {
     listedDates.slice().sort().reverse(),
     'news articles must be listed newest first'
   );
-  for (const file of datedNewsFiles) {
-    const source = fs.readFileSync(path.join(sourceDir, 'news', file), 'utf8');
-    assert.match(source, /\[G3W-SUITE team\]\(\/en\/about\/g3w-suite-team\/\)/, `${file} must link to its author profile`);
-  }
   for (const page of ['about/index', 'about/g3w-suite-team']) {
     assert.ok(fs.existsSync(path.join(sourceDir, `${page}.md`)), `${page} page source must be Markdown`);
     assert.ok(!fs.existsSync(path.join(sourceDir, `${page}.html`)), `${page} HTML source must be removed`);
@@ -214,14 +240,6 @@ Then('both languages are generated from shared page templates', function () {
       listedArticles.map(slug => `/${lang}/news/${slug}/`),
       `${lang} news must list articles newest first`
     );
-    for (const file of datedNewsFiles) {
-      const article = readPage(path.join(staticDir, lang, 'news', newsSlug(file), 'index.html')).$;
-      assert.equal(
-        article(`main a[href="/${lang}/about/g3w-suite-team/"]`).text().trim(),
-        'G3W-SUITE team',
-        `${lang} ${file} must link to its author profile`
-      );
-    }
     for (const file of datedNewsFiles) {
       const article = newsSlug(file);
       assert.equal(newsIndex(`main a[href="/${lang}/news/${article}/"]`).length, 1, `${lang} news must link to ${article}`);
