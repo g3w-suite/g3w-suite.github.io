@@ -184,9 +184,9 @@ function buildDocumentation(outputDir) {
       breadcrumbItems.push({ label: heading[0].replace(/<[^>]*>/g, '').trim() });
       const breadcrumb = renderBreadcrumb(lang, breadcrumbItems);
       const releaseNotes = releaseVersions.length
-        ? `<section class="docs-release-notes" aria-labelledby="docs-release-notes-title"><h2 id="docs-release-notes-title">Changelog</h2><div class="docs-release-notes__links">${releaseVersions.map(version =>
-            `<a class="btn btn--outline" href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
-          ).join('')}</div></section>`
+        ? `<details class="docs-release-notes"><summary>Changelog</summary>${releaseVersions.map(version =>
+            `<a href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
+          ).join('')}</details>`
         : '';
       const html = `<!doctype html>
 <html lang="${lang}">
@@ -213,7 +213,6 @@ function buildDocumentation(outputDir) {
   <main id="main-content">
   ${breadcrumb}
   <div class="page-header"><div class="container">${heading[0]}</div></div>
-  ${releaseNotes}
   <div class="docs-layout">
     <nav class="docs-nav" aria-label="${ui.navigation}">
       <form class="docs-search" role="search" data-index-url="${basePath}${lang === 'it' ? '/it/docs' : '/docs'}/search-index.json">
@@ -221,6 +220,7 @@ function buildDocumentation(outputDir) {
         <input id="docs-search-input" type="search" name="q" placeholder="${ui.searchPlaceholder}" autocomplete="off" aria-controls="docs-search-results">
       </form>
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
+      ${releaseNotes}
       ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, docsDir, lang)}
     </nav>
     <div class="docs-content">

@@ -197,27 +197,6 @@ time { color: var(--color-muted); font-size: .9rem; }
   color: var(--color-white);
   text-decoration: none;
 }
-.docs-release-notes {
-  max-width: 1440px;
-  margin: 1.5rem auto 0;
-  padding: 0 1.5rem;
-}
-.docs-release-notes h2 {
-  margin: 0 0 1rem;
-  font-size: 2rem;
-}
-.docs-release-notes__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-}
-.docs-release-notes__links .btn--outline {
-  border-width: 1px;
-  border-color: var(--color-border);
-  border-radius: .25rem;
-  font-size: 1rem;
-  font-weight: 400;
-}
 .btn--sm { padding: .35rem .9rem; font-size: .85rem; }
 .btn-group { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
 .btn-group--left { justify-content: flex-start; }
@@ -1268,21 +1247,33 @@ section + .section--dark { border-top: none; }
   list-style: disc;
 }
 .page-about main > section:has(> .container > h2 > #demo-3-11) section { margin-top: 1.5rem; }
-.page-about main > section:has(> .container > h2 > #components) { background: var(--color-light); }
-.page-about main > section:has(> .container > h2 > #components) ul {
+.page-about main > section:has(> .container > h2 > #components) > .container > section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: .75rem;
-  margin: 1.5rem 0;
-  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  align-content: center;
+  padding: 2rem;
 }
-.page-about main > section:has(> .container > h2 > #components) li {
-  padding: 1.25rem;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius);
+.page-about main > section:has(> .container > h2 > #components) > .container > section:nth-of-type(even) {
+  background: var(--color-light);
 }
+.page-about main > section:has(> .container > h2 > #components) > .container > section:not(:has(> p > img)) { display: block; }
+.page-about main > section:has(> .container > h2 > #components) > .container > section > h3,
+.page-about main > section:has(> .container > h2 > #components) > .container > section > p:not(:has(> img)) { grid-column: 2; }
+.page-about main > section:has(> .container > h2 > #components) > .container > section > p:has(> img) {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  align-self: center;
+  margin: 0;
+}
+.page-about main > section:has(> .container > h2 > #components) > .container > section > p > img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.page-about main > section:has(> .container > h2 > #components) > .container > section:nth-of-type(even) > h3,
+.page-about main > section:has(> .container > h2 > #components) > .container > section:nth-of-type(even) > p:not(:has(> img)) { grid-column: 1; }
+.page-about main > section:has(> .container > h2 > #components) > .container > section:nth-of-type(even) > p:has(> img) { grid-column: 2; }
 .page-about-versions main > section > .container { overflow-x: auto; }
 .page-about-versions main table {
   min-width: 800px;
@@ -1521,6 +1512,14 @@ section + .section--dark { border-top: none; }
   color: var(--color-muted);
   font-size: .9rem;
 }
+.docs-release-notes {
+  margin-bottom: 1.5rem;
+  padding: .6rem .75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.docs-release-notes summary { cursor: pointer; font-weight: 600; }
+.docs-release-notes[open] summary { margin-bottom: .4rem; }
 .docs-nav > section { padding: 0; }
 .docs-nav > section + section { padding-top: 1rem; }
 .docs-nav .docs-search-results li { margin: 0 0 .75rem; }
@@ -2018,6 +2017,8 @@ section + .section--dark { border-top: none; }
     grid-column: 1;
     grid-row: auto;
   }
+  .page-about main > section:has(> .container > h2 > #components) > .container > section { display: block; padding: 1.5rem; }
+  .page-about main > section:has(> .container > h2 > #components) > .container > section > p:has(> img) { margin: 0 0 1rem; }
   .page-about main > section:has(> .container > h2 > #principles) > .container { grid-template-columns: 1fr; }
   .page-about main > section:has(> .container > h2 > #principles) > .container > h2,
   .page-about main > section:has(> .container > h2 > #principles) > .container > p { grid-column: 1; }

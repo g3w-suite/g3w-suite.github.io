@@ -215,24 +215,37 @@ Map client and administration panel are available in additional languages:
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/">{{t 'Try the demo'}}</a>
-    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/about/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
 
 <script type="application/json" data-i18n>
   {
     "it": {
+      "**Happy mapping!**": "**Buon lavoro con le mappe!**",
+      "Cartographic Client": "Client cartografico",
       "Changelog 3.2 - G3W-Suite": "Changelog 3.2 - G3W-Suite",
+      "Data providers": "Fonti dati",
+      "Feature: Data export": "Funzionalità: esportazione dei dati",
+      "Feature: More data type support": "Funzionalità: supporto per più tipi di dati",
       "For complete details, see the": "Per il dettaglio completo consulta il",
+      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the **main funder of this version** we remember:": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web. Tra i **principali finanziatori di questa versione** ricordiamo:",
+      "General": "Generale",
+      "Map client and administration panel are available in additional languages:": "Il client cartografico e il pannello di amministrazione sono disponibili in altre lingue:",
+      "Minor improvements": "Miglioramenti minori",
+      "Plots": "Grafici",
+      "Quick Start": "Guida rapida",
       "Release date: **07 April 2021**": "Data di rilascio: **7 aprile 2021**",
+      "Sponsor and funder": "Sponsor e finanziatori",
       "The **QGIS AuthCFG system** is managed by the suite.": "Il sistema **QGIS AuthCFG** è gestito dalla suite.",
       "The **filter is also active** on any **plots based on tables related 1: N** with the features of the geographic layers": "Il **filtro è attivo anche** sui **grafici basati su tabelle correlate 1:N** alle feature dei layer geografici.",
       "The **filter is also active** on any plots based **on tables related 1: N** with the features of the geographic layers": "Il **filtro è attivo anche** sui grafici basati su **tabelle correlate 1:N** alle feature dei layer geografici.",
       "The **plots** can be **filtered** on the values associated with only the **features visible on the map**": "I **grafici** possono essere **filtrati** considerando solo i valori associati alle **feature visibili sulla mappa**.",
       "The **plots** can be **filtered** on the values associated with only the **filtered features** following selection": "I **grafici** possono essere **filtrati** considerando solo i valori associati alle **feature filtrate** dopo la selezione.",
       "These will be **visible in the query results form** and **in the 1:N relations session**.": "Questi saranno **visibili nel modulo dei risultati delle interrogazioni** e **nella sessione delle relazioni 1:N**.",
-      "Try the demo": "Prova la demo",
+      "Try the current demo": "Prova la demo attuale",
+      "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
       "ability to **select layer records** and **filter the content on the map and on print**": "possibilità di **selezionare i record dei layer** e **filtrare i contenuti sulla mappa e nelle stampe**",
       "en": "it",
       "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"

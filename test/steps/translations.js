@@ -43,8 +43,8 @@ Then('translated text is rendered for each language', function () {
   assert.equal(pages.it('meta[property="og:type"]').attr('content'), 'website');
   assert.equal(pages.it('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Inizia in pochi minuti');
   assert.equal(pages.en('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Get started in minutes');
-  assert.equal(readPage(path.join(staticDir, 'it', 'about', 'index.html')).$('head title').text(), 'Il progetto G3W-SUITE - G3W-Suite');
-  assert.equal(readPage(path.join(staticDir, 'en', 'about', 'index.html')).$('head title').text(), 'About G3W-SUITE - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'it', 'about', 'index.html')).$('head title').text(), 'Il progetto - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'en', 'about', 'index.html')).$('head title').text(), 'About - G3W-Suite');
   assert.equal(
     readPage(path.join(staticDir, 'it', 'about', 'index.html')).$('meta[name="description"]').attr('content'),
     'Porta i progetti QGIS nel lavoro quotidiano con un WebGIS open source e modulare, pensato per la collaborazione.',
@@ -170,7 +170,8 @@ Then('page-local translations are valid and used by the Italian build', function
     ['Crea il tuo progetto QGIS', 'Sincronizza i tuoi dati geografici', 'Pubblica il tuo progetto QGIS', 'Gestisci gli accessi e attiva le funzionalità aggiuntive']
   );
   const exploreIt = readPage(path.join(staticDir, 'it', 'about', 'index.html')).$;
-  assert.equal(exploreIt('main h1').first().text().trim(), 'Il progetto G3W-SUITE');
+  assert.equal(exploreIt('main h1').first().text().trim(), 'Il progetto');
+  assert.equal(readPage(path.join(staticDir, 'en', 'about', 'index.html')).$('main h1').first().text().trim(), 'About');
   const quickStartIt = readPage(path.join(staticDir, 'it', 'docs', 'quick-start', 'index.html')).$;
   assert.equal(quickStartIt('main h1').first().text().trim(), 'Guida rapida');
   assert.equal(quickStartIt('main iframe').length, 4);
@@ -189,6 +190,24 @@ Then('page-local translations are valid and used by the Italian build', function
   assert.equal(latestChangelogIt('main .sponsor-country').first().text(), 'Svizzera');
   assert.equal(latestChangelogIt('main img[src="/img/site-bookmarks-projects.png"]').attr('alt'), 'Schermata: progetti preferiti');
   assert.ok(latestChangelogIt('main').text().includes('riduzione superiore al 90% dei tempi di compilazione'));
+  const changelog38It = readPage(path.join(staticDir, 'it', 'news', 'v3.8', 'index.html')).$;
+  assert.ok(changelog38It('main').text().includes("L'elenco dei gruppi cartografici può essere filtrato"));
+  const changelog39It = readPage(path.join(staticDir, 'it', 'news', 'v3.9', 'index.html')).$;
+  assert.equal(changelog39It('main img[src="/img/site-grosseto-logo.png"]').attr('alt'), 'Comune di Grosseto');
+  const changelog310It = readPage(path.join(staticDir, 'it', 'news', 'v3.10', 'index.html')).$;
+  const changelog310En = readPage(path.join(staticDir, 'en', 'news', 'v3.10', 'index.html')).$;
+  assert.equal(changelog310It('main .sponsor-country').first().text(), 'Svizzera');
+  assert.equal(changelog310En('main .sponsor-country').first().text(), 'Switzerland');
+  assert.ok(changelog310It('main').text().includes('annotazioni sulla mappa'));
+  for (const [lang, text, href] of [
+    ['it', 'Guida rapida', '/it/docs/quick-start/'],
+    ['en', 'Quick Start', '/docs/quick-start/'],
+  ]) {
+    const page = readPage(path.join(staticDir, lang, 'news', 'v3.9', 'index.html')).$;
+    assert.equal(page('main .cta-box a.btn--outline').text().trim(), text);
+    assert.equal(page('main .cta-box a.btn--outline').attr('href'), href);
+    assert.equal(page('main .cta-box a.btn--primary').attr('href'), `/${lang}/about/#demo-3-11`);
+  }
   const modelIt = readPage(path.join(staticDir, 'it', 'news', 'model-builder-processing', 'index.html')).$;
   assert.equal(modelIt('main h2').first().text().trim(), 'Funzionalità e impostazioni di QGIS Model Builder');
   const timeSeriesIt = readPage(path.join(staticDir, 'it', 'docs', 'client-bottom-session', 'index.html')).$;

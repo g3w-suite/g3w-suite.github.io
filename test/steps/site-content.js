@@ -204,6 +204,13 @@ Then('both languages are generated from shared page templates', function () {
     const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'overview', 'index.html')).$;
     assert.ok(manual('main').text().includes('QGIS 3.44 LTR'), `${lang} manual must match the current QGIS version`);
     assert.equal(explore('#components').closest('section').find('a[href*="/about/g3w-"]').length, 7, `${lang} About page must link to all component pages`);
+    const componentSections = explore('#components').closest('section').children('.container').children('section');
+    assert.equal(componentSections.length, 7, `${lang} About page must present each component separately`);
+    componentSections.each((_, section) => {
+      const component = explore(section);
+      assert.equal(component.find(`a[href^="/${lang}/about/"]`).length, 1, `${lang} component must link to its details`);
+      assert.equal(component.find('a[href^="https://github.com/g3w-suite/"]').length, 1, `${lang} component must link to its source`);
+    });
     for (const component of [
       'g3w-admin',
       'g3w-client',

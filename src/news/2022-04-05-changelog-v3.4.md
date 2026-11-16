@@ -258,20 +258,29 @@ Using drag&drop in the ADMIN session it’s now possible to define the order of 
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/">{{t 'Try the demo'}}</a>
-    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/about/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
 
 <script type="application/json" data-i18n>
   {
     "it": {
+      "**Happy mapping!**": "**Buon lavoro con le mappe!**",
       "**drill-down cascading** and **conditional forms** on edit": "**menu a cascata** e **moduli condizionali** durante la modifica",
+      "Cartographic Client": "Client cartografico",
       "Changelog 3.4 - G3W-Suite": "Changelog 3.4 - G3W-Suite",
       "For complete details, see the": "Per il dettaglio completo consulta il",
+      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the **main funder of this version** we remember:": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web. Tra i **principali finanziatori di questa versione** ricordiamo:",
+      "General": "Generale",
       "It is now possible to measure interactively the **segments length** and the **polygons area** on the map during the editing phase.": "È ora possibile misurare interattivamente la **lunghezza dei segmenti** e l’**area dei poligoni** sulla mappa durante la modifica.",
+      "Minor improvements": "Miglioramenti minori",
       "Print": "Stampa",
-      "Try the demo": "Prova la demo",
+      "Quick Start": "Guida rapida",
+      "Setting inherited from the QGIS project": "Impostazione ereditata dal progetto QGIS",
+      "Sponsor and funder": "Sponsor e finanziatori",
+      "Try the current demo": "Prova la demo attuale",
+      "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
       "en": "it",
       "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"
     }

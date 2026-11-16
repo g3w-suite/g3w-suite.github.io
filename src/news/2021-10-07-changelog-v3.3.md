@@ -260,24 +260,44 @@ In the administration session, a search tool will** allow you to find projects a
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/">{{t 'Try the demo'}}</a>
-    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/about/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
 
 <script type="application/json" data-i18n>
   {
     "it": {
+      "**Happy mapping!**": "**Buon lavoro con le mappe!**",
       "**alphanumeric constraints** based on **SQL** and **QGIS expressions** (visualization and editing)": "**Vincoli alfanumerici** basati su **SQL** e **espressioni QGIS** (visualizzazione e modifica)",
+      "Cartographic Client": "Client cartografico",
       "Changelog 3.3 - G3W-Suite": "Changelog 3.3 - G3W-Suite",
+      "Data providers": "Fonti dati",
+      "Feature: More data type support": "Funzionalità: supporto per più tipi di dati",
       "For complete details, see the": "Per il dettaglio completo consulta il",
+      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the **main funder of this version** we remember:": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web. Tra i **principali finanziatori di questa versione** ricordiamo:",
+      "General": "Generale",
+      "In particular, the new release implements:": "In particolare, la nuova versione introduce:",
+      "Map client and administration panel are available in additional languages:": "Il client cartografico e il pannello di amministrazione sono disponibili in altre lingue:",
+      "Minor improvements": "Miglioramenti minori",
+      "OWS server (WMS, WFS and WCS)": "server OWS (WMS, WFS e WCS)",
+      "Quick Start": "Guida rapida",
       "Release date: **07 October 2021**": "Data di rilascio: **7 ottobre 2021**",
+      "Setting inherited from the QGIS project": "Impostazione ereditata dal progetto QGIS",
+      "Sponsor and funder": "Sponsor e finanziatori",
       "The **Add layer** tool now support:": "Lo strumento **Aggiungi layer** ora supporta:",
       "The definition on the **QGIS project** of the **order of the layers in the map**, **independent of the order of the layers in the TOC**, is now managed.": "La definizione dell’**ordine dei layer nella mappa** nel **progetto QGIS**, indipendentemente dall’ordine dei layer nel TOC, è ora gestita.",
       "Through a drop-down menu it is possible to view the **different combinations of layers** (switched on and off) **based on themes** defined in the **QGIS project**.": "Tramite un menu a discesa è possibile visualizzare le **diverse combinazioni di layer** (attivati o disattivati) **in base ai temi** definiti nel **progetto QGIS**.",
-      "Try the demo": "Prova la demo",
+      "To date, the** modules/functions are managed through the API** are:": "Ad oggi, i **moduli e le funzioni gestiti tramite API** sono:",
+      "Try the current demo": "Prova la demo attuale",
+      "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
+      "altas print layout": "layout di stampa atlante",
+      "editing and visualization constraints": "vincoli di modifica e visualizzazione",
       "en": "it",
-      "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"
+      "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs",
+      "project import": "importazione dei progetti",
+      "searches (optional, standard through WMS service)": "ricerche (opzionali, standard tramite servizio WMS)",
+      "vector layer API (table view)": "API dei layer vettoriali (vista tabellare)"
     }
   }
 </script>

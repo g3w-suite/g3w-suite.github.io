@@ -151,7 +151,7 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
   <p>{{t 'For complete details, see the'}} <a href="/docs/">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
     <a class="btn btn--primary" href="/{{t 'en'}}/about/#demo-3-11">{{t 'Try the demo'}}</a>
-    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
 
@@ -197,6 +197,7 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
       "Italy": "Italia",
       "Numerous changes to the client interface.": "Numerose modifiche all'interfaccia del client.",
       "QGIS 3.44 LTR compatibility": "compatibilità con QGIS 3.44 LTR",
+      "Quick Start": "Guida rapida",
       "References to the parent are visible when accessing the list of records in the child layer of a 1:N relation.": "I riferimenti all'elemento padre sono visibili nell'elenco dei record del layer figlio di una relazione 1:N.",
       "Release date: **08 April 2026**": "Data di rilascio: **8 aprile 2026**",
       "Screenshot: Bookmarks Projects": "Schermata: progetti preferiti",

@@ -218,25 +218,47 @@ It is now possible to activate the **snap function also between layers** and no 
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/">Prova la demo</a>
-    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/about/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
 
 <script type="application/json" data-i18n>
   {
     "it": {
+      "**Happy mapping!**": "**Buon lavoro con le mappe!**",
       "Atlas prints are **available** both **from the generic print session** and **from the query/search result forms.**": "Le stampe Atlas sono **disponibili** sia **nella sessione di stampa generica** sia **nei moduli dei risultati delle interrogazioni e delle ricerche.**",
+      "Cartographic Client": "Client cartografico",
       "Changelog 3.1 - G3W-Suite": "Changelog 3.1 - G3W-Suite",
+      "Data providers": "Fonti dati",
+      "Feature: Data export": "Funzionalità: esportazione dei dati",
+      "Feature: New editing tools": "Funzionalità: nuovi strumenti di editing",
+      "Feature: Password recovery system**  **": "Funzionalità: recupero della password**  **",
       "For the full detail see the": "Per il dettaglio completo consulta il",
+      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the **main funder of this version** we remember:": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web. Tra i **principali finanziatori di questa versione** ricordiamo:",
+      "General": "Generale",
+      "In particular, the new release implements:": "In particolare, la nuova versione introduce:",
+      "New editing functions are implemented:": "Sono state introdotte nuove funzioni di editing:",
+      "OWS server (WMS, WFS and WCS)": "server OWS (WMS, WFS e WCS)",
+      "Plots": "Grafici",
       "Print": "Stampa",
       "Print layouts with **multiple map items** and **panoramic maps** are now supported": "Sono ora supportati layout di stampa con **più elementi mappa** e **mappe panoramiche**.",
+      "Quick Start": "Guida rapida",
+      "Sponsor and funder": "Sponsor e finanziatori",
       "The **access mode** is specified for each service (free or with credentials)": "La **modalità di accesso** è definita per ciascun servizio (libero o con credenziali).",
       "The **maximum extension** is setted from the **WMS capabilities extent** set on the QGIS project.": "La **massima estensione** è impostata in base all’estensione delle **WMS capabilities** configurata nel progetto QGIS.",
       "The **query and search results window** and the **attribute tables** are now **resizable** as desired to improve the display of the contents": "La **finestra dei risultati delle interrogazioni e delle ricerche** e le **tabelle degli attributi** possono essere **ridimensionate** per migliorare la visualizzazione dei contenuti.",
+      "To date, the** modules/functions are managed through the API** are:": "Ad oggi, i **moduli e le funzioni gestiti tramite API** sono:",
+      "Try the current demo": "Prova la demo attuale",
+      "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
+      "altas print layout": "layout di stampa atlante",
+      "editing and visualization constraints": "vincoli di modifica e visualizzazione",
       "en": "it",
       "official manual on ReadTheDocs": "manuale ufficiale su ReadTheDocs",
-      "support for **Atlas** print layout (integrating the dedicated QGIS Server plugin service [https://github.com/3liz/qgis-atlasprint](https://github.com/3liz/qgis-atlasprint))": "supporto per i layout di stampa **Atlas** (integrato tramite il servizio plugin dedicato di QGIS Server [https://github.com/3liz/qgis-atlasprint](https://github.com/3liz/qgis-atlasprint))"
+      "project import": "importazione dei progetti",
+      "searches (optional, standard through WMS service)": "ricerche (opzionali, standard tramite servizio WMS)",
+      "support for **Atlas** print layout (integrating the dedicated QGIS Server plugin service [https://github.com/3liz/qgis-atlasprint](https://github.com/3liz/qgis-atlasprint))": "supporto per i layout di stampa **Atlas** (integrato tramite il servizio plugin dedicato di QGIS Server [https://github.com/3liz/qgis-atlasprint](https://github.com/3liz/qgis-atlasprint))",
+      "vector layer API (table view)": "API dei layer vettoriali (vista tabellare)"
     }
   }
 </script>

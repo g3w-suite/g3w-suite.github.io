@@ -22,7 +22,7 @@ Contributions to code, documentation and translations make the project more acce
 
 ## <span id="sponsors"></span>Our sponsors
 
-These organizations and projects are credited in the release notes as funders. Each profile links to the releases they supported; being listed here does not imply a current sponsorship.
+These organizations and projects have supported G3W-SUITE over the years. Explore their profiles and the releases they helped make possible.
 
 - [Gis3W](/en/sponsors/gis3w/)
 - [![ARPA Liguria](/img/site-arpal.png) ARPA Liguria](/en/sponsors/arpa-liguria/)
@@ -101,7 +101,7 @@ These examples show organizations using G3W-SUITE; use of the platform does not 
       "Support the project": "Sostieni il progetto",
       "Supporting ongoing work helps keep the WebGIS platform useful alongside a changing QGIS ecosystem.": "Sostenere il lavoro continuativo aiuta la piattaforma WebGIS a rimanere utile mentre l'ecosistema QGIS evolve.",
       "These examples show organizations using G3W-SUITE; use of the platform does not necessarily mean sponsorship.": "Questi sono esempi di organizzazioni che usano G3W-SUITE; l'utilizzo della piattaforma non implica necessariamente una sponsorizzazione.",
-      "These organizations and projects are credited in the release notes as funders. Each profile links to the releases they supported; being listed here does not imply a current sponsorship.": "Queste organizzazioni e questi progetti sono riconosciuti come finanziatori nelle note di rilascio. Ogni scheda rimanda alle versioni sostenute; la presenza nell'elenco non implica una sponsorizzazione attuale.",
+      "These organizations and projects have supported G3W-SUITE over the years. Explore their profiles and the releases they helped make possible.": "Queste organizzazioni e questi progetti hanno sostenuto G3W-SUITE nel corso degli anni. Scopri le loro schede e le versioni che hanno contribuito a realizzare.",
       "Whether you want to fund an improvement, contribute to the project or explore a partnership, we would be glad to hear from you. Gis3W also offers consulting, technical support and custom development for organizations using G3W-SUITE.": "Se vuoi finanziare un miglioramento, contribuire al progetto o avviare una partnership, saremo lieti di conoscerti. Gis3W offre anche consulenza, assistenza tecnica e sviluppo personalizzato alle organizzazioni che usano G3W-SUITE.",
       "Why support matters": "Perché il tuo sostegno è importante",
       "Work with us": "Collabora con noi"

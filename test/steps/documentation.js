@@ -7,7 +7,7 @@ const { Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageBodyClass, readPage, localTarget } = require('../support/site');
 
-Then('release links are generated before the documentation content', function () {
+Then('release links are available in the documentation navigation', function () {
   const releasePattern = /^(\d{4}-\d{2}-\d{2})-changelog-(v\d+\.\d+)\.md$/;
   const releaseRoutes = filesIn(path.resolve('src/news'))
     .map(file => releasePattern.exec(path.basename(file)))
@@ -18,34 +18,28 @@ Then('release links are generated before the documentation content', function ()
   for (const lang of languages) {
     const docsRoot = path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
     const index = readPage(path.join(docsRoot, 'index.html')).$;
-    const releaseSection = index('main > .docs-release-notes');
-    assert.equal(releaseSection.length, 1, `${lang} release links must be outside the documentation layout`);
-    assert.equal(releaseSection.next('.docs-layout').length, 1, `${lang} release links must precede the documentation layout`);
-    assert.equal(releaseSection.find('h2').text().trim(), 'Changelog');
+    const releaseSection = index('nav.docs-nav > details.docs-release-notes');
+    assert.equal(releaseSection.length, 1, `${lang} release links must be in the documentation navigation`);
+    assert.equal(releaseSection.attr('open'), undefined, `${lang} release notes must be collapsed initially`);
+    assert.equal(releaseSection.find('summary').text().trim(), 'Changelog');
     assert.deepEqual(
-      releaseSection.find('a.btn--outline').map((_, link) => link.attribs.href).get(),
+      releaseSection.find('a').map((_, link) => link.attribs.href).get(),
       releaseRoutes.map(version => `/${lang}/news/${version}/`),
       `${lang} documentation home must show each release`
     );
-    assert.equal(releaseSection.find('main').length, 0, `${lang} release links must not be part of the manual content`);
-    assert.equal(
-      index('nav.docs-nav a[href^="/' + lang + '/news/"]').length,
-      0,
-      `${lang} release links must not appear in documentation navigation`
-    );
+    assert.equal(index('main > .docs-release-notes').length, 0, `${lang} release notes must not occupy the main content`);
     assert.equal(
       releaseSection.find('a').first().text().trim(),
       `${lang === 'it' ? 'Versione' : 'Version'} ${releaseRoutes[0].slice(1)}`,
-      `${lang} release buttons must use the localized label`
+      `${lang} release links must use the localized label`
     );
 
     for (const file of htmlFiles(docsRoot)) {
       const page = readPage(file).$;
-      const releases = page('main > .docs-release-notes');
+      const releases = page('nav.docs-nav > details.docs-release-notes');
       assert.equal(releases.length, 1, `${file}: release links must appear on every documentation page`);
-      assert.equal(releases.next('.docs-layout').length, 1, `${file}: release links must precede the documentation layout`);
       assert.deepEqual(
-        releases.find('a.btn--outline').map((_, link) => link.attribs.href).get(),
+        releases.find('a').map((_, link) => link.attribs.href).get(),
         releaseRoutes.map(version => `/${lang}/news/${version}/`),
         `${file}: release links must match the documentation home`
       );
@@ -79,11 +73,11 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.equal(italianIndex('html').attr('lang'), 'it');
   assert.equal(italianIndex('main h1').text(), 'Guida rapida');
   assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
-  assert.equal(index('nav.docs-nav a').first().attr('href'), '/docs/');
-  assert.equal(italianIndex('nav.docs-nav a').first().attr('href'), '/it/docs/');
-  assert.equal(italianIndex('nav.docs-nav a').first().text(), 'Guida rapida');
-  assert.equal(index('nav.docs-nav a').first().attr('aria-current'), 'page');
-  assert.equal(italianIndex('nav.docs-nav a').first().attr('aria-current'), 'page');
+  assert.equal(index('nav.docs-nav section a').first().attr('href'), '/docs/');
+  assert.equal(italianIndex('nav.docs-nav section a').first().attr('href'), '/it/docs/');
+  assert.equal(italianIndex('nav.docs-nav section a').first().text(), 'Guida rapida');
+  assert.equal(index('nav.docs-nav section a').first().attr('aria-current'), 'page');
+  assert.equal(italianIndex('nav.docs-nav section a').first().attr('aria-current'), 'page');
   assert.ok(index('nav.docs-nav a[href="/docs/overview/"]').length, 'navigation must retain the manual overview');
   assert.ok(readPage(path.join(staticDir, 'docs', 'overview', 'index.html')).$('main h1').text().includes('G3W-SUITE 3.11'));
   const oldQuickStart = readPage(path.join(staticDir, 'docs', 'quick-start', 'index.html')).$;

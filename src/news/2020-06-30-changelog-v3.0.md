@@ -230,8 +230,8 @@ The return of the network connection will automatically save the changes made on
 <div class="cta-box">
   <p>{{t 'For the full detail see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official manual on ReadTheDocs'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/about/">Prova la demo</a>
-    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/about/#demo-3-11">{{t 'Try the current demo'}}</a>
+    <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
 
@@ -241,13 +241,23 @@ The return of the network connection will automatically save the changes made on
       "**Reading and editing mode**": "**Modalità di lettura e modifica**",
       "**access portal menu**": "**access portal menù**",
       "**cartographic** **client interface menu**": "**cartografico** **menu dell’interfaccia del client**",
+      "Cartographic Client": "Client cartografico",
       "Changelog 3.0 - G3W-Suite": "Changelog 3.0 - G3W-Suite",
+      "Data providers": "Fonti dati",
+      "Feature: Data export": "Funzionalità: esportazione dei dati",
+      "Feature: New editing tools": "Funzionalità: nuovi strumenti di editing",
       "For the full detail see the": "Per il dettaglio completo consulta il",
+      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the **main funder of this version** we remember:": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web. Tra i **principali finanziatori di questa versione** ricordiamo:",
+      "General": "Generale",
       "In G3W-ADMIN it's now possible to set **editing alphanumeric/expression constraints**.": "In G3W-ADMIN è ora possibile impostare **vincoli alfanumerici e basati su espressioni**.",
       "It's now possible to set **geographical editing constraints** on the different layers present in the individual WebGis services.": "È ora possibile impostare **vincoli geografici di modifica** sui diversi layer dei singoli servizi WebGIS.",
+      "New editing functions are implemented:": "Sono state introdotte nuove funzioni di editing:",
       "Progetto RISVAL “Rischio Sisismico e Vulnerabilita Alpina” – Programma Inerreg V Italia-Francia – ALCOTRA 2014-2020": "Progetto RISVAL “Rischio Sisismico e Vulnerabilità Alpina” – Programma Inerreg V Italia-Francia – ALCOTRA 2014-2020",
+      "Quick Start": "Guida rapida",
+      "Sponsor and funder": "Sponsor e finanziatori",
       "The **capabilities and properties of QGIS server** like all the services supported by him WMS WFS, WCS etc are **now managed and controlled by G3W-SUITE through the QGIS API.**": "Le **funzionalità e le proprietà del server QGIS**, come tutti i servizi da esso supportati (WMS, WFS, WCS ecc.), sono **ora gestite e controllate da G3W-SUITE tramite la QGIS API.**",
       "The **transaction group management** QGIS function is inherited in WebGis editing.": "La funzione QGIS di **gestione dei gruppi di transazioni** è disponibile nell’editing WebGIS.",
+      "Try the current demo": "Prova la demo attuale",
       "en": "it",
       "official manual on ReadTheDocs": "manuale ufficiale su ReadTheDocs"
     }
