@@ -42,7 +42,7 @@ flowchart LR
 
 Add the alternative text to the page's Italian translations. Puppeteer downloads Chrome during `npm install`. To skip that download, set `PUPPETEER_SKIP_DOWNLOAD=true` during installation; the build then uses an installed Chrome or the browser specified by `PUPPETEER_EXECUTABLE_PATH`.
 
-`src/_redirect.html` only redirects to the Italian version. Assets in `static/` are tracked; generated pages are ignored by Git.
+`src/_redirect.html` only redirects to the Italian version. Site assets are tracked; generated pages and Mermaid images are ignored by Git.
 
 ## Add or update a page
 
