@@ -2,6 +2,14 @@
 
 This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .
 
+## Server sizing
+
+CPU, memory and storage needs depend on the number of users, the complexity of the maps, the data and the enabled services. This guide does not prescribe a universal minimum: test the deployment with representative projects and concurrent users before choosing production capacity.
+
+Monitor container CPU and memory usage with `docker stats`. Check free space on the shared volume with `df -h <shared-volume-path>`; allow room for the database, project data, uploads, tile cache and backups.
+
+For a cloud deployment, choose a Linux host that supports the required Docker images and Docker Compose. Use persistent storage, plan backups and provide a domain and HTTPS for public access.
+
 ## Deploy
 
 Follow steps to deploy G3W-SUITE on a Ubuntu Server (20.04)
@@ -214,6 +222,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "A custom CSS is added to the pages, the file is located in `config/g3w-suite/overrides/static/style.css` and can be modified directly, changes are effective immediately.": "Alle pagine viene aggiunto un CSS personalizzato; il file si trova in `config/g3w-suite/overrides/static/style.css` e può essere modificato direttamente. Le modifiche sono applicate immediatamente.",
     "Become postgres user": "Passare all'utente postgres",
     "Builds": "Build",
+    "CPU, memory and storage needs depend on the number of users, the complexity of the maps, the data and the enabled services. This guide does not prescribe a universal minimum: test the deployment with representative projects and concurrent users before choosing production capacity.": "Le esigenze di CPU, memoria e archiviazione dipendono dal numero di utenti, dalla complessità delle mappe, dai dati e dai servizi attivi. Questa guida non prescrive un minimo universale: prova l'installazione con progetti rappresentativi e utenti simultanei prima di scegliere le risorse per la produzione.",
     "Caching": "Cache",
     "Check the container name": "Verificare il nome del container",
     "Configuration": "Configurazione",
@@ -230,6 +239,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Editing module is active by default, to avoid simultaneous feature editing by two or more users, the editing module works with a feature lock system.": "Il modulo di modifica è attivo per impostazione predefinita. Per evitare che due o più utenti modifichino contemporaneamente la stessa entità, il modulo utilizza un sistema di blocco delle entità.",
     "First time setup": "Configurazione iniziale",
     "Follow steps to deploy G3W-SUITE on a Ubuntu Server (20.04)": "Segui questi passaggi per distribuire G3W-SUITE su Ubuntu Server (20.04).",
+    "For a cloud deployment, choose a Linux host that supports the required Docker images and Docker Compose. Use persistent storage, plan backups and provide a domain and HTTPS for public access.": "Per una distribuzione cloud, scegli un server Linux che supporti le immagini Docker necessarie e Docker Compose. Usa archiviazione persistente, pianifica i backup e prevedi un dominio e HTTPS per l'accesso pubblico.",
     "Front-end App": "Applicazione front-end",
     "G3W-SUITE use `huey` for bach processing (https://github.com/coleifer/huey), so if you want to use it,": "G3W-SUITE usa `huey` per l'elaborazione in background (https://github.com/coleifer/huey); se vuoi utilizzarlo,",
     "G3W-SUITE with consumer image": "G3W-SUITE con immagine consumer",
@@ -238,6 +248,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "If all went well, G3W-SUITE run on http://localhost:8080": "Se tutto è andato a buon fine, G3W-SUITE è disponibile all'indirizzo http://localhost:8080",
     "In the above example the container name is `g3wsuitedocker_postgis_1`": "Nell'esempio precedente, il nome del container è `g3wsuitedocker_postgis_1`.",
     "Log into the container": "Accedere al container",
+    "Monitor container CPU and memory usage with `docker stats`. Check free space on the shared volume with `df -h <shared-volume-path>`; allow room for the database, project data, uploads, tile cache and backups.": "Monitora l'uso di CPU e memoria dei container con `docker stats`. Controlla lo spazio libero sul volume condiviso con `df -h <shared-volume-path>`; prevedi spazio per il database, i dati dei progetti, i file caricati, la cache delle tile e i backup.",
     "Performances optimization": "Ottimizzazione delle prestazioni",
     "Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docker/stacks/add) section to learn how to deploy the `docker-compose-consumer.yml` stack with Portainer (>= v2.1.1).": "Consulta la sezione [Aggiungere un nuovo stack](https://docs.portainer.io/v/ce-2.9/user/docker/stacks/add) per scoprire come distribuire lo stack `docker-compose-consumer.yml` con Portainer (>= v2.1.1).",
     "Portainer (https://www.portainer.io) is a docker-based web application used to edit and manage Docker applications in a simple and intuitive way.": "Portainer (https://www.portainer.io) è un'applicazione web basata su Docker che consente di modificare e gestire le applicazioni Docker in modo semplice e intuitivo.",
@@ -247,6 +258,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "PostgreSQL administration": "Amministrazione di PostgreSQL",
     "PostgreSQL runs in a Docker container. To access it:": "PostgreSQL è in esecuzione in un container Docker. Per accedervi:",
     "Run": "Esecuzione",
+    "Server sizing": "Dimensionamento del server",
     "Set a strong administrator password in `.env` before starting a new installation. The `.env.example` file contains example credentials that must be changed.": "Imposta una password amministratore robusta in `.env` prima di avviare una nuova installazione. Il file `.env.example` contiene credenziali di esempio da modificare.",
     "Set the environment variable": "Imposta la variabile d'ambiente",
     "Setups": "Configurazioni",

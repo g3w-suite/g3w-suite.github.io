@@ -3,6 +3,8 @@
 These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.
 Use this installation for development, not production.
 
+For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.
+
 ## Install required packages
 First step is install dev libraries packages for python module
 
@@ -312,6 +314,7 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "Django setup": "Configurazione di Django",
       "First step is install dev libraries packages for python module": "Per prima cosa, installa le librerie di sviluppo necessarie ai moduli Python.",
       "For G3W-SUITE deploy clearly can be used the native Python3 `venv` module, `virtualenvwrapper` is a third part module that render the use and management of virtual environments very simple.": "Per distribuire G3W-SUITE è possibile utilizzare il modulo nativo `venv` di Python 3. `virtualenvwrapper` è un modulo di terze parti che semplifica notevolmente l'uso e la gestione degli ambienti virtuali.",
+      "For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.": "Per le altre versioni, consulta la [tabella di compatibilità](versions.md) prima di scegliere le versioni di Python e QGIS. Le soluzioni per versioni precedenti di Ubuntu e Python non sono istruzioni per questa installazione.",
       "G3W-ADMIN has a series of [paver](http://pythonhosted.org/Paver/) CLI commands to administrate the suite.": "G3W-ADMIN mette a disposizione una serie di comandi CLI [paver](http://pythonhosted.org/Paver/) per amministrare la suite.",
       "G3W-ADMIN is a Django application, and to work is necessary set a config.py file. To start copy local_settings.example.py and set the databse and other:": "G3W-ADMIN è un'applicazione Django e per funzionare richiede un file di configurazione. Per iniziare, copia `local_settings_example.py` in `local_settings.py` e configura il database e gli altri parametri:",
       "G3W-ADMIN is a django application so is possible run app by standard django manage.py commands": "G3W-ADMIN è un'applicazione Django, quindi può essere avviata con i normali comandi `manage.py` di Django.",
