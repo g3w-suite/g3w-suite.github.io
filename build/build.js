@@ -6,7 +6,7 @@ const { projectRoot, staticDir, sourceDir, languages, publishedHtml } = require(
 const { htmlFiles, markdownFiles } = require('../utils/files');
 const { renderLanguageBlocks, translateHtml, extractPageTranslations, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
 const { autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
-const { outputPage, languagePageUrl, renderComponent } = require('../utils/routes');
+const { outputPage, languagePageUrl, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
 
 function build(outputDir) {
@@ -29,6 +29,7 @@ function build(outputDir) {
     fs.mkdirSync(path.join(outputDir, lang), { recursive: true });
   }
 
+  const renderedPages = [];
   for (const { file, page } of pages) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
     const pageTemplate = extractPageTranslations(sourceHtml, path.relative(projectRoot, file));
@@ -62,14 +63,31 @@ function build(outputDir) {
         const header = renderComponent('header', lang, page, pageUrls, pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls);
         const output = renderMarkdownButtonLinks(renderYoutubeVideos(`${header}\n${pageContent}\n${footer}`));
-        const target = path.join(outputDir, lang, outputPage(page));
-        fs.mkdirSync(path.dirname(target), { recursive: true });
-        fs.writeFileSync(target, publishedHtml(output));
+        const title = /<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(pageContent)?.[1].replace(/<[^>]*>/g, '').trim();
+        if (!title) throw new Error('Page has no main heading for the breadcrumb');
+        renderedPages.push({ page, lang, url: pageUrls[lang], title, output });
       } catch (e) {
         e.message = `${path.relative(projectRoot, file)} (${lang}): ${e.message}`;
         throw e;
       }
     }
+  }
+  const titles = new Map(renderedPages.map(({ url, title }) => [url, title]));
+  for (const { page, lang, url, title, output } of renderedPages) {
+    let result = output;
+    if (page !== 'index.md') {
+      const segments = url.split('/').filter(Boolean);
+      const items = [];
+      for (let index = 2; index < segments.length; index++) {
+        const parentUrl = `/${segments.slice(0, index).join('/')}/`;
+        if (titles.has(parentUrl)) items.push({ href: parentUrl, label: titles.get(parentUrl) });
+      }
+      items.push({ label: title });
+      result = output.replace(/(<main\b[^>]*>)/i, `$1${renderBreadcrumb(lang, items)}`);
+    }
+    const target = path.join(outputDir, lang, outputPage(page));
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, publishedHtml(result));
   }
   buildDocumentation(outputDir);
 }

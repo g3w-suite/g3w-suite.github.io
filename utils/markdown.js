@@ -27,7 +27,7 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
     }
     if (lang !== 'en' && !wholeBlockTranslated && !/^\s*\|/.test(line)) {
       const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
-      if (match && match[2] && !/[{}<>]/.test(match[2]) && Object.hasOwn(entries, match[2])) {
+      if (match && match[2] && !/[{}]/.test(match[2]) && Object.hasOwn(entries, match[2])) {
         lines[index] = `${match[1]}${entries[match[2]]}${match[3]}`;
         wholeBlockTranslated = true;
       }

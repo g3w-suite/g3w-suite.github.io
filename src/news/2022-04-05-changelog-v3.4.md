@@ -2,7 +2,7 @@
 
 Release date: **5 April 2022**
 
-{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [Francesco Boccacci](/en/about/francesco-boccacci/) ? [Leonardo Lami](/en/about/leonardo-lami/) ? [Matteo Tosi](/en/about/matteo-tosi/) ? [Walter Lorenzetti](/en/about/walter-lorenzetti/)
+{{#en}}By{{/en}}{{#it}}A cura di{{/it}} [Francesco Boccacci](/en/about/francesco-boccacci/) • [Leonardo Lami](/en/about/leonardo-lami/) • [Matteo Tosi](/en/about/matteo-tosi/) • [Walter Lorenzetti](/en/about/walter-lorenzetti/)
 
 ## Changelog for G3W-SUITE 3.4
 

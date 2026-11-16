@@ -107,9 +107,13 @@ An active community keeps G3W-SUITE stable, up to date and continuously evolving
 <script type="application/json" data-i18n>
   {
     "it": {
+      "**Create your QGIS project**": "**Crea il tuo progetto QGIS**",
       "**Get started in minutes** Publish your QGIS project in 4 steps": "**Inizia in pochi minuti** Pubblica il tuo progetto QGIS in 4 passi",
+      "**Manage access and activate extra functions**": "**Gestisci gli accessi e attiva le funzionalità aggiuntive**",
       "**Open Source Ecosystem** Partnerships and community supporting the project": "**Ecosistema Open Source** Partnership e community a supporto del progetto",
       "**Open Source WebGIS**": "**WebGIS Open Source**",
+      "**Publish your QGIS project**": "**Pubblica il tuo progetto QGIS**",
+      "**Synchronise your geographic data**": "**Sincronizza i tuoi dati geografici**",
       "**Use cases** One platform, three operational use cases": "**Casi d'uso** Una piattaforma, tre casi d'uso operativi",
       "**Validated in production** Used by public bodies, companies and universities": "**Validato sul campo** Utilizzato da enti pubblici, aziende e università",
       "Access your own web portal to publish your projects as WebGis service": "Accedi al tuo portale web dedicato per pubblicare i tuoi progetti come servizi WebGis",

@@ -26,6 +26,16 @@ function pageBodyClass(page) {
   return `page-${slug || 'home'}`;
 }
 
+function renderBreadcrumb(lang, items) {
+  const label = lang === 'it' ? 'Percorso di navigazione' : 'Breadcrumb';
+  const links = [{ href: `/${lang}/`, label: 'Home' }, ...items];
+  return `<nav class="site-breadcrumb" aria-label="${label}"><div class="container"><ol>${links.map(({ href, label: text }, index) =>
+    index === links.length - 1
+      ? `<li aria-current="page">${text}</li>`
+      : `<li><a href="${href}">${text}</a></li>`
+  ).join('')}</ol></div></nav>`;
+}
+
 function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   const values = {
     itPage: pageUrls.it,
@@ -76,4 +86,4 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   );
 }
 
-module.exports = { outputPage, languagePageUrl, pageBodyClass, renderComponent };
+module.exports = { outputPage, languagePageUrl, pageBodyClass, renderBreadcrumb, renderComponent };

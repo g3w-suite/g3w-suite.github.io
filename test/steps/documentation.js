@@ -18,7 +18,7 @@ Then('release links are generated before the documentation content', function ()
   for (const lang of languages) {
     const docsRoot = path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
     const index = readPage(path.join(docsRoot, 'index.html')).$;
-    const releaseSection = index('body > .docs-release-notes');
+    const releaseSection = index('main > .docs-release-notes');
     assert.equal(releaseSection.length, 1, `${lang} release links must be outside the documentation layout`);
     assert.equal(releaseSection.next('.docs-layout').length, 1, `${lang} release links must precede the documentation layout`);
     assert.equal(releaseSection.find('h2').text().trim(), 'Changelog');
@@ -41,7 +41,7 @@ Then('release links are generated before the documentation content', function ()
 
     for (const file of htmlFiles(docsRoot)) {
       const page = readPage(file).$;
-      const releases = page('body > .docs-release-notes');
+      const releases = page('main > .docs-release-notes');
       assert.equal(releases.length, 1, `${file}: release links must appear on every documentation page`);
       assert.equal(releases.next('.docs-layout').length, 1, `${file}: release links must precede the documentation layout`);
       assert.deepEqual(
@@ -111,10 +111,15 @@ Then('every documentation source is Markdown and has a generated page', function
     const englishRoute = docsRoute ? `/docs/${docsRoute}/` : '/docs/';
     const italianRoute = docsRoute ? `/it/docs/${docsRoute}/` : '/it/docs/';
     const sourcePath = sourceRelative.split('/').map(encodeURIComponent).join('/');
-    assert.equal(page('nav.docs-toolbar').length, 1, `${file}: documentation toolbar is missing`);
-    assert.ok(page('nav.docs-toolbar .docs-breadcrumb__home[href="/docs/"]').length, `${file}: documentation breadcrumb is missing its home link`);
+    assert.equal(page('.docs-toolbar').length, 1, `${file}: documentation toolbar is missing`);
+    assert.ok(page('nav.site-breadcrumb a[href="/en/"]').length, `${file}: breadcrumb is missing the site home link`);
+    assert.equal(page('main > .page-header h1').length, 1, `${file}: documentation page header is missing`);
+    assert.equal(page('nav.site-breadcrumb [aria-current="page"]').text(), page('main > .page-header h1').text(), `${file}: breadcrumb must identify the current page`);
+    assert.ok(italianPage('nav.site-breadcrumb a[href="/it/"]').length, `${italianFile}: breadcrumb is missing the localized site home link`);
+    assert.equal(italianPage('main > .page-header h1').length, 1, `${italianFile}: localized page header is missing`);
+    assert.equal(italianPage('nav.site-breadcrumb [aria-current="page"]').text(), italianPage('main > .page-header h1').text(), `${italianFile}: breadcrumb must identify the current page`);
     assert.equal(
-      page('nav.docs-toolbar .docs-source-link').attr('href'),
+      page('.docs-toolbar .docs-source-link').attr('href'),
       `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`,
       `${file}: GitHub edit link does not match the Markdown source`
     );
@@ -128,14 +133,15 @@ Then('every documentation source is Markdown and has a generated page', function
     assert.equal(italianPage('.lang-switcher a[hreflang="en"][lang="en"]').attr('href'), englishRoute);
   }
   const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
-  assert.ok(childPage('nav.docs-toolbar .docs-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
+  assert.ok(childPage('nav.site-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
   assert.equal(
-    childPage('main.docs-content a').filter((_, link) => childPage(link).text().startsWith('Back to')).length,
+    childPage('.docs-content a').filter((_, link) => childPage(link).text().startsWith('Back to')).length,
     0,
     'the breadcrumb must replace the duplicate back link'
   );
   const italianChildPage = readPage(path.join(staticDir, 'it', 'docs', 'admin-users', 'index.html')).$;
-  assert.ok(italianChildPage('nav.docs-toolbar .docs-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').length, 'Italian child pages must link to their localized parent breadcrumb');
+  assert.ok(italianChildPage('nav.site-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').length, 'Italian child pages must link to their localized parent breadcrumb');
+  assert.equal(italianChildPage('nav.site-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').text(), 'G3W-ADMIN: il pannello di amministrazione');
   assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
   assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
   assert.equal(index('body > header.site-header').length, 1, 'documentation must use the shared site header');
@@ -165,7 +171,7 @@ Then('every documentation source is Markdown and has a generated page', function
   const linkedPages = new Map();
   for (const file of [...pages, ...italianPages]) {
     const page = readPage(file).$;
-    page('main.docs-content a[href*="#"]').each((_, link) => {
+    page('.docs-content a[href*="#"]').each((_, link) => {
       const href = page(link).attr('href');
       const url = new URL(href, 'https://www.g3wsuite.it/');
       if (!url.hash || !['g3wsuite.it', 'www.g3wsuite.it'].includes(url.hostname)) return;

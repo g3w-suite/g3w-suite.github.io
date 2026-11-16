@@ -59,7 +59,7 @@ function markdownTranslationKeys(markdown) {
     }
     if (inCodeFence || /^\s*\|/.test(line)) continue;
     const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
-    if (match && match[2] && !/[{}<>]/.test(match[2])) keys.add(match[2]);
+    if (match && match[2] && !/[{}]/.test(match[2])) keys.add(match[2]);
     for (const [, label] of line.matchAll(/!\[([^\[\]]+)\]\(/g)) keys.add(label);
     for (const [, , label] of line.matchAll(/(^|[^!])\[([^\[\]]+)\]\(/g)) keys.add(label);
   }

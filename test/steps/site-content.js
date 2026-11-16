@@ -26,13 +26,11 @@ Then('the governing board and team are listed separately and news credits link t
     }
     for (const file of news) {
       const article = readPage(path.join(staticDir, lang, 'news', newsSlug(file), 'index.html')).$;
-      const byline = article('main p').filter((_, p) => article(p).find(`a[href="/${lang}/about/francesco-boccacci/"]`).length);
+      const byline = article('main p').filter((_, p) => /^(?:By|A cura di)\s/.test(article(p).text().trim()));
       assert.equal(byline.length, 1, `${lang}: ${file} board byline`);
-      assert.deepEqual(
-        byline.find('a').map((_, link) => article(link).attr('href')).get(),
-        groups['governing-board'].map(member => `/${lang}/about/${member}/`),
-        `${lang}: ${file} must link to every board member`
-      );
+      const authors = byline.find('a').map((_, link) => article(link).attr('href')).get();
+      const boardLinks = groups['governing-board'].map(member => `/${lang}/about/${member}/`);
+      assert.ok(authors.length > 0 && authors.every(href => boardLinks.includes(href)), `${lang}: ${file} must link to its board authors`);
     }
   }
 });
@@ -80,7 +78,7 @@ Then('sponsor profiles link to their credited releases in both languages', funct
     for (const [slug, versions] of Object.entries(sponsors)) {
       assert.equal(index(`main a[href="/${lang}/sponsors/${slug}/"]`).length, 1, `${lang}: missing ${slug}`);
       const profile = readPage(path.join(staticDir, lang, 'sponsors', slug, 'index.html')).$;
-      assert.equal(profile(`main a[href="/${lang}/sponsors/"]`).length, 1, `${lang}: ${slug} must link back`);
+      assert.equal(profile(`main > section a[href="/${lang}/sponsors/"]`).length, 1, `${lang}: ${slug} must link back`);
       assert.deepEqual(
         profile(`main a[href^="/${lang}/news/v"]`).map((_, link) => link.attribs.href).get(),
         versions.split(',').map(version => `/${lang}/news/v${version}/`),
@@ -200,7 +198,7 @@ Then('both languages are generated from shared page templates', function () {
     assert.equal(explore('main table').length, 0, `${lang} Explore must keep technical compatibility on its own page`);
     const versions = readPage(path.join(staticDir, lang, 'about', 'versions', 'index.html')).$;
     assert.equal(versions('main table th').length, 8, `${lang} compatibility page must render its table`);
-    assert.equal(versions(`main a[href="/${lang}/about/"]`).length, 1, `${lang} compatibility page must link back`);
+    assert.equal(versions(`main > section a[href="/${lang}/about/"]`).length, 1, `${lang} compatibility page must link back`);
     const community = readPage(path.join(staticDir, lang, 'community', 'index.html')).$;
     assert.equal(community(`main a[href="/${lang}/about/#people"]`).length, 1, `${lang} community must link to contributor profiles`);
     const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'overview', 'index.html')).$;

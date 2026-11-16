@@ -36,6 +36,16 @@ Then('every page declares its language, metadata, and main structure', function 
       expect($(section).children('.container').length === 1, 'main section must have one container');
     }
     const pagePath = path.relative(path.join(staticDir, lang), file).split(path.sep).join('/');
+    const breadcrumb = main.children('nav.site-breadcrumb');
+    if (pagePath === 'index.html') {
+      expect(breadcrumb.length === 0, 'homepage must not have a breadcrumb');
+    } else {
+      expect(breadcrumb.length === 1, 'page must have one breadcrumb');
+      expect(breadcrumb.find(`a[href="/${lang}/"]`).length === 1, 'breadcrumb must link to the localized home');
+      expect(breadcrumb.find('[aria-current="page"]').text().trim() === heading.text().trim(), 'breadcrumb must identify the current page');
+      const parent = pagePath.split('/').slice(0, -2).join('/');
+      if (parent) expect(breadcrumb.find(`a[href="/${lang}/${parent}/"]`).length === 1, 'breadcrumb must link to the parent page');
+    }
     if (!main.find('.changelog').length) {
       expect(main.find('hr:not([style])').length === 0, 'Markdown section separators must be compiled');
     }

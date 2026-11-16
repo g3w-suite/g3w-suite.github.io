@@ -5,7 +5,7 @@ const path = require('node:path');
 const { basePath, languages, projectRoot, sourceDir, publishedHtml } = require('./config');
 const { marked, getHeadingList, autoTranslateMarkdown } = require('./markdown');
 const { extractPageTranslations, translateHtml } = require('./translations');
-const { pageBodyClass, renderComponent } = require('./routes');
+const { pageBodyClass, renderBreadcrumb, renderComponent } = require('./routes');
 const { documentationFiles } = require('./files');
 
 function documentationLink(href, file, docsDir, lang = 'en') {
@@ -74,20 +74,16 @@ function documentationNavigation(index, currentPage, docsDir, lang) {
 
 const documentationTranslations = {
   en: {
-    breadcrumb: 'Breadcrumb',
     description: 'G3W-SUITE documentation',
     edit: 'Edit this page',
-    home: 'Documentation home',
     navigation: 'Documentation navigation',
     search: 'Search documentation',
     searchPlaceholder: 'Search docs',
     title: 'G3W-SUITE Documentation',
   },
   it: {
-    breadcrumb: 'Percorso di navigazione',
     description: 'Documentazione di G3W-SUITE',
     edit: 'Modifica questa pagina',
-    home: 'Pagina iniziale della documentazione',
     navigation: 'Navigazione della documentazione',
     search: 'Cerca nella documentazione',
     searchPlaceholder: 'Cerca nella documentazione',
@@ -146,7 +142,13 @@ function buildDocumentation(outputDir) {
           fs.readFileSync(parentFile, 'utf8'),
           path.relative(projectRoot, parentFile)
         );
-        parentTitle = parentSource.translations[lang]?.[parentTitle] || parentTitle;
+        const localizedParentSource = translateHtml(
+          autoTranslateMarkdown(parentSource.html, lang, parentSource.translations),
+          lang,
+          parentSource.translations
+        );
+        const parentHeading = /^#\s+(.+)$/m.exec(localizedParentSource)?.[1];
+        if (parentHeading) parentTitle = marked.parseInline(parentHeading).replace(/<[^>]*>/g, '');
       }
       const sourceBody = localizedParent ? localizedSource.replace(localizedParent[0], '') : localizedSource;
       let sourceHeadings = [];
@@ -170,12 +172,17 @@ function buildDocumentation(outputDir) {
       if (!siteHeader) throw new Error('Shared header component has no <header> element');
       const siteFooter = renderComponent('footer', lang, componentPage, pageUrls)
         .replace(/<\/body>\s*<\/html>\s*$/i, '');
-      const parentBreadcrumb = parentMatch
-        ? `<li><a href="${documentationLink(parentMatch[2], file, docsDir, lang)}">${parentTitle}</a></li>`
-        : '';
       const sourcePath = sourceRelative.replace(/\\/g, '/').split('/').map(encodeURIComponent).join('/');
       const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/docs/${sourcePath}`;
       const ui = documentationTranslations[lang];
+      const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(content);
+      if (!heading) throw new Error(`${file}: documentation page has no heading`);
+      content = content.replace(heading[0], '');
+      const breadcrumbItems = [];
+      if (relative !== 'index.md') breadcrumbItems.push({ href: lang === 'it' ? '/it/docs/' : '/docs/', label: ui.title });
+      if (parentMatch) breadcrumbItems.push({ href: documentationLink(parentMatch[2], file, docsDir, lang), label: parentTitle });
+      breadcrumbItems.push({ label: heading[0].replace(/<[^>]*>/g, '').trim() });
+      const breadcrumb = renderBreadcrumb(lang, breadcrumbItems);
       const releaseNotes = releaseVersions.length
         ? `<section class="docs-release-notes" aria-labelledby="docs-release-notes-title"><h2 id="docs-release-notes-title">Changelog</h2><div class="docs-release-notes__links">${releaseVersions.map(version =>
             `<a class="btn btn--outline" href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
@@ -203,6 +210,9 @@ function buildDocumentation(outputDir) {
 </head>
 <body class="${pageBodyClass(componentPage)}">
   ${siteHeader}
+  <main id="main-content">
+  ${breadcrumb}
+  <div class="page-header"><div class="container">${heading[0]}</div></div>
   ${releaseNotes}
   <div class="docs-layout">
     <nav class="docs-nav" aria-label="${ui.navigation}">
@@ -213,18 +223,14 @@ function buildDocumentation(outputDir) {
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
       ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, docsDir, lang)}
     </nav>
-    <main id="main-content" class="docs-content">
-      <nav class="docs-toolbar" aria-label="${ui.breadcrumb}">
-        <ol class="docs-breadcrumb">
-          <li><a class="docs-breadcrumb__home" href="${lang === 'it' ? '/it/docs/' : '/docs/'}" aria-label="${ui.home}"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 3 2 12h3v9h5v-6h4v6h5v-9h3z"></path></svg></a></li>
-          ${parentBreadcrumb}
-          <li aria-current="page">${title}</li>
-        </ol>
+    <div class="docs-content">
+      <div class="docs-toolbar">
         <a class="docs-source-link" href="${sourceUrl}">${ui.edit}</a>
-      </nav>
+      </div>
       ${content}
-    </main>
+    </div>
   </div>
+  </main>
   ${siteFooter}
 </body>
 </html>`;
