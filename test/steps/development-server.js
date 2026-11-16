@@ -46,7 +46,7 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     const response = await fetch(`http://localhost:${this.port}/`);
     assert.equal(response.status, 200);
     assert.match(await response.text(), /url=\/it\//i);
-    for (const url of ['/it/about/', '/it/about/g3w-admin/', '/en/news/v3.11/']) {
+    for (const url of ['/it/about/', '/it/docs/components/g3w-admin/', '/en/news/v3.11/']) {
       const page = await fetch(`http://localhost:${this.port}${url}`);
       assert.equal(page.status, 200, url);
     }

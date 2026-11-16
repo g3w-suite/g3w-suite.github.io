@@ -198,9 +198,23 @@ Then('both languages are generated from shared page templates', function () {
       assert.equal(explore(`#${id}`).length, 1, `${lang} About page must preserve #${id}`);
     }
     assert.ok(explore('main > section:first-of-type li').length > 20, `${lang} About must list the ecosystem capabilities`);
+    const shortcuts = explore('main > section:first-of-type > .container > p').last().find('a');
+    assert.deepEqual(shortcuts.map((_, link) => ({
+      href: explore(link).attr('href'),
+      label: explore(link).text(),
+    })).get(), [
+      { href: `/${lang}/about/#features`, label: lang === 'it' ? 'Funzionalità' : 'Features' },
+      { href: `/${lang}/about/demos/`, label: 'Demo' },
+      { href: `/${lang}/about/#components`, label: lang === 'it' ? 'Componenti' : 'Components' },
+      { href: `/${lang}/about/#people`, label: lang === 'it' ? 'Persone' : 'People' },
+      { href: `/${lang}/about/versions/`, label: lang === 'it' ? 'Versioni e compatibilità' : 'Versions and compatibility' },
+    ], `${lang} About must provide localized navigation shortcuts`);
     assert.equal(explore(`main a[href="/${lang}/about/versions/"]`).length, 1, `${lang} About must link to compatibility`);
     assert.equal(explore('main table').length, 0, `${lang} About must keep technical compatibility on its own page`);
-    assert.equal(explore('main > section').last().find('#people').length, 1, `${lang} About must end with the project members`);
+    const joinSection = explore('main > section').last();
+    assert.equal(joinSection.find('#participate').length, 1, `${lang} About must include the invitation to join`);
+    assert.equal(joinSection.find('> .container > section').first().find('#people').length, 1, `${lang} invitation must precede the project members`);
+    assert.equal(joinSection.find('h2').text().trim(), lang === 'it' ? 'Contribuisci al progetto' : 'Contribute to the project');
     const demos = readPage(path.join(staticDir, lang, 'about', 'demos', 'index.html')).$;
     for (const id of ['demo-3-11', 'demo-3-10', 'demo-dev']) {
       assert.equal(demos(`#${id}`).length, 1, `${lang} demo page must preserve #${id}`);
@@ -214,29 +228,40 @@ Then('both languages are generated from shared page templates', function () {
     const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'overview', 'index.html')).$;
     assert.ok(manual('main').text().includes('QGIS 3.44 LTR'), `${lang} manual must match the current QGIS version`);
     const componentSections = explore('main > section').slice(1, 8);
-    assert.equal(componentSections.length, 7, `${lang} About page must present each component separately`);
-    componentSections.each((_, section) => {
-      const component = explore(section);
-      assert.equal(component.find('img[alt][src^="/img/"]').length, 1, `${lang} component must have a local illustration`);
-      assert.equal(component.find(`h2 a[href^="/${lang}/about/"]`).length, 1, `${lang} component title must link to its details`);
-      assert.equal(component.find('a.btn--github[href^="https://github.com/g3w-suite/"]').length, 1, `${lang} component must link to its source`);
-    });
-    for (const component of [
+    const components = [
       'g3w-admin',
       'g3w-client',
       'g3w-admin-processing',
+      'g3w-suite-docker',
       'g3w-admin-frontend',
       'g3w-admin-pdnd',
-      'g3w-suite-docker',
       'g3w-client-plugin-editing',
-    ]) {
-      const componentPage = readPage(path.join(staticDir, lang, 'about', component, 'index.html')).$;
+    ];
+    assert.equal(componentSections.length, components.length, `${lang} About page must present each component separately`);
+    const docsRoot = lang === 'it' ? '/it/docs' : '/docs';
+    componentSections.each((index, section) => {
+      const component = explore(section);
+      const href = `${docsRoot}/components/${components[index]}/`;
+      assert.equal(component.find('img[alt][src^="/img/"]').length, 1, `${lang} component must have a local illustration`);
+      assert.equal(component.find(`h2 a[href="${href}"]`).length, 1, `${lang} component title must link to its documentation`);
+      const github = component.find('a.btn--github[href^="https://github.com/g3w-suite/"]');
+      assert.equal(github.length, 1, `${lang} component must link to its source`);
+      const documentation = github.next(`a.btn--outline[href="${href}"]`);
+      assert.equal(documentation.length, 1, `${lang} component must link to its documentation beside GitHub`);
+      assert.equal(documentation.text().trim(), lang === 'it' ? 'Funzionalità' : 'Features');
+    });
+    for (const component of components) {
+      const componentPage = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'components', component, 'index.html')).$;
       assert.ok(componentPage('main img[alt]').length, `${lang} ${component} page must include an image with alt text`);
       assert.equal(
-        componentPage(`nav a[aria-current="page"][href="/${lang}/about/"]`).length,
+        componentPage(`nav.docs-nav section a[aria-current="page"][href="${docsRoot}/components/${component}/"]`).length,
         1,
-        `${lang} ${component} page must mark About as current`
+        `${lang} ${component} page must appear as current in the documentation navigation`
       );
+      assert.equal(componentPage('nav.docs-nav section').filter((_, section) =>
+        componentPage(section).children('h2').text() === (lang === 'it' ? 'Componenti' : 'Components')
+      ).find(`a[href="${docsRoot}/components/${component}/"]`).length, 1, `${lang} ${component} must be listed under Components`);
+      assert.ok(!fs.existsSync(path.join(staticDir, lang, 'about', component)), `${lang} old component route must be removed`);
     }
     assert.ok(!fs.existsSync(path.join(staticDir, lang, 'demo')), `${lang} legacy demo route must be removed`);
     assert.ok(!fs.existsSync(path.join(staticDir, lang, 'modules')), `${lang} legacy modules route must be removed`);

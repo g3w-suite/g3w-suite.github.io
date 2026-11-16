@@ -19,6 +19,16 @@ Through the web interface, administrators can publish and organize QGIS projects
 
 - [Quick Start](quick-start.md)
 
+## Components
+
+- [G3W-ADMIN](components/g3w-admin.md)
+- [G3W-CLIENT](components/g3w-client.md)
+- [G3W-ADMIN-PROCESSING](components/g3w-admin-processing.md)
+- [G3W-SUITE-DOCKER](components/g3w-suite-docker.md)
+- [G3W-ADMIN-FRONTEND](components/g3w-admin-frontend.md)
+- [G3W-ADMIN-PDND](components/g3w-admin-pdnd.md)
+- [G3W-CLIENT-PLUGIN-EDITING](components/g3w-client-plugin-editing.md)
+
 ## Installation and deployment
 
 - [Installation](install.md)
@@ -63,6 +73,7 @@ Through the web interface, administrators can publish and organize QGIS projects
       "Base layers": "Layer di base",
       "Branding": "Personalizzazione del marchio",
       "Cartographic client": "Client cartografico",
+      "Components": "Componenti",
       "Data management": "Gestione dei dati",
       "Demo tutorial": "Tutorial della demo",
       "Docker environment variables": "Variabili d'ambiente di Docker",

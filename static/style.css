@@ -800,10 +800,9 @@ main > section > .container > h2 > strong:first-of-type {
   background: var(--color-white);
   font-size: .85rem;
 }
-.page-about main > section:has(> .container > h2 > #people) > .container > section { text-align: center; }
-.page-about main > section:has(> .container > h2 > #people) > .container > section + section { margin-top: 3rem; }
-.page-about main > section:has(> .container > h2 > #people) > .container > section > h3 { margin-bottom: 1.25rem; }
-.page-about main > section:has(> .container > h2 > #people) > .container > section > ul {
+.page-about main > section:has(> .container > h2 > #participate) > .container > section { text-align: center; margin-top: 3rem; }
+.page-about main > section:has(> .container > h2 > #participate) > .container > section > h3 { margin-bottom: 1.25rem; }
+.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
@@ -811,7 +810,7 @@ main > section > .container > h2 > strong:first-of-type {
   padding: 0;
   list-style: none;
 }
-.page-about main > section:has(> .container > h2 > #people) > .container > section > ul > li > a {
+.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul > li > a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -826,13 +825,13 @@ main > section > .container > h2 > strong:first-of-type {
   font-weight: 600;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.page-about main > section:has(> .container > h2 > #people) > .container > section > ul > li > a:hover,
-.page-about main > section:has(> .container > h2 > #people) > .container > section > ul > li > a:focus {
+.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul > li > a:hover,
+.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul > li > a:focus {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
   text-decoration: none;
 }
-.page-about main > section:has(> .container > h2 > #people) > .container > section > ul img {
+.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
