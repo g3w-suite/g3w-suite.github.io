@@ -46,16 +46,16 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     const response = await fetch(`http://localhost:${this.port}/`);
     assert.equal(response.status, 200);
     assert.match(await response.text(), /url=\/it\//i);
-    for (const url of ['/it/explore/', '/it/about/', '/en/news/v3.11/']) {
+    for (const url of ['/it/about/', '/it/about/g3w-admin/', '/en/news/v3.11/']) {
       const page = await fetch(`http://localhost:${this.port}${url}`);
       assert.equal(page.status, 200, url);
     }
     for (const [source, target] of [
-      ['/it/explore.html?test=1', '/it/explore/?test=1'],
-      ['/it/explore/index.html', '/it/explore/'],
+      ['/it/about.html?test=1', '/it/about/?test=1'],
+      ['/it/about/index.html', '/it/about/'],
       ['/it/index.html', '/it/'],
       ['/it/news/v3.11/index.html', '/it/news/v3.11/'],
-      ['/it/explore?test=1', '/it/explore/?test=1'],
+      ['/it/about?test=1', '/it/about/?test=1'],
     ]) {
       const redirect = await fetch(`http://localhost:${this.port}${source}`, { redirect: 'manual' });
       assert.equal(redirect.status, 301, source);

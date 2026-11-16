@@ -34,7 +34,7 @@ The platform integrates with QGIS and is available as open-source software under
 
 ## Explore G3W-SUITE
 
-[Try the demo](/en/explore/ "primary-button") [Explore the components](/en/explore/#components "outline-button") [Quick Start](/en/docs/quick-start/ "outline-button")
+[Try the demo](/en/about/ "primary-button") [Explore the components](/en/about/#components "outline-button") [Quick Start](/en/docs/quick-start/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

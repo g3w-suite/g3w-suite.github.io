@@ -24,7 +24,7 @@ Track planned work and follow ongoing development on the public roadmap.
 
 Meet the people behind G3W-SUITE and learn about their contributions.
 
-[Meet the contributors](/en/about/ "outline-button")
+[Meet the contributors](/en/about/#people "outline-button")
 
 <script type="application/json" data-i18n>
   {

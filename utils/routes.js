@@ -63,9 +63,7 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
       ? 'documentation'
       : page.startsWith(`about${path.sep}`)
         ? 'about'
-        : page.startsWith(`explore${path.sep}`)
-          ? 'explore'
-          : page.startsWith(`sponsors${path.sep}`)
+        : page.startsWith(`sponsors${path.sep}`)
             ? 'sponsors'
             : page.startsWith(`community${path.sep}`)
               ? 'community'

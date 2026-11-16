@@ -14,12 +14,12 @@ Optional modules add capabilities such as QGIS Processing integration and authen
 
 [View the G3W-ADMIN source repository](https://github.com/g3w-suite/g3w-admin) · [Read the administration guide](/docs/admin-publishing/)
 
-[Back to Explore](/en/explore/)
+[Back to About](/en/about/)
 
 <script type="application/json" data-i18n>
   {
     "it": {
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "Extend the platform": "Estendi la piattaforma",
       "G3W-ADMIN - G3W-Suite": "G3W-ADMIN - G3W-Suite",
       "G3W-ADMIN administration interface": "Interfaccia di amministrazione G3W-ADMIN",

@@ -260,7 +260,7 @@ In the administration session, a search tool will** allow you to find projects a
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="https://g3w-suite.readthedocs.io" target="_blank" rel="noopener">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="/{{t 'en'}}/explore/">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="/{{t 'en'}}/about/">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">Download</a>
   </div>
 </div>

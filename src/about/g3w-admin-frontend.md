@@ -12,13 +12,13 @@ It complements the G3W-ADMIN publishing tools and can be adapted to the identity
 
 [View the G3W-ADMIN-FRONTEND source repository](https://github.com/g3w-suite/g3w-admin-frontend)
 
-[Back to Explore](/en/explore/)
+[Back to About](/en/about/)
 
 <script type="application/json" data-i18n>
   {
     "it": {
       "A branded entry point": "Un portale personalizzato",
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "G3W-ADMIN-FRONTEND - G3W-Suite": "G3W-ADMIN-FRONTEND - G3W-Suite",
       "G3W-ADMIN-FRONTEND is an optional portal for presenting published cartographic groups through a public-facing interface.": "G3W-ADMIN-FRONTEND è un portale opzionale che presenta i gruppi cartografici pubblicati attraverso un'interfaccia rivolta al pubblico.",
       "G3W-SUITE public portal": "Portale pubblico G3W-SUITE",

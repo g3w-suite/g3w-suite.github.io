@@ -12,12 +12,12 @@ The editing capabilities are maintained in the G3W-ADMIN and G3W-CLIENT projects
 
 [Read the editing guide](/docs/editing-client-tools/)
 
-[Back to Explore](/en/explore/)
+[Back to About](/en/about/)
 
 <script type="application/json" data-i18n>
   {
     "it": {
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "Collaborative editing - G3W-Suite": "Modifica collaborativa - G3W-Suite",
       "Editing can be enabled for selected layers and user groups. Geometry, attributes and relations can be managed in the browser, while feature locks help prevent conflicting edits by multiple users.": "La modifica può essere abilitata per layer e gruppi di utenti selezionati. Geometrie, attributi e relazioni possono essere gestiti nel browser; il blocco delle feature aiuta a prevenire modifiche in conflitto tra più utenti.",
       "G3W-CLIENT editing tools": "Strumenti di modifica di G3W-CLIENT",

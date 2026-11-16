@@ -12,13 +12,13 @@ This component is released under the MIT licence. Check its repository for insta
 
 [View the G3W-ADMIN-PDND source repository](https://github.com/g3w-suite/g3w-admin-pdnd)
 
-[Back to Explore](/en/explore/)
+[Back to About](/en/about/)
 
 <script type="application/json" data-i18n>
   {
     "it": {
       "Authentication for public services": "Autenticazione per i servizi pubblici",
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "G3W-ADMIN-PDND - G3W-Suite": "G3W-ADMIN-PDND - G3W-Suite",
       "G3W-ADMIN-PDND is an optional integration for connecting G3W-SUITE to Italy's Public Digital Data Platform (PDND) authentication services.": "G3W-ADMIN-PDND è un'integrazione opzionale per collegare G3W-SUITE ai servizi di autenticazione della Piattaforma Digitale Nazionale Dati (PDND).",
       "G3W-SUITE login screen": "Schermata di accesso a G3W-SUITE",

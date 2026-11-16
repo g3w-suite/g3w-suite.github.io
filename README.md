@@ -19,7 +19,7 @@ Run `npm run build` to generate the published site and documentation in `static/
 
 The manual is maintained in English Markdown in `src/docs/`, with Italian translations in each page's `data-i18n` block. The site build publishes it at `/docs/` and `/it/docs/`. Documentation pages reuse the site's shared header and footer and include language-specific client-side search. Images share the flat `static/img/` folder and are referenced as `/img/<filename>`.
 
-Page URLs use directories, never `.html`: `src/about/index.md` and `src/explore/index.md` become `/it/about/`, `/en/about/`, `/it/explore/` and `/en/explore/`. The news index is `/it/news/` or `/en/news/`, and release notes are published under `/it/news/v<version>/` and `/en/news/v<version>/`. Their source files use the `YYYY-MM-DD-changelog-vX.Y.md` pattern, which also generates the version buttons at the top of the documentation homepage. The shared homepage is `src/index.md`; `src/_redirect.html` generates the root redirect. Use these URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
+Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/about/` and `/en/about/`; member and component pages live under the same `about/` route. The news index is `/it/news/` or `/en/news/`, and release notes are published under `/it/news/v<version>/` and `/en/news/v<version>/`. Their source files use the `YYYY-MM-DD-changelog-vX.Y.md` pattern, which also generates the version buttons at the top of the documentation homepage. The shared homepage is `src/index.md`; `src/_redirect.html` generates the root redirect. Use these URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 
 ## Where to make changes
 
@@ -36,7 +36,7 @@ Page URLs use directories, never `.html`: `src/about/index.md` and `src/explore/
 
 1. Start from an existing Markdown page directly in `src/` or `src/news/`, keeping its metadata and local translations. Release-note filenames use `YYYY-MM-DD-changelog-vX.Y.md`; other news articles start with `YYYY-MM-DD-`. Keep raw HTML for page-specific layout and media.
 2. Add exact full-line Markdown translations or inline `{{t '...'}}` translations to the page's `data-i18n` JSON block; shared components keep their translations in their own files. Use language blocks only for genuine differences. Check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Use site-root URLs for internal pages and assets, such as `/it/explore/` and `/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
+3. Use site-root URLs for internal pages and assets, such as `/it/about/` and `/img/logo.png`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 

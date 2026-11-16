@@ -4,7 +4,7 @@
 
 Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.
 
-[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/explore/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
+[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/about/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
 
 ![Publishing QGIS on web](/img/{{#it}}site-g3w-suite-homepage-italian.jpg{{/it}}{{#en}}homepage_eng2.png{{/en}})
 
@@ -68,7 +68,7 @@ WebGIS publishing, public-sector interoperability and advanced geospatial analys
 
 Integrated map client and admin panel for multi-user projects, editing workflows and permission management.
 
-[Full feature set](/en/explore/#features "outline-small-button")
+[Full feature set](/en/about/#features "outline-small-button")
 
 ### Interoperability for public administration
 
@@ -90,7 +90,7 @@ Run QGIS Processing models directly from the web client to integrate analysis in
 Field data collection and WebGIS publishing in one workflow, from survey to sharing.
 
 [Discover the solutions](/en/news/merginmaps/ "primary-button")
-[Explore the components](/en/explore/#components "outline-button")
+[Explore the components](/en/about/#components "outline-button")
 
 ### Main contributors
 

@@ -14,13 +14,13 @@ The client uses the QGIS project configuration for layers, forms, styles and map
 
 [View the G3W-CLIENT source repository](https://github.com/g3w-suite/g3w-client) · [Read the client guide](/docs/client-overview/)
 
-[Back to Explore](/en/explore/)
+[Back to About](/en/about/)
 
 <script type="application/json" data-i18n>
   {
     "it": {
       "Adapted to each project": "Adattato a ogni progetto",
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "Explore and work with maps": "Esplora e lavora con le mappe",
       "G3W-CLIENT - G3W-Suite": "G3W-CLIENT - G3W-Suite",
       "G3W-CLIENT is the browser-based map application for exploring and working with data published by G3W-SUITE.": "G3W-CLIENT è l'applicazione cartografica basata su browser per esplorare e utilizzare i dati pubblicati da G3W-SUITE.",

@@ -46,7 +46,7 @@ Then('every page declares its language, metadata, and main structure', function 
         homepage ? 'homepage h1 must remain in the hero' : 'main h1 must use the generated page header'
       );
     }
-    if (path.relative(path.join(staticDir, lang), file) === path.join('explore', 'index.html')) {
+    if (path.relative(path.join(staticDir, lang), file) === path.join('about', 'index.html')) {
       for (const id of ['features', 'components', 'hosting']) {
         expect(main.find(`[id="${id}"]`).length === 1, `missing section anchor #${id}`);
       }
@@ -155,7 +155,6 @@ Then('the navigation controls retain their accessibility attributes', function (
     const expectedNavigation = lang === 'it'
       ? [
           ['Il progetto', `/${lang}/about/`],
-          ['Esplora', `/${lang}/explore/`],
           ['Documentazione', '/it/docs/'],
           ['Sponsor', `/${lang}/sponsors/`],
           ['Novità', `/${lang}/news/`],
@@ -163,7 +162,6 @@ Then('the navigation controls retain their accessibility attributes', function (
         ]
       : [
           ['About', `/${lang}/about/`],
-          ['Explore', `/${lang}/explore/`],
           ['Documentation', '/docs/'],
           ['Sponsors', `/${lang}/sponsors/`],
           ['News', `/${lang}/news/`],
@@ -172,7 +170,7 @@ Then('the navigation controls retain their accessibility attributes', function (
     expect(nav.find('.nav-list > li > a').toArray().every((link, index) =>
       $(link).text().trim() === expectedNavigation[index]?.[0] &&
       $(link).attr('href') === expectedNavigation[index]?.[1]
-    ) && nav.find('.nav-list > li').length === expectedNavigation.length, 'navigation must match the six top-level destinations');
+    ) && nav.find('.nav-list > li').length === expectedNavigation.length, 'navigation must match the top-level destinations');
     const relativePage = path.relative(path.join(staticDir, lang), file);
     const pageRoute = path.dirname(relativePage);
     const expectedActiveKey = relativePage === 'index.html'
@@ -183,8 +181,6 @@ Then('the navigation controls retain their accessibility attributes', function (
         ? 'documentation'
         : relativePage.startsWith(`about${path.sep}`)
           ? 'about'
-        : relativePage.startsWith(`explore${path.sep}`)
-          ? 'explore'
         : relativePage.startsWith(`sponsors${path.sep}`)
           ? 'sponsors'
         : ['community', 'sponsors'].includes(pageRoute)
@@ -193,7 +189,6 @@ Then('the navigation controls retain their accessibility attributes', function (
     const currentLinks = nav.find('a[aria-current="page"]');
     const activeHref = {
       about: `/${lang}/about/`,
-      explore: `/${lang}/explore/`,
       documentation: lang === 'it' ? '/it/docs/' : '/docs/',
       sponsors: `/${lang}/sponsors/`,
       news: `/${lang}/news/`,

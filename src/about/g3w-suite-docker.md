@@ -12,12 +12,12 @@ Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project an
 
 [View the G3W-SUITE-DOCKER source repository](https://github.com/g3w-suite/g3w-suite-docker)
 
-[Back to Explore](/en/explore/)
+[Back to About](/en/about/)
 
 <script type="application/json" data-i18n>
   {
     "it": {
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "G3W-SUITE deployment workflow": "Flusso di distribuzione di G3W-SUITE",
       "G3W-SUITE-DOCKER - G3W-Suite": "G3W-SUITE-DOCKER - G3W-Suite",
       "G3W-SUITE-DOCKER provides a Docker-based deployment stack for running G3W-SUITE and its supporting services.": "G3W-SUITE-DOCKER fornisce uno stack basato su Docker per eseguire G3W-SUITE e i servizi di supporto.",

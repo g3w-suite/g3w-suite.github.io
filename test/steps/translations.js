@@ -38,15 +38,15 @@ Then('translated text is rendered for each language', function () {
   assert.equal(pages.it('meta[property="og:type"]').attr('content'), 'website');
   assert.equal(pages.it('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Inizia in pochi minuti');
   assert.equal(pages.en('main > section:nth-of-type(2) h2 > strong:first-of-type').first().text(), 'Get started in minutes');
-  assert.equal(readPage(path.join(staticDir, 'it', 'explore', 'index.html')).$('head title').text(), 'Esplora G3W-SUITE - G3W-Suite');
-  assert.equal(readPage(path.join(staticDir, 'en', 'explore', 'index.html')).$('head title').text(), 'Explore G3W-SUITE - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'it', 'about', 'index.html')).$('head title').text(), 'Il progetto G3W-SUITE - G3W-Suite');
+  assert.equal(readPage(path.join(staticDir, 'en', 'about', 'index.html')).$('head title').text(), 'About G3W-SUITE - G3W-Suite');
   assert.equal(
-    readPage(path.join(staticDir, 'it', 'explore', 'index.html')).$('meta[name="description"]').attr('content'),
-    'G3W-SUITE pubblica servizi WebGIS da progetti QGIS e offre editing collaborativo, analisi e opzioni flessibili di distribuzione.',
+    readPage(path.join(staticDir, 'it', 'about', 'index.html')).$('meta[name="description"]').attr('content'),
+    'Porta i progetti QGIS nel lavoro quotidiano con un WebGIS open source e modulare, pensato per la collaborazione.',
     'explicit attribute translations must be rendered'
   );
   assert.ok(
-    sourceHtml.some(source => source.includes('"description": "G3W-SUITE publishes WebGIS services from QGIS projects and provides collaborative editing, analysis and flexible deployment options."')),
+    sourceHtml.some(source => source.includes('"description": "Bring QGIS projects into everyday work with an open, modular WebGIS built for collaboration."')),
     'translated meta descriptions must use data-i18n-meta'
   );
   assert.ok(
@@ -160,8 +160,8 @@ Then('page-local translations are valid and used by the Italian build', function
     'Discover the solutions'
   );
   assert.equal(homepageIt('main a[href="/it/docs/quick-start/"]').text().trim(), 'Guida rapida');
-  const exploreIt = readPage(path.join(staticDir, 'it', 'explore', 'index.html')).$;
-  assert.equal(exploreIt('main h1').first().text().trim(), 'Esplora G3W-SUITE');
+  const exploreIt = readPage(path.join(staticDir, 'it', 'about', 'index.html')).$;
+  assert.equal(exploreIt('main h1').first().text().trim(), 'Il progetto G3W-SUITE');
   const quickStartIt = readPage(path.join(staticDir, 'it', 'docs', 'quick-start', 'index.html')).$;
   assert.equal(quickStartIt('main h1').first().text().trim(), 'Guida rapida');
   assert.equal(quickStartIt('main iframe').length, 4);

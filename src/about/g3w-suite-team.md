@@ -20,7 +20,7 @@ G3W-ADMIN publishes and organizes QGIS projects, while G3W-CLIENT provides the b
 
 Projects can retain the styles, forms, relations and print layouts prepared in QGIS. Administrators can organize users and permissions, while map users search, query and work with the information available to them.
 
-The [online demo](/en/explore/#demo-3-11) offers a way to try the client with a building and maintenance management project. It includes a public account for exploring geometric and relational editing alongside map search, charts and printing.
+The [online demo](/en/about/#demo-3-11) offers a way to try the client with a building and maintenance management project. It includes a public account for exploring geometric and relational editing alongside map search, charts and printing.
 
 ## Learn and contribute
 
@@ -28,7 +28,7 @@ The [documentation](/en/docs/) covers installation, administration and the map c
 
 Questions and ideas are welcome in the [community](/en/community/), where users can join discussions, follow the roadmap and find ways to contribute. The [project page](/en/about/) introduces some of the people behind G3W-SUITE.
 
-[Explore G3W-SUITE](/en/explore/ "outline-button") [Read the news](/en/news/ "outline-button")
+[Explore G3W-SUITE](/en/about/ "outline-button") [Read the news](/en/news/ "outline-button")
 
 <script type="application/json" data-i18n>
   {
@@ -48,7 +48,7 @@ Questions and ideas are welcome in the [community](/en/community/), where users 
       "Read the news": "Leggi le novità",
       "The [documentation](/en/docs/) covers installation, administration and the map client. Start with the [Quick Start](/en/docs/quick-start/) for a practical introduction or explore the individual components and their source repositories.": "La [documentazione](/en/docs/) comprende installazione, amministrazione e client cartografico. Parti dalla [guida rapida](/en/docs/quick-start/) per un'introduzione pratica oppure esplora i singoli componenti e i loro repository.",
       "The [news archive](/en/news/) is a place to follow the platform over time, from compatibility updates and editing tools to new ways of exploring maps and data.": "L'[archivio delle notizie](/en/news/) permette di seguire l'evoluzione della piattaforma, dagli aggiornamenti di compatibilità e dagli strumenti di editing ai nuovi modi di esplorare mappe e dati.",
-      "The [online demo](/en/explore/#demo-3-11) offers a way to try the client with a building and maintenance management project. It includes a public account for exploring geometric and relational editing alongside map search, charts and printing.": "La [demo online](/en/explore/#demo-3-11) permette di provare il client con un progetto per la gestione di edifici e manutenzioni. Include un account pubblico per esplorare l'editing geometrico e relazionale, oltre a ricerca sulla mappa, grafici e stampa.",
+      "The [online demo](/en/about/#demo-3-11) offers a way to try the client with a building and maintenance management project. It includes a public account for exploring geometric and relational editing alongside map search, charts and printing.": "La [demo online](/en/about/#demo-3-11) permette di provare il client con un progetto per la gestione di edifici e manutenzioni. Include un account pubblico per esplorare l'editing geometrico e relazionale, oltre a ricerca sulla mappa, grafici e stampa.",
       "We publish project news and release notes under the G3W-SUITE team profile when an article has no individual byline. Our release articles introduce new capabilities and improvements, with links to the people and organizations supporting the project.": "Pubblichiamo le novità e le note di rilascio con il profilo del team G3W-SUITE quando un articolo non ha una firma individuale. Gli articoli sulle versioni presentano nuove funzionalità e miglioramenti, con collegamenti alle persone e alle organizzazioni che sostengono il progetto.",
       "We work on G3W-SUITE, an open-source WebGIS project built around QGIS. Its administration server and map client help teams publish their projects, share geographic information and work with data in the browser.": "Lavoriamo a G3W-SUITE, un progetto WebGIS open source costruito intorno a QGIS. Il server di amministrazione e il client cartografico aiutano i team a pubblicare i progetti, condividere informazioni geografiche e lavorare con i dati nel browser."
     }

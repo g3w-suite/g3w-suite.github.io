@@ -19,12 +19,12 @@ Compare supported branches and their QGIS, Python and Django requirements. Older
 | **3.2** | 3.16 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.2.x/index.html) | [3.2](/en/news/v3.2/) |
 | **3.1** | 3.10 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.1.x/) | [3.1](/en/news/v3.1/) |
 
-[Back to Explore](/en/explore/ "outline-button")
+[Back to About](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {
     "it": {
-      "Back to Explore": "Torna a Esplora",
+      "Back to About": "Torna al progetto",
       "Branch": "Branch",
       "Branch compatibility": "Compatibilità dei branch",
       "Bug fixes": "Correzione bug",
