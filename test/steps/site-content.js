@@ -17,6 +17,11 @@ Then('the governing board and team are listed separately and news credits link t
     const about = readPage(path.join(staticDir, lang, 'about', 'index.html')).$;
     for (const [id, members] of Object.entries(groups)) {
       const section = about(`#${id}`).closest('section');
+      const headings = {
+        'governing-board': lang === 'it' ? 'Consiglio direttivo' : 'Governing board',
+        team: lang === 'it' ? 'Contributori' : 'Contributors',
+      };
+      assert.equal(section.find('h3').text().trim(), headings[id]);
       assert.deepEqual(
         section.find('li a').map((_, link) => about(link).attr('href')).get(),
         members.map(member => `/${lang}/about/${member}/`),
@@ -189,13 +194,18 @@ Then('both languages are generated from shared page templates', function () {
       }
     }
     const explore = readPage(path.join(staticDir, lang, 'about', 'index.html')).$;
-    for (const id of ['features', 'demo-3-11', 'demo-3-10', 'demo-dev', 'components', 'hosting', 'branches']) {
-      assert.equal(explore(`#${id}`).length, 1, `${lang} Explore page must preserve #${id}`);
+    for (const id of ['features', 'components', 'people', 'governing-board', 'team']) {
+      assert.equal(explore(`#${id}`).length, 1, `${lang} About page must preserve #${id}`);
     }
-    const features = explore('#features').closest('section').children('.container');
-    assert.equal(features.children('section.section').length, 4, `${lang} Explore must summarize four feature groups`);
-    assert.equal(explore(`main a[href="/${lang}/about/versions/"]`).length, 1, `${lang} Explore must link to compatibility`);
-    assert.equal(explore('main table').length, 0, `${lang} Explore must keep technical compatibility on its own page`);
+    assert.ok(explore('main > section:first-of-type li').length > 20, `${lang} About must list the ecosystem capabilities`);
+    assert.equal(explore(`main a[href="/${lang}/about/versions/"]`).length, 1, `${lang} About must link to compatibility`);
+    assert.equal(explore('main table').length, 0, `${lang} About must keep technical compatibility on its own page`);
+    assert.equal(explore('main > section').last().find('#people').length, 1, `${lang} About must end with the project members`);
+    const demos = readPage(path.join(staticDir, lang, 'about', 'demos', 'index.html')).$;
+    for (const id of ['demo-3-11', 'demo-3-10', 'demo-dev']) {
+      assert.equal(demos(`#${id}`).length, 1, `${lang} demo page must preserve #${id}`);
+    }
+    assert.ok(demos('main').text().includes('viewer1'), `${lang} demo page must retain the public login`);
     const versions = readPage(path.join(staticDir, lang, 'about', 'versions', 'index.html')).$;
     assert.equal(versions('main table th').length, 8, `${lang} compatibility page must render its table`);
     assert.equal(versions(`main > section a[href="/${lang}/about/"]`).length, 1, `${lang} compatibility page must link back`);
@@ -203,13 +213,13 @@ Then('both languages are generated from shared page templates', function () {
     assert.equal(community(`main a[href="/${lang}/about/#people"]`).length, 1, `${lang} community must link to contributor profiles`);
     const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'overview', 'index.html')).$;
     assert.ok(manual('main').text().includes('QGIS 3.44 LTR'), `${lang} manual must match the current QGIS version`);
-    assert.equal(explore('#components').closest('section').find('a[href*="/about/g3w-"]').length, 7, `${lang} About page must link to all component pages`);
-    const componentSections = explore('#components').closest('section').children('.container').children('section');
+    const componentSections = explore('main > section').slice(1, 8);
     assert.equal(componentSections.length, 7, `${lang} About page must present each component separately`);
     componentSections.each((_, section) => {
       const component = explore(section);
-      assert.equal(component.find(`a[href^="/${lang}/about/"]`).length, 1, `${lang} component must link to its details`);
-      assert.equal(component.find('a[href^="https://github.com/g3w-suite/"]').length, 1, `${lang} component must link to its source`);
+      assert.equal(component.find('img[alt][src^="/img/"]').length, 1, `${lang} component must have a local illustration`);
+      assert.equal(component.find(`h2 a[href^="/${lang}/about/"]`).length, 1, `${lang} component title must link to its details`);
+      assert.equal(component.find('a.btn--github[href^="https://github.com/g3w-suite/"]').length, 1, `${lang} component must link to its source`);
     });
     for (const component of [
       'g3w-admin',
@@ -274,7 +284,7 @@ Then('both languages are generated from shared page templates', function () {
     );
     assert.doesNotMatch(source, /<!doctype html>|<\/?html\b|<\/?head\b|<\/?body\b/i, `${file}: document shell must come from shared components`);
   }
-  assert.ok(!fs.existsSync(path.join(sourceDir, 'demo.md')), 'demo content must live in about/index.md');
+  assert.ok(!fs.existsSync(path.join(sourceDir, 'demo.md')), 'demo content must live under about/');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'modules.md')), 'component pages must live under about/');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'explore')), 'Explore pages must be merged into About');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'pages')), 'page templates must be directly in src');
@@ -330,9 +340,11 @@ Then('generated buttons retain their styles and external-link behavior', functio
     assert.equal(home('main a[title$="-button"]').length, 0, `${lang} homepage must consume button markers`);
 
     const explore = readPage(path.join(staticDir, lang, 'about', 'index.html')).$;
-    assert.ok(explore('main a.btn--primary').length, `${lang} Explore page must render primary buttons`);
-    assert.ok(explore('main a.btn--outline').length, `${lang} Explore page must render outline buttons`);
-    assert.equal(explore('main a[title$="-button"]').length, 0, `${lang} Explore page must consume button markers`);
+    assert.ok(explore('main a.btn--github').length, `${lang} About page must render GitHub buttons`);
+    assert.ok(explore('main a.btn--outline').length, `${lang} About page must render outline buttons`);
+    assert.equal(explore('main a[title$="-button"]').length, 0, `${lang} About page must consume button markers`);
+    const demos = readPage(path.join(staticDir, lang, 'about', 'demos', 'index.html')).$;
+    assert.ok(demos('main a.btn--primary').length, `${lang} demo page must render primary buttons`);
 
     const model = readPage(path.join(staticDir, lang, 'news', 'model-builder-processing', 'index.html')).$;
     const demoButton = model('main a.btn--primary');

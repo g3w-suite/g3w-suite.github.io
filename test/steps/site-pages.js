@@ -57,7 +57,7 @@ Then('every page declares its language, metadata, and main structure', function 
       );
     }
     if (path.relative(path.join(staticDir, lang), file) === path.join('about', 'index.html')) {
-      for (const id of ['features', 'components', 'hosting']) {
+      for (const id of ['features', 'components', 'people']) {
         expect(main.find(`[id="${id}"]`).length === 1, `missing section anchor #${id}`);
       }
     }

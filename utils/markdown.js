@@ -194,7 +194,9 @@ function renderMarkdownSections(markdown, page) {
       }
 
       flush();
-      const heading = item.heading ? marked.parser([item.heading]) : '';
+      const heading = item.heading
+        ? marked.parser([item.heading]).replace(/(<h[1-6]) id="([^"]+)"(>)(<span id="\2"><\/span>)/, '$1$3$4')
+        : '';
       const content = `${heading}${renderItems(item.items)}`;
       html += topLevel
         ? `<section class="section"><div class="container">${content}</div></section>`

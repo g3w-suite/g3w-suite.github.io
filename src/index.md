@@ -4,7 +4,7 @@
 
 Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.
 
-[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/about/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
+[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/about/demos/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
 
 ![Publishing QGIS on web](/img/{{#it}}site-g3w-suite-homepage-italian.jpg{{/it}}{{#en}}homepage_eng2.png{{/en}})
 
