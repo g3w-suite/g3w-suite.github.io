@@ -76,11 +76,11 @@ Then('every page declares its language, metadata, and main structure', function 
   });
 });
 Then('every page uses the shared assets with root-relative paths', function () {
-  for (const asset of ['style.css', 'app.js', 'icons.svg']) {
+  for (const asset of ['app.css', 'app.js', 'icons.svg']) {
     assert.ok(fs.statSync(path.join(staticDir, asset)).isFile(), `Missing shared asset ${asset}`);
   }
   checkPages(this.pages, ({ $ }, expect) => {
-    const stylesheet = '/style.css';
+    const stylesheet = '/app.css';
     const script = '/app.js';
     expect($(`head link[rel="stylesheet"][href="${stylesheet}"]`).length === 1, `missing stylesheet ${stylesheet}`);
     expect($(`body script[src="${script}"]`).length === 1, `missing script ${script}`);

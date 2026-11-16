@@ -97,7 +97,7 @@ Then('every documentation source is Markdown and has a generated page', function
     const italianPage = readPage(italianFile).$;
     for (const [document, name] of [[page, file], [italianPage, italianFile]]) {
       assert.equal(document('head style').length, 0, `${name}: styles must use the shared stylesheet`);
-      assert.equal(document('head link[rel="stylesheet"][href="/style.css"]').length, 1, `${name}: shared stylesheet is missing`);
+      assert.equal(document('head link[rel="stylesheet"][href="/app.css"]').length, 1, `${name}: shared stylesheet is missing`);
     }
     assert.equal(page('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${file}: body must have a page-specific class`);
     assert.equal(italianPage('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${italianFile}: body must have a page-specific class`);

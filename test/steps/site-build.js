@@ -34,7 +34,7 @@ Then('the build supports a project base path without broken internal links', fun
     const { $ } = readPage(path.join(staticDir, 'index.html'));
     assert.equal($('meta[http-equiv="refresh"]').attr('content'), `0; url=${prefix}/it/`);
     const explore = readPage(path.join(staticDir, 'en', 'about', 'index.html')).$;
-    assert.equal(explore('link[rel="stylesheet"]').attr('href'), `${prefix}/style.css`);
+    assert.equal(explore('link[rel="stylesheet"]').attr('href'), `${prefix}/app.css`);
     const demos = readPage(path.join(staticDir, 'docs', 'demo', 'index.html')).$;
     assert.ok(demos('a[href="https://v311.g3wsuite.it/"]').length, 'external URLs must remain unchanged');
     const docs = readPage(path.join(staticDir, 'docs', 'index.html')).$;

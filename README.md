@@ -29,7 +29,7 @@ Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/abou
 - **Head metadata:** define the page `title`, optional `description`, and Open Graph title/description/type in a `<script type="application/json" data-i18n-meta>` block; the build inserts them into `<head>`. Italian text values belong in the same page's `data-i18n` block.
 - **Shared document shell:** page templates and documentation use `src/_header.html` before page content and `src/_footer.html` after it. Do not add header/footer include directives or document-level tags to page files. The header opens the doctype, `<html>`, `<head>` and `<body>` and contains common head tags; each body gets a route-based `page-*` class. The footer closes the document.
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
-- **Appearance and interactions:** edit `static/style.css` and `static/app.js` (vanilla JavaScript, without libraries).
+- **Appearance and interactions:** edit `static/app.css` and `static/app.js` (vanilla JavaScript, without libraries).
 - **Images:** add them to the flat `static/img/` directory and link them with `/img/...`.
 
 `src/_redirect.html` only redirects to the Italian version. Assets in `static/` are tracked; generated pages are ignored by Git.

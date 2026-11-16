@@ -44,7 +44,7 @@ src/
 |- news/                 # News index, dated articles and release notes
 |- docs/                 # English Markdown manual with per-page Italian translations
 static/
-|- app.js, style.css, icons.svg
+|- app.js, app.css, icons.svg
 |- fonts/                # Tracked fonts
 |- img/                  # Tracked site and manual images; no subfolders
 |- it/, en/, docs/        # Generated publishing output; ignored by Git
@@ -95,7 +95,7 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 ## CSS/JS Rules
 
 - `_footer.html` includes the shared script after `</footer>` using `{{siteRoot}}app.js`; do not repeat it in pages.
-- Use only `static/style.css` for site styles.
+- Use only `static/app.css` for site styles.
 - Use only `static/app.js` for global interactions.
 - Keep javascript vanilla (`'use strict'`, no libraries).
 - Existing interactions to preserve: mobile menu toggle, dropdown accessibility, demo-card filtering.
@@ -119,7 +119,7 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 - `package.json`
 - `build/server.js`
 - `src/index.md`
-- `static/style.css`
+- `static/app.css`
 - `static/app.js`
 - `src/_header.html`
 - `src/_footer.html`

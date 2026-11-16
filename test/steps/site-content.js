@@ -99,7 +99,7 @@ Then('source text is valid UTF-8 without corrupted character sequences', functio
   const corrupted = /[\u0080-\u009f\ufffd]|\u00c3[\u0080-\u00bf\u0192]|\u00c2[\u0080-\u00bf]|\u00e2[\u0080\u20ac]|\u00ef\u00bf\u00bd/;
   const files = [
     ...filesIn(path.resolve('src')),
-    ...['app.js', 'style.css', 'icons.svg'].map(file => path.join(staticDir, file)),
+    ...['app.js', 'app.css', 'icons.svg'].map(file => path.join(staticDir, file)),
   ].filter(file => /\.(?:html|md|css|js|svg)$/.test(file));
   for (const file of files) {
     let text;
