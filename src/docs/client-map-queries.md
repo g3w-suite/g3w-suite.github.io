@@ -125,21 +125,16 @@ In case of **active plots** on the related table, these will be displayed throug
 
 ## Parameterized URLs
 
-**It is possible to create parameterized URLs for direct zooming to:**
-geographical extension 
-single feature by FID 
-single/list features by value of a field 
+Add parameters to a project URL to open a specific extent, feature or map theme:
 
-Here the URL parameters available:
- * **map_extent (Zoom to map extent)**
-   * Ex: `<url_project>?map_extent=Xmin, Ymin,Xmax,Ymax`
- * **zoom_to_fid (Zoom to a specific feature by FID)**
-   * Ex: `<url_project>?zoom_to_fid=<layer_id>|<fid value>`
- * **ztf (Zoom to features defined on the basis of attribute values)**
-   * Ex: `<url_project>?ztf=<layer_id or layer name>:<field name>=<field value>`
+ * `map_extent`: set the initial extent in the project CRS: `<project_url>?map_extent=Xmin,Ymin,Xmax,Ymax`.
+ * `zoom_to_fid`: zoom to a feature by layer ID and FID: `<project_url>?zoom_to_fid=<layer_id>|<fid>`.
+ * `ztf`: zoom to features by attribute value, using the layer ID or name: `<project_url>?ztf=<layer_id_or_name>:<field>=<value>`.
+ * `map_theme`: apply a theme defined in the QGIS project: `<project_url>?map_theme=<theme_name>`.
 
-If **Views (Themes)** are set up in the QGIS project, it will also be possible to parameterize them in the webgis URL: 
-   * Ex: `<url>?map_theme=<theme_name>`
+For `ztf`, combine conditions with `AND` or `OR`, for example: `<project_url>?ztf=roads:type=primaryANDstatus=open`.
+
+Encode special characters in parameter values, and use `&` to separate multiple parameters.
 
 <script type="application/json" data-i18n>
 {
@@ -153,7 +148,6 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
     "**Download all the features results (Shapefile, GPK, GPX, CSV, XLS):** if activated in the administration session": "**Scarica tutti gli elementi risultanti (Shapefile, GPK, GPX, CSV, XLS):** se attivato nella sezione di amministrazione",
     "**Download single results (Shapefile, GPK, GPX, CSV, XLS):** if activated in the administration session": "**Scarica il singolo risultato (Shapefile, GPK, GPX, CSV, XLS):** se attivato nella sezione di amministrazione",
     "**Editing:** to start editing directly on this feature": "**Modifica:** avvia la modifica direttamente su questo elemento",
-    "**It is possible to create parameterized URLs for direct zooming to:**": "**È possibile creare URL parametrizzati per eseguire direttamente lo zoom su:**",
     "**NB:** it will be possible to zoom on the feature associated with the individual results only if the option **`Add geometry to object response`** has been activated at the QGIS project level (**`Project → Properties, QGIS Server session`**).": "**NB:** è possibile eseguire lo zoom sull’elemento associato a ciascun risultato solo se nel progetto QGIS è stata attivata l’opzione **`Add geometry to object response`** (**`Progetto → Proprietà, sezione QGIS Server`**).",
     "**Print Atlas:** prints the reports (atlas) (if set on QGIS project) related to all the features result": "**Stampa Atlante:** stampa i report (atlanti), se configurati nel progetto QGIS, relativi a tutti gli elementi risultanti",
     "**Print Atlas:** prints the reports (atlas) (if set on QGIS project) related to the queried feature": "**Stampa Atlante:** stampa i report (atlanti), se configurati nel progetto QGIS, relativi all’elemento interrogato",
@@ -162,22 +156,20 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
     "**Show relations (1: N):** if present on the QGIS project": "**Mostra relazioni (1:N):** se presenti nel progetto QGIS",
     "**Zoom to feature:** if the function is activated on the Properties of the QGIS project": "**Zoom sull’elemento:** se la funzione è attivata nelle proprietà del progetto QGIS",
     "**Zoom to features result extent:** if the function is activated on the Properties of the QGIS project": "**Zoom sull’estensione dei risultati:** se la funzione è attivata nelle proprietà del progetto QGIS",
-    "**map_extent (Zoom to map extent)**": "**map_extent (zoom all’estensione della mappa)**",
-    "**zoom_to_fid (Zoom to a specific feature by FID)**": "**zoom_to_fid (zoom su un elemento specifico tramite FID)**",
-    "**ztf (Zoom to features defined on the basis of attribute values)**": "**ztf (zoom sugli elementi definiti in base ai valori degli attributi)**",
     "1:N relation data": "Dati di relazione 1:N",
     "A filter, applied generically to the contents of all fields, will allow you to filter the list of child records.": "Un filtro generico applicato al contenuto di tutti i campi consente di filtrare l’elenco dei record figli.",
     "A series of icons, relating to the list of resulting features, will allow you to:": "Una serie di icone relative all’elenco degli elementi risultanti consente di:",
     "Above the table, a dedicated section will report the main information of the parent feature (breadcrumps).": "Sopra la tabella, una sezione dedicata mostra le informazioni principali dell’elemento padre (percorso di navigazione).",
+    "Add parameters to a project URL to open a specific extent, feature or map theme:": "Aggiungi parametri all'URL di un progetto per aprire un'estensione, un elemento o un tema cartografico specifico:",
     "After accessing one of the existing relationships, the child records will be displayed in tabular format.": "Dopo aver aperto una delle relazioni esistenti, i record figli vengono visualizzati in formato tabellare.",
     "Any links to photos will determine the display of a clickable preview, any links to links or other multimedia content will determine the display of the Open button that will allow consultation of the link.": "I collegamenti alle foto mostrano un’anteprima cliccabile; i collegamenti ad altri contenuti multimediali mostrano il pulsante Open, che consente di consultare il contenuto.",
     "Back to Cartographic client": "Torna al client cartografico",
     "By clicking on the icon you will access the **list of 1:N relations** present and, from these, the list of child records associated with the individual relationships.": "Facendo clic sull’icona si accede all’**elenco delle relazioni 1:N** e, per ciascuna, all’elenco dei record figli associati.",
     "Display 1:1 (join) and 1:N relation data": "Visualizzazione dei dati di relazione 1:1 (join) e 1:N",
+    "Encode special characters in parameter values, and use `&` to separate multiple parameters.": "Codifica i caratteri speciali nei valori dei parametri e usa `&` per separare più parametri.",
+    "For `ztf`, combine conditions with `AND` or `OR`, for example: `<project_url>?ztf=roads:type=primaryANDstatus=open`.": "Per `ztf`, combina le condizioni con `AND` o `OR`, ad esempio: `<project_url>?ztf=roads:type=primaryANDstatus=open`.",
     "For further information on this point, see the [**dedicated paragraph**](projectsettings-layers.md#viewing-multimedia-content).": "Per ulteriori informazioni, consulta il [**paragrafo dedicato**](projectsettings-layers.md#viewing-multimedia-content).",
-    "Here the URL parameters available:": "Di seguito sono elencati i parametri URL disponibili:",
     "Icon: Relations": "Icona: relazioni",
-    "If **Views (Themes)** are set up in the QGIS project, it will also be possible to parameterize them in the webgis URL:": "Se nel progetto QGIS sono configurate **Viste (Temi)**, è possibile parametrizzarle anche nell’URL del WebGIS:",
     "If a specific layer is selected in the TOC, the results are limited to that layer.": "Se nella TOC è selezionato un layer specifico, i risultati sono limitati a quel layer.",
     "If the relations are inserted in a custom form dedicated to displaying attributes (QGIS Attributes form), then the link to them will be displayed directly in the parent attributes form.": "Se le relazioni sono inserite in un modulo personalizzato per la visualizzazione degli attributi (modulo attributi di QGIS), il relativo collegamento apparirà direttamente nel modulo degli attributi del padre.",
     "In case of **active plots** on the related table, these will be displayed through **`Show charts`** at the top right.": "Se sulla tabella correlata sono attivi dei **grafici**, questi vengono mostrati tramite **`Show charts`** in alto a destra.",
@@ -215,13 +207,14 @@ If **Views (Themes)** are set up in the QGIS project, it will also be possible t
     "Upon querying a geometry, the form structure will be replicated at the client level.": "Quando si interroga una geometria, la struttura del modulo viene riprodotta nel client.",
     "Use an area query to search project layers with a polygon:": "Usa un'interrogazione per area per cercare nei layer del progetto tramite un poligono:",
     "Viewing query results": "Visualizzazione dei risultati delle interrogazioni",
+    "`map_extent`: set the initial extent in the project CRS: `<project_url>?map_extent=Xmin,Ymin,Xmax,Ymax`.": "`map_extent`: imposta l'estensione iniziale nel CRS del progetto: `<project_url>?map_extent=Xmin,Ymin,Xmax,Ymax`.",
+    "`map_theme`: apply a theme defined in the QGIS project: `<project_url>?map_theme=<theme_name>`.": "`map_theme`: applica un tema definito nel progetto QGIS: `<project_url>?map_theme=<theme_name>`.",
+    "`zoom_to_fid`: zoom to a feature by layer ID and FID: `<project_url>?zoom_to_fid=<layer_id>|<fid>`.": "`zoom_to_fid`: esegue lo zoom su un elemento tramite ID del layer e FID: `<project_url>?zoom_to_fid=<layer_id>|<fid>`.",
+    "`ztf`: zoom to features by attribute value, using the layer ID or name: `<project_url>?ztf=<layer_id_or_name>:<field>=<value>`.": "`ztf`: esegue lo zoom sugli elementi in base al valore di un attributo, usando l'ID o il nome del layer: `<project_url>?ztf=<layer_id_or_name>:<field>=<value>`.",
     "deriving from a feature of a polygonal layer present in the project or added by the user": "derivata da un elemento di un layer poligonale presente nel progetto o aggiunto dall’utente",
     "draw: rectangles, circles or free-form polygons": "disegnata: rettangoli, cerchi o poligoni a mano libera",
-    "geographical extension": "un’estensione geografica",
     "polygon": "poligono",
     "rectangle": "rettangolo",
-    "single feature by FID": "un singolo elemento tramite FID",
-    "single/list features by value of a field": "uno o più elementi in base al valore di un campo",
     "within": "contenuto in"
   }
 }

@@ -115,8 +115,9 @@ This can be done by modifying the `.env` file.
 
 ### First time setup
 
-- log into the application web administation panel using default credentials (_admin/admin_)
-- change the password for the admin user and for any other example user that may be present
+Set a strong administrator password in `.env` before starting a new installation. The `.env.example` file contains example credentials that must be changed.
+
+Sign in to the administration panel with `G3WSUITE_ADMIN_USERNAME` and `G3WSUITE_ADMIN_PASSWORD`. These variables create the initial account only; after initialization, change its password in the administration interface, not by editing `.env`.
 
 ### Caching
 
@@ -246,8 +247,10 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "PostgreSQL administration": "Amministrazione di PostgreSQL",
     "PostgreSQL runs in a Docker container. To access it:": "PostgreSQL è in esecuzione in un container Docker. Per accedervi:",
     "Run": "Esecuzione",
+    "Set a strong administrator password in `.env` before starting a new installation. The `.env.example` file contains example credentials that must be changed.": "Imposta una password amministratore robusta in `.env` prima di avviare una nuova installazione. Il file `.env.example` contiene credenziali di esempio da modificare.",
     "Set the environment variable": "Imposta la variabile d'ambiente",
     "Setups": "Configurazioni",
+    "Sign in to the administration panel with `G3WSUITE_ADMIN_USERNAME` and `G3WSUITE_ADMIN_PASSWORD`. These variables create the initial account only; after initialization, change its password in the administration interface, not by editing `.env`.": "Accedi al pannello di amministrazione con `G3WSUITE_ADMIN_USERNAME` e `G3WSUITE_ADMIN_PASSWORD`. Queste variabili servono solo a creare l'account iniziale; dopo l'inizializzazione, modifica la password nell'interfaccia di amministrazione, non nel file `.env`.",
     "Style customization": "Personalizzazione dello stile",
     "Templates can now be overridden by placing the overrides in the `config/g3w-suite/overrides/templates`, a Docker service restart is required to make the changes effective.": "I template possono essere sostituiti collocando le versioni personalizzate in `config/g3w-suite/overrides/templates`; per applicare le modifiche è necessario riavviare il servizio Docker.",
     "The Docker hub name for this image is `g3wsuite/postgis:11.0-2.5`": "Il nome di questa immagine su Docker Hub è `g3wsuite/postgis:11.0-2.5`.",
@@ -266,7 +269,6 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Volumes": "Volumi",
     "activate 301 redirect into `config/nginx/django.conf`": "attiva il reindirizzamento 301 in `config/nginx/django.conf`",
     "but is also possible build main image of G3W-SUITE and other docker-compose images.": "ma è anche possibile creare l'immagine principale di G3W-SUITE e le altre immagini Docker Compose.",
-    "change the password for the admin user and for any other example user that may be present": "modifica la password dell'utente admin e di qualsiasi altro utente di esempio eventualmente presente",
     "check the domain name in the `.env` file and in `config/nginx/django_ssl.conf`": "verifica il nome di dominio nel file `.env` e in `config/nginx/django_ssl.conf`",
     "do not turn on by default base-layers XYZ such as (Google base maps)": "non attivare per impostazione predefinita layer di base XYZ come Google Maps",
     "do not use rule-based/categorized rendering on layers with too many categories (example: elec_penwell_public_power), they are unreadable anyway": "non usare una resa basata su regole o categorie per layer con troppe categorie (ad esempio elec_penwell_public_power), perché diventano comunque illeggibili",
@@ -274,7 +276,6 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "environments it is encouraged to change this to a permanent location.": "è consigliabile spostarlo in una posizione permanente.",
     "if you disabled HTTPS, you can move `config/nginx/django_ssl.conf` back to its original location now, and restart the Docker compose to finally enable HTTPS": "se hai disattivato HTTPS, puoi riportare `config/nginx/django_ssl.conf` nella posizione originale e riavviare Docker Compose per riattivare HTTPS",
     "launch `./run_certbot.sh`": "avvia `./run_certbot.sh`",
-    "log into the application web administation panel using default credentials (_admin/admin_)": "accedi al pannello web di amministrazione dell'applicazione usando le credenziali predefinite (_admin/admin_)",
     "make sure the certs are renewed by adding a cron job with `crontab -e` and add the following line:": "assicurati che i certificati vengano rinnovati aggiungendo un cron job con `crontab -e` e inserisci la riga seguente:",
     "move `config/_nginx/django_ssl.conf` to `config/nginx/django_ssl.conf`": "sposta `config/_nginx/django_ssl.conf` in `config/nginx/django_ssl.conf`",
     "policy must be enforced.": "regolare.",

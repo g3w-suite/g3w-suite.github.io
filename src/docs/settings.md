@@ -286,6 +286,15 @@ Default is `False`. Set to `True` to render possible give to `anonymous user` ed
 Default is `False`. Set to `True` to log users editing action into database.
 
 ## Caching settings
+
+### Project configuration cache
+
+The `/api/config` response is cached separately from map tiles, by project and user. Project and related configuration changes invalidate the affected cache.
+
+`QDJANGO_PRJ_CACHE` enables this cache and defaults to `True`; set it to `False` to disable it. The cache uses Django's default cache backend. Docker configures Redis as that backend.
+
+### Tile cache
+
 Settings params for `caching` module
 
 ### `TILESTACHE_CACHE_NAME`
@@ -457,6 +466,7 @@ Settings variables for *caching* workflow
       "Openrouteservice settings": "Impostazioni di Openrouteservice",
       "Path to disk space where to save tile created by tilestache if `TILESTAHCE_CACHE_TYEPE` is se to `Disk`.": "Percorso su disco in cui salvare le tile create da tilestache se `TILESTAHCE_CACHE_TYEPE` è impostato su `Disk`.",
       "Path to geo data directory (shp, Spatialite, raster, etc..).": "Percorso della directory dei dati geografici (shp, Spatialite, raster ecc.).",
+      "Project configuration cache": "Cache della configurazione del progetto",
       "Qplotly settings": "Impostazioni di Qplotly",
       "Registration": "Registrazione",
       "Required if RECAPTCHA is True, Google reCAPATCHA private key.": "Obbligatoria se RECAPTCHA è True: chiave privata Google reCAPTCHA.",
@@ -470,12 +480,15 @@ Settings variables for *caching* workflow
       "Settings variables about third part services, i.e. Google API etc..": "Variabili di configurazione per servizi di terze parti, ad es. API Google ecc.",
       "Settings variables for *caching* workflow": "Variabili di configurazione del flusso di *caching*",
       "Settings variables for user registration system.": "Variabili di configurazione del sistema di registrazione degli utenti.",
+      "The `/api/config` response is cached separately from map tiles, by project and user. Project and related configuration changes invalidate the affected cache.": "La risposta di `/api/config` viene memorizzata per progetto e utente, separatamente dalle tile della mappa. Le modifiche al progetto e alle configurazioni associate invalidano la cache interessata.",
       "The following variables can be added to or edited in the project’s `local_settings.py`:": "Le seguenti variabili possono essere aggiunte o modificate nel file `local_settings.py` del progetto:",
       "This logging system continues to save log records with no upper limit. To keep the table from getting too big, there is a `django command` that deletes records older than a set number of days.": "Questo sistema continua a salvare i record di log senza limiti. Per evitare che la tabella diventi troppo grande, è disponibile un `comando Django` che elimina i record più vecchi di un numero di giorni specificato.",
+      "Tile cache": "Cache delle tile",
       "To activate it is sufficient add a new log `handler` inside Django `LOGGING` settings and use it for a `logger`:": "Per attivarla è sufficiente aggiungere un nuovo `handler` di log alle impostazioni `LOGGING` di Django e utilizzarlo per un `logger`:",
       "Vendors settings": "Impostazioni dei fornitori",
       "With v3.6.x version G3W-SUITE can save message logs inside the database.": "Dalla versione 3.6.x, G3W-SUITE può salvare i messaggi di log nel database.",
       "You can also add custom providers (or edit the existing ones within `static/client/geocoding-providers` folder), just remember to use javascript file name as \"provider\" identifier:": "È possibile aggiungere provider personalizzati (o modificare quelli esistenti nella cartella `static/client/geocoding-providers`); ricordarsi di usare il nome del file JavaScript come identificatore del \"provider\":",
+      "`QDJANGO_PRJ_CACHE` enables this cache and defaults to `True`; set it to `False` to disable it. The cache uses Django's default cache backend. Docker configures Redis as that backend.": "`QDJANGO_PRJ_CACHE` abilita questa cache ed è `True` per impostazione predefinita; impostalo su `False` per disattivarla. La cache usa il backend predefinito di Django. Docker configura Redis come backend.",
       "`api`: by g3w-suite layer vector API.": "`api`: tramite l'API vettoriale dei layer di G3W-SUITE.",
       "`i18n` (optional) set True if you want lent client try to translate title.": "`i18n` (facoltativo): impostare True per consentire al client di provare a tradurre il titolo.",
       "`ows`: by wms search;": "`ows`: ricerca tramite WMS;",

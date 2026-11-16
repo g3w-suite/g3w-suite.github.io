@@ -22,7 +22,8 @@ Assuming you want to add the following WMST service [http://qgistiles.webmapp.it
  * **Description:** an internal description of the new Base Layer
  * **Property:** the specifications of the new Base Layer; for example, for our case:
 
- {
+```python
+{
  "crs": {
       "epsg":3857,
       "proj4":"+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs",
@@ -32,6 +33,9 @@ Assuming you want to add the following WMST service [http://qgistiles.webmapp.it
  "url": "http://qgstiles.webmapp.it/tiles/{z}/{x}/{y}.png",
  "servertype": "TMS"
 }
+```
+
+See [base layer configuration](base_layers.md) for the CRS fields and further examples.
 
 ![Screenshot: G3W-ADMIN Django Administration Add](/img/manual-english-g3wadmin-django-administration-add.avif)
 
@@ -152,6 +156,7 @@ Then:
       "Screenshot: Language Admin": "Schermata: lingua del pannello di amministrazione",
       "Screenshot: Language Client": "Schermata: lingua del client",
       "Screenshot: Language Form": "Schermata: modulo delle lingue",
+      "See [base layer configuration](base_layers.md) for the CRS fields and further examples.": "Consulta la [configurazione dei layer di base](base_layers.md) per i campi del CRS e altri esempi.",
       "Sessions **`Cartographic MacroGroups`**, **`Cartographic Groups`** and **`WebGis Services`**: contents definable and translatable in the form defining these elements, limited to the items:": "Le sezioni **`Cartographic MacroGroups`**, **`Cartographic Groups`** e **`WebGis Services`**: contenuti definibili e traducibili nel modulo di definizione di questi elementi, limitatamente ai campi:",
       "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](g3wsuite_administration.md) session of the Control Panel Administration": "Le sezioni **`Home`**, **`About`**, **`Maps`** e **`Login`**: contenuti definibili e traducibili nella sezione [**Edit General Data**](g3wsuite_administration.md) del pannello di amministrazione",
       "Spanish": "Spagnolo",

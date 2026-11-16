@@ -68,9 +68,11 @@ It will therefore be necessary, in the case of using geographic files on the fil
 Two specific directories can also be created within the root directory of the File Manager:
 
  * **`media_user`**: a directory exposed on the web, to store your **multimedia files**
- * **`svg:`** a directory to store **extra SVG icons** used your QGIS projects
+ * **`svg`**: a directory to store **extra SVG icons** used in your QGIS projects
 
 All the directories can be organized in subdirectories with no nesting limits.
+
+In the standard Docker configuration, QGIS searches for custom symbols in `/shared-volume/project_data/svg/`. Upload the SVG files to the `svg` directory with File Manager and use the same symbols in the QGIS project. The search paths are defined in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configure the symbol directory in QGIS Desktop too, use distinct names for different symbols and check the published map.
 
 **NB:** The names of these directories are defined by the basic settings set during the installation of the suite.
 [See dedicated paragraph.](settings#base-settings)
@@ -98,7 +100,7 @@ In the next chapter the powers and limits of the two roles will be described in 
       "**Of course, mixed solutions with geographical data on PostGreSQL/PostGIS, SpatiaLite and other formats will also be possible.**": "**Naturalmente sono possibili anche soluzioni miste con dati geografici su PostGreSQL/PostGIS, SpatiaLite e altri formati.**",
       "**The root directory of the File Manager corresponds to the local **`project_data`** directory**": "**La directory radice di File Manager corrisponde alla directory locale **`project_data`****",
       "**`media_user`**: a directory exposed on the web, to store your **multimedia files**": "**`media_user`**: directory esposta sul web in cui archiviare i **file multimediali**",
-      "**`svg:`** a directory to store **extra SVG icons** used your QGIS projects": "**`svg:`** directory in cui archiviare **icone SVG aggiuntive** utilizzate nei progetti QGIS",
+      "**`svg`**: a directory to store **extra SVG icons** used in your QGIS projects": "**`svg`**: directory in cui archiviare **icone SVG aggiuntive** utilizzate nei progetti QGIS",
       "**organize data and projects** in predefined local directories and subdirectories": "**organizzare dati e progetti** in directory e sottodirectory locali predefinite",
       "**reading and editing mode**": "**modalità di lettura e modifica**",
       "**reading mode**": "**modalità di lettura**",
@@ -116,6 +118,7 @@ In the next chapter the powers and limits of the two roles will be described in 
       "If your geographic data is stored on `Server DB`, it will be sufficient to allow access to the DB from the IP address on which the application is installed.": "Se i dati geografici sono archiviati su un `server DB`, è sufficiente consentire l'accesso al database dall'indirizzo IP su cui è installata l'applicazione.",
       "If your geographical data are stored on `SpatiaLite`, `GeoPackage` or an other physical files (`.shp`, `.kml`, `.tif`...) located on your local PC, you will need:": "Se i dati geografici sono archiviati in `SpatiaLite`, `GeoPackage` o altri file fisici (`.shp`, `.kml`, `.tif`...) sul computer locale, sarà necessario:",
       "In the next chapter the powers and limits of the two roles will be described in detail.": "Nel capitolo successivo verranno descritti nel dettaglio i poteri e i limiti dei due ruoli.",
+      "In the standard Docker configuration, QGIS searches for custom symbols in `/shared-volume/project_data/svg/`. Upload the SVG files to the `svg` directory with File Manager and use the same symbols in the QGIS project. The search paths are defined in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configure the symbol directory in QGIS Desktop too, use distinct names for different symbols and check the published map.": "Nella configurazione Docker standard, QGIS cerca i simboli personalizzati in `/shared-volume/project_data/svg/`. Carica i file SVG nella directory `svg` con File Manager e usa gli stessi simboli nel progetto QGIS. I percorsi di ricerca sono definiti in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configura la directory dei simboli anche in QGIS Desktop, usa nomi distinti per simboli diversi e verifica la mappa pubblicata.",
       "It will therefore be necessary, in the case of using geographic files on the file system, to synchronize the contents of the local **`project_data`** directory (and any sub-directories) before proceeding with the publication of QGIS projects.": "Pertanto, se si utilizzano file geografici nel file system, prima di pubblicare i progetti QGIS sarà necessario sincronizzare il contenuto della directory locale **`project_data`** e delle eventuali sottodirectory.",
       "Management and organization of geographic data and QGIS projects": "Gestione e organizzazione dei dati geografici e dei progetti QGIS",
       "Oracle Spatial (compiling QGIS Server)": "Oracle Spatial (compilando QGIS Server)",
