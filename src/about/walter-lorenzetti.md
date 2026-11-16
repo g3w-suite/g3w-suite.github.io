@@ -4,6 +4,8 @@
 
 **I work on G3W-ADMIN, developing the server and administration interface used to run WebGIS projects.**
 
+[GitHub profile](https://github.com/wlorenzetti) · [LinkedIn](https://www.linkedin.com/in/walterlorenzetti/) · [Gis3W](https://www.gis3w.it)
+
 ## Beyond G3W-SUITE
 
 My public repositories include small [Linux scripts](https://github.com/wlorenzetti/linux-scripts) and [mdojo](https://github.com/wlorenzetti/mdojo), a Django app for managing a Japanese martial arts dojo. It is a different field, but still software for keeping everyday operations organized.
@@ -20,7 +22,7 @@ My contributions also include the Elasticsearch configuration module and work on
 
 From layer management to sign-in and configuration, the server provides the workspace in which projects and permissions are organized. My work addresses both the code behind that workspace and the interface administrators use.
 
-[GitHub profile](https://github.com/wlorenzetti "github-button") [LinkedIn](https://www.linkedin.com/in/walterlorenzetti/ "outline-button") [Gis3W](https://www.gis3w.it "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

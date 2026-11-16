@@ -4,6 +4,8 @@
 
 **I work across server code and map interfaces, bringing GIS experience to web mapping.**
 
+[GitHub profile](https://github.com/volterra79) · [Leaflet course](https://github.com/volterra79/corso-leaflet) · [Gis3W](https://www.gis3w.it)
+
 ## Beyond G3W-SUITE
 
 My public code reaches beyond G3W-SUITE: an [AniMove plugin for SEXTANTE/QGIS](https://github.com/volterra79/sextante_animove), a [Leaflet course](https://github.com/volterra79/corso-leaflet), and a [Vue 3 + OpenLayers example](https://github.com/volterra79/ol-vue-vite). These projects explore spatial tools in QGIS and the browser.
@@ -20,7 +22,7 @@ My G3W-ADMIN contributions also include work on the editing plugin: showing all 
 
 Forms, layer controls and editing tools are points where the underlying GIS meets the person using the map. My work on both client and administration code helps bring those pieces together.
 
-[GitHub profile](https://github.com/volterra79 "github-button") [Leaflet course](https://github.com/volterra79/corso-leaflet "outline-button") [Gis3W](https://www.gis3w.it "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

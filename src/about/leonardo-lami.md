@@ -4,7 +4,7 @@
 
 **I contribute to G3W-SUITE and its documentation, helping people publish QGIS projects and work with them on the web.**
 
-My GitHub accounts, [@leolami](https://github.com/leolami) and [@leonardolami](https://github.com/leonardolami), include repositories for [G3W-ADMIN](https://github.com/leolami/g3w-admin) and the [end-user documentation](https://github.com/leolami/g3w-suite-documentation). Together, they cover the platform's administration tools and the guides that accompany them.
+[GitHub @leolami](https://github.com/leolami) · [GitHub @leonardolami](https://github.com/leonardolami) · [LinkedIn](https://www.linkedin.com/in/leonardolami/)
 
 ## Documentation and releases
 
@@ -16,13 +16,15 @@ I also worked on documentation for versions 3.8, 3.9 and 3.10, including updated
 
 ## From the platform to its users
 
+My GitHub accounts, [@leolami](https://github.com/leolami) and [@leonardolami](https://github.com/leonardolami), include repositories for [G3W-ADMIN](https://github.com/leolami/g3w-admin) and the [end-user documentation](https://github.com/leolami/g3w-suite-documentation). Together, they cover the platform's administration tools and the guides that accompany them.
+
 G3W-ADMIN connects QGIS projects with a web-based administration environment. Projects, users and permissions can be organized there before maps are made available through the client. Documentation and screenshots help administrators and map users navigate those workflows.
 
 I have also contributed to the project website, updating navigation, documentation links and Italian translations for version 3.11. The [current manual](/en/docs/) and [Quick Start](/en/docs/quick-start/) offer a starting point for installing the platform and publishing maps.
 
 The Quick Start walks through preparing a QGIS project, uploading geographic data, creating a cartographic group and publishing the project. The administration and editing guides then cover the settings needed to work with a WebGIS service.
 
-[GitHub @leolami](https://github.com/leolami "github-button") [GitHub @leonardolami](https://github.com/leonardolami "outline-button") [LinkedIn](https://www.linkedin.com/in/leonardolami/ "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

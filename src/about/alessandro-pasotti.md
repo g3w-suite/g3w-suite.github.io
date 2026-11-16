@@ -4,6 +4,8 @@
 
 **I work on open-source GIS, with a particular focus on QGIS and its server-side tools.**
 
+[GitHub profile](https://github.com/elpaso) · [LinkedIn](https://www.linkedin.com/in/itopen/) · [Mastodon](https://mapstodon.space/@elpaso) · [QGIS development at ItOpen](https://www.itopen.it/qgis-development/)
+
 ## Beyond G3W-SUITE
 
 At [ItOpen](https://www.itopen.it), I work with QGIS. My projects include [QGIS Geocoding](https://github.com/elpaso/qgis-geocoding), [QGIS Server Vagrant](https://github.com/elpaso/qgis3-server-vagrant) and [django-dag](https://github.com/elpaso/django-dag): tools that range from finding data to building and deploying GIS infrastructure.
@@ -19,7 +21,7 @@ In G3W-ADMIN, I work on the details between QGIS Server and the people administe
 The printing change connects annotations made in the web client with the map sent to QGIS Server for output. My routing fixes cover cases involving raster layers and travel-time intervals, while other contributions address how legend styles are handled.
 
 This work spans standards-based map services and the practical details of an administration interface. The linked changes show the implementation and discussion for each improvement.
-[GitHub profile](https://github.com/elpaso "github-button") [LinkedIn](https://www.linkedin.com/in/itopen/ "outline-button") [Mastodon](https://mapstodon.space/@elpaso "outline-button") [QGIS development at ItOpen](https://www.itopen.it/qgis-development/ "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

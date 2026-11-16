@@ -501,6 +501,17 @@ time { color: var(--color-muted); font-size: .9rem; }
   text-align: center;
 }
 .page-header h1 { margin-bottom: 1rem; }
+.contributor-profile__header { max-width: 860px; }
+.contributor-profile__header img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contributor-profile__header h1 { margin-bottom: .5rem; }
+.contributor-profile__header p { margin-bottom: 1rem; }
+.contributor-profile__header p:last-child { margin-bottom: 0; }
 .page-header .release-meta {
   display: flex;
   justify-content: center;

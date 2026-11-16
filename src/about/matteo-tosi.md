@@ -4,6 +4,8 @@
 
 **I develop map extensions and tools that help G3W-SUITE grow.**
 
+[GitHub profile](https://github.com/Raruto) · [LinkedIn](https://www.linkedin.com/in/raruto) · [npm](https://www.npmjs.com/~raruto) · [Raruto](https://raruto.github.io/)
+
 ## Beyond G3W-SUITE
 
 My Leaflet projects solve map problems directly: [leaflet-elevation](https://github.com/Raruto/leaflet-elevation) draws elevation profiles with SVG and Canvas, [leaflet-rotate](https://github.com/Raruto/leaflet-rotate) rotates maps, and [leaflet-kmz](https://github.com/Raruto/leaflet-kmz) loads KMZ data. I also publish technical notes on [Raruto](https://raruto.github.io/).
@@ -20,7 +22,7 @@ The plugin guide gives developers a starting point for extending the client, whi
 
 These contributions connect the public map interface with the tools used to build, release and extend it. Explore the linked repositories for code, examples and the conversations behind individual changes.
 
-[GitHub profile](https://github.com/Raruto "github-button") [LinkedIn](https://www.linkedin.com/in/raruto "outline-button") [npm](https://www.npmjs.com/~raruto "outline-button") [Raruto](https://raruto.github.io/ "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

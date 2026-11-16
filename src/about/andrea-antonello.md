@@ -4,6 +4,8 @@
 
 **I work on geospatial software, from GIS libraries in Dart to G3W-SUITE localization.**
 
+[GitHub profile](https://github.com/moovida) · [LinkedIn](https://www.linkedin.com/in/andreaantonello) · [Mastodon](https://digitalcourage.social/@moovida) · [G-ANT Scientific Solutions](https://g-ant.eu)
+
 ## Beyond G3W-SUITE
 
 Through [G-ANT Scientific Solutions](https://g-ant.eu) and my public repositories, I work on the geospatial ecosystem around mobile and open data: [dart_jts](https://github.com/moovida/dart_jts) ports part of the Java Topology Suite to Dart, while [flutter_geopackage](https://github.com/moovida/flutter_geopackage) and [dart_shp](https://github.com/moovida/dart_shp) bring common GIS formats to Dart and Flutter apps. I also maintain small utilities for a reMarkable tablet.
@@ -20,7 +22,7 @@ The translation helpers use a folder structure to export language files and impo
 
 I have shared [configuration scripts](https://github.com/moovida/g3wsuite_config_scripts) for setting up G3W-SUITE as well. They sit alongside the translation work as practical resources for people installing and maintaining the platform.
 
-[GitHub profile](https://github.com/moovida "github-button") [LinkedIn](https://www.linkedin.com/in/andreaantonello "outline-button") [Mastodon](https://digitalcourage.social/@moovida "outline-button") [G-ANT Scientific Solutions](https://g-ant.eu "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

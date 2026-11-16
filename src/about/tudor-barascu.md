@@ -4,6 +4,8 @@
 
 **I work with QGIS, from beginner-friendly plugins and server tutorials to Romanian GIS data and G3W-SUITE translations.**
 
+[GitHub profile](https://github.com/tudorbarascu) · [QGIS Minimal Plugins](https://github.com/tudorbarascu/qgis_minimal_plugins) · [QTIBIA](https://qtibia.com)
+
 ## Beyond G3W-SUITE
 
 My public repositories include [QGIS Minimal Plugins](https://github.com/tudorbarascu/qgis_minimal_plugins), described as a starting point for newcomers, [QGIS Server tutorial data](https://github.com/tudorbarascu/qgis-server-tutorial-data), and a [Stereo70 to ETRS89 reference](https://github.com/tudorbarascu/stereo70-etrs89). Together they connect GIS software, learning resources and Romanian geodata.
@@ -20,7 +22,7 @@ My Romanian translation work also extends to G3W-CLIENT, including print-related
 
 I am also connected with [QTIBIA](/en/sponsors/qtibia/), whose work includes QGIS training and geographic information services. The resources linked here offer starting points for learning, translation and working with Romanian spatial data.
 
-[GitHub profile](https://github.com/tudorbarascu "github-button") [QGIS Minimal Plugins](https://github.com/tudorbarascu/qgis_minimal_plugins "outline-button") [QTIBIA](https://qtibia.com "outline-button") [Back to the project](/en/about/ "outline-button")
+[Back to the project](/en/about/ "outline-button")
 
 <script type="application/json" data-i18n>
   {

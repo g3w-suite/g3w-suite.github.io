@@ -151,6 +151,20 @@ function renderMarkdownSections(markdown, page) {
     return renderHomepageHero(hero) + renderItems(root.items, true);
   }
 
+  const profile = firstSection === -1 ? [] : root.items.slice(0, firstSection).filter(item => item.raw.trim());
+  if (
+    /^about[\\/]/.test(page) &&
+    profile.length === 4 &&
+    profile[0].type === 'heading' && profile[0].depth === 1 &&
+    profile[1].type === 'paragraph' && profile[1].tokens.length === 1 && profile[1].tokens[0].type === 'image' &&
+    profile[2].type === 'paragraph' && profile[2].tokens[0]?.type === 'strong' &&
+    profile[3].type === 'paragraph' && profile[3].tokens.some(token => token.type === 'link')
+  ) {
+    root.items.splice(0, firstSection);
+    const header = marked.parser([profile[1], profile[0], profile[2], profile[3]]);
+    return `<div class="page-header"><div class="container contributor-profile__header">${header}</div></div>${renderItems(root.items, true)}`;
+  }
+
   if (firstSection !== -1 && page !== 'index.md' && !markdown.includes('class="page-header"')) {
     const headingTokens = root.items.slice(0, firstSection).filter(
       item => !item.section && item.type === 'heading' && item.depth === 1

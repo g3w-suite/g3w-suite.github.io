@@ -7,6 +7,22 @@ const { Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, newsSlug, readPage } = require('../support/site');
 
+Then('member profile headers show the portrait, name, introduction and personal links', function () {
+  const members = ['alessandro-pasotti', 'andrea-antonello', 'francesco-boccacci', 'leonardo-lami', 'matteo-tosi', 'tudor-barascu', 'walter-lorenzetti'];
+  for (const lang of languages) {
+    for (const slug of members) {
+      const $ = readPage(path.join(staticDir, lang, 'about', slug, 'index.html')).$;
+      const header = $('main > .page-header > .contributor-profile__header');
+      assert.deepEqual(header.children().map((_, el) => el.tagName).get(), ['p', 'h1', 'p', 'p'], `${lang}: ${slug} header order`);
+      assert.equal(header.children('p').first().children('img[alt]').length, 1, `${lang}: ${slug} portrait`);
+      assert.ok(header.children('p').eq(1).children('strong').text().trim(), `${lang}: ${slug} introduction`);
+      assert.ok(header.children('p').eq(2).children('a[href^="https://"]').length >= 2, `${lang}: ${slug} links`);
+    }
+    const team = readPage(path.join(staticDir, lang, 'about', 'g3w-suite-team', 'index.html')).$;
+    assert.equal(team('main > .page-header > .contributor-profile__header').length, 0, `${lang}: team is not an individual profile`);
+  }
+});
+
 Then('sponsor profiles link to their credited releases in both languages', function () {
   const sponsors = {
     'arpa-liguria': '3.3,3.10,3.11',

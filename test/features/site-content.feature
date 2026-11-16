@@ -18,3 +18,6 @@ Feature: Site content conventions
 
   Scenario: Sponsor profiles document release credits
     Then sponsor profiles link to their credited releases in both languages
+
+  Scenario: Member profiles introduce people and their links
+    Then member profile headers show the portrait, name, introduction and personal links
