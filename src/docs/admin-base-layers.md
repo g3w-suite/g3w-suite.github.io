@@ -80,7 +80,7 @@ Also for the Administration panel, through the same drop-down menu, it is possib
 Fixed front end content is already available in the four basic languages.
 
 Variable contents, i.e. user-definable contents, are instead translated:
- * Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](admin-interface.md) session of the Control Panel Administration
+ * Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](g3wsuite_administration.md) session of the Control Panel Administration
  * Sessions **`Cartographic MacroGroups`**, **`Cartographic Groups`** and **`WebGis Services`**: contents definable and translatable in the form defining these elements, limited to the items:
 
    * **Public Title**
@@ -154,7 +154,7 @@ Then:
       "Screenshot: Language Client": "Schermata: lingua del client",
       "Screenshot: Language Form": "Schermata: modulo delle lingue",
       "Sessions **`Cartographic MacroGroups`**, **`Cartographic Groups`** and **`WebGis Services`**: contents definable and translatable in the form defining these elements, limited to the items:": "Le sezioni **`Cartographic MacroGroups`**, **`Cartographic Groups`** e **`WebGis Services`**: contenuti definibili e traducibili nel modulo di definizione di questi elementi, limitatamente ai campi:",
-      "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](admin-interface.md) session of the Control Panel Administration": "Le sezioni **`Home`**, **`About`**, **`Maps`** e **`Login`**: contenuti definibili e traducibili nella sezione [**Edit General Data**](admin-interface.md) del pannello di amministrazione",
+      "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](g3wsuite_administration.md) session of the Control Panel Administration": "Le sezioni **`Home`**, **`About`**, **`Maps`** e **`Login`**: contenuti definibili e traducibili nella sezione [**Edit General Data**](g3wsuite_administration.md) del pannello di amministrazione",
       "Spanish": "Spagnolo",
       "Swedish": "Svedese",
       "The new Base Layer will then be available and can be activated at the level of individual Cartographic Groups.": "Il nuovo Base Layer sarà quindi disponibile e potrà essere attivato nei singoli Gruppi cartografici.",

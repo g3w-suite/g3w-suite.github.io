@@ -50,7 +50,7 @@ function addDocumentationHeadingAliases(html, sourceHeadings, localizedHeadings)
   });
 }
 
-function documentationNavigation(index, currentPage, docsDir, lang) {
+function documentationNavigation(index, currentPage, parentPage, docsDir, lang) {
   const groups = [];
   let group;
   for (const line of index.split(/\r?\n/)) {
@@ -64,12 +64,15 @@ function documentationNavigation(index, currentPage, docsDir, lang) {
     if (group && link) {
       const indexFile = path.join(docsDir, 'index.md');
       const href = documentationLink(link[2], indexFile, docsDir, lang);
-      group.links.push(`<a href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${link[1]}</a>`);
+      group.links.push({ href, label: link[1] });
     }
   }
-  return groups.map(({ title, links }) =>
-    `<section><h2>${title}</h2>${links.join('')}</section>`
-  ).join('');
+  return groups.map(({ title, links }) => {
+    const open = links.some(({ href }) => href === currentPage || href === parentPage);
+    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(({ href, label }) =>
+      `<a href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`
+    ).join('')}</details></section>`;
+  }).join('');
 }
 
 const documentationTranslations = {
@@ -199,7 +202,7 @@ function buildDocumentation(outputDir) {
   <link rel="stylesheet" href="/style.css">
   <style>
     .docs-layout{display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:2rem;max-width:1440px;margin:2rem auto;padding:0 1.5rem}
-    .docs-nav{border-right:1px solid #d8e0e4;padding-right:1rem}.docs-nav section{margin-bottom:1.5rem}.docs-nav h2{font-size:1rem;margin:0 0 .4rem}
+    .docs-nav{border-right:1px solid #d8e0e4;padding-right:1rem}.docs-nav section{margin-bottom:1rem}.docs-nav summary{cursor:pointer}.docs-nav h2{display:inline;font-size:1rem}
     .docs-nav a{display:block;padding:.2rem 0}.docs-nav a[aria-current=page]{font-weight:700}
     .docs-content{min-width:0;max-width:900px}.docs-content img{max-width:100%;height:auto}.docs-content pre{overflow:auto;padding:1rem;background:#f2f5f6}
     .docs-content table{display:block;overflow-x:auto;border-collapse:collapse}.docs-content th,.docs-content td{border:1px solid #d8e0e4;padding:.5rem}
@@ -219,7 +222,7 @@ function buildDocumentation(outputDir) {
       </form>
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
       ${releaseNotes}
-      ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, docsDir, lang)}
+      ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, parentMatch ? documentationLink(parentMatch[2], file, docsDir, lang) : null, docsDir, lang)}
     </nav>
     <div class="docs-content">
       ${content}

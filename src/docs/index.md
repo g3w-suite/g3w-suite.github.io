@@ -18,18 +18,11 @@ Through the web interface, administrators can publish and organize QGIS projects
 ## Getting started
 
 - [Quick Start](quick-start.md)
-- [Demo](demos.md)
+- [Demo](demo.md)
+- [Overview](index.md)
+- [Concepts and architecture](introduction.md)
+- [Components](components.md)
 - [Versions and compatibility](versions.md)
-
-## Components
-
-- [G3W-ADMIN](components/g3w-admin.md)
-- [G3W-CLIENT](components/g3w-client.md)
-- [G3W-ADMIN-PROCESSING](components/g3w-admin-processing.md)
-- [G3W-SUITE-DOCKER](components/g3w-suite-docker.md)
-- [G3W-ADMIN-PORTAL](components/g3w-admin-portal.md)
-- [G3W-ADMIN-PDND](components/g3w-admin-pdnd.md)
-- [G3W-CLIENT-PLUGIN-EDITING](components/g3w-client-plugin-editing.md)
 
 ## Installation and deployment
 
@@ -43,11 +36,8 @@ Through the web interface, administrators can publish and organize QGIS projects
 - [Elasticsearch](elasticsearch.md)
 - [Two-factor authentication](twofa.md)
 
-## Manual
+## Using G3W-SUITE
 
-- [Overview](index.md)
-- [Introduction](introduction.md)
-- [Technological infrastructure](infrastructure.md)
 - [Data management](datamanagement.md)
 - [User groups and organization](user_groups_organization.md)
 - [QGIS project settings](projectsettings.md)
@@ -57,10 +47,6 @@ Through the web interface, administrators can publish and organize QGIS projects
 - [Online editing](g3wsuite_editing.md)
 - [Editing via iframe](g3wsuite_editing_iframe.md)
 - [Branding](branding.md)
-
-## Tutorial
-
-- [Demo tutorial](demo.md)
 
 <script type="application/json" data-i18n>
   {
@@ -76,6 +62,7 @@ Through the web interface, administrators can publish and organize QGIS projects
       "Branding": "Personalizzazione del marchio",
       "Cartographic client": "Client cartografico",
       "Components": "Componenti",
+      "Concepts and architecture": "Concetti e architettura",
       "Data management": "Gestione dei dati",
       "Demo tutorial": "Tutorial della demo",
       "Docker environment variables": "Variabili d'ambiente di Docker",
@@ -104,6 +91,7 @@ Through the web interface, administrators can publish and organize QGIS projects
       "Tutorial": "Tutorial",
       "Two-factor authentication": "Autenticazione a due fattori",
       "User groups and organization": "Gruppi utenti e organizzazione",
+      "Using G3W-SUITE": "Usare G3W-SUITE",
       "Versions and compatibility": "Versioni e compatibilità"
     }
   }

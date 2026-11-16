@@ -72,10 +72,20 @@ Once the editing function is activated, updating the service, the **`Tools menu`
 
 For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).
 
+## Personalize your demo
+
+**Do you want to test the online editing function more deeply?**
+
+Redefine attribute forms, aliases and editing widgets associated with the individual fields and reload the project to check the new settings.
+
+**It is advisable to consult the section on** [editing activation and configuration](g3wsuite_editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**
+
 <script type="application/json" data-i18n>
 {
   "it": {
     "**By activating the editing function it will be possible to edit the geometries and attributes of the Public Buildings layer and the related interventions.**": "**Attivando la funzione di modifica sarà possibile modificare le geometrie e gli attributi del layer Public Buildings e dei relativi interventi.**",
+    "**Do you want to test the online editing function more deeply?**": "**Vuoi approfondire la prova della funzione di modifica online?**",
+    "**It is advisable to consult the section on** [editing activation and configuration](g3wsuite_editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**": "**Si consiglia di consultare la sezione sulla** [attivazione e configurazione delle modifiche](g3wsuite_editing.md) **per l'elenco e i limiti dei singoli widget di modifica ereditati dal progetto QGIS.**",
     "**`Buildings rating`**": "**`Buildings rating`**",
     "**`Buildings`**": "**`Buildings`**",
     "**`Maintenance_works`**": "**`Maintenance_works`**",
@@ -112,9 +122,12 @@ For **further information** on the web editing function, read the [**dedicated s
     "**zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)": "**zone** (testo): modifica testo (con valori predefiniti basati su un'espressione QGIS per l'associazione all'area di lavoro intersecante)",
     "Back to Demo tutorial": "Torna al tutorial della demo",
     "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.png) (placed at the left of each rows) will open a modal window that will allow you to:": "Facendo clic sull'icona **Layer di modifica** ![Icona: modifica](/img/manual-english-icon-editing.png) (a sinistra di ogni riga) si aprirà una finestra modale che consentirà di:",
+    "Customize the demo": "Personalizzare la demo",
     "Editing on line": "Modifica online",
     "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).": "Per **ulteriori informazioni** sulla funzione di modifica sul web, consulta la [**sezione dedicata del manuale**](editing-client-tools.md).",
     "Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**": "Una volta attivata la funzione di modifica e aggiornato il servizio, nel pannello sinistro apparirà il **`menu Strumenti`**.",
+    "Personalize your demo": "Personalizza la tua demo",
+    "Redefine attribute forms, aliases and editing widgets associated with the individual fields and reload the project to check the new settings.": "Ridefinisci i moduli degli attributi, gli alias e i widget di modifica associati ai singoli campi, quindi ricarica il progetto per verificare le nuove impostazioni.",
     "Screenshot: Demo Editing Web": "Schermata: modifica online della demo",
     "Screenshot: Editing Client Start": "Schermata: avvio del client di modifica",
     "Screenshot: Editing Form2": "Schermata: modulo di modifica",

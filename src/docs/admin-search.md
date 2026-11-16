@@ -1,0 +1,203 @@
+# Search widgets
+
+[Back to Administration panel](g3wsuite_administration.md)
+
+## ![Icon: Widget](/img/manual-english-icon-widget.png) Widget setting - Search tools
+
+**Using this icon it is possible to associate a series of widgets to the layer. The basic widget allows you to define search tools that will be available in the WebGis.**
+
+### Basic settings
+
+In G3W-SUITE it is possible to create search widgets.
+
+By default, searches can be built on individual vector layers based on the fields of the table associated with the layer.
+
+**NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**
+
+See [dedicated paragraph](settings#g3w_client_search_endpoint).
+
+
+Every search widget will be saved by referring to the layer identifiers (for example the DB parameters: IP, DB name, schema, layer name).
+
+This aspect allows, once a search widget for a layer has been created, to have it available on all the projects in which the layer is present, without having to rebuild the widget from scratch each time.
+
+In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.png)
+
+![Screenshot: G3W-SUITE Administration Project Widget List](/img/manual-english-g3wsuite-administration-project-widget-list.png)
+
+By clicking on the icon, the list of already active (or activatable) widgets associated with the layer will be shown.
+
+These widgets can be **modified, deleted or disconnected** using the appropriate icons.
+
+**ATTENTION: deleting a search** will delete it from all projects in which that search is active.
+
+To **deactivate a search** from a project, simply disconnect it using the check-box on the right.
+
+To **create a new search**, click on the link **`New widget`**.
+
+In the pop-up that appears, the **`Search` type** have to be chosen.
+
+![Screenshot: G3W-SUITE Administration Project Widget Choose](/img/manual-english-g3wsuite-administration-project-widget-choose.png)
+
+In the related form we can define:
+ * **Form Title**
+   * **`Type`:** "Search"
+   * **`Name`:** name that G3W-SUITE will use to internally register the search widget.
+ * **General configuration of research and results**
+   * **`Search title`:** title that will become available in the **'Research'** panel of the WebGis interface
+   * **`Paginate results`:** option to activate pagination for the results list in order to avoid timeout problems in the case of a large number of results
+ * **Search fields settings**
+   * **`Field`:** field on which to carry out the research
+   * **`Widget`:** method of entering the value to be searched
+     * `InputBox`: manual compilation
+     * `SelectBox`: values ​​shown via drop-down menu
+     * `AutoCompleteBox`: values ​​shown through auto-complete mode
+     * `DateTimeBox`: widget to be used exclusively for date type fields. On the client, the user will define the date/time to search through the calendar/clock widget.
+   * **`Alias`:** alias assigned to the field that will appear in the search form
+   * **`Description`:** description assigned to the field
+   * **`Comparison operator`:** comparison operator (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) through which the search query will be carried out. The **IN** operator simplifies searches where a field must be associated with multiple values (OR operator)
+   * **`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.
+   * **`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.   
+
+The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.
+
+The example below shows the compilation of the form for creating a search widget with serveral options.
+![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.png)
+
+Once the form has been filled in, click on the **OK** button to save the settings.
+
+Once the settings are saved, the created widget will appear in the list of Widgets associated with the layer.
+
+The widget will already be **`connected`** and therefore **available in the WebGis interface**.
+
+![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.png)
+
+
+**IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.
+
+**This will allow you not to have to recreate the widget several times and to decide in which projects to activate the search and in which not.**
+
+
+#### Dependency
+Now it is possible to **define the dependence more or less strong** (strictly).
+
+In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.
+
+Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.
+
+
+#### Tip
+In the event that, at QGIS project level, the following editing widgets are associated with a field:
+ * Value relations
+ * Value maps
+ * Relation reference
+
+The values shown in the search tool will be those defined on the basis of the tables related via widegt.
+
+**Warning: in the case of fields with more than 100 unique values, the WMS service does not allow to obtain the complete list of values. In this case it is recommended not to use the `SelectBox` method**
+
+**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](settings#g3w_client_search_endpoint).
+
+ 
+### Multiple layers search
+
+The **Other searching layers** option allows you to extend the search carried out to other layers.
+
+If the additional layers have homologous fields (same name and type) the search will be extended to them.
+
+The results will be differentiated according to the corresponding layer.
+
+Especially useful in the case of multi geometric layers.
+
+![Screenshot: G3W-SUITE Administration Project Search Multilayers](/img/manual-english-g3wsuite-administration-project-search-multilayers.png)
+
+
+### Search based on 1:N relation data
+The option allows you to create a search based on the fields of a table (child in a 1:N relation) and obtain results relating to the parent layer of the relation.
+
+**N.B. to create searches based on fields derived from simple joins (1: 1 / N: 1) or from 1: N relation, you have to change the setting of the method used (from WMS to QGIS API).**
+See [dedicated paragraph](settings#g3w_client_search_endpoint).
+
+The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.
+
+
+![Screenshot: G3W-SUITE Administration Project Search 1 N](/img/manual-english-g3wsuite-administration-project-search-1-n.png)
+
+<script type="application/json" data-i18n>
+{
+  "it": {
+    "![Icon: Widget](/img/manual-english-icon-widget.png) Widget setting - Search tools": "![Icona: widget](/img/manual-english-icon-widget.png) Impostazioni dei widget - strumenti di ricerca",
+    "**ATTENTION: deleting a search** will delete it from all projects in which that search is active.": "**ATTENZIONE: eliminando una ricerca** la si rimuove da tutti i progetti in cui è attiva.",
+    "**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](settings#g3w_client_search_endpoint).": "**In alternativa, è possibile usare QGIS API come metodo di ricerca per superare questo limite. Consultare il** [paragrafo dedicato](settings#g3w_client_search_endpoint).",
+    "**Form Title**": "**Titolo del modulo**",
+    "**General configuration of research and results**": "**Configurazione generale della ricerca e dei risultati**",
+    "**IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.": "**IMPORTANTE:** il widget di ricerca creato sarà disponibile (scollegato) in tutti i progetti che contengono il layer a cui è stato associato.",
+    "**N.B. to create searches based on fields derived from simple joins (1: 1 / N: 1) or from 1: N relation, you have to change the setting of the method used (from WMS to QGIS API).**": "**N.B. per creare ricerche basate su campi derivati da join semplici (1:1/N:1) o da relazioni 1:N, è necessario modificare il metodo usato (da WMS a QGIS API).**",
+    "**NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**": "**NB: per creare ricerche basate su campi derivati da join semplici (1:1/N:1) o da relazioni 1:N, è necessario modificare il metodo usato (da WMS a QGIS API).**",
+    "**Search fields settings**": "**Impostazioni dei campi di ricerca**",
+    "**This will allow you not to have to recreate the widget several times and to decide in which projects to activate the search and in which not.**": "**In questo modo non sarà necessario ricreare più volte il widget e si potrà decidere in quali progetti attivare la ricerca.**",
+    "**Using this icon it is possible to associate a series of widgets to the layer. The basic widget allows you to define search tools that will be available in the WebGis.**": "**Questa icona consente di associare una serie di widget al layer. Il widget di base permette di definire strumenti di ricerca disponibili nel WebGis.**",
+    "**Warning: in the case of fields with more than 100 unique values, the WMS service does not allow to obtain the complete list of values. In this case it is recommended not to use the `SelectBox` method**": "**Attenzione: per i campi con più di 100 valori univoci, il servizio WMS non consente di ottenere l'elenco completo. In questo caso si consiglia di non usare il metodo `SelectBox`.**",
+    "**`Alias`:** alias assigned to the field that will appear in the search form": "**`Alias`:** alias assegnato al campo e visualizzato nel modulo di ricerca",
+    "**`Comparison operator`:** comparison operator (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) through which the search query will be carried out. The **IN** operator simplifies searches where a field must be associated with multiple values (OR operator)": "**`Comparison operator`:** operatore di confronto (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) usato per eseguire la ricerca. L'operatore **IN** semplifica le ricerche in cui a un campo devono essere associati più valori (operatore OR)",
+    "**`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.": "**`Dependency`:** questo parametro facoltativo consente, solo per i widget **SelectBox** o **AutoCompleteBox**, di mostrare i valori di un campo filtrati in base al valore impostato nei campi precedenti.",
+    "**`Description`:** description assigned to the field": "**`Description`:** descrizione assegnata al campo",
+    "**`Field`:** field on which to carry out the research": "**`Field`:** campo su cui eseguire la ricerca",
+    "**`Name`:** name that G3W-SUITE will use to internally register the search widget.": "**`Name`:** nome usato da G3W-SUITE per registrare internamente il widget di ricerca.",
+    "**`Paginate results`:** option to activate pagination for the results list in order to avoid timeout problems in the case of a large number of results": "**`Paginate results`:** opzione per attivare la paginazione dell'elenco dei risultati ed evitare timeout quando i risultati sono numerosi",
+    "**`Search title`:** title that will become available in the **'Research'** panel of the WebGis interface": "**`Search title`:** titolo visualizzato nel pannello **'Research'** dell'interfaccia WebGis",
+    "**`Type`:** \"Search\"": "**`Type`:** \"Search\"",
+    "**`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.": "**`Use alternative unique values`** (per il widget SelectBox): possibilità di associare un layer del progetto QGIS che fornisce l'elenco dei valori univoci da mostrare nel campo di ricerca. Il campo che riporta i valori univoci deve avere lo stesso nome del campo impostato per la ricerca. Questo accelera notevolmente il caricamento del modulo di ricerca lato utente e migliora l'usabilità dello strumento, soprattutto quando sono presenti molti record con pochi valori univoci.",
+    "**`Widget`:** method of entering the value to be searched": "**`Widget`:** modalità di inserimento del valore da cercare",
+    "Back to Administration panel": "Torna al pannello di amministrazione",
+    "Basic settings": "Impostazioni di base",
+    "Button: Add": "Pulsante: aggiungi",
+    "By clicking on the icon, the list of already active (or activatable) widgets associated with the layer will be shown.": "Facendo clic sull'icona viene mostrato l'elenco dei widget già attivi o attivabili associati al layer.",
+    "By default, searches can be built on individual vector layers based on the fields of the table associated with the layer.": "Per impostazione predefinita, è possibile creare ricerche sui singoli layer vettoriali basandosi sui campi della tabella associata al layer.",
+    "Dependency": "Dipendenza",
+    "Especially useful in the case of multi geometric layers.": "Particolarmente utile nel caso di layer con geometrie multiple.",
+    "Every search widget will be saved by referring to the layer identifiers (for example the DB parameters: IP, DB name, schema, layer name).": "Ogni widget di ricerca viene salvato facendo riferimento agli identificatori del layer (ad esempio, i parametri del DB: IP, nome del DB, schema e nome del layer).",
+    "If the additional layers have homologous fields (same name and type) the search will be extended to them.": "Se i layer aggiuntivi hanno campi omologhi (stesso nome e tipo), la ricerca verrà estesa anche a essi.",
+    "In G3W-SUITE it is possible to create search widgets.": "In G3W-SUITE è possibile creare widget di ricerca.",
+    "In case of **strictly dependence**, the values of the dependent fields will be loaded **only after** the choice of the value of the field on which the dependency depends.": "In caso di **dipendenza stretta**, i valori dei campi dipendenti verranno caricati **solo dopo** aver scelto il valore del campo da cui dipendono.",
+    "In the event that, at QGIS project level, the following editing widgets are associated with a field:": "Se a livello di progetto QGIS a un campo sono associati i seguenti widget di modifica:",
+    "In the list of layers present within the project, **identify the layer on which to create and associate the search widget** and click on the icon ![Icon: Widget](/img/manual-english-icon-widget.png)": "Nell'elenco dei layer del progetto, **individuare il layer a cui associare il widget di ricerca** e fare clic sull'icona ![Icon: Widget](/img/manual-english-icon-widget.png)",
+    "In the pop-up that appears, the **`Search` type** have to be chosen.": "Nella finestra popup visualizzata, scegliere il tipo **`Search`**.",
+    "In the related form we can define:": "Nel modulo corrispondente è possibile definire:",
+    "Multiple layers search": "Ricerca su più layer",
+    "Now it is possible to **define the dependence more or less strong** (strictly).": "Ora è possibile **definire il grado di vincolo della dipendenza** (stretta o meno).",
+    "Once the form has been filled in, click on the **OK** button to save the settings.": "Dopo aver compilato il modulo, fare clic sul pulsante **OK** per salvare le impostazioni.",
+    "Once the settings are saved, the created widget will appear in the list of Widgets associated with the layer.": "Dopo aver salvato le impostazioni, il widget creato apparirà nell'elenco dei widget associati al layer.",
+    "Otherwise it will be possible to define the values of the individual fields freely and **without a specific order**. The values available for the other fields will in any case depend on the choice made.": "Altrimenti sarà possibile impostare liberamente i valori dei singoli campi e **senza un ordine specifico**. I valori disponibili per gli altri campi dipenderanno comunque dalla scelta effettuata.",
+    "Relation reference": "Relation reference",
+    "Screenshot: Demo Search Result": "Schermata: risultato di ricerca demo",
+    "Screenshot: G3W-SUITE Administration Project Search 1 N": "Schermata: ricerca 1:N nell'amministrazione di G3W-SUITE",
+    "Screenshot: G3W-SUITE Administration Project Search Form": "Schermata: modulo di ricerca del progetto nell'amministrazione di G3W-SUITE",
+    "Screenshot: G3W-SUITE Administration Project Search Multilayers": "Schermata: ricerca su più layer nell'amministrazione di G3W-SUITE",
+    "Screenshot: G3W-SUITE Administration Project Widget Choose": "Schermata: scelta del widget del progetto nell'amministrazione di G3W-SUITE",
+    "Screenshot: G3W-SUITE Administration Project Widget List": "Schermata: elenco dei widget del progetto nell'amministrazione di G3W-SUITE",
+    "Search based on 1:N relation data": "Ricerca basata sui dati di una relazione 1:N",
+    "Search widgets": "Widget di ricerca",
+    "See [dedicated paragraph](settings#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](settings#g3w_client_search_endpoint).",
+    "The **Other searching layers** option allows you to extend the search carried out to other layers.": "L'opzione **Other searching layers** consente di estendere la ricerca ad altri layer.",
+    "The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.": "L'opzione **Relations** consente di definire la relazione da usare (se presente) per individuare il layer padre di cui mostrare i risultati.",
+    "The button ![Button: Add](/img/manual-english-button-add.png) allows you to add additional fields for the construction of the search query currently manageable through **AND/OR operators**.": "Il pulsante ![Button: Add](/img/manual-english-button-add.png) consente di aggiungere altri campi alla query di ricerca, attualmente gestibile tramite operatori **AND/OR**.",
+    "The example below shows the compilation of the form for creating a search widget with serveral options.": "L'esempio seguente mostra la compilazione del modulo per creare un widget di ricerca con diverse opzioni.",
+    "The option allows you to create a search based on the fields of a table (child in a 1:N relation) and obtain results relating to the parent layer of the relation.": "L'opzione consente di creare una ricerca basata sui campi di una tabella (figlia in una relazione 1:N) e ottenere risultati relativi al layer padre della relazione.",
+    "The results will be differentiated according to the corresponding layer.": "I risultati saranno distinti in base al layer corrispondente.",
+    "The values shown in the search tool will be those defined on the basis of the tables related via widegt.": "I valori mostrati nello strumento di ricerca saranno quelli definiti in base alle tabelle correlate tramite widget.",
+    "The widget will already be **`connected`** and therefore **available in the WebGis interface**.": "Il widget sarà già **`connected`** e quindi **disponibile nell'interfaccia WebGis**.",
+    "These widgets can be **modified, deleted or disconnected** using the appropriate icons.": "Questi widget possono essere **modificati, eliminati o scollegati** usando le icone corrispondenti.",
+    "This aspect allows, once a search widget for a layer has been created, to have it available on all the projects in which the layer is present, without having to rebuild the widget from scratch each time.": "In questo modo, una volta creato un widget di ricerca per un layer, sarà disponibile in tutti i progetti in cui è presente il layer, senza doverlo ricreare ogni volta.",
+    "Tip": "Suggerimento",
+    "To **create a new search**, click on the link **`New widget`**.": "Per **creare una nuova ricerca**, fare clic sul link **`New widget`**.",
+    "To **deactivate a search** from a project, simply disconnect it using the check-box on the right.": "Per **disattivare una ricerca** in un progetto, è sufficiente scollegarla tramite la casella di controllo a destra.",
+    "Value maps": "Value maps",
+    "Value relations": "Value relations",
+    "`AutoCompleteBox`: values ​​shown through auto-complete mode": "`AutoCompleteBox`: valori mostrati tramite completamento automatico",
+    "`DateTimeBox`: widget to be used exclusively for date type fields. On the client, the user will define the date/time to search through the calendar/clock widget.": "`DateTimeBox`: widget da usare esclusivamente per campi di tipo data. Nel client l'utente imposta la data/ora da cercare tramite il widget calendario/orologio.",
+    "`InputBox`: manual compilation": "`InputBox`: inserimento manuale",
+    "`SelectBox`: values ​​shown via drop-down menu": "`SelectBox`: valori mostrati in un menu a discesa"
+  }
+}
+</script>

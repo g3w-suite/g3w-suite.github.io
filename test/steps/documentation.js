@@ -73,6 +73,7 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.equal(italianIndex('html').attr('lang'), 'it');
   assert.equal(italianIndex('main h1').text(), 'Guida rapida');
   assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
+  assert.equal(index('nav.docs-nav section details[open]').length, 1, 'only the current navigation group must start open');
   assert.equal(index('nav.docs-nav section a').first().attr('href'), '/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().attr('href'), '/it/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().text(), 'Guida rapida');
@@ -137,6 +138,7 @@ Then('every documentation source is Markdown and has a generated page', function
   }
   const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
   assert.ok(childPage('nav.site-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
+  assert.equal(childPage('nav.docs-nav section details[open] a[href="/docs/g3wsuite_administration/"]').length, 1, 'child pages must open the parent navigation group');
   assert.equal(
     childPage('.docs-content a').filter((_, link) => childPage(link).text().startsWith('Back to')).length,
     0,
@@ -169,6 +171,22 @@ Then('every documentation source is Markdown and has a generated page', function
       `${englishPage.title}\n${englishPage.text}`,
       `${page.url}: Italian content is not translated`
     );
+  }
+
+  for (const [lang, docsPages] of [['en', pages], ['it', italianPages]]) {
+    const expected = new Set(docsPages);
+    const visited = new Set();
+    const queue = [path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']), 'index.html')];
+    for (const file of queue) {
+      if (visited.has(file)) continue;
+      visited.add(file);
+      const page = readPage(file).$;
+      page('a[href]').each((_, link) => {
+        const target = localTarget(file, page(link).attr('href'));
+        if (expected.has(target) && !visited.has(target)) queue.push(target);
+      });
+    }
+    assert.deepEqual([...expected].filter(file => !visited.has(file)), [], `${lang}: documentation pages must be reachable`);
   }
 
   const linkedPages = new Map();
