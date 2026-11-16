@@ -4,8 +4,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { basePath, languages, projectRoot, sourceDir, publishedHtml } = require('./config');
 const { marked, getHeadingList, autoTranslateMarkdown, renderMarkdownButtonLinks } = require('./markdown');
-const { extractPageTranslations, translateHtml } = require('./translations');
-const { pageBodyClass, renderBreadcrumb, renderComponent } = require('./routes');
+const { extractPageTranslations, translateHtml, renderPageAlternates } = require('./translations');
+const { renderBreadcrumb, renderComponent } = require('./routes');
 const { documentationFiles } = require('./files');
 
 function documentationLink(href, file, docsDir, lang = 'en') {
@@ -170,12 +170,15 @@ function buildDocumentation(outputDir) {
       const pagePath = lang === 'it' ? `/it${docsPath}` : docsPath;
       const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
       const pageUrls = { it: `/it${docsPath}`, en: docsPath };
-      const headerDocument = renderComponent('header', lang, componentPage, pageUrls);
-      const siteHeader = /<header\b[\s\S]*?<\/header>/i.exec(headerDocument)?.[0];
-      if (!siteHeader) throw new Error('Shared header component has no <header> element');
-      const siteFooter = renderComponent('footer', lang, componentPage, pageUrls)
-        .replace(/<\/body>\s*<\/html>\s*$/i, '');
       const ui = documentationTranslations[lang];
+      const pageHead = [
+        `<meta name="description" content="${ui.description}">`,
+        `<title>${title} - ${ui.title}</title>`,
+        renderPageAlternates(pageUrls),
+        alias ? `<link rel="canonical" href="${lang === 'it' ? '/it/docs/' : '/docs/'}">` : '',
+      ].filter(Boolean).join('\n  ');
+      const siteHeader = renderComponent('header', lang, componentPage, pageUrls, pageHead);
+      const siteFooter = renderComponent('footer', lang, componentPage, pageUrls);
       const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(content);
       if (!heading) throw new Error(`${file}: documentation page has no heading`);
       content = content.replace(heading[0], '');
@@ -189,28 +192,7 @@ function buildDocumentation(outputDir) {
             `<a href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
           ).join('')}</details>`
         : '';
-      const html = `<!doctype html>
-<html lang="${lang}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="${ui.description}">
-  <title>${title} - ${ui.title}</title>
-  <link rel="alternate" href="${pageUrls.it}" hreflang="it">
-  <link rel="alternate" href="${pageUrls.en}" hreflang="en">
-  ${alias ? `<link rel="canonical" href="${lang === 'it' ? '/it/docs/' : '/docs/'}">` : ''}
-  <link rel="stylesheet" href="/style.css">
-  <style>
-    .docs-layout{display:grid;grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:2rem;max-width:1440px;margin:2rem auto;padding:0 1.5rem}
-    .docs-nav{border-right:1px solid #d8e0e4;padding-right:1rem}.docs-nav section{margin-bottom:1rem}.docs-nav summary{cursor:pointer}.docs-nav h2{display:inline;font-size:1rem}
-    .docs-nav a{display:block;padding:.2rem 0}.docs-nav a[aria-current=page]{font-weight:700}
-    .docs-content{min-width:0;max-width:900px}.docs-content img{max-width:100%;height:auto}.docs-content pre{overflow:auto;padding:1rem;background:#f2f5f6}
-    .docs-content table{display:block;overflow-x:auto;border-collapse:collapse}.docs-content th,.docs-content td{border:1px solid #d8e0e4;padding:.5rem}
-    @media(max-width:760px){.docs-layout{grid-template-columns:1fr}.docs-nav{border-right:0;border-bottom:1px solid #d8e0e4;padding:0 0 1rem}}
-  </style>
-</head>
-<body class="${pageBodyClass(componentPage)}">
-  ${siteHeader}
+      const html = `${siteHeader}
   <main id="main-content">
   ${breadcrumb}
   <div class="page-header"><div class="container">${heading[0]}</div></div>
@@ -229,9 +211,7 @@ function buildDocumentation(outputDir) {
     </div>
   </div>
   </main>
-  ${siteFooter}
-</body>
-</html>`;
+  ${siteFooter}`;
       const targetDir = path.join(outputDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
       const target = relative === 'index.md'
         ? path.join(targetDir, 'index.html')
