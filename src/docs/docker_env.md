@@ -44,7 +44,7 @@ If you are going to use docker postgis image, it'll be set to `5432`
 The login used for the superuser account. Only works when setup a new environment.
 
 ### `G3WSUITE_ADMIN_PASSWORD`
-The password used during initial setup. Use `docker-compose-consumer.yml`, which passes this variable to the application. The `v3.11.x` default Compose file passes `G3WSUITE_ADMIN_PASS` instead; change that entry to `G3WSUITE_ADMIN_PASSWORD` before starting a new installation.
+The password used during initial setup. If `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead, correct `services.g3w-suite.environment` as shown in the [installation guide](docker.md#run). The optional Huey stack already passes `G3WSUITE_ADMIN_PASSWORD`.
 
 ## Other not required settings
 
@@ -150,7 +150,7 @@ If `true`, the startup script activates the bundled `frontend` module in the mou
     "The follow variables re for set the connection to G3W-SUITE administration database.": "Le seguenti variabili servono a configurare la connessione al database di amministrazione di G3W-SUITE.",
     "The following varaible are just set into docker-compose files:": "Le seguenti variabili sono impostate solo nei file docker-compose:",
     "The login used for the superuser account. Only works when setup a new environment.": "Credenziali di accesso per l'account superutente. Funziona solo durante la configurazione di un nuovo ambiente.",
-    "The password used during initial setup. Use `docker-compose-consumer.yml`, which passes this variable to the application. The `v3.11.x` default Compose file passes `G3WSUITE_ADMIN_PASS` instead; change that entry to `G3WSUITE_ADMIN_PASSWORD` before starting a new installation.": "Password usata durante la configurazione iniziale. Usa `docker-compose-consumer.yml`, che passa questa variabile all'applicazione. Il file Compose predefinito `v3.11.x` passa invece `G3WSUITE_ADMIN_PASS`: sostituiscila con `G3WSUITE_ADMIN_PASSWORD` prima di avviare una nuova installazione.",
+    "The password used during initial setup. If `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead, correct `services.g3w-suite.environment` as shown in the [installation guide](docker.md#run). The optional Huey stack already passes `G3WSUITE_ADMIN_PASSWORD`.": "Password usata durante la configurazione iniziale. Se `docker-compose.yml` passa invece `G3WSUITE_ADMIN_PASS`, correggi `services.g3w-suite.environment` come indicato nella [guida all?installazione](docker.md#run). Lo stack Huey facoltativo passa gi? `G3WSUITE_ADMIN_PASSWORD`.",
     "The path on which the docker permanent volume will be mounted with the application data inside.": "Percorso in cui verrà montato il volume Docker permanente contenente i dati dell'applicazione.",
     "These notes describe the Docker `v3.11.x` branch; its `.env.example` and Compose files are not interchangeable with development-branch configuration.": "Queste note riguardano il branch Docker `v3.11.x`; il suo `.env.example` e i suoi file Compose non sono intercambiabili con la configurazione del branch di sviluppo.",
     "Thi is used to compensate the python/gunicorn memory leaks.": "Serve a compensare le perdite di memoria di Python/Gunicorn.",

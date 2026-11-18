@@ -30,12 +30,8 @@ The option **`Automatically create transaction group where possible`** is automa
 #### Layers Capabilities
 
 **This submenu defines the **querable and/or searchable layers** at the WebGis service level.**
- * Check the **`Identifiable`** column if you want that the layer will be searchable on the WMS service and then in the webgis service
- * Check the **`Searchable`** column if you want that the layer will be querable on the WMS service and then in the webgis service
- 
-
-**NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**
-See [dedicated paragraph](settings.md#g3w_client_search_endpoint)
+ * Enable **`Identifiable`** to allow feature identification with the map query tools.
+ * Enable **`Searchable`** to allow the layer to be filtered by search widgets.
 
 
 ![Screenshot: Datasources](/img/manual-english-datasources.avif)
@@ -160,7 +156,6 @@ The request to delete the basic embedded project causes a warning message as thi
       "**In this section it is possible to define which `layers are exposed as WMTS services` defining the various options**": "**In questa sezione è possibile definire, tramite le diverse opzioni, quali `layer esporre come servizi WMTS`.**",
       "**In this section it is possible to define which `rasters are exposed as WCS services`**": "**In questa sezione è possibile definire quali `raster esporre come servizi WCS`.**",
       "**It is possible to publish QGIS projects that contain layers or groups of layers deriving from embedded projects.**": "**È possibile pubblicare progetti QGIS contenenti layer o gruppi di layer provenienti da progetti incorporati.**",
-      "**NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**": "**Nota: questa distinzione è possibile solo utilizzando le API QGIS, ad esempio l'endpoint Search URL.**",
       "**QGIS server**": "**QGIS Server**",
       "**Set the `service capabilities`**.": "**Imposta le `capacità del servizio`**.",
       "**Set the project title, which also becomes the `WebGIS service title`.**": "**Imposta il titolo del progetto, che diventa anche il `titolo del servizio WebGIS`.**",
@@ -172,11 +167,11 @@ The request to delete the basic embedded project causes a warning message as thi
       "Capabilities WMS - Advertised extent": "Capacità WMS - Estensione pubblicizzata",
       "Capabilities WMS - Exclude layouts": "Capacità WMS - Esclusione dei layout",
       "Capabilities WMS - General aspects": "Capacità WMS - Aspetti generali",
-      "Check the **`Identifiable`** column if you want that the layer will be searchable on the WMS service and then in the webgis service": "Selezionare la colonna **`Identificabile`** per rendere il layer ricercabile tramite il servizio WMS e quindi nel servizio WebGIS",
-      "Check the **`Searchable`** column if you want that the layer will be querable on the WMS service and then in the webgis service": "Selezionare la colonna **`Ricercabile`** per rendere il layer interrogabile tramite il servizio WMS e quindi nel servizio WebGIS",
       "Data sources": "Sorgenti dati",
       "Defining some parameters related to project properties is essential for defining:": "La definizione di alcuni parametri relativi alle proprietà del progetto è fondamentale per specificare:",
       "Embedded project": "Progetto incorporato",
+      "Enable **`Identifiable`** to allow feature identification with the map query tools.": "Abilita **`Identificabile`** per consentire l?identificazione delle entit? con gli strumenti di interrogazione della mappa.",
+      "Enable **`Searchable`** to allow the layer to be filtered by search widgets.": "Abilita **`Ricercabile`** per consentire ai widget di ricerca di filtrare il layer.",
       "Filter legend by Map content": "Filtrare la legenda in base al contenuto della mappa",
       "From the **`Project → Properties`** menu, you can access the **`Project Properties`** window and the three submenus of our interest:": "Dal menu **`Progetto → Proprietà`** è possibile aprire la finestra **`Proprietà progetto`** e le tre sottosezioni di interesse:",
       "General": "Generale",
@@ -208,7 +203,6 @@ The request to delete the basic embedded project causes a warning message as thi
       "Screenshot: Qgisservergeneralaspectswfs": "Schermata: aspetti generali WFS di QGIS Server",
       "Screenshot: Qgisserversetmapexpetent": "Schermata: impostazione dell'estensione della mappa in QGIS Server",
       "Screenshot: Qgisserversrisrestriction": "Schermata: restrizioni CRS di QGIS Server",
-      "See [dedicated paragraph](settings.md#g3w_client_search_endpoint)": "Vedere il [paragrafo dedicato](settings.md#g3w_client_search_endpoint)",
       "See also the [client metadata section](client-tools-and-toc.md#metadata).": "Vedere anche la [sezione sui metadati del client](client-tools-and-toc.md#metadata).",
       "Service capabilities": "Capacità del servizio",
       "Show features count": "Mostrare il conteggio degli elementi",

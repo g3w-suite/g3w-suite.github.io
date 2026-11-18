@@ -36,10 +36,9 @@ When('the development server starts with PORT set to another value', { timeout: 
 });
 
 Then('it serves the root page on port 8080', { timeout: 90000 }, async function () {
-  const probe = `dev-watch-${process.pid}-${Date.now()}.md`;
-  const source = path.resolve('src', 'docs', probe);
-  const outputDir = path.resolve('static', 'docs', probe.slice(0, -3));
-  const output = path.join(outputDir, 'index.html');
+  const probe = `dev-watch-${process.pid}-${Date.now()}`;
+  const source = path.resolve('src', `${probe}.md`);
+  const output = path.resolve('static', 'en', probe, 'index.html');
   const failingPage = path.resolve('src', `zz-dev-watch-failure-${process.pid}-${Date.now()}.html`);
   try {
     assert.equal(this.port, 8080);
@@ -95,6 +94,8 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     fs.rmSync(source, { force: true });
     fs.rmSync(failingPage, { force: true });
     this.server.kill();
-    fs.rmSync(outputDir, { recursive: true, force: true });
+    for (const lang of ['en', 'it']) {
+      fs.rmSync(path.resolve('static', lang, probe), { recursive: true, force: true });
+    }
   }
 });

@@ -10,9 +10,6 @@ Create search widgets in G3W-SUITE.
 
 By default, searches can be built on individual vector layers based on the fields of the table associated with the layer.
 
-**NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**
-
-See [dedicated paragraph](settings.md#g3w_client_search_endpoint).
 
 
 Every search widget will be saved by referring to the layer identifiers (for example the DB parameters: IP, DB name, schema, layer name).
@@ -111,9 +108,6 @@ Especially useful in the case of multi geometric layers.
 ### Search based on 1:N relation data
 The option allows you to create a search based on the fields of a table (child in a 1:N relation) and obtain results relating to the parent layer of the relation.
 
-**N.B. to create searches based on fields derived from simple joins (1: 1 / N: 1) or from 1: N relation, you have to change the setting of the method used (from WMS to QGIS API).**
-See [dedicated paragraph](settings.md#g3w_client_search_endpoint).
-
 The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.
 
 
@@ -127,8 +121,6 @@ The **Relations** option allows you to to define the relationship to be used (if
     "**Form Title**": "**Titolo del modulo**",
     "**General configuration of research and results**": "**Configurazione generale della ricerca e dei risultati**",
     "**IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.": "**IMPORTANTE:** il widget di ricerca creato sarà disponibile (scollegato) in tutti i progetti che contengono il layer a cui è stato associato.",
-    "**N.B. to create searches based on fields derived from simple joins (1: 1 / N: 1) or from 1: N relation, you have to change the setting of the method used (from WMS to QGIS API).**": "**N.B. per creare ricerche basate su campi derivati da join semplici (1:1/N:1) o da relazioni 1:N, è necessario modificare il metodo usato (da WMS a QGIS API).**",
-    "**NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**": "**NB: per creare ricerche basate su campi derivati da join semplici (1:1/N:1) o da relazioni 1:N, è necessario modificare il metodo usato (da WMS a QGIS API).**",
     "**Search fields settings**": "**Impostazioni dei campi di ricerca**",
     "**This will allow you not to have to recreate the widget several times and to decide in which projects to activate the search and in which not.**": "**In questo modo non sarà necessario ricreare più volte il widget e si potrà decidere in quali progetti attivare la ricerca.**",
     "**Tip:** Use `AutoCompleteBox` for fields with many distinct values, so users can type to narrow the suggestions instead of browsing a long list.": "**Suggerimento:** usa `AutoCompleteBox` per i campi con molti valori distinti, così chi cerca può digitare per restringere i suggerimenti anziché scorrere un lungo elenco.",
@@ -171,7 +163,6 @@ The **Relations** option allows you to to define the relationship to be used (if
     "Screenshot: G3W-SUITE Administration Project Widget List": "Schermata: elenco dei widget del progetto nell'amministrazione di G3W-SUITE",
     "Search based on 1:N relation data": "Ricerca basata sui dati di una relazione 1:N",
     "Search widgets": "Widget di ricerca",
-    "See [dedicated paragraph](settings.md#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](settings.md#g3w_client_search_endpoint).",
     "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **Other searching layers** option allows you to extend the search carried out to other layers.": "L'opzione **Other searching layers** consente di estendere la ricerca ad altri layer.",
     "The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.": "L'opzione **Relations** consente di definire la relazione da usare (se presente) per individuare il layer padre di cui mostrare i risultati.",

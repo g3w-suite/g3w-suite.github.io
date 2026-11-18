@@ -6,6 +6,8 @@ This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Doc
 
 [Compare supported versions and their requirements](versions.md).
 
+For technical background, see the generated DeepWiki pages for [G3W-CLIENT](https://deepwiki.com/g3w-suite/g3w-client), [G3W-ADMIN](https://deepwiki.com/g3w-suite/g3w-admin) and [G3W-SUITE-DOCKER](https://deepwiki.com/g3w-suite/g3w-suite-docker). They may describe a different revision; follow this manual for the stable release.
+
 ## Technological infrastructure
 
 The publishing system is based on a series of OS tools and software
@@ -196,6 +198,7 @@ The editing capabilities are maintained in the G3W-ADMIN and G3W-CLIENT projects
     "Editing can be enabled for selected layers and user groups. Geometry, attributes and relations can be managed in the browser, while feature locks help prevent conflicting edits by multiple users.": "La modifica può essere abilitata per layer e gruppi di utenti selezionati. Geometrie, attributi e relazioni possono essere gestiti nel browser; il blocco delle feature aiuta a prevenire modifiche in conflitto tra più utenti.",
     "Explore and work with maps": "Esplora e lavora con le mappe",
     "Extend the platform": "Estendi la piattaforma",
+    "For technical background, see the generated DeepWiki pages for [G3W-CLIENT](https://deepwiki.com/g3w-suite/g3w-client), [G3W-ADMIN](https://deepwiki.com/g3w-suite/g3w-admin) and [G3W-SUITE-DOCKER](https://deepwiki.com/g3w-suite/g3w-suite-docker). They may describe a different revision; follow this manual for the stable release.": "Per approfondire, consulta le pagine generate da DeepWiki per [G3W-CLIENT](https://deepwiki.com/g3w-suite/g3w-client), [G3W-ADMIN](https://deepwiki.com/g3w-suite/g3w-admin) e [G3W-SUITE-DOCKER](https://deepwiki.com/g3w-suite/g3w-suite-docker). Potrebbero descrivere una revisione diversa: per la versione stabile fai riferimento a questo manuale.",
     "Forward OWS request": "Inoltra la richiesta OWS",
     "Forward OWS response": "Inoltra la risposta OWS",
     "G3W-ADMIN administration interface": "Interfaccia di amministrazione G3W-ADMIN",

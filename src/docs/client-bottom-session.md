@@ -6,7 +6,7 @@ The bottom part of the left bar contains the following items:
 
 ### Add layer
 
-Through this tool the user can add custom WMS, TSM or local file layers to the WebGis service.
+Through this tool the user can add custom WMS, TMS or local file layers to the WebGIS service.
 
 #### WMS (URL)
 
@@ -29,7 +29,7 @@ The WMS layer will be added to the map and TOC after the project layer list.
 The list of WMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.
 
 #### TMS (URL)
-The user can add one or more TSM service by defining:
+The user can add one or more TMS services by defining:
  * **URL:** the TMS service URL
  * **Name:** custom name to associate with the service
  * **Projection system** to be associated
@@ -60,7 +60,7 @@ The formats currently managed are:
 For each layer you need to specify:
  * associated **Projection** system
  * **Position** (top or buttom) with respect to the other layers of the project
- * **Persistent data:** choose whether to delete the layer when the session closes
+ * **Persistent data:** keep the imported layer in this browser after reloading the page. If disabled, the layer is only available until you reload or close the page. This option does not publish the layer to other users.
  * **Label (optional):** the field to use to label the features
  * Layer **color** and **opacity**
 
@@ -113,7 +113,7 @@ The modification of the start date of the series will determine the updating of 
     "**Name:** custom name to associate with the service": "**Nome:** nome personalizzato da associare al servizio",
     "**Opacity** of the layer": "**Opacità** del layer",
     "**Pay attention: to use the Time series function for raster data, it must also be activated at the level of the G3W-ADMIN layer properties.**": "**Attenzione: per usare la funzione Serie temporali con dati raster, è necessario attivarla anche nelle proprietà del layer in G3W-ADMIN.**",
-    "**Persistent data:** choose whether to delete the layer when the session closes": "**Dati persistenti:** scegli se eliminare il layer alla chiusura della sessione",
+    "**Persistent data:** keep the imported layer in this browser after reloading the page. If disabled, the layer is only available until you reload or close the page. This option does not publish the layer to other users.": "**Persistenza:** conserva il layer importato in questo browser anche dopo aver ricaricato la pagina. Se l’opzione è disattivata, il layer resta disponibile solo fino alla ricarica o alla chiusura della pagina. Questa opzione non rende il layer disponibile agli altri utenti.",
     "**Position** (top or buttom) with respect to the other layers of the project": "**Posizione** (in alto o in basso) rispetto agli altri layer del progetto",
     "**Projection system** to be associated": "**Sistema di proiezione** da associare",
     "**URL:** the TMS service URL": "**URL:** l’URL del servizio TMS",
@@ -147,12 +147,12 @@ The modification of the start date of the series will determine the updating of 
     "The list of TMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.": "L’elenco dei servizi TMS e dei relativi layer WMS aggiunti resterà disponibile finché non verrà svuotata la cache del browser.",
     "The list of WMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.": "L’elenco dei servizi WMS e dei relativi layer aggiunti resterà disponibile finché non verrà svuotata la cache del browser.",
     "The modification of the start date of the series will determine the updating of the map with the visualization of the layer in coherence with the chosen date.": "La modifica della data iniziale della serie aggiorna la mappa, mostrando il layer in base alla data selezionata.",
-    "The user can add one or more TSM service by defining:": "L’utente può aggiungere uno o più servizi TSM specificando:",
+    "The user can add one or more TMS services by defining:": "L’utente può aggiungere uno o più servizi TMS specificando:",
     "The user can add one or more WMS service by defining:": "L’utente può aggiungere uno o più servizi WMS specificando:",
     "The user can add one or more local layer uploading it in the form.": "L’utente può aggiungere uno o più layer locali caricandoli tramite il modulo.",
     "This panel will allow you to:": "Questo pannello consente di:",
     "This version of G3W-SUITE manages the temporal aspects for both vector and raster layers but with limitations:": "Questa versione di G3W-SUITE gestisce gli aspetti temporali dei layer vettoriali e raster, con alcune limitazioni:",
-    "Through this tool the user can add custom WMS, TSM or local file layers to the WebGis service.": "Con questo strumento l’utente può aggiungere al servizio WebGIS layer WMS, TSM o provenienti da file locali.",
+    "Through this tool the user can add custom WMS, TMS or local file layers to the WebGIS service.": "Con questo strumento l’utente può aggiungere al servizio WebGIS layer WMS, TMS o provenienti da file locali.",
     "Time series": "Serie temporali",
     "WMS (URL)": "WMS (URL)",
     "You can change the map view while maintaining the current scale and extent.": "È possibile cambiare la visualizzazione della mappa mantenendo la scala e l’estensione correnti.",

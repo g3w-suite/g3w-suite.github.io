@@ -26,22 +26,16 @@ When `qes` is listed in `G3WADMIN_LOCAL_MORE_APPS`, G3W-SUITE automatically adds
 
 ## Deploy with Docker
 
-The official `docker-compose.ltr.yml` / `docker-compose.latest.yml` files in [g3w-suite-docker](https://github.com/g3w-suite/g3w-suite-docker) include an `elasticsearch` service ready to use:
+The [standard Compose file for 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml) includes Elasticsearch 8.18.1, but the service is not on the same Compose network as `g3w-suite`. Add `internal` under `services.elasticsearch.networks` in the Compose file you deploy:
 
 ```yaml
-elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.18.1
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
-    volumes:
-      - esdata:/usr/share/elasticsearch/data
-    ports:
-      - "9200:9200"
+services:
+  elasticsearch:
+    networks:
+      - internal
 ```
 
-The G3W-SUITE container reaches it through the internal Docker network at `http://elasticsearch:9200`.
+Keep the other service settings and remove the `ports` entries if only containers need access. The bundled configuration disables Elasticsearch authentication: do not publish those ports on a public interface. Once the network is shared, G3W-SUITE reaches Elasticsearch at `http://elasticsearch:9200`.
 
 ## Manual installation
 
@@ -81,7 +75,7 @@ Standard [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedo
 ``QES_INDEXING_PROJECT``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Default: `True`. Master switch that enables (or disables) the automatic indexing of QGIS projects in Elasticsearch. When set to `False` the `qes` module is loaded but does not index anything and the search API returns no results.
+Default: `True` in G3W-ADMIN. This is the global indexing switch when the optional `es_conf` module is not installed. With `es_conf`, indexing is enabled per project.
 
 ``QES_INDEXING_FIELDS``
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,7 +190,7 @@ The response is a JSON list of hits. Each hit contains:
       "Configuration": "Configurazione",
       "Default sort applied to search hits. Defaults to ascending `layer_id`:": "Ordinamento predefinito dei risultati di ricerca. Per impostazione predefinita, `layer_id` viene ordinato in modo crescente:",
       "Default: `None`. When set to a [Huey `crontab`](https://huey.readthedocs.io/) expression, the periodic task `es_project_cron_indexing` is scheduled and runs a full re-indexing on the defined schedule. Example — re-index every four hours:": "Valore predefinito: `None`. Se impostato su un'espressione [Huey `crontab`](https://huey.readthedocs.io/), pianifica l'attività periodica `es_project_cron_indexing` ed esegue una reindicizzazione completa secondo la pianificazione definita. Esempio — reindicizzazione ogni quattro ore:",
-      "Default: `True`. Master switch that enables (or disables) the automatic indexing of QGIS projects in Elasticsearch. When set to `False` the `qes` module is loaded but does not index anything and the search API returns no results.": "Valore predefinito: `True`. Interruttore generale che abilita o disabilita l'indicizzazione automatica dei progetti QGIS in Elasticsearch. Se impostato su `False`, il modulo `qes` viene caricato ma non indicizza nulla e l'API di ricerca non restituisce risultati.",
+      "Default: `True` in G3W-ADMIN. This is the global indexing switch when the optional `es_conf` module is not installed. With `es_conf`, indexing is enabled per project.": "Valore predefinito: `True` in G3W-ADMIN. ? l?interruttore globale di indicizzazione quando non ? installato il modulo facoltativo `es_conf`. Con `es_conf`, l?indicizzazione si abilita per progetto.",
       "Default: `{}` (index every attribute). Optional dictionary, keyed by QGIS layer id, that restricts the fields that will be indexed. Example:": "Valore predefinito: `{}` (indicizza tutti gli attributi). Dizionario facoltativo, indicizzato per ID del layer QGIS, che limita i campi da indicizzare. Esempio:",
       "Deploy with Docker": "Distribuzione con Docker",
       "Elasticsearch integration": "Integrazione Elasticsearch",
@@ -204,6 +198,7 @@ The response is a JSON list of hits. Each hit contains:
       "For installation instructions refer to the official documentation: <https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html>.": "Per le istruzioni di installazione, consultare la documentazione ufficiale: <https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html>.",
       "If you are not using the provided Docker compose stack, install and start an Elasticsearch 8.x instance on a host reachable by G3W-ADMIN, then configure the connection as described below.": "Se non si usa lo stack Docker Compose fornito, installare e avviare un'istanza Elasticsearch 8.x su un host raggiungibile da G3W-ADMIN, quindi configurare la connessione come descritto di seguito.",
       "Indexing projects": "Indicizzazione dei progetti",
+      "Keep the other service settings and remove the `ports` entries if only containers need access. The bundled configuration disables Elasticsearch authentication: do not publish those ports on a public interface. Once the network is shared, G3W-SUITE reaches Elasticsearch at `http://elasticsearch:9200`.": "Mantieni le altre impostazioni del servizio e rimuovi le voci `ports` se devono accedervi solo i container. La configurazione fornita disattiva l?autenticazione di Elasticsearch: non pubblicare quelle porte su un?interfaccia pubblica. Una volta condivisa la rete, G3W-SUITE raggiunge Elasticsearch all?indirizzo `http://elasticsearch:9200`.",
       "Layers that are not listed in `QES_INDEXING_FIELDS` are still fully indexed; layers that are listed are limited to the declared field names.": "I layer non elencati in `QES_INDEXING_FIELDS` vengono comunque indicizzati completamente; per quelli elencati l'indicizzazione è limitata ai nomi di campo dichiarati.",
       "Manual installation": "Installazione manuale",
       "One-shot indexing from the command line": "Indicizzazione singola dalla riga di comando",
@@ -216,13 +211,12 @@ The response is a JSON list of hits. Each hit contains:
       "Set `QES_INDEXING_CRON_SCHEDULE` (see above) to run a full re-indexing on a regular basis through the Huey consumer.": "Impostare `QES_INDEXING_CRON_SCHEDULE` (vedere sopra) per eseguire regolarmente una reindicizzazione completa tramite il consumer Huey.",
       "Standard [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedocs.io/) connection dictionary. The `default` alias is the one used by the QES indexer. Use `http_auth` to provide credentials when X-Pack security is enabled.": "Dizionario standard delle connessioni di [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedocs.io/). L'alias `default` è quello utilizzato dall'indicizzatore QES. Usare `http_auth` per fornire le credenziali quando è abilitata la sicurezza X-Pack.",
       "Starting from version 3.10, G3W-SUITE ships with the **`qes`** module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into [Elasticsearch](https://www.elastic.co/elasticsearch) to provide fast, full-text search across the published WebGIS projects.": "Dalla versione 3.10, G3W-SUITE include il modulo **`qes`** (QGIS Elasticsearch), un componente facoltativo che indicizza gli elementi dei layer QGIS in [Elasticsearch](https://www.elastic.co/elasticsearch) per offrire ricerche full-text rapide nei progetti WebGIS pubblicati.",
-      "The G3W-SUITE container reaches it through the internal Docker network at `http://elasticsearch:9200`.": "Il container G3W-SUITE lo raggiunge tramite la rete Docker interna all'indirizzo `http://elasticsearch:9200`.",
+      "The [standard Compose file for 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml) includes Elasticsearch 8.18.1, but the service is not on the same Compose network as `g3w-suite`. Add `internal` under `services.elasticsearch.networks` in the Compose file you deploy:": "Il [file Compose standard per la 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml) include Elasticsearch 8.18.1, ma il servizio non ? sulla stessa rete Compose di `g3w-suite`. Aggiungi `internal` in `services.elasticsearch.networks` nel file Compose che usi:",
       "The `qes_indexer` management command performs a full indexing of one or more QGIS projects for every user that has permission to access them:": "Il comando di gestione `qes_indexer` esegue un'indicizzazione completa di uno o più progetti QGIS per ogni utente autorizzato ad accedervi:",
       "The endpoint honours the standard G3W-SUITE project permissions: anonymous users only see results from projects shared with the anonymous user, authenticated users see the subset of features that match their grants.": "L'endpoint rispetta i normali permessi di progetto di G3W-SUITE: gli utenti anonimi visualizzano solo i risultati dei progetti condivisi con l'utente anonimo, mentre gli utenti autenticati vedono gli elementi corrispondenti alle autorizzazioni assegnate.",
       "The following Python packages (already declared in the g3w-admin `requirements.txt`):": "I seguenti pacchetti Python (già dichiarati in `requirements.txt` di g3w-admin):",
       "The module exposes a per-project search endpoint backed by `QesSearchAPIView`. Issue a `GET` request to the project search URL with a `q` query parameter, for example:": "Il modulo espone un endpoint di ricerca per progetto basato su `QesSearchAPIView`. Inviare una richiesta `GET` all'URL di ricerca del progetto con un parametro di query `q`, ad esempio:",
       "The module is part of the [g3w-admin](https://github.com/g3w-suite/g3w-admin) codebase (`g3w-admin/qes/`) and is activated by adding `qes` to the `G3WADMIN_LOCAL_MORE_APPS` list in `local_settings.py`.": "Il modulo fa parte del codice di [g3w-admin](https://github.com/g3w-suite/g3w-admin) (`g3w-admin/qes/`) e si attiva aggiungendo `qes` all'elenco `G3WADMIN_LOCAL_MORE_APPS` in `local_settings.py`.",
-      "The official `docker-compose.ltr.yml` / `docker-compose.latest.yml` files in [g3w-suite-docker](https://github.com/g3w-suite/g3w-suite-docker) include an `elasticsearch` service ready to use:": "I file ufficiali `docker-compose.ltr.yml` / `docker-compose.latest.yml` in [g3w-suite-docker](https://github.com/g3w-suite/g3w-suite-docker) includono un servizio `elasticsearch` pronto all'uso:",
       "The response is a JSON list of hits. Each hit contains:": "La risposta è un elenco JSON di risultati. Ciascun risultato contiene:",
       "This requires the Huey consumer to be running (see the *consumer* Docker compose recipe in [docker.md](docker.md)).": "È necessario che il consumer Huey sia in esecuzione (vedere la configurazione Docker Compose del *consumer* in [docker.md](docker.md)).",
       "Troubleshooting": "Risoluzione dei problemi",

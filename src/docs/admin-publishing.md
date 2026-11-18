@@ -9,7 +9,7 @@ Publish new QGIS projects:
 In the dedicated form we could define the characteristic of the project being published:
 
 #### QGIS project
-**`QGIS file`***: load the QGIS cartographic project to be published (.qgz or .qgs file)
+**`QGIS file`**: upload the `.qgz` or `.qgs` project. Uploading the project is not a substitute for making its data sources available to QGIS Server. If a file-based layer is missing after publishing or updating, verify the server-side paths against the [data management guide](datamanagement.md).
 
 #### ACL Users
 **Management of access and/or modification permissions**
@@ -246,7 +246,7 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
     "**`Map themes list initial status`**: it is possible to define whether the list of themes (views) possibly associated with the project is collapsed or expanded when the WebGis service is started": "**`Map themes list initial status`**: definire se l'elenco dei temi (viste) eventualmente associati al progetto debba essere compresso o espanso all'avvio del servizio WebGis",
     "**`Max feature to get for query`***: maximum number of features returned in single or multiple query mode (default: 5; recommended value: 50)": "**`Max feature to get for query`***: numero massimo di elementi restituiti in modalità di interrogazione singola o multipla (valore predefinito: 5; valore consigliato: 50)",
     "**`Public title`:** title of the WebGis service, it will appear at the font end level and in the header of the client.": "**`Public title`:** titolo del servizio WebGis, visibile nel front end e nell'intestazione del client.",
-    "**`QGIS file`***: load the QGIS cartographic project to be published (.qgz or .qgs file)": "**`QGIS file`***: caricare il progetto cartografico QGIS da pubblicare (file .qgz o .qgs)",
+    "**`QGIS file`**: upload the `.qgz` or `.qgs` project. Uploading the project is not a substitute for making its data sources available to QGIS Server. If a file-based layer is missing after publishing or updating, verify the server-side paths against the [data management guide](datamanagement.md).": "**`QGIS file`**: carica il progetto `.qgz` o `.qgs`. Il caricamento del progetto non sostituisce la configurazione delle sorgenti dati per QGIS Server. Se dopo la pubblicazione o l’aggiornamento manca un layer basato su file, verifica i percorsi sul server seguendo la [guida alla gestione dei dati](datamanagement.md).",
     "**`Query by bbox control mode`***: single or multiple": "**`Query by bbox control mode`***: singola o multipla",
     "**`Query by polygon control mode`***: single or multiple": "**`Query by polygon control mode`***: singola o multipla",
     "**`Query control mode`***: single or multiple": "**`Query control mode`***: singola o multipla",
