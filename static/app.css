@@ -92,7 +92,7 @@
 
 /* ── 3. Reset minimo ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem); -webkit-text-size-adjust: 100%; }
 body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 1rem;
@@ -1428,7 +1428,7 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
 .docs-nav h2 { display: inline; font-size: 1rem; }
 .docs-nav a { display: block; padding: .2rem 0; }
 .docs-nav section > details > a { padding-left: 1rem; }
-.docs-nav__subgroup { margin: .15rem 0 .4rem; border-left: 1px solid var(--color-border); }
+.docs-nav__subgroup { margin: .15rem 0 .4rem; border-left: 1px solid transparent; }
 .docs-nav__subgroup[open] { border-left-color: var(--color-primary); }
 .docs-nav__subgroup > summary { cursor: pointer; }
 .docs-nav__subgroup > summary > a { display: inline; padding: 0; }
@@ -1439,6 +1439,7 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
 }
 .docs-nav a.docs-nav__page { padding-left: 2rem; }
 .docs-content { min-width: 0; max-width: 900px; }
+.docs-heading-link { color: inherit; }
 .docs-content pre { overflow: auto; padding: 1rem; background: #f2f5f6; }
 .docs-content table { display: block; overflow-x: auto; }
 .docs-content th, .docs-content td { border: 1px solid #d8e0e4; padding: .5rem; }

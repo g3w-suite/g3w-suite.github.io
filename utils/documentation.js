@@ -51,6 +51,14 @@ function addDocumentationHeadingAliases(html, sourceHeadings, localizedHeadings)
   });
 }
 
+function linkDocumentationHeadings(html) {
+  return html.replace(/<h([1-6])\b([^>]*)>([\s\S]*?)<\/h\1>/g, (heading, level, attributes, content) => {
+    const id = /\bid="([^"]+)"/.exec(attributes)?.[1];
+    if (!id || /<a\b/i.test(content)) return heading;
+    return `<h${level}${attributes}><a class="docs-heading-link" href="#${id}">${content}</a></h${level}>`;
+  });
+}
+
 function documentationNavigation(index, currentPage, parentPage, docsDir, lang) {
   const groups = [];
   let group;
@@ -220,6 +228,7 @@ function buildDocumentation(outputDir, diagrams) {
       }
       let content = renderMarkdownButtonLinks(marked.parse(sourceBody));
       if (lang === 'it') content = addDocumentationHeadingAliases(content, sourceHeadings, getHeadingList());
+      content = linkDocumentationHeadings(content);
       content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
         `${name}="${documentationLink(href, file, docsDir, lang)}"`
       );
