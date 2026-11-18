@@ -100,7 +100,10 @@ Then('every documentation source is Markdown and has a generated page', function
     for (const [document, name] of [[page, file], [italianPage, italianFile]]) {
       assert.equal(document('head style').length, 0, `${name}: styles must use the shared stylesheet`);
       assert.equal(document('head link[rel="stylesheet"][href="/app.css"]').length, 1, `${name}: shared stylesheet is missing`);
-      document('main > .page-header h1, .docs-content h1, .docs-content h2, .docs-content h3, .docs-content h4, .docs-content h5, .docs-content h6').each((_, heading) => {
+      const pageTitle = document('main > .page-header h1');
+      assert.ok(pageTitle.attr('id'), `${name}: page title must remain an anchor target`);
+      assert.equal(pageTitle.find('a').length, 0, `${name}: page title must not be a link`);
+      document('.docs-content h1, .docs-content h2, .docs-content h3, .docs-content h4, .docs-content h5, .docs-content h6').each((_, heading) => {
         const title = document(heading);
         const id = title.attr('id');
         assert.ok(id, `${name}: documentation heading must have an ID`);

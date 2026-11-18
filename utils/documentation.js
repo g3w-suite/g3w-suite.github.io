@@ -153,7 +153,6 @@ function buildDocumentation(outputDir, diagrams) {
       }
       let content = renderMarkdownButtonLinks(marked.parse(sourceBody));
       if (lang === 'it') content = addDocumentationHeadingAliases(content, sourceHeadings, getHeadingList());
-      content = linkDocumentationHeadings(content);
       content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
         `${name}="${documentationLink(href, file, docsDir, lang)}"`
       );
@@ -172,7 +171,7 @@ function buildDocumentation(outputDir, diagrams) {
       const siteFooter = renderComponent('footer', lang, componentPage, pageUrls);
       const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(content);
       if (!heading) throw new Error(`${file}: documentation page has no heading`);
-      content = content.replace(heading[0], '');
+      content = linkDocumentationHeadings(content.replace(heading[0], ''));
       const breadcrumbItems = [];
       if (relative !== 'index.md') breadcrumbItems.push({ href: lang === 'it' ? '/it/docs/' : '/docs/', label: ui.breadcrumb });
       breadcrumbItems.push({ label: heading[0].replace(/<[^>]*>/g, '').trim() });
