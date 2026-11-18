@@ -10,7 +10,7 @@ const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, newsSlug, rea
 Then('the governing board and team are listed separately and news credits link to the board', function () {
   const groups = {
     'governing-board': ['francesco-boccacci', 'leonardo-lami', 'matteo-tosi', 'walter-lorenzetti'],
-    team: ['alessandro-pasotti', 'andrea-antonello', 'tudor-barascu'],
+    team: ['alessandro-pasotti', 'andrea-antonello', 'matteo-ghetta', 'tudor-barascu'],
   };
   const news = fs.readdirSync(path.resolve('src', 'news')).filter(file => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(file));
   for (const lang of languages) {
@@ -41,7 +41,7 @@ Then('the governing board and team are listed separately and news credits link t
 });
 
 Then('member profile headers show the portrait, name, introduction and personal links', function () {
-  const members = ['alessandro-pasotti', 'andrea-antonello', 'francesco-boccacci', 'leonardo-lami', 'matteo-tosi', 'tudor-barascu', 'walter-lorenzetti'];
+  const members = ['alessandro-pasotti', 'andrea-antonello', 'francesco-boccacci', 'leonardo-lami', 'matteo-ghetta', 'matteo-tosi', 'tudor-barascu', 'walter-lorenzetti'];
   for (const lang of languages) {
     for (const slug of members) {
       const $ = readPage(path.join(staticDir, lang, 'about', slug, 'index.html')).$;

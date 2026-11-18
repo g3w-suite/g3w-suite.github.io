@@ -20,7 +20,7 @@ The contents of the header differ for the public user and for the logged in user
    * WebGis service title
  * **Alerts:** the Messages associated with the individual WebGis services and displayed when the services are started can be recalled by the user at any time. The message will be displayed on a resizable modal and can be consulted in overlay while continuing to interact with the various elements of the cartographic client.
  * **Credits:** references to the G3W-SUITE project
- * **Sign** in (far cambiare in Log in)
+ * **Sign in menu**
    * **Sign in:** login in for registered users
    * **Embed map:** URL with the references to the extension currently displayed
    * **Change map:** switch WebGIS services while keeping the map extent and scale
@@ -58,8 +58,6 @@ The upper section containing:
  * **Search:** with the search tools defined in the Administration session, as well as a free **Query Builder** like the one present in QGIS
  * **Editing layers:** open editing session
  * **Theme:** a session to define which theme (among those defined in the QGIS project) to activate; the user (not anonymous) can create and save his own themes to recall them as needed
-
-![Screenshot: G3wclient Header Anonymus](/img/manual-english-g3wclient-header-anonymus.avif)
 
 The middle section containing the list of project layers organized into any groups as in a QGIS project.
 
@@ -112,8 +110,8 @@ These features are described in a dedicated paragraph below.
     "**Print:** printing tool based on the layouts defined on the QGIS project": "**Stampa:** strumento di stampa basato sui layout definiti nel progetto QGIS",
     "**Public user (Anonymous user)**": "**Utente pubblico (utente anonimo)**",
     "**Search:** with the search tools defined in the Administration session, as well as a free **Query Builder** like the one present in QGIS": "**Ricerca:** include gli strumenti di ricerca definiti nella sezione Amministrazione e un **Query Builder** libero, simile a quello disponibile in QGIS",
+    "**Sign in menu**": "**Menu di accesso**",
     "**Sign in:** login in for registered users": "**Accedi:** accesso per gli utenti registrati",
-    "**Sign** in (far cambiare in Log in)": "**Accedi**",
     "**Theme:** a session to define which theme (among those defined in the QGIS project) to activate; the user (not anonymous) can create and save his own themes to recall them as needed": "**Tema:** sezione per scegliere quale tema attivare tra quelli definiti nel progetto QGIS; l’utente non anonimo può creare e salvare i propri temi per richiamarli quando necessario",
     "**User name:** the name of the logged user": "**Nome utente:** il nome dell’utente autenticato",
     "Back to Cartographic client": "Torna al client cartografico",

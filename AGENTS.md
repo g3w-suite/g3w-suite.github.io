@@ -114,6 +114,13 @@ Edit shared navigation and common head tags in `src/_header.html`, and the foote
 - When adding or renaming pages directly in `src/` or in `src/news/`, verify generated links in both languages and hreflang tags.
 - Keep content/language changes local to the correct folder and preserve existing URL conventions.
 
+### G3W-SUITE manual sources and screenshots
+
+- Verify product behavior in the matching release tag or branch of the upstream [G3W-CLIENT](https://github.com/g3w-suite/g3w-client), [G3W-ADMIN](https://github.com/g3w-suite/g3w-admin), and [G3W-SUITE-DOCKER](https://github.com/g3w-suite/g3w-suite-docker) repositories.
+- Use the AI-generated DeepWiki pages for [G3W-CLIENT](https://deepwiki.com/g3w-suite/g3w-client), [G3W-ADMIN](https://deepwiki.com/g3w-suite/g3w-admin), and [G3W-SUITE-DOCKER](https://deepwiki.com/g3w-suite/g3w-suite-docker), or the DeepWiki MCP server when available, to find relevant code. Verify claims against the release source before documenting them.
+- Capture real screenshots from the version covered by the page: [3.11](https://v311.g3wsuite.it), [3.10](https://v310.g3wsuite.it), or the corresponding versioned demo. Use [the development instance](https://dev.g3wsuite.it) only for the latest development UI. Check that the selected screen and UI labels match the instructions, crop to the relevant controls, and exclude credentials and private data. If a screen is unavailable, do not mock it or substitute another version's UI.
+- When replacing a screenshot, preserve the workflow step and the context the reader needs: show where the controls are, fill in representative demo values, and capture the resulting state when the text describes what happens after an action. Keep the existing image if a new capture omits that information.
+
 ## Key Files
 
 - `AGENTS.md`

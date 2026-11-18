@@ -121,6 +121,7 @@ Check out the public roadmap, join the community discussions or sponsor G3W-SUIT
 
 - [![Alessandro Pasotti](https://github.com/elpaso.png?size=240) Alessandro Pasotti (@elpaso)](/en/about/alessandro-pasotti/)
 - [![Andrea Antonello](https://github.com/moovida.png?size=240) Andrea Antonello (@moovida)](/en/about/andrea-antonello/)
+- [![Matteo Ghetta](https://github.com/ghtmtt.png?size=240) Matteo Ghetta (@ghtmtt)](/en/about/matteo-ghetta/)
 - [![Tudor Barascu](https://github.com/tudorbarascu.png?size=240) Tudor Barascu (@tudorbarascu)](/en/about/tudor-barascu/)
 
 <script type="application/json" data-i18n>
