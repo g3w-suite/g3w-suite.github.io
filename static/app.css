@@ -1483,6 +1483,8 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   grid-area: navigation;
   position: sticky;
   top: calc(var(--header-h) + 1rem);
+  max-height: calc(100dvh - var(--header-h) - 2rem);
+  overflow-y: auto;
   align-self: start;
   border-right: 1px solid #d8e0e4;
   padding-right: 1rem;
@@ -1509,6 +1511,8 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   }
   .docs-nav {
     position: static;
+    max-height: none;
+    overflow-y: visible;
     border-right: 0;
     border-top: 1px solid #d8e0e4;
     padding: 1rem 0 0;

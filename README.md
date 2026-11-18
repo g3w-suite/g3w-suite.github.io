@@ -21,7 +21,7 @@ The manual is maintained in English Markdown in `src/docs/`, with translations i
 
 The breadcrumb bar includes a link to edit each page's source on GitHub, except on the site homepage.
 
-On desktop, the manual navigation is sticky below the header, without an internal scrollbar or height limit. The layout is as tall as its tallest column, so the page scroll reaches all navigation links. On screens up to 760px wide, navigation follows the page content without sticky positioning.
+On desktop, the manual navigation is sticky below the header, with an internal scrollbar only when it exceeds the available viewport height. On screens up to 760px wide, navigation follows the page content without sticky positioning or an internal scrollbar.
 
 Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/about/` and `/en/about/`, and member pages live under the same `about/` route. Component descriptions are collected at `/en/docs/components-of-g3w-suite/` and `/it/docs/components-of-g3w-suite/`. The news index is `/it/news/` or `/en/news/`, and release notes are published under `/it/news/v<version>/` and `/en/news/v<version>/`. Their source files use the `YYYY-MM-DD-changelog-vX.Y.md` pattern, which also generates the version buttons at the top of the documentation homepage. The shared homepage is `src/index.md`; `src/_redirect.html` generates language-selection redirects. Use localized URLs in links; the build derives hreflang alternates and language-switcher targets from each page path. External URLs are unchanged. The local server redirects old `.html` URLs to the directory form.
 
