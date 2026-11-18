@@ -2,8 +2,8 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { sourceDir } = require('./config');
-const { extractPageTranslations, translateHtml, renderLanguageBlocks } = require('./translations');
+const { sourceDir, languages, languageName, docsRoot } = require('./config');
+const { pageCatalog, translate, translateHtml, renderLanguageBlocks } = require('./translations');
 
 function outputPage(page) {
   let htmlPage = page.replace(/\.md$/, '.html');
@@ -20,18 +20,25 @@ function languagePageUrl(page, lang) {
   return `/${lang}/${route}${route ? '/' : ''}`;
 }
 
+function renderLanguageLinks(pageUrls, currentLanguage) {
+  return [...languages].sort().map(lang =>
+    `<li><a href="${pageUrls[lang]}" lang="${lang}" hreflang="${lang}"${lang === currentLanguage ? ' aria-current="true"' : ''}>${languageName(lang)}</a></li>`
+  ).join('');
+}
+
 function pageBodyClass(page) {
   const route = outputPage(page).split(path.sep).join('/').replace(/(^|\/)index\.html$/, '');
   const slug = route.split('/').filter(Boolean).join('-').toLowerCase().replace(/[^a-z0-9-]/g, '-');
   return `page-${slug || 'home'}`;
 }
 
-function renderBreadcrumb(lang, items, sourcePage) {
-  const label = lang === 'it' ? 'Percorso di navigazione' : 'Breadcrumb';
-  const editLabel = lang === 'it' ? 'Modifica' : 'Edit';
+function renderBreadcrumb(lang, items, sourcePage, entries) {
+  const translations = pageCatalog(lang, entries, '@breadcrumb');
+  const label = translate('Breadcrumb', lang, translations);
+  const editLabel = translate('Edit', lang, translations);
   const sourcePath = sourcePage.split(path.sep).map(encodeURIComponent).join('/');
   const sourceUrl = `https://github.com/g3w-suite/g3w-suite.github.io/edit/vanilla/src/${sourcePath}`;
-  const links = [{ href: `/${lang}/`, label: 'Home' }, ...items];
+  const links = [{ href: `/${lang}/`, label: translate('Home', lang, translations) }, ...items];
   return `<nav class="site-breadcrumb" aria-label="${label}"><div class="container"><ol>${links.map(({ href, label: text }, index) =>
     index === links.length - 1
       ? `<li aria-current="page">${text}</li>`
@@ -39,12 +46,12 @@ function renderBreadcrumb(lang, items, sourcePage) {
   ).join('')}</ol><a class="site-edit-link" href="${sourceUrl}">${editLabel}</a></div></nav>`;
 }
 
-function renderComponent(component, lang, page, pageUrls, pageHead = '') {
+function renderComponent(component, lang, page, pageUrls, entries, pageHead = '') {
   const values = {
-    itPage: pageUrls.it,
-    enPage: pageUrls.en,
+    currentLanguage: languageName(lang),
+    languageLinks: renderLanguageLinks(pageUrls, lang),
     langRoot: `/${lang}/`,
-    documentationUrl: lang === 'it' ? '/it/docs/' : '/docs/',
+    documentationUrl: `${docsRoot(lang)}/`,
     siteRoot: '/',
     lang,
     pageClass: pageBodyClass(page),
@@ -53,14 +60,11 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   const name = `_${component}.html`;
   let output;
   try {
-    const componentTemplate = extractPageTranslations(
-      fs.readFileSync(path.join(sourceDir, name), 'utf8').trim(),
-      `src/${name}`
-    );
+    const template = fs.readFileSync(path.join(sourceDir, name), 'utf8').trim();
     output = translateHtml(
-      renderLanguageBlocks(componentTemplate.html, lang),
+      renderLanguageBlocks(template, lang),
       lang,
-      componentTemplate.translations
+      pageCatalog(lang, entries, name)
     );
   } catch (e) {
     e.message = `src/${name}: ${e.message}`;
@@ -84,9 +88,7 @@ function renderComponent(component, lang, page, pageUrls, pageHead = '') {
   output = output.replace(/<a\b([^>]*?)\sdata-nav-key="([^"]+)"([^>]*)>/g, (_, before, key, after) =>
     `<a${before}${after}${key === active ? ' aria-current="page"' : ''}>`
   );
-  return output.replace(/<a\b([^>]*?)\sdata-lang-key="([^"]+)"([^>]*)>/g, (_, before, key, after) =>
-    `<a${before}${after}${key === lang ? ' aria-current="true"' : ''}>`
-  );
+  return output;
 }
 
-module.exports = { outputPage, languagePageUrl, pageBodyClass, renderBreadcrumb, renderComponent };
+module.exports = { outputPage, languagePageUrl, renderLanguageLinks, pageBodyClass, renderBreadcrumb, renderComponent };

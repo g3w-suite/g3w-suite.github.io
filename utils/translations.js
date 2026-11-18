@@ -1,10 +1,39 @@
 'use strict';
 
-const { languages } = require('./config');
+const fs = require('node:fs');
+const path = require('node:path');
+const { parse: parseYaml } = require('yaml');
+const { catalogDir, docsRoot, languages } = require('./config');
+
+function catalog(lang) {
+  if (lang === 'en') return {};
+  const file = path.join(catalogDir, `${lang}.json`);
+  const entries = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const isMap = value => value && typeof value === 'object' && !Array.isArray(value);
+  const validEntries = value => isMap(value) && Object.values(value).every(text => typeof text === 'string');
+  if (!isMap(entries) || !Object.values(entries).every(validEntries)) {
+    throw new Error(`Invalid translation catalog: ${file}`);
+  }
+  return entries;
+}
+
+function pageCatalog(lang, entries, source) {
+  return { [lang]: entries[source.split(path.sep).join('/')] || {} };
+}
+
+function localizeSiteUrl(url, lang) {
+  return url.replace(/^\/?(?:en\/)?docs\//, `${docsRoot(lang)}/`)
+    .replace(/^\/?en\//, `/${lang}/`);
+}
+
+function localizeSiteLinks(html, lang) {
+  return html.replace(/(\bhref=["'])(\/(?:docs|en)\/[^"']*)/g, (_, before, url) =>
+    before + localizeSiteUrl(url, lang));
+}
 
 function renderLanguageBlocks(html, lang) {
   const output = html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
-    target === lang ? content : ''
+    target === (lang === 'it' ? 'it' : 'en') ? content : ''
   );
   const bad = /\{\{(?:#(?:it|en)|\/(?:it|en))\}\}/.exec(output);
   if (bad) throw new Error(`Unclosed language block ${bad[0]}`);
@@ -22,7 +51,7 @@ function translate(source, lang, pageTranslations = {}) {
   const trailing = /\s*$/.exec(source)[0];
   const text = source.slice(leading.length, source.length - trailing.length);
   const key = text.replace(/&amp;/g, '&');
-  const translated = pageTranslations[lang]?.[key] ?? (lang === 'en' ? key : undefined);
+  const translated = pageTranslations[lang]?.[key] ?? (lang === 'it' ? undefined : key);
   if (typeof translated !== 'string') throw new Error(`Missing Italian translation: ${text}`);
   const escaped = translated.replace(/&(?!#\d+;|#x[\da-f]+;|[a-z][\da-z]+;)|[<>"']/gi, char => ({
     '&': '&amp;',
@@ -42,48 +71,25 @@ function translateHtml(html, lang, pageTranslations = {}) {
   return output;
 }
 
-function extractPageTranslations(html, file) {
-  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/g)];
-  if (blocks.length > 1) throw new Error(`${file} must contain at most one data-i18n block`);
-  if (!blocks.length) return { html, translations: {} };
-
-  let translations;
-  try {
-    translations = JSON.parse(blocks[0][1]);
-  } catch (error) {
-    throw new Error(`${file} has invalid data-i18n JSON: ${error.message}`);
-  }
-  if (!translations || typeof translations !== 'object' || Array.isArray(translations)) {
-    throw new Error(`${file} data-i18n must be an object keyed by language`);
-  }
-  for (const [lang, entries] of Object.entries(translations)) {
-    if (!languages.includes(lang) || !entries || typeof entries !== 'object' || Array.isArray(entries) ||
-      Object.values(entries).some(value => typeof value !== 'string')) {
-      throw new Error(`${file} has invalid ${lang} translations in data-i18n`);
-    }
-  }
-  return { html: html.replace(blocks[0][0], ''), translations };
-}
-
 function extractPageMetadata(html, file) {
-  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n-meta>([\s\S]*?)<\/script>/g)];
-  if (blocks.length > 1) throw new Error(`${file} must contain at most one data-i18n-meta block`);
-  if (!blocks.length) return { html, metadata: null };
+  if (!/^---[ \t]*\r?\n/.test(html)) return { html, metadata: null };
+  const block = /^---[ \t]*\r?\n([\s\S]*?)^---[ \t]*(?:\r?\n|$)(?:[ \t]*\r?\n)?/m.exec(html);
+  if (!block) throw new Error(`${file} has unclosed YAML front matter`);
 
   let metadata;
   try {
-    metadata = JSON.parse(blocks[0][1]);
+    metadata = parseYaml(block[1], { maxAliasCount: 0 });
   } catch (error) {
-    throw new Error(`${file} has invalid data-i18n-meta JSON: ${error.message}`);
+    throw new Error(`${file} has invalid YAML front matter: ${error.message}`);
   }
   const allowedFields = ['title', 'description', 'ogTitle', 'ogDescription', 'ogType'];
   if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata) ||
     !Object.keys(metadata).length || Object.keys(metadata).some(key => !allowedFields.includes(key)) ||
     Object.entries(metadata).some(([key, value]) => typeof value !== 'string' || !value.trim() ||
       key === 'ogType' && !/^[a-z][a-z\d.-]*$/i.test(value))) {
-    throw new Error(`${file} data-i18n-meta has invalid metadata fields`);
+    throw new Error(`${file} front matter has invalid metadata fields`);
   }
-  return { html: html.replace(blocks[0][0], ''), metadata };
+  return { html: html.slice(block[0].length), metadata };
 }
 
 function renderPageMetadata(metadata, lang, translations) {
@@ -107,4 +113,4 @@ function renderPageAlternates(pageUrls) {
   ).join('\n');
 }
 
-module.exports = { renderLanguageBlocks, translate, translateHtml, extractPageTranslations, extractPageMetadata, renderPageMetadata, renderPageAlternates };
+module.exports = { catalog, pageCatalog, localizeSiteUrl, localizeSiteLinks, renderLanguageBlocks, translate, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates };

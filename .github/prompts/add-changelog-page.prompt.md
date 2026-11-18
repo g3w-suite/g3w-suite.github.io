@@ -14,9 +14,9 @@ Crea un articolo News con le note di rilascio di G3W-Suite versione **$ARGUMENTS
 2. **Crea `src/news/YYYY-MM-DD-changelog-v3.X.md`** (usa la data di rilascio e sostituisci X con la versione fornita):
    - Scrivi in Markdown: il primo H1 e il paragrafo successivo diventano titolo e intro della pagina; usa Markdown per titoli, paragrafi ed elenchi
    - Mantieni HTML solo per layout o media che Markdown non può esprimere (per esempio schede sponsor, video e CTA)
-   - Usa la pagina inglese come testo di base; aggiungi le traduzioni italiane in un blocco JSON `data-i18n` in fondo al file, usando ogni riga Markdown inglese completa come chiave esatta; per il testo Markdown non serve `{{t '...'}}`
+   - Usa la pagina inglese come testo di base; aggiungi le traduzioni italiane in `i18n/it.json` sotto il percorso del file relativo a `src/`, mantenendo il prefisso con la data. Usa ogni riga Markdown inglese completa come chiave esatta; per il testo Markdown non serve `{{t '...'}}`
    - Usa `{{t '...'}}` solo per testo inline come attributi e testi alternativi delle immagini
-   - Definisci il titolo in un blocco `data-i18n-meta` in fondo alla pagina; aggiungi la traduzione italiana corrispondente al blocco `data-i18n`
+   - Definisci `title` nel front matter YAML all'inizio della pagina, tra due righe `---`; aggiungi la traduzione italiana alla stessa voce di `i18n/it.json`
    - Non definire `doctype`, `html`, `head`, `body` o `main`: il build genera lo scheletro automaticamente
    - Non inserire tag `rel="alternate"`: il build genera automaticamente gli URL hreflang dal percorso della pagina
    - Usa `{{#it}}...{{/it}}` o `{{#en}}...{{/en}}` solo per differenze di contenuto o markup non gestibili con le traduzioni

@@ -1,3 +1,8 @@
+---
+title: Support G3W-SUITE - Sponsors and partners
+description: Support G3W-SUITE and discover the organizations that have funded its development.
+---
+
 # Support G3W-SUITE
 
 **Open-source software grows when the people who rely on it invest in it together.**
@@ -70,47 +75,3 @@ These examples show organizations using G3W-SUITE; use of the platform does not 
 - [![Gran Paradiso National Park](/img/site-pngp.avif)](https://sit.parco.gran-paradiso.g3wsuite.it)
 - [![Suez](/img/site-suez.avif)](https://www.suez.com)
 - [![Planetek Italia](/img/site-planetek-logo.avif)](https://www.planetek.it)
-
-<script type="application/json" data-i18n>
-  {
-    "it": {
-      "**Open-source software grows when the people who rely on it invest in it together.**": "**Il software open source cresce quando chi lo utilizza investe insieme nel suo futuro.**",
-      "City of Palermo": "Comune di Palermo",
-      "City of Trento": "Comune di Trento",
-      "Contact us": "Contattaci",
-      "Contributions to code, documentation and translations make the project more accessible to everyone.": "I contributi al codice, alla documentazione e alle traduzioni rendono il progetto più accessibile a tutti.",
-      "Develop in the open": "Sviluppare in modo aperto",
-      "FVG Landscape Plan": "Piano Paesaggistico Regionale FVG",
-      "Gis3W is an official Mergin Maps partner and provides support for field data collection workflows based on QGIS.": "Gis3W è partner ufficiale di Mergin Maps e supporta i flussi di raccolta dati sul campo basati su QGIS.",
-      "Gran Paradiso National Park": "Parco Nazionale Gran Paradiso",
-      "Join the community": "Partecipa alla community",
-      "Maintain the platform": "Mantenere la piattaforma",
-      "Meet our sponsors": "Scopri gli sponsor",
-      "Mergin Maps partnership": "Partnership con Mergin Maps",
-      "Metropolitan Area of Bari": "Area Vasta Metropoli Terra di Bari",
-      "Metropolitan City of Rome": "Città Metropolitana Roma Capitale",
-      "Organizations using G3W-SUITE": "Organizzazioni che utilizzano G3W-SUITE",
-      "Our sponsors": "I nostri sponsor",
-      "Public organizations, businesses and individuals help G3W-SUITE evolve through funding, development and shared expertise. Their support benefits everyone who uses the project.": "Enti pubblici, aziende e persone aiutano G3W-SUITE a crescere con finanziamenti, sviluppo e competenze condivise. Il loro sostegno va a beneficio di chiunque utilizzi il progetto.",
-      "Read about the Mergin Maps partnership": "Scopri la partnership con Mergin Maps",
-      "Share knowledge": "Condividere conoscenze",
-      "Sponsorship helps turn practical needs into improvements shared with the wider G3W-SUITE community.": "Le sponsorizzazioni aiutano a trasformare esigenze concrete in miglioramenti condivisi con tutta la community di G3W-SUITE.",
-      "Support G3W-SUITE": "Sostieni G3W-SUITE",
-      "Support G3W-SUITE - Sponsors and partners": "Sostieni G3W-SUITE - Sponsor e partner",
-      "Support G3W-SUITE and discover the organizations that have funded its development.": "Sostieni G3W-SUITE e scopri le organizzazioni che ne hanno finanziato lo sviluppo.",
-      "Support the project": "Sostieni il progetto",
-      "Supporting ongoing work helps keep the WebGIS platform useful alongside a changing QGIS ecosystem.": "Sostenere il lavoro continuativo aiuta la piattaforma WebGIS a rimanere utile mentre l'ecosistema QGIS evolve.",
-      "These examples show organizations using G3W-SUITE; use of the platform does not necessarily mean sponsorship.": "Questi sono esempi di organizzazioni che usano G3W-SUITE; l'utilizzo della piattaforma non implica necessariamente una sponsorizzazione.",
-      "These organizations and projects have supported G3W-SUITE over the years. Explore their profiles and the releases they helped make possible.": "Queste organizzazioni e questi progetti hanno sostenuto G3W-SUITE nel corso degli anni. Scopri le loro schede e le versioni che hanno contribuito a realizzare.",
-      "Whether you want to fund an improvement, contribute to the project or explore a partnership, we would be glad to hear from you. Gis3W also offers consulting, technical support and custom development for organizations using G3W-SUITE.": "Se vuoi finanziare un miglioramento, contribuire al progetto o avviare una partnership, saremo lieti di conoscerti. Gis3W offre anche consulenza, assistenza tecnica e sviluppo personalizzato alle organizzazioni che usano G3W-SUITE.",
-      "Why support matters": "Perché il tuo sostegno è importante",
-      "Work with us": "Collabora con noi"
-    }
-  }
-</script>
-<script type="application/json" data-i18n-meta>
-  {
-    "title": "Support G3W-SUITE - Sponsors and partners",
-    "description": "Support G3W-SUITE and discover the organizations that have funded its development."
-  }
-</script>

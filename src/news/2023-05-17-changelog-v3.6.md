@@ -1,3 +1,7 @@
+---
+title: Changelog 3.6 - G3W-Suite
+---
+
 # Changelog G3W-Suite 3.6
 
 Release date: **17 May 2023**
@@ -205,32 +209,3 @@ It is now possible to create animations based on multiple temporal layers both r
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
-
-<script type="application/json" data-i18n>
-  {
-    "it": {
-      "**Happy mapping!**": "**Buon lavoro con le mappe!**",
-      "**We hope you enjoy this great work!**": "**Speriamo che questo lavoro vi piaccia!**",
-      "Analysis tool": "Strumento di analisi",
-      "Cartographic Client": "Client cartografico",
-      "Changelog 3.6 - G3W-Suite": "Changelog 3.6 - G3W-Suite",
-      "Feature: Default values": "Funzionalità: valori predefiniti",
-      "For complete details, see the": "Per il dettaglio completo consulta il",
-      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on. Among the **main funder of this version** we remember:": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web. Tra i **principali finanziatori di questa versione** ricordiamo:",
-      "General": "Generale",
-      "Quick Start": "Guida rapida",
-      "Release date: **17 May 2023**": "Data di rilascio: **17 maggio 2023**",
-      "Sponsor and funder": "Sponsor e finanziatori",
-      "Take advantage of all the news related to the preparation of QGIS projects with the new LTR version": "Sfrutta tutte le novità della nuova versione LTR nella preparazione dei progetti QGIS.",
-      "Try the current demo": "Prova la demo attuale",
-      "We remember in particular:": "In particolare:",
-      "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs"
-    }
-  }
-</script>
-
-<script type="application/json" data-i18n-meta>
-  {
-    "title": "Changelog 3.6 - G3W-Suite"
-  }
-</script>

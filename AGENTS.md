@@ -6,8 +6,8 @@ Static multilingual marketing/documentation website for G3W-Suite. `build/server
 
 ## Verified Current State
 
-- `npm run build` generates the publishable site and bilingual Markdown documentation in `static/`; English docs use `/docs/` and Italian docs use `/it/docs/`. `npm run dev` serves the same folder and rebuilds when files in `src/` change.
-- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`. Italian translations live in each page or component's `data-i18n` JSON block, placed at the file end or immediately before `</body>`; omit empty language maps. Site and Markdown images share the flat `static/img/` directory. English uses the source strings directly.
+- `npm run build` generates the publishable site and localized Markdown documentation in `static/`; English docs use `/docs/` and other manuals use `/<language>/docs/`. `npm run dev` serves the same folder and rebuilds when files in `src/` or `i18n/` change.
+- Shared page templates and components are directly in `src/`; tracked site assets are in `static/`. All catalogs in `i18n/` group translations by page or component path relative to `src/`, with `/` separators. Shared generated labels go in `@breadcrumb` and `@documentation`. Site and Markdown images share the flat `static/img/` directory. English uses the source strings directly.
 
 ## Run
 
@@ -36,6 +36,7 @@ build/
 |- utils/
    |- files.js
    |- routes.js
+i18n/                   # Translation catalogs
 src/
 |- index.md             # Shared homepage template, published as it/ and en/
 |- _redirect.html       # Root redirect emitted as static/index.html
@@ -50,7 +51,7 @@ static/
 |- it/, en/, docs/        # Generated publishing output; ignored by Git
 ```
 
-`src/index.md` is the shared homepage template. Site pages, news articles and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` generates the root redirect to Italian. `build/` contains the site generator, server and build utilities.
+`src/index.md` is the shared homepage template. Site pages, news articles and documentation pages are Markdown compiled by JavaScript; use HTML for custom layout and media. `src/_redirect.html` redirects to the best supported browser language, with English as the fallback. `build/` contains the site generator, server and build utilities.
 
 ## Key Conventions
 
@@ -61,35 +62,46 @@ static/
 - The build wraps Markdown page content in `<main id="main-content">`; do not add a `<main>` wrapper to Markdown sources.
 - Every generated page gets a route-based `page-*` class on `<body>`, shared by its Italian and English versions.
 - The build derives hreflang alternates and language-switcher links from each page path; do not hardcode alternate links.
-- Markdown content can be translated without `{{t '...'}}` by adding the exact full line of text to that page's `data-i18n` block; include inline Markdown such as `**bold**` in the key and translate the whole line, never a partial substring. Markdown link labels can also use their exact `data-i18n` key without the helper. Use `{{t '...'}}` for image alt text, attributes, and other inline text. Keep keys alphabetically sorted.
-- Declare every page title, optional description, and Open Graph title/description in a trailing `data-i18n-meta` JSON block; the build inserts them into `<head>`, and their Italian strings must also exist in the page's `data-i18n` block. `ogType` is copied as-is.
-- Site pages in `src/` and news articles in `src/news/` are Markdown; use Markdown for content and images. News article filenames begin with their publication date (`YYYY-MM-DD-`), and `src/news/index.md` lists them newest first. Release notes use `YYYY-MM-DD-changelog-vX.Y.md`; the documentation homepage generates its version buttons from these filenames. In site page sources, HTML is limited to translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings; the build adds the `<main>` wrapper and generates other layout markup through JavaScript.
+- Markdown content can be translated without `{{t '...'}}` by adding the exact full line to the catalog; include inline Markdown such as `**bold**` in the key and translate the whole line, never a partial substring. Markdown link labels can also use their exact catalog key without the helper. Use `{{t '...'}}` for image alt text, attributes, and other inline text. Keep keys alphabetically sorted.
+- Declare site page `title` and optional `description`, `ogTitle`, `ogDescription`, and `ogType` in YAML front matter at the top of the Markdown file. The build inserts them into `<head>`. Put their translations in the catalogs. `ogType` is copied as-is.
+- Site pages in `src/` and news articles in `src/news/` are Markdown; use Markdown for content and images. News article filenames begin with their publication date (`YYYY-MM-DD-`), and `src/news/index.md` lists them newest first. Release notes use `YYYY-MM-DD-changelog-vX.Y.md`; the documentation homepage generates its version buttons from these filenames. In site page sources, HTML is limited to `<iframe>` and `<span id="...">` anchors inside headings; the build adds the `<main>` wrapper and generates other layout markup through JavaScript.
 - Avoid HTML wrappers around Markdown used only for styling; target generated sections with the page body class and section position.
 - Keep separate paragraphs inside Markdown list items using blank lines and indented continuation paragraphs; the renderer preserves this indentation.
 - The first `#` heading in a non-homepage Markdown page gets a `.page-header` wrapper automatically. Do not write that wrapper manually unless the page needs a custom header.
 - In site Markdown, each `##`–`######` heading starts a section; lower-level headings nest inside the previous section, while a heading at the same or higher level closes the previous section(s). The build adds section and container wrappers; `#` remains the page title. Prefer headings over standalone `---` section delimiters, which remain supported for existing custom layouts. Use the page's body class and section position for variant styling, and keep IDs as inline anchors when links target them.
 - In Markdown links, use `/en/<page>/` for internal pages; the build changes that language segment to the current language. For other URLs, mark only the segment that changes between languages, not the entire URL.
-- In `src/docs/`, keep English as the source text and add exact Italian line translations to each page's `data-i18n` block. The manual compiler publishes matching routes under `/docs/` and `/it/docs/`, and local documentation links follow the current language.
+- In `src/docs/`, keep English as the source text and add exact Italian line translations under the corresponding `docs/...` key in `i18n/it.json`. Local documentation links follow the current language.
 - Use `{{#it}}...{{/it}}` and `{{#en}}...{{/en}}` only for genuine differences in content or markup.
 - `src/_redirect.html` is the root redirect; do not replace it with page content.
 
 ## Page Source Pattern
 
-Site page files are Markdown fragments compiled by JavaScript. Use Markdown for content and images; source HTML is limited to translation scripts, `<iframe>`, and `<span id="...">` anchors inside headings. The build wraps content in `<main id="main-content">` and injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
+Site page files are Markdown fragments compiled by JavaScript. Use Markdown for content and images; source HTML is limited to `<iframe>` and `<span id="...">` anchors inside headings. The build wraps content in `<main id="main-content">` and injects the shared header and footer; do not write document-level tags or header/footer includes in page sources.
 
 ```markdown
+---
+title: Page title
+---
+
 # Page title
 
 Markdown page content
+```
 
-<script type="application/json" data-i18n>
-  { "it": { "Markdown page content": "Contenuto della pagina" } }
-</script>
+For `example.md`, the corresponding `i18n/it.json` entry is:
+
+```json
+{
+  "example.md": {
+    "Markdown page content": "Contenuto della pagina",
+    "Page title": "Titolo della pagina"
+  }
+}
 ```
 
 ## Critical Pitfall
 
-`_header.html` provides the doctype, language, head and opening body, including common charset, viewport and stylesheet tags; the build injects it and passes page metadata and generated hreflang links. `_footer.html` closes the document and is injected after page content and local JSON scripts. Declare titles, descriptions and page-specific Open Graph metadata in `data-i18n-meta`.
+`_header.html` provides the doctype, language, head and opening body, including common charset, viewport and stylesheet tags; the build injects it and passes page metadata and generated hreflang links. `_footer.html` closes the document and is injected after page content.
 
 Edit shared navigation and common head tags in `src/_header.html`, and the footer in `src/_footer.html`. The build inserts both components automatically for every page template.
 

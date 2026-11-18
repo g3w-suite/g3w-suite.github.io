@@ -284,11 +284,24 @@ time { color: var(--color-muted); font-size: .9rem; }
 [aria-expanded="true"] .icon--caret { transform: rotate(180deg); }
 
 /* Lang switcher */
-.lang-switcher {
-  display: flex;
-  gap: .3rem;
+.lang-switcher dialog {
+  margin: auto;
+  padding: 1.25rem;
+  max-width: min(28rem, calc(100vw - 2rem));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-dark);
 }
-.lang-switcher a {
+.lang-switcher dialog::backdrop { background: rgb(0 0 0 / 50%); }
+.lang-switcher ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: .5rem;
+  margin: 1rem 0;
+  list-style: none;
+}
+.lang-switcher a,
+.lang-switcher button {
   display: inline-block;
   padding: .25rem .5rem;
   font-size: .8rem;
@@ -296,8 +309,12 @@ time { color: var(--color-muted); font-size: .9rem; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-dark);
+  background: var(--color-white);
+  cursor: pointer;
   transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
+.lang-switcher ul a { display: block; }
+.lang-switcher form { text-align: end; }
 .lang-switcher a[aria-current="true"],
 .lang-switcher a:hover,
 .lang-switcher a:focus {
@@ -1399,7 +1416,6 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   .nav-list { flex-direction: column; align-items: flex-start; width: 100%; gap: 0; }
   .drop-menu { position: static; box-shadow: none; border: none; padding: 0 0 0 1rem; display: none; }
   .nav-item--has-dropdown.is-open > .drop-menu { display: block; }
-  .lang-switcher { flex-direction: row; }
 }
 
 @media (max-width: 768px) {

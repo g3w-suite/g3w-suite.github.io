@@ -53,8 +53,23 @@ document.addEventListener('click', () => {
     });
 });
 
+const languageDialog = document.querySelector('#language-dialog');
+const languageButton = document.querySelector('[aria-controls="language-dialog"]');
+if (languageButton && languageDialog) {
+  languageButton.addEventListener('click', () => {
+    languageDialog.showModal();
+    languageButton.setAttribute('aria-expanded', 'true');
+  });
+  languageDialog.addEventListener('close', () => languageButton.setAttribute('aria-expanded', 'false'));
+}
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
+    if (languageDialog?.open) {
+      e.preventDefault();
+      languageDialog.close();
+      return;
+    }
     document.querySelectorAll('.nav-item--has-dropdown.is-open')
       .forEach(el => {
         el.classList.remove('is-open');
@@ -140,7 +155,7 @@ if (docsSearch) {
     }
 
     searchResults.hidden = false;
-    searchResults.textContent = 'Searching...';
+    searchResults.textContent = docsSearch.dataset.searching;
     try {
       if (!searchIndex) {
         const response = await fetch(docsSearch.dataset.indexUrl);
@@ -159,7 +174,7 @@ if (docsSearch) {
       }).filter(Boolean).sort((a, b) => b.score - a.score);
 
       if (!matches.length) {
-        searchResults.textContent = 'No results found.';
+        searchResults.textContent = docsSearch.dataset.empty;
         return;
       }
 
@@ -179,12 +194,12 @@ if (docsSearch) {
 
       const summary = document.createElement('span');
       summary.className = 'sr-only';
-      summary.textContent = `${matches.length} search results`;
+      summary.textContent = `${docsSearch.dataset.results}: ${matches.length}`;
       searchResults.replaceChildren(summary, list);
     } catch (error) {
       searchIndex = null;
       console.error('Documentation search failed:', error);
-      searchResults.textContent = 'Search is unavailable. Please try again.';
+      searchResults.textContent = docsSearch.dataset.error;
     }
   });
 }

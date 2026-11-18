@@ -20,26 +20,3 @@ G3W-ADMIN v3.11.4 ships client v4.1.5. The development branch changes independen
 | **3.3** | 3.16 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.3.x/) | [3.3](/en/news/v3.3/) |
 | **3.2** | 3.16 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.2.x/index.html) | [3.2](/en/news/v3.2/) |
 | **3.1** | 3.10 LTR | {{t 'Integrated'}} | 3.6 | 2.2 | {{t 'No longer supported'}} | [ENG](https://g3w-suite.readthedocs.io/en/v.3.1.x/) | [3.1](/en/news/v3.1/) |
-
-<script type="application/json" data-i18n>
-  {
-    "it": {
-      "Branch": "Branch",
-      "Branch compatibility": "Compatibilità dei branch",
-      "Bug fixes": "Correzione bug",
-      "Compare supported branches and their QGIS, Python and Django requirements. Older branches are listed for reference.": "Confronta i branch supportati e i requisiti di QGIS, Python e Django. I branch precedenti sono riportati come riferimento.",
-      "Django": "Django",
-      "Documentation": "Documentazione",
-      "G3W-ADMIN v3.11.4 ships client v4.1.5. The development branch changes independently; its QGIS and Python versions should be checked against the specific development checkout.": "G3W-ADMIN v3.11.4 include il client v4.1.5. Il branch di sviluppo evolve indipendentemente: verifica le versioni di QGIS e Python nella specifica copia di sviluppo.",
-      "In development": "In sviluppo",
-      "Integrated": "Integrata",
-      "No longer supported": "Non più supportato",
-      "Python": "Python",
-      "QGIS": "QGIS",
-      "QGIS API": "API QGIS",
-      "Release notes": "Note di rilascio",
-      "Status": "Stato",
-      "Versions and compatibility": "Versioni e compatibilità"
-    }
-  }
-</script>

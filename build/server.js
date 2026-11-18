@@ -3,7 +3,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
-const { staticDir, sourceDir, port, mimeTypes } = require('../utils/config');
+const { staticDir, sourceDir, catalogDir, port, mimeTypes } = require('../utils/config');
 const { runBuild } = require('./build');
 const devMode = process.argv.includes('--dev');
 const buildOnly = process.argv.includes('--build');
@@ -14,13 +14,16 @@ else if (devMode) runBuild(root, false);
 
 if (devMode) {
   let rebuildTimer;
-  const watcher = fs.watch(sourceDir, { recursive: true }, () => {
+  const rebuild = () => {
     clearTimeout(rebuildTimer);
     rebuildTimer = setTimeout(() => {
       if (runBuild(root, false)) console.log('Sito aggiornato.');
     }, 100);
-  });
-  watcher.on('error', error => console.error(`Source watcher failed: ${error.message}`));
+  };
+  for (const dir of [sourceDir, catalogDir]) {
+    fs.watch(dir, { recursive: true }, rebuild)
+      .on('error', error => console.error(`Watcher failed for ${dir}: ${error.message}`));
+  }
 }
 
 if (!buildOnly) {

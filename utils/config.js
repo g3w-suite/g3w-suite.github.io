@@ -4,7 +4,13 @@ const path = require('node:path');
 const projectRoot = path.resolve(__dirname, '..');
 const staticDir = path.join(projectRoot, 'static');
 const sourceDir = path.join(projectRoot, 'src');
-const languages = ['it', 'en'];
+const catalogDir = path.join(projectRoot, 'i18n');
+// The client uses "se" internally for Swedish; the web language tag is "sv".
+const languages = ['it', 'en', 'bg', 'de', 'es', 'fi', 'fr', 'pl', 'pt', 'ro', 'sv', 'uk'];
+const docsRoot = lang => lang === 'en' ? '/docs' : `/${lang}/docs`;
+function languageName(lang) {
+  return new Intl.DisplayNames([lang], { type: 'language' }).of(lang);
+}
 const port = 8080;
 const basePath = (process.env.SITE_BASE_PATH || '').replace(/\/$/, '');
 if (basePath && !/^\/[a-zA-Z0-9._/-]+$/.test(basePath)) {
@@ -37,4 +43,4 @@ const mimeTypes = {
   '.json': 'application/json',
 };
 
-module.exports = { projectRoot, staticDir, sourceDir, languages, port, basePath, publishedHtml, mimeTypes };
+module.exports = { projectRoot, staticDir, sourceDir, catalogDir, languages, languageName, docsRoot, port, basePath, publishedHtml, mimeTypes };

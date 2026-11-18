@@ -8,7 +8,7 @@ Feature: Generated site pages
 
   Scenario: Links between languages
     Given the HTML pages in the language folders
-    Then every page links consistently to the Italian and English versions
+    Then every page links consistently to the published languages
 
   Scenario: Navigation accessibility
     Given the HTML pages in the language folders
@@ -34,5 +34,5 @@ Feature: Generated site pages
   Scenario: Generated images have alternative text
     Then every generated image has non-empty alternative text
 
-  Scenario: The root page redirects to Italian
-    Then the root page redirects to the Italian version
+  Scenario: The root page chooses a supported browser language
+    Then the root page redirects to the best available version

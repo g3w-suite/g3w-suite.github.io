@@ -3,9 +3,11 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { runInNewContext } = require('node:vm');
 const { Given, Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageBodyClass, readPage, localTarget, checkPages } = require('../support/site');
+const { languages: publishedLanguages, docsRoot } = require('../../utils/config');
 
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
@@ -157,11 +159,13 @@ Then('every generated image has non-empty alternative text', function () {
     `generated images with missing alt text: ${count} images across ${missing.length} pages\n${missing.join('\n')}`
   );
 });
-Then('every page links consistently to the Italian and English versions', function () {
+Then('every page links consistently to the published languages', function () {
   checkPages(this.pages, ({ $, file, lang }, expect) => {
-    expect($('head link[rel="alternate"][hreflang]').length === 2, 'expected two hreflang alternates');
+    expect($('head link[rel="alternate"][hreflang]').length === publishedLanguages.length, 'expected an alternate for each published language');
     expect($('.lang-switcher').length === 1, 'expected one language switcher');
-    for (const targetLang of languages) {
+    expect($('.lang-switcher > button[aria-haspopup="dialog"][aria-controls="language-dialog"]').length === 1, 'expected a language dialog trigger');
+    expect($('.lang-switcher dialog#language-dialog:not([open])').length === 1, 'expected a closed language dialog');
+    for (const targetLang of publishedLanguages) {
       const alternate = $(`head link[rel="alternate"][hreflang="${targetLang}"]`);
       const switchLink = $(`.lang-switcher a[hreflang="${targetLang}"][lang="${targetLang}"]`);
       expect(alternate.length === 1, `expected one ${targetLang} alternate`);
@@ -184,6 +188,21 @@ Then('every page links consistently to the Italian and English versions', functi
       }
     }
   });
+  for (const lang of publishedLanguages.filter(code => !languages.includes(code))) {
+    for (const [localizedRoute, englishRoute] of [
+      [`/${lang}/about/`, '/en/about/'],
+      [`${docsRoot(lang)}/quick-start/`, '/docs/quick-start/'],
+    ]) {
+      const readRoute = url => readPage(path.join(staticDir, url, 'index.html')).$;
+      const $ = readRoute(localizedRoute);
+      assert.equal($('html').attr('lang'), lang);
+      assert.notEqual($('main h1').first().text(), readRoute(englishRoute)('main h1').first().text(), localizedRoute);
+      assert.equal($(`link[rel="alternate"][hreflang="en"]`).attr('href'), englishRoute);
+      assert.equal($(`.lang-switcher a[hreflang="${lang}"][aria-current="true"]`).attr('href'), localizedRoute);
+    }
+    const index = JSON.parse(fs.readFileSync(path.join(staticDir, docsRoot(lang), 'search-index.json'), 'utf8'));
+    assert.ok(index.some(entry => entry.url === `${docsRoot(lang)}/quick-start/`));
+  }
 });
 Then('the navigation controls retain their accessibility attributes', function () {
   checkPages(this.pages, ({ $, lang, file }, expect) => {
@@ -275,20 +294,35 @@ Then('YouTube videos do not load before consent', function () {
   });
   assert.ok(videoCount > 0, 'expected generated YouTube video placeholders');
 });
-Then('the root page redirects to the Italian version', function () {
+Then('the root page redirects to the best available version', function () {
   const file = path.join(staticDir, 'index.html');
   const { $ } = readPage(file);
-  const target = path.join(staticDir, 'it', 'index.html');
-  const refresh = $('meta[http-equiv]').filter((_, element) => $(element).attr('http-equiv').toLowerCase() === 'refresh');
-  const match = /^\s*0\s*;\s*url\s*=\s*(.+?)\s*$/i.exec(refresh.attr('content') || '');
-  assert.equal(refresh.length, 1, 'expected one redirect');
-  assert.equal(localTarget(file, match && match[1]), target, 'redirect must target the Italian homepage');
-  assert.ok($('a[href]').toArray().some(element => localTarget(file, $(element).attr('href')) === target), 'fallback link must target the Italian homepage');
+  const links = $('a[hreflang]').toArray().map(element => ({
+    href: $(element).attr('href'),
+    hreflang: $(element).attr('hreflang'),
+  }));
+  assert.deepEqual(links.map(link => link.hreflang).sort(), [...publishedLanguages].sort());
+  for (const { href, hreflang } of links) {
+    assert.equal(localTarget(file, href), path.join(staticDir, hreflang, 'index.html'));
+  }
+  const cases = [[['zz', 'it-CH', 'en'], 'it'], [['en-GB', 'it'], 'en'], [['zz'], 'en'], [[], 'en']];
+  for (const code of publishedLanguages) cases.push([[`${code}-XX`, 'en'], code]);
+  for (const [preferences, lang] of cases) {
+    let redirected;
+    runInNewContext($('script').text(), {
+      document: { querySelectorAll: () => links },
+      navigator: { languages: preferences },
+      location: { search: '?example=1', hash: '#people', replace: url => { redirected = url; } },
+    });
+    assert.equal(redirected, `/${lang}/?example=1#people`);
+  }
   assert.equal($('body').attr('class'), 'page-redirect', 'root redirect must have an identifying body class');
   assert.equal($('main').length, 0, 'the root page must remain a redirect');
 });
 Then('every internal link and asset resolves without HTML extensions', function () {
-  const pages = [readPage(path.join(staticDir, 'index.html')), ...this.pages];
+  const localized = publishedLanguages.filter(lang => !languages.includes(lang))
+    .flatMap(lang => htmlFiles(path.join(staticDir, lang))).map(readPage);
+  const pages = [readPage(path.join(staticDir, 'index.html')), ...this.pages, ...localized];
   const cache = new Map(pages.map(page => [page.file, page.$]));
   checkPages(pages, ({ $, file }, expect) => {
     $('[href], [src]').each((_, element) => {

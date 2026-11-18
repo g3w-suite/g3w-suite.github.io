@@ -6,6 +6,7 @@ const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, newsSlug, readPage } = require('../support/site');
+const { extractPageMetadata } = require('../../utils/translations');
 
 Then('the governing board and team are listed separately and news credits link to the board', function () {
   const groups = {
@@ -145,7 +146,8 @@ Then('both languages are generated from shared page templates', function () {
     '2026-11-16-new-website.md',
     'index.md',
   ]);
-  const newsIndexSource = fs.readFileSync(path.join(sourceDir, 'news', 'index.md'), 'utf8').split('<script')[0];
+  const newsIndexFile = path.join(sourceDir, 'news', 'index.md');
+  const { html: newsIndexSource } = extractPageMetadata(fs.readFileSync(newsIndexFile, 'utf8'), newsIndexFile);
   const listedArticles = [...newsIndexSource.matchAll(/\]\(\/en\/news\/([^/]+)\/\)/g)].map(([, slug]) => slug);
   assert.deepEqual(
     listedArticles.slice().sort(),
@@ -356,14 +358,9 @@ Then('site page sources contain only the allowed HTML elements', function () {
   assert.ok(!fs.existsSync(path.join(sourceDir, 'sponsors.md')), 'sponsors page must live under sponsors/');
   for (const page of pages) {
     const file = path.join(sourceDir, page);
-    const source = fs.readFileSync(file, 'utf8');
+    const { html: source } = extractPageMetadata(fs.readFileSync(file, 'utf8'), file);
     assert.equal((source.match(/<main\b[^>]*>/gi) || []).length, 0, `${file}: main element is injected by the build`);
-    for (const [opening] of source.matchAll(/<script\b[^>]*>/gi)) {
-      assert.match(opening, /^<script type="application\/json" data-i18n(?:-meta)?>$/i, `${file}: only translation scripts are allowed`);
-    }
-
     const markdown = source
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
       .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '')
       .replace(/^(#{1,6}\s.*)$/gm, heading => heading.replace(/<span id="[^"]+"><\/span>/g, ''));
     assert.doesNotMatch(markdown, /<\/?[a-z][^>]*>/i, `${file}: use Markdown instead of other HTML elements`);

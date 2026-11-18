@@ -54,17 +54,6 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.ok(sources.every(file => file.endsWith('.md')), 'documentation sources must use Markdown');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'images')), 'documentation images must be stored outside src/docs');
   assert.equal(pages.length, sources.length, 'each documentation source must have one English route');
-  for (const file of sources) {
-    const source = fs.readFileSync(file, 'utf8');
-    const block = /<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/.exec(source);
-    assert.ok(block, `${file}: Italian translations are missing`);
-    let translations;
-    assert.doesNotThrow(() => { translations = JSON.parse(block[1]); }, `${file}: translation JSON is invalid`);
-    assert.ok(translations.it && Object.keys(translations.it).length, `${file}: Italian translations are empty`);
-    const keys = Object.keys(translations.it);
-    assert.deepEqual(keys, [...keys].sort(), `${file}: Italian translations must be sorted`);
-  }
-
   const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
   assert.match(index('main h1').text(), /^G3W-SUITE .* Manual$/, 'documentation home must show the manual index');
   const italianPages = htmlFiles(path.join(staticDir, 'it', 'docs'));

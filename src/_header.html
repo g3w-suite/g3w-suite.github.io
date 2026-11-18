@@ -25,23 +25,16 @@
         <li><a href="{{langRoot}}community/" data-nav-key="community">{{t 'Community'}}</a></li>
       </ul>
       <div class="lang-switcher">
-        <a href="{{itPage}}" lang="it" hreflang="it" data-lang-key="it">IT</a>
-        <a href="{{enPage}}" lang="en" hreflang="en" data-lang-key="en">EN</a>
+        <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="language-dialog" aria-labelledby="language-title current-language">
+          <span id="current-language" lang="{{lang}}">{{currentLanguage}}</span>
+          <span aria-hidden="true">▾</span>
+        </button>
+        <dialog id="language-dialog" aria-labelledby="language-title">
+          <h2 id="language-title">{{t 'Choose a language'}}</h2>
+          <ul>{{languageLinks}}</ul>
+          <form method="dialog"><button>{{t 'Close'}}</button></form>
+        </dialog>
       </div>
     </nav>
   </div>
 </header>
-
-<script type="application/json" data-i18n>
-  {
-    "it": {
-      "About": "Il progetto",
-      "Community": "Community",
-      "Documentation": "Documentazione",
-      "Main navigation": "Navigazione principale",
-      "News": "Novità",
-      "Open menu": "Apri menu",
-      "Sponsors": "Sponsor"
-    }
-  }
-</script>

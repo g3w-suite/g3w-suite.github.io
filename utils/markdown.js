@@ -2,6 +2,7 @@
 
 const { marked } = require('marked');
 const { gfmHeadingId, getHeadingList } = require('marked-gfm-heading-id');
+const { localizeSiteUrl } = require('./translations');
 marked.use(gfmHeadingId());
 
 function autoTranslateMarkdown(markdown, lang, translations = {}) {
@@ -43,10 +44,7 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
       });
     }
     lines[index] = lines[index].replace(/(^|[^!])\[((?:[^\[\]]|!\[[^\[\]]*\]\([^)]*\))*)\]\(([^)]*)\)/g, (_, before, label, destination) => {
-      const localizedDestination = destination
-        .replace(/^\/?en\/(docs\/.*)$/, (_, docsPath) => `/${lang === 'it' ? 'it/' : ''}${docsPath}`)
-        .replace(/^\/?en\//, `/${lang}/`);
-      return `${before}[${label}](${localizedDestination})`;
+      return `${before}[${label}](${localizeSiteUrl(destination, lang)})`;
     });
   }
   return lines.join('');

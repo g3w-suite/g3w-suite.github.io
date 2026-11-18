@@ -66,37 +66,6 @@ function markdownTranslationKeys(markdown) {
   return keys;
 }
 
-function extractPageTranslations(html, file) {
-  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/g)];
-  assert.ok(blocks.length <= 1, `${file}: expected at most one data-i18n block`);
-  if (!blocks.length) return { html, translations: {} };
-
-  const translations = JSON.parse(blocks[0][1]);
-  assert.ok(translations && typeof translations === 'object' && !Array.isArray(translations), `${file}: data-i18n must be an object`);
-  for (const [lang, entries] of Object.entries(translations)) {
-    assert.ok(languages.includes(lang), `${file}: unsupported data-i18n language "${lang}"`);
-    assert.ok(entries && typeof entries === 'object' && !Array.isArray(entries), `${file}: ${lang} translations must be an object`);
-    assert.ok(Object.keys(entries).length > 0, `${file}: omit empty ${lang} translations`);
-    assert.ok(Object.values(entries).every(value => typeof value === 'string'), `${file}: ${lang} translations must be strings`);
-  }
-  return { html: html.replace(blocks[0][0], ''), translations };
-}
-
-function extractPageMetadata(html, file) {
-  const blocks = [...html.matchAll(/<script type="application\/json" data-i18n-meta>([\s\S]*?)<\/script>/g)];
-  assert.ok(blocks.length <= 1, `${file}: expected at most one data-i18n-meta block`);
-  if (!blocks.length) return { html, metadata: null };
-
-  const metadata = JSON.parse(blocks[0][1]);
-  assert.ok(metadata && typeof metadata === 'object' && !Array.isArray(metadata), `${file}: data-i18n-meta must be an object`);
-  assert.ok(Object.keys(metadata).length > 0, `${file}: data-i18n-meta must not be empty`);
-  assert.ok(Object.keys(metadata).every(key =>
-    ['title', 'description', 'ogTitle', 'ogDescription', 'ogType'].includes(key)
-  ), `${file}: unsupported data-i18n-meta key`);
-  assert.ok(Object.values(metadata).every(value => typeof value === 'string' && value.trim()), `${file}: metadata values must be non-empty strings`);
-  return { html: html.replace(blocks[0][0], ''), metadata };
-}
-
 function renderLanguageBlocks(html, lang) {
   return html.replace(/\{\{#(it|en)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, target, content) =>
     target === lang ? content : ''
@@ -159,8 +128,6 @@ module.exports = {
   filesIn,
   translationHelperPattern,
   markdownTranslationKeys,
-  extractPageTranslations,
-  extractPageMetadata,
   renderLanguageBlocks,
   findUnmarkedTranslations,
   readPage,

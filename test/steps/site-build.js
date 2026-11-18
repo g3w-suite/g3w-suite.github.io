@@ -8,6 +8,7 @@ const { spawnSync } = require('node:child_process');
 const { runInNewContext } = require('node:vm');
 const { Then } = require('@cucumber/cucumber');
 const { staticDir, htmlFiles, readPage, localTarget } = require('../support/site');
+const { languages } = require('../../utils/config');
 const { prepareMermaid, copyMermaidScript } = require('../../utils/mermaid');
 
 Then('the browser highlighter supports the languages used in code blocks', function () {
@@ -76,7 +77,9 @@ Then('the build supports a project base path without broken internal links', fun
 
     }
     const { $ } = readPage(path.join(staticDir, 'index.html'));
-    assert.equal($('meta[http-equiv="refresh"]').attr('content'), `0; url=${prefix}/it/`);
+    for (const lang of languages) {
+      assert.equal($(`a[hreflang="${lang}"]`).attr('href'), `${prefix}/${lang}/`);
+    }
     const explore = readPage(path.join(staticDir, 'en', 'about', 'index.html')).$;
     assert.equal(explore('link[rel="stylesheet"]').attr('href'), `${prefix}/app.css`);
     const demos = readPage(path.join(staticDir, 'docs', 'demo', 'index.html')).$;

@@ -1,3 +1,7 @@
+---
+title: Changelog 3.11 - G3W-Suite
+---
+
 # Changelog G3W-Suite 3.11
 
 Release date: **08 April 2026**
@@ -154,84 +158,3 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>
-
-<script type="application/json" data-i18n>
-  {
-    "it": {
-      "&gt;90% reduction in compilation time": "riduzione superiore al 90% dei tempi di compilazione",
-      "&gt;90% reduction in the total number of files": "riduzione superiore al 90% del numero totale di file",
-      "**G3W-SUITE 3.11 is compatible with the new 3.44 LTR of QGIS**": "**G3W-SUITE 3.11 è compatibile con la nuova versione LTR 3.44 di QGIS**",
-      "**G3W-SUITE allows you to associate interactive graphics created on QGIS with the [DataPlotly](https://plugins.qgis.org/plugins/DataPlotly/) plugin to various WebGis services.**": "**G3W-SUITE permette di associare ai servizi WebGIS grafici interattivi creati in QGIS con il plugin [DataPlotly](https://plugins.qgis.org/plugins/DataPlotly/).**",
-      "**Happy mapping with G3W-SUITE!**": "**Buon lavoro con le mappe di G3W-SUITE!**",
-      "**Version 3.11 of G3W-SUITE is characterized by a great refactoring job.**": "**La versione 3.11 di G3W-SUITE è caratterizzata da un importante lavoro di refactoring.**",
-      "**We hope you enjoy this great work!**": "**Speriamo che questo lavoro vi piaccia!**",
-      "A new search tool based on **[Elasticsearch](https://www.elastic.co/elasticsearch)** technology has been added.": "È stato aggiunto un nuovo strumento di ricerca basato su **[Elasticsearch](https://www.elastic.co/elasticsearch)**.",
-      "A reorganization of breadcrumbs allows you to better manage situations with multiple caching relationships": "La riorganizzazione dei breadcrumb permette di gestire meglio le situazioni con più relazioni di caching.",
-      "A right click on the mouse allows you to access a series of functions related (but not limited to) to the point where you click": "Con un clic destro si accede a una serie di funzioni relative al punto selezionato e non solo.",
-      "A simpler system for managing filters on attribute fields based on users or user groups.": "Un sistema più semplice per gestire i filtri sui campi degli attributi in base agli utenti o ai gruppi.",
-      "Administration": "Amministrazione",
-      "Among the **main funder of this version** we remember:": "Tra i **principali finanziatori di questa versione** ricordiamo:",
-      "Among the main innovations we also remember:": "Tra le principali novità troviamo:",
-      "Cartographic client and interaction with the map": "Client cartografico e interazione con la mappa",
-      "Changelog 3.11 - G3W-Suite": "Changelog 3.11 - G3W-Suite",
-      "Changelog for G3W-SUITE 3.11": "Novità di G3W-SUITE 3.11",
-      "Charts": "Grafici",
-      "Complete list of improvements": "Elenco completo dei miglioramenti",
-      "Editing on line": "Editing online",
-      "Feature: 1:N relation parent information": "Funzionalità: informazioni sull'elemento padre nelle relazioni 1:N",
-      "Feature: Admin": "Funzionalità: amministrazione",
-      "Feature: Bookmark Projects": "Funzionalità: progetti preferiti",
-      "Feature: Breadcrump improvment": "Funzionalità: miglioramento dei breadcrumb",
-      "Feature: Client": "Funzionalità: client",
-      "Feature: Elastic Search": "Funzionalità: Elasticsearch",
-      "Feature: Increased user experience": "Funzionalità: esperienza utente migliorata",
-      "Feature: Managing filters on fields": "Funzionalità: gestione dei filtri sui campi",
-      "Feature: Multiple charts management": "Funzionalità: gestione di grafici multipli",
-      "Feature: QGIS 3.44 LTR compatibility": "Funzionalità: compatibilità con QGIS 3.44 LTR",
-      "Feature: Right click option": "Funzionalità: opzioni con il clic destro",
-      "Feature: Rotate features": "Funzionalità: rotazione delle geometrie",
-      "For complete details, see the": "Per il dettaglio completo consulta il",
-      "G3W-SUITE is an **open source project** and if you are able to, consider supporting our work through donations or contributions to the code documentation, web site and so on.": "G3W-SUITE è un **progetto open source**: se puoi, sostieni il nostro lavoro con una donazione o contribuendo al codice, alla documentazione o al sito web.",
-      "General": "Generale",
-      "Improved management of all features without disrupting the end user experience.": "La gestione delle funzionalità è stata migliorata senza stravolgere l'esperienza degli utenti.",
-      "Italy": "Italia",
-      "Numerous changes to the client interface.": "Numerose modifiche all'interfaccia del client.",
-      "QGIS 3.44 LTR compatibility": "compatibilità con QGIS 3.44 LTR",
-      "Quick Start": "Guida rapida",
-      "References to the parent are visible when accessing the list of records in the child layer of a 1:N relation.": "I riferimenti all'elemento padre sono visibili nell'elenco dei record del layer figlio di una relazione 1:N.",
-      "Release date: **08 April 2026**": "Data di rilascio: **8 aprile 2026**",
-      "Screenshot: Bookmarks Projects": "Schermata: progetti preferiti",
-      "Screenshot: Breadcrumbs Navigation": "Schermata: navigazione tramite breadcrumb",
-      "Screenshot: Fields User Filters": "Schermata: filtri sui campi per utente",
-      "Screenshot: Multi Plot": "Schermata: grafici multipli",
-      "Screenshot: New Client": "Schermata: nuovo client",
-      "Screenshot: Parent Relation Info": "Schermata: informazioni sull'elemento padre",
-      "Screenshot: QGIS 3 44": "Schermata: QGIS 3.44",
-      "Screenshot: Right Click": "Schermata: menu del clic destro",
-      "Searches": "Ricerche",
-      "Sponsor and funder": "Sponsor e finanziatori",
-      "Swiss": "Svizzera",
-      "Take advantage of all the news related to the preparation of QGIS projects with the new LTR version": "Sfrutta tutte le novità della nuova versione LTR nella preparazione dei progetti QGIS.",
-      "The feature rotation function has been added to the editing tools.": "La rotazione delle geometrie è stata aggiunta agli strumenti di editing.",
-      "The filter setting is aligned with the modes used for the other widgets.": "La configurazione dei filtri segue le stesse modalità degli altri widget.",
-      "The rotation of point geometries is linked to the presence of a field called “**rotation**” in the attribute table, on which the direction of the symbology associated with the point is based": "La rotazione delle geometrie puntuali richiede un campo chiamato “**rotation**” nella tabella degli attributi, sul quale si basa l'orientamento della simbologia del punto.",
-      "This function can also be set for cascading 1:N relations.": "Questa funzione può essere impostata anche per le relazioni 1:N in cascata.",
-      "This tool allows you to perform comprehensive searches based on a subset of the project layers, simplifying the use by the user.": "Lo strumento permette di effettuare ricerche su un insieme di layer del progetto, semplificandone l'utilizzo.",
-      "Try the demo": "Prova la demo",
-      "With the new version it is possible to merge multiple graphs from the DataPlotly plugin to create multiple overlapping graphs": "La nuova versione permette di combinare più grafici del plugin DataPlotly e sovrapporli.",
-      "You can now create bookmarks for your favorite projects so they always appear on top of your admin session dashboard.": "Ora puoi aggiungere i progetti preferiti ai segnalibri per averli sempre in cima alla dashboard di amministrazione.",
-      "ability to test changes “live” directly on a remote server (few substantial differences between evelopment and production environments)": "possibilità di provare le modifiche in tempo reale su un server remoto, con poche differenze sostanziali tra sviluppo e produzione",
-      "and much more.": "e molto altro.",
-      "increasingly “plug-and-play” architecture, meaning extensibility comes first (stable code = if it is easily modifiable via plugins/code snippets, without touching the core)": "architettura sempre più “plug-and-play”, che mette al primo posto l'estensibilità tramite plugin e frammenti di codice senza modificare il core",
-      "new integrations with the QGIS API": "nuove integrazioni con le API di QGIS",
-      "official ReadTheDocs documentation": "manuale ufficiale su ReadTheDocs",
-      "user experience at the heart of everything (the “simpler” the code, the “cleaner” the graphical interface)": "esperienza utente al centro: codice più semplice e interfaccia grafica più pulita"
-    }
-  }
-</script>
-
-<script type="application/json" data-i18n-meta>
-  {
-    "title": "Changelog 3.11 - G3W-Suite"
-  }
-</script>

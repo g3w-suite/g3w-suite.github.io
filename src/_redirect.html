@@ -1,11 +1,20 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/it/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>G3W-Suite</title>
   </head>
   <body class="page-redirect">
-    <p>Reindirizzamento in corso... <a href="/it/">Clicca qui</a></p>
+    <p>Choose your language:</p>
+    <ul>{{languageLinks}}</ul>
+    <script>
+      const links = [...document.querySelectorAll('a[hreflang]')];
+      const preferred = (navigator.languages?.length ? navigator.languages : [navigator.language])
+        .map(tag => tag?.toLowerCase().split('-')[0]);
+      const target = preferred.map(lang => links.find(link => link.hreflang === lang)).find(Boolean)
+        || links.find(link => link.hreflang === 'en');
+      location.replace(target.href + location.search + location.hash);
+    </script>
   </body>
 </html>

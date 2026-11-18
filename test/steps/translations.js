@@ -4,14 +4,15 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
+const { languages: siteLanguages } = require('../../utils/config');
 const { autoTranslateMarkdown } = require('../../utils/markdown');
+const { catalog, pageCatalog, extractPageMetadata } = require('../../utils/translations');
 const {
   staticDir,
   languages,
+  filesIn,
   htmlFiles,
   pageSourceFiles,
-  extractPageTranslations,
-  extractPageMetadata,
   renderLanguageBlocks,
   findUnmarkedTranslations,
   translationHelperPattern,
@@ -50,10 +51,13 @@ Then('translated text is rendered for each language', function () {
     'Porta i progetti QGIS nel lavoro quotidiano con un WebGIS open source e modulare, pensato per la collaborazione.',
     'explicit attribute translations must be rendered'
   );
-  assert.ok(
-    sourceHtml.some(source => source.includes('"description": "Bring QGIS projects into everyday work with an open, modular WebGIS built for collaboration."')),
-    'translated meta descriptions must use data-i18n-meta'
+  const about = path.join('src', 'about', 'index.md');
+  assert.equal(
+    extractPageMetadata(fs.readFileSync(about, 'utf8'), about).metadata.description,
+    'Bring QGIS projects into everyday work with an open, modular WebGIS built for collaboration.'
   );
+  assert.throws(() => extractPageMetadata('---\r\ntitle: [\r\n---\r\n', 'example.md'), /example\.md has invalid YAML front matter/);
+  assert.throws(() => extractPageMetadata('---\ntitle: Example\n', 'example.md'), /example\.md has unclosed YAML front matter/);
   assert.ok(
     sourceHtml.some(source => /\b[\w:-]+=["'][^"']*\{\{t '(?:\\.|[^'\\])*'\s*\}\}[^"']*["']/.test(source)),
     'translated attributes must use the translation helper'
@@ -67,34 +71,34 @@ Then('translated text is rendered for each language', function () {
     'translation helpers must be expanded in all generated pages'
   );
 });
-Then('page-local translations are valid and used by the Italian build', function () {
+Then('the page-scoped catalogs are valid and used by the build', function () {
   const sourceDir = path.resolve('src');
-  const sourceFiles = pageSourceFiles(sourceDir);
+  const docs = filesIn(path.join(sourceDir, 'docs')).filter(file => file.endsWith('.md'));
+  const sourceFiles = [
+    ...pageSourceFiles(sourceDir),
+    ...['_header.html', '_footer.html'].map(file => path.join(sourceDir, file)),
+    ...docs,
+  ];
+  const sourceKeys = new Set([
+    ...sourceFiles.map(file => path.relative(sourceDir, file).split(path.sep).join('/')),
+    '@breadcrumb',
+    '@documentation',
+  ]);
+  const catalogs = Object.fromEntries(siteLanguages.filter(lang => lang !== 'en').map(lang => [lang, catalog(lang)]));
+  for (const [lang, entries] of Object.entries(catalogs)) {
+    for (const source of Object.keys(entries)) assert.ok(sourceKeys.has(source), `${lang}/${source}: orphaned translations`);
+    assert.ok(Object.hasOwn(entries, '@breadcrumb') && Object.hasOwn(entries, '@documentation'), `${lang}: missing shared labels`);
+  }
+  const italian = catalogs.it;
   const unmarked = [];
   for (const file of sourceFiles) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
-    const { html: withoutMetadata, metadata } = extractPageMetadata(sourceHtml, file);
-    const { html, translations: pageTranslations } = extractPageTranslations(withoutMetadata, file);
+    assert.doesNotMatch(sourceHtml, /<script\b[^>]*\bdata-i18n(?:-meta)?(?:\s|>)/, `${file}: use catalogs and front matter instead of scripts`);
+    if (docs.includes(file)) continue;
+    const { html, metadata } = extractPageMetadata(sourceHtml, file);
+    const pageTranslations = pageCatalog('it', italian, path.relative(sourceDir, file));
     if (!path.basename(file).startsWith('_')) {
-      assert.ok(metadata && metadata.title, `${file}: page title must be declared in data-i18n-meta`);
-    }
-    const trailingBlocks = [...sourceHtml.matchAll(/<script type="application\/json" data-i18n(?:-meta)?>([\s\S]*?)<\/script>/g)];
-    for (let index = 1; index < trailingBlocks.length; index++) {
-      const previous = trailingBlocks[index - 1];
-      assert.equal(
-        sourceHtml.slice(previous.index + previous[0].length, trailingBlocks[index].index).trim(),
-        '',
-        `${file}: translation scripts must be adjacent`
-      );
-    }
-    if (trailingBlocks.length) {
-      const last = trailingBlocks[trailingBlocks.length - 1];
-      const trailingHtml = sourceHtml.slice(last.index + last[0].length);
-      assert.match(
-        trailingHtml,
-        /^\s*(?:<\/body>\s*)?(?:<\/html>\s*)?$/i,
-        `${file}: translation scripts must be at the end of the source file`
-      );
+      assert.ok(metadata && metadata.title, `${file}: page title must be declared in YAML front matter`);
     }
     const localUsage = new Map(languages.map(lang => [lang, new Set()]));
     for (const [key, value] of Object.entries(metadata || {})) {
@@ -102,7 +106,7 @@ Then('page-local translations are valid and used by the Italian build', function
       if (Object.hasOwn(pageTranslations.it || {}, value)) {
         localUsage.get('it').add(value);
       } else {
-        assert.fail(`${file}: missing page-local Italian translation for metadata "${value}"`);
+        assert.fail(`${file}: missing Italian translation for metadata "${value}"`);
       }
     }
     for (const [lang, entries] of Object.entries(pageTranslations)) {
@@ -116,7 +120,7 @@ Then('page-local translations are valid and used by the Italian build', function
         if (Object.hasOwn(pageTranslations[lang] || {}, key)) {
           localUsage.get(lang).add(key);
         } else if (lang === 'it') {
-          assert.fail(`${file}: missing page-local Italian translation for "${key}"`);
+          assert.fail(`${file}: missing Italian translation for "${key}"`);
         }
       }
       if (file.endsWith('.md')) {
@@ -138,6 +142,13 @@ Then('page-local translations are valid and used by the Italian build', function
     }
   }
   assert.deepEqual(unmarked, [], `translatable strings missing {{t '...'}}: ${unmarked.join('\n')}`);
+  const footer = readPage(path.join(staticDir, 'it', 'index.html')).$;
+  const sponsors = readPage(path.join(staticDir, 'it', 'sponsors', 'index.html')).$;
+  assert.match(footer('footer a[href^="mailto:"]').attr('href'), /subject=Supporto G3W-SUITE/);
+  assert.match(sponsors('main').text(), /Sostieni G3W-SUITE/);
+  const french = readPage(path.join(staticDir, 'fr', 'about', 'index.html')).$;
+  assert.equal(french('.site-edit-link').text(), catalogs.fr['@breadcrumb'].Edit);
+  assert.equal(french('head title').text(), catalogs.fr['about/index.md']['Open Source Ecosystem - G3W-Suite']);
 
   const outputFiles = htmlFiles(staticDir);
   const unexpanded = outputFiles.filter(file => /\{\{t\b|\{\{\/t\}\}/.test(fs.readFileSync(file, 'utf8')));

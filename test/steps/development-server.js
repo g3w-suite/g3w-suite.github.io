@@ -39,7 +39,7 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
   const probe = `dev-watch-${process.pid}-${Date.now()}`;
   const source = path.resolve('src', `${probe}.md`);
   const output = path.resolve('static', 'en', probe, 'index.html');
-  const failingPage = path.resolve('src', `zz-dev-watch-failure-${process.pid}-${Date.now()}.html`);
+  const failingPage = path.resolve('src', `zz-dev-watch-failure-${process.pid}-${Date.now()}.md`);
   try {
     assert.equal(this.port, 8080);
     const response = await fetch(`http://localhost:${this.port}/`);
@@ -74,7 +74,7 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
       `development server must rebuild changed source files: ${this.serverErrors}`
     );
 
-    fs.writeFileSync(failingPage, '<script type="application/json" data-i18n-meta>{}</script>');
+    fs.writeFileSync(failingPage, '---\ntitle: [\n---\n\n# Invalid front matter\n');
     const failureDeadline = Date.now() + 15000;
     while (Date.now() < failureDeadline && !this.serverErrors.includes('Build failed:')) {
       await new Promise(resolve => setTimeout(resolve, 50));

@@ -4,14 +4,15 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { projectRoot, staticDir, sourceDir, languages, publishedHtml } = require('../utils/config');
 const { htmlFiles, markdownFiles } = require('../utils/files');
-const { renderLanguageBlocks, translateHtml, extractPageTranslations, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
+const { catalog, pageCatalog, localizeSiteLinks, renderLanguageBlocks, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
 const { autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
-const { outputPage, languagePageUrl, renderBreadcrumb, renderComponent } = require('../utils/routes');
+const { outputPage, languagePageUrl, renderLanguageLinks, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
 const { prepareMermaid, copyMermaidScript } = require('../utils/mermaid');
 
 function build(outputDir) {
   const diagrams = new Set();
+  const catalogs = Object.fromEntries(languages.map(lang => [lang, catalog(lang)]));
   const pageFiles = [
     ...htmlFiles(sourceDir),
     ...markdownFiles(sourceDir).filter(file =>
@@ -25,7 +26,9 @@ function build(outputDir) {
   if (!pages.length) throw new Error('No source pages found in src');
 
   fs.mkdirSync(outputDir, { recursive: true });
-  fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8')));
+  const redirect = fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8').replace('{{languageLinks}}',
+    renderLanguageLinks(Object.fromEntries(languages.map(lang => [lang, languagePageUrl('index.md', lang)]))));
+  fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(redirect));
   for (const lang of languages) {
     fs.rmSync(path.join(outputDir, lang), { recursive: true, force: true });
     fs.mkdirSync(path.join(outputDir, lang), { recursive: true });
@@ -34,22 +37,22 @@ function build(outputDir) {
   const renderedPages = [];
   for (const { file, page } of pages) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
-    const pageTemplate = extractPageTranslations(sourceHtml, path.relative(projectRoot, file));
-    const pageMetadata = extractPageMetadata(pageTemplate.html, path.relative(projectRoot, file));
+    const pageMetadata = extractPageMetadata(sourceHtml, path.relative(projectRoot, file));
     const pageUrls = Object.fromEntries(languages.map(lang => [lang, languagePageUrl(page, lang)]));
     for (const lang of languages) {
       try {
+        const translations = pageCatalog(lang, catalogs[lang], page);
         const pageHead = [
-          renderPageMetadata(pageMetadata.metadata, lang, pageTemplate.translations),
+          renderPageMetadata(pageMetadata.metadata, lang, translations),
           renderPageAlternates(pageUrls),
         ].filter(Boolean).join('\n  ');
         let localized = translateHtml(
           renderLanguageBlocks(pageMetadata.html, lang),
           lang,
-          pageTemplate.translations
+          translations
         );
         if (path.extname(file) === '.md') {
-          localized = autoTranslateMarkdown(localized, lang, pageTemplate.translations);
+          localized = autoTranslateMarkdown(localized, lang, translations);
           localized = prepareMermaid(localized, diagrams, `${page} (${lang})`);
         }
         const content = localized.replace(
@@ -63,9 +66,9 @@ function build(outputDir) {
               ? renderChangelogMarkdown(content)
               : renderPageMarkdown(content, page)
           : content;
-        const header = renderComponent('header', lang, page, pageUrls, pageHead);
-        const footer = renderComponent('footer', lang, page, pageUrls);
-        const output = renderMarkdownButtonLinks(renderYoutubeVideos(`${header}\n${pageContent}\n${footer}`));
+        const header = renderComponent('header', lang, page, pageUrls, catalogs[lang], pageHead);
+        const footer = renderComponent('footer', lang, page, pageUrls, catalogs[lang]);
+        const output = renderMarkdownButtonLinks(renderYoutubeVideos(`${header}\n${localizeSiteLinks(pageContent, lang)}\n${footer}`));
         const title = /<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(pageContent)?.[1].replace(/<[^>]*>/g, '').trim();
         if (!title) throw new Error('Page has no main heading for the breadcrumb');
         renderedPages.push({ page, lang, url: pageUrls[lang], title, output });
@@ -86,13 +89,13 @@ function build(outputDir) {
         if (titles.has(parentUrl)) items.push({ href: parentUrl, label: titles.get(parentUrl) });
       }
       items.push({ label: title });
-      result = output.replace(/(<main\b[^>]*>)/i, `$1${renderBreadcrumb(lang, items, page)}`);
+      result = output.replace(/(<main\b[^>]*>)/i, `$1${renderBreadcrumb(lang, items, page, catalogs[lang])}`);
     }
     const target = path.join(outputDir, lang, outputPage(page));
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, publishedHtml(result));
   }
-  buildDocumentation(outputDir, diagrams);
+  buildDocumentation(outputDir, diagrams, catalogs);
   const mermaidScript = path.join(outputDir, 'mermaid.min.js');
   if (diagrams.size) copyMermaidScript(outputDir);
   else fs.rmSync(mermaidScript, { force: true });
