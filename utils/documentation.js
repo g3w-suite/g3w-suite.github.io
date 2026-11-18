@@ -107,9 +107,6 @@ function documentationNavigation(index, currentPage, parentPage, docsDir, lang) 
     }
     listed.add(page.href);
   }
-  for (const item of groups) {
-    item.links = item.links.flatMap(link => [link, ...(children.get(link.href) || [])]);
-  }
   if (additional.length) {
     groups.push({
       title: lang === 'it' ? 'Altre pagine' : 'Other pages',
@@ -117,10 +114,19 @@ function documentationNavigation(index, currentPage, parentPage, docsDir, lang) 
     });
   }
   return groups.map(({ title, links }) => {
-    const open = links.some(({ href }) => href === currentPage || href === parentPage);
-    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(({ href, label, child }) =>
-      `<a${child ? ' class="docs-nav__page"' : ''} href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`
-    ).join('')}</details></section>`;
+    const hasCurrentChild = links.some(({ href }) =>
+      (children.get(href) || []).some(child => child.href === currentPage)
+    );
+    const open = links.some(({ href }) => href === currentPage || href === parentPage) || hasCurrentChild;
+    const renderLink = ({ href, label, child }) =>
+      `<a${child ? ' class="docs-nav__page"' : ''} href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`;
+    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(link => {
+      const subpages = children.get(link.href) || [];
+      if (!subpages.length) return renderLink(link);
+      const openSubpages = link.href === currentPage || link.href === parentPage ||
+        subpages.some(child => child.href === currentPage);
+      return `<details class="docs-nav__subgroup"${openSubpages ? ' open' : ''}><summary>${renderLink(link)}</summary>${subpages.map(renderLink).join('')}</details>`;
+    }).join('')}</details></section>`;
   }).join('');
 }
 

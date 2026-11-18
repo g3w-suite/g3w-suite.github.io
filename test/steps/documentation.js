@@ -73,7 +73,8 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.equal(italianIndex('html').attr('lang'), 'it');
   assert.equal(italianIndex('main h1').text(), 'Guida rapida');
   assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
-  assert.equal(index('nav.docs-nav section details[open]').length, 1, 'only the current navigation group must start open');
+  assert.equal(index('nav.docs-nav section > details[open]').length, 1, 'only the current navigation group must start open');
+  assert.equal(index('nav.docs-nav .docs-nav__subgroup[open]').length, 0, 'page subgroups must start collapsed');
   assert.equal(index('nav.docs-nav section a').first().attr('href'), '/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().attr('href'), '/it/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().text(), 'Guida rapida');
@@ -152,12 +153,19 @@ Then('every documentation source is Markdown and has a generated page', function
   }
   const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
   assert.ok(childPage('nav.site-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
+  assert.equal(childPage('nav.docs-nav .docs-nav__subgroup[open] > summary > a[href="/docs/g3wsuite_administration/"]').length, 1, 'the current page must expand its TOC subgroup');
   assert.equal(childPage('nav.docs-nav section details[open] a[href="/docs/g3wsuite_administration/"]').length, 1, 'child pages must open the parent navigation group');
   assert.equal(
     childPage('.docs-content a').filter((_, link) => childPage(link).text().startsWith('Back to')).length,
     0,
     'the breadcrumb must replace the duplicate back link'
   );
+  const dataManagementPage = readPage(path.join(staticDir, 'docs', 'datamanagement', 'index.html')).$;
+  assert.equal(dataManagementPage('nav.docs-nav section > details > a[href="/docs/datamanagement/"]').length, 1, 'data management must remain at the top page level');
+  assert.equal(dataManagementPage('nav.docs-nav .docs-nav__subgroup > summary > a[href="/docs/datamanagement/"]').length, 0, 'data management must not be a parent page');
+  const organizationExamples = readPage(path.join(staticDir, 'docs', 'organization-examples', 'index.html')).$;
+  assert.equal(organizationExamples('nav.docs-nav .docs-nav__subgroup > summary > a[href="/docs/user_groups_organization/"]').length, 1, 'TOC parent must match the page breadcrumb');
+  assert.equal(organizationExamples('nav.site-breadcrumb a[href="/docs/user_groups_organization/"]').length, 1, 'organization examples breadcrumb must match its TOC parent');
   const italianChildPage = readPage(path.join(staticDir, 'it', 'docs', 'admin-users', 'index.html')).$;
   assert.ok(italianChildPage('nav.site-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').length, 'Italian child pages must link to their localized parent breadcrumb');
   assert.equal(italianChildPage('nav.site-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').text(), 'G3W-ADMIN: il pannello di amministrazione');
