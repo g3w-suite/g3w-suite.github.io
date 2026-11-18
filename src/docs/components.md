@@ -48,7 +48,12 @@ The module is an optional extension and requires a compatible G3W-SUITE installa
 
 ## G3W-SUITE-DOCKER
 
-![G3W-SUITE deployment workflow](/img/manual-english-architecture-workflow.avif)
+```mermaid {{t 'G3W-SUITE publication flow: QGIS projects are uploaded to G3W-ADMIN, which uses QGIS Server to serve maps to G3W-CLIENT'}}
+flowchart LR
+  project["{{t 'QGIS project'}}"] -->|{{t 'Upload and configure'}}| admin["G3W-ADMIN"]
+  admin <-->|GetProjectSettings / OWS| server["QGIS Server"]
+  admin <-->|REST / OGC| client["G3W-CLIENT"]
+```
 
 G3W-SUITE-DOCKER provides a Docker-based deployment stack for running G3W-SUITE and its supporting services.
 
@@ -122,9 +127,9 @@ The editing capabilities are maintained in the G3W-ADMIN and G3W-CLIENT projects
     "G3W-CLIENT editing tools": "Strumenti di modifica di G3W-CLIENT",
     "G3W-CLIENT is the browser-based map application for exploring and working with data published by G3W-SUITE.": "G3W-CLIENT è l'applicazione cartografica basata su browser per esplorare e utilizzare i dati pubblicati da G3W-SUITE.",
     "G3W-CLIENT web map interface": "Interfaccia cartografica web di G3W-CLIENT",
-    "G3W-SUITE deployment workflow": "Flusso di distribuzione di G3W-SUITE",
     "G3W-SUITE login screen": "Schermata di accesso a G3W-SUITE",
     "G3W-SUITE public portal": "Portale pubblico G3W-SUITE",
+    "G3W-SUITE publication flow: QGIS projects are uploaded to G3W-ADMIN, which uses QGIS Server to serve maps to G3W-CLIENT": "Flusso di pubblicazione di G3W-SUITE: i progetti QGIS vengono caricati in G3W-ADMIN, che usa QGIS Server per fornire le mappe a G3W-CLIENT",
     "G3W-SUITE's editing tools let authorized users update geographic features and related records from the web client, using forms and rules configured in QGIS.": "Gli strumenti di modifica di G3W-SUITE consentono agli utenti autorizzati di aggiornare feature geografiche e record correlati dal client web, utilizzando moduli e regole configurati in QGIS.",
     "G3W-SUITE-DOCKER provides a Docker-based deployment stack for running G3W-SUITE and its supporting services.": "G3W-SUITE-DOCKER fornisce uno stack basato su Docker per eseguire G3W-SUITE e i servizi di supporto.",
     "It complements the G3W-ADMIN publishing tools and can be adapted to the identity and needs of a deployment.": "Completa gli strumenti di pubblicazione di G3W-ADMIN e può essere adattato all'identità e alle esigenze di ogni installazione.",
@@ -132,6 +137,7 @@ The editing capabilities are maintained in the G3W-ADMIN and G3W-CLIENT projects
     "Publish QGIS projects through QGIS Server, organize them into cartographic groups, and manage users, groups, permissions and project settings.": "Pubblica progetti QGIS tramite QGIS Server, organizzali in gruppi cartografici e gestisci utenti, gruppi, permessi e impostazioni dei progetti.",
     "Publish and administer": "Pubblica e amministra",
     "QGIS Processing model builder": "Model Builder di QGIS Processing",
+    "QGIS project": "Progetto QGIS",
     "Read about Processing in the manual": "Consulta il manuale su Processing",
     "Read the administration guide": "Consulta la guida di amministrazione",
     "Read the client guide": "Consulta la guida al client",
@@ -145,6 +151,7 @@ The editing capabilities are maintained in the G3W-ADMIN and G3W-CLIENT projects
     "The module is an optional extension and requires a compatible G3W-SUITE installation and QGIS Processing environment.": "Il modulo è un'estensione opzionale e richiede un'installazione compatibile di G3W-SUITE e un ambiente QGIS Processing.",
     "The stack brings together the application, QGIS Server, NGINX and PostgreSQL/PostGIS services. It is a starting point for self-hosted deployments; production environments should be configured and maintained for their own operational requirements.": "Lo stack integra l'applicazione, QGIS Server, NGINX e i servizi PostgreSQL/PostGIS. È un punto di partenza per installazioni autonome; gli ambienti di produzione devono essere configurati e gestiti in base ai propri requisiti operativi.",
     "This component is released under the MIT licence. Check its repository for installation requirements and configuration details.": "Questo componente è rilasciato con licenza MIT. Consulta il repository per i requisiti di installazione e i dettagli di configurazione.",
+    "Upload and configure": "Carica e configura",
     "Use map navigation, search, identify and query tools, print layouts, charts and data tables. When enabled for a project, users can also edit features and related records directly in the browser.": "Usa gli strumenti di navigazione, ricerca, identificazione e interrogazione, i layout di stampa, i grafici e le tabelle dati. Se abilitata nel progetto, è possibile modificare feature e record correlati direttamente dal browser.",
     "Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project and the [Docker documentation](/docs/docker/) for setup details.": "Segui la [guida rapida](/en/docs/quick-start/) per pubblicare il primo progetto e consulta la [documentazione Docker](/docs/docker/) per i dettagli di configurazione.",
     "View the G3W-ADMIN source repository": "Visualizza il repository sorgente di G3W-ADMIN",

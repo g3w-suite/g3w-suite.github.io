@@ -8,11 +8,18 @@ G3W-SUITE organizes WebGIS services on two thematic or functional levels:
 
 **These organizational levels can be associated with different types of users (Editor 1, Editor2 and Viewer) in order to manage the access/management powers to the individual elements in a granular way.**
 
-The following image shows an example of the functional use of these organizational levels within a Union of Municipalities.
+The following diagram shows an example of the functional use of these organizational levels within a Union of Municipalities.
 
 Access policies and individual functional modules may be associated with each WebGis service.
 
-![Screenshot: G3W-SUITE Administration Organization Containers Simple](/img/manual-english-g3wsuite-administration-organization-containers-simple.avif)
+```mermaid {{t 'Two municipal administrations have separate macro-groups; each contains cartographic groups that can contain WebGIS services'}}
+flowchart LR
+  a["{{t 'Macro-group'}}: {{t 'Administration'}} A"] --> a1["{{t 'Service'}} A"] & a2["{{t 'Service'}} B"] & a3["{{t 'Service'}} C"]
+  b["{{t 'Macro-group'}}: {{t 'Administration'}} B"] --> b1["{{t 'Service'}} A"] & b2["{{t 'Service'}} B"] & b3["{{t 'Service'}} C"]
+  a2 --> w1["WebGIS 1, 2, 3"]
+  a3 --> w2["WebGIS 1, 2"]
+  b2 --> w3["WebGIS 1, 2, 3"]
+```
 
 ## Types of Users (Roles)
 In G3W-SUITE you can create **Users** and **Users Groups** and associate them with specific roles:
@@ -59,7 +66,14 @@ When creating a cartographic group, the Admin user can define:
  * the eventual user (individual/group) **Editor 2** to associate the Group with
  * **Viewers** users (individuals/groups) who will have access to this container
 
-![Screenshot: G3W-SUITE Administration Organization Containers No Mg](/img/manual-english-g3wsuite-administration-organization-containers-no-mg.avif)
+```mermaid {{t 'Without macro-groups, Admin manages all cartographic groups and can delegate group management to Editor2; Viewers can access authorized WebGIS services'}}
+flowchart LR
+  admin["Admin"] --> groups["{{t 'Cartographic groups'}}<br/>Editor2"]
+  groups --> a1["{{t 'Service'}} A"] & a2["{{t 'Service'}} B"] & a3["{{t 'Service'}} C"] & b1["{{t 'Service'}} A"] & b2["{{t 'Service'}} B"] & b3["{{t 'Service'}} C"]
+  a2 --> w1["WebGIS 1, 2, 3<br/>Viewer"]
+  a3 --> w2["WebGIS 1, 2<br/>Viewer"]
+  b2 --> w3["WebGIS 1, 2, 3<br/>Viewer"]
+```
 
 In the event that the Cartographic Group is assigned to **Editor 2** (single or group users), they will may autonomously publish/update WebGis services inside in this container. 
 
@@ -79,7 +93,15 @@ In this way it will be possible to create totally independent entities, the Macr
 
 Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.
 
-![Screenshot: G3W-SUITE Administration Organization Containers](/img/manual-english-g3wsuite-administration-organization-containers.avif)
+```mermaid {{t 'Admin oversees both macro-groups; each has its own Editor1, with Editor2 at group level and Viewer access at WebGIS service level'}}
+flowchart LR
+  admin["Admin"] --> a["{{t 'Macro-group'}}: {{t 'Administration'}} A<br/>Editor1"] & b["{{t 'Macro-group'}}: {{t 'Administration'}} B<br/>Editor1"]
+  a --> a1["{{t 'Service'}} A<br/>Editor2"] & a2["{{t 'Service'}} B<br/>Editor2"] & a3["{{t 'Service'}} C<br/>Editor2"]
+  b --> b1["{{t 'Service'}} A<br/>Editor2"] & b2["{{t 'Service'}} B<br/>Editor2"] & b3["{{t 'Service'}} C<br/>Editor2"]
+  a2 --> w1["WebGIS 1, 2, 3<br/>Viewer"]
+  a3 --> w2["WebGIS 1, 2<br/>Viewer"]
+  b2 --> w3["WebGIS 1, 2, 3<br/>Viewer"]
+```
 
 As previously specified, **Editor 1** user will be able to:
  * create **users** (single and/or groups) of type Editor2 and Viewer
@@ -133,9 +155,12 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
     "Access policies and individual functional modules may be associated with each WebGis service.": "A ciascun servizio WebGIS è possibile associare criteri di accesso e moduli funzionali specifici.",
     "Access policies and organization examples": "Politiche di accesso ed esempi organizzativi",
     "Accessed the File Manager tool": "Accesso allo strumento File Manager",
+    "Admin oversees both macro-groups; each has its own Editor1, with Editor2 at group level and Viewer access at WebGIS service level": "Admin gestisce entrambi i Macrogruppi, ciascuno con il proprio Editor1; Editor2 opera a livello di Gruppo e Viewer accede ai servizi WebGIS autorizzati",
+    "Administration": "Amministrazione",
     "Again from the perspective of an infrastructure dedicated to a Union of Municipalities, this will allow each Editor1 (manager of one Administrations) to be able to independently manage the geographical data of their own Administration.": "Anche nel caso di un'infrastruttura dedicata a un'Unione di Comuni, ciò consentirà a ciascun Editor1 (responsabile di un'amministrazione) di gestire in autonomia i dati geografici della propria amministrazione.",
     "As described in the previous chapter, the users who can access the FileManager are the following:": "Come descritto nel capitolo precedente, possono accedere a File Manager i seguenti utenti:",
     "As previously specified, **Editor 1** user will be able to:": "Come già specificato, l'utente **Editor 1** potrà:",
+    "Cartographic groups": "Gruppi cartografici",
     "Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.": "Naturalmente gli utenti Admin (1 e 2) continueranno ad avere pieni poteri su tutti i gruppi presenti nel sistema.",
     "Each **Macrogroup** can be associated with only one **Editor1** user.": "A ciascun **Macrogruppo** può essere associato un solo utente **Editor1**.",
     "Each MacroGroup can be considered as a watertight compartment within which the associated Editor 1 user (administrator of the MacroGroup), will be able to create users and user groups that will be made available to define access permissions for content (Groups Maps, WebGis services, functional modules …) of the reference MacroGroup only.": "Ogni Macrogruppo può essere considerato un compartimento isolato, nel quale l'utente Editor 1 associato (amministratore del Macrogruppo) può creare utenti e gruppi di utenti da usare per definire le autorizzazioni di accesso ai contenuti (Gruppi cartografici, servizi WebGIS, moduli funzionali...) del solo Macrogruppo di riferimento.",
@@ -151,19 +176,20 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
     "In this case the individual **Editor1** users will be associated with cartographic Macrogroups and will **manage users and contents completely independently** from those of other Macrogroups associated with other Editor1 users.": "In questo caso, i singoli utenti **Editor1** saranno associati a Macrogruppi cartografici e **gestiranno utenti e contenuti in modo del tutto indipendente** da quelli degli altri Macrogruppi associati ad altri utenti Editor1.",
     "In this way it will be possible to create totally independent entities, the MacroGroups, which will be managed exclusively by the user Editor 1 associated with them.": "In questo modo è possibile creare entità del tutto indipendenti, i Macrogruppi, gestiti esclusivamente dall'utente Editor 1 a essi associato.",
     "It is in fact possible to associate the two types of containers (MacroGroups and Cartographic Groups) to users with different roles/powers (Editor1 and Editor2) who will thus become the Administrators of all their contents.": "È infatti possibile associare i due tipi di contenitore (Macrogruppi e Gruppi cartografici) a utenti con ruoli e permessi diversi (Editor1 ed Editor2), che diventeranno così amministratori di tutti i relativi contenuti.",
+    "Macro-group": "Macrogruppo",
     "One organization level (absence of MacroGroups)": "Un livello organizzativo (senza Macrogruppi)",
-    "Screenshot: G3W-SUITE Administration Organization Containers": "Schermata: contenitori organizzativi dell'amministrazione di G3W-SUITE",
-    "Screenshot: G3W-SUITE Administration Organization Containers No Mg": "Schermata: contenitori organizzativi dell'amministrazione di G3W-SUITE senza macrogruppi",
-    "Screenshot: G3W-SUITE Administration Organization Containers Simple": "Schermata: contenitori organizzativi semplici dell'amministrazione di G3W-SUITE",
+    "Service": "Servizio",
     "The cases relating to one or two organizational levels will be better described below.": "I casi con uno o due livelli organizzativi sono descritti più dettagliatamente di seguito.",
     "The creation of a **Editor1** role user (**administrator of a MacroGroup**) determines the automatic creation of a subfolder of the **project_data** folder with the same name as that defined for the Editor1 user.": "La creazione di un utente con ruolo **Editor1** (**amministratore di un Macrogruppo**) comporta la creazione automatica, nella cartella **project_data**, di una sottocartella con lo stesso nome assegnato all'utente Editor1.",
-    "The following image shows an example of the functional use of these organizational levels within a Union of Municipalities.": "L'immagine seguente mostra un esempio di utilizzo funzionale di questi livelli organizzativi all'interno di un'Unione di Comuni.",
+    "The following diagram shows an example of the functional use of these organizational levels within a Union of Municipalities.": "Il diagramma seguente mostra un esempio di utilizzo di questi livelli organizzativi all'interno di un'Unione di Comuni.",
     "These hierarchical levels can be used for **organizational purposes** (thematic containers) and/or **functional** (containers managed by different users/roles).": "Questi livelli gerarchici possono essere usati a fini **organizzativi** (contenitori tematici) e/o **funzionali** (contenitori gestiti da utenti o ruoli diversi).",
     "This user will manage, independently, only the contents of that folder.": "L'utente gestirà autonomamente solo i contenuti di quella cartella.",
+    "Two municipal administrations have separate macro-groups; each contains cartographic groups that can contain WebGIS services": "Due amministrazioni comunali hanno Macrogruppi separati; ciascuno contiene Gruppi cartografici che possono ospitare servizi WebGIS",
     "Two organization levels (presence of MacroGroups)": "Due livelli organizzativi (con Macrogruppi)",
     "Types of Users (Roles)": "Tipi di utenti (ruoli)",
     "When Editor 1 user creates a Cartographic Group, he can define:": "Quando l'utente Editor 1 crea un Gruppo cartografico, può definire:",
     "When creating a cartographic group, the Admin user can define:": "Quando crea un gruppo cartografico, l'utente Admin può definire:",
+    "Without macro-groups, Admin manages all cartographic groups and can delegate group management to Editor2; Viewers can access authorized WebGIS services": "Senza Macrogruppi, Admin gestisce tutti i Gruppi cartografici e può delegarne la gestione a Editor2; i Viewer accedono ai servizi WebGIS autorizzati",
     "_**G3W-SUITE organizes WebGIS services hierarchically.**_": "_**G3W-SUITE organizza i servizi WebGIS in modo gerarchico.**_",
     "_**The following paragraph is dedicated to better understanding the relationships between the different types of users and the different elements of the suite (MacroGroups, Map Groups, WebGis services ...).**_": "_**Il paragrafo seguente aiuta a comprendere meglio le relazioni tra i diversi tipi di utenti e i vari elementi della suite (Macrogruppi, Gruppi cartografici, servizi WebGIS...).**_",
     "activate **specific modules** on individual **WebGis services**": "attivare **moduli specifici** nei singoli **servizi WebGIS**",

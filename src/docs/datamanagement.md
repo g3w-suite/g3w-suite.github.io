@@ -38,7 +38,11 @@ Data on physical files and / or on GeoDB SpatiaLite and QGIS cartographic projec
    * a **`project_data` sub-directory** that must contain the **geographic data** used for the various cartographic projects, such data can also be organized in subdirectories with no nesting limits.
    * a **`projects` sub-directory** that must contain the **QGIS cartographic projects** (.qgz or .qgs files)
 
-![Screenshot: Datamanagement](/img/manual-english-datamanagement.avif)
+```mermaid {{t 'The main directory contains project_data for geographic data and projects for QGIS project files'}}
+flowchart TB
+  root["{{t 'Main directory'}}"] --> data["project_data"]
+  root --> projects["projects"]
+```
 
 **NB:** The name of the local directory dedicated to geographic data must correspond to the name defined for the **`DATASOURCE_PATH`** variable set during installation.
 [See dedicated paragraph.](settings#base-settings)
@@ -120,13 +124,13 @@ In the next chapter the powers and limits of the two roles will be described in 
       "In the next chapter the powers and limits of the two roles will be described in detail.": "Nel capitolo successivo verranno descritti nel dettaglio i poteri e i limiti dei due ruoli.",
       "In the standard Docker configuration, QGIS searches for custom symbols in `/shared-volume/project_data/svg/`. Upload the SVG files to the `svg` directory with File Manager and use the same symbols in the QGIS project. The search paths are defined in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configure the symbol directory in QGIS Desktop too, use distinct names for different symbols and check the published map.": "Nella configurazione Docker standard, QGIS cerca i simboli personalizzati in `/shared-volume/project_data/svg/`. Carica i file SVG nella directory `svg` con File Manager e usa gli stessi simboli nel progetto QGIS. I percorsi di ricerca sono definiti in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configura la directory dei simboli anche in QGIS Desktop, usa nomi distinti per simboli diversi e verifica la mappa pubblicata.",
       "It will therefore be necessary, in the case of using geographic files on the file system, to synchronize the contents of the local **`project_data`** directory (and any sub-directories) before proceeding with the publication of QGIS projects.": "Pertanto, se si utilizzano file geografici nel file system, prima di pubblicare i progetti QGIS sarà necessario sincronizzare il contenuto della directory locale **`project_data`** e delle eventuali sottodirectory.",
+      "Main directory": "Cartella principale",
       "Management and organization of geographic data and QGIS projects": "Gestione e organizzazione dei dati geografici e dei progetti QGIS",
       "Oracle Spatial (compiling QGIS Server)": "Oracle Spatial (compilando QGIS Server)",
       "Organization of data and projects": "Organizzazione dei dati e dei progetti",
       "PostGreSQL/PostGIS": "PostGreSQL/PostGIS",
       "SQL Server": "SQL Server",
       "SQLite/SpatiaLite": "SQLite/SpatiaLite",
-      "Screenshot: Datamanagement": "Schermata: gestione dei dati",
       "Screenshot: G3W-SUITE Administration Configuration Menu": "Schermata: menu di configurazione dell'amministrazione di G3W-SUITE",
       "Screenshot: G3W-SUITE Administration File Manager": "Schermata: File Manager dell'amministrazione di G3W-SUITE",
       "ShapeFile": "Shapefile",
@@ -135,6 +139,7 @@ In the next chapter the powers and limits of the two roles will be described in 
       "The data stored in the local **`project_data`** directory must be synchronized on the server where the G3W-SUITE application is installed.": "I dati archiviati nella directory locale **`project_data`** devono essere sincronizzati sul server in cui è installata l'applicazione G3W-SUITE.",
       "The example shows the case in which in the local **project_data** directory there are two directories (**geopackage** and **spatialite**) in addition to the two system directories (**svg** and **media_user**).": "L'esempio mostra il caso in cui nella directory locale **project_data** sono presenti due directory (**geopackage** e **spatialite**), oltre alle due directory di sistema (**svg** e **media_user**).",
       "The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.": "I dati geografici archiviati nella cartella locale **`project_data`** devono essere caricati mantenendo la struttura delle eventuali sottodirectory.",
+      "The main directory contains project_data for geographic data and projects for QGIS project files": "La cartella principale contiene project_data per i dati geografici e projects per i file dei progetti QGIS",
       "The suite also supports viewing and editing:": "La suite supporta anche la consultazione e la modifica di:",
       "To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located in the upper right corner.": "Per sincronizzare i dati, accedere al pannello di amministrazione di G3W-ADMIN e fare clic sull'**icona `Configurazioni`** ![Icona: configurazione](/img/manual-english-iconconfiguration.avif) nell'angolo superiore destro.",
       "Two specific directories can also be created within the root directory of the File Manager:": "Nella directory radice di File Manager è inoltre possibile creare due directory specifiche:",
