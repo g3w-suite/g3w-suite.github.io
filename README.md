@@ -51,6 +51,8 @@ All translation catalogs in `i18n/` group entries by the page or component path 
 
 On pushes to `vanilla` or manual runs on that branch, the [CI workflow](./.github/workflows/ci.yml) uses Argos Translate locally on the runner to fill missing keys without overwriting existing translations. After the tests pass, it commits any catalog changes directly to `vanilla`; it opens no pull request. Translation generation and commits are disabled on pull requests and other branches. The workflow token must be allowed to push to `vanilla`. To list missing string counts without translating or editing catalogs, run `node utils/update-translations.js --dry-run`.
 
+Generation rejects repeated-word loops, changed login values or software versions, malformed HTML entities and broken Markdown emphasis before saving. The catalog tests apply these checks to existing translations too. Technical identifiers, software versions and demo credentials are kept out of the translation model; semantic accuracy still requires review.
+
 ## Add or update a page
 
 1. Start from an existing Markdown page directly in `src/` or `src/news/`, keeping its metadata and local translations. Release-note filenames use `YYYY-MM-DD-changelog-vX.Y.md`; other news articles start with `YYYY-MM-DD-`. Keep raw HTML for page-specific layout and media.
@@ -63,6 +65,7 @@ On pushes to `vanilla` or manual runs on that branch, the [CI workflow](./.githu
 
 ```sh
 npm test
+python -m unittest discover -s test -p 'test_*.py'
 ```
 
 The Gherkin scenarios in `test/features/` check page structure, assets, language links, navigation accessibility and every internal `href`/`src` target (including HTML fragments) without contacting external sites; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.

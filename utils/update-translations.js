@@ -3,6 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { marked } = require('marked');
 const { catalogDir, sourceDir, languages } = require('./config');
 const { htmlFiles, markdownFiles } = require('./files');
 const { autoTranslateMarkdown } = require('./markdown');
@@ -65,6 +66,45 @@ function missingSharedKeys(lang, entries) {
   ];
 }
 
+function validateTranslation(source, translation) {
+  if (typeof translation !== 'string' || !translation.trim()) {
+    throw new Error('Empty translation');
+  }
+  if (/(?:^|\s)(\p{L}[\p{L}\p{M}\p{N}'\u2019-]*)(?:\s+\1){7,}(?=\s|[.,;:!?]|$)/iu.test(translation)) {
+    throw new Error('Corrupted translation: repeated words');
+  }
+  const brokenEntity = /&\s+(?:#(?:x[\da-f]+|\d+)|[a-z]+);/i;
+  if (brokenEntity.test(translation) && !brokenEntity.test(source)) {
+    throw new Error('Corrupted translation: malformed HTML entity');
+  }
+  for (const [, value] of source.matchAll(/\b(?:user|password):\s*\*\*([^*]+)\*\*/gi)) {
+    if (!translation.includes(`**${value}**`)) {
+      throw new Error('Corrupted translation: changed login value');
+    }
+  }
+  const versions = translation.match(/\d+(?:\.\d+)+(?:\.x)?/g) || [];
+  for (const match of source.matchAll(/\b(?:(?:QGIS|Ubuntu|Django|Python|G3W-SUITE)\s+(?:\*{1,2})?(\d+(?:\.\d+)+(?:\.x)?)|(\d+(?:\.\d+)+(?:\.x)?)\s+(?:LTR|LTS)\b)/g)) {
+    if (!versions.includes(match[1] || match[2])) {
+      throw new Error('Corrupted translation: changed software version');
+    }
+  }
+  const markers = text => JSON.stringify(text.match(/\*+|_+|~~/g) || []);
+  if (/[*_]/.test(source) && markers(source) === markers(translation)) {
+    const formatting = text => {
+      const counts = { strong: 0, em: 0 };
+      marked.walkTokens(marked.lexer(text), token => {
+        if (Object.hasOwn(counts, token.type)) counts[token.type]++;
+      });
+      return counts;
+    };
+    const expected = formatting(source);
+    const actual = formatting(translation);
+    if (actual.strong < expected.strong || actual.em < expected.em) {
+      throw new Error('Corrupted translation: broken Markdown emphasis');
+    }
+  }
+}
+
 function updateCatalog(entries, missing, translations) {
   const updated = { ...entries };
   for (const [page, keys] of Object.entries(missing)) {
@@ -73,6 +113,12 @@ function updateCatalog(entries, missing, translations) {
       if (values.has(key)) continue;
       if (!Object.hasOwn(translations, key) || typeof translations[key] !== 'string' || !translations[key].trim()) {
         throw new Error(`Missing machine translation for ${page}: ${key}`);
+      }
+      try {
+        validateTranslation(key, translations[key]);
+      } catch (error) {
+        error.message = `${page}: ${error.message}: ${key}`;
+        throw error;
       }
       values.set(key, translations[key]);
     }
@@ -122,4 +168,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { missingPageKeys, updateCatalog };
+module.exports = { missingPageKeys, updateCatalog, validateTranslation };

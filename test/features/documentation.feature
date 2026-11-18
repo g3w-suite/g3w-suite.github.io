@@ -6,3 +6,6 @@ Feature: Site documentation
 
   Scenario: Markdown documentation is compiled locally
     Then every documentation source is Markdown and has a generated page
+
+  Scenario: LLM documentation files are generated
+    Then LLM documentation files include every manual page

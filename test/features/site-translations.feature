@@ -9,3 +9,6 @@ Feature: Site translations
 
   Scenario: Automatic translation fills gaps without replacing existing entries
     Then the translation updater adds only missing source keys
+
+  Scenario: Corrupted machine translations cannot be saved
+    Then corrupted machine translations are rejected

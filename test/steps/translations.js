@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
-const { missingPageKeys, updateCatalog } = require('../../utils/update-translations');
+const { missingPageKeys, updateCatalog, validateTranslation } = require('../../utils/update-translations');
 const { languages: siteLanguages } = require('../../utils/config');
 const { autoTranslateMarkdown } = require('../../utils/markdown');
 const { catalog, pageCatalog, extractPageMetadata } = require('../../utils/translations');
@@ -41,6 +41,24 @@ Then('the translation updater adds only missing source keys', function () {
   const updated = updateCatalog(entries, { [file]: [...missing, 'Existing'] }, generated);
   assert.equal(updated[file].Existing, 'Gia tradotto');
   assert.deepEqual(missingPageKeys(markdown, file, 'it', updated[file]), []);
+});
+
+Then('corrupted machine translations are rejected', function () {
+  for (const [source, translated, error] of [
+    ['No plugin needed.', `Inget ${'nej '.repeat(12)}plugin behövs.`, /repeated words/],
+    ['Open the map.', 'Відкрийте '.repeat(12), /repeated words/],
+    ['user: **viewer1**', 'utilisateur : **visualiseur1**', /changed login value/],
+    ['password: **example123**', 'mot de passe : **example123 (extra)**', /changed login value/],
+    ['Title:', 'Titre & #160;:', /malformed HTML entity/],
+    ['Use QGIS 3.40 LTR.', 'Utiliser QGIS 3,40 LTR.', /changed software version/],
+    ['Use QGIS 3.4.', 'Utiliser QGIS 3.44.', /changed software version/],
+    ['**Open the map**', '** Ouvrir la carte**', /broken Markdown/],
+    ['The **map** is ready.', 'La **carte ** est prête.', /broken Markdown/],
+  ]) {
+    assert.throws(() => updateCatalog({}, { 'example.md': [source] }, { [source]: translated }), error);
+  }
+  assert.doesNotThrow(() => validateTranslation('user: **viewer1**', 'utilisateur : **viewer1**'));
+  assert.doesNotThrow(() => validateTranslation('The **map** is ready.', 'La **carte** est prête.'));
 });
 
 Then('translated text is rendered for each language', function () {
@@ -111,6 +129,11 @@ Then('the page-scoped catalogs are valid and used by the build', function () {
   for (const [lang, entries] of Object.entries(catalogs)) {
     for (const source of Object.keys(entries)) assert.ok(sourceKeys.has(source), `${lang}/${source}: orphaned translations`);
     assert.ok(Object.hasOwn(entries, '@breadcrumb') && Object.hasOwn(entries, '@documentation'), `${lang}: missing shared labels`);
+    for (const [page, values] of Object.entries(entries)) {
+      for (const [source, translation] of Object.entries(values)) {
+        assert.doesNotThrow(() => validateTranslation(source, translation), `${lang}/${page}: ${source}`);
+      }
+    }
   }
   const italian = catalogs.it;
   const unmarked = [];

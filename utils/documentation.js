@@ -100,6 +100,7 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
     .sort((a, b) => b[1].localeCompare(a[1]))
     .map(([, , version]) => version);
   const searchIndexes = Object.fromEntries(languages.map(lang => [lang, []]));
+  let llmsPages = [];
   for (const lang of languages) {
     const targetDir = path.join(outputDir, docsRoot(lang));
     fs.mkdirSync(targetDir, { recursive: true });
@@ -124,6 +125,11 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
       const pagePath = documentationLink(relative, indexFile, docsDir, lang);
       return { file, relative, html, metadata, translations, localized, title, pagePath };
     });
+    if (lang === 'en') {
+      llmsPages = localizedPages.map(({ metadata, localized, pagePath, title }) => ({
+        metadata, content: localized, pagePath, title,
+      }));
+    }
     const titles = new Map(localizedPages.map(({ pagePath, title }) =>
       [pagePath, marked.parseInline(title).replace(/<[^>]*>/g, '')]));
     const index = localizedPages.find(({ file }) => file === indexFile);
@@ -208,6 +214,30 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
     const targetDir = path.join(outputDir, docsRoot(lang));
     fs.writeFileSync(path.join(targetDir, 'search-index.json'), JSON.stringify(searchIndexes[lang]));
   }
+  fs.writeFileSync(path.join(outputDir, 'llms.txt'), [
+    '# G3W-SUITE',
+    '',
+    `> ${pages.find(({ relative }) => relative === 'index.md').metadata.description}`,
+    '',
+    '## Documentation',
+    ...llmsPages.map(({ metadata, pagePath, title }) =>
+      `- [${title}](${basePath}${pagePath}): ${metadata.description}`),
+    '',
+  ].join('\n'));
+  fs.writeFileSync(path.join(outputDir, 'llms-full.txt'), [
+    '# G3W-SUITE Documentation',
+    '',
+    ...llmsPages.map(({ content, metadata, pagePath, title }) => [
+      `## ${title}`,
+      '',
+      metadata.description,
+      '',
+      `[Read online](${basePath}${pagePath})`,
+      '',
+      content.trim(),
+    ].join('\n')),
+    '',
+  ].join('\n'));
 }
 
 module.exports = { buildDocumentation, documentationLabels };

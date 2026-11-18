@@ -103,6 +103,10 @@ Then('the build supports a project base path without broken internal links', fun
     assert.equal(docs('form.docs-search').attr('data-index-url'), `${prefix}/en/docs/search-index.json`);
     const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'en', 'docs', 'search-index.json'), 'utf8'));
     assert.ok(searchIndex.every(page => page.url.startsWith(`${prefix}/en/docs/`)), 'search results must include the project base path');
+    const llms = fs.readFileSync(path.join(staticDir, 'llms.txt'), 'utf8');
+    const llmsFull = fs.readFileSync(path.join(staticDir, 'llms-full.txt'), 'utf8');
+    assert.ok(llms.includes(`](${prefix}/en/docs/`), 'llms.txt links must include the project base path');
+    assert.ok(llmsFull.includes(`](${prefix}/en/docs/`), 'llms-full.txt links must include the project base path');
     const italianDocs = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
     assert.equal(italianDocs('html').attr('lang'), 'it');
     assert.equal(italianDocs('form.docs-search').attr('data-index-url'), `${prefix}/it/docs/search-index.json`);

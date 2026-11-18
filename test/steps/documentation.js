@@ -10,6 +10,18 @@ const { extractPageMetadata, catalog } = require('../../utils/translations');
 const { languages: siteLanguages } = require('../../utils/config');
 const { staticDir, languages, filesIn, htmlFiles, pageBodyClass, readPage, localTarget } = require('../support/site');
 
+Then('LLM documentation files include every manual page', function () {
+  const sources = filesIn(path.resolve('src/docs')).filter(file => file.endsWith('.md'));
+  const llms = fs.readFileSync(path.join(staticDir, 'llms.txt'), 'utf8');
+  const full = fs.readFileSync(path.join(staticDir, 'llms-full.txt'), 'utf8');
+  assert.equal((llms.match(/^- \[/gm) || []).length, sources.length);
+  for (const file of sources) {
+    const { metadata } = extractPageMetadata(fs.readFileSync(file, 'utf8'), file);
+    assert.ok(llms.includes(`[${metadata.title}](`), `${file}: missing from llms.txt`);
+    assert.ok(full.includes(`## ${metadata.title}`), `${file}: missing from llms-full.txt`);
+  }
+});
+
 Then('release links are available in the documentation navigation', function () {
   const releasePattern = /^(\d{4}-\d{2}-\d{2})-changelog-(v\d+\.\d+)\.md$/;
   const releaseRoutes = filesIn(path.resolve('src/news'))

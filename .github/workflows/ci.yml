@@ -27,9 +27,9 @@ jobs:
         id: translations
         run: node utils/update-translations.js --dry-run
       - uses: actions/setup-python@v5
-        if: steps.translations.outputs.has_missing == 'true'
         with:
           python-version: '3.11'
+      - run: python -m unittest discover -s test -p 'test_*.py'
       - name: Generate missing translations
         if: steps.translations.outputs.has_missing == 'true'
         env:
