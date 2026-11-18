@@ -5,7 +5,7 @@ const path = require('node:path');
 const { projectRoot, staticDir, sourceDir, languages, publishedHtml } = require('../utils/config');
 const { htmlFiles, markdownFiles } = require('../utils/files');
 const { catalog, pageCatalog, localizeSiteLinks, renderLanguageBlocks, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
-const { autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
+const { marked, getHeadingList, addHeadingAliases, autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
 const { outputPage, languagePageUrl, renderLanguageLinks, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
 const { prepareMermaid, copyMermaidScript } = require('../utils/mermaid');
@@ -39,6 +39,11 @@ function build(outputDir) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
     const pageMetadata = extractPageMetadata(sourceHtml, path.relative(projectRoot, file));
     const pageUrls = Object.fromEntries(languages.map(lang => [lang, languagePageUrl(page, lang)]));
+    let sourceHeadings = [];
+    if (path.extname(file) === '.md') {
+      marked.parse(translateHtml(renderLanguageBlocks(pageMetadata.html, 'en'), 'en'));
+      sourceHeadings = getHeadingList().map(({ id }) => id);
+    }
     for (const lang of languages) {
       try {
         const translations = pageCatalog(lang, catalogs[lang], page);
@@ -59,13 +64,14 @@ function build(outputDir) {
           /<!--#include file="(?:\.\.\/)?_(?:header|footer)\.html"-->/g,
           ''
         );
-        const pageContent = path.extname(file) === '.md'
+        let pageContent = path.extname(file) === '.md'
           ? page === path.join('news', 'index.md')
             ? renderPageMarkdown(content, page)
             : page.startsWith(`news${path.sep}`)
               ? renderChangelogMarkdown(content)
               : renderPageMarkdown(content, page)
           : content;
+        if (lang !== 'en') pageContent = addHeadingAliases(pageContent, sourceHeadings);
         const header = renderComponent('header', lang, page, pageUrls, catalogs[lang], pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls, catalogs[lang]);
         const output = renderMarkdownButtonLinks(renderYoutubeVideos(`${header}\n${localizeSiteLinks(pageContent, lang)}\n${footer}`));

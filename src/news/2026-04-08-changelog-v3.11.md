@@ -154,7 +154,7 @@ With the new version it is possible to merge multiple graphs from the DataPlotly
 <div class="cta-box">
   <p>{{t 'For complete details, see the'}} <a href="/docs/">{{t 'official ReadTheDocs documentation'}}</a>.</p>
   <div class="btn-group">
-    <a class="btn btn--primary" href="{{#it}}/it/docs/demo/{{/it}}{{#en}}/docs/demo/{{/en}}#demo-3-11">{{t 'Try the demo'}}</a>
+    <a class="btn btn--primary" href="{{#it}}/it/docs/demo/{{/it}}{{#en}}/docs/demo/{{/en}}#try-the-live-demo">{{t 'Try the demo'}}</a>
     <a class="btn btn--outline" href="{{#it}}/it/docs/quick-start/{{/it}}{{#en}}/docs/quick-start/{{/en}}">{{t 'Quick Start'}}</a>
   </div>
 </div>

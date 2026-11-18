@@ -148,7 +148,7 @@ This component is released under the MIT licence. Check its repository for insta
 
 [View the G3W-ADMIN-PDND source repository](https://github.com/g3w-suite/g3w-admin-pdnd)
 
-## <span id="g3w-client-plugin-editing"></span>Collaborative editing
+## Collaborative editing
 
 ![G3W-CLIENT editing tools](/img/manual-english-editing-client-tool.avif)
 

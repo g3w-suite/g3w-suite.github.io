@@ -8,6 +8,7 @@ const { Given, Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
 const { staticDir, languages, filesIn, htmlFiles, pageBodyClass, readPage, localTarget, checkPages } = require('../support/site');
 const { languages: publishedLanguages, docsRoot } = require('../../utils/config');
+const { renderPageMarkdown } = require('../../utils/markdown');
 
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
@@ -21,6 +22,11 @@ Given('the HTML pages in the language folders', function () {
   });
 });
 Then('every page declares its language, metadata, and main structure', function () {
+  const markdown = '# Example\n\n## Details\n\n## Details\n';
+  const rendered = renderPageMarkdown(markdown, 'example.md');
+  assert.equal(renderPageMarkdown(markdown, 'example.md'), rendered, 'heading IDs must not depend on earlier renders');
+  assert.match(rendered, /id="details"/);
+  assert.match(rendered, /id="details-1"/);
   checkPages(this.pages, ({ $, html, file, lang }, expect) => {
     expect(/^<!doctype html>/i.test(html.trimStart()), 'missing HTML doctype');
     expect($('html').attr('lang') === lang, `html lang must be ${lang}`);
@@ -71,7 +77,7 @@ Then('every page declares its language, metadata, and main structure', function 
       );
     }
     if (path.relative(path.join(staticDir, lang), file) === path.join('about', 'index.html')) {
-      for (const id of ['features', 'components', 'people']) {
+      for (const id of ['open-source-ecosystem', 'g3w-admin', 'governing-board']) {
         expect(main.find(`[id="${id}"]`).length === 1, `missing section anchor #${id}`);
       }
     }

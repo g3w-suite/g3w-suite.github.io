@@ -51,7 +51,7 @@ On pushes to `vanilla` or manual runs on that branch, the [CI workflow](./.githu
 
 1. Start from an existing Markdown page directly in `src/` or `src/news/`, keeping its metadata and local translations. Release-note filenames use `YYYY-MM-DD-changelog-vX.Y.md`; other news articles start with `YYYY-MM-DD-`. Keep raw HTML for page-specific layout and media.
 2. Add exact full-line Markdown translations or inline `{{t '...'}}` translations to the catalogs in `i18n/`. Use language blocks only for genuine differences. Check that generated `hreflang` tags and language switcher links point to the correct pages in both directions.
-3. Use site-root URLs for internal pages and assets, such as `/it/about/` and `/img/logo.avif`, never `../` or `./`. Same-page fragments (`#section`) are allowed. The build prefixes these URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
+3. Use site-root URLs for internal pages and assets, such as `/it/about/` and `/img/logo.avif`, never `../` or `./`. Link to heading IDs generated from the English Markdown title (for example `/en/about/#governing-board`), not manual `<span id="...">` anchors. The build also generates these English heading aliases on translated pages. The build prefixes URLs and the root redirect with `SITE_BASE_PATH` when publishing under a subdirectory; GitHub Pages supplies this automatically.
 4. Preserve ARIA attributes and keyboard behavior for menus when editing shared navigation components.
 5. Check the pages in the browser, including on small screens, and run the tests.
 

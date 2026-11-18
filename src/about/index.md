@@ -3,7 +3,7 @@ title: Open Source Ecosystem - G3W-Suite
 description: Bring QGIS projects into everyday work with an open, modular WebGIS built for collaboration.
 ---
 
-# <span id="features"></span>Open Source Ecosystem
+# Open Source Ecosystem
 
 G3W-SUITE is made of modular open source components, available on [GitHub](https://github.com/g3w-suite).
 
@@ -37,9 +37,9 @@ G3W-SUITE is made of modular open source components, available on [GitHub](https
 - PDND
 - public administration
 
-[Features](/en/about/#features) · [Demo](/en/docs/demo/) · [Components](/en/about/#components) · [People](/en/about/#people) · [Versions and compatibility](/en/docs/versions/)
+[Features](/en/about/#open-source-ecosystem) · [Demo](/en/docs/demo/) · [Components](/en/about/#g3w-admin) · [People](/en/about/#governing-board) · [Versions and compatibility](/en/docs/versions/)
 
-## <span id="components"></span>[G3W-ADMIN](/en/docs/components/#g3w-admin)
+## [G3W-ADMIN](/en/docs/components/#g3w-admin)
 
 ![{{t 'G3W-ADMIN administration interface'}}](/img/site-webgis-management-preview.avif)
 
@@ -99,7 +99,7 @@ G3W-SUITE integration with the Italian **Piattaforma Digitale Nazionale Dati** (
 
 [g3w-suite/g3w-admin-pdnd](https://github.com/g3w-suite/g3w-admin-pdnd "github-button") [Features](/en/docs/components/#g3w-admin-pdnd "outline-button")
 
-## [G3W-CLIENT-PLUGIN-EDITING](/en/docs/components/#g3w-client-plugin-editing)
+## [G3W-CLIENT-PLUGIN-EDITING](/en/docs/components/#collaborative-editing)
 
 ![{{t 'G3W-CLIENT editing tools'}}](/img/manual-english-demo-editing-web.avif)
 
@@ -107,22 +107,22 @@ G3W-SUITE integration with the Italian **Piattaforma Digitale Nazionale Dati** (
 
 A JavaScript plugin for **collaborative editing of geometries and attributes** directly in the map client. Authorised users can create, modify and delete vector features using advanced snap, split and multi-relation tools. The code is now maintained inside `g3w-admin`.
 
-[g3w-admin / editing](https://github.com/g3w-suite/g3w-admin/tree/dev/g3w-admin/editing "github-button") [Features](/en/docs/components/#g3w-client-plugin-editing "outline-button")
+[g3w-admin / editing](https://github.com/g3w-suite/g3w-admin/tree/dev/g3w-admin/editing "github-button") [Features](/en/docs/components/#collaborative-editing "outline-button")
 
-## <span id="participate"></span>Participate in the project
+## Participate in the project
 
 Check out the public roadmap, join the community discussions or sponsor G3W-SUITE development.
 
 [g3w-suite on GitHub](https://github.com/g3w-suite "github-button") [Public roadmap](https://github.com/orgs/g3w-suite/projects/12 "outline-button") [Discussions](https://github.com/g3w-suite/community/discussions "outline-button")
 
-### <span id="governing-board"></span><span id="people"></span>{{t 'Governing board'}}
+### {{t 'Governing board'}}
 
 - [![Francesco Boccacci](https://github.com/volterra79.png?size=240) Francesco Boccacci (@volterra79)](/en/about/francesco-boccacci/)
 - [![Leonardo Lami](https://github.com/leolami.png?size=240) Leonardo Lami](/en/about/leonardo-lami/)
 - [![Matteo Tosi](https://github.com/Raruto.png?size=240) Matteo Tosi (@Raruto)](/en/about/matteo-tosi/)
 - [![Walter Lorenzetti](https://github.com/wlorenzetti.png?size=240) Walter Lorenzetti (@wlorenzetti)](/en/about/walter-lorenzetti/)
 
-### <span id="team"></span>Contributors
+### Contributors
 
 - [![Alessandro Pasotti](https://github.com/elpaso.png?size=240) Alessandro Pasotti (@elpaso)](/en/about/alessandro-pasotti/)
 - [![Andrea Antonello](https://github.com/moovida.png?size=240) Andrea Antonello (@moovida)](/en/about/andrea-antonello/)

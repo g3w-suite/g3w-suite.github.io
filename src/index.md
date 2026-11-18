@@ -12,7 +12,7 @@ ogType: website
 
 Open source solution to publish and manage WebGIS services directly from your QGIS projects, in cloud or in house.
 
-[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/docs/demo/#demo-3-11 "light-button") [GitHub](https://github.com/g3w-suite "github-button")
+[What's new in v3.11](/en/news/v3.11/ "primary-button") [Try the demo](/en/docs/demo/#try-the-live-demo "light-button") [GitHub](https://github.com/g3w-suite "github-button")
 
 ![Publishing QGIS on web](/img/{{#it}}site-g3w-suite-homepage-italian.avif{{/it}}{{#en}}homepage_eng2.avif{{/en}})
 
@@ -54,7 +54,7 @@ Web editing supports collaborative workflows and field data collection, includin
 
 [Try the demo]({{#en}}https://v310.g3wsuite.it/it/#/en/{{/en}}{{#it}}https://v311.g3wsuite.it{{/it}} "primary-button") [Quick Start](/en/docs/quick-start/ "outline-button")
 
-## <span id="clienti"></span>**Validated in production** Used by public bodies, companies and universities
+## **Validated in production** Used by public bodies, companies and universities
 
 From territorial planning to network management, with active projects in different operational contexts.
 
@@ -69,14 +69,14 @@ From territorial planning to network management, with active projects in differe
 
 [See all sponsors and contributors](/en/sponsors/ "outline-button")
 
-## <span id="comefunziona"></span>**Use cases** One platform, three operational use cases
+## **Use cases** One platform, three operational use cases
 
 WebGIS publishing, public-sector interoperability and advanced geospatial analysis: three paths based on project needs.
 ### WebGIS publishing and management
 
 Integrated map client and admin panel for multi-user projects, editing workflows and permission management.
 
-[Full feature set](/en/about/#features "outline-small-button")
+[Full feature set](/en/about/#open-source-ecosystem "outline-small-button")
 
 ### Interoperability for public administration
 
@@ -98,7 +98,7 @@ Run QGIS Processing models directly from the web client to integrate analysis in
 Field data collection and WebGIS publishing in one workflow, from survey to sharing.
 
 [Discover the solutions](/en/news/merginmaps/ "primary-button")
-[Explore the components](/en/about/#components "outline-button")
+[Explore the components](/en/about/#g3w-admin "outline-button")
 
 ### Main contributors
 

@@ -1,9 +1,21 @@
 'use strict';
 
 const { marked } = require('marked');
-const { gfmHeadingId, getHeadingList } = require('marked-gfm-heading-id');
+const { gfmHeadingId, getHeadingList, resetHeadings } = require('marked-gfm-heading-id');
 const { localizeSiteUrl } = require('./translations');
 marked.use(gfmHeadingId());
+
+function addHeadingAliases(html, sourceHeadings) {
+  const existingIds = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(([, id]) => id));
+  let headingIndex = 0;
+  return html.replace(/<h[1-6]\b[^>]*>/g, heading => {
+    const sourceId = sourceHeadings[headingIndex++];
+    const localizedId = /\bid="([^"]+)"/.exec(heading)?.[1];
+    if (!localizedId || !sourceId || sourceId === localizedId || existingIds.has(sourceId)) return heading;
+    existingIds.add(sourceId);
+    return `${heading}<span id="${sourceId}"></span>`;
+  });
+}
 
 function autoTranslateMarkdown(markdown, lang, translations = {}) {
   // ponytail: single-line blocks only; add token-aware parsing if multiline Markdown needs translation
@@ -27,7 +39,7 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
       }).join('|');
     }
     if (lang !== 'en' && !wholeBlockTranslated && !/^\s*\|/.test(line)) {
-      const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
+      const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?)(.*?)(\s*)$/.exec(line);
       if (match && match[2] && !/[{}]/.test(match[2]) && Object.hasOwn(entries, match[2])) {
         lines[index] = `${match[1]}${entries[match[2]]}${match[3]}`;
         wholeBlockTranslated = true;
@@ -86,6 +98,7 @@ function renderMarkdownButtonLinks(html) {
 }
 
 function renderChangelogMarkdown(markdown) {
+  resetHeadings();
   const tokens = marked.lexer(markdown);
   const headerTokens = [];
   if (tokens[0]?.type === 'heading' && tokens[0].depth === 1) {
@@ -101,6 +114,7 @@ function renderChangelogMarkdown(markdown) {
 }
 
 function renderPageMarkdown(markdown, page) {
+  resetHeadings();
   const main = /(<main\b[^>]*>)([\s\S]*?)(<\/main>)/i.exec(markdown);
   let html = main
     ? markdown.slice(0, main.index) +
@@ -193,7 +207,7 @@ function renderMarkdownSections(markdown, page) {
 
       flush();
       const heading = item.heading
-        ? marked.parser([item.heading]).replace(/(<h[1-6]) id="([^"]+)"(>)(<span id="\2"><\/span>)/, '$1$3$4')
+        ? marked.parser([item.heading])
         : '';
       const content = `${heading}${renderItems(item.items)}`;
       html += topLevel
@@ -251,4 +265,4 @@ function renderDelimitedSections(html, page) {
   return html.slice(0, mainOpenEnd) + rendered + html.slice(mainEnd);
 }
 
-module.exports = { marked, getHeadingList, autoTranslateMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks, renderChangelogMarkdown, renderPageMarkdown };
+module.exports = { marked, getHeadingList, addHeadingAliases, autoTranslateMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks, renderChangelogMarkdown, renderPageMarkdown };

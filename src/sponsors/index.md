@@ -9,7 +9,7 @@ description: Support G3W-SUITE and discover the organizations that have funded i
 
 Public organizations, businesses and individuals help G3W-SUITE evolve through funding, development and shared expertise. Their support benefits everyone who uses the project.
 
-[Support the project](mailto:info@gis3w.it?subject=G3W-SUITE%20sponsorship "primary-button") [Meet our sponsors](#sponsors "outline-button")
+[Support the project](mailto:info@gis3w.it?subject=G3W-SUITE%20sponsorship "primary-button") [Meet our sponsors](#our-sponsors "outline-button")
 
 ## Why support matters
 
@@ -25,7 +25,7 @@ Supporting ongoing work helps keep the WebGIS platform useful alongside a changi
 
 Contributions to code, documentation and translations make the project more accessible to everyone.
 
-## <span id="sponsors"></span>Our sponsors
+## Our sponsors
 
 These organizations and projects have supported G3W-SUITE over the years. Explore their profiles and the releases they helped make possible.
 
@@ -51,19 +51,19 @@ These organizations and projects have supported G3W-SUITE over the years. Explor
 - [SC FOCA MANAGEMENT PARTNERS SRL](/en/sponsors/foca-management-partners/)
 - [![Stantec](/img/site-stanec.avif) Stantec](/en/sponsors/stantec/)
 
-## <span id="g3w-partners"></span>Work with us
+## Work with us
 
 Whether you want to fund an improvement, contribute to the project or explore a partnership, we would be glad to hear from you. Gis3W also offers consulting, technical support and custom development for organizations using G3W-SUITE.
 
 [Contact us](mailto:info@gis3w.it?subject=G3W-SUITE%20partnership "primary-button") [Join the community](/en/community/ "outline-button")
 
-## <span id="merginmaps"></span>Mergin Maps partnership
+## Mergin Maps partnership
 
 Gis3W is an official Mergin Maps partner and provides support for field data collection workflows based on QGIS.
 
 [Read about the Mergin Maps partnership](/en/news/merginmaps/ "outline-button")
 
-## <span id="clients"></span>Organizations using G3W-SUITE
+## Organizations using G3W-SUITE
 
 These examples show organizations using G3W-SUITE; use of the platform does not necessarily mean sponsorship.
 

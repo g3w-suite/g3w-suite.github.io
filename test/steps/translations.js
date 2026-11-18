@@ -240,7 +240,7 @@ Then('the page-scoped catalogs are valid and used by the build', function () {
     const page = readPage(path.join(staticDir, lang, 'news', 'v3.9', 'index.html')).$;
     assert.equal(page('main .cta-box a.btn--outline').text().trim(), text);
     assert.equal(page('main .cta-box a.btn--outline').attr('href'), href);
-    assert.equal(page('main .cta-box a.btn--primary').attr('href'), `${lang === 'it' ? '/it' : ''}/docs/demo/#demo-3-11`);
+    assert.equal(page('main .cta-box a.btn--primary').attr('href'), `${lang === 'it' ? '/it' : ''}/docs/demo/#try-the-live-demo`);
   }
   const modelIt = readPage(path.join(staticDir, 'it', 'news', 'model-builder-processing', 'index.html')).$;
   assert.equal(modelIt('main h2').first().text().trim(), 'Funzionalità e impostazioni di QGIS Model Builder');

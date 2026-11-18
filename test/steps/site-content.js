@@ -198,7 +198,7 @@ Then('both languages are generated from shared page templates', function () {
     }
     const explore = readPage(path.join(staticDir, lang, 'about', 'index.html')).$;
     const docsRoot = lang === 'it' ? '/it/docs' : '/docs';
-    for (const id of ['features', 'components', 'people', 'governing-board', 'team']) {
+    for (const id of ['open-source-ecosystem', 'g3w-admin', 'governing-board', 'contributors']) {
       assert.equal(explore(`#${id}`).length, 1, `${lang} About page must preserve #${id}`);
     }
     assert.ok(explore('main > section:first-of-type li').length > 20, `${lang} About must list the ecosystem capabilities`);
@@ -207,21 +207,21 @@ Then('both languages are generated from shared page templates', function () {
       href: explore(link).attr('href'),
       label: explore(link).text(),
     })).get(), [
-      { href: `/${lang}/about/#features`, label: lang === 'it' ? 'Funzionalità' : 'Features' },
+      { href: `/${lang}/about/#open-source-ecosystem`, label: lang === 'it' ? 'Funzionalità' : 'Features' },
       { href: `${docsRoot}/demo/`, label: 'Demo' },
-      { href: `/${lang}/about/#components`, label: lang === 'it' ? 'Componenti' : 'Components' },
-      { href: `/${lang}/about/#people`, label: lang === 'it' ? 'Persone' : 'People' },
+      { href: `/${lang}/about/#g3w-admin`, label: lang === 'it' ? 'Componenti' : 'Components' },
+      { href: `/${lang}/about/#governing-board`, label: lang === 'it' ? 'Persone' : 'People' },
       { href: `${docsRoot}/versions/`, label: lang === 'it' ? 'Versioni e compatibilità' : 'Versions and compatibility' },
     ], `${lang} About must provide localized navigation shortcuts`);
     assert.equal(explore(`main a[href="${docsRoot}/versions/"]`).length, 1, `${lang} About must link to compatibility`);
     assert.equal(explore('main table').length, 0, `${lang} About must keep technical compatibility on its own page`);
     const joinSection = explore('main > section').last();
-    assert.equal(joinSection.find('#participate').length, 1, `${lang} About must include the invitation to join`);
-    assert.equal(joinSection.find('> .container > section').first().find('#people').length, 1, `${lang} invitation must precede the project members`);
+    assert.equal(joinSection.find('#participate-in-the-project').length, 1, `${lang} About must include the invitation to join`);
+    assert.equal(joinSection.find('> .container > section').first().find('#governing-board').length, 1, `${lang} invitation must precede the project members`);
     assert.equal(joinSection.find('h2').text().trim(), lang === 'it' ? 'Partecipa al progetto' : 'Participate in the project');
     const demos = readPage(path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']), 'demo', 'index.html')).$;
     assert.ok(!fs.existsSync(path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']), 'demos')), `${lang} old demos route must be removed`);
-    for (const id of ['demo-3-11', 'demo-3-10', 'demo-dev']) {
+    for (const id of ['try-the-live-demo', 'other-versions', 'development-branch']) {
       assert.equal(demos(`#${id}`).length, 1, `${lang} demo page must preserve #${id}`);
     }
     assert.ok(demos('main').text().includes('viewer1'), `${lang} demo page must retain the public login`);
@@ -239,7 +239,7 @@ Then('both languages are generated from shared page templates', function () {
     assert.equal(versions(`main table a[href="${docsRoot}/"]`).length, 1, `${lang} compatibility table must link to the localized manual`);
     assert.equal(versions(`main table a[href="/${lang}/news/v3.11/"]`).length, 1, `${lang} compatibility table must link to localized release notes`);
     const community = readPage(path.join(staticDir, lang, 'community', 'index.html')).$;
-    assert.equal(community(`main a[href="/${lang}/about/#people"]`).length, 1, `${lang} community must link to contributor profiles`);
+    assert.equal(community(`main a[href="/${lang}/about/#governing-board"]`).length, 1, `${lang} community must link to contributor profiles`);
     const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'index.html')).$;
     assert.ok(manual('main').text().includes('QGIS 3.44 LTR'), `${lang} manual must match the current QGIS version`);
     const componentSections = explore('main > section').slice(1, 8);
@@ -337,6 +337,7 @@ Then('both languages are generated from shared page templates', function () {
       `${file}: shared shell components must be injected by the build`
     );
     assert.doesNotMatch(source, /<!doctype html>|<\/?html\b|<\/?head\b|<\/?body\b/i, `${file}: document shell must come from shared components`);
+    assert.doesNotMatch(source, /<span\b[^>]*\bid=/i, `${file}: heading IDs must be generated from Markdown`);
   }
   assert.ok(!fs.existsSync(path.join(sourceDir, 'demo.md')), 'demo content must live under about/');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'modules.md')), 'component pages must live under about/');
@@ -361,8 +362,7 @@ Then('site page sources contain only the allowed HTML elements', function () {
     const { html: source } = extractPageMetadata(fs.readFileSync(file, 'utf8'), file);
     assert.equal((source.match(/<main\b[^>]*>/gi) || []).length, 0, `${file}: main element is injected by the build`);
     const markdown = source
-      .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '')
-      .replace(/^(#{1,6}\s.*)$/gm, heading => heading.replace(/<span id="[^"]+"><\/span>/g, ''));
+      .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '');
     assert.doesNotMatch(markdown, /<\/?[a-z][^>]*>/i, `${file}: use Markdown instead of other HTML elements`);
   }
 });

@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { basePath, languages, docsRoot, sourceDir, publishedHtml } = require('./config');
-const { marked, getHeadingList, autoTranslateMarkdown, renderMarkdownButtonLinks } = require('./markdown');
+const { marked, getHeadingList, addHeadingAliases, autoTranslateMarkdown, renderMarkdownButtonLinks } = require('./markdown');
 const { pageCatalog, localizeSiteUrl, translate, translateHtml, renderLanguageBlocks, renderPageAlternates } = require('./translations');
 const { renderBreadcrumb, renderComponent } = require('./routes');
 const { documentationFiles } = require('./files');
@@ -31,19 +31,6 @@ function documentationLink(href, file, docsDir, lang = 'en') {
   }
 
   return `/docs/${relative.replace(/\\/g, '/')}${suffix}`;
-}
-
-function addDocumentationHeadingAliases(html, sourceHeadings, localizedHeadings) {
-  const existingIds = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(([, id]) => id));
-  let headingIndex = 0;
-  return html.replace(/<h[1-6]\b[^>]*>/g, heading => {
-    const sourceId = sourceHeadings[headingIndex];
-    const localizedId = localizedHeadings[headingIndex]?.id;
-    headingIndex += 1;
-    if (!sourceId || sourceId === localizedId || existingIds.has(sourceId)) return heading;
-    existingIds.add(sourceId);
-    return `${heading}<span id="${sourceId}"></span>`;
-  });
 }
 
 function linkDocumentationHeadings(html) {
@@ -149,7 +136,7 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
         sourceHeadings = getHeadingList().map(({ id }) => id);
       }
       let content = renderMarkdownButtonLinks(marked.parse(sourceBody));
-      if (lang !== 'en') content = addDocumentationHeadingAliases(content, sourceHeadings, getHeadingList());
+      if (lang !== 'en') content = addHeadingAliases(content, sourceHeadings);
       content = content.replace(/\b(href|src)=(")(.*?)\2/g, (attribute, name, quote, href) =>
         `${name}="${documentationLink(href, file, docsDir, lang)}"`
       );

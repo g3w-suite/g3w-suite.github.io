@@ -759,9 +759,9 @@ main > section > .container > h2 > strong:first-of-type {
   background: var(--color-white);
   font-size: .85rem;
 }
-.page-about main > section:has(> .container > h2 > #participate) > .container > section { text-align: center; margin-top: 3rem; }
-.page-about main > section:has(> .container > h2 > #participate) > .container > section > h3 { margin-bottom: 1.25rem; }
-.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul {
+.page-about main > section:last-of-type > .container > section { text-align: center; margin-top: 3rem; }
+.page-about main > section:last-of-type > .container > section > h3 { margin-bottom: 1.25rem; }
+.page-about main > section:last-of-type > .container > section > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
@@ -769,7 +769,7 @@ main > section > .container > h2 > strong:first-of-type {
   padding: 0;
   list-style: none;
 }
-.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul > li > a {
+.page-about main > section:last-of-type > .container > section > ul > li > a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -784,21 +784,21 @@ main > section > .container > h2 > strong:first-of-type {
   font-weight: 600;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul > li > a:hover,
-.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul > li > a:focus {
+.page-about main > section:last-of-type > .container > section > ul > li > a:hover,
+.page-about main > section:last-of-type > .container > section > ul > li > a:focus {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
   text-decoration: none;
 }
-.page-about main > section:has(> .container > h2 > #participate) > .container > section > ul img {
+.page-about main > section:last-of-type > .container > section > ul img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
 }
-.page-about main > section:has(> .container > h2 > #participate) > .container { text-align: center; }
-.page-about main > section:has(> .container > h2 > #participate) > .container > p { max-width: 760px; margin-inline: auto; }
-.page-about main > section:has(> .container > h2 > #participate) > .container > p:has(> a.btn) {
+.page-about main > section:last-of-type > .container { text-align: center; }
+.page-about main > section:last-of-type > .container > p { max-width: 760px; margin-inline: auto; }
+.page-about main > section:last-of-type > .container > p:has(> a.btn) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -827,7 +827,7 @@ main > section > .container > h2 > strong:first-of-type {
   border-radius: var(--radius);
 }
 .page-sponsors main > section:nth-of-type(2) section h3 { font-size: 1.1rem; }
-.page-sponsors main > section:has(> .container > h2 > #sponsors) ul {
+.page-sponsors main > section:nth-of-type(3) ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1rem;
@@ -835,7 +835,7 @@ main > section > .container > h2 > strong:first-of-type {
   padding: 0;
   list-style: none;
 }
-.page-sponsors main > section:has(> .container > h2 > #sponsors) li a {
+.page-sponsors main > section:nth-of-type(3) li a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -852,12 +852,12 @@ main > section > .container > h2 > strong:first-of-type {
   font-weight: 600;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.page-sponsors main > section:has(> .container > h2 > #sponsors) li a:hover,
-.page-sponsors main > section:has(> .container > h2 > #sponsors) li a:focus-visible {
+.page-sponsors main > section:nth-of-type(3) li a:hover,
+.page-sponsors main > section:nth-of-type(3) li a:focus-visible {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
-.page-sponsors main > section:has(> .container > h2 > #sponsors) li img {
+.page-sponsors main > section:nth-of-type(3) li img {
   width: 100%;
   max-width: 150px;
   height: 65px;
@@ -871,7 +871,7 @@ body[class*="page-sponsors-"] main > section:first-of-type img {
   margin-bottom: 1.5rem;
 }
 body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; flex-wrap: wrap; gap: .75rem; }
-.page-sponsors main > section:has(> .container > h2 > #clients) > .container > ul {
+.page-sponsors main > section:last-of-type > .container > ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -881,7 +881,7 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   padding: 0;
   list-style: none;
 }
-.page-sponsors main > section:has(> .container > h2 > #clients) > .container > ul > li {
+.page-sponsors main > section:last-of-type > .container > ul > li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -892,23 +892,23 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   box-shadow: var(--shadow-card);
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.page-sponsors main > section:has(> .container > h2 > #clients) > .container > ul > li:hover {
+.page-sponsors main > section:last-of-type > .container > ul > li:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
-.page-sponsors main > section:has(> .container > h2 > #clients) > .container > ul > li a {
+.page-sponsors main > section:last-of-type > .container > ul > li a {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.page-sponsors main > section:has(> .container > h2 > #clients) > .container > ul > li img {
+.page-sponsors main > section:last-of-type > .container > ul > li img {
   max-height: 50px;
   width: auto;
   filter: grayscale(25%);
   transition: filter var(--transition);
   object-fit: contain;
 }
-.page-sponsors main > section:has(> .container > h2 > #clients) > .container > ul > li:hover img { filter: none; }
+.page-sponsors main > section:last-of-type > .container > ul > li:hover img { filter: none; }
 .page-news main > p:first-of-type {
   max-width: 1232px;
   margin: 2rem auto 0;

@@ -1,6 +1,6 @@
 # Demo
 
-## <span id="demo-3-11"></span>Try the live demo
+## Try the live demo
 
 Explore a building and maintenance management project in the stable G3W-SUITE 3.11 demo, based on QGIS 3.44 LTR. Search the map, view charts and print reports.
 
@@ -13,13 +13,13 @@ Features being edited by another user may be temporarily locked.
 
 [Open the stable demo](https://v311.g3wsuite.it/ "primary-button") [Release notes 3.11](/en/news/v3.11/ "outline-button")
 
-## <span id="demo-3-10"></span>Other versions
+## Other versions
 
 The maintenance demo uses G3W-SUITE 3.10 and QGIS 3.40 LTR.
 
 [Open the 3.10 demo](https://v310.g3wsuite.it/it/map/demo-310/) · [Release notes 3.10](/en/news/v3.10/)
 
-## <span id="demo-dev"></span>Development branch
+## Development branch
 
 Follow development of the next major version on [GitHub](https://github.com/g3w-suite/g3w-admin/tree/dev).
 
