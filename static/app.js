@@ -58,7 +58,17 @@ const languageButton = document.querySelector('[aria-controls="language-dialog"]
 if (languageButton && languageDialog) {
   languageButton.addEventListener('click', () => {
     languageDialog.showModal();
+    languageDialog.querySelector('input:checked').focus();
     languageButton.setAttribute('aria-expanded', 'true');
+  });
+  languageDialog.addEventListener('change', event => {
+    if (event.target.name === 'language') {
+      const target = document.querySelector(`link[rel="alternate"][hreflang="${event.target.value}"]`);
+      location.assign(target.href + location.search + location.hash);
+    }
+  });
+  languageDialog.addEventListener('click', event => {
+    if (event.target === languageDialog) languageDialog.close();
   });
   languageDialog.addEventListener('close', () => languageButton.setAttribute('aria-expanded', 'false'));
 }

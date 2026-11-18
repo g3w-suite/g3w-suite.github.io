@@ -159,8 +159,8 @@ Then('every documentation source is Markdown and has a generated page', function
     assert.equal(page('head link[rel="alternate"][hreflang="en"]').attr('href'), englishRoute);
     assert.equal(italianPage('head link[rel="alternate"][hreflang="it"]').attr('href'), italianRoute);
     assert.equal(italianPage('head link[rel="alternate"][hreflang="en"]').attr('href'), englishRoute);
-    assert.equal(italianPage('.lang-switcher a[hreflang="it"][lang="it"]').attr('href'), italianRoute);
-    assert.equal(italianPage('.lang-switcher a[hreflang="en"][lang="en"]').attr('href'), englishRoute);
+    assert.equal(italianPage('.language-options input[value="it"]:checked').length, 1);
+    assert.equal(italianPage('.language-options input[value="en"]').length, 1);
     const englishTocHref = page('link[rel="canonical"]').attr('href') || englishRoute;
     const italianTocHref = italianPage('link[rel="canonical"]').attr('href') || italianRoute;
     for (const [document, href, name] of [

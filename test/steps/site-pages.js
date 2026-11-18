@@ -171,17 +171,23 @@ Then('every page links consistently to the published languages', function () {
     expect($('head link[rel="alternate"][hreflang]').length === publishedLanguages.length, 'expected an alternate for each published language');
     expect($('.lang-switcher').length === 1, 'expected one language switcher');
     expect($('.lang-switcher > button[aria-haspopup="dialog"][aria-controls="language-dialog"]').length === 1, 'expected a language dialog trigger');
+    expect($('.lang-switcher > button img').attr('src') === `/img/language-${lang}.avif`, 'language trigger must show the current flag');
+    expect($('#current-language').text() === new Intl.DisplayNames(['en'], { type: 'language' }).of(lang), 'language trigger must show the capitalized English language name');
+    expect($('#current-language').attr('lang') === 'en', 'language trigger name must be marked as English');
     expect($('.lang-switcher dialog#language-dialog:not([open])').length === 1, 'expected a closed language dialog');
+    expect($('.language-options input[type="radio"][name="language"]').length === publishedLanguages.length, 'expected a language radio for every published language');
+    expect($('.language-options input:checked').length === 1, 'exactly one language must be selected');
     for (const targetLang of publishedLanguages) {
       const alternate = $(`head link[rel="alternate"][hreflang="${targetLang}"]`);
-      const switchLink = $(`.lang-switcher a[hreflang="${targetLang}"][lang="${targetLang}"]`);
+      const option = $(`.language-options input[value="${targetLang}"]`);
       expect(alternate.length === 1, `expected one ${targetLang} alternate`);
-      expect(switchLink.length === 1, `expected one ${targetLang} language switch link`);
+      expect(option.length === 1, `expected one ${targetLang} language option`);
+      expect(option.closest('label').find('img').attr('src') === `/img/language-${targetLang}.avif`, `${targetLang} option must have its flag`);
+      expect(option.closest('label').find('span').text() === new Intl.DisplayNames(['en'], { type: 'language' }).of(targetLang), `${targetLang} option must use its capitalized English name`);
+      expect(option.closest('label').find('span').attr('lang') === 'en', `${targetLang} option name must be marked as English`);
       const target = localTarget(file, alternate.attr('href'));
-      const switchTarget = localTarget(file, switchLink.attr('href'));
       const languageDir = path.join(staticDir, targetLang) + path.sep;
       expect(target && target.startsWith(languageDir) && target.endsWith('.html') && fs.existsSync(target) && fs.statSync(target).isFile(), `${targetLang} alternate must target an existing HTML page in its language folder`);
-      expect(target && target === switchTarget, `${targetLang} alternate and switch link must target the same page`);
       if (target && targetLang !== lang && target.startsWith(languageDir) && target.endsWith('.html') && fs.existsSync(target) && fs.statSync(target).isFile()) {
         const other = readPage(target).$;
         const backlink = other(`head link[rel="alternate"][hreflang="${lang}"]`);
@@ -189,9 +195,9 @@ Then('every page links consistently to the published languages', function () {
       }
       if (targetLang === lang) {
         expect(target === file, 'current-language link must target the current page');
-        expect(switchLink.attr('aria-current') === 'true', 'current-language link must have aria-current="true"');
+        expect(option.is(':checked'), 'current-language radio must be checked');
       } else {
-        expect(switchLink.attr('aria-current') !== 'true', 'other-language link must not be current');
+        expect(!option.is(':checked'), 'other-language radios must not be checked');
       }
     }
   });
@@ -205,7 +211,7 @@ Then('every page links consistently to the published languages', function () {
       assert.equal($('html').attr('lang'), lang);
       assert.notEqual($('main h1').first().text(), readRoute(englishRoute)('main h1').first().text(), localizedRoute);
       assert.equal($(`link[rel="alternate"][hreflang="en"]`).attr('href'), englishRoute);
-      assert.equal($(`.lang-switcher a[hreflang="${lang}"][aria-current="true"]`).attr('href'), localizedRoute);
+      assert.equal($(`.language-options input[value="${lang}"]:checked`).length, 1);
     }
     const index = JSON.parse(fs.readFileSync(path.join(staticDir, docsRoot(lang), 'search-index.json'), 'utf8'));
     assert.ok(index.some(entry => entry.url === `${docsRoot(lang)}/quick-start/`));

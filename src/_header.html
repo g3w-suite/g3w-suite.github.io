@@ -26,13 +26,13 @@
       </ul>
       <div class="lang-switcher">
         <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="language-dialog" aria-labelledby="language-title current-language">
-          <span id="current-language" lang="{{lang}}">{{currentLanguage}}</span>
+          <img src="{{siteRoot}}img/language-{{lang}}.avif" width="24" height="16" alt="{{currentLanguage}}" aria-hidden="true">
+          <span id="current-language" lang="en">{{currentLanguage}}</span>
           <span aria-hidden="true">▾</span>
         </button>
         <dialog id="language-dialog" aria-labelledby="language-title">
-          <h2 id="language-title">{{t 'Choose a language'}}</h2>
-          <ul>{{languageLinks}}</ul>
-          <form method="dialog"><button>{{t 'Close'}}</button></form>
+          <h2 id="language-title" class="sr-only">{{t 'Choose a language'}}</h2>
+          <form class="language-options" method="dialog">{{languageOptions}}</form>
         </dialog>
       </div>
     </nav>

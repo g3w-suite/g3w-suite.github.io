@@ -26,6 +26,14 @@ function renderLanguageLinks(pageUrls, currentLanguage) {
   ).join('');
 }
 
+function renderLanguageOptions(currentLanguage) {
+  const names = new Intl.DisplayNames(['en'], { type: 'language' });
+  return [...languages].sort().map(lang => {
+    const label = names.of(lang);
+    return `<label><input type="radio" name="language" value="${lang}"${lang === currentLanguage ? ' checked' : ''}><img src="/img/language-${lang}.avif" width="24" height="16" alt="${label}" aria-hidden="true"><span lang="en">${label}</span></label>`;
+  }).join('');
+}
+
 function pageBodyClass(page) {
   const route = outputPage(page).split(path.sep).join('/').replace(/(^|\/)index\.html$/, '');
   const slug = route.split('/').filter(Boolean).join('-').toLowerCase().replace(/[^a-z0-9-]/g, '-');
@@ -48,8 +56,8 @@ function renderBreadcrumb(lang, items, sourcePage, entries) {
 
 function renderComponent(component, lang, page, pageUrls, entries, pageHead = '') {
   const values = {
-    currentLanguage: languageName(lang),
-    languageLinks: renderLanguageLinks(pageUrls, lang),
+    currentLanguage: new Intl.DisplayNames(['en'], { type: 'language' }).of(lang),
+    languageOptions: renderLanguageOptions(lang),
     langRoot: `/${lang}/`,
     documentationUrl: `${docsRoot(lang)}/`,
     siteRoot: '/',

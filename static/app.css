@@ -286,23 +286,52 @@ time { color: var(--color-muted); font-size: .9rem; }
 /* Lang switcher */
 .lang-switcher dialog {
   margin: auto;
-  padding: 1.25rem;
-  max-width: min(28rem, calc(100vw - 2rem));
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  color: var(--color-dark);
+  padding: 0;
+  width: 350px;
+  max-width: calc(100vw - 1rem);
+  max-height: calc(100dvh - 2rem);
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 1px #000;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
 }
 .lang-switcher dialog::backdrop { background: rgb(0 0 0 / 50%); }
-.lang-switcher ul {
+.language-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  gap: .5rem;
-  margin: 1rem 0;
-  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 14px;
+  user-select: none;
 }
-.lang-switcher a,
-.lang-switcher button {
-  display: inline-block;
+.language-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  cursor: pointer;
+  text-align: left;
+}
+.language-options input {
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+  font: inherit;
+  accent-color: #263238;
+  cursor: pointer;
+}
+.language-options img,
+.lang-switcher > button img {
+  flex-shrink: 0;
+  width: 24px;
+  height: 16px;
+}
+.lang-switcher > button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   padding: .25rem .5rem;
   font-size: .8rem;
   font-weight: 700;
@@ -312,16 +341,6 @@ time { color: var(--color-muted); font-size: .9rem; }
   background: var(--color-white);
   cursor: pointer;
   transition: background var(--transition), color var(--transition), border-color var(--transition);
-}
-.lang-switcher ul a { display: block; }
-.lang-switcher form { text-align: end; }
-.lang-switcher a[aria-current="true"],
-.lang-switcher a:hover,
-.lang-switcher a:focus {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-white);
-  text-decoration: none;
 }
 
 @media (min-width: 981px) and (max-width: 1100px) {
