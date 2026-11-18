@@ -1,5 +1,30 @@
 ﻿'use strict';
 
+(async () => {
+const appScript = document.currentScript;
+if (document.body.classList.contains('page-404')) {
+  const alternates = [...document.querySelectorAll('link[rel="alternate"][hreflang]')];
+  const english = alternates.find(link => link.hreflang === 'en');
+  const root = new URL(english.href).pathname.slice(0, -'en/404/'.length);
+  const pathname = location.pathname.slice(root.length);
+  const language = pathname.split('/')[0];
+  const target = alternates.find(link => link.hreflang === language);
+  if (!target) {
+    const preferred = (navigator.languages?.length ? navigator.languages : [navigator.language])
+      .map(tag => tag?.toLowerCase().split('-')[0]);
+    const selected = preferred.map(lang => alternates.find(link => link.hreflang === lang)).find(Boolean) || english;
+    location.replace(`${root}${selected.hreflang}/${pathname}${location.search}${location.hash}`);
+    return;
+  }
+  if (language !== document.documentElement.lang) {
+    const response = await fetch(target.href);
+    if (!response.ok) throw new Error(`Not-found translation request failed: ${response.status}`);
+    const localized = new DOMParser().parseFromString(await response.text(), 'text/html');
+    document.documentElement.lang = localized.documentElement.lang;
+    document.documentElement.replaceChildren(...localized.documentElement.childNodes);
+  }
+}
+
 // ── Menu hamburger mobile ───────────────────────────────────────────────────
 const toggleBtn = document.querySelector('.menu-toggle-btn');
 const nav       = document.querySelector('.main-nav');
@@ -216,7 +241,7 @@ if (docsSearch) {
 
 const codeBlocks = document.querySelectorAll('pre > code');
 if (codeBlocks.length) {
-  const assets = new URL('highlight/', document.currentScript.src);
+  const assets = new URL('highlight/', appScript.src);
   const style = document.createElement('link');
   style.rel = 'stylesheet';
   style.href = new URL('github.min.css', assets).href;
@@ -251,7 +276,6 @@ if (mermaidDiagrams.length) {
       }
     });
   };
-  const appScript = document.currentScript;
   if (!appScript || !appScript.src) {
     setDiagramState('is-error');
     throw new Error('Cannot resolve the Mermaid runtime relative to app.js');
@@ -289,3 +313,4 @@ if (mermaidDiagrams.length) {
   }, { once: true });
   document.head.append(script);
 }
+})();

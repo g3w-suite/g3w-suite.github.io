@@ -11,6 +11,9 @@ Feature: Site builds
   Scenario: The not-found page is localized and uses shared components
     Then all language-specific not-found pages have the shared header and footer
 
+  Scenario: Missing routes select the appropriate language
+    Then missing routes preserve their address and select the appropriate language
+
   Scenario: Mermaid diagrams render in the browser
     Then Mermaid blocks render at runtime with accessible labels
 

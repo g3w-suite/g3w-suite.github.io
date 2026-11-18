@@ -170,3 +170,47 @@ Then('all language-specific not-found pages have the shared header and footer', 
   const sitemap = fs.readFileSync(path.join(staticDir, 'sitemap.xml'), 'utf8');
   assert.ok(languages.every(lang => !sitemap.includes(`<loc>https://www.g3wsuite.it/${lang}/404/</loc>`)));
 });
+
+Then('missing routes preserve their address and select the appropriate language', async function () {
+  const script = fs.readFileSync(path.join(staticDir, 'app.js'), 'utf8');
+  for (const [prefix, pathname, preferred, expected] of [
+    ['', '/missing-page', ['fr-CA', 'it'], '/fr/missing-page'],
+    ['', '/missing-page/', ['ja', 'it-IT'], '/it/missing-page/'],
+    ['', '/missing-page', ['ja'], '/en/missing-page'],
+    ['/project', '/project/missing-page', ['fr'], '/project/fr/missing-page'],
+    ['', '/fr/missing-page', ['it'], null],
+    ['', '/en/missing-page', ['fr'], null],
+  ]) {
+    let redirected;
+    let requested;
+    let replaced = false;
+    const alternates = languages.map(lang => ({
+      hreflang: lang, href: `https://example.test${prefix}/${lang}/404/`,
+    }));
+    const element = { lang: 'en', replaceChildren: () => { replaced = true; } };
+    await runInNewContext(script, {
+      URL,
+      navigator: { languages: preferred },
+      location: { pathname, search: '?example=1', hash: '#details', replace: url => { redirected = url; } },
+      document: {
+        currentScript: { src: 'https://example.test/app.js' },
+        body: { classList: { contains: () => true } },
+        documentElement: element,
+        querySelector: () => null,
+        querySelectorAll: selector => selector.startsWith('link[') ? alternates : [],
+        addEventListener: () => {},
+      },
+      fetch: async url => {
+        requested = url;
+        return { ok: true, text: async () => '<html lang="fr"></html>' };
+      },
+      DOMParser: class {
+        parseFromString() { return { documentElement: { lang: 'fr', childNodes: [] } }; }
+      },
+    });
+    assert.equal(redirected, expected ? `${expected}?example=1#details` : undefined);
+    assert.equal(requested, pathname === '/fr/missing-page' ? 'https://example.test/fr/404/' : undefined);
+    assert.equal(replaced, pathname === '/fr/missing-page');
+    assert.equal(element.lang, replaced ? 'fr' : 'en');
+  }
+});
