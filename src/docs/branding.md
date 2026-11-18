@@ -23,8 +23,18 @@ location /custom_static/ {
 
 **NOTE:** When testing this in development/debug mode, the static folder **custom_static** needs to be created in the static folder of the **core** package of the g3w-admin app. 
 
-![Screenshot: Branding 16 Static Folder](/img/manual-english-branding-16-static-folder.avif)
-
+```
+g3w-admin/
+└── core/
+    └── static/
+        └── custom_static/
+            ├── css/
+            │   └── custom.css
+            ├── favicon.ico
+            ├── logo_login.png
+            ├── logo_main.png
+            └── logo_reduced.png
+```
 
 In this case the setting needs to be adjusted to contain the static folder (note the initial static folder):
 
@@ -188,7 +198,6 @@ This is based on the following [gist](https://gist.github.com/vstoykov/1366794?p
     "Screenshot: Branding 08 Logos Login": "Schermata: branding 08, loghi nella schermata di accesso",
     "Screenshot: Branding 09 Logos Main": "Schermata: branding 09, logo principale",
     "Screenshot: Branding 10 Logos Reduced": "Schermata: branding 10, logo ridotto",
-    "Screenshot: Branding 16 Static Folder": "Schermata: branding 16, cartella statica",
     "Setting a default language": "Impostare una lingua predefinita",
     "The following settings will force the suite to load as default language the one specified": "Le impostazioni seguenti forzano il caricamento della suite nella lingua predefinita specificata",
     "The powered by setting, turned on by default, shows information about the suite and the main developers behind it in the credits section, which is accessible from the top bar of the suite.": "L'impostazione powered by, attiva per impostazione predefinita, mostra le informazioni sulla suite e sui principali sviluppatori nella sezione dei crediti, accessibile dalla barra superiore.",
