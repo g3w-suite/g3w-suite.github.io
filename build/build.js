@@ -2,9 +2,9 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { projectRoot, staticDir, sourceDir, languages, publishedHtml } = require('../utils/config');
+const { projectRoot, staticDir, sourceDir, siteOrigin, basePath, languages, publishedHtml } = require('../utils/config');
 const { htmlFiles, markdownFiles } = require('../utils/files');
-const { catalog, pageCatalog, localizeSiteLinks, renderLanguageBlocks, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
+const { catalog, pageCatalog, localizeSiteLinks, renderLanguageBlocks, translate, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
 const { marked, getHeadingList, addHeadingAliases, autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
 const { outputPage, languagePageUrl, renderLanguageLinks, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
@@ -68,6 +68,7 @@ function build(outputDir) {
         const pageHead = [
           renderPageMetadata(pageMetadata.metadata, lang, translations),
           renderPageAlternates(pageUrls),
+          page === '404.md' ? '<meta name="robots" content="noindex">' : '',
         ].filter(Boolean).join('\n  ');
         let localized = translateHtml(
           renderLanguageBlocks(pageMetadata.html, lang),
@@ -89,6 +90,19 @@ function build(outputDir) {
               ? renderChangelogMarkdown(content)
               : renderPageMarkdown(content, page)
           : content;
+        if (page === '404.md') {
+          const searchLabel = translate('Search', lang, translations);
+          const search = `<form class="google-search" role="search" action="https://www.google.com/search" method="get">
+            <input type="hidden" name="as_sitesearch" value="${new URL(siteOrigin).hostname}">
+            <label for="google-search-input" class="sr-only">${searchLabel}</label>
+            <input id="google-search-input" type="search" name="q" placeholder="${searchLabel}" required>
+            <button type="submit" class="btn btn--primary">${searchLabel}</button>
+          </form>`;
+          const body = marked.parse(content);
+          const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(body);
+          if (!heading) throw new Error('Not-found page has no main heading');
+          pageContent = `<main id="main-content"><div class="page-header"><div class="container">${heading[0]}</div></div><section class="section"><div class="container">${body.replace(heading[0], '')}${search}</div></section></main>`;
+        }
         if (lang !== 'en') pageContent = addHeadingAliases(pageContent, sourceHeadings);
         const header = renderComponent('header', lang, page, pageUrls, catalogs[lang], pageHead);
         const footer = renderComponent('footer', lang, page, pageUrls, catalogs[lang]);
@@ -105,7 +119,7 @@ function build(outputDir) {
   const titles = new Map(renderedPages.map(({ url, title }) => [url, title]));
   for (const { page, lang, url, title, output } of renderedPages) {
     let result = output;
-    if (page !== 'index.md') {
+    if (page !== 'index.md' && page !== '404.md') {
       const segments = url.split('/').filter(Boolean);
       const items = [];
       for (let index = 2; index < segments.length; index++) {
@@ -120,6 +134,26 @@ function build(outputDir) {
     fs.writeFileSync(target, publishedHtml(result));
   }
   buildDocumentation(outputDir, diagrams, catalogs);
+  fs.copyFileSync(
+    path.join(outputDir, 'en', outputPage('404.md')),
+    path.join(outputDir, '404.html')
+  );
+  const sitemapUrls = languages.flatMap(lang =>
+    htmlFiles(path.join(outputDir, lang))
+      .filter(file => path.relative(path.join(outputDir, lang), file) !== path.join('404', 'index.html'))
+      .map(file => {
+      const route = path.relative(outputDir, file).split(path.sep).join('/').replace(/index\.html$/, '');
+      return `${siteOrigin}${basePath}/${route}`;
+      })
+  );
+  fs.writeFileSync(path.join(outputDir, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${siteOrigin}${basePath}/sitemap.xml\n`);
+  fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...sitemapUrls.map(url => `  <url><loc>${url}</loc></url>`),
+    '</urlset>',
+    '',
+  ].join('\n'));
   const mermaidScript = path.join(outputDir, 'mermaid.min.js');
   if (diagrams.size) copyMermaidScript(outputDir);
   else fs.rmSync(mermaidScript, { force: true });

@@ -13,7 +13,7 @@ npm run dev
 
 Open [http://localhost:8080/](http://localhost:8080/). The server generates and serves files directly from `static/`, watching `src/` for changes, so just reload the browser. Port 8080 must be available and does not normally require elevated privileges on Linux.
 
-Run `npm run build` to generate the published site and documentation in `static/`.
+Run `npm run build` to generate the published site, documentation, `404.html`, `robots.txt` and `sitemap.xml` in `static/`. The local server serves `404.html` with HTTP status 404 for missing routes. Its search form submits to Google, restricted to the public site, without JavaScript.
 
 ## Documentation
 

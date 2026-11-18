@@ -3,52 +3,52 @@
 > G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
 
 ## Documentation
-- [Access policy examples](/www.g3wsuite.it/en/docs/access-policy-examples/): This table summarizes permissions by role.
-- [Access portal](/www.g3wsuite.it/en/docs/access-portal/): This section describes the different sections of the access portal and how to login to the Administration Panel
-- [Administration panel](/www.g3wsuite.it/en/docs/administration-panel/): This section describes how to manage the various aspects and features of the Suite:
-- [Bottom panel and time series](/www.g3wsuite.it/en/docs/bottom-panel-and-time-series/): The bottom part of the left bar contains the following items:
-- [Branding](/www.g3wsuite.it/en/docs/branding/): Customize the G3W-SUITE interface to match your organization's branding.
-- [Cartographic groups](/www.g3wsuite.it/en/docs/cartographic-groups/): Manage existing Cartographic Groups or create new ones.
-- [Components of G3W-SUITE](/www.g3wsuite.it/en/docs/components-of-g3w-suite/): This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the v3.11.x branch of G3W-SUITE-DOCKER.
-- [Configure charts](/www.g3wsuite.it/en/docs/configure-charts/): View plots created using QGIS DataPlotly (a great plugin developed by Matteo Ghetta) in the cartographic client.
-- [Demo](/www.g3wsuite.it/en/docs/demo/): Explore a building and maintenance management project in the stable G3W-SUITE 3.11 demo, based on QGIS 3.44 LTR. Search the map, view charts and print reports.
-- [Docker environment variables](/www.g3wsuite.it/en/docs/docker-environment-variables/): Set these environment variables when deploying G3W-SUITE with Docker.
-- [Docker installation](/www.g3wsuite.it/en/docs/docker-installation/): This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .
-- [Double Factor Authentication (2FA)](/www.g3wsuite.it/en/docs/double-factor-authentication-2fa/): G3W-SUITE supports standard login plus optional two-factor authentication (2FA). When 2FA is enabled for a user, authentication is completed in two steps:
-- [Editing constraints](/www.g3wsuite.it/en/docs/editing-constraints/): Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.
-- [Editing permissions](/www.g3wsuite.it/en/docs/editing-permissions/): To activate the online editing functions, access the Layer list section of the project within the administration panel of G3W-ADMIN.
-- [Editing related records](/www.g3wsuite.it/en/docs/editing-related-records/): The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.
-- [Editing tools](/www.g3wsuite.it/en/docs/editing-tools/): After enabling and configuring online editing for a project layer, Editing layers appears in the client's left sidebar.
-- [Editing via IFRAME](/www.g3wsuite.it/en/docs/editing-via-iframe/): Use online editing when G3W-SUITE is embedded in an <iframe> hosted by an external parent application.
-- [Elasticsearch integration](/www.g3wsuite.it/en/docs/elasticsearch-integration/): Starting from version 3.10, G3W-SUITE ships with the qes module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into Elasticsearch to provide fast, full-text search across the published WebGIS projects.
-- [G3W-SUITE base layers](/www.g3wsuite.it/en/docs/g3w-suite-base-layers/): Add, edit or delete Base layers for WebGIS services at the Cartographic Group level. These layers are independent of the project.
-- [Geocoding](/www.g3wsuite.it/en/docs/geocoding/): A specific editing function is associated with the Geocoding map control.
-- [Group base layers and languages](/www.g3wsuite.it/en/docs/group-base-layers-and-languages/): Add custom base layers and make them available to individual WebGIS services.
-- [G3W-SUITE 3.11 Manual](/www.g3wsuite.it/en/docs/): G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
-- [Layer properties](/www.g3wsuite.it/en/docs/layer-properties/): The WebGIS service automatically reproduces each layer's rendering style.
-- [Layer tools](/www.g3wsuite.it/en/docs/layer-tools/): Once a cartographic project has been published, thougth the icon it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
-- [Layer visibility and constraints](/www.g3wsuite.it/en/docs/layer-visibility-and-constraints/): Through the Geo-constraints by user/group and Alphanumeric and QGIS expressions constraints by user/groups widgets it is possible to define editing and display filters for users authorized to consult/edit the project.
-- [Layers and attribute table](/www.g3wsuite.it/en/docs/layers-and-attribute-table/): This session shows the layers prepared on QGIS projects with the same organization the groups and subgroups.
-- [Manage cartographic groups](/www.g3wsuite.it/en/docs/manage-cartographic-groups/): From this item you can access the list of the created cartographic groups.
-- [Manage QGIS data](/www.g3wsuite.it/en/docs/manage-qgis-data/): This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes
-- [Manual installation](/www.g3wsuite.it/en/docs/manual-installation/): These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3. Use this installation for development, not production.
-- [Map client](/www.g3wsuite.it/en/docs/map-client/): The application has a responsive interface consisting of expandable and reducible sessions.
-- [Map navigation and queries](/www.g3wsuite.it/en/docs/map-navigation-and-queries/): At the base of the map area there is an information bar showing:
-- [Map queries and results](/www.g3wsuite.it/en/docs/map-queries-and-results/): Right-clicking on the map queries the map using the core sampling method, displaying results for all layers below the clicked point.
-- [Map tools](/www.g3wsuite.it/en/docs/map-tools/): The upper part of the left bar contains, if activated, the following items:
-- [Online editing](/www.g3wsuite.it/en/docs/online-editing/): The editing settings are defined partly at the QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations) and partly at the Administration level (users with editing power, activation scale, alpha and geo constraints).
-- [Prepare a project for editing](/www.g3wsuite.it/en/docs/prepare-a-project-for-editing/): In the QGIS project, define the attribute display form structure for each layer.
-- [Project properties](/www.g3wsuite.it/en/docs/project-properties/): Defining some parameters related to project properties is essential for defining:
-- [Publish a WebGIS service](/www.g3wsuite.it/en/docs/publish-a-webgis-service/): To publish the project, you can access the G3W-SUITE test application via the following URL: https://v311.g3wsuite.it
-- [Publish and update WebGIS services](/www.g3wsuite.it/en/docs/publish-and-update-webgis-services/): Publish new QGIS projects:
-- [QGIS: project settings](/www.g3wsuite.it/en/docs/qgis-project-settings/): This section describes how to optimize your QGIS projects to publish as a WebGis service.
-- [Quick Start](/www.g3wsuite.it/en/docs/quick-start/): To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.
-- [Search widgets](/www.g3wsuite.it/en/docs/search-widgets/): Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.
-- [Settings](/www.g3wsuite.it/en/docs/settings/): The following variables can be added to or edited in the project’s local_settings.py:
-- [Social login](/www.g3wsuite.it/en/docs/social-login/): Since version 3.9, G3W-SUITE supports social authentication through django-allauth.
-- [Translate G3W-SUITE](/www.g3wsuite.it/en/docs/translate-g3w-suite/): Add a language to G3W-SUITE by following these steps.
-- [Try layer tools in the demo](/www.g3wsuite.it/en/docs/try-layer-tools-in-the-demo/): Once your project has been published, you can access the list of widgets and additional functions to enrich your WebGis service.
-- [Try online editing](/www.g3wsuite.it/en/docs/try-online-editing/): Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.
-- [Users and macro-groups](/www.g3wsuite.it/en/docs/users-and-macro-groups/): In the left side menu there is the Users item with four sub-items:
-- [Versions and compatibility](/www.g3wsuite.it/en/docs/versions-and-compatibility/): Compare supported branches and their QGIS, Python and Django requirements. Older branches are listed for reference.
-- [WebGIS roles and organization](/www.g3wsuite.it/en/docs/webgis-roles-and-organization/): G3W-SUITE organizes WebGIS services on two thematic or functional levels:
+- [Access policy examples](/en/docs/access-policy-examples/): This table summarizes permissions by role.
+- [Access portal](/en/docs/access-portal/): This section describes the different sections of the access portal and how to login to the Administration Panel
+- [Administration panel](/en/docs/administration-panel/): This section describes how to manage the various aspects and features of the Suite:
+- [Bottom panel and time series](/en/docs/bottom-panel-and-time-series/): The bottom part of the left bar contains the following items:
+- [Branding](/en/docs/branding/): Customize the G3W-SUITE interface to match your organization's branding.
+- [Cartographic groups](/en/docs/cartographic-groups/): Manage existing Cartographic Groups or create new ones.
+- [Components of G3W-SUITE](/en/docs/components-of-g3w-suite/): This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the v3.11.x branch of G3W-SUITE-DOCKER.
+- [Configure charts](/en/docs/configure-charts/): View plots created using QGIS DataPlotly (a great plugin developed by Matteo Ghetta) in the cartographic client.
+- [Demo](/en/docs/demo/): Explore a building and maintenance management project in the stable G3W-SUITE 3.11 demo, based on QGIS 3.44 LTR. Search the map, view charts and print reports.
+- [Docker environment variables](/en/docs/docker-environment-variables/): Set these environment variables when deploying G3W-SUITE with Docker.
+- [Docker installation](/en/docs/docker-installation/): This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .
+- [Double Factor Authentication (2FA)](/en/docs/double-factor-authentication-2fa/): G3W-SUITE supports standard login plus optional two-factor authentication (2FA). When 2FA is enabled for a user, authentication is completed in two steps:
+- [Editing constraints](/en/docs/editing-constraints/): Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.
+- [Editing permissions](/en/docs/editing-permissions/): To activate the online editing functions, access the Layer list section of the project within the administration panel of G3W-ADMIN.
+- [Editing related records](/en/docs/editing-related-records/): The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.
+- [Editing tools](/en/docs/editing-tools/): After enabling and configuring online editing for a project layer, Editing layers appears in the client's left sidebar.
+- [Editing via IFRAME](/en/docs/editing-via-iframe/): Use online editing when G3W-SUITE is embedded in an <iframe> hosted by an external parent application.
+- [Elasticsearch integration](/en/docs/elasticsearch-integration/): Starting from version 3.10, G3W-SUITE ships with the qes module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into Elasticsearch to provide fast, full-text search across the published WebGIS projects.
+- [G3W-SUITE base layers](/en/docs/g3w-suite-base-layers/): Add, edit or delete Base layers for WebGIS services at the Cartographic Group level. These layers are independent of the project.
+- [Geocoding](/en/docs/geocoding/): A specific editing function is associated with the Geocoding map control.
+- [Group base layers and languages](/en/docs/group-base-layers-and-languages/): Add custom base layers and make them available to individual WebGIS services.
+- [G3W-SUITE 3.11 Manual](/en/docs/): G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
+- [Layer properties](/en/docs/layer-properties/): The WebGIS service automatically reproduces each layer's rendering style.
+- [Layer tools](/en/docs/layer-tools/): Once a cartographic project has been published, thougth the icon it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
+- [Layer visibility and constraints](/en/docs/layer-visibility-and-constraints/): Through the Geo-constraints by user/group and Alphanumeric and QGIS expressions constraints by user/groups widgets it is possible to define editing and display filters for users authorized to consult/edit the project.
+- [Layers and attribute table](/en/docs/layers-and-attribute-table/): This session shows the layers prepared on QGIS projects with the same organization the groups and subgroups.
+- [Manage cartographic groups](/en/docs/manage-cartographic-groups/): From this item you can access the list of the created cartographic groups.
+- [Manage QGIS data](/en/docs/manage-qgis-data/): This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes
+- [Manual installation](/en/docs/manual-installation/): These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3. Use this installation for development, not production.
+- [Map client](/en/docs/map-client/): The application has a responsive interface consisting of expandable and reducible sessions.
+- [Map navigation and queries](/en/docs/map-navigation-and-queries/): At the base of the map area there is an information bar showing:
+- [Map queries and results](/en/docs/map-queries-and-results/): Right-clicking on the map queries the map using the core sampling method, displaying results for all layers below the clicked point.
+- [Map tools](/en/docs/map-tools/): The upper part of the left bar contains, if activated, the following items:
+- [Online editing](/en/docs/online-editing/): The editing settings are defined partly at the QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations) and partly at the Administration level (users with editing power, activation scale, alpha and geo constraints).
+- [Prepare a project for editing](/en/docs/prepare-a-project-for-editing/): In the QGIS project, define the attribute display form structure for each layer.
+- [Project properties](/en/docs/project-properties/): Defining some parameters related to project properties is essential for defining:
+- [Publish a WebGIS service](/en/docs/publish-a-webgis-service/): To publish the project, you can access the G3W-SUITE test application via the following URL: https://v311.g3wsuite.it
+- [Publish and update WebGIS services](/en/docs/publish-and-update-webgis-services/): Publish new QGIS projects:
+- [QGIS: project settings](/en/docs/qgis-project-settings/): This section describes how to optimize your QGIS projects to publish as a WebGis service.
+- [Quick Start](/en/docs/quick-start/): To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.
+- [Search widgets](/en/docs/search-widgets/): Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.
+- [Settings](/en/docs/settings/): The following variables can be added to or edited in the project’s local_settings.py:
+- [Social login](/en/docs/social-login/): Since version 3.9, G3W-SUITE supports social authentication through django-allauth.
+- [Translate G3W-SUITE](/en/docs/translate-g3w-suite/): Add a language to G3W-SUITE by following these steps.
+- [Try layer tools in the demo](/en/docs/try-layer-tools-in-the-demo/): Once your project has been published, you can access the list of widgets and additional functions to enrich your WebGis service.
+- [Try online editing](/en/docs/try-online-editing/): Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.
+- [Users and macro-groups](/en/docs/users-and-macro-groups/): In the left side menu there is the Users item with four sub-items:
+- [Versions and compatibility](/en/docs/versions-and-compatibility/): Compare supported branches and their QGIS, Python and Django requirements. Older branches are listed for reference.
+- [WebGIS roles and organization](/en/docs/webgis-roles-and-organization/): G3W-SUITE organizes WebGIS services on two thematic or functional levels:

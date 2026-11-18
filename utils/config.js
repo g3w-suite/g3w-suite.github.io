@@ -5,6 +5,7 @@ const projectRoot = path.resolve(__dirname, '..');
 const staticDir = path.join(projectRoot, 'static');
 const sourceDir = path.join(projectRoot, 'src');
 const catalogDir = path.join(projectRoot, 'i18n');
+const siteOrigin = 'https://www.g3wsuite.it';
 // The client uses "se" internally for Swedish; the web language tag is "sv".
 const languages = ['it', 'en', 'bg', 'de', 'es', 'fi', 'fr', 'pl', 'pt', 'ro', 'sv', 'uk'];
 const docsRoot = lang => `/${lang}/docs`;
@@ -43,4 +44,4 @@ const mimeTypes = {
   '.json': 'application/json',
 };
 
-module.exports = { projectRoot, staticDir, sourceDir, catalogDir, languages, languageName, docsRoot, port, basePath, publishedHtml, mimeTypes };
+module.exports = { projectRoot, staticDir, sourceDir, catalogDir, siteOrigin, languages, languageName, docsRoot, port, basePath, publishedHtml, mimeTypes };

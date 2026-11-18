@@ -146,6 +146,9 @@ Then('the page-scoped catalogs are valid and used by the build', function () {
       assert.ok(metadata?.title && metadata.description, `${file}: page title and description must be declared in YAML front matter`);
     }
     const localUsage = new Map(languages.map(lang => [lang, new Set()]));
+    if (path.relative(sourceDir, file) === '404.md') {
+      for (const usage of localUsage.values()) usage.add('Search');
+    }
     for (const [key, value] of Object.entries(metadata || {})) {
       if (key === 'ogType') continue;
       if (Object.hasOwn(pageTranslations.it || {}, value)) {

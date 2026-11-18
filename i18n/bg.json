@@ -15,6 +15,11 @@
     "Searching...": "Търсене...",
     "Version": "Версия"
   },
+  "404.md": {
+    "Page not found": "Страницата не е намерена",
+    "Search": "Търсене",
+    "The page may have moved or the address may be incorrect.": "Страницата може да е преместена или адресът да е неправилен."
+  },
   "_footer.html": {
     ", main sponsor of the project.": ", главен спонсор на проекта.",
     "Accept and don't ask again": "Приеми и не питай отново.",

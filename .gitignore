@@ -4,6 +4,7 @@ public/
 static/docs/
 static/??/
 static/**/index.html
+static/404.html
 static/img/mermaid-*.avif
 static/mermaid.min.js
 static/highlight/

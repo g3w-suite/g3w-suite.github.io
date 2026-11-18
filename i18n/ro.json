@@ -15,6 +15,11 @@
     "Searching...": "Caut...",
     "Version": "Versiune"
   },
+  "404.md": {
+    "Page not found": "Pagina nu a fost găsită",
+    "Search": "Caută",
+    "The page may have moved or the address may be incorrect.": "Este posibil ca pagina să fi fost mutată sau adresa să fie incorectă."
+  },
   "_footer.html": {
     ", main sponsor of the project.": ", sponsor principal al proiectului.",
     "Accept and don't ask again": "Acceptă şi nu mai întreba încă o dată.",

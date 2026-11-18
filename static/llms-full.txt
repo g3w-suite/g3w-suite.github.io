@@ -4,7 +4,7 @@
 
 This table summarizes permissions by role.
 
-[Read online](/www.g3wsuite.it/en/docs/access-policy-examples/)
+[Read online](/en/docs/access-policy-examples/)
 
 # Access policy examples
 
@@ -103,7 +103,7 @@ flowchart TB
 
 This section describes the different sections of the access portal and how to login to the Administration Panel
 
-[Read online](/www.g3wsuite.it/en/docs/access-portal/)
+[Read online](/en/docs/access-portal/)
 
 # Access portal
 _**This section describes the different sections of the access portal and how to login to the Administration Panel**_
@@ -162,7 +162,7 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
 
 This section describes how to manage the various aspects and features of the Suite:
 
-[Read online](/www.g3wsuite.it/en/docs/administration-panel/)
+[Read online](/en/docs/administration-panel/)
 
 # Administration panel
 
@@ -303,7 +303,7 @@ After filling in the various form, click on the **Save button** to confirm your 
 
 The bottom part of the left bar contains the following items:
 
-[Read online](/www.g3wsuite.it/en/docs/bottom-panel-and-time-series/)
+[Read online](/en/docs/bottom-panel-and-time-series/)
 
 # Bottom panel and time series
 
@@ -412,7 +412,7 @@ The modification of the start date of the series will determine the updating of 
 
 Customize the G3W-SUITE interface to match your organization's branding.
 
-[Read online](/www.g3wsuite.it/en/docs/branding/)
+[Read online](/en/docs/branding/)
 
 # Branding
 
@@ -674,7 +674,7 @@ This is a fallback, not a way to force one language for all visitors. Django can
 
 Manage existing Cartographic Groups or create new ones.
 
-[Read online](/www.g3wsuite.it/en/docs/cartographic-groups/)
+[Read online](/en/docs/cartographic-groups/)
 
 # Cartographic groups
 
@@ -815,7 +815,7 @@ After filling in the various form, click on the **Save** button to confirm your 
 
 This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the v3.11.x branch of G3W-SUITE-DOCKER.
 
-[Read online](/www.g3wsuite.it/en/docs/components-of-g3w-suite/)
+[Read online](/en/docs/components-of-g3w-suite/)
 
 # Components of G3W-SUITE
 
@@ -997,7 +997,7 @@ The editing capabilities are maintained in the G3W-ADMIN and G3W-CLIENT projects
 
 View plots created using QGIS DataPlotly (a great plugin developed by Matteo Ghetta) in the cartographic client.
 
-[Read online](/www.g3wsuite.it/en/docs/configure-charts/)
+[Read online](/en/docs/configure-charts/)
 
 # Configure charts
 
@@ -1083,7 +1083,7 @@ You can use Drag&Drop to define the order on the widget list
 
 Explore a building and maintenance management project in the stable G3W-SUITE 3.11 demo, based on QGIS 3.44 LTR. Search the map, view charts and print reports.
 
-[Read online](/www.g3wsuite.it/en/docs/demo/)
+[Read online](/en/docs/demo/)
 
 # Demo
 
@@ -1173,7 +1173,7 @@ The publication system provides for the use of the **title of the project** as t
 
 Set these environment variables when deploying G3W-SUITE with Docker.
 
-[Read online](/www.g3wsuite.it/en/docs/docker-environment-variables/)
+[Read online](/en/docs/docker-environment-variables/)
 
 # Docker environment variables
 
@@ -1281,7 +1281,7 @@ If `true`, the startup script activates the bundled `frontend` module in the mou
 
 This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .
 
-[Read online](/www.g3wsuite.it/en/docs/docker-installation/)
+[Read online](/en/docs/docker-installation/)
 
 # Docker installation
 
@@ -1484,7 +1484,7 @@ See [Add a new stack](https://docs.portainer.io/user/docker/stacks/add) for how 
 
 G3W-SUITE supports standard login plus optional two-factor authentication (2FA). When 2FA is enabled for a user, authentication is completed in two steps:
 
-[Read online](/www.g3wsuite.it/en/docs/double-factor-authentication-2fa/)
+[Read online](/en/docs/double-factor-authentication-2fa/)
 
 # Double Factor Authentication (2FA)
 
@@ -1550,7 +1550,7 @@ The login view also keeps alternative navigation and configured external provide
 
 Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.
 
-[Read online](/www.g3wsuite.it/en/docs/editing-constraints/)
+[Read online](/en/docs/editing-constraints/)
 
 # Editing constraints
 
@@ -1653,7 +1653,7 @@ In the alphanumeric constraints list you can see a summary of the setted rules.
 
 To activate the online editing functions, access the Layer list section of the project within the administration panel of G3W-ADMIN.
 
-[Read online](/www.g3wsuite.it/en/docs/editing-permissions/)
+[Read online](/en/docs/editing-permissions/)
 
 # Editing permissions
 
@@ -1723,7 +1723,7 @@ To allow editing on the related table in mode 1: n , the **editing function must
 
 The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.
 
-[Read online](/www.g3wsuite.it/en/docs/editing-related-records/)
+[Read online](/en/docs/editing-related-records/)
 
 # Editing related records
 
@@ -1816,7 +1816,7 @@ Remember that during the editing phase the **undo/redo icons** allow you to dele
 
 After enabling and configuring online editing for a project layer, Editing layers appears in the client's left sidebar.
 
-[Read online](/www.g3wsuite.it/en/docs/editing-tools/)
+[Read online](/en/docs/editing-tools/)
 
 # Editing tools
 
@@ -1905,7 +1905,7 @@ For this reason the green button **SAVE** will be disabled until all constraints
 
 Use online editing when G3W-SUITE is embedded in an <iframe> hosted by an external parent application.
 
-[Read online](/www.g3wsuite.it/en/docs/editing-via-iframe/)
+[Read online](/en/docs/editing-via-iframe/)
 
 # Editing via IFRAME
 
@@ -2179,7 +2179,7 @@ When modifying an existing feature, include its GeoJSON (with its feature ID) in
 
 Starting from version 3.10, G3W-SUITE ships with the qes module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into Elasticsearch to provide fast, full-text search across the published WebGIS projects.
 
-[Read online](/www.g3wsuite.it/en/docs/elasticsearch-integration/)
+[Read online](/en/docs/elasticsearch-integration/)
 
 # Elasticsearch integration
 
@@ -2362,7 +2362,7 @@ The response is a JSON list of hits. Each hit contains:
 
 Add, edit or delete Base layers for WebGIS services at the Cartographic Group level. These layers are independent of the project.
 
-[Read online](/www.g3wsuite.it/en/docs/g3w-suite-base-layers/)
+[Read online](/en/docs/g3w-suite-base-layers/)
 
 # G3W-SUITE base layers
 
@@ -2450,7 +2450,7 @@ Use Python booleans (`True` or `False`), not strings such as `'false'`.
 
 A specific editing function is associated with the Geocoding map control.
 
-[Read online](/www.g3wsuite.it/en/docs/geocoding/)
+[Read online](/en/docs/geocoding/)
 
 # Geocoding
 
@@ -2519,7 +2519,7 @@ By clicking on the green **Insert/Edit** button the point will be permanently sa
 
 Add custom base layers and make them available to individual WebGIS services.
 
-[Read online](/www.g3wsuite.it/en/docs/group-base-layers-and-languages/)
+[Read online](/en/docs/group-base-layers-and-languages/)
 
 # Group base layers and languages
 
@@ -2631,7 +2631,7 @@ Then:
 
 G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
 
-[Read online](/www.g3wsuite.it/en/docs/)
+[Read online](/en/docs/)
 
 # G3W-SUITE 3.11 Manual
 
@@ -2723,7 +2723,7 @@ For the complete workflow, see [publish and update WebGIS services](publish-and-
 
 The WebGIS service automatically reproduces each layer's rendering style.
 
-[Read online](/www.g3wsuite.it/en/docs/layer-properties/)
+[Read online](/en/docs/layer-properties/)
 
 # Layer properties
 
@@ -2850,7 +2850,7 @@ Following queries at the cartographic client level, we will have different behav
 
 Once a cartographic project has been published, thougth the icon it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
 
-[Read online](/www.g3wsuite.it/en/docs/layer-tools/)
+[Read online](/en/docs/layer-tools/)
 
 # Layer tools
 
@@ -2939,7 +2939,7 @@ With this icon it will be possible to define the list of users (single and/or gr
 
 Through the Geo-constraints by user/group and Alphanumeric and QGIS expressions constraints by user/groups widgets it is possible to define editing and display filters for users authorized to consult/edit the project.
 
-[Read online](/www.g3wsuite.it/en/docs/layer-visibility-and-constraints/)
+[Read online](/en/docs/layer-visibility-and-constraints/)
 
 # Layer visibility and constraints
 
@@ -2989,7 +2989,7 @@ At the top right, identified by the item "Project layers actions", there are ico
 
 This session shows the layers prepared on QGIS projects with the same organization the groups and subgroups.
 
-[Read online](/www.g3wsuite.it/en/docs/layers-and-attribute-table/)
+[Read online](/en/docs/layers-and-attribute-table/)
 
 # Layers and attribute table
 
@@ -3121,7 +3121,7 @@ We remind you that activating a filter affects:
 
 From this item you can access the list of the created cartographic groups.
 
-[Read online](/www.g3wsuite.it/en/docs/manage-cartographic-groups/)
+[Read online](/en/docs/manage-cartographic-groups/)
 
 # Manage cartographic groups
 
@@ -3185,7 +3185,7 @@ This order will be reflected within the belonging MacroGroups.
 
 This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes
 
-[Read online](/www.g3wsuite.it/en/docs/manage-qgis-data/)
+[Read online](/en/docs/manage-qgis-data/)
 
 # Manage QGIS data
 _**This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes**_
@@ -3284,7 +3284,7 @@ In the next chapter the powers and limits of the two roles will be described in 
 
 These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3. Use this installation for development, not production.
 
-[Read online](/www.g3wsuite.it/en/docs/manual-installation/)
+[Read online](/en/docs/manual-installation/)
 
 # Manual installation
 
@@ -3588,7 +3588,7 @@ The v3.11.4 checkout includes [docker-compose.ltr.yml](https://github.com/g3w-su
 
 The application has a responsive interface consisting of expandable and reducible sessions.
 
-[Read online](/www.g3wsuite.it/en/docs/map-client/)
+[Read online](/en/docs/map-client/)
 
 # Map client
 
@@ -3683,7 +3683,7 @@ These features are described in a dedicated paragraph below.
 
 At the base of the map area there is an information bar showing:
 
-[Read online](/www.g3wsuite.it/en/docs/map-navigation-and-queries/)
+[Read online](/en/docs/map-navigation-and-queries/)
 
 # Map navigation and queries
 
@@ -3751,7 +3751,7 @@ Map-controls available on the top left corner of the map:
 
 Right-clicking on the map queries the map using the core sampling method, displaying results for all layers below the clicked point.
 
-[Read online](/www.g3wsuite.it/en/docs/map-queries-and-results/)
+[Read online](/en/docs/map-queries-and-results/)
 
 # Map queries and results
 
@@ -3892,7 +3892,7 @@ Encode special characters in parameter values, and use `&` to separate multiple 
 
 The upper part of the left bar contains, if activated, the following items:
 
-[Read online](/www.g3wsuite.it/en/docs/map-tools/)
+[Read online](/en/docs/map-tools/)
 
 # Map tools
 
@@ -4036,7 +4036,7 @@ Once created, the User Themes will be selectable, overwritable and editable usin
 
 The editing settings are defined partly at the QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations) and partly at the Administration level (users with editing power, activation scale, alpha and geo constraints).
 
-[Read online](/www.g3wsuite.it/en/docs/online-editing/)
+[Read online](/en/docs/online-editing/)
 
 # Online editing
 
@@ -4099,7 +4099,7 @@ This block will be deactivated when the user exits the editing mode.
 
 In the QGIS project, define the attribute display form structure for each layer.
 
-[Read online](/www.g3wsuite.it/en/docs/prepare-a-project-for-editing/)
+[Read online](/en/docs/prepare-a-project-for-editing/)
 
 # Prepare a project for editing
 
@@ -4201,7 +4201,7 @@ When working with layers with the same source (es. layer from the same PostGreSQ
 
 Defining some parameters related to project properties is essential for defining:
 
-[Read online](/www.g3wsuite.it/en/docs/project-properties/)
+[Read online](/en/docs/project-properties/)
 
 # Project properties
 
@@ -4350,7 +4350,7 @@ The request to delete the basic embedded project causes a warning message as thi
 
 To publish the project, you can access the G3W-SUITE test application via the following URL: https://v311.g3wsuite.it
 
-[Read online](/www.g3wsuite.it/en/docs/publish-a-webgis-service/)
+[Read online](/en/docs/publish-a-webgis-service/)
 
 # Publish a WebGIS service
 
@@ -4405,7 +4405,7 @@ Reupload the QGIS project with your changes, click on the **Save button** and se
 
 Publish new QGIS projects:
 
-[Read online](/www.g3wsuite.it/en/docs/publish-and-update-webgis-services/)
+[Read online](/en/docs/publish-and-update-webgis-services/)
 
 # Publish and update WebGIS services
 
@@ -4622,7 +4622,7 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
 
 This section describes how to optimize your QGIS projects to publish as a WebGis service.
 
-[Read online](/www.g3wsuite.it/en/docs/qgis-project-settings/)
+[Read online](/en/docs/qgis-project-settings/)
 
 # QGIS: project settings
 
@@ -4686,7 +4686,7 @@ See also the dedicated paragraph [Geographic data synchronization on the server]
 
 To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.
 
-[Read online](/www.g3wsuite.it/en/docs/quick-start/)
+[Read online](/en/docs/quick-start/)
 
 # Quick Start
 
@@ -4729,7 +4729,7 @@ After saving, check that the project appears in the group's project list. Open i
 
 Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.
 
-[Read online](/www.g3wsuite.it/en/docs/search-widgets/)
+[Read online](/en/docs/search-widgets/)
 
 # Search widgets
 
@@ -4849,7 +4849,7 @@ The **Relations** option allows you to to define the relationship to be used (if
 
 The following variables can be added to or edited in the project’s local_settings.py:
 
-[Read online](/www.g3wsuite.it/en/docs/settings/)
+[Read online](/en/docs/settings/)
 
 # Settings
 
@@ -5149,7 +5149,7 @@ Default *g3wsuite.it*, Email's sign of emails of Registration workflow: activati
 
 Since version 3.9, G3W-SUITE supports social authentication through django-allauth.
 
-[Read online](/www.g3wsuite.it/en/docs/social-login/)
+[Read online](/en/docs/social-login/)
 
 # Social login
 
@@ -5287,7 +5287,7 @@ Once enabled the django admin will provide the following view:
 
 Add a language to G3W-SUITE by following these steps.
 
-[Read online](/www.g3wsuite.it/en/docs/translate-g3w-suite/)
+[Read online](/en/docs/translate-g3w-suite/)
 
 # Translate G3W-SUITE
 
@@ -5383,7 +5383,7 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
 
 Once your project has been published, you can access the list of widgets and additional functions to enrich your WebGis service.
 
-[Read online](/www.g3wsuite.it/en/docs/try-layer-tools-in-the-demo/)
+[Read online](/en/docs/try-layer-tools-in-the-demo/)
 
 # Try layer tools in the demo
 
@@ -5456,7 +5456,7 @@ In the client, try filtering the charts by visible or selected features. See [ch
 
 Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.
 
-[Read online](/www.g3wsuite.it/en/docs/try-online-editing/)
+[Read online](/en/docs/try-online-editing/)
 
 # Try online editing
 
@@ -5541,7 +5541,7 @@ Redefine attribute forms, aliases and editing widgets associated with the indivi
 
 In the left side menu there is the Users item with four sub-items:
 
-[Read online](/www.g3wsuite.it/en/docs/users-and-macro-groups/)
+[Read online](/en/docs/users-and-macro-groups/)
 
 # Users and macro-groups
 
@@ -5681,7 +5681,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
 
 Compare supported branches and their QGIS, Python and Django requirements. Older branches are listed for reference.
 
-[Read online](/www.g3wsuite.it/en/docs/versions-and-compatibility/)
+[Read online](/en/docs/versions-and-compatibility/)
 
 # Versions and compatibility
 
@@ -5709,7 +5709,7 @@ G3W-ADMIN v3.11.4 ships client v4.1.5. The development branch changes independen
 
 G3W-SUITE organizes WebGIS services on two thematic or functional levels:
 
-[Read online](/www.g3wsuite.it/en/docs/webgis-roles-and-organization/)
+[Read online](/en/docs/webgis-roles-and-organization/)
 
 # WebGIS roles and organization
 

@@ -48,6 +48,9 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     const image = await fetch(`http://localhost:${this.port}/img/site-g3w-suite-logo.avif`);
     assert.equal(image.status, 200);
     assert.equal(image.headers.get('content-type'), 'image/avif');
+    const notFound = await fetch(`http://localhost:${this.port}/missing-page/`);
+    assert.equal(notFound.status, 404);
+    assert.match(await notFound.text(), /Page not found/);
     for (const url of ['/it/about/', '/it/docs/components-of-g3w-suite/', '/en/docs/demo/', '/en/news/v3.11/']) {
       const page = await fetch(`http://localhost:${this.port}${url}`);
       assert.equal(page.status, 200, url);

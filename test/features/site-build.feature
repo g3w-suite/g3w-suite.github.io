@@ -8,6 +8,9 @@ Feature: Site builds
   Scenario: Deployment under a GitHub Pages project path
     Then the build supports a project base path without broken internal links
 
+  Scenario: The not-found page is localized and uses shared components
+    Then all language-specific not-found pages have the shared header and footer
+
   Scenario: Mermaid diagrams render in the browser
     Then Mermaid blocks render at runtime with accessible labels
 

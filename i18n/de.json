@@ -15,6 +15,11 @@
     "Searching...": "Durchsuchen...",
     "Version": "Fassung"
   },
+  "404.md": {
+    "Page not found": "Seite nicht gefunden",
+    "Search": "Suche",
+    "The page may have moved or the address may be incorrect.": "Die Seite wurde möglicherweise verschoben oder die Adresse ist falsch."
+  },
   "_footer.html": {
     ", main sponsor of the project.": "Hauptsponsor des Projekts.",
     "Accept and don't ask again": "Akzeptieren und nicht noch einmal fragen",

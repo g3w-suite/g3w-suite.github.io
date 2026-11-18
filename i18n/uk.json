@@ -15,6 +15,11 @@
     "Searching...": "Пошук",
     "Version": "верстка"
   },
+  "404.md": {
+    "Page not found": "Сторінку не знайдено",
+    "Search": "Пошук",
+    "The page may have moved or the address may be incorrect.": "Можливо, сторінку перемістили або адресу введено неправильно."
+  },
   "_footer.html": {
     ", main sponsor of the project.": ", головний спонсор проекту.",
     "Accept and don't ask again": "Прийняття і не запитати",

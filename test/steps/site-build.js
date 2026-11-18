@@ -9,6 +9,7 @@ const { runInNewContext } = require('node:vm');
 const { Then } = require('@cucumber/cucumber');
 const { staticDir, htmlFiles, readPage, localTarget } = require('../support/site');
 const { languages } = require('../../utils/config');
+const { catalog } = require('../../utils/translations');
 const { prepareMermaid, copyMermaidScript } = require('../../utils/mermaid');
 
 Then('the browser highlighter supports the languages used in code blocks', function () {
@@ -65,6 +66,16 @@ Then('the build supports a project base path without broken internal links', fun
   };
   try {
     build(prefix);
+    const notFound = readPage(path.join(staticDir, '404.html')).$;
+    assert.equal(notFound('meta[name="robots"]').attr('content'), 'noindex');
+    assert.equal(notFound('header.site-header').length, 1, '404 must use the shared site header');
+    assert.equal(notFound('footer.site-footer').length, 1, '404 must use the shared site footer');
+    assert.equal(notFound(`link[rel="alternate"][hreflang="it"]`).attr('href'), `${prefix}/it/404/`);
+    assert.equal(notFound('form.google-search').attr('action'), 'https://www.google.com/search');
+    const italianNotFound = readPage(path.join(staticDir, 'it', '404', 'index.html')).$;
+    assert.equal(italianNotFound('main h1').text(), 'Pagina non trovata');
+    assert.equal(italianNotFound('header.site-header').length, 1);
+    assert.equal(italianNotFound('footer.site-footer').length, 1);
     assert.ok(!fs.existsSync(obsoleteRedirect), 'rebuilds must remove redirects for deleted page routes');
     for (const file of htmlFiles(staticDir)) {
       const { $ } = readPage(file);
@@ -107,6 +118,17 @@ Then('the build supports a project base path without broken internal links', fun
     const llmsFull = fs.readFileSync(path.join(staticDir, 'llms-full.txt'), 'utf8');
     assert.ok(llms.includes(`](${prefix}/en/docs/`), 'llms.txt links must include the project base path');
     assert.ok(llmsFull.includes(`](${prefix}/en/docs/`), 'llms-full.txt links must include the project base path');
+    const robots = fs.readFileSync(path.join(staticDir, 'robots.txt'), 'utf8');
+    const sitemap = fs.readFileSync(path.join(staticDir, 'sitemap.xml'), 'utf8');
+    assert.ok(robots.includes(`Sitemap: https://www.g3wsuite.it${prefix}/sitemap.xml`), 'robots.txt must link to the prefixed sitemap');
+    for (const lang of languages) {
+      for (const file of htmlFiles(path.join(staticDir, lang))) {
+        if (path.relative(path.join(staticDir, lang), file) === path.join('404', 'index.html')) continue;
+        const route = path.relative(staticDir, file).split(path.sep).join('/').replace(/index\.html$/, '');
+        assert.ok(sitemap.includes(`<loc>https://www.g3wsuite.it${prefix}/${route}</loc>`), `${file}: missing from sitemap`);
+      }
+      assert.ok(!sitemap.includes(`<loc>https://www.g3wsuite.it${prefix}/${lang}/404/</loc>`), `${lang}: 404 page must not be in sitemap`);
+    }
     const italianDocs = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
     assert.equal(italianDocs('html').attr('lang'), 'it');
     assert.equal(italianDocs('form.docs-search').attr('data-index-url'), `${prefix}/it/docs/search-index.json`);
@@ -116,4 +138,35 @@ Then('the build supports a project base path without broken internal links', fun
     fs.rmSync(obsoleteRedirect, { recursive: true, force: true });
     build('');
   }
+});
+
+Then('all language-specific not-found pages have the shared header and footer', function () {
+  const source = readPage(path.join(staticDir, '404.html')).$;
+  assert.equal(source('header.site-header').length, 1);
+  assert.equal(source('footer.site-footer').length, 1);
+  assert.equal(source('meta[name="robots"]').attr('content'), 'noindex');
+  for (const lang of languages) {
+    const page = readPage(path.join(staticDir, lang, '404', 'index.html')).$;
+    const expectedTitle = lang === 'en' ? 'Page not found' : catalog(lang)['404.md']['Page not found'];
+    const expectedSearch = lang === 'en' ? 'Search' : catalog(lang)['404.md'].Search;
+    assert.equal(page('html').attr('lang'), lang);
+    assert.equal(page('main h1').text(), expectedTitle);
+    assert.equal(page('main h2').length, 0);
+    assert.equal(page('main > .page-header > .container > h1').text(), expectedTitle);
+    assert.doesNotMatch(page('main').text(), /google/i);
+    assert.equal(page('header.site-header').length, 1, `${lang}: missing shared header`);
+    assert.equal(page('footer.site-footer').length, 1, `${lang}: missing shared footer`);
+    assert.equal(page('meta[name="robots"]').attr('content'), 'noindex');
+    const form = page('main > section > .container > form.google-search');
+    assert.equal(form.attr('action'), 'https://www.google.com/search', `${lang}: missing Google search form`);
+    assert.equal(form.attr('method'), 'get');
+    assert.equal(form.find('input[type="search"][name="q"][required]').length, 1);
+    assert.equal(form.find('input[name="as_sitesearch"]').attr('value'), 'www.g3wsuite.it');
+    assert.equal(form.find('button[type="submit"]').text(), expectedSearch);
+    assert.equal(form.find('input[type="search"]').attr('placeholder'), expectedSearch);
+    assert.equal(form.find('label').attr('for'), form.find('input[type="search"]').attr('id'));
+    assert.equal(page('.docs-search, #docs-search-results').length, 0);
+  }
+  const sitemap = fs.readFileSync(path.join(staticDir, 'sitemap.xml'), 'utf8');
+  assert.ok(languages.every(lang => !sitemap.includes(`<loc>https://www.g3wsuite.it/${lang}/404/</loc>`)));
 });

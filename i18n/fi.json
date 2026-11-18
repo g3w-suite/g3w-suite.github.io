@@ -15,6 +15,11 @@
     "Searching...": "Etsitään...",
     "Version": "Versio"
   },
+  "404.md": {
+    "Page not found": "Sivua ei löytynyt",
+    "Search": "Haku",
+    "The page may have moved or the address may be incorrect.": "Sivu on ehkä siirretty tai osoite on virheellinen."
+  },
   "_footer.html": {
     ", main sponsor of the project.": ", hankkeen pääsponsori.",
     "Accept and don't ask again": "Hyväksy ja älä kysy uudestaan",

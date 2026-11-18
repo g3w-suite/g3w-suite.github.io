@@ -15,6 +15,11 @@
     "Searching...": "Söker...",
     "Version": "Version"
   },
+  "404.md": {
+    "Page not found": "Sidan kunde inte hittas",
+    "Search": "Sök",
+    "The page may have moved or the address may be incorrect.": "Sidan kan ha flyttats eller adressen kan vara felaktig."
+  },
   "_footer.html": {
     ", main sponsor of the project.": ", projektets huvudsponsor.",
     "Accept and don't ask again": "Acceptera och fråga inte igen",

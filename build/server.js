@@ -27,6 +27,18 @@ if (devMode) {
 }
 
 if (!buildOnly) {
+  const respondNotFound = res => {
+    fs.readFile(path.join(root, '404.html'), (error, content) => {
+      if (error) {
+        console.error(`Failed to read 404.html: ${error.message}`);
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('File not found');
+        return;
+      }
+      res.writeHead(404, { 'Content-Type': 'text/html' });
+      res.end(content);
+    });
+  };
   http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
     if (url.pathname.endsWith('.html')) {
@@ -59,8 +71,7 @@ if (!buildOnly) {
           }
         });
       } else {
-        res.writeHead(404);
-        res.end('File not found');
+        respondNotFound(res);
       }
     });
   }).listen(port, () => {

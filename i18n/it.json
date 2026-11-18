@@ -15,6 +15,11 @@
     "Searching...": "Ricerca in corso...",
     "Version": "Versione"
   },
+  "404.md": {
+    "Page not found": "Pagina non trovata",
+    "Search": "Ricerca",
+    "The page may have moved or the address may be incorrect.": "La pagina potrebbe essere stata spostata o l'indirizzo potrebbe essere errato."
+  },
   "_footer.html": {
     ", main sponsor of the project.": ", main sponsor del progetto.",
     "Accept and don't ask again": "Accetta e non chiedere più",
