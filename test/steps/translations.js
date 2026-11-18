@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
+const { missingPageKeys, updateCatalog } = require('../../utils/update-translations');
 const { languages: siteLanguages } = require('../../utils/config');
 const { autoTranslateMarkdown } = require('../../utils/markdown');
 const { catalog, pageCatalog, extractPageMetadata } = require('../../utils/translations');
@@ -19,6 +20,28 @@ const {
   markdownTranslationKeys,
   readPage,
 } = require('../support/site');
+
+Then('the translation updater adds only missing source keys', function () {
+  const file = 'docs/example.md';
+  const entries = { [file]: { Existing: 'Gia tradotto' } };
+  const markdown = [
+    '---', 'title: New title', 'ogType: website', '---', '# Existing',
+    'New **body** with `QGIS`.', '[Navigation label](/docs/)', '| Table heading |',
+    'Read the [localized guide](https://{{#it}}it.{{/it}}example.org).',
+    '<iframe title="{{t \'Video title\'}}"></iframe>',
+    '{{#it}}Testo gia localizzato{{/it}}', '{{#en}}English branch{{/en}}',
+    '```sh', 'echo Example', '```',
+  ].join('\n');
+  const missing = missingPageKeys(markdown, file, 'it', entries[file]);
+  assert.deepEqual(missing.sort(), [
+    'Navigation label', 'New **body** with `QGIS`.', 'New title', 'Table heading', 'Video title', 'localized guide',
+  ]);
+  assert.ok(missingPageKeys(markdown, file, 'fr', {}).includes('English branch'));
+  const generated = Object.fromEntries([...missing, 'Existing'].map(key => [key, `Draft: ${key}`]));
+  const updated = updateCatalog(entries, { [file]: [...missing, 'Existing'] }, generated);
+  assert.equal(updated[file].Existing, 'Gia tradotto');
+  assert.deepEqual(missingPageKeys(markdown, file, 'it', updated[file]), []);
+});
 
 Then('translated text is rendered for each language', function () {
   const imageLink = '[![Contributor](https://example.test/avatar.png) Contributor](/en/about/contributor/)';

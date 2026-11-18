@@ -6,3 +6,6 @@ Feature: Site translations
 
   Scenario: Catalogs are grouped by page and applied
     Then the page-scoped catalogs are valid and used by the build
+
+  Scenario: Automatic translation fills gaps without replacing existing entries
+    Then the translation updater adds only missing source keys

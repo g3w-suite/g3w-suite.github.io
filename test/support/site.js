@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { load } = require('cheerio');
+const { autoTranslateMarkdown } = require('../../utils/markdown');
 
 const staticDir = path.resolve('static');
 const languages = ['it', 'en'];
@@ -51,18 +52,12 @@ function translationHelperPattern() {
 
 function markdownTranslationKeys(markdown) {
   const keys = new Set();
-  let inCodeFence = false;
-  for (const line of markdown.split(/\r?\n/)) {
-    if (/^\s*(```|~~~)/.test(line)) {
-      inCodeFence = !inCodeFence;
-      continue;
-    }
-    if (inCodeFence || /^\s*\|/.test(line)) continue;
-    const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?(?:<span id="[^"]+"><\/span>)?)(.*?)(\s*)$/.exec(line);
-    if (match && match[2] && !/[{}]/.test(match[2])) keys.add(match[2]);
-    for (const [, label] of line.matchAll(/!\[([^\[\]]+)\]\(/g)) keys.add(label);
-    for (const [, , label] of line.matchAll(/(^|[^!])\[([^\[\]]+)\]\(/g)) keys.add(label);
-  }
+  autoTranslateMarkdown(markdown, 'it', { it: new Proxy({}, {
+    getOwnPropertyDescriptor(_target, key) {
+      keys.add(key);
+      return undefined;
+    },
+  }) });
   return keys;
 }
 

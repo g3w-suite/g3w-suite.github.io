@@ -89,9 +89,14 @@ const documentationLabels = {
   breadcrumb: 'Documentation',
   description: 'G3W-SUITE documentation',
   navigation: 'Documentation navigation',
+  noResults: 'No results found.',
   search: 'Search documentation',
+  searchError: 'Search is unavailable. Please try again.',
   searchPlaceholder: 'Search docs',
+  searchResults: 'Search results',
+  searching: 'Searching...',
   title: 'G3W-SUITE Documentation',
+  version: 'Version',
 };
 
 function buildDocumentation(outputDir, diagrams, catalogs) {
@@ -166,7 +171,7 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
       const breadcrumb = renderBreadcrumb(lang, breadcrumbItems, path.join('docs', relative), entries);
       const releaseNotes = releaseVersions.length
         ? `<details class="docs-release-notes"><summary>Changelog</summary>${releaseVersions.map(version =>
-            `<a href="/${lang}/news/${version}/">${label('Version')} ${version.slice(1)}</a>`
+            `<a href="/${lang}/news/${version}/">${ui.version} ${version.slice(1)}</a>`
           ).join('')}</details>`
         : '';
       const html = `${siteHeader}
@@ -176,10 +181,10 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
   <div class="docs-layout">
     <nav class="docs-nav" aria-label="${ui.navigation}">
       <form class="docs-search" role="search" data-index-url="${basePath}${docsRoot(lang)}/search-index.json"
-        data-searching="${label('Searching...')}"
-        data-empty="${label('No results found.')}"
-        data-results="${label('Search results')}"
-        data-error="${label('Search is unavailable. Please try again.')}">
+        data-searching="${ui.searching}"
+        data-empty="${ui.noResults}"
+        data-results="${ui.searchResults}"
+        data-error="${ui.searchError}">
         <label for="docs-search-input" class="sr-only">${ui.search}</label>
         <input id="docs-search-input" type="search" name="q" placeholder="${ui.searchPlaceholder}" autocomplete="off" aria-controls="docs-search-results">
       </form>
@@ -219,4 +224,4 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
   }
 }
 
-module.exports = { buildDocumentation };
+module.exports = { buildDocumentation, documentationLabels };

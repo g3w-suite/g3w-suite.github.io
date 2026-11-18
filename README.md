@@ -45,6 +45,8 @@ Add the alternative text to the page's Italian translations.
 
 All translation catalogs in `i18n/` group entries by the page or component path relative to `src/` (for example `docs/index.md` or `_footer.html`), then by the exact English source string. The `@breadcrumb` and `@documentation` groups hold labels shared across pages. English uses the source directly. English documentation stays at `/docs/`; other manuals use `/<language>/docs/` and each has its own search index. Review technical wording before relying on automatically translated instructions.
 
+On pushes to `vanilla` or manual runs on that branch, the [CI workflow](./.github/workflows/ci.yml) uses Argos Translate locally on the runner to fill missing keys without overwriting existing translations. After the tests pass, it commits any catalog changes directly to `vanilla`; it opens no pull request. Translation generation and commits are disabled on pull requests and other branches. The workflow token must be allowed to push to `vanilla`. To list missing string counts without translating or editing catalogs, run `node utils/update-translations.js --dry-run`.
+
 ## Add or update a page
 
 1. Start from an existing Markdown page directly in `src/` or `src/news/`, keeping its metadata and local translations. Release-note filenames use `YYYY-MM-DD-changelog-vX.Y.md`; other news articles start with `YYYY-MM-DD-`. Keep raw HTML for page-specific layout and media.
@@ -63,7 +65,7 @@ The Gherkin scenarios in `test/features/` check page structure, assets, language
 
 Source Markdown, HTML, CSS, JavaScript and SVG must be saved as UTF-8. Tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities.
 
-A separate workflow deploys `static/` to GitHub Pages on pushes to the `vanilla` branch and can also be started manually.
+The [CD workflow](./.github/workflows/cd.yml) starts after a successful CI run on `vanilla` (excluding pull requests). CI uploads the validated commit SHA, including any generated translation commit, so CD builds and deploys that exact revision rather than a potentially newer branch tip. CD can also be started manually to deploy the selected revision without generating translations.
 
 ## Connect a custom domain
 

@@ -1,17 +1,16 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
+  workflow_run:
+    workflows: ["Test BDD"]
+    types: [completed]
     branches: ["vanilla"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -24,13 +23,38 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event != 'pull_request')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Download validated commit
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: deployment-sha
+          path: ${{ runner.temp }}/ci-deployment
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - name: Read validated commit
+        if: github.event_name == 'workflow_run'
+        id: validated
+        shell: bash
+        run: |
+          sha=$(cat "$RUNNER_TEMP/ci-deployment/deployment-sha.txt")
+          if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Invalid deployment commit SHA"
+            exit 1
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.validated.outputs.sha || github.sha }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

@@ -1,0 +1,60 @@
+name: Test BDD
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Find missing translations
+        if: github.ref == 'refs/heads/vanilla' && github.event_name != 'pull_request'
+        id: translations
+        run: node utils/update-translations.js --dry-run
+      - uses: actions/setup-python@v5
+        if: steps.translations.outputs.has_missing == 'true'
+        with:
+          python-version: '3.11'
+      - name: Generate missing translations
+        if: steps.translations.outputs.has_missing == 'true'
+        env:
+          ARGOS_CHUNK_TYPE: MINISBD
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install argostranslate==1.11.0
+          node utils/update-translations.js
+      - run: npm test
+      - name: Commit generated translations
+        if: steps.translations.outputs.has_missing == 'true'
+        run: |
+          git add -- 'i18n/*.json'
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Add missing website translations' \
+              -m 'Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>'
+          git push origin HEAD:refs/heads/vanilla
+      - name: Record validated commit
+        if: github.ref == 'refs/heads/vanilla' && github.event_name != 'pull_request'
+        run: git rev-parse HEAD > "$RUNNER_TEMP/deployment-sha.txt"
+      - uses: actions/upload-artifact@v4
+        if: github.ref == 'refs/heads/vanilla' && github.event_name != 'pull_request'
+        with:
+          name: deployment-sha
+          path: ${{ runner.temp }}/deployment-sha.txt
+          if-no-files-found: error
