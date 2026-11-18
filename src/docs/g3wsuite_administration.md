@@ -1,4 +1,4 @@
-# G3W-ADMIN: the Administration panel
+# Administration panel
 
 _**This section describes how to manage the various aspects and features of the Suite:**_
  * _**customization of the access portal**_
@@ -165,6 +165,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "**`a text menu on the left`:**": "**`un menu testuale a sinistra`:**",
     "Add custom Base layers": "Aggiunta di livelli di base personalizzati",
     "Administration interface and portal": "Interfaccia di amministrazione e portale",
+    "Administration panel": "Pannello di amministrazione",
     "After filling in the various form, click on the **Save button** to confirm your choices.": "Dopo aver compilato i vari moduli, fare clic sul pulsante **Save** per confermare le scelte.",
     "Back to Administration panel": "Torna al pannello di amministrazione",
     "Base layers and multilingual settings": "Livelli di base e impostazioni multilingue",
@@ -180,7 +181,6 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Front End Social Data": "Dati social del front end",
     "Front end portal customization": "Personalizzazione del portale front end",
     "Frontend Groups Map Data": "Dati delle mappe dei gruppi del front end",
-    "G3W-ADMIN: the Administration panel": "G3W-ADMIN: il pannello di amministrazione",
     "In the **Credits** subsection it is possible to define additional text for the publishing aspects.": "Nella sottosezione **Credits** è possibile definire testo aggiuntivo relativo alla pubblicazione.",
     "In the **`General suite data`** form you can define all the informations that will appear on the portal home page": "Nel modulo **`General suite data`** è possibile definire tutte le informazioni che appariranno nella pagina iniziale del portale",
     "Information that will be displayed in the **Login/Administration** session": "Informazioni visualizzate nella sezione **Login/Administration**",

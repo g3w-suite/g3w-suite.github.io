@@ -1,7 +1,5 @@
 # Editing related records
 
-[Back to Online editing](g3wsuite_editing.md)
-
 ## 1:N and N:M related tables editing
 **Relational editing** requires:
  * on the published QGIS project there are one or more geographic layers related (1:N) with one or more alphanumeric tables
@@ -109,7 +107,6 @@ Remember that during the editing phase the **undo/redo icons** allow you to dele
     "A series of icons appear to the right of each record associated with the edited feature.": "A destra di ogni record associato all’elemento in modifica appaiono diverse icone.",
     "After the editing has been activated on a record in the parent table, an editing icon (pen) will appear at the level of the relations references.": "Dopo aver attivato la modifica di un record nella tabella padre, accanto ai riferimenti delle relazioni appare un’icona di modifica (matita).",
     "Association of an existing record": "Associazione di un record esistente",
-    "Back to Online editing": "Torna alle modifiche online",
     "By clicking on the icon **`Create and link a new relation`** ![Icon: Plus](/img/manual-english-icon-plus.avif)(located at the top right) it will be show the attribute form to insert a new record.": "Facendo clic sull’icona **`Crea e collega una nuova relazione`** ![Icona: aggiungi](/img/manual-english-icon-plus.avif) (in alto a destra), viene mostrato il modulo attributi per inserire un nuovo record.",
     "By clicking on the icon **`Join a relation to this feature`** ![Icon: Join](/img/manual-english-icon-join.avif) (located at the top right) you can associate a record, already linked to other features or orphaned, to the edited feature.": "Facendo clic sull’icona **`Collega una relazione a questo elemento`** ![Icona: collega](/img/manual-english-icon-join.avif) (in alto a destra), è possibile associare all’elemento in modifica un record già collegato ad altri elementi o orfano.",
     "Clicking on it the form switch in a session dedicated to the edit of the relational table where it will be possible: **create and add a new records** related to the edited feature": "Facendo clic su di essa, il modulo passa alla sezione dedicata alla modifica della tabella relazionale, dove è possibile **creare e aggiungere nuovi record** associati all’elemento in modifica",

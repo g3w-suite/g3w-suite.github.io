@@ -1,4 +1,4 @@
-# Editing on line
+# Online editing
 
 ## Activation and configuration
 ### Introduction and main features
@@ -69,7 +69,6 @@ This block will be deactivated when the user exits the editing mode.
     "An important note in relation to the formats supported in editing: please remember that only data on PostGreSQL/PostGis and Oracle Satial support multi-user editing.": "Una nota importante sui formati supportati per la modifica: solo i dati su PostGreSQL/PostGis e Oracle Spatial supportano la modifica multiutente.",
     "Back to Online editing": "Torna alle modifiche online",
     "Editing activation and overview": "Attivazione e panoramica delle modifiche",
-    "Editing on line": "Modifica online",
     "Further configuration": "Ulteriori impostazioni",
     "G3W-SUITE manages **multi-user editing** through a **feature lock system**.": "G3W-SUITE gestisce la **modifica multiutente** tramite un **sistema di blocco degli elementi**.",
     "Geocoding and map-based data entry": "Geocodifica e inserimento di dati sulla mappa",
@@ -79,6 +78,7 @@ This block will be deactivated when the user exits the editing mode.
     "It’s strongly recommended to allow multi-user editing only in the case of layers on the GeoDatabase and not on physical files.": "Si consiglia vivamente di consentire la modifica multiutente solo per i layer su GeoDatabase, non per quelli archiviati in file fisici.",
     "Multi-user editing": "Modifica multiutente",
     "Multi-user editing on formats such as Shapefile, but also GeoPackage and SpatiaLite, can lead to data corruption.": "La modifica multiutente di formati come Shapefile, GeoPackage e SpatiaLite può causare la corruzione dei dati.",
+    "Online editing": "Modifica online",
     "Online editing tools in the cartographic client": "Strumenti di modifica online nel client cartografico",
     "Online editing tools on cartographic client": "Strumenti di modifica online nel client cartografico",
     "QGIS project settings for editing": "Impostazioni del progetto QGIS per le modifiche",

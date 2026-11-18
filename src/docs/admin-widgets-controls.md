@@ -1,6 +1,4 @@
-# Widget constraints and search tools
-
-[Back to Administration panel](g3wsuite_administration.md)
+# Layer visibility and constraints
 
 ## Widgets management
 
@@ -56,7 +54,6 @@ At the top right, identified by the item "Project layers actions", there are ico
     "![Icon: Styles](/img/manual-english-icon-styles.avif) Manage layer styles": "![Icona: stili](/img/manual-english-icon-styles.avif) Gestire gli stili del layer",
     "**Hide selected layer fields from individual users or groups during viewing.**": "**Nascondi i campi selezionati del layer a singoli utenti o gruppi durante la consultazione.**",
     "At the top right, identified by the item \"Project layers actions\", there are icons dedicated to settings that act on multiple elements of the project:": "In alto a destra, sotto la voce \"Project layers actions\", sono presenti icone dedicate a impostazioni che agiscono su più elementi del progetto:",
-    "Back to Administration panel": "Torna al pannello di amministrazione",
     "Clicking on the icon will show the list of any existing alphanumeric column constraints and the item `+ Create New Column Level constraints` to create a new one.": "Facendo clic sull'icona verrà mostrato l'elenco degli eventuali vincoli alfanumerici esistenti sulle colonne e la voce `+ Create New Column Level constraints` per crearne uno nuovo.",
     "Clicking on the item will open a modal window which will allow you to define:": "Facendo clic sulla voce si aprirà una finestra modale che consente di definire:",
     "Icon: Chart Order": "Icona: ordine dei grafici",
@@ -64,6 +61,7 @@ At the top right, identified by the item "Project layers actions", there are ico
     "Icon: Multi Editing": "Icona: modifica multipla",
     "If **multi styles have been associated with the same layer** in the QGIS project, they will be exposed.": "Se nel progetto QGIS **allo stesso layer sono associati più stili**, questi saranno disponibili.",
     "It will be possible to associate new layers by **loading related QML files** and **set the style to be used as default**.": "È possibile associare nuovi stili **caricando i relativi file QML** e **impostare lo stile predefinito**.",
+    "Layer visibility and constraints": "Visibilità e vincoli dei layer",
     "Once all the constraints have been setted, click on the OK to confirm the rules.": "Dopo aver impostato tutti i vincoli, fare clic su OK per confermare le regole.",
     "Project layers actions": "Azioni sui layer del progetto",
     "Screenshot: G3W-SUITE Administration Hide Columns New": "Schermata: nuovo vincolo di colonne nascoste nell'amministrazione di G3W-SUITE",
@@ -73,7 +71,6 @@ At the top right, identified by the item "Project layers actions", there are ico
     "This setting is also available for the AnonymousUser user": "Questa impostazione è disponibile anche per l'utente AnonymousUser",
     "Through the **Geo-constraints by user/group** and **Alphanumeric and QGIS expressions constraints by user/groups**  widgets it is possible to define editing and display filters for users authorized to consult/edit the project.": "I widget **Geo-constraints by user/group** e **Alphanumeric and QGIS expressions constraints by user/groups** consentono di definire filtri di modifica e visualizzazione per gli utenti autorizzati a consultare o modificare il progetto.",
     "To activate this type of constraint, you must click, at the level of the layer of interest, on the Hide columns by User/Groups icon ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.avif).": "Per attivare questo tipo di vincolo, fare clic sull'icona Hide columns by User/Groups ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.avif) associata al layer interessato.",
-    "Widget constraints and search tools": "Vincoli dei widget e strumenti di ricerca",
     "Widgets management": "Gestione dei widget",
     "list of fields to hide": "elenco dei campi da nascondere",
     "list of users for whom these fields should be hidden": "elenco degli utenti a cui nascondere questi campi",

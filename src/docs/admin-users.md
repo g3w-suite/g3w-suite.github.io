@@ -1,6 +1,4 @@
-# Users and cartographic macro-groups
-
-[Back to Administration panel](g3wsuite_administration.md)
+# Users and macro-groups
 
 ## Users and Users Groups management
 In the left side menu there is the **Users** item with four sub-items:
@@ -87,7 +85,7 @@ In this section it is possible to view the list of Cartographic Macrogroups, man
 
 **ATTENTION: use the Cartographic MacroGroups only if you need them.**
 
-See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization#hierarchical-organization-of-webgis-services-and-types-of-users-roles) to learn more about this aspect.
+See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization.md) to learn more about this aspect.
 
 For example, you can create a **Macrogroup** to collect a series of **Cartographic Groups** belonging to the same Administration (single Municipality within a Union of Municipalities) or more simply to have main containers that contain second level groupings (Groups).
 
@@ -190,7 +188,6 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "After filling in the from, click on the **Save** button to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante **Save** per confermare le scelte.",
       "After filling in the various form, click on the Save button to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante Save per confermare le scelte.",
       "Associated Cartographic MacroGroups (optional)": "Macrogruppi cartografici associati (facoltativo)",
-      "Back to Administration panel": "Torna al pannello di amministrazione",
       "Backend: info on user creation (G3W-SUITE or LDAP)": "Backend: informazioni sulla creazione dell'utente (G3W-SUITE o LDAP)",
       "Button: Save": "Pulsante: salva",
       "Client header composition follows the [Cartographic Group logo settings](admin-cartographic-groups.md).": "La composizione dell'intestazione del client segue le [impostazioni del logo del Gruppo cartografico](admin-cartographic-groups.md).",
@@ -221,7 +218,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "Screenshot: G3W-SUITE Administration User List": "Schermata: elenco degli utenti nell'amministrazione di G3W-SUITE",
       "Screenshot: G3W-SUITE Administration Usergroup Add": "Schermata: aggiunta di un gruppo di utenti nell'amministrazione di G3W-SUITE",
       "Screenshot: G3W-SUITE Administration Usergroup List": "Schermata: elenco dei gruppi di utenti nell'amministrazione di G3W-SUITE",
-      "See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization#hierarchical-organization-of-webgis-services-and-types-of-users-roles) to learn more about this aspect.": "Per ulteriori informazioni, consultare il capitolo [Organizzazione gerarchica dei servizi WebGis e tipi di utenti](user_groups_organization#hierarchical-organization-of-webgis-services-and-types-of-users-roles).",
+      "See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization.md) to learn more about this aspect.": "Per ulteriori informazioni, consultare il capitolo [Organizzazione gerarchica dei servizi WebGis e tipi di utenti](user_groups_organization.md).",
       "State of user: active/deactivated": "Stato dell'utente: attivo/disattivato",
       "Super user and Staff privileges": "Privilegi di superutente e Staff",
       "The association between user and user groups can also be achieved at the individual user management level.": "L'associazione tra utenti e gruppi di utenti può essere effettuata anche dalla gestione del singolo utente.",
@@ -237,7 +234,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "User groups to which they belong": "Gruppi di utenti a cui appartengono",
       "Username": "Nome utente",
       "Users and Users Groups management": "Gestione degli utenti e dei gruppi di utenti",
-      "Users and cartographic macro-groups": "Utenti e macrogruppi cartografici",
+      "Users and macro-groups": "Utenti e macrogruppi",
       "Users list": "Elenco degli utenti",
       "Using the icons at the head of each row, you can:": "Le icone all'inizio di ogni riga consentono di:",
       "the **removal of all the Cartographic Groups** contained in it": "la **rimozione di tutti i Gruppi cartografici** che contiene",

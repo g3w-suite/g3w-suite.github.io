@@ -1,4 +1,4 @@
-# Branding the G3W-Suite
+# Branding
 
 Customize the G3W-SUITE interface to match your organization's branding.
 
@@ -180,7 +180,7 @@ This is based on the following [gist](https://gist.github.com/vstoykov/1366794?p
     "**G3WSUITE_RID_LOGO**: The logo that appears in the top left corner of the suite when logged in the admin section, with the sidebar reduced. Mind that this one needs to be around 60x60 pixels to fit nicely.": "**G3WSUITE_RID_LOGO**: logo visualizzato nell'angolo superiore sinistro della suite quando si accede alla sezione di amministrazione con la barra laterale ridotta. Per adattarsi correttamente, dovrebbe avere dimensioni di circa 60x60 pixel.",
     "**NOTE:** When testing this in development/debug mode, the static folder **custom_static** needs to be created in the static folder of the **core** package of the g3w-admin app.": "**NOTA:** durante i test in modalità sviluppo/debug, la cartella statica **custom_static** deve essere creata nella cartella statica del pacchetto **core** dell'app g3w-admin.",
     "Adding the following line to the ```local_settings.py``` file will turn off the *powered by* section and show only what has been set in the **Map CLient Data** section of the **General Suite Data**:": "Aggiungendo la riga seguente al file ```local_settings.py``` si disattiva la sezione *powered by* e si mostra solo quanto configurato nella sezione **Map Client Data** di **General Suite Data**:",
-    "Branding the G3W-Suite": "Personalizzare il marchio di G3W-Suite",
+    "Branding": "Personalizzazione del marchio",
     "By setting the following line in the ```local_settings.py``` file:": "Impostando la riga seguente nel file ```local_settings.py```:",
     "Client appearance and customization": "Aspetto e personalizzazione del client",
     "Customize the G3W-SUITE interface to match your organization's branding.": "Personalizza l'interfaccia di G3W-SUITE in base all'identità della tua organizzazione.",

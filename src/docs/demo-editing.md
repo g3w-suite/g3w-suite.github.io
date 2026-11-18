@@ -1,7 +1,5 @@
 # Try online editing
 
-[Back to Demo tutorial](demo.md)
-
 ## Editing on line
 _**Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.**_
 
@@ -120,7 +118,6 @@ Redefine attribute forms, aliases and editing widgets associated with the indivi
     "**year** (integer NOT NULL): unique values (2015,2016,2017,2018,2019,2020)": "**year** (intero NOT NULL): valori univoci (2015,2016,2017,2018,2019,2020)",
     "**year** (integer): range (2018-2022 step 1)": "**year** (intero): intervallo (2018-2022, passo 1)",
     "**zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)": "**zone** (testo): modifica testo (con valori predefiniti basati su un'espressione QGIS per l'associazione all'area di lavoro intersecante)",
-    "Back to Demo tutorial": "Torna al tutorial della demo",
     "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.avif) (placed at the left of each rows) will open a modal window that will allow you to:": "Facendo clic sull'icona **Layer di modifica** ![Icona: modifica](/img/manual-english-icon-editing.avif) (a sinistra di ogni riga) si aprirà una finestra modale che consentirà di:",
     "Customize the demo": "Personalizzare la demo",
     "Editing on line": "Modifica online",

@@ -1,7 +1,5 @@
 # Layers and attribute table
 
-[Back to Cartographic client](g3wsuite_client.md)
-
 ## TOC session
 
 The midle part of the left bar contains the following items:
@@ -151,7 +149,6 @@ We remind you that activating a filter affects:
     "Activation of the filter is reflected:": "L’attivazione del filtro si riflette su:",
     "At the same time, additional icons appear:": "Contemporaneamente vengono mostrate altre icone:",
     "Attribute table": "Tabella attributi",
-    "Back to Cartographic client": "Torna al client cartografico",
     "Clear selection": "Cancella selezione",
     "Double clicking on the layer or Layer Group zooms to the extent of the layer or Group content.": "Facendo doppio clic sul layer o sul gruppo di layer, viene visualizzata l’estensione del layer o del contenuto del gruppo.",
     "Enable/Disable  filter": "Attiva/disattiva filtro",

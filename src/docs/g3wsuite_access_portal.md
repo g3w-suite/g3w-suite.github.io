@@ -1,4 +1,4 @@
-# G3W-FRONTEND: the front end portal
+# Access portal
 _**This section describes the different sections of the access portal and how to login to the Administration Panel**_
 
 ## The login portal sessions
@@ -60,9 +60,9 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "**`Info`**": "**`Informazioni`**",
       "**`Login`**": "**`Accedi`**",
       "**`Maps`**": "**`Mappe`**",
+      "Access portal": "Portale di accesso",
       "By accessing the **Maps** session, the **Macrogroups** (if present) will be displayed, access to the Macrogroup will allow you to view the associated **Cartographic Groups** and from these access the list of individual **WebGis services**.": "Accedendo alla sezione **Mappe**, verranno visualizzati i **Macrogruppi** (se presenti); accedendo a un macrogruppo si potranno consultare i **Gruppi cartografici** associati e, da questi, l'elenco dei singoli **servizi WebGIS**.",
       "Following authentication, the **Maps** page will also show the MacroGroups, Groups and WebGis services with restricted access and on which the user has access permissions.": "Dopo l'autenticazione, la pagina **Mappe** mostrerà anche i Macrogruppi, i Gruppi e i servizi WebGIS ad accesso limitato per i quali l'utente dispone delle autorizzazioni.",
-      "G3W-FRONTEND: the front end portal": "G3W-FRONTEND: il portale front-end",
       "Icon: G3wclient Config": "Icona: configurazione G3W-Client",
       "If you are an **Administrator** or **Editor** of 1 or 2 level, you can also access the Administration session.": "Se si è **Amministratore** o **Editor** di livello 1 o 2, è possibile accedere anche alla sezione di amministrazione.",
       "If you have a user for access, you can authenticate yourself through the **Login session**.": "Se si dispone di un account, è possibile autenticarsi tramite la sezione **Accedi**.",

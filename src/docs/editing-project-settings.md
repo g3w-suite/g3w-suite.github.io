@@ -1,6 +1,4 @@
-# QGIS project settings for editing
-
-[Back to Online editing](g3wsuite_editing.md)
+# Prepare a project for editing
 
 ## Activation and configuration
 
@@ -123,7 +121,6 @@ When working with layers with the same source (es. layer from the same PostGreSQ
     "Allow multiple selections supported": "è supportata la selezione multipla",
     "Also for the tables related in 1:n mode it will be possible to define the **attribute form structure, aliases and editing widgets** in the QGIS project.": "Anche per le tabelle correlate tramite relazioni 1:n è possibile definire nel progetto QGIS la **struttura del modulo attributi, gli alias e i widget di modifica**.",
     "As in QGIS the default values are displayed in the form during editing and not only after saving.": "Come in QGIS, i valori predefiniti sono mostrati nel modulo durante la modifica, non solo dopo il salvataggio.",
-    "Back to Online editing": "Torna alle modifiche online",
     "Below are the available widgets and any limitations:": "Di seguito sono elencati i widget disponibili e le eventuali limitazioni:",
     "Conditional forms based on QGIS expressions are supported and implemented for online editing/consulting.": "I moduli condizionali basati su espressioni QGIS sono supportati e disponibili per la modifica e la consultazione online.",
     "Conditionals forms based on QGIS expressions": "Moduli condizionali basati su espressioni QGIS",
@@ -138,10 +135,10 @@ When working with layers with the same source (es. layer from the same PostGreSQ
     "In this case, at the online edit level, the form relating to the field thus defined will be self-calculated and can be set not editable by the user.": "In questo caso, durante la modifica online il valore del campo viene calcolato automaticamente e il campo può essere impostato come non modificabile dall’utente.",
     "It is therefore possible to define the visibility of a forms (form or group) and of the fields it contains, on the basis of the values defined on further fields when filling in the attributes.": "È quindi possibile definire la visibilità di un modulo (o di un gruppo) e dei campi che contiene in base ai valori inseriti negli altri campi durante la compilazione degli attributi.",
     "Order value option supported": "è supportata l’opzione di ordinamento dei valori",
+    "Prepare a project for editing": "Preparare un progetto per la modifica",
     "QGIS expressions and default values": "Espressioni QGIS e valori predefiniti",
     "QGIS filter expression supported": "è supportata l’espressione di filtro QGIS",
     "QGIS project settings": "Impostazioni del progetto QGIS",
-    "QGIS project settings for editing": "Impostazioni del progetto QGIS per le modifiche",
     "Screenshot: Datasources": "Schermata: sorgenti dati",
     "Screenshot: Editing QGIS Form Widget": "Schermata: widget del modulo di modifica QGIS",
     "The `Apply the default value also to the update` option is supported.": "È supportata l’opzione `Applica il valore predefinito anche all’aggiornamento`.",

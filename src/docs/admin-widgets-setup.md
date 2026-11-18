@@ -1,6 +1,4 @@
-# Widget and layer setup
-
-[Back to Administration panel](g3wsuite_administration.md)
+# Layer tools
 
 ## Widgets management
 Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.
@@ -124,7 +122,6 @@ With this icon it will be possible to define the list of users (single and/or gr
     "**Visibility capabilities:** allows you to define some elements in a generic way, i.e. without distinction between users.": "**Visibility capabilities:** consente di definire alcune opzioni in modo generale, senza differenziare tra utenti.",
     "**WFS:** a check mark shows whether the layer is published as a WFS service or not": "**WFS:** una spunta indica se il layer è pubblicato come servizio WFS",
     "**WMS external:** to speed up loading, the WMS layers present in a QGIS project are managed directly by Django and not by QGIS-Server.": "**WMS external:** per velocizzare il caricamento, i layer WMS presenti in un progetto QGIS vengono gestiti direttamente da Django e non da QGIS Server.",
-    "Back to Administration panel": "Torna al pannello di amministrazione",
     "Base layer attribution": "Attribuzione del Base Layer",
     "Base layer description": "Descrizione del Base Layer",
     "Base layer title": "Titolo del Base Layer",
@@ -143,6 +140,7 @@ With this icon it will be possible to define the list of users (single and/or gr
     "Icon: Widget": "Icona: widget",
     "If the published project contains only one layer is it possible to convert this WebGis service into a Base Layer.": "Se il progetto pubblicato contiene un solo layer, è possibile convertire il servizio WebGis in un Base Layer.",
     "In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.": "Nel caso di WMS non esterni, il servizio viene gestito da Django, evitando problemi cross-domain; l'unico formato di risposta GetFeatureInfo gestito è GML.",
+    "Layer tools": "Strumenti dei layer",
     "Learn more about how to create a new base layer in the [dedicated section](admin-base-layers.md).": "Per ulteriori informazioni su come creare un Base Layer, consultare la [sezione dedicata](admin-base-layers.md).",
     "Next to each layer are a series of icons and checkboxes:": "Accanto a ogni layer sono disponibili diverse icone e caselle di controllo:",
     "Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Dopo aver pubblicato un progetto cartografico, tramite l'icona ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) è possibile accedere all'elenco dei layer geografici che lo compongono e definirne alcuni aspetti funzionali disponibili nel client cartografico.",
@@ -158,7 +156,6 @@ With this icon it will be possible to define the list of users (single and/or gr
     "The option is available only if the WMS loaded on the QGIS project is associated with the same projection system as the project.": "L'opzione è disponibile solo se il WMS caricato nel progetto QGIS usa lo stesso sistema di proiezione del progetto.",
     "To do this you need to activate the **Base layer option** form and fill in the second part of the form:": "Per farlo, attivare l'opzione **Base layer** nel modulo e compilare la seconda parte:",
     "Use this icon to enable editing on individual layers and set permissions for users or groups.": "Usa questa icona per abilitare la modifica dei singoli layer e impostare i permessi per utenti o gruppi.",
-    "Widget and layer setup": "Configurazione dei widget e dei layer",
     "Widgets management": "Gestione dei widget",
     "With this icon it is possible to **activate/manage the cache of the single layers** and **create XYZ Tiles layer** that you can use as **Base Layer** in your WebGis.": "Questa icona consente di **attivare e gestire la cache dei singoli layer** e di **creare layer XYZ Tiles** da usare come **Base Layer** nel WebGis.",
     "With this icon it will be possible to define the list of users (single and/or groups) who will be enabled to view this layer at the TOC and map level.": "Questa icona consente di definire l'elenco degli utenti (singoli e/o gruppi) autorizzati a visualizzare il layer nella TOC e sulla mappa."

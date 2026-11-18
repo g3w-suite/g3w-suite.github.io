@@ -238,7 +238,7 @@ Then('both languages are generated from shared page templates', function () {
     assert.equal(versions(`main table a[href="/${lang}/news/v3.11/"]`).length, 1, `${lang} compatibility table must link to localized release notes`);
     const community = readPage(path.join(staticDir, lang, 'community', 'index.html')).$;
     assert.equal(community(`main a[href="/${lang}/about/#people"]`).length, 1, `${lang} community must link to contributor profiles`);
-    const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'overview', 'index.html')).$;
+    const manual = readPage(path.join(staticDir, lang === 'it' ? 'it' : '', 'docs', 'index.html')).$;
     assert.ok(manual('main').text().includes('QGIS 3.44 LTR'), `${lang} manual must match the current QGIS version`);
     const componentSections = explore('main > section').slice(1, 8);
     const components = [

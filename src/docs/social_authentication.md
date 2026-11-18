@@ -1,4 +1,4 @@
-# Social Account Authentication in the G3W-Suite with django-allauth
+# Social login
 
 Since version 3.9, G3W-SUITE supports social authentication through [django-allauth](https://django-allauth.readthedocs.io/en/latest/).
 
@@ -167,9 +167,9 @@ Once enabled the django admin will provide the following view:
       "Screenshot: Socialauth User Sessions": "Schermata: sessioni utente Socialauth",
       "Set the site id": "Impostare l'ID del sito",
       "Since version 3.9, G3W-SUITE supports social authentication through [django-allauth](https://django-allauth.readthedocs.io/en/latest/).": "Dalla versione 3.9, G3W-SUITE supporta l'autenticazione social tramite [django-allauth](https://django-allauth.readthedocs.io/en/latest/).",
-      "Social Account Authentication in the G3W-Suite with django-allauth": "Autenticazione tramite account social in G3W-SUITE con django-allauth",
       "Social account corner cases": "Casi particolari degli account social",
       "Social apps are the settings that in fact enable providers to be used for authentication.": "Le app social sono le impostazioni che abilitano effettivamente i provider per l'autenticazione.",
+      "Social login": "Accesso con account social",
       "The admin roles have to be manually set, if necessary. Any typo in this setting or": "Se necessario, i ruoli di amministrazione devono essere impostati manualmente. Eventuali errori di battitura in questa impostazione o",
       "The base settings of the suite have a site id configured as 1.": "Le impostazioni di base della suite prevedono l'ID del sito impostato su 1.",
       "The required Django apps and some providers are preconfigured. You can add other providers supported by ```django-allauth```.": "Le app Django necessarie e alcuni provider sono preconfigurati. Puoi aggiungere altri provider supportati da ```django-allauth```.",

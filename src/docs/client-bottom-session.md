@@ -1,7 +1,5 @@
 # Bottom panel and time series
 
-[Back to Cartographic client](g3wsuite_client.md)
-
 ## Bottom session
 
 The bottom part of the left bar contains the following items:
@@ -125,7 +123,6 @@ The modification of the start date of the series will determine the updating of 
     "**vector layers:** limited to the **Single field with Date/Time** configuration": "**layer vettoriali:** limitati alla configurazione **Campo singolo con data/ora**",
     "Add layer": "Aggiungi layer",
     "An arrow icon in the upper left corner will allow you to navigate between Cartographic Groups (and possibly Cartographic Macrogroups) to select other maps.": "Un’icona a forma di freccia nell’angolo superiore sinistro consente di spostarsi tra i Gruppi cartografici (ed eventualmente i Macrogruppi cartografici) per selezionare altre mappe.",
-    "Back to Cartographic client": "Torna al client cartografico",
     "Bottom panel and time series": "Pannello inferiore e serie temporali",
     "Bottom session": "Pannello inferiore",
     "Change map": "Cambia mappa",

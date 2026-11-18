@@ -1,6 +1,4 @@
-# Tools panel and table of contents
-
-[Back to Cartographic client](g3wsuite_client.md)
+# Map tools
 
 ## Tools panel
 
@@ -166,7 +164,6 @@ Once created, the User Themes will be selectable, overwritable and editable usin
     "Additional information is displayed if you log in as Administrator": "Se accedi come amministratore vengono mostrate informazioni aggiuntive.",
     "Appropriate **messages** at the single plots level will indicate the activation of these filters.": "Messaggi appropriati accanto ai singoli grafici indicano l’attivazione di questi filtri.",
     "Available only after activation of the editing function and based on the powers of the logged in user": "Disponibile solo dopo aver attivato la funzione di modifica e in base ai permessi dell’utente autenticato.",
-    "Back to Cartographic client": "Torna al client cartografico",
     "Bookmarks": "Segnalibri",
     "By clicking on the **+** button it will be possible to define a name to associate and create the Theme.": "Facendo clic sul pulsante **+** è possibile assegnare un nome e creare il tema.",
     "By positioning on the individual results, the corresponding features will be highlighted on the map; clicking on the individual results you can consult all the attributes.": "Spostando il puntatore sui singoli risultati, gli elementi corrispondenti vengono evidenziati sulla mappa; facendo clic su un risultato è possibile consultare tutti gli attributi.",
@@ -183,6 +180,7 @@ Once created, the User Themes will be selectable, overwritable and editable usin
     "In the event that Themes (Views) are defined in the QGIS project, a specific choice menu will be available in the Layers session of the TOC.": "Se nel progetto QGIS sono definiti dei Temi (Viste), nella sezione Layer della TOC sarà disponibile un apposito menu di selezione.",
     "Layers and attribute table": "Layer e tabella degli attributi",
     "Legend": "Legenda",
+    "Map tools": "Strumenti della mappa",
     "Metadata": "Metadati",
     "On the map, a light rectangular area will allow you to define the print area.": "Sulla mappa, un riquadro chiaro consente di definire l’area di stampa.",
     "Once created, the User Themes will be selectable, overwritable and editable using the icons shown next to each of them.": "Dopo la creazione, i temi utente possono essere selezionati, sovrascritti e modificati tramite le icone accanto a ciascuno di essi.",
@@ -220,7 +218,6 @@ Once created, the User Themes will be selectable, overwritable and editable usin
     "This tool will display the spatial bookmarks defined and associated with the QGIS project.": "Questo strumento mostra i segnalibri spaziali definiti e associati al progetto QGIS.",
     "Through this tool it is possible to:": "Questo strumento consente di:",
     "Tools panel": "Pannello degli strumenti",
-    "Tools panel and table of contents": "Pannello degli strumenti e indice dei contenuti",
     "User themes": "Temi utente",
     "View the service's complete legend.": "Consulta la legenda completa del servizio.",
     "You choose the search you are interested in, fill in the required fields and click on the **`Search`** button.": "Scegli la ricerca desiderata, compila i campi richiesti e fai clic sul pulsante **`Search`**.",

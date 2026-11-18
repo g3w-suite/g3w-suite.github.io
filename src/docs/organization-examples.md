@@ -1,6 +1,4 @@
-# Access policies and organization examples
-
-[Back to Users and organization](user_groups_organization.md)
+# Access policy examples
 
 ## Summary table of access/administration policies
 This table summarizes permissions by role.
@@ -103,14 +101,13 @@ flowchart TB
     "**Contents organized on two levels (Cartographic macro-groups and cartographic groups)**": "**Contenuti organizzati su due livelli (Macrogruppi cartografici e Gruppi cartografici)**",
     "**Editor1** users can create/manage users within their work environment (Macrogroup) ensuring separation from users created by other Editor1 users and related to other MacroGroups": "Gli utenti **Editor1** possono creare e gestire utenti nel proprio ambiente di lavoro (Macrogruppo), mantenendoli separati da quelli creati dagli altri utenti Editor1 e associati ad altri Macrogruppi.",
     "**Editor1** users can in turn delegate some secondary administrators (**Editor2** role) in managing the contents of the individual Cartographic Groups.": "Gli utenti **Editor1** possono a loro volta delegare alcuni amministratori secondari (**ruolo Editor2**) per la gestione dei contenuti dei singoli Gruppi cartografici.",
-    "Access policies and organization examples": "Politiche di accesso ed esempi organizzativi",
+    "Access policy examples": "Esempi di criteri di accesso",
     "Access to Cartographic Groups and individual WebGIS services can be limited to system users (**Viewer** role) or to free access (**Anonymous user**).": "L'accesso ai Gruppi cartografici e ai singoli servizi WebGIS può essere limitato agli utenti del sistema (**ruolo Viewer**) oppure essere libero (**utente Anonymous**).",
     "Access to Cartographic Groups and individual WebGis services can be limited to system users (**Viewer** role) or to free access (**Anonymous user**)": "L'accesso ai Gruppi cartografici e ai singoli servizi WebGIS può essere limitato agli utenti del sistema (**ruolo Viewer**) oppure essere libero (**utente Anonymous**).",
     "Administration": "Amministrazione",
     "Advanced administrator with access to Django administration.": "Amministratore avanzato con accesso al pannello di amministrazione di Django.",
     "Advanced organization": "Organizzazione avanzata",
     "Advanced organization: Admin assigns an Editor1 to each independent macro-group; each Editor1 manages its own users and can delegate group content to Editor2": "Organizzazione avanzata: Admin assegna un Editor1 a ciascun Macrogruppo indipendente; ciascun Editor1 gestisce i propri utenti e può delegare a Editor2 la gestione dei contenuti dei Gruppi",
-    "Back to Users and organization": "Torna a utenti e organizzazione",
     "Basic administrator.": "Amministratore base.",
     "Basic organization": "Organizzazione di base",
     "Basic organization on one level: Admin manages cartographic groups directly, and viewers can access authorized WebGIS services": "Organizzazione di base su un livello: Admin gestisce direttamente i Gruppi cartografici e i Viewer possono accedere ai servizi WebGIS autorizzati",

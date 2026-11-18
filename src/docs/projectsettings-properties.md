@@ -1,6 +1,4 @@
-# Project properties and general settings
-
-[Back to QGIS project settings](projectsettings.md)
+# Project properties
 
 ## Project property
 
@@ -37,7 +35,7 @@ The option **`Automatically create transaction group where possible`** is automa
  
 
 **NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**
-See [dedicated paragraph](settings#g3w_client_search_endpoint)
+See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint)
 
 
 ![Screenshot: Datasources](/img/manual-english-datasources.avif)
@@ -171,7 +169,6 @@ The request to delete the basic embedded project causes a warning message as thi
       "1:N and N:M relations": "Relazioni 1:N e N:M",
       "A specific menu on the webgis will allow you to choose the Theme to be displayed.": "Un menu specifico nel WebGIS consente di scegliere il tema da visualizzare.",
       "An update of the embedded project will result in a consequent modification of all derived projects.": "L'aggiornamento del progetto incorporato comporta la modifica di tutti i progetti derivati.",
-      "Back to QGIS project settings": "Torna alle impostazioni del progetto QGIS",
       "Capabilities WMS - Advertised extent": "Capacità WMS - Estensione pubblicizzata",
       "Capabilities WMS - Exclude layouts": "Capacità WMS - Esclusione dei layout",
       "Capabilities WMS - General aspects": "Capacità WMS - Aspetti generali",
@@ -197,7 +194,7 @@ The request to delete the basic embedded project causes a warning message as thi
       "Mutually exclusive groups": "Gruppi mutuamente esclusivi",
       "OGC services through which to expose project data and related projection systems": "Servizi OGC tramite i quali esporre i dati del progetto e i relativi sistemi di proiezione",
       "Other geographic reference systems can be implemented by clicking on the **'+'** button and choosing from the list of reference systems.": "È possibile aggiungere altri sistemi di riferimento geografico facendo clic sul pulsante **'+'** e scegliendoli dall'elenco.",
-      "Project properties and general settings": "Proprietà del progetto e impostazioni generali",
+      "Project properties": "Proprietà del progetto",
       "Project property": "Proprietà del progetto",
       "Project title and description": "Titolo e descrizione del progetto",
       "QGIS Server": "QGIS Server",
@@ -211,7 +208,7 @@ The request to delete the basic embedded project causes a warning message as thi
       "Screenshot: Qgisservergeneralaspectswfs": "Schermata: aspetti generali WFS di QGIS Server",
       "Screenshot: Qgisserversetmapexpetent": "Schermata: impostazione dell'estensione della mappa in QGIS Server",
       "Screenshot: Qgisserversrisrestriction": "Schermata: restrizioni CRS di QGIS Server",
-      "See [dedicated paragraph](settings#g3w_client_search_endpoint)": "Vedere il [paragrafo dedicato](settings#g3w_client_search_endpoint)",
+      "See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint)": "Vedere il [paragrafo dedicato](appearance-settings.md#g3w_client_search_endpoint)",
       "See also the [client metadata section](client-tools-and-toc.md#metadata).": "Vedere anche la [sezione sui metadati del client](client-tools-and-toc.md#metadata).",
       "Service capabilities": "Capacità del servizio",
       "Show features count": "Mostrare il conteggio degli elementi",

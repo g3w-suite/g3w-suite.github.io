@@ -1,7 +1,5 @@
 # Map navigation and queries
 
-[Back to Cartographic client](g3wsuite_client.md)
-
 ## Navigation and interaction with the map
 
 ### Map area
@@ -86,7 +84,6 @@ Map-controls available on the top left corner of the map:
     "**project projection system**": "**sistema di proiezione del progetto**",
     "**share map:** t icon to share the map bringing back various customizations": "**condividi mappa:** icona per condividere la mappa mantenendo le personalizzazioni",
     "At the base of the map area there is an information bar showing:": "Nella parte inferiore dell’area della mappa è presente una barra informativa che mostra:",
-    "Back to Cartographic client": "Torna al client cartografico",
     "Here is an example of using the annotation tool": "Ecco un esempio di utilizzo dello strumento di annotazione.",
     "In the top-left panel, choose:": "Nel pannello in alto a sinistra, scegli:",
     "Map area": "Area della mappa",

@@ -1,4 +1,4 @@
-# G3W-CLIENT: the cartographic client
+# Map client
 
 ## Generic aspects
 
@@ -123,10 +123,10 @@ These features are described in a dedicated paragraph below.
     "Cartographic Group name": "nome del Gruppo cartografico",
     "Client overview": "Panoramica del client",
     "Depending on the settings defined at the QGIS project publication level, the legend can be inserted in a dedicated tab or integrated into the layer list as in QGIS.": "In base alle impostazioni di pubblicazione del progetto QGIS, la legenda può essere inserita in una scheda dedicata oppure integrata nell’elenco dei layer, come in QGIS.",
-    "G3W-CLIENT: the cartographic client": "G3W-CLIENT: il client cartografico",
     "Generic aspects": "Aspetti generali",
     "Header": "Intestazione",
     "Main menù": "Menu principale",
+    "Map client": "Client cartografico",
     "Map navigation and queries": "Navigazione e interrogazione della mappa",
     "Navigation and interaction with the map": "Navigazione e interazione con la mappa",
     "Screenshot: G3wclient Header": "Schermata: intestazione G3wclient",

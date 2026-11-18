@@ -29,9 +29,7 @@ function documentationLink(href, file, docsDir, lang = 'en') {
   if ((['.md', '.html', '.rst'].includes(extension) || !extension) && fs.existsSync(page)) {
     const pagePath = path.relative(docsDir, page).replace(/\\/g, '/').replace(/\.md$/, '');
     const docsRoot = lang === 'it' ? '/it/docs' : '/docs';
-    const route = pagePath === 'quick-start'
-      ? `${docsRoot}/`
-      : `${docsRoot}/${pagePath === 'index' ? 'overview' : pagePath.replace(/\/index$/, '')}/`;
+    const route = pagePath === 'index' ? `${docsRoot}/` : `${docsRoot}/${pagePath.replace(/\/index$/, '')}/`;
     return `${route}${suffix}`;
   }
 
@@ -59,8 +57,9 @@ function linkDocumentationHeadings(html) {
   });
 }
 
-function documentationNavigation(index, currentPage, parentPage, docsDir, lang) {
+function documentationNavigation(index, docsDir, lang, titles) {
   const groups = [];
+  const listed = new Set();
   let group;
   for (const line of index.split(/\r?\n/)) {
     const heading = /^##\s+(.+)$/.exec(line);
@@ -73,68 +72,19 @@ function documentationNavigation(index, currentPage, parentPage, docsDir, lang) 
     if (group && link) {
       const indexFile = path.join(docsDir, 'index.md');
       const href = documentationLink(link[2], indexFile, docsDir, lang);
-      group.links.push({ href, label: link[1] });
+      if (!titles.has(href)) throw new Error(`Unknown documentation index entry: ${href}`);
+      if (listed.has(href)) throw new Error(`Duplicate documentation index entry: ${href}`);
+      listed.add(href);
+      group.links.push({ href, label: titles.get(href) });
     }
   }
-  const indexFile = path.join(docsDir, 'index.md');
-  const pages = documentationFiles(docsDir).map(file => {
-    const source = fs.readFileSync(file, 'utf8');
-    const extracted = extractPageTranslations(source, path.relative(projectRoot, file));
-    const localized = translateHtml(
-      autoTranslateMarkdown(extracted.html, lang, extracted.translations),
-      lang,
-      extracted.translations
-    );
-    const title = /^#\s+(.+)$/m.exec(localized)?.[1] || path.basename(file, '.md');
-    const href = documentationLink(path.relative(docsDir, file), indexFile, docsDir, lang);
-    const back = /^\[Back to [^\]]+\]\(([^)]+)\)/m.exec(source);
-    return {
-      href,
-      label: marked.parseInline(title).replace(/<[^>]*>/g, ''),
-      parent: back ? documentationLink(back[1], file, docsDir, lang) : null,
-    };
-  });
-  const listed = new Set(groups.flatMap(item => item.links.map(link => link.href)));
-  const children = new Map();
-  const additional = [];
-  for (const page of pages) {
-    if (listed.has(page.href)) {
-      for (const item of groups) {
-        const link = item.links.find(entry => entry.href === page.href);
-        if (link) link.label = page.label;
-      }
-      continue;
-    }
-    const parentGroup = groups.find(item => item.links.some(link => link.href === page.parent));
-    if (parentGroup) {
-      const siblings = children.get(page.parent) || [];
-      siblings.push({ ...page, child: true });
-      children.set(page.parent, siblings);
-    } else {
-      additional.push(page);
-    }
-    listed.add(page.href);
-  }
-  if (additional.length) {
-    groups.push({
-      title: lang === 'it' ? 'Altre pagine' : 'Other pages',
-      links: additional,
-    });
-  }
-  return groups.map(({ title, links }) => {
-    const hasCurrentChild = links.some(({ href }) =>
-      (children.get(href) || []).some(child => child.href === currentPage)
-    );
-    const open = links.some(({ href }) => href === currentPage || href === parentPage) || hasCurrentChild;
-    const renderLink = ({ href, label, child }) =>
-      `<a${child ? ' class="docs-nav__page"' : ''} href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`;
-    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(link => {
-      const subpages = children.get(link.href) || [];
-      if (!subpages.length) return renderLink(link);
-      const openSubpages = link.href === currentPage || link.href === parentPage ||
-        subpages.some(child => child.href === currentPage);
-      return `<details class="docs-nav__subgroup"${openSubpages ? ' open' : ''}><summary>${renderLink(link)}</summary>${subpages.map(renderLink).join('')}</details>`;
-    }).join('')}</details></section>`;
+  const missing = [...titles.keys()].filter(href => !listed.has(href));
+  if (missing.length) throw new Error(`Missing documentation index entries: ${missing.join(', ')}`);
+  return currentPage => groups.map(({ title, links }) => {
+    const open = links.some(({ href }) => href === currentPage);
+    const renderLink = ({ href, label }) =>
+      `<a href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`;
+    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(renderLink).join('')}</details></section>`;
   }).join('');
 }
 
@@ -160,8 +110,11 @@ const documentationTranslations = {
 function buildDocumentation(outputDir, diagrams) {
   const docsDir = path.join(sourceDir, 'docs');
   const indexFile = path.join(docsDir, 'index.md');
-  const indexSource = fs.readFileSync(indexFile, 'utf8');
-  const indexTranslations = extractPageTranslations(indexSource, path.relative(projectRoot, indexFile));
+  const pages = documentationFiles(docsDir).map(file => {
+    const relative = path.relative(docsDir, file);
+    const source = fs.readFileSync(file, 'utf8');
+    return { file, relative, ...extractPageTranslations(source, path.relative(projectRoot, file)) };
+  });
   const releasePattern = /^(\d{4}-\d{2}-\d{2})-changelog-(v\d+\.\d+)\.md$/;
   const releaseVersions = fs.readdirSync(path.join(sourceDir, 'news'))
     .map(file => releasePattern.exec(file))
@@ -177,53 +130,25 @@ function buildDocumentation(outputDir, diagrams) {
     }
   }
 
-  const pages = documentationFiles(docsDir).flatMap(file => {
-    const source = path.relative(docsDir, file);
-    if (source === 'index.md') return [{ file, source, relative: 'overview.md' }];
-    if (source === 'quick-start.md') return [
-      { file, source, relative: 'index.md' },
-      { file, source, relative: 'quick-start.md', alias: true },
-    ];
-    return [{ file, source, relative: source }];
-  });
-  for (const { file, source: sourceRelative, relative, alias } of pages) {
-    const source = fs.readFileSync(file, 'utf8');
-    const extracted = extractPageTranslations(source, path.relative(projectRoot, file));
-    const parentMatch = /^\[Back to ([^\]]+)\]\(([^)]+)\)/m.exec(extracted.html);
-    for (const lang of languages) {
-      const localizedSource = translateHtml(
-        autoTranslateMarkdown(renderLanguageBlocks(extracted.html, lang), lang, extracted.translations),
-        lang,
-        extracted.translations
+  for (const lang of languages) {
+    const localizedPages = pages.map(({ file, relative, html, translations }) => {
+      const localized = translateHtml(
+        autoTranslateMarkdown(renderLanguageBlocks(html, lang), lang, translations), lang, translations
       );
-      const title = /^#\s+(.+)$/m.exec(localizedSource)?.[1] || path.basename(file, '.md');
-      const localizedParent = parentMatch && /^\[([^\]]+)\]\(([^)]+)\)/m.exec(localizedSource);
-      const parentTarget = parentMatch
-        ? path.resolve(path.dirname(file), parentMatch[2].split(/[?#]/)[0])
-        : null;
-      const parentFile = parentTarget && (path.extname(parentTarget) ? parentTarget : `${parentTarget}.md`);
-      let parentTitle = parentMatch?.[1];
-      if (parentFile && fs.existsSync(parentFile)) {
-        const parentSource = extractPageTranslations(
-          fs.readFileSync(parentFile, 'utf8'),
-          path.relative(projectRoot, parentFile)
-        );
-        const localizedParentSource = translateHtml(
-          autoTranslateMarkdown(parentSource.html, lang, parentSource.translations),
-          lang,
-          parentSource.translations
-        );
-        const parentHeading = /^#\s+(.+)$/m.exec(localizedParentSource)?.[1];
-        if (parentHeading) parentTitle = marked.parseInline(parentHeading).replace(/<[^>]*>/g, '');
-      }
-      const sourceBody = prepareMermaid(
-        localizedParent ? localizedSource.replace(localizedParent[0], '') : localizedSource,
-        diagrams,
-        `${sourceRelative} (${lang})`
-      );
+      const title = /^#\s+(.+)$/m.exec(localized)?.[1];
+      if (!title) throw new Error(`${file}: documentation page has no heading`);
+      const pagePath = documentationLink(relative, indexFile, docsDir, lang);
+      return { file, relative, html, localized, title, pagePath };
+    });
+    const titles = new Map(localizedPages.map(({ pagePath, title }) =>
+      [pagePath, marked.parseInline(title).replace(/<[^>]*>/g, '')]));
+    const index = localizedPages.find(({ file }) => file === indexFile);
+    const navigation = documentationNavigation(index.localized, docsDir, lang, titles);
+    for (const { file, relative, html: source, localized, title, pagePath } of localizedPages) {
+      const sourceBody = prepareMermaid(localized, diagrams, `${relative} (${lang})`);
       let sourceHeadings = [];
       if (lang === 'it') {
-        marked.parse(parentMatch ? extracted.html.replace(parentMatch[0], '') : extracted.html);
+        marked.parse(source);
         sourceHeadings = getHeadingList().map(({ id }) => id);
       }
       let content = renderMarkdownButtonLinks(marked.parse(sourceBody));
@@ -235,7 +160,6 @@ function buildDocumentation(outputDir, diagrams) {
       const docsPath = relative === 'index.md'
         ? '/docs/'
         : `/docs/${relative.replace(/\.md$/, '').replace(/\\/g, '/')}/`;
-      const pagePath = lang === 'it' ? `/it${docsPath}` : docsPath;
       const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
       const pageUrls = { it: `/it${docsPath}`, en: docsPath };
       const ui = documentationTranslations[lang];
@@ -243,8 +167,7 @@ function buildDocumentation(outputDir, diagrams) {
         `<meta name="description" content="${ui.description}">`,
         `<title>${title} - ${ui.title}</title>`,
         renderPageAlternates(pageUrls),
-        alias ? `<link rel="canonical" href="${lang === 'it' ? '/it/docs/' : '/docs/'}">` : '',
-      ].filter(Boolean).join('\n  ');
+      ].join('\n  ');
       const siteHeader = renderComponent('header', lang, componentPage, pageUrls, pageHead);
       const siteFooter = renderComponent('footer', lang, componentPage, pageUrls);
       const heading = /<h1\b[^>]*>[\s\S]*?<\/h1>/.exec(content);
@@ -252,9 +175,8 @@ function buildDocumentation(outputDir, diagrams) {
       content = content.replace(heading[0], '');
       const breadcrumbItems = [];
       if (relative !== 'index.md') breadcrumbItems.push({ href: lang === 'it' ? '/it/docs/' : '/docs/', label: ui.breadcrumb });
-      if (parentMatch) breadcrumbItems.push({ href: documentationLink(parentMatch[2], file, docsDir, lang), label: parentTitle });
       breadcrumbItems.push({ label: heading[0].replace(/<[^>]*>/g, '').trim() });
-      const breadcrumb = renderBreadcrumb(lang, breadcrumbItems, path.join('docs', sourceRelative));
+      const breadcrumb = renderBreadcrumb(lang, breadcrumbItems, path.join('docs', relative));
       const releaseNotes = releaseVersions.length
         ? `<details class="docs-release-notes"><summary>Changelog</summary>${releaseVersions.map(version =>
             `<a href="/${lang}/news/${version}/">${lang === 'it' ? 'Versione' : 'Version'} ${version.slice(1)}</a>`
@@ -272,7 +194,7 @@ function buildDocumentation(outputDir, diagrams) {
       </form>
       <div id="docs-search-results" class="docs-search-results" role="status" aria-live="polite" hidden></div>
       ${releaseNotes}
-      ${documentationNavigation(autoTranslateMarkdown(indexTranslations.html, lang, indexTranslations.translations), alias ? (lang === 'it' ? '/it/docs/' : '/docs/') : pagePath, parentMatch ? documentationLink(parentMatch[2], file, docsDir, lang) : null, docsDir, lang)}
+      ${navigation(pagePath)}
     </nav>
     <div class="docs-content">
       ${content}
@@ -297,7 +219,7 @@ function buildDocumentation(outputDir, diagrams) {
         .replace(/&#39;/g, "'")
         .replace(/\s+/g, ' ')
         .trim();
-      if (!alias) searchIndexes[lang].push({ title, url: `${basePath}${pagePath}`, text });
+      searchIndexes[lang].push({ title, url: `${basePath}${pagePath}`, text });
     }
   }
   for (const lang of languages) {

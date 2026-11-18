@@ -1,7 +1,5 @@
 # Layer properties
 
-[Back to QGIS project settings](projectsettings.md)
-
 ## Layers properties
 
 ### Simbology
@@ -134,7 +132,6 @@ Following queries at the cartographic client level, we will have different behav
       "**upload the media file to the `media_user` folder** (folder exposed on the web) accessible through the **`File Manager`** tool in the Suite Administration Panel": "**caricare il file multimediale nella cartella `media_user`** (esposta sul web), accessibile tramite lo strumento **`File Manager`** nel pannello di amministrazione della suite",
       "**web link or other multimedia file**: display of an **Open** orange button to allow consultation of the content": "**link web o altro file multimediale**: viene mostrato un pulsante arancione **Apri** per consultare il contenuto",
       "Attribute table": "Tabella degli attributi",
-      "Back to QGIS project settings": "Torna alle impostazioni del progetto QGIS",
       "Definition of the attribute display form": "Definizione del modulo di visualizzazione degli attributi",
       "Definition of the fields that can be consulted for each layer": "Definizione dei campi consultabili per ciascun layer",
       "Editing": "Modifica",

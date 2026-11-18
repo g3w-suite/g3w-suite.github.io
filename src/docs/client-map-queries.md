@@ -1,7 +1,5 @@
 # Map queries and results
 
-[Back to Cartographic client](g3wsuite_client.md)
-
 ## Map query
 
 Right-clicking on the map queries the map using the core sampling method, displaying results for all layers below the clicked point.
@@ -163,7 +161,6 @@ Encode special characters in parameter values, and use `&` to separate multiple 
     "Add parameters to a project URL to open a specific extent, feature or map theme:": "Aggiungi parametri all'URL di un progetto per aprire un'estensione, un elemento o un tema cartografico specifico:",
     "After accessing one of the existing relationships, the child records will be displayed in tabular format.": "Dopo aver aperto una delle relazioni esistenti, i record figli vengono visualizzati in formato tabellare.",
     "Any links to photos will determine the display of a clickable preview, any links to links or other multimedia content will determine the display of the Open button that will allow consultation of the link.": "I collegamenti alle foto mostrano un’anteprima cliccabile; i collegamenti ad altri contenuti multimediali mostrano il pulsante Open, che consente di consultare il contenuto.",
-    "Back to Cartographic client": "Torna al client cartografico",
     "By clicking on the icon you will access the **list of 1:N relations** present and, from these, the list of child records associated with the individual relationships.": "Facendo clic sull’icona si accede all’**elenco delle relazioni 1:N** e, per ciascuna, all’elenco dei record figli associati.",
     "Display 1:1 (join) and 1:N relation data": "Visualizzazione dei dati di relazione 1:1 (join) e 1:N",
     "Encode special characters in parameter values, and use `&` to separate multiple parameters.": "Codifica i caratteri speciali nei valori dei parametri e usa `&` per separare più parametri.",

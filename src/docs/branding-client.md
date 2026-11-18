@@ -1,6 +1,4 @@
-# Client appearance and customization
-
-[Back to Branding](branding.md)
+# Client appearance
 
 ## G3WSUITE_CUSTOM_CSS
 
@@ -186,8 +184,7 @@ to:
 {
   "it": {
     "Assume you want to remove everyting but the layer view. This can be done by adding the following css to the custom css file:": "Per rimuovere tutto tranne la vista dei layer, aggiungi il CSS seguente al file CSS personalizzato:",
-    "Back to Branding": "Torna alla personalizzazione",
-    "Client appearance and customization": "Aspetto e personalizzazione del client",
+    "Client appearance": "Aspetto del client",
     "Customize the WebGIS client legend with these settings:": "Personalizza la legenda del client WebGIS con queste impostazioni:",
     "Do you want to remove the bottom map logo?": "Vuoi rimuovere il logo in fondo alla mappa?",
     "Example: change the skin color": "Esempio: cambiare il colore del tema",

@@ -1,9 +1,21 @@
-# Raw installation
+# Manual installation
 
 These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.
 Use this installation for development, not production.
 
 For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.
+
+For a containerized deployment, follow the [Docker installation guide](docker.md) instead.
+
+**In this page**
+
+- [Install required packages](#install-required-packages)
+- [Install QGIS Server](#install-qgis-server)
+- [Installation of node.js and Yarn](#installation-of-nodejs-and-yarn)
+- [Virtualenv creation](#virtualenv-creation)
+- [Install G3W-SUITE](#install-g3w-suite)
+- [Deploy G3W-SUITE](#deploy-g3w-suite)
+- [Manual installation steps](#manual-installation-steps)
 
 ## Install required packages
 First step is install dev libraries packages for python module
@@ -299,6 +311,7 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
   {
     "it": {
       "!!IMPORTANT!! Make sure that paths set for DATASOURCE_PATH and MEDIA_ROOT exist.": "!!IMPORTANTE!! Verifica che i percorsi impostati per `DATASOURCE_PATH` e `MEDIA_ROOT` esistano.",
+      "**In this page**": "**In questa pagina**",
       "After migration, create an administrator account from the directory containing `manage.py`:": "Dopo la migrazione, crea un account amministratore dalla directory che contiene `manage.py`:",
       "After prepared environment if sufficient invoke paver *install* task": "Dopo aver preparato l'ambiente, è sufficiente eseguire il task *install* di paver.",
       "Alternative solutions are:": "In alternativa, è possibile utilizzare:",
@@ -314,6 +327,7 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "Django setup": "Configurazione di Django",
       "First step is install dev libraries packages for python module": "Per prima cosa, installa le librerie di sviluppo necessarie ai moduli Python.",
       "For G3W-SUITE deploy clearly can be used the native Python3 `venv` module, `virtualenvwrapper` is a third part module that render the use and management of virtual environments very simple.": "Per distribuire G3W-SUITE è possibile utilizzare il modulo nativo `venv` di Python 3. `virtualenvwrapper` è un modulo di terze parti che semplifica notevolmente l'uso e la gestione degli ambienti virtuali.",
+      "For a containerized deployment, follow the [Docker installation guide](docker.md) instead.": "Per un’installazione in container, segui la [guida all’installazione Docker](docker.md).",
       "For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.": "Per le altre versioni, consulta la [tabella di compatibilità](versions.md) prima di scegliere le versioni di Python e QGIS. Le soluzioni per versioni precedenti di Ubuntu e Python non sono istruzioni per questa installazione.",
       "G3W-ADMIN has a series of [paver](http://pythonhosted.org/Paver/) CLI commands to administrate the suite.": "G3W-ADMIN mette a disposizione una serie di comandi CLI [paver](http://pythonhosted.org/Paver/) per amministrare la suite.",
       "G3W-ADMIN is a Django application, and to work is necessary set a config.py file. To start copy local_settings.example.py and set the databse and other:": "G3W-ADMIN è un'applicazione Django e per funzionare richiede un file di configurazione. Per iniziare, copia `local_settings_example.py` in `local_settings.py` e configura il database e gli altri parametri:",
@@ -336,10 +350,10 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "Line endings in a Git checkout": "Fine riga in una copia Git",
       "Login again with your user to activate `Virtualenvwrapper`": "Accedi nuovamente con il tuo utente per attivare `Virtualenvwrapper`.",
       "Make sure build components are available in static and collected later": "Assicurati che i componenti compilati siano disponibili in `static` e vengano raccolti in seguito.",
+      "Manual installation": "Installazione manuale",
       "Manual installation steps": "Passaggi per l'installazione manuale",
       "On the web if simple to find tutorial for deploy a Django application.": "Sul web è facile trovare tutorial per distribuire un'applicazione Django.",
       "Possibly within a virtual env:": "Se necessario, all'interno di un ambiente virtuale:",
-      "Raw installation": "Installazione manuale",
       "Review the staged diff before committing it. To refresh working-tree files, make a fresh checkout after committing the normalization. Git applies the repository's attributes and your Git configuration when writing files, so confirm they specify LF for the working tree if LF is required.": "Controlla il diff nell'indice prima di committarlo. Per aggiornare i file della copia di lavoro, crea una nuova copia dopo il commit della normalizzazione. Quando scrive i file, Git applica gli attributi del repository e la tua configurazione Git: se serve LF, verifica che lo prevedano per la copia di lavoro.",
       "Run G3W-SUITE": "Avviare G3W-SUITE",
       "Run `git ls-files --eol` to inspect line endings and check the repository's `.gitattributes` for its intended checkout settings. Normalizing the Git index does not by itself rewrite files in the working tree.": "Esegui `git ls-files --eol` per controllare i fine riga e verifica le impostazioni del file `.gitattributes` del repository. La normalizzazione dell'indice Git non riscrive da sola i file nella copia di lavoro.",

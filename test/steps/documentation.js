@@ -53,7 +53,7 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.ok(sources.length > 0, 'expected Markdown documentation sources');
   assert.ok(sources.every(file => file.endsWith('.md')), 'documentation sources must use Markdown');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'images')), 'documentation images must be stored outside src/docs');
-  assert.equal(pages.length, sources.length + 1, 'Quick Start must also retain its previous route');
+  assert.equal(pages.length, sources.length, 'each documentation source must have one English route');
   for (const file of sources) {
     const source = fs.readFileSync(file, 'utf8');
     const block = /<script type="application\/json" data-i18n>([\s\S]*?)<\/script>/.exec(source);
@@ -66,25 +66,26 @@ Then('every documentation source is Markdown and has a generated page', function
   }
 
   const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
-  assert.equal(index('main h1').text(), 'Quick Start', 'documentation home must show Quick Start');
+  assert.match(index('main h1').text(), /^G3W-SUITE .* Manual$/, 'documentation home must show the manual index');
   const italianPages = htmlFiles(path.join(staticDir, 'it', 'docs'));
-  assert.equal(italianPages.length, sources.length + 1, 'Italian Quick Start must also retain its previous route');
+  assert.equal(italianPages.length, sources.length, 'each documentation source must have one Italian route');
   const italianIndex = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
   assert.equal(italianIndex('html').attr('lang'), 'it');
-  assert.equal(italianIndex('main h1').text(), 'Guida rapida');
+  assert.match(italianIndex('main h1').text(), /^Manuale G3W-SUITE /);
   assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
   assert.equal(index('nav.docs-nav section > details[open]').length, 1, 'only the current navigation group must start open');
-  assert.equal(index('nav.docs-nav .docs-nav__subgroup[open]').length, 0, 'page subgroups must start collapsed');
   assert.equal(index('nav.docs-nav section a').first().attr('href'), '/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().attr('href'), '/it/docs/');
-  assert.equal(italianIndex('nav.docs-nav section a').first().text(), 'Guida rapida');
+  assert.equal(italianIndex('nav.docs-nav section a').first().text(), italianIndex('main h1').text());
   assert.equal(index('nav.docs-nav section a').first().attr('aria-current'), 'page');
   assert.equal(italianIndex('nav.docs-nav section a').first().attr('aria-current'), 'page');
-  assert.ok(index('nav.docs-nav a[href="/docs/overview/"]').length, 'navigation must retain the manual overview');
-  assert.ok(readPage(path.join(staticDir, 'docs', 'overview', 'index.html')).$('main h1').text().includes('G3W-SUITE 3.11'));
-  const oldQuickStart = readPage(path.join(staticDir, 'docs', 'quick-start', 'index.html')).$;
-  assert.equal(oldQuickStart('main h1').text(), 'Quick Start');
-  assert.equal(oldQuickStart('link[rel="canonical"]').attr('href'), '/docs/');
+  assert.equal(index('nav.docs-nav a[href="/docs/quick-start/"]').length, 1, 'navigation must link to the standalone Quick Start');
+  assert.equal(index('.docs-content a[href="/docs/demo/#demo-tutorial"]').length, 1, 'manual home must offer the guided demo');
+  const quickStart = readPage(path.join(staticDir, 'docs', 'quick-start', 'index.html')).$;
+  assert.equal(quickStart('main h1').text(), 'Quick Start');
+  assert.equal(quickStart('.docs-content a[href="/docs/admin-cartographic-groups/#add-group"]').length, 1);
+  const publishing = readPage(path.join(staticDir, 'docs', 'admin-publishing', 'index.html')).$;
+  assert.equal(publishing('.docs-content h2#update-webgis-services').length, 1, 'publishing must include the update guide');
   assert.ok(italianIndex('nav.docs-nav a[href="/it/docs/settings/"]').length, 'Italian navigation must link to the localized settings page');
   assert.equal(italianIndex('header.site-header .nav-list a[href="/it/docs/"]').length, 1, 'Italian documentation header must link to its localized home');
   assert.equal(italianIndex('footer.site-footer a[href="/it/docs/"]').length, 1, 'Italian documentation footer must link to its localized home');
@@ -108,11 +109,7 @@ Then('every documentation source is Markdown and has a generated page', function
     }
     assert.equal(page('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${file}: body must have a page-specific class`);
     assert.equal(italianPage('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${italianFile}: body must have a page-specific class`);
-    const sourceRelative = outputRelative === 'index.html'
-      ? 'quick-start.md'
-      : outputRelative === 'overview/index.html'
-        ? 'index.md'
-        : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
+    const sourceRelative = outputRelative === 'index.html' ? 'index.md' : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
     const docsRoute = outputRelative === 'index.html' ? '' : outputRelative.replace(/\/index\.html$/, '');
     const englishRoute = docsRoute ? `/docs/${docsRoute}/` : '/docs/';
     const italianRoute = docsRoute ? `/it/docs/${docsRoute}/` : '/it/docs/';
@@ -125,6 +122,8 @@ Then('every documentation source is Markdown and has a generated page', function
     if (outputRelative !== 'index.html') {
       assert.equal(page('nav.site-breadcrumb a[href="/docs/"]').first().text(), 'Documentation');
       assert.equal(italianPage('nav.site-breadcrumb a[href="/it/docs/"]').first().text(), 'Documentazione');
+      assert.equal(page('nav.site-breadcrumb li').length, 3, `${file}: no parent page in the breadcrumb`);
+      assert.equal(italianPage('nav.site-breadcrumb li').length, 3, `${italianFile}: no parent page in the breadcrumb`);
     }
     assert.equal(italianPage('main > .page-header h1').length, 1, `${italianFile}: localized page header is missing`);
     assert.equal(italianPage('nav.site-breadcrumb [aria-current="page"]').text(), italianPage('main > .page-header h1').text(), `${italianFile}: breadcrumb must identify the current page`);
@@ -152,29 +151,12 @@ Then('every documentation source is Markdown and has a generated page', function
       [page, englishTocHref, file],
       [italianPage, italianTocHref, italianFile],
     ]) {
-      const tocLink = document('nav.docs-nav a').filter((_, link) => document(link).attr('href') === href);
-      assert.equal(tocLink.length, 1, `${name}: page must appear in the documentation TOC`);
+      const tocLink = document('nav.docs-nav section > details[open] > a[aria-current="page"]').filter((_, link) => document(link).attr('href') === href);
+      assert.equal(tocLink.length, 1, `${name}: page must be a direct link in its open documentation section`);
       assert.equal(tocLink.text().trim(), document('main > .page-header h1').text().trim(), `${name}: TOC link must use the page title`);
+      assert.equal(document('nav.docs-nav section details details').length, 0, `${name}: page subgroups are not allowed`);
     }
   }
-  const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
-  assert.ok(childPage('nav.site-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');
-  assert.equal(childPage('nav.docs-nav .docs-nav__subgroup[open] > summary > a[href="/docs/g3wsuite_administration/"]').length, 1, 'the current page must expand its TOC subgroup');
-  assert.equal(childPage('nav.docs-nav section details[open] a[href="/docs/g3wsuite_administration/"]').length, 1, 'child pages must open the parent navigation group');
-  assert.equal(
-    childPage('.docs-content a').filter((_, link) => childPage(link).text().startsWith('Back to')).length,
-    0,
-    'the breadcrumb must replace the duplicate back link'
-  );
-  const dataManagementPage = readPage(path.join(staticDir, 'docs', 'datamanagement', 'index.html')).$;
-  assert.equal(dataManagementPage('nav.docs-nav section > details > a[href="/docs/datamanagement/"]').length, 1, 'data management must remain at the top page level');
-  assert.equal(dataManagementPage('nav.docs-nav .docs-nav__subgroup > summary > a[href="/docs/datamanagement/"]').length, 0, 'data management must not be a parent page');
-  const organizationExamples = readPage(path.join(staticDir, 'docs', 'organization-examples', 'index.html')).$;
-  assert.equal(organizationExamples('nav.docs-nav .docs-nav__subgroup > summary > a[href="/docs/user_groups_organization/"]').length, 1, 'TOC parent must match the page breadcrumb');
-  assert.equal(organizationExamples('nav.site-breadcrumb a[href="/docs/user_groups_organization/"]').length, 1, 'organization examples breadcrumb must match its TOC parent');
-  const italianChildPage = readPage(path.join(staticDir, 'it', 'docs', 'admin-users', 'index.html')).$;
-  assert.ok(italianChildPage('nav.site-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').length, 'Italian child pages must link to their localized parent breadcrumb');
-  assert.equal(italianChildPage('nav.site-breadcrumb a[href="/it/docs/g3wsuite_administration/"]').text(), 'G3W-ADMIN: il pannello di amministrazione');
   assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
   assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
   assert.equal(index('body > header.site-header').length, 1, 'documentation must use the shared site header');

@@ -1,7 +1,5 @@
 # Manage cartographic groups
 
-[Back to Administration panel](g3wsuite_administration.md)
-
 ## Groups List
 **From this item you can access the list of the created cartographic groups.**
 
@@ -71,7 +69,6 @@ This order will be reflected within the belonging MacroGroups.
     "**From this item you can access the list of the created cartographic groups.**": "**Questa voce consente di accedere all'elenco dei Gruppi cartografici creati.**",
     "**NB:** currently in the list of Groups it is not present in the subdivision in the belonging MacroGroups but the fact that a Group can be associated with only one MacroGroup still allows you to manage intuitively what will be the complessive display order.": "**NB:** al momento l'elenco dei Gruppi non è suddiviso in base ai Macrogruppi di appartenenza; tuttavia, poiché un Gruppo può essere associato a un solo Macrogruppo, è comunque possibile gestire in modo intuitivo l'ordine complessivo di visualizzazione.",
     "A large **+ icon** is available to access the form for creating a new group.": "È disponibile una grande **icona +** per accedere al modulo di creazione di un nuovo gruppo.",
-    "Back to Administration panel": "Torna al pannello di amministrazione",
     "Cartographic Group Trash": "Cestino dei Gruppi cartografici",
     "Cartographic Groups": "Gruppi cartografici",
     "Cartographic Groups and the restore functions through the menu on the left sidebar.": "È possibile consultare i Gruppi cartografici eliminati e ripristinarli dal menu nella barra laterale sinistra.",

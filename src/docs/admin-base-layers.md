@@ -1,6 +1,4 @@
-# Base layers and multilingual settings
-
-[Back to Administration panel](g3wsuite_administration.md)
+# Group base layers and languages
 
 ## Add custom Base layers
 
@@ -129,8 +127,6 @@ Then:
       "As an example, remember that you can publish a set of orthophotos as a single VRT file produced in QGIS.": "Ad esempio, è possibile pubblicare un insieme di ortofoto come singolo file VRT creato con QGIS.",
       "Assuming you want to add the following WMST service [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/) you fill in the form as follows:": "Supponendo di voler aggiungere il seguente servizio WMST [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/), compilare il modulo come segue:",
       "Automatically a new **Base Layer** will be inserted into those present in the Base Layer subsession of the **Django Administration** session and it will be available and can be activated at the level of individual Cartographic Groups.": "Un nuovo **Base Layer** verrà inserito automaticamente tra quelli presenti nella sottosezione Base Layers di **Django Administration**; sarà quindi disponibile per l'attivazione nei singoli Gruppi cartografici.",
-      "Back to Administration panel": "Torna al pannello di amministrazione",
-      "Base layers and multilingual settings": "Livelli di base e impostazioni multilingue",
       "Bulgarian": "Bulgaro",
       "Create new Base Layers starting from external services": "Creare nuovi Base Layer a partire da servizi esterni",
       "Create new Base Layers starting from your own layers": "Creare nuovi Base Layer a partire dai propri layer",
@@ -140,6 +136,7 @@ Then:
       "Fixed front end content is already available in the four basic languages.": "I contenuti fissi del front end sono già disponibili nelle quattro lingue di base.",
       "French": "Francese",
       "Front end": "Front end",
+      "Group base layers and languages": "Layer di base e lingue dei gruppi",
       "In the **Django Administration** session, access the **Base Layers** sub-session and click on the **Add Base Layer** button.": "Nella sezione **Django Administration**, accedere alla sottosezione **Base Layers** e fare clic sul pulsante **Add Base Layer**.",
       "Italian": "Italiano",
       "Map client": "Client cartografico",

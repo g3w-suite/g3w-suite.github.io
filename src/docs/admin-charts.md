@@ -1,7 +1,5 @@
 # Configure charts
 
-[Back to Administration panel](g3wsuite_administration.md)
-
 ## ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) QPlotly widget
 
 ### Activate charts on your WebGis
@@ -105,7 +103,6 @@ You can use Drag&Drop to define the order on the widget list
     "After loading the XML file, the loaded chart will be listed, and icons and checkboxes will allow you to select its display modes:": "Dopo aver caricato il file XML, il grafico apparirà nell'elenco; icone e caselle di controllo consentono di scegliere le modalità di visualizzazione:",
     "As with searches, the uploaded graph will now be available in all projects that contain the same layer. As with searches, to activate the graph in other projects, access the layer and check the **'Linked'** checkbox.": "Come le ricerche, il grafico caricato sarà disponibile in tutti i progetti che contengono lo stesso layer. Per attivarlo negli altri progetti, accedere al layer e selezionare la casella **'Linked'**.",
     "At the level of the layer for which the charts has been prepared, click on the **QPlotly widgets** icon ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) and load the xml by clicking on the **'New Qplotly widget'** button.": "Nel layer per cui sono stati preparati i grafici, fare clic sull'icona **QPlotly widgets** ![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) e caricare il file XML facendo clic sul pulsante **'New Qplotly widget'**.",
-    "Back to Administration panel": "Torna al pannello di amministrazione",
     "Chart order": "Ordine dei grafici",
     "Chart visibility": "Visibilità dei grafici",
     "Charts based on 1:N data relation (child layer)": "Grafici basati su una relazione dati 1:N (layer figlio)",

@@ -1,7 +1,5 @@
 # Search widgets
 
-[Back to Administration panel](g3wsuite_administration.md)
-
 ## ![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools
 
 **Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.**
@@ -14,7 +12,7 @@ By default, searches can be built on individual vector layers based on the field
 
 **NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**
 
-See [dedicated paragraph](settings#g3w_client_search_endpoint).
+See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).
 
 
 Every search widget will be saved by referring to the layer identifiers (for example the DB parameters: IP, DB name, schema, layer name).
@@ -96,7 +94,7 @@ The values shown in the search tool will be those defined on the basis of the ta
 
 **Warning: in the case of fields with more than 100 unique values, the WMS service does not allow to obtain the complete list of values. In this case it is recommended not to use the `SelectBox` method**
 
-**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](settings#g3w_client_search_endpoint).
+**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).
 
  
 ### Multiple layers search
@@ -116,7 +114,7 @@ Especially useful in the case of multi geometric layers.
 The option allows you to create a search based on the fields of a table (child in a 1:N relation) and obtain results relating to the parent layer of the relation.
 
 **N.B. to create searches based on fields derived from simple joins (1: 1 / N: 1) or from 1: N relation, you have to change the setting of the method used (from WMS to QGIS API).**
-See [dedicated paragraph](settings#g3w_client_search_endpoint).
+See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).
 
 The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.
 
@@ -128,7 +126,7 @@ The **Relations** option allows you to to define the relationship to be used (if
   "it": {
     "![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools": "![Icona: widget](/img/manual-english-icon-widget.avif) Impostazioni dei widget - strumenti di ricerca",
     "**ATTENTION: deleting a search** will delete it from all projects in which that search is active.": "**ATTENZIONE: eliminando una ricerca** la si rimuove da tutti i progetti in cui è attiva.",
-    "**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](settings#g3w_client_search_endpoint).": "**In alternativa, è possibile usare QGIS API come metodo di ricerca per superare questo limite. Consultare il** [paragrafo dedicato](settings#g3w_client_search_endpoint).",
+    "**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).": "**In alternativa, è possibile usare QGIS API come metodo di ricerca per superare questo limite. Consultare il** [paragrafo dedicato](appearance-settings.md#g3w_client_search_endpoint).",
     "**Form Title**": "**Titolo del modulo**",
     "**General configuration of research and results**": "**Configurazione generale della ricerca e dei risultati**",
     "**IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.": "**IMPORTANTE:** il widget di ricerca creato sarà disponibile (scollegato) in tutti i progetti che contengono il layer a cui è stato associato.",
@@ -149,7 +147,6 @@ The **Relations** option allows you to to define the relationship to be used (if
     "**`Type`:** \"Search\"": "**`Type`:** \"Search\"",
     "**`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.": "**`Use alternative unique values`** (per il widget SelectBox): possibilità di associare un layer del progetto QGIS che fornisce l'elenco dei valori univoci da mostrare nel campo di ricerca. Il campo che riporta i valori univoci deve avere lo stesso nome del campo impostato per la ricerca. Questo accelera notevolmente il caricamento del modulo di ricerca lato utente e migliora l'usabilità dello strumento, soprattutto quando sono presenti molti record con pochi valori univoci.",
     "**`Widget`:** method of entering the value to be searched": "**`Widget`:** modalità di inserimento del valore da cercare",
-    "Back to Administration panel": "Torna al pannello di amministrazione",
     "Basic settings": "Impostazioni di base",
     "Button: Add": "Pulsante: aggiungi",
     "By clicking on the icon, the list of already active (or activatable) widgets associated with the layer will be shown.": "Facendo clic sull'icona viene mostrato l'elenco dei widget già attivi o attivabili associati al layer.",
@@ -177,7 +174,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "Screenshot: G3W-SUITE Administration Project Widget List": "Schermata: elenco dei widget del progetto nell'amministrazione di G3W-SUITE",
     "Search based on 1:N relation data": "Ricerca basata sui dati di una relazione 1:N",
     "Search widgets": "Widget di ricerca",
-    "See [dedicated paragraph](settings#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](settings#g3w_client_search_endpoint).",
+    "See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](appearance-settings.md#g3w_client_search_endpoint).",
     "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **Other searching layers** option allows you to extend the search carried out to other layers.": "L'opzione **Other searching layers** consente di estendere la ricerca ad altri layer.",
     "The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.": "L'opzione **Relations** consente di definire la relazione da usare (se presente) per individuare il layer padre di cui mostrare i risultati.",

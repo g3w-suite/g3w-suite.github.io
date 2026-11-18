@@ -1,7 +1,5 @@
 # Editing constraints
 
-[Back to Online editing](g3wsuite_editing.md)
-
 ## Constraints setting
 
 **G3W-SUITE supports two types of constraints:**
@@ -110,7 +108,6 @@ In the alphanumeric constraints list you can see a summary of the setted rules.
     "**geographic constraints**": "**vincoli geografici**",
     "After clicking the OK button, the constraint will appear in the list and can be parameterized using two ways of defining the rules:": "Dopo aver fatto clic su OK, il vincolo appare nell’elenco e può essere configurato definendo le regole in due modi:",
     "Alphanumeric (SQL) / QGIS expressions Constraints": "Vincoli alfanumerici (SQL) / espressioni QGIS",
-    "Back to Online editing": "Torna alle modifiche online",
     "Both work in terms of visualization and/or editing": "Entrambi possono agire sulla visualizzazione e/o sulla modifica.",
     "Button: Add": "Pulsante: aggiungi",
     "Choose where the filter applies:": "Scegli dove applicare il filtro:",

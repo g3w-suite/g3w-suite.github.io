@@ -1,7 +1,5 @@
 # Cartographic groups
 
-[Back to Administration panel](g3wsuite_administration.md)
-
 ## Cartographic Groups
 _**Manage existing Cartographic Groups or create new ones.**_
 
@@ -195,7 +193,6 @@ After filling in the various form, click on the **Save** button to confirm your 
     "ACL Users": "Utenti ACL",
     "Add Group": "Aggiungere un gruppo",
     "After filling in the various form, click on the **Save** button to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante **Save** per confermare le scelte.",
-    "Back to Administration panel": "Torna al pannello di amministrazione",
     "Base layers and Map interaction tools": "Livelli di base e strumenti di interazione con la mappa",
     "Button: Save": "Pulsante: salva",
     "By default, the map client header, for each WebGis service, is composed of:": "Per impostazione predefinita, l'intestazione del client cartografico per ciascun servizio WebGis è composta da:",

@@ -1,6 +1,4 @@
-# Administration settings for editing
-
-[Back to Online editing](g3wsuite_editing.md)
+# Editing permissions
 
 ## Activation and configuration
 
@@ -86,12 +84,11 @@ To allow editing on the related table in mode 1: n , the **editing function must
     "Activation of on-line editing on a single layer": "Attivazione della modifica online su un singolo layer",
     "Activation of online editing on multiple layers at the same time": "Attivazione della modifica online su più layer contemporaneamente",
     "Administration settings": "Impostazioni di amministrazione",
-    "Administration settings for editing": "Impostazioni di amministrazione per le modifiche",
     "All settings defined at the QGIS level for these fields (eg default values) will no longer be considered.": "Le impostazioni definite in QGIS per questi campi (ad esempio i valori predefiniti) non verranno più considerate.",
-    "Back to Online editing": "Torna alle modifiche online",
     "Clicking on the icon will open a modal window that will allow you to:": "Facendo clic sull’icona si apre una finestra modale che consente di:",
     "Copy editing permission from a user to the others": "Copia dei permessi di modifica da un utente ad altri",
     "Editing constraints": "Vincoli per la modifica",
+    "Editing permissions": "Permessi di modifica",
     "I should be noted that:": "È importante notare che:",
     "Icon: Editing": "Icona: modifica",
     "Icon: Editing Clone": "Icona: duplica permessi di modifica",

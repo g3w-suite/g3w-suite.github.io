@@ -1,4 +1,4 @@
-# How to Add a New Translation (i.e. Italian) to G3W-SUITE
+# Translate G3W-SUITE
 
 Add a language to G3W-SUITE by following these steps.
 
@@ -107,7 +107,6 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
       "G3W-ADMIN": "G3W-ADMIN",
       "G3W-CLIENT": "G3W-CLIENT",
       "G3W-SUITE is a modular Django application, so you may have multiple **django.po** files. For example, each module (e.g. `core`, `qdjango`, etc.) can contain its own `locale/<lang>/LC_MESSAGES/django.po` file.": "G3W-SUITE è un'applicazione Django modulare, quindi possono essere presenti più file **django.po**. Ad esempio, ogni modulo (come `core`, `qdjango` ecc.) può contenere il proprio file `locale/<lang>/LC_MESSAGES/django.po`.",
-      "How to Add a New Translation (i.e. Italian) to G3W-SUITE": "Come aggiungere una nuova traduzione (ad es. in italiano) a G3W-SUITE",
       "Important": "Importante",
       "Language files are stored into the [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales) folder.": "I file delle lingue sono archiviati nella cartella [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales).",
       "Open the locale/it/LC_MESSAGES/django.po file and translate the strings.": "Aprire il file locale/it/LC_MESSAGES/django.po e tradurre le stringhe.",
@@ -115,7 +114,8 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
       "Otherwise, edit one of that files and then submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) with appropriate changes.": "In alternativa, modificare uno di questi file e inviare una [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) con le modifiche appropriate.",
       "Scans your codebase for marked translatable strings;": "Esamina il codice alla ricerca delle stringhe contrassegnate come traducibili;",
       "This command:": "Questo comando:",
-      "This creates the compiled **.mo** files Django uses to load translations:": "Questo comando crea i file compilati **.mo** che Django utilizza per caricare le traduzioni:"
+      "This creates the compiled **.mo** files Django uses to load translations:": "Questo comando crea i file compilati **.mo** che Django utilizza per caricare le traduzioni:",
+      "Translate G3W-SUITE": "Tradurre G3W-SUITE"
     }
   }
 </script>

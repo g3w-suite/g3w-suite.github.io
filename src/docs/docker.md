@@ -1,4 +1,4 @@
-# Dockerization
+# Docker installation
 
 This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .
 
@@ -234,7 +234,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Deploy": "Distribuzione",
     "Description of other *environment variables* that can be used, are available on [Docker environment variables](docker_env)": "La descrizione delle altre *variabili d'ambiente* utilizzabili è disponibile nella pagina [Variabili d'ambiente di Docker](docker_env).",
     "Docker compose will download images from docker hub (https://hub.docker.com/u/g3wsuite),": "Docker Compose scarica immagini da Docker Hub (https://hub.docker.com/u/g3wsuite),",
-    "Dockerization": "Dockerizzazione",
+    "Docker installation": "Installazione con Docker",
     "Editing": "Modifica",
     "Editing module is active by default, to avoid simultaneous feature editing by two or more users, the editing module works with a feature lock system.": "Il modulo di modifica è attivo per impostazione predefinita. Per evitare che due o più utenti modifichino contemporaneamente la stessa entità, il modulo utilizza un sistema di blocco delle entità.",
     "First time setup": "Configurazione iniziale",

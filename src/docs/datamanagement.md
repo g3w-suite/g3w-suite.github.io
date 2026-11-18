@@ -1,4 +1,4 @@
-#  Management and organization of geographic data and QGIS projects
+# Manage QGIS data
 _**This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes**_
 
 Thanks to the integration with the APIs of QGIS it is now possible to manage the main formats (geographic or not) supported by QGIS Server:
@@ -125,7 +125,7 @@ In the next chapter the powers and limits of the two roles will be described in 
       "In the standard Docker configuration, QGIS searches for custom symbols in `/shared-volume/project_data/svg/`. Upload the SVG files to the `svg` directory with File Manager and use the same symbols in the QGIS project. The search paths are defined in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configure the symbol directory in QGIS Desktop too, use distinct names for different symbols and check the published map.": "Nella configurazione Docker standard, QGIS cerca i simboli personalizzati in `/shared-volume/project_data/svg/`. Carica i file SVG nella directory `svg` con File Manager e usa gli stessi simboli nel progetto QGIS. I percorsi di ricerca sono definiti in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/dev/config/qgis/QGIS3.ini). Configura la directory dei simboli anche in QGIS Desktop, usa nomi distinti per simboli diversi e verifica la mappa pubblicata.",
       "It will therefore be necessary, in the case of using geographic files on the file system, to synchronize the contents of the local **`project_data`** directory (and any sub-directories) before proceeding with the publication of QGIS projects.": "Pertanto, se si utilizzano file geografici nel file system, prima di pubblicare i progetti QGIS sarà necessario sincronizzare il contenuto della directory locale **`project_data`** e delle eventuali sottodirectory.",
       "Main directory": "Cartella principale",
-      "Management and organization of geographic data and QGIS projects": "Gestione e organizzazione dei dati geografici e dei progetti QGIS",
+      "Manage QGIS data": "Gestire i dati QGIS",
       "Oracle Spatial (compiling QGIS Server)": "Oracle Spatial (compilando QGIS Server)",
       "Organization of data and projects": "Organizzazione dei dati e dei progetti",
       "PostGreSQL/PostGIS": "PostGreSQL/PostGIS",

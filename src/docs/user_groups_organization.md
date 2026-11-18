@@ -1,4 +1,4 @@
-# Hierarchical organization of WebGis services and types of Users (roles)
+# WebGIS roles and organization
 
 
 G3W-SUITE organizes WebGIS services on two thematic or functional levels:
@@ -166,7 +166,6 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
     "Each MacroGroup can be considered as a watertight compartment within which the associated Editor 1 user (administrator of the MacroGroup), will be able to create users and user groups that will be made available to define access permissions for content (Groups Maps, WebGis services, functional modules …) of the reference MacroGroup only.": "Ogni Macrogruppo può essere considerato un compartimento isolato, nel quale l'utente Editor 1 associato (amministratore del Macrogruppo) può creare utenti e gruppi di utenti da usare per definire le autorizzazioni di accesso ai contenuti (Gruppi cartografici, servizi WebGIS, moduli funzionali...) del solo Macrogruppo di riferimento.",
     "Even the **Admin** user can publish **WebGis services** within a Cartographic Group and, if necessary, associate them with a user (single and/or group) of **Editor 2** type.": "Anche l'utente **Admin** può pubblicare **servizi WebGIS** all'interno di un Gruppo cartografico e, se necessario, associarli a un utente **Editor 2** (singolo e/o gruppo).",
     "G3W-SUITE organizes WebGIS services on two thematic or functional levels:": "G3W-SUITE organizza i servizi WebGIS su due livelli tematici o funzionali:",
-    "Hierarchical organization of WebGis services and types of Users (roles)": "Organizzazione gerarchica dei servizi WebGIS e tipi di utenti (ruoli)",
     "Hierarchical organization of contents": "Organizzazione gerarchica dei contenuti",
     "If MacroGroups are not needed, the Admin user will be the only administrator of the suite and can therefore:": "Se non sono necessari i Macrogruppi, l'utente Admin sarà l'unico amministratore della suite e potrà quindi:",
     "In G3W-SUITE it is possible to manage Webgis services in a more or less structured way": "In G3W-SUITE è possibile gestire i servizi WebGIS con diversi livelli di struttura:",
@@ -187,6 +186,7 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
     "Two municipal administrations have separate macro-groups; each contains cartographic groups that can contain WebGIS services": "Due amministrazioni comunali hanno Macrogruppi separati; ciascuno contiene Gruppi cartografici che possono ospitare servizi WebGIS",
     "Two organization levels (presence of MacroGroups)": "Due livelli organizzativi (con Macrogruppi)",
     "Types of Users (Roles)": "Tipi di utenti (ruoli)",
+    "WebGIS roles and organization": "Ruoli e organizzazione WebGIS",
     "When Editor 1 user creates a Cartographic Group, he can define:": "Quando l'utente Editor 1 crea un Gruppo cartografico, può definire:",
     "When creating a cartographic group, the Admin user can define:": "Quando crea un gruppo cartografico, l'utente Admin può definire:",
     "Without macro-groups, Admin manages all cartographic groups and can delegate group management to Editor2; Viewers can access authorized WebGIS services": "Senza Macrogruppi, Admin gestisce tutti i Gruppi cartografici e può delegarne la gestione a Editor2; i Viewer accedono ai servizi WebGIS autorizzati",

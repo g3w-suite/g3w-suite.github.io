@@ -1,6 +1,4 @@
-# Online editing tools in the cartographic client
-
-[Back to Online editing](g3wsuite_editing.md)
+# Editing tools
 
 ## Online editing tools on cartographic client
 
@@ -111,9 +109,9 @@ For this reason the green button **SAVE** will be disabled until all constraints
     "Activating the Add features and Update feature vertex tools allows you to:": "Attivando gli strumenti Aggiungi elemento e Aggiorna vertici dell’elemento è possibile:",
     "Any **mandatory fields will be marked with an asterisk**.": "I **campi obbligatori sono contrassegnati da un asterisco**.",
     "Any **unfulfilled constraints will be highlighted** with specific warning messages shown **in red**.": "Gli **eventuali vincoli non rispettati** sono evidenziati con messaggi di avviso specifici **in rosso**.",
-    "Back to Online editing": "Torna alle modifiche online",
     "Create and edit features": "Creazione e modifica degli elementi",
     "Editing related records": "Modificare i record correlati",
+    "Editing tools": "Strumenti di modifica",
     "For this reason the green button **SAVE** will be disabled until all constraints are met.": "Per questo motivo, il pulsante verde **SAVE** resta disabilitato finché non vengono soddisfatti tutti i vincoli.",
     "Geographic and alphanumeric editing": "Modifica geografica e alfanumerica",
     "Icon: Feature Add": "Icona: aggiungi elemento",
@@ -136,7 +134,6 @@ For this reason the green button **SAVE** will be disabled until all constraints
     "If the logged in user is an Administrator, there will be a link in the panel to access the features unlock session": "Se l’utente autenticato è un amministratore, nel pannello è disponibile un collegamento alla sezione di sblocco degli elementi.",
     "In case of interaction of the editing tools with overlapping geometries, an intermediate step will allow to select the effective geometry on which to operate.": "Quando gli strumenti di modifica interagiscono con geometrie sovrapposte, un passaggio intermedio consente di selezionare la geometria su cui operare.",
     "In the case of many editable layers, a useful **filter** allows you to view only the layers of interest in the list.": "Se sono presenti molti layer modificabili, un utile **filtro** consente di visualizzare nell’elenco solo quelli desiderati.",
-    "Online editing tools in the cartographic client": "Strumenti di modifica online nel client cartografico",
     "Online editing tools on cartographic client": "Strumenti di modifica online nel client cartografico",
     "Screenshot: Editing Client Tool": "Schermata: strumento di modifica client",
     "Screenshot: Editing Form": "Schermata: modulo di modifica",

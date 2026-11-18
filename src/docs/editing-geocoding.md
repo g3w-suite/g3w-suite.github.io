@@ -1,6 +1,4 @@
-# Geocoding and map-based data entry
-
-[Back to Online editing](g3wsuite_editing.md)
+# Geocoding
 
 ## Geocoding map control use case for populating project layers
 A specific editing function is associated with the Geocoding map control.
@@ -73,13 +71,12 @@ By clicking on the green **Insert/Edit** button the point will be permanently sa
     "A specific editing function is associated with the Geocoding map control.": "Al controllo di geocodifica della mappa è associata una specifica funzione di modifica.",
     "Activation of Geocoding map control at Cartographic Group level": "Attivazione del controllo di geocodifica a livello di Gruppo cartografico",
     "After choosing the layer on which to insert the result, click on the pencil icon to the right of the layer name to determine the insertion of the point on the layer itself.": "Dopo aver scelto il layer in cui inserire il risultato, fai clic sull’icona a forma di matita a destra del nome del layer per inserirvi il punto.",
-    "Back to Online editing": "Torna alle modifiche online",
     "Below are the settings and steps to perform for this purpose.": "Di seguito sono descritte le impostazioni e le procedure necessarie.",
     "By clicking on the green **Insert/Edit** button the point will be permanently saved on the layer in use.": "Facendo clic sul pulsante verde **Inserisci/Modifica**, il punto verrà salvato definitivamente nel layer in uso.",
     "Clicking on this icon will show the list of point layers on which online editing is enabled.": "Facendo clic su questa icona viene mostrato l’elenco dei layer puntuali per i quali è attiva la modifica online.",
     "Definition of the providers to use for each WebGis service": "Definizione dei provider da usare per ogni servizio WebGIS",
     "First of all, **Geocoding** must be associated with the Cartographic Group by selecting it at the **Base Layers and Map default features** session level. This will ensure that the tool is present on all WebGis services published within the Group.": "Per prima cosa, è necessario associare **Geocoding** al Gruppo cartografico selezionandolo nella sezione **Layer di base e funzioni predefinite della mappa**. In questo modo lo strumento sarà disponibile in tutti i servizi WebGIS pubblicati nel gruppo.",
-    "Geocoding and map-based data entry": "Geocodifica e inserimento di dati sulla mappa",
+    "Geocoding": "Geocodifica",
     "Geocoding map control use case for populating project layers": "Caso d’uso del controllo di geocodifica per popolare i layer del progetto",
     "In the publication form of your QGIS project you need to define the providers to be associated with the Geocoding map control:": "Nel modulo di pubblicazione del progetto QGIS occorre definire i provider da associare al controllo di geocodifica:",
     "Insert the markers present in the map into a vector layer": "Inserimento dei segnaposto della mappa in un layer vettoriale",
