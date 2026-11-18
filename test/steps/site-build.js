@@ -5,9 +5,25 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { runInNewContext } = require('node:vm');
 const { Then } = require('@cucumber/cucumber');
 const { staticDir, htmlFiles, readPage, localTarget } = require('../support/site');
 const { prepareMermaid, copyMermaidScript } = require('../../utils/mermaid');
+
+Then('the browser highlighter supports the languages used in code blocks', function () {
+  const assets = path.join(staticDir, 'highlight');
+  const context = {};
+  runInNewContext(fs.readFileSync(path.join(assets, 'highlight.min.js'), 'utf8'), context);
+  const docs = readPage(path.join(staticDir, 'docs', 'translation', 'index.html')).$;
+  for (const language of ['js', 'po']) {
+    const snippet = docs(`pre > code.language-${language}`).text();
+    assert.ok(snippet.trim());
+    assert.match(context.hljs.highlight(snippet, { language }).value, /<span class="hljs-keyword">/);
+  }
+  assert.ok(context.hljs.getLanguage('nginx'));
+  assert.ok(context.hljs.getLanguage('jsonc'));
+  assert.match(fs.readFileSync(path.join(assets, 'github.min.css'), 'utf8'), /\.hljs-keyword/);
+});
 
 Then('Mermaid blocks render at runtime with accessible labels', function () {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'g3w-mermaid-'));

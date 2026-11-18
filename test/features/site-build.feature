@@ -10,3 +10,6 @@ Feature: Site builds
 
   Scenario: Mermaid diagrams render in the browser
     Then Mermaid blocks render at runtime with accessible labels
+
+  Scenario: Code blocks can be highlighted in the browser
+    Then the browser highlighter supports the languages used in code blocks

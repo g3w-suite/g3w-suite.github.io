@@ -96,6 +96,20 @@ function build(outputDir) {
   const mermaidScript = path.join(outputDir, 'mermaid.min.js');
   if (diagrams.size) copyMermaidScript(outputDir);
   else fs.rmSync(mermaidScript, { force: true });
+
+  const highlightScript = require.resolve('@highlightjs/cdn-assets/highlight.min.js');
+  const highlightDir = path.dirname(highlightScript);
+  const highlightOutput = path.join(outputDir, 'highlight');
+  fs.mkdirSync(highlightOutput, { recursive: true });
+  const nginx = fs.readFileSync(path.join(highlightDir, 'languages', 'nginx.min.js'), 'utf8');
+  const po = String.raw`hljs.registerLanguage('po', hljs => ({
+    aliases: ['gettext'],
+    contains: [hljs.HASH_COMMENT_MODE, hljs.QUOTE_STRING_MODE, { scope: 'keyword', match: /\b(?:msgctxt|msgid_plural|msgid|msgstr)\b/ }]
+  }));`;
+  fs.writeFileSync(path.join(highlightOutput, 'highlight.min.js'), [fs.readFileSync(highlightScript, 'utf8'), nginx, po].join('\n;\n'));
+  const theme = fs.readFileSync(path.join(highlightDir, 'styles', 'github.min.css'), 'utf8');
+  fs.writeFileSync(path.join(highlightOutput, 'github.min.css'), `${theme}\n.docs-content pre:has(> code.hljs) { padding: 0; }\n`);
+  fs.copyFileSync(path.join(highlightDir, 'LICENSE'), path.join(highlightOutput, 'LICENSE'));
 }
 
 function runBuild(dir, exitOnError = true) {

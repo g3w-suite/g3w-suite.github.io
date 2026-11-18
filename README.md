@@ -31,6 +31,7 @@ Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/abou
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
 - **Appearance and interactions:** edit `static/app.css` and `static/app.js` (vanilla JavaScript, without libraries).
 - **Images:** add AVIF files to the flat `static/img/` directory and link them with `/img/...`. GitHub profile portraits remain external and dynamic; `static/icons.svg` is the shared icon sprite.
+- **Code blocks:** put the language after the opening fence (for example, `js`, `python` or `bash`). Syntax highlighting assets are served locally and loaded only on pages with code blocks. Inline code does not load them.
 - **Diagrams:** write top-level fenced Mermaid blocks in Markdown, with alternative text after `mermaid`. Diagrams render in the browser; the runtime is included only when the site has diagrams and loaded only on pages that contain them. Use language blocks inside the diagram when labels differ.
 
 <pre><code>```mermaid {{t 'Diagram description'}}

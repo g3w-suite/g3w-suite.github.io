@@ -189,6 +189,29 @@ if (docsSearch) {
   });
 }
 
+const codeBlocks = document.querySelectorAll('pre > code');
+if (codeBlocks.length) {
+  const assets = new URL('highlight/', document.currentScript.src);
+  const style = document.createElement('link');
+  style.rel = 'stylesheet';
+  style.href = new URL('github.min.css', assets).href;
+  const script = document.createElement('script');
+  script.src = new URL('highlight.min.js', assets).href;
+  for (const asset of [style, script]) {
+    asset.addEventListener('error', () => {
+      console.error(`Syntax highlighting asset failed to load: ${asset.href || asset.src}`);
+    }, { once: true });
+  }
+  script.addEventListener('load', () => {
+    codeBlocks.forEach(code => {
+      const language = /\blanguage-([\w-]+)/.exec(code.className)?.[1];
+      if (language && window.hljs.getLanguage(language)) window.hljs.highlightElement(code);
+      else code.classList.add('hljs');
+    });
+  }, { once: true });
+  document.head.append(style, script);
+}
+
 const mermaidFigures = document.querySelectorAll('.mermaid-diagram');
 const mermaidDiagrams = document.querySelectorAll('.mermaid-diagram .mermaid');
 if (mermaidDiagrams.length) {
