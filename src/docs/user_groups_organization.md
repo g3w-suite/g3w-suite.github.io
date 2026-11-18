@@ -1,10 +1,10 @@
 # Hierarchical organization of WebGis services and types of Users (roles)
 
-_**G3W-SUITE organizes WebGIS services hierarchically.**_
 
 G3W-SUITE organizes WebGIS services on two thematic or functional levels:
- * **`Cartographic MacroGroups`**
-   * **`Cartographic groups`**
+
+- **`Cartographic MacroGroups`**
+- **`Cartographic groups`**
 
 **These organizational levels can be associated with different types of users (Editor 1, Editor2 and Viewer) in order to manage the access/management powers to the individual elements in a granular way.**
 
