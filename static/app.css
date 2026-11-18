@@ -1485,6 +1485,7 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   top: calc(var(--header-h) + 1rem);
   max-height: calc(100dvh - var(--header-h) - 2rem);
   overflow-y: auto;
+  scrollbar-width: none;
   align-self: start;
   border-right: 1px solid #d8e0e4;
   padding-right: 1rem;
