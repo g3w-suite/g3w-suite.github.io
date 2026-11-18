@@ -6,3 +6,4 @@ static/en/
 static/it/
 static/index.html
 static/img/mermaid-*.avif
+static/mermaid.min.js

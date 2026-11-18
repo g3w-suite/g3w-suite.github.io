@@ -31,18 +31,16 @@ Page URLs use directories, never `.html`: `src/about/index.md` becomes `/it/abou
 - `_footer.html` also loads the shared `app.js`; do not add another script tag to individual pages.
 - **Appearance and interactions:** edit `static/app.css` and `static/app.js` (vanilla JavaScript, without libraries).
 - **Images:** add AVIF files to the flat `static/img/` directory and link them with `/img/...`. GitHub profile portraits remain external and dynamic; `static/icons.svg` is the shared icon sprite.
-- **Diagrams:** write top-level fenced Mermaid blocks in Markdown, with alternative text after `mermaid`. The build generates AVIF images automatically; use language blocks inside the diagram when labels differ. Generated `mermaid-*.avif` files in `static/img/` are ignored by Git.
+- **Diagrams:** write top-level fenced Mermaid blocks in Markdown, with alternative text after `mermaid`. Diagrams render in the browser; the runtime is included only when the site has diagrams and loaded only on pages that contain them. Use language blocks inside the diagram when labels differ.
 
-````markdown
-```mermaid {{t 'Diagram description'}}
+<pre><code>```mermaid {{t 'Diagram description'}}
 flowchart LR
   source["Source"] --> page["Published page"]
-```
-````
+```</code></pre>
 
-Add the alternative text to the page's Italian translations. Puppeteer downloads Chrome during `npm install`. To skip that download, set `PUPPETEER_SKIP_DOWNLOAD=true` during installation; the build then uses an installed Chrome or the browser specified by `PUPPETEER_EXECUTABLE_PATH`.
+Add the alternative text to the page's Italian translations.
 
-`src/_redirect.html` only redirects to the Italian version. Site assets are tracked; generated pages and Mermaid images are ignored by Git.
+`src/_redirect.html` only redirects to the Italian version. Site assets are tracked; generated pages and the Mermaid runtime bundle are ignored by Git.
 
 ## Add or update a page
 

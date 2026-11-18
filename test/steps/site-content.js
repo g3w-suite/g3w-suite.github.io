@@ -295,14 +295,22 @@ Then('both languages are generated from shared page templates', function () {
         assert.equal(newsArticle(`main a[href="/${lang}/about/matteo-tosi/"]`).text(), 'Matteo Tosi');
         assert.ok(newsArticle(`main a[href="${docsRoot}/"]`).length, `${lang} announcement must link to the documentation`);
         const images = newsArticle('main img').map((_, image) => newsArticle(image).attr('src')).get();
-        assert.equal(images.length, 4, `${lang} announcement must have two screenshots and two diagrams`);
+        assert.equal(images.length, 2, `${lang} announcement must keep its two screenshots`);
         assert.equal(images[0], `/img/site-new-website-home-${lang}.avif`);
-        assert.equal(images[2], `/img/site-new-website-docs-${lang}.avif`);
-        for (const index of [1, 3]) {
-          assert.match(images[index], /^\/img\/mermaid-[a-f0-9]{64}\.avif$/, `${lang} diagram must be generated from Mermaid`);
-        }
+        assert.equal(images[1], `/img/site-new-website-docs-${lang}.avif`);
+        const diagrams = newsArticle('main .mermaid-diagram');
+        assert.equal(diagrams.length, 2, `${lang} announcement must retain its two runtime diagrams`);
+        diagrams.each((_, diagram) => {
+          const figure = newsArticle(diagram);
+          assert.equal(figure.attr('role'), 'img');
+          assert.equal(figure.attr('aria-busy'), 'true');
+          assert.ok(figure.attr('aria-label'), `${lang} diagram must have alternative text`);
+          assert.equal(figure.find('pre.mermaid[aria-hidden="true"]').length, 1);
+        });
+        assert.equal(newsArticle('script[src$="mermaid.min.js"]').length, 0, 'Mermaid must be loaded dynamically');
       }
       if (article === 'geospatial-infrastructure') {
+        assert.equal(newsArticle('main .mermaid-diagram').length, 0);
         assert.equal(
           newsArticle('main h1').first().text(),
           lang === 'it' ? 'Una piattaforma per gestire la tua infrastruttura geospaziale' : 'A platform for managing your geospatial infrastructure'

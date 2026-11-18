@@ -7,32 +7,29 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const { Then } = require('@cucumber/cucumber');
 const { staticDir, htmlFiles, readPage, localTarget } = require('../support/site');
-const { prepareMermaid, renderMermaid } = require('../../utils/mermaid');
+const { prepareMermaid, copyMermaidScript } = require('../../utils/mermaid');
 
-Then('Mermaid blocks produce updated accessible AVIF images', { timeout: 180000 }, function () {
+Then('Mermaid blocks render at runtime with accessible labels', function () {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'g3w-mermaid-'));
   try {
     const markdown = label => `\`\`\`mermaid Diagram of the workflow\nflowchart LR\n  a["${label}"] --> b["Published"]\n\`\`\`\n`;
-    const first = new Map();
-    const html = prepareMermaid(markdown('First'), first, 'example.md (en)');
-    assert.match(html, /<img src="\/img\/mermaid-[a-f0-9]{64}\.avif" alt="Diagram of the workflow">/);
-    renderMermaid(first, output);
-    const [firstName] = first.keys();
-    const firstFile = path.join(output, 'img', firstName);
-    const firstBytes = fs.readFileSync(firstFile);
-    assert.equal(firstBytes.toString('ascii', 4, 12), 'ftypavif');
-
-    const second = new Map();
-    prepareMermaid(markdown('Changed'), second, 'example.md (en)');
-    const invalid = new Map();
-    prepareMermaid('```mermaid Invalid diagram\nnot a diagram\n```\n', invalid, 'example.md');
-    assert.throws(() => renderMermaid(new Map([...second, ...invalid]), output), /example\.md.*(?:error|diagram)/i);
-    const [secondName] = second.keys();
-    assert.notEqual(firstName, secondName, 'editing a diagram must produce a new image');
-    assert.notDeepEqual(firstBytes, fs.readFileSync(path.join(output, 'img', secondName)));
-    renderMermaid(second, output);
-    assert.equal(fs.existsSync(firstFile), false, 'obsolete generated images must be removed');
-    assert.throws(() => prepareMermaid('```mermaid\nflowchart LR\n a-->b\n```\n', new Map(), 'example.md'), /alternative text/);
+    const diagrams = new Set();
+    const html = prepareMermaid(markdown('First & <diagram>'), diagrams, 'example.md (en)');
+    assert.equal(diagrams.size, 1);
+    assert.match(html, /<figure class="mermaid-diagram" role="img" aria-busy="true" aria-label="Diagram of the workflow">/);
+    assert.match(html, /<pre class="mermaid" aria-hidden="true">[\s\S]*First &amp; &lt;diagram&gt;[\s\S]*<\/pre>/);
+    assert.doesNotMatch(html, /<img|\.avif/);
+    assert.throws(
+      () => prepareMermaid('```mermaid\nflowchart LR\n a-->b\n```\n', new Set(), 'example.md'),
+      /alternative text/
+    );
+    assert.throws(
+      () => prepareMermaid('> ```mermaid Diagram\n> flowchart LR\n> a-->b\n> ```\n', new Set(), 'example.md'),
+      /top-level/
+    );
+    copyMermaidScript(output);
+    assert.ok(fs.statSync(path.join(output, 'mermaid.min.js')).size > 0);
+    assert.ok(fs.existsSync(path.join(staticDir, 'mermaid.min.js')), 'site build must publish the Mermaid runtime');
   } finally {
     fs.rmSync(output, { recursive: true, force: true });
   }

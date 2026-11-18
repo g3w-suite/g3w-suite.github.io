@@ -8,5 +8,5 @@ Feature: Site builds
   Scenario: Deployment under a GitHub Pages project path
     Then the build supports a project base path without broken internal links
 
-  Scenario: Mermaid diagrams are compiled and updated
-    Then Mermaid blocks produce updated accessible AVIF images
+  Scenario: Mermaid diagrams render in the browser
+    Then Mermaid blocks render at runtime with accessible labels

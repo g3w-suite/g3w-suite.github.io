@@ -188,3 +188,56 @@ if (docsSearch) {
     }
   });
 }
+
+const mermaidFigures = document.querySelectorAll('.mermaid-diagram');
+const mermaidDiagrams = document.querySelectorAll('.mermaid-diagram .mermaid');
+if (mermaidDiagrams.length) {
+  const setDiagramState = state => {
+    mermaidFigures.forEach(figure => {
+      figure.classList.add(state);
+      figure.setAttribute('aria-busy', 'false');
+      if (state === 'is-error') {
+        figure.dataset.errorMessage = document.documentElement.lang === 'it'
+          ? 'Diagramma non disponibile'
+          : 'Diagram unavailable';
+      }
+    });
+  };
+  const appScript = document.currentScript;
+  if (!appScript || !appScript.src) {
+    setDiagramState('is-error');
+    throw new Error('Cannot resolve the Mermaid runtime relative to app.js');
+  }
+
+  const script = document.createElement('script');
+  script.src = new URL('mermaid.min.js', appScript.src).href;
+  script.addEventListener('load', () => {
+    Promise.resolve().then(() => {
+      window.mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: 'strict',
+        theme: 'base',
+        themeVariables: {
+          fontFamily: 'Arial',
+          fontSize: '18px',
+          primaryColor: '#fff7ed',
+          primaryBorderColor: '#e87722',
+          primaryTextColor: '#2b2b2b',
+          lineColor: '#777777',
+        },
+        flowchart: { useMaxWidth: false },
+      });
+      return window.mermaid.run({ nodes: mermaidDiagrams });
+    }).then(() => {
+      setDiagramState('is-rendered');
+    }).catch(error => {
+      setDiagramState('is-error');
+      console.error('Mermaid rendering failed:', error);
+    });
+  }, { once: true });
+  script.addEventListener('error', () => {
+    setDiagramState('is-error');
+    console.error(`Mermaid runtime failed to load: ${script.src}`);
+  }, { once: true });
+  document.head.append(script);
+}

@@ -1326,6 +1326,27 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
 .content-page ol, .docs-content ol { list-style: decimal; }
 .content-page li, .docs-content li { margin-bottom: .35rem; font-size: .95rem; }
 .content-page img, .docs-content img { margin: 1.25rem auto; border-radius: var(--radius); }
+.mermaid-diagram { position: relative; min-height: 2.5rem; max-width: 100%; margin: 1.25rem auto; overflow: clip; text-align: center; }
+.mermaid-diagram:not(.is-rendered):not(.is-error) > .mermaid { position: absolute; inset: 0; visibility: hidden; }
+.mermaid-diagram:not(.is-rendered):not(.is-error)::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: .5rem auto;
+  border: 3px solid #d8e0e4;
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: mermaid-spin .8s linear infinite;
+}
+.mermaid-diagram.is-rendered { overflow-x: auto; }
+.mermaid-diagram.is-rendered > .mermaid { position: static; visibility: visible; margin: 0; padding: 0; overflow: visible; background: transparent; text-align: center; }
+.mermaid-diagram.is-rendered svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.mermaid-diagram.is-error::before { content: attr(data-error-message); color: var(--color-primary); }
+@keyframes mermaid-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .mermaid-diagram:not(.is-rendered):not(.is-error)::before { animation: none; }
+}
 
 /* ── 24. Media queries ───────────────────────────────────────── */
 @media (max-width: 900px) {

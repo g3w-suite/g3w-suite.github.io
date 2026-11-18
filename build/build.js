@@ -8,10 +8,10 @@ const { renderLanguageBlocks, translateHtml, extractPageTranslations, extractPag
 const { autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
 const { outputPage, languagePageUrl, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
-const { prepareMermaid, renderMermaid } = require('../utils/mermaid');
+const { prepareMermaid, copyMermaidScript } = require('../utils/mermaid');
 
 function build(outputDir) {
-  const diagrams = new Map();
+  const diagrams = new Set();
   const pageFiles = [
     ...htmlFiles(sourceDir),
     ...markdownFiles(sourceDir).filter(file =>
@@ -93,7 +93,9 @@ function build(outputDir) {
     fs.writeFileSync(target, publishedHtml(result));
   }
   buildDocumentation(outputDir, diagrams);
-  renderMermaid(diagrams, outputDir);
+  const mermaidScript = path.join(outputDir, 'mermaid.min.js');
+  if (diagrams.size) copyMermaidScript(outputDir);
+  else fs.rmSync(mermaidScript, { force: true });
 }
 
 function runBuild(dir, exitOnError = true) {
