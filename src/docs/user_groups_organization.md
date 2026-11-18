@@ -1,4 +1,5 @@
 # Hierarchical organization of WebGis services and types of Users (roles)
+
 _**G3W-SUITE organizes WebGIS services hierarchically.**_
 
 G3W-SUITE organizes WebGIS services on two thematic or functional levels:
