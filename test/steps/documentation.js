@@ -139,6 +139,16 @@ Then('every documentation source is Markdown and has a generated page', function
     assert.equal(italianPage('head link[rel="alternate"][hreflang="en"]').attr('href'), englishRoute);
     assert.equal(italianPage('.lang-switcher a[hreflang="it"][lang="it"]').attr('href'), italianRoute);
     assert.equal(italianPage('.lang-switcher a[hreflang="en"][lang="en"]').attr('href'), englishRoute);
+    const englishTocHref = page('link[rel="canonical"]').attr('href') || englishRoute;
+    const italianTocHref = italianPage('link[rel="canonical"]').attr('href') || italianRoute;
+    for (const [document, href, name] of [
+      [page, englishTocHref, file],
+      [italianPage, italianTocHref, italianFile],
+    ]) {
+      const tocLink = document('nav.docs-nav a').filter((_, link) => document(link).attr('href') === href);
+      assert.equal(tocLink.length, 1, `${name}: page must appear in the documentation TOC`);
+      assert.equal(tocLink.text().trim(), document('main > .page-header h1').text().trim(), `${name}: TOC link must use the page title`);
+    }
   }
   const childPage = readPage(path.join(staticDir, 'docs', 'admin-users', 'index.html')).$;
   assert.ok(childPage('nav.site-breadcrumb a[href="/docs/g3wsuite_administration/"]').length, 'child pages must link to their parent in the breadcrumb');

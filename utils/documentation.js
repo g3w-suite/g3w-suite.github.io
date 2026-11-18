@@ -68,10 +68,58 @@ function documentationNavigation(index, currentPage, parentPage, docsDir, lang) 
       group.links.push({ href, label: link[1] });
     }
   }
+  const indexFile = path.join(docsDir, 'index.md');
+  const pages = documentationFiles(docsDir).map(file => {
+    const source = fs.readFileSync(file, 'utf8');
+    const extracted = extractPageTranslations(source, path.relative(projectRoot, file));
+    const localized = translateHtml(
+      autoTranslateMarkdown(extracted.html, lang, extracted.translations),
+      lang,
+      extracted.translations
+    );
+    const title = /^#\s+(.+)$/m.exec(localized)?.[1] || path.basename(file, '.md');
+    const href = documentationLink(path.relative(docsDir, file), indexFile, docsDir, lang);
+    const back = /^\[Back to [^\]]+\]\(([^)]+)\)/m.exec(source);
+    return {
+      href,
+      label: marked.parseInline(title).replace(/<[^>]*>/g, ''),
+      parent: back ? documentationLink(back[1], file, docsDir, lang) : null,
+    };
+  });
+  const listed = new Set(groups.flatMap(item => item.links.map(link => link.href)));
+  const children = new Map();
+  const additional = [];
+  for (const page of pages) {
+    if (listed.has(page.href)) {
+      for (const item of groups) {
+        const link = item.links.find(entry => entry.href === page.href);
+        if (link) link.label = page.label;
+      }
+      continue;
+    }
+    const parentGroup = groups.find(item => item.links.some(link => link.href === page.parent));
+    if (parentGroup) {
+      const siblings = children.get(page.parent) || [];
+      siblings.push({ ...page, child: true });
+      children.set(page.parent, siblings);
+    } else {
+      additional.push(page);
+    }
+    listed.add(page.href);
+  }
+  for (const item of groups) {
+    item.links = item.links.flatMap(link => [link, ...(children.get(link.href) || [])]);
+  }
+  if (additional.length) {
+    groups.push({
+      title: lang === 'it' ? 'Altre pagine' : 'Other pages',
+      links: additional,
+    });
+  }
   return groups.map(({ title, links }) => {
     const open = links.some(({ href }) => href === currentPage || href === parentPage);
-    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(({ href, label }) =>
-      `<a href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`
+    return `<section><details${open ? ' open' : ''}><summary><h2>${title}</h2></summary>${links.map(({ href, label, child }) =>
+      `<a${child ? ' class="docs-nav__page"' : ''} href="${href}"${href === currentPage ? ' aria-current="page"' : ''}>${label}</a>`
     ).join('')}</details></section>`;
   }).join('');
 }
