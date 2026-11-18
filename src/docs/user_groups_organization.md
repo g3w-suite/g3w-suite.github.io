@@ -13,12 +13,12 @@ The following diagram shows an example of the functional use of these organizati
 Access policies and individual functional modules may be associated with each WebGis service.
 
 ```mermaid {{t 'Two municipal administrations have separate macro-groups; each contains cartographic groups that can contain WebGIS services'}}
-flowchart LR
+flowchart TB
   a["{{t 'Macro-group'}}: {{t 'Administration'}} A"] --> a1["{{t 'Service'}} A"] & a2["{{t 'Service'}} B"] & a3["{{t 'Service'}} C"]
   b["{{t 'Macro-group'}}: {{t 'Administration'}} B"] --> b1["{{t 'Service'}} A"] & b2["{{t 'Service'}} B"] & b3["{{t 'Service'}} C"]
-  a2 --> w1["WebGIS 1, 2, 3"]
-  a3 --> w2["WebGIS 1, 2"]
-  b2 --> w3["WebGIS 1, 2, 3"]
+  a2 --> a2w1["WebGIS 1"] & a2w2["WebGIS 2"] & a2w3["WebGIS 3"]
+  a3 --> a3w1["WebGIS 1"] & a3w2["WebGIS 2"]
+  b2 --> b2w1["WebGIS 1"] & b2w2["WebGIS 2"] & b2w3["WebGIS 3"]
 ```
 
 ## Types of Users (Roles)
@@ -67,12 +67,12 @@ When creating a cartographic group, the Admin user can define:
  * **Viewers** users (individuals/groups) who will have access to this container
 
 ```mermaid {{t 'Without macro-groups, Admin manages all cartographic groups and can delegate group management to Editor2; Viewers can access authorized WebGIS services'}}
-flowchart LR
+flowchart TB
   admin["Admin"] --> groups["{{t 'Cartographic groups'}}<br/>Editor2"]
   groups --> a1["{{t 'Service'}} A"] & a2["{{t 'Service'}} B"] & a3["{{t 'Service'}} C"] & b1["{{t 'Service'}} A"] & b2["{{t 'Service'}} B"] & b3["{{t 'Service'}} C"]
-  a2 --> w1["WebGIS 1, 2, 3<br/>Viewer"]
-  a3 --> w2["WebGIS 1, 2<br/>Viewer"]
-  b2 --> w3["WebGIS 1, 2, 3<br/>Viewer"]
+  a2 --> a2w1["WebGIS 1<br/>Viewer"] & a2w2["WebGIS 2<br/>Viewer"] & a2w3["WebGIS 3<br/>Viewer"]
+  a3 --> a3w1["WebGIS 1<br/>Viewer"] & a3w2["WebGIS 2<br/>Viewer"]
+  b2 --> b2w1["WebGIS 1<br/>Viewer"] & b2w2["WebGIS 2<br/>Viewer"] & b2w3["WebGIS 3<br/>Viewer"]
 ```
 
 In the event that the Cartographic Group is assigned to **Editor 2** (single or group users), they will may autonomously publish/update WebGis services inside in this container. 
@@ -94,13 +94,13 @@ In this way it will be possible to create totally independent entities, the Macr
 Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.
 
 ```mermaid {{t 'Admin oversees both macro-groups; each has its own Editor1, with Editor2 at group level and Viewer access at WebGIS service level'}}
-flowchart LR
+flowchart TB
   admin["Admin"] --> a["{{t 'Macro-group'}}: {{t 'Administration'}} A<br/>Editor1"] & b["{{t 'Macro-group'}}: {{t 'Administration'}} B<br/>Editor1"]
   a --> a1["{{t 'Service'}} A<br/>Editor2"] & a2["{{t 'Service'}} B<br/>Editor2"] & a3["{{t 'Service'}} C<br/>Editor2"]
   b --> b1["{{t 'Service'}} A<br/>Editor2"] & b2["{{t 'Service'}} B<br/>Editor2"] & b3["{{t 'Service'}} C<br/>Editor2"]
-  a2 --> w1["WebGIS 1, 2, 3<br/>Viewer"]
-  a3 --> w2["WebGIS 1, 2<br/>Viewer"]
-  b2 --> w3["WebGIS 1, 2, 3<br/>Viewer"]
+  a2 --> a2w1["WebGIS 1<br/>Viewer"] & a2w2["WebGIS 2<br/>Viewer"] & a2w3["WebGIS 3<br/>Viewer"]
+  a3 --> a3w1["WebGIS 1<br/>Viewer"] & a3w2["WebGIS 2<br/>Viewer"]
+  b2 --> b2w1["WebGIS 1<br/>Viewer"] & b2w2["WebGIS 2<br/>Viewer"] & b2w3["WebGIS 3<br/>Viewer"]
 ```
 
 As previously specified, **Editor 1** user will be able to:
