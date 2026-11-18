@@ -1,3 +1,8 @@
+---
+title: Editing constraints
+description: Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.
+---
+
 # Editing constraints
 
 ## Constraints setting

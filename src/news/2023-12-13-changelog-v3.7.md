@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.7 - G3W-Suite
+description: Version 3.7 introduces a module for running QGIS ModelDesigner analyses on the web, alongside improvements to filtering, editing and map tools.
 ---
 
 # Changelog G3W-Suite 3.7

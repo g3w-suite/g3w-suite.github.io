@@ -16,7 +16,7 @@ Crea un articolo News con le note di rilascio di G3W-Suite versione **$ARGUMENTS
    - Mantieni HTML solo per layout o media che Markdown non può esprimere (per esempio schede sponsor, video e CTA)
    - Usa la pagina inglese come testo di base; aggiungi le traduzioni italiane in `i18n/it.json` sotto il percorso del file relativo a `src/`, mantenendo il prefisso con la data. Usa ogni riga Markdown inglese completa come chiave esatta; per il testo Markdown non serve `{{t '...'}}`
    - Usa `{{t '...'}}` solo per testo inline come attributi e testi alternativi delle immagini
-   - Definisci `title` nel front matter YAML all'inizio della pagina, tra due righe `---`; aggiungi la traduzione italiana alla stessa voce di `i18n/it.json`
+   - Definisci `title` e `description` nel front matter YAML all'inizio della pagina, tra due righe `---`; aggiungi le traduzioni italiane alla stessa voce di `i18n/it.json`
    - Non definire `doctype`, `html`, `head`, `body` o `main`: il build genera lo scheletro automaticamente
    - Non inserire tag `rel="alternate"`: il build genera automaticamente gli URL hreflang dal percorso della pagina
    - Usa `{{#it}}...{{/it}}` o `{{#en}}...{{/en}}` solo per differenze di contenuto o markup non gestibili con le traduzioni

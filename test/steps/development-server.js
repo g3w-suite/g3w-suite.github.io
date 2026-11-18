@@ -44,13 +44,18 @@ Then('it serves the root page on port 8080', { timeout: 90000 }, async function 
     assert.equal(this.port, 8080);
     const response = await fetch(`http://localhost:${this.port}/`);
     assert.equal(response.status, 200);
-    assert.match(await response.text(), /url=\/it\//i);
+    assert.match(await response.text(), /class="page-redirect"/);
     const image = await fetch(`http://localhost:${this.port}/img/site-g3w-suite-logo.avif`);
     assert.equal(image.status, 200);
     assert.equal(image.headers.get('content-type'), 'image/avif');
-    for (const url of ['/it/about/', '/it/docs/components/', '/en/news/v3.11/']) {
+    for (const url of ['/it/about/', '/it/docs/components-of-g3w-suite/', '/en/docs/demo/', '/en/news/v3.11/']) {
       const page = await fetch(`http://localhost:${this.port}${url}`);
       assert.equal(page.status, 200, url);
+    }
+    for (const url of ['/about', '/docs/demo', '/news/v3.11/']) {
+      const page = await fetch(`http://localhost:${this.port}${url}`);
+      assert.equal(page.status, 200, url);
+      assert.match(await page.text(), /class="page-redirect"/);
     }
     for (const [source, target] of [
       ['/it/about.html?test=1', '/it/about/?test=1'],

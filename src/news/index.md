@@ -1,5 +1,6 @@
 ---
 title: G3W-Suite News
+description: Latest updates from G3W-SUITE
 ---
 
 # News

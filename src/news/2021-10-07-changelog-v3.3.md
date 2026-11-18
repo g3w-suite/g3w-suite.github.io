@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.3 - G3W-Suite
+description: Version 3.3 introduces per-user editing permissions, QGIS expressions in online editing, Oracle Spatial editing and more API integration.
 ---
 
 # Changelog G3W-Suite 3.3

@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.11 - G3W-Suite
+description: Version 3.11 brings QGIS 3.44 LTR compatibility, major reductions in file count and compilation time, and new integrations with the QGIS API.
 ---
 
 # Changelog G3W-Suite 3.11

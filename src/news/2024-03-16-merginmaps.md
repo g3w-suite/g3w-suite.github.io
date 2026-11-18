@@ -1,5 +1,6 @@
 ---
 title: MerginMaps Partnership - G3W-Suite
+description: Gis3W is an official Mergin Maps partner, supporting field data collection workflows built on QGIS.
 ---
 
 # MerginMaps Partnership

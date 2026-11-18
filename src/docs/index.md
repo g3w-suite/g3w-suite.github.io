@@ -1,3 +1,8 @@
+---
+title: G3W-SUITE 3.11 Manual
+description: G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
+---
+
 # G3W-SUITE 3.11 Manual
 
 G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.
@@ -19,68 +24,68 @@ Follow the [Quick Start](quick-start.md) to publish your own project, or use the
 - [G3W-SUITE 3.11 Manual](index.md)
 - [Quick Start](quick-start.md)
 - [Demo](demo.md)
-- [Publish a WebGIS service](demo-publish.md)
-- [Try layer tools in the demo](demo-widgets.md)
-- [Try online editing](demo-editing.md)
-- [Components of G3W-SUITE](components.md)
-- [Versions and compatibility](versions.md)
+- [Publish a WebGIS service](publish-a-webgis-service.md)
+- [Try layer tools in the demo](try-layer-tools-in-the-demo.md)
+- [Try online editing](try-online-editing.md)
+- [Components of G3W-SUITE](components-of-g3w-suite.md)
+- [Versions and compatibility](versions-and-compatibility.md)
 
 ## Install and maintain
 
 Use Docker for a containerized deployment, or follow the manual installation guide if you manage the system packages and services yourself.
 
-- [Docker installation](docker.md)
-- [Manual installation](install.md)
-- [Docker environment variables](docker_env.md)
+- [Docker installation](docker-installation.md)
+- [Manual installation](manual-installation.md)
+- [Docker environment variables](docker-environment-variables.md)
 - [Settings](settings.md)
-- [Social login](social_authentication.md)
-- [Double Factor Authentication (2FA)](twofa.md)
+- [Social login](social-login.md)
+- [Double Factor Authentication (2FA)](double-factor-authentication-2fa.md)
 
 ## Prepare and publish a WebGIS
 
-- [Manage QGIS data](datamanagement.md)
-- [QGIS: project settings](projectsettings.md)
-- [Project properties](projectsettings-properties.md)
-- [Layer properties](projectsettings-layers.md)
-- [WebGIS roles and organization](user_groups_organization.md)
-- [Access policy examples](organization-examples.md)
-- [Administration panel](g3wsuite_administration.md)
-- [Users and macro-groups](admin-users.md)
-- [Cartographic groups](admin-cartographic-groups.md)
-- [Manage cartographic groups](admin-group-management.md)
-- [Publish and update WebGIS services](admin-publishing.md)
-- [G3W-SUITE base layers](base_layers.md)
-- [Group base layers and languages](admin-base-layers.md)
-- [Layer tools](admin-widgets-setup.md)
-- [Layer visibility and constraints](admin-widgets-controls.md)
-- [Search widgets](admin-search.md)
-- [Configure charts](admin-charts.md)
+- [Manage QGIS data](manage-qgis-data.md)
+- [QGIS: project settings](qgis-project-settings.md)
+- [Project properties](project-properties.md)
+- [Layer properties](layer-properties.md)
+- [WebGIS roles and organization](webgis-roles-and-organization.md)
+- [Access policy examples](access-policy-examples.md)
+- [Administration panel](administration-panel.md)
+- [Users and macro-groups](users-and-macro-groups.md)
+- [Cartographic groups](cartographic-groups.md)
+- [Manage cartographic groups](manage-cartographic-groups.md)
+- [Publish and update WebGIS services](publish-and-update-webgis-services.md)
+- [G3W-SUITE base layers](g3w-suite-base-layers.md)
+- [Group base layers and languages](group-base-layers-and-languages.md)
+- [Layer tools](layer-tools.md)
+- [Layer visibility and constraints](layer-visibility-and-constraints.md)
+- [Search widgets](search-widgets.md)
+- [Configure charts](configure-charts.md)
 
-For the complete workflow, see [publish and update WebGIS services](admin-publishing.md).
+For the complete workflow, see [publish and update WebGIS services](publish-and-update-webgis-services.md).
 
 ## Use and customize the WebGIS
 
-- [Access portal](g3wsuite_access_portal.md)
-- [Map client](g3wsuite_client.md)
-- [Map navigation and queries](client-map-interaction.md)
-- [Map queries and results](client-map-queries.md)
-- [Layers and attribute table](client-layers.md)
-- [Map tools](client-tools-and-toc.md)
-- [Bottom panel and time series](client-bottom-session.md)
-- [Online editing](g3wsuite_editing.md)
-- [Prepare a project for editing](editing-project-settings.md)
-- [Editing permissions](editing-administration-settings.md)
-- [Editing tools](editing-client-tools.md)
-- [Editing related records](editing-relations.md)
+- [Access portal](access-portal.md)
+- [Map client](map-client.md)
+- [Map navigation and queries](map-navigation-and-queries.md)
+- [Map queries and results](map-queries-and-results.md)
+- [Layers and attribute table](layers-and-attribute-table.md)
+- [Map tools](map-tools.md)
+- [Bottom panel and time series](bottom-panel-and-time-series.md)
+- [Online editing](online-editing.md)
+- [Prepare a project for editing](prepare-a-project-for-editing.md)
+- [Editing permissions](editing-permissions.md)
+- [Editing tools](editing-tools.md)
+- [Editing related records](editing-related-records.md)
 - [Editing constraints](editing-constraints.md)
-- [Geocoding](editing-geocoding.md)
+- [Geocoding](geocoding.md)
 - [Branding](branding.md)
 
 ## Integrate and contribute
 
-- [Editing via IFRAME](g3wsuite_editing_iframe.md)
-- [Elasticsearch integration](elasticsearch.md)
-- [Translate G3W-SUITE](translation.md)
+- [Editing via IFRAME](editing-via-iframe.md)
+- [Elasticsearch integration](elasticsearch-integration.md)
+- [Translate G3W-SUITE](translate-g3w-suite.md)
 
 ![G3W-SUITE administration panel](/img/installation-english-admin.avif)
 ![G3W-SUITE cartographic client](/img/installation-english-client.avif)

@@ -1454,12 +1454,20 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
 .docs-layout {
   display: grid;
   grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  grid-template-areas: "navigation content";
   gap: 2rem;
   max-width: 1440px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
-.docs-nav { border-right: 1px solid #d8e0e4; padding-right: 1rem; }
+.docs-nav {
+  grid-area: navigation;
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+  align-self: start;
+  border-right: 1px solid #d8e0e4;
+  padding-right: 1rem;
+}
 .docs-nav section { margin-bottom: 1rem; }
 .docs-nav summary { cursor: pointer; }
 .docs-nav h2 { display: inline; font-size: 1rem; }
@@ -1469,13 +1477,21 @@ body[class*="page-sponsors-"] main > section p:has(> a.btn) { display: flex; fle
   color: var(--color-primary-d);
   font-weight: 700;
 }
-.docs-content { min-width: 0; max-width: 900px; }
+.docs-content { grid-area: content; min-width: 0; max-width: 900px; }
 .docs-heading-link { color: inherit; }
 .docs-content pre { overflow: auto; padding: 1rem; background: #f2f5f6; }
 .docs-content table { display: block; overflow-x: auto; }
 .docs-content th, .docs-content td { border: 1px solid #d8e0e4; padding: .5rem; }
 
 @media (max-width: 760px) {
-  .docs-layout { grid-template-columns: 1fr; }
-  .docs-nav { border-right: 0; border-bottom: 1px solid #d8e0e4; padding: 0 0 1rem; }
+  .docs-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "content" "navigation";
+  }
+  .docs-nav {
+    position: static;
+    border-right: 0;
+    border-top: 1px solid #d8e0e4;
+    padding: 1rem 0 0;
+  }
 }

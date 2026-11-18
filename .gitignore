@@ -3,7 +3,7 @@ public/
 .dev/
 static/docs/
 static/??/
-static/index.html
+static/**/index.html
 static/img/mermaid-*.avif
 static/mermaid.min.js
 static/highlight/

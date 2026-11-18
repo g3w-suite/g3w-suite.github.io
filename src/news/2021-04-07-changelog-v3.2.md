@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.2 - G3W-Suite
+description: Version 3.2 adds QGIS 3.16 LTR support, layer filtering, DataPlotly integration and QGIS AuthCFG support.
 ---
 
 # Changelog G3W-Suite 3.2

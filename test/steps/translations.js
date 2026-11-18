@@ -26,7 +26,7 @@ Then('the translation updater adds only missing source keys', function () {
   const entries = { [file]: { Existing: 'Gia tradotto' } };
   const markdown = [
     '---', 'title: New title', 'ogType: website', '---', '# Existing',
-    'New **body** with `QGIS`.', '[Navigation label](/docs/)', '| Table heading |',
+    'New **body** with `QGIS`.', '[Navigation label](/en/docs/)', '| Table heading |',
     'Read the [localized guide](https://{{#it}}it.{{/it}}example.org).',
     '<iframe title="{{t \'Video title\'}}"></iframe>',
     '{{#it}}Testo gia localizzato{{/it}}', '{{#en}}English branch{{/en}}',
@@ -117,11 +117,10 @@ Then('the page-scoped catalogs are valid and used by the build', function () {
   for (const file of sourceFiles) {
     const sourceHtml = fs.readFileSync(file, 'utf8');
     assert.doesNotMatch(sourceHtml, /<script\b[^>]*\bdata-i18n(?:-meta)?(?:\s|>)/, `${file}: use catalogs and front matter instead of scripts`);
-    if (docs.includes(file)) continue;
     const { html, metadata } = extractPageMetadata(sourceHtml, file);
     const pageTranslations = pageCatalog('it', italian, path.relative(sourceDir, file));
     if (!path.basename(file).startsWith('_')) {
-      assert.ok(metadata && metadata.title, `${file}: page title must be declared in YAML front matter`);
+      assert.ok(metadata?.title && metadata.description, `${file}: page title and description must be declared in YAML front matter`);
     }
     const localUsage = new Map(languages.map(lang => [lang, new Set()]));
     for (const [key, value] of Object.entries(metadata || {})) {
@@ -136,6 +135,7 @@ Then('the page-scoped catalogs are valid and used by the build', function () {
       const keys = Object.keys(entries);
       assert.deepEqual(keys, [...keys].sort(), `${file}: ${lang} translations must be sorted`);
     }
+    if (docs.includes(file)) continue;
     for (const lang of languages) {
       const localizedHtml = renderLanguageBlocks(html, lang);
       for (const [, literal] of localizedHtml.matchAll(translationHelperPattern())) {
@@ -235,15 +235,15 @@ Then('the page-scoped catalogs are valid and used by the build', function () {
   assert.ok(changelog310It('main').text().includes('annotazioni sulla mappa'));
   for (const [lang, text, href] of [
     ['it', 'Guida rapida', '/it/docs/quick-start/'],
-    ['en', 'Quick Start', '/docs/quick-start/'],
+    ['en', 'Quick Start', '/en/docs/quick-start/'],
   ]) {
     const page = readPage(path.join(staticDir, lang, 'news', 'v3.9', 'index.html')).$;
     assert.equal(page('main .cta-box a.btn--outline').text().trim(), text);
     assert.equal(page('main .cta-box a.btn--outline').attr('href'), href);
-    assert.equal(page('main .cta-box a.btn--primary').attr('href'), `${lang === 'it' ? '/it' : ''}/docs/demo/#try-the-live-demo`);
+    assert.equal(page('main .cta-box a.btn--primary').attr('href'), `/${lang}/docs/demo/#try-the-live-demo`);
   }
   const modelIt = readPage(path.join(staticDir, 'it', 'news', 'model-builder-processing', 'index.html')).$;
   assert.equal(modelIt('main h2').first().text().trim(), 'Funzionalità e impostazioni di QGIS Model Builder');
-  const timeSeriesIt = readPage(path.join(staticDir, 'it', 'docs', 'client-bottom-session', 'index.html')).$;
+  const timeSeriesIt = readPage(path.join(staticDir, 'it', 'docs', 'bottom-panel-and-time-series', 'index.html')).$;
   assert.ok(timeSeriesIt('main').text().includes('la funzione Serie temporali è disponibile solo con QGIS Server versione >= 3.26'));
 });

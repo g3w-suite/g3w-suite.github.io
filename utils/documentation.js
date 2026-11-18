@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { basePath, languages, docsRoot, sourceDir, publishedHtml } = require('./config');
 const { marked, getHeadingList, addHeadingAliases, autoTranslateMarkdown, renderMarkdownButtonLinks } = require('./markdown');
-const { pageCatalog, localizeSiteUrl, translate, translateHtml, renderLanguageBlocks, renderPageAlternates } = require('./translations');
+const { pageCatalog, localizeSiteUrl, translate, translateHtml, renderLanguageBlocks, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('./translations');
 const { renderBreadcrumb, renderComponent } = require('./routes');
 const { documentationFiles } = require('./files');
 const { prepareMermaid } = require('./mermaid');
@@ -30,7 +30,7 @@ function documentationLink(href, file, docsDir, lang = 'en') {
     return `${route}${suffix}`;
   }
 
-  return `/docs/${relative.replace(/\\/g, '/')}${suffix}`;
+  return `${docsRoot(lang)}/${relative.replace(/\\/g, '/')}${suffix}`;
 }
 
 function linkDocumentationHeadings(html) {
@@ -74,7 +74,6 @@ function documentationNavigation(index, docsDir, lang, titles) {
 
 const documentationLabels = {
   breadcrumb: 'Documentation',
-  description: 'G3W-SUITE documentation',
   navigation: 'Documentation navigation',
   noResults: 'No results found.',
   search: 'Search documentation',
@@ -82,7 +81,6 @@ const documentationLabels = {
   searchPlaceholder: 'Search docs',
   searchResults: 'Search results',
   searching: 'Searching...',
-  title: 'G3W-SUITE Documentation',
   version: 'Version',
 };
 
@@ -91,7 +89,9 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
   const indexFile = path.join(docsDir, 'index.md');
   const pages = documentationFiles(docsDir).map(file => {
     const relative = path.relative(docsDir, file);
-    return { file, relative, html: fs.readFileSync(file, 'utf8') };
+    const { html, metadata } = extractPageMetadata(fs.readFileSync(file, 'utf8'), file);
+    if (!metadata?.title || !metadata.description) throw new Error(`${file}: documentation requires title and description in front matter`);
+    return { file, relative, html, metadata };
   });
   const releasePattern = /^(\d{4}-\d{2}-\d{2})-changelog-(v\d+\.\d+)\.md$/;
   const releaseVersions = fs.readdirSync(path.join(sourceDir, 'news'))
@@ -114,7 +114,7 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
     const label = value => translate(value, lang, shared);
     const ui = Object.fromEntries(Object.entries(documentationLabels)
       .map(([key, value]) => [key, label(value)]));
-    const localizedPages = pages.map(({ file, relative, html }) => {
+    const localizedPages = pages.map(({ file, relative, html, metadata }) => {
       const translations = pageCatalog(lang, entries, path.relative(sourceDir, file));
       const localized = translateHtml(
         autoTranslateMarkdown(renderLanguageBlocks(html, lang), lang, translations), lang, translations
@@ -122,13 +122,13 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
       const title = /^#\s+(.+)$/m.exec(localized)?.[1];
       if (!title) throw new Error(`${file}: documentation page has no heading`);
       const pagePath = documentationLink(relative, indexFile, docsDir, lang);
-      return { file, relative, html, localized, title, pagePath };
+      return { file, relative, html, metadata, translations, localized, title, pagePath };
     });
     const titles = new Map(localizedPages.map(({ pagePath, title }) =>
       [pagePath, marked.parseInline(title).replace(/<[^>]*>/g, '')]));
     const index = localizedPages.find(({ file }) => file === indexFile);
     const navigation = documentationNavigation(index.localized, docsDir, lang, titles);
-    for (const { file, relative, html: source, localized, title, pagePath } of localizedPages) {
+    for (const { file, relative, html: source, metadata, translations, localized, title, pagePath } of localizedPages) {
       const sourceBody = prepareMermaid(localized, diagrams, `${relative} (${lang})`);
       let sourceHeadings = [];
       if (lang !== 'en') {
@@ -143,8 +143,7 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
       const componentPage = path.join('docs', relative.replace(/\.md$/, '.html'));
       const pageUrls = Object.fromEntries(languages.map(code => [code, documentationLink(relative, indexFile, docsDir, code)]));
       const pageHead = [
-        `<meta name="description" content="${ui.description}">`,
-        `<title>${title} - ${ui.title}</title>`,
+        renderPageMetadata(metadata, lang, translations),
         renderPageAlternates(pageUrls),
       ].join('\n  ');
       const siteHeader = renderComponent('header', lang, componentPage, pageUrls, entries, pageHead);
@@ -166,6 +165,9 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
   ${breadcrumb}
   <div class="page-header"><div class="container">${heading[0]}</div></div>
   <div class="docs-layout">
+    <div class="docs-content">
+      ${content}
+    </div>
     <nav class="docs-nav" aria-label="${ui.navigation}">
       <form class="docs-search" role="search" data-index-url="${basePath}${docsRoot(lang)}/search-index.json"
         data-searching="${ui.searching}"
@@ -179,9 +181,6 @@ function buildDocumentation(outputDir, diagrams, catalogs) {
       ${releaseNotes}
       ${navigation(pagePath)}
     </nav>
-    <div class="docs-content">
-      ${content}
-    </div>
   </div>
   </main>
   ${siteFooter}`;

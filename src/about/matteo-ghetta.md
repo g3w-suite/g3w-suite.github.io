@@ -19,8 +19,8 @@ The [DataPlotly documentation](https://dataplotly-docs.readthedocs.io/en/latest/
 
 ## In G3W-SUITE
 
-G3W-SUITE brings charts made with DataPlotly into the web map. A project administrator can save a chart configuration as XML in QGIS and import it into G3W-ADMIN as a [QPlotly widget](/en/docs/admin-charts/), without having to recreate the chart for the web.
+G3W-SUITE brings charts made with DataPlotly into the web map. A project administrator can save a chart configuration as XML in QGIS and import it into G3W-ADMIN as a [QPlotly widget](/en/docs/configure-charts/), without having to recreate the chart for the web.
 
-In the web map, users can filter the chart to features they select or to those visible in the current map view. For example, a chart of property sizes can show only the parcels in view as a user zooms into a neighbourhood. The [widget demo guide](/en/docs/demo-widgets/) shows how to try both filters.
+In the web map, users can filter the chart to features they select or to those visible in the current map view. For example, a chart of property sizes can show only the parcels in view as a user zooms into a neighbourhood. The [widget demo guide](/en/docs/try-layer-tools-in-the-demo/) shows how to try both filters.
 
 [Back to the project](/en/about/ "outline-button")

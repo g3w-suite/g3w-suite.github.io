@@ -7,8 +7,6 @@
   "@documentation": {
     "Documentation": "Documentație",
     "Documentation navigation": "Navigare documentație",
-    "G3W-SUITE Documentation": "G3W-SUITE Documentație",
-    "G3W-SUITE documentation": "G3W-SUITE  documentația",
     "No results found.": "Nu s-au găsit rezultate.",
     "Search docs": "Documente de căutare",
     "Search documentation": "Documentație de căutare",
@@ -197,11 +195,11 @@
     "**I develop DataPlotly, a QGIS plugin that links interactive charts to the map.**": "**Developez DataPlotly, a QGIS  modul care leagă diagrame interactive de hartă.**",
     "Back to the project": "Înapoi la proiect",
     "Beyond G3W-SUITE": "Dincolo de G3W-SUITE",
-    "G3W-SUITE brings charts made with DataPlotly into the web map. A project administrator can save a chart configuration as XML in QGIS and import it into G3W-ADMIN as a [QPlotly widget](/en/docs/admin-charts/), without having to recreate the chart for the web.": "G3W-SUITE  aduce diagrame realizate cu DataPlotly  în harta web. Un administrator de proiect poate salva o configurare grafică ca XML în QGIS  şi importă în G3W-ADMIN ca o [QPlotly widget](/en/docs/admin-charts/) Fără să trebuiască să recreezi graficul pentru web.",
+    "G3W-SUITE brings charts made with DataPlotly into the web map. A project administrator can save a chart configuration as XML in QGIS and import it into G3W-ADMIN as a [QPlotly widget](/en/docs/configure-charts/), without having to recreate the chart for the web.": "G3W-SUITE  aduce diagrame realizate cu DataPlotly  în harta web. Un administrator de proiect poate salva o configurare grafică ca XML în QGIS  şi importă în G3W-ADMIN ca o [QPlotly widget](/en/docs/configure-charts/) Fără să trebuiască să recreezi graficul pentru web.",
     "GitHub profile": "Profilul GitHub",
     "I developed DataPlotly to create interactive charts directly in QGIS using Plotly. It supports scatter plots, histograms and box plots, among others. Selecting a point in a scatter plot can highlight the corresponding feature on the map, making it easier to see where an outlier is located.": "Am dezvoltat DataPlotly  crearea de diagrame interactive direct în QGIS  Folosind Plotly. Acesta suportă parcele scatter, histograme și parcele box, printre altele. Selectarea unui punct într-un complot scatter poate evidenția caracteristica corespunzătoare de pe hartă, ceea ce face mai ușor de văzut unde se află un outlier.",
     "In G3W-SUITE": "În G3W-SUITE",
-    "In the web map, users can filter the chart to features they select or to those visible in the current map view. For example, a chart of property sizes can show only the parcels in view as a user zooms into a neighbourhood. The [widget demo guide](/en/docs/demo-widgets/) shows how to try both filters.": "În harta web, utilizatorii pot filtra graficul pentru a filtra caracteristicile pe care le selectează sau pentru cele vizibile în vizualizarea hărții curente. De exemplu, o hartă de dimensiuni ale proprietății poate arăta doar parcelele în vederea zoom-uri de utilizator într-un cartier. [ ghid demo widget](/en/docs/demo-widgets/)  arată cum să încercați ambele filtre.",
+    "In the web map, users can filter the chart to features they select or to those visible in the current map view. For example, a chart of property sizes can show only the parcels in view as a user zooms into a neighbourhood. The [widget demo guide](/en/docs/try-layer-tools-in-the-demo/) shows how to try both filters.": "În harta web, utilizatorii pot filtra graficul pentru a filtra caracteristicile pe care le selectează sau pentru cele vizibile în vizualizarea hărții curente. De exemplu, o hartă de dimensiuni ale proprietății poate arăta doar parcelele în vederea zoom-uri de utilizator într-un cartier. [ ghid demo widget](/en/docs/try-layer-tools-in-the-demo/)  arată cum să încercați ambele filtre.",
     "Matteo Ghetta - G3W-Suite": "Matteo Ghetta - G3W-Suite",
     "Matteo Ghetta develops DataPlotly, the QGIS plugin used to create interactive charts for G3W-SUITE web maps.": "Matteo Ghetta se dezvoltă DataPlotly, QGIS  modul folosit pentru a crea diagrame interactive pentru G3W-SUITE  hărți web.",
     "The [DataPlotly documentation](https://dataplotly-docs.readthedocs.io/en/latest/intro.html) shows how to combine charts and export them as HTML without losing interactivity. I have also worked on the [QGIS documentation](https://github.com/qgis/QGIS-Documentation/commits?author=ghtmtt), where I added copy buttons to code examples.": ", [DataPlotly  documentația](https://dataplotly-docs.readthedocs.io/en/latest/intro.html)  arată cum să combine diagrame și să le exporte ca HTML fără a pierde interactivitate. Am lucrat, de asemenea, pe [QGIS  documentația](https://github.com/qgis/QGIS-Documentation/commits?author=ghtmtt), unde am adăugat butoane de copiere la exemple de cod."
@@ -275,7 +273,7 @@
     "Use GitHub Discussions to ask questions, exchange ideas and share how you use G3W-SUITE.": "Utilizați Discuții GitHub pentru a pune întrebări, a schimba idei și a partaja modul de utilizare G3W-SUITE.",
     "View the public roadmap": "Vizualizați foaia de parcurs publică"
   },
-  "docs/admin-base-layers.md": {
+  "docs/group-base-layers-and-languages.md": {
     "**Description**": "** Descriere**",
     "**Description:** an internal description of the new Base Layer": "** Descriere:** o descriere internă a noului plan de bază",
     "**Icon:** a descriptive, client-side view of the new Base Layer": "** Pictogramă:** o imagine descriptivă, de partea clientului a noului plan de bază",
@@ -318,9 +316,9 @@
     "Screenshot: Language Admin": "Screenshot: Limba admin",
     "Screenshot: Language Client": "Screenshot: Client de limbi",
     "Screenshot: Language Form": "Screenshot: Formular de limbă",
-    "See [base layer configuration](base_layers.md) for the CRS fields and further examples.": "Vezi? [ configurare strat de bază](base_layers.md)  pentru câmpurile SIR și exemple suplimentare.",
+    "See [base layer configuration](g3w-suite-base-layers.md) for the CRS fields and further examples.": "Vezi? [ configurare strat de bază](g3w-suite-base-layers.md)  pentru câmpurile SIR și exemple suplimentare.",
     "Sessions **`Cartographic MacroGroups`**, **`Cartographic Groups`** and **`WebGis Services`**: contents definable and translatable in the form defining these elements, limited to the items:": "Sesiuni **`Cartographic MacroGroups`**, **`Cartographic Groups`**  şi **`WebGis Services`**: continut definibil si traducator in forma care defineste aceste elemente, limitat la elementele:",
-    "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](g3wsuite_administration.md) session of the Control Panel Administration": "Sesiuni **`Home`**, **`About`**, **`Maps`**  şi **`Login`**: conţinut care poate fi definit şi tradus în [** Editează date generale**](g3wsuite_administration.md) Sesiunea administraţiei comitetului de control",
+    "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](administration-panel.md) session of the Control Panel Administration": "Sesiuni **`Home`**, **`About`**, **`Maps`**  şi **`Login`**: conţinut care poate fi definit şi tradus în [** Editează date generale**](administration-panel.md) Sesiunea administraţiei comitetului de control",
     "Spanish": "Spaniolă",
     "Swedish": "Suedeză",
     "The new Base Layer will then be available and can be activated at the level of individual Cartographic Groups.": "Noul strat de bază va fi disponibil și poate fi activat la nivelul grupurilor cartografice individuale.",
@@ -339,7 +337,7 @@
     "save the new settings": "salvează setările noi",
     "save the settings": "salvează setările"
   },
-  "docs/admin-cartographic-groups.md": {
+  "docs/cartographic-groups.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![ Buton: Salvare](/img/manual-english-buttom-save.avif)",
     "***NB:** the security protocols prevent the creation of screenshots if WMS services with domains other than the publication one are present on the map. **In this case the icons will not be present on the client even if the MapControl is selected.**": "***NB:**  protocoalele de securitate împiedică crearea de capturi de ecran dacă WMS  serviciile cu alte domenii decât publicarea sunt prezente pe hartă. ** În acest caz, icoanele nu vor fi prezente pe client chiar dacă MapControl este selectat.**",
     "**Access and modification powers are managed.**": "**Se gestionează competenţele de acces şi modificare.**",
@@ -372,7 +370,7 @@
     "**addlayers:** tool for temporarily uploading GML, GeoJson, KML, GPX, SHP (zipped) and CSV with coordinate to WebGis. These layers will remain until the end of the work session": "**Addlayers:** instrument pentru încărcarea temporară a GML, GeoJson, KML, GPX, SHP (zipată) și CSV cu coordonate la WebGis. Aceste straturi vor rămâne până la sfârșitul sesiunii de lucru",
     "**annotation:*** an useful tool to add custom texts or geometrics (points, line, cirlce, polygon) annotations to the map and share them": "**Adnotare:*** un instrument util pentru adăugarea de texte personalizate sau geometrii (puncte, linie, cirlce, poligon) adnotări pe hartă și împărtășirea acestora",
     "**area:** surface measuring instrument": "** zonă:** instrument de măsurare a suprafeței",
-    "**geocoding:** address search tools and toponyms based on OSM; see the [dedicated paragraph](editing-geocoding.md) for using map control as a tool for populating project data": "**geocodare:**  adresați-vă instrumentelor de căutare și toponimurilor bazate pe MSO; a se vedea [ paragraf dedicat](editing-geocoding.md)  pentru utilizarea controlului hărții ca instrument de populare a datelor proiectului",
+    "**geocoding:** address search tools and toponyms based on OSM; see the [dedicated paragraph](geocoding.md) for using map control as a tool for populating project data": "**geocodare:**  adresați-vă instrumentelor de căutare și toponimurilor bazate pe MSO; a se vedea [ paragraf dedicat](geocoding.md)  pentru utilizarea controlului hărții ca instrument de populare a datelor proiectului",
     "**geolocation:** geolocation tool  (available only with https certificate)": "**geolocaţie:** instrument de geolocație (disponibil numai cu certificat de operator)",
     "**geoscreenshot:*** tool to create a GeoTIFF of the map area": "**geoscreenhot:*** instrument de creare a unui GeoTIFF al zonei de hartă",
     "**length:** linear measuring instrument": "** lungime:** instrument liniar de măsurare",
@@ -408,13 +406,14 @@
     "In the event that the Group is created by an Editor1 type user, the Group will be automatically associated with the MacroGroup associated with the same Editor1.": "În cazul în care grupul este creat de un utilizator de tip Editor1, grupul va fi asociat automat cu MacroGroup asociat cu același Editor1.",
     "In the left side menu there is the **Cartographic Groups** item with two sub-items:": "În meniul din stânga este ** Grupuri cartografice** element cu două subposturi:",
     "In this box you can define:": "În această casetă puteți defini:",
-    "In this regard, consult the section on [**base layers**](admin-base-layers.md).": "În acest sens, consultaţi secţiunea privind [** straturi de bază**](admin-base-layers.md).",
-    "Learn more about this in the [dedicated session](user_groups_organization).": "Aflaţi mai multe despre acest lucru în [ sesiune dedicată](user_groups_organization).",
+    "In this regard, consult the section on [**base layers**](group-base-layers-and-languages.md).": "În acest sens, consultaţi secţiunea privind [** straturi de bază**](group-base-layers-and-languages.md).",
+    "Learn more about this in the [dedicated session](webgis-roles-and-organization.md).": "Aflaţi mai multe despre acest lucru în [ sesiune dedicată](webgis-roles-and-organization.md).",
     "Let's see in detail the various sub-sessions of the group creation form.": "Să vedem în detaliu diferitele sub-sesiuni ale forma de creare a grupului.",
     "Let’s see in detail the various sub-sessions of the ACL Users session:": "Să vedem în detaliu diferitele sub-sesiuni ale sesiunii utilizatorilor ACL:",
     "Logo/Picture": "Logo/Pictură",
     "MacroGroups": "Macrogrupuri",
     "Manage cartographic groups": "Gestionează grupuri cartografice",
+    "Manage existing Cartographic Groups or create new ones.": "Gestionează grupurile cartografice existente sau creează altele noi.",
     "Remember that it is possible to build customized Base Layers starting from open external Base Layer or from the contenents of a projects published on the suite.": "Amintiți-vă că este posibil să se construiască straturi de bază personalizate începând de la deschis plan extern de bază sau de la contenenții unui proiect publicat pe suită.",
     "Screenshot: G3W-SUITE Administration Group Add ACL": "Captură de ecran: G3W-SUITE  Grup de administrare Adaugă ACL",
     "Screenshot: G3W-SUITE Administration Group Add Geodata": "Captură de ecran: G3W-SUITE  Grup de administrare Adaugă date geodate",
@@ -423,7 +422,7 @@
     "The option **`Propagate viewers user (single and groups) permissions`** allows you to propagate the Viewer users (individuals and/or groups) associated to the Group to ALL the WebGis services present in it.": "Opțiunea **`Propagate viewers user (single and groups) permissions`**  permite propagarea utilizatorilor de Viewer (persoane fizice și/sau grupuri) asociați Grupului la TOATE serviciile WebGis prezente în acesta.",
     "The options present will vary according to the type of user (Admin or Editor1) who creates/manages the Group": "Opțiunile prezente vor varia în funcție de tipul de utilizator (Admin sau Editor1) care creează/gestionează Grupul",
     "This option is available only if Cartographic macro groups have been created": "Această opțiune este disponibilă numai dacă au fost create macrogrupuri cartografice",
-    "To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-widgets-setup.md) section.": "Pentru a evita acest lucru, setați WMS  cum ** internă WMS**  în [ Gestionarea widget-ului](admin-widgets-setup.md) Sectiunea.",
+    "To avoid this, set the WMS as **internal WMS** in the [Widget management](layer-tools.md) section.": "Pentru a evita acest lucru, setați WMS  cum ** internă WMS**  în [ Gestionarea widget-ului](layer-tools.md) Sectiunea.",
     "You can also access the list of groups by clicking on the **\"Show\"** button in the **Cartographic Groups** box on the **Dashboard**.": "Puteți accesa, de asemenea, lista de grupuri făcând clic pe **\"Arată\"**  buton în ** Grupuri cartografice**  cutie pe **Tablou de bord**.",
     "You can switch between WebGIS services while keeping the map extent and scale only when their projects belong to the same cartographic group.": "Puteți schimba între serviciile WebGIS păstrând în același timp amploarea și scara hărții numai atunci când proiectele lor aparțin aceluiași grup cartografic.",
     "_**Manage existing Cartographic Groups or create new ones.**_": "_**Gestionează grupurile cartografice existente sau creează altele noi.**_",
@@ -434,7 +433,7 @@
     "title associated with the **Cartographic MacroGroup**": "titlul asociat **MacroGroup cartografic**",
     "title of the WebGis service": "titlul serviciului WebGis"
   },
-  "docs/admin-charts.md": {
+  "docs/configure-charts.md": {
     "![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) QPlotly widget": "![ Pictogramă: Dateplotly](/img/manual-english-icon-dataplotly.avif) QPlotly widget",
     "![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)": "![Captură de ecran: G3W-SUITE Ploturi de administrare](/img/manual-english-g3wsuite-administration-plots.avif)",
     "![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.avif)": "![Captură de ecran: G3W-SUITE Ploturi de clienți](/img/manual-english-g3wsuite-client-plots.avif)",
@@ -481,13 +480,14 @@
     "The chart title comes from the DataPlotly plugin and is used as its label in G3W-SUITE.": "Titlul graficului vine de la DataPlotly  modul și este utilizat ca eticheta sa în G3W-SUITE.",
     "The module, based on the [Plotly library](https://plotly.com/), , manages plots builts and saved as xml in the DataPlotly QGIS plugin.": "Modulul, bazat pe [ Bibliotecă plotly](https://plotly.com/), , gestionează parcele construite și salvate ca xml în DataPlotly QGIS  Modul.",
     "To access the configuration menu, click on the **'Project QPlotly widgets order'** icon ![Icon: Chart Order](/img/manual-english-icon-chart-order.avif)": "Pentru a accesa meniul de configurare, faceți clic pe **\"Proiect QPlotly widgets order\"**  Pictogramă![ Pictogramă: Ordinea grafică](/img/manual-english-icon-chart-order.avif)",
+    "View plots created using QGIS DataPlotly (a great plugin developed by Matteo Ghetta) in the cartographic client.": "** Vizualizează parcelele create folosind QGIS DataPlotly (un modul mare dezvoltat de Matteo Ghetta) în clientul cartografic.**",
     "You can use Drag&Drop to define the order on the widget list": "Puteți utiliza Drag&Drop pentru a defini ordinea de pe lista de widget",
     "access the list of graphs associated with a specific layer": "accesarea listei graficelor asociate unui anumit strat",
     "click the Related widgets icon for one of the graphs to which you want to associate other graphs": "click pe pictograma Widget-uri conexe pentru unul dintre graficele la care doriți să asociați alte grafice",
     "in the window, add the graphs that will make up the multiple graph from those already present and associated with the layer": "în fereastră, adăugați graficele care vor alcătui graficul multiplu de la cele deja prezente și asociate cu stratul",
     "sort the graphs to define their display order (the title shown will be the one associated with the first graph in the list).": "sortează graficele pentru a defini ordinea de afișare (titlul afișat va fi cel asociat cu primul grafic din listă)."
   },
-  "docs/admin-group-management.md": {
+  "docs/manage-cartographic-groups.md": {
     "![Icon: Add](/img/manual-english-icon-add.avif) **Add a new project (QGIS)** to be published as WebGis service": "![ Pictogramă: Adaugă](/img/manual-english-icon-add.avif) **Adaugă un nou proiect (QGIS)** care urmează să fie publicat ca serviciu WebGis",
     "![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** group definitions": "![ Pictogramă: Editare](/img/manual-english-icon-edit.avif) ** Modificare**  definiţii de grup",
     "![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** group": "![ Pictogramă: Ştergere](/img/manual-english-icon-erase.avif) ** Șterge**  grup",
@@ -503,6 +503,7 @@
     "Drag and drop groups to change their order in the list.": "Trageți și picătură grupuri pentru a schimba ordinea lor în listă.",
     "Filter cartographic groups by:": "Grupuri cartografice de filtrare:",
     "For each group, the Title and associated EPSG are shown.": "Pentru fiecare grup, titlul și asociate EPSG  sunt prezentate.",
+    "From this item you can access the list of the created cartographic groups.": "** Din acest articol puteți accesa lista grupurilor cartografice create.**",
     "General operations": "Operațiuni generale",
     "Groups List": "Listă grupe",
     "In case of request to delete the Cartographic Group, a popup will ask whether the deletion of the Group should be permanent or a simple deactivation, which can be restored from the Trash menu.": "În cazul solicitării de a șterge grupul Cartografic, un popup va întreba dacă ștergerea grupului ar trebui să fie permanentă sau o dezactivare simplă, care poate fi restabilită din meniul Trash.",
@@ -525,7 +526,7 @@
     "the associated EPSG": "asociate EPSG",
     "the associated Editor1/Editor2 users and Editor2/Viewer user groups": "utilizatorii asociați Editor1/Editor2 și grupurile de utilizatori Editor2/Viewer"
   },
-  "docs/admin-publishing.md": {
+  "docs/publish-and-update-webgis-services.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![ Buton: Salvare](/img/manual-english-buttom-save.avif)",
     "![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.avif) **Download of the QGIS project**": "![Screenshot: Iconmic Download](/img/manual-english-iconsmall-download.avif) ** Descărcarea QGIS  proiect**",
     "![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) **Update a project:** update of the QGIS file and other options related to the project": "![Screenshot: Editare iconmic](/img/manual-english-iconsmall-edit.avif) **Actualizează un proiect:**  actualizarea QGIS  fișier și alte opțiuni legate de proiect",
@@ -560,7 +561,7 @@
     "**`Map themes list initial status`**: it is possible to define whether the list of themes (views) possibly associated with the project is collapsed or expanded when the WebGis service is started": "**`Map themes list initial status`**: este posibil să se definească dacă lista temelor (vizurilor) asociate eventual proiectului este prăbușită sau extinsă la începerea serviciului WebGis",
     "**`Max feature to get for query`***: maximum number of features returned in single or multiple query mode (default: 5; recommended value: 50)": "**`Max feature to get for query`***: numărul maxim de caracteristici returnate în modul de interogare unică sau multiplă (default: 5; valoare recomandată: 50)",
     "**`Public title`:** title of the WebGis service, it will appear at the font end level and in the header of the client.": "**`Public title`:**  titlul serviciului WebGis, acesta va apărea la nivelul de capăt al fontului și în antetul clientului.",
-    "**`QGIS file`**: upload the `.qgz` or `.qgs` project. Uploading the project is not a substitute for making its data sources available to QGIS Server. If a file-based layer is missing after publishing or updating, verify the server-side paths against the [data management guide](datamanagement.md).": "**`QGIS file`**: încărcați `.qgz`  sau `.qgs`  proiectul. Încarcarea proiectului nu este un substitut pentru punerea la dispoziţia surselor sale de date QGIS Server. Dacă un strat bazat pe fișiere lipsește după publicare sau actualizare, verificați căile de server-side împotriva [ ghidul de gestionare a datelor](datamanagement.md).",
+    "**`QGIS file`**: upload the `.qgz` or `.qgs` project. Uploading the project is not a substitute for making its data sources available to QGIS Server. If a file-based layer is missing after publishing or updating, verify the server-side paths against the [data management guide](manage-qgis-data.md).": "**`QGIS file`**: încărcați `.qgz`  sau `.qgs`  proiectul. Încarcarea proiectului nu este un substitut pentru punerea la dispoziţia surselor sale de date QGIS Server. Dacă un strat bazat pe fișiere lipsește după publicare sau actualizare, verificați căile de server-side împotriva [ ghidul de gestionare a datelor](manage-qgis-data.md).",
     "**`Query by bbox control mode`***: single or multiple": "**`Query by bbox control mode`***: singur sau multiplu",
     "**`Query by polygon control mode`***: single or multiple": "**`Query by polygon control mode`***: singur sau multiplu",
     "**`Query control mode`***: single or multiple": "**`Query control mode`***: singur sau multiplu",
@@ -597,7 +598,7 @@
     "In this session it is also possible to define which of the cartographic projects loaded within the group will be used as a panoramic map.": "În această sesiune este posibilă definirea care dintre proiectele cartografice încărcate în cadrul grupului vor fi utilizate ca o hartă panoramică.",
     "It is possible to access the list of trashed Projects and the restore functions through the tab Trash positioned just above the list of published projects": "Este posibil să accesăm lista proiectelor distruse și a funcțiilor de restaurare prin tab-ul Trash poziționat chiar deasupra listei de proiecte publicate",
     "It is possible to define a custom order by moving the published projects via drag&drop.": "Este posibil să se definească un ordin personalizat prin mutarea proiectelor publicate prin drag&drop.",
-    "Learn more about this in the [dedicated session](user_groups_organization).": "Aflaţi mai multe despre acest lucru în [ sesiune dedicată](user_groups_organization).",
+    "Learn more about this in the [dedicated session](webgis-roles-and-organization.md).": "Aflaţi mai multe despre acest lucru în [ sesiune dedicată](webgis-roles-and-organization.md).",
     "Let’s see in detail the various sub-sessions of the ACL Users session:": "Să vedem în detaliu diferitele sub-sesiuni ale sesiunii utilizatorilor ACL:",
     "Messages": "Mesaje",
     "Name of the QGIS project file": "Denumirea QGIS  fișier proiect",
@@ -607,7 +608,7 @@
     "Public title: if set": "Titlul public: dacă este stabilit",
     "Publication of new WebGis services": "Publicarea de noi servicii WebGis",
     "Publish and update WebGIS services": "Publică și actualizează serviciile WebGIS",
-    "Publish new QGIS projects:": "Editează nou QGIS  proiecte:",
+    "Publish new QGIS projects:": "Editează nou QGIS proiecte:",
     "QGIS project": "QGIS  proiect",
     "QGIS project title: if set on the **General session** of **QGIS project properties**": "QGIS  titlul proiectului: dacă este stabilit pe **Sesiunea generală**  din **QGIS  Proprietățile proiectului**",
     "Restoring a Project involves restoring all the accessory settings/functions of  the project (permissions, searches, editing settings, downloads, etc...).": "Restaurarea unui proiect presupune restaurarea tuturor setărilor/funcţiilor accesorii ale proiectului (permisii, căutări, editarea seturilor, descărcări, etc...).",
@@ -622,7 +623,7 @@
     "Screenshot: Messages New": "Captură de ecran: Mesaje noi",
     "Screenshot: Project Delete": "Screenshot: Ștergere proiect",
     "Screenshot: Tools Details": "Captura de ecran: Unelte Detalii",
-    "See [embedded projects](projectsettings-properties.md#embedded-project) for the publication order and how updates affect dependent projects.": "Vezi? [ proiecte integrate](projectsettings-properties.md#embedded-project)  pentru ordinea de publicare și modul în care actualizările afectează proiectele dependente.",
+    "See [embedded projects](project-properties.md#embedded-project) for the publication order and how updates affect dependent projects.": "Vezi? [ proiecte integrate](project-properties.md#embedded-project)  pentru ordinea de publicare și modul în care actualizările afectează proiectele dependente.",
     "Setting up the overview map for WebGis services": "Crearea hărții de prezentare a serviciilor WebGis",
     "Show details": "Arată detalii",
     "The Project with all its related content (widgets and settings) is moved to the Trash session.": "Proiectul cu tot conţinutul său (widget-uri şi setări) este mutat la sesiunea de gunoi.",
@@ -655,7 +656,7 @@
     "visibility constraints on attribute fields": "constrângeri de vizibilitate în domeniile atributelor",
     "visibility constraints on layers": "constrângeri de vizibilitate pe straturi"
   },
-  "docs/admin-search.md": {
+  "docs/search-widgets.md": {
     "![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools": "![ Pictogramă: Widget](/img/manual-english-icon-widget.avif) Setare widget - instrumente de căutare",
     "![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)": "![Screenshot: Demo Căutare Rezultat](/img/manual-english-demo-search-result.avif)",
     "![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.avif)": "![Captură de ecran: G3W-SUITE Formular de căutare proiect de administrare](/img/manual-english-g3wsuite-administration-project-search-form.avif)",
@@ -716,6 +717,7 @@
     "Tip": "Sfat",
     "To **create a new search**, click on the link **`New widget`**.": "La ** creează o nouă căutare**, faceți clic pe link-ul **`New widget`**.",
     "To **deactivate a search** from a project, simply disconnect it using the check-box on the right.": "La ** Dezactivează căutarea**  dintr-un proiect, deconectați-l folosind caseta de check-uri din dreapta.",
+    "Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.": "** Utilizați această pictogramă pentru a adăuga widget-uri la strat. Widget-ul de bază definește instrumentele de căutare disponibile în WebGIS.**",
     "Value maps": "Hărți valorice",
     "Value relations": "Relaţii de valoare",
     "`AutoCompleteBox`: values ​​shown through auto-complete mode": "`AutoCompleteBox`: valori afișate prin modul automat complet",
@@ -723,7 +725,7 @@
     "`InputBox`: manual compilation": "`InputBox`: compilare manuală",
     "`SelectBox`: values ​​shown via drop-down menu": "`SelectBox`: valori afișate prin meniu de drop-down"
   },
-  "docs/admin-users.md": {
+  "docs/users-and-macro-groups.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![ Buton: Salvare](/img/manual-english-buttom-save.avif)",
     "![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** characteristics of the MacroGroup": "![ Pictogramă: Editare](/img/manual-english-icon-edit.avif) ** Modificare**  caracteristicile macrogrupului",
     "![Icon: Edit](/img/manual-english-icon-edit.avif) **Modify:** to modify the characteristics of the group": "![ Pictogramă: Editare](/img/manual-english-icon-edit.avif) ** Modificare:**  modificarea caracteristicilor grupului",
@@ -771,7 +773,7 @@
     "Assign one or more Editor1 users to a cartographic macro-group when you need to delegate content management.": "Trimite unul sau mai mulți utilizatori Editor1 unui macro-grup cartografic atunci când trebuie să delegeți managementul conținutului.",
     "Associated Cartographic MacroGroups (optional)": "Macrogrupuri cartografice asociate (opțional)",
     "Backend: info on user creation (G3W-SUITE or LDAP)": "Platformă: informații privind crearea utilizatorilor (G3W-SUITE  sau LDAP)",
-    "Client header composition follows the [Cartographic Group logo settings](admin-cartographic-groups.md).": "Compoziţia antetului clientului urmează [Configurări logo-ul Grupului Cartografic](admin-cartographic-groups.md).",
+    "Client header composition follows the [Cartographic Group logo settings](cartographic-groups.md).": "Compoziţia antetului clientului urmează [Configurări logo-ul Grupului Cartografic](cartographic-groups.md).",
     "Created: creation date": "Creat: data creării",
     "Define the MacroGroups order on the FrontEnd": "Defineşte ordinul macrogrupurilor de pe FrontEnd",
     "Deleting a macro-group removes its associations with cartographic groups. It does not delete the groups, their projects, or their widgets. A cartographic group can belong to more than one macro-group.": "Eliminarea unui macrogrup elimină asociaţiile sale cu grupuri cartografice. Nu şterge grupurile, proiectele lor sau widget-urile lor. Un grup cartografic poate aparţine mai multor macrogrupuri.",
@@ -781,10 +783,11 @@
     "General data": "Date generale",
     "Groups users list": "Lista utilizatorilor grupurilor",
     "In the left side menu there is the **Users** item with four sub-items:": "În meniul din stânga este ** Utilizatori** element cu patru subposturi:",
+    "In the left side menu there is the Users item with four sub-items:": "În meniul din stânga este ** Utilizatori** element cu patru subposturi:",
     "In the specific form for creating user groups, the following info are defined:": "În forma specifică pentru crearea grupurilor de utilizatori, sunt definite următoarele informații:",
     "In this section it is possible to view the list of Cartographic Macrogroups, manage them and create new ones.": "În această secțiune este posibil să vizualizați lista macrogrupurilor cartografice, să le gestionați și să le creați noi.",
     "It is possible to create only two types of user groups:": "Este posibil să se creeze doar două tipuri de grupuri de utilizatori:",
-    "Learn more about this in the [dedicated session](user_groups_organization)": "Aflaţi mai multe despre acest lucru în [ sesiune dedicată](user_groups_organization)",
+    "Learn more about this in the [dedicated session](webgis-roles-and-organization.md)": "Aflaţi mai multe despre acest lucru în [ sesiune dedicată](webgis-roles-and-organization.md)",
     "Macro Cartographic Groups": "Grupuri macrocartografice",
     "MacroGroups list": "Lista macrogrupurilor",
     "Main roles (**Editor1, Editor2 or Viewer**)": "Principalele roluri (** Editor1, Editor2 sau Vizualizator**)",
@@ -795,7 +798,7 @@
     "Screenshot: G3W-SUITE Administration User List": "Captură de ecran: G3W-SUITE  Lista utilizatorilor de administrare",
     "Screenshot: G3W-SUITE Administration Usergroup Add": "Captură de ecran: G3W-SUITE  Administraţie Grup Utilizator Adaugă",
     "Screenshot: G3W-SUITE Administration Usergroup List": "Captură de ecran: G3W-SUITE  Lista utilizatorilor de grup de administrare",
-    "See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization.md) to learn more about this aspect.": "A se vedea capitolul [ Organizarea ierarhică a serviciilor WebGis și a tipurilor de utilizatori](user_groups_organization.md)  să aflu mai multe despre acest aspect.",
+    "See chapter [Hierarchical organization of WebGis services and types of Users](webgis-roles-and-organization.md) to learn more about this aspect.": "A se vedea capitolul [ Organizarea ierarhică a serviciilor WebGis și a tipurilor de utilizatori](webgis-roles-and-organization.md)  să aflu mai multe despre acest aspect.",
     "State of user: active/deactivated": "Starea utilizatorului: activ/deactivat",
     "Super user and Staff privileges": "Super-utilizator și privilegii de personal",
     "The association between user and user groups can also be achieved at the individual user management level.": "Asocierea dintre grupuri de utilizatori și utilizatori poate fi realizată și la nivelul de gestionare individuală a utilizatorilor.",
@@ -815,7 +818,7 @@
     "Users list": "Lista utilizatorilor",
     "Using the icons at the head of each row, you can:": "Folosind icoanele din capul fiecărui rând, puteți:"
   },
-  "docs/admin-widgets-controls.md": {
+  "docs/layer-visibility-and-constraints.md": {
     "![Icon: Chart Order](/img/manual-english-icon-chart-order.avif) **`Project’s Qplotly widget order`:** allows you to define the display order of active graphs at the client interface level": "![ Pictogramă: Ordinea grafică](/img/manual-english-icon-chart-order.avif) **`Project’s Qplotly widget order`:**  permite definirea ordinii de afișare a graficelor active la nivelul interfeței client",
     "![Icon: Clone Users](/img/manual-english-icon-clone-users.avif) **`Copy permissions`:** allows you to clone all the settings defined for a user (editing permissions, various constraints...), relating to the project being managed, and assign them to other users": "![ Pictogramă: Utilizatori de clone](/img/manual-english-icon-clone-users.avif) **`Copy permissions`:**  permite clonarea tuturor setărilor definite pentru un utilizator (editare permisiuni, diferite constrângeri...), legate de proiectul administrat, și atribuirea acestora altor utilizatori",
     "![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.avif) ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.avif) Display and editing constraints": "![ Pictogramă: Geoconstrângeri](/img/manual-english-icon-geoconstraints.avif) ![ Pictogramă: Constrângeri alfa](/img/manual-english-icon-alpha-constraints.avif) Constrângeri de afișare și editare",
@@ -834,16 +837,17 @@
     "Screenshot: G3W-SUITE Administration Hide Columns New": "Captură de ecran: G3W-SUITE  Administraţie Ascunde coloanele noi",
     "Screenshot: G3W-SUITE Administration Styles": "Captură de ecran: G3W-SUITE  Stiluri de administrare",
     "Search widgets": "Căutare widget-uri",
-    "See the dedicated paragraph in [Administration settings for editing](editing-administration-settings.md).": "A se vedea paragraful dedicat din [Setări de administrare pentru editare](editing-administration-settings.md).",
+    "See the dedicated paragraph in [Administration settings for editing](editing-permissions.md).": "A se vedea paragraful dedicat din [Setări de administrare pentru editare](editing-permissions.md).",
     "This setting is also available for the AnonymousUser user": "Această setare este disponibilă și pentru utilizatorul AnonimUser",
     "Through the **Geo-constraints by user/group** and **Alphanumeric and QGIS expressions constraints by user/groups**  widgets it is possible to define editing and display filters for users authorized to consult/edit the project.": "Prin intermediul **Constrângeri geografice pe utilizator/grup**  şi **Alfanumerice și QGIS  constrângeri de exprimare ale utilizatorilor/grupurilor**  widget-uri este posibil să se definească editarea și afișarea filtrelor pentru utilizatorii autorizați să consulte / editeze proiectul.",
+    "Through the Geo-constraints by user/group and Alphanumeric and QGIS expressions constraints by user/groups widgets it is possible to define editing and display filters for users authorized to consult/edit the project.": "Prin intermediul Constrângeri geografice pe utilizator/grup şi Alfanumerice și QGIS constrângeri de exprimare ale utilizatorilor/grupurilor widget-uri este posibil să se definească editarea și afișarea filtrelor pentru utilizatorii autorizați să consulte / editeze proiectul.",
     "To activate this type of constraint, you must click, at the level of the layer of interest, on the Hide columns by User/Groups icon ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.avif).": "Pentru a activa acest tip de constrângere, trebuie să faceți clic, la nivelul stratului de interes, pe coloanele Hide de către pictograma Utilizator/Grupuri![ Pictogramă: Ascunde coloanele](/img/manual-english-icon-hide-columns.avif).",
     "Widgets management": "Gestionarea dispozitivelor de control",
     "list of fields to hide": "lista câmpurilor de ascuns",
     "list of users for whom these fields should be hidden": "lista utilizatorilor pentru care aceste câmpuri trebuie ascunse",
     "list of users groups for whom these fields should be hidden": "lista grupurilor de utilizatori pentru care aceste câmpuri ar trebui ascunse"
   },
-  "docs/admin-widgets-setup.md": {
+  "docs/layer-tools.md": {
     "![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.avif) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions": "![ Pictogramă: Constrângeri alfa](/img/manual-english-icon-alpha-constraints.avif) **Alfanumerice și QGIS  constrângeri de exprimare ale utilizatorilor/grupurilor:**  crearea sau gestionarea constrângerilor de editare și vizualizare bazate pe limba SLQ sau QGIS  expresii",
     "![Icon: Cache](/img/manual-english-icon-cache.avif) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level": "![ Pictogramă: Cache](/img/manual-english-icon-cache.avif) ** Strat de cache:**  permite activarea si administrarea cache-ului unui singur strat la nivelul proiectului",
     "![Icon: Cache](/img/manual-english-icon-cache.avif) Caching layer": "![ Pictogramă: Cache](/img/manual-english-icon-cache.avif)  Strat de cache",
@@ -888,11 +892,12 @@
     "Configure charts": "Configurează diagrame",
     "In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.": "În cazul în care nu există o altă formă de finanțare WMS, serviciul este gestionat de Django și acest lucru elimină problemele de domeniu cross-, dar singurul tip de răspuns GetFeatureInfo gestionat este GML.",
     "Layer tools": "Unelte plan",
-    "Learn more about how to create a new base layer in the [dedicated section](admin-base-layers.md).": "Aflaţi mai multe despre cum să creaţi un nou strat de bază în [secţiune dedicată](admin-base-layers.md).",
+    "Learn more about how to create a new base layer in the [dedicated section](group-base-layers-and-languages.md).": "Aflaţi mai multe despre cum să creaţi un nou strat de bază în [secţiune dedicată](group-base-layers-and-languages.md).",
     "Next to each layer are a series of icons and checkboxes:": "Lângă fiecare strat sunt o serie de icoane și cutii de checkbox:",
     "Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Odată ce un proiect cartografic a fost publicat, tu eşti pictograma ![Screenshot: Iconmic Layerlist](/img/manual-english-iconsmall-layerlist.avif)  este posibil să se acceseze lista statelor geografice care compun și să se definească anumite aspecte funcționale care vor fi activate la nivelul clienților cartografici.",
+    "Once a cartographic project has been published, thougth the icon it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Odată ce un proiect cartografic a fost publicat, tu eşti pictograma este posibil să se acceseze lista statelor geografice care compun și să se definească anumite aspecte funcționale care vor fi activate la nivelul clienților cartografici.",
     "Screenshot: G3W-SUITE Administration Hide Layer": "Captură de ecran: G3W-SUITE Ascunde plan de administrare",
-    "See the dedicated section on [editing administration settings](editing-administration-settings.md).": "Vezi secțiunea dedicată pe [ editarea setărilor de administrare](editing-administration-settings.md).",
+    "See the dedicated section on [editing administration settings](editing-permissions.md).": "Vezi secțiunea dedicată pe [ editarea setărilor de administrare](editing-permissions.md).",
     "The cache for the selected layer can be saved as a Base Layer, including when the published project contains other layers.": "Cache-ul pentru stratul selectat poate fi salvat ca un strat de bază, inclusiv atunci când proiectul publicat conține alte straturi.",
     "The external WMS option allows obtaining a response to the query (GetFeatureInfo) even if the response is not in GML but also in HTML or text/plain format.": "Exteriorul WMS  opțiunea permite obținerea unui răspuns la interogare (GetFeatureInfo) chiar dacă răspunsul nu este în GML, ci și în format HTML sau text/scenar.",
     "The eye icon shows the layer ID used in parameterized URLs.": "Pictograma ochilor arată ID-ul strat utilizat în URL-uri parametrizat.",
@@ -906,13 +911,14 @@
     "With this icon it is possible to **activate/manage the cache of the single layers** and **create XYZ Tiles layer** that you can use as **Base Layer** in your WebGis.": "Cu această pictogramă este posibil să ** activați/administrați cache-ul straturilor unice**  şi ** creați stratul de dale XYZ** pe care le puteți folosi ca ** Strat de bază**  în WebGis.",
     "With this icon it will be possible to define the list of users (single and/or groups) who will be enabled to view this layer at the TOC and map level.": "Cu această pictogramă va fi posibilă definirea listei utilizatorilor (singure și/sau grupuri) care vor putea vizualiza acest strat la nivelul TOC și al hărții."
   },
-  "docs/base_layers.md": {
+  "docs/g3w-suite-base-layers.md": {
     "**IMPORTANT** the configurations shown above are not `JSON` but are `Python dict`": "**IMPORTANT** configurările prezentate mai sus nu sunt `JSON` dar sunt `Python dict`",
     "**\\*** mandatory parameters": "**\\***  parametri obligatorii",
+    "Add, edit or delete Base layers for WebGIS services at the Cartographic Group level. These layers are independent of the project.": "Adaugă, editează sau șterge Base layers pentru serviciile WebGIS la nivel de Cartographic Group. Aceste straturi sunt independente de proiect.",
     "Add, edit or delete `Base layers` for WebGIS services at the Cartographic Group level. These layers are independent of the project.": "Adaugă, editează sau șterge `Base layers`  pentru serviciile WebGIS la nivel de Cartographic Group. Aceste straturi sunt independente de proiect.",
     "Below is a brief description of the parameters:": "Mai jos este o scurtă descriere a parametrilor:",
     "Form fields:": "Câmpuri de formă:",
-    "G3W-SUITE base layers": "G3W-SUITE  straturi de bază",
+    "G3W-SUITE base layers": "G3W-SUITE straturi de bază",
     "In the `Property` field, you can configure `TMS`, `WMS`, and `WMTS` services as base layers. Below are some examples:": "În `Property`  câmp, puteți configura `TMS`, `WMS`, și `WMTS`  serviciile ca straturi de bază. Mai jos sunt câteva exemple:",
     "Only users with the `Admin level 1` role can configure base layers in the Django admin interface.": "Numai utilizatorii cu `Admin level 1`  rol poate configura straturi de bază în interfața admin Django.",
     "Screenshot: Configuration Django Admin Access": "Screenshot: Configurare acces admin Django",
@@ -1013,7 +1019,7 @@
     "using the icon and as tooltip the title of the dictionary.": "utilizarea pictogramei și ca instrument de vârf titlul dicționarului.",
     "we get the following result:": "obţinem următorul rezultat:"
   },
-  "docs/client-bottom-session.md": {
+  "docs/bottom-panel-and-time-series.md": {
     "**Label (optional):** the field to use to label the features": "** Eticheta (opțional):**  câmpul care trebuie utilizat pentru a eticheta caracteristicile",
     "**N.B.** the added WMS layer cannot not be queried.": "**N.B.** se adaugă WMS  Stratul nu poate fi interogat.",
     "**N.B.:** the added TMS layer cannot not be queried.": "**N.B.:**  stratul TMS adăugat nu poate fi interogat.",
@@ -1074,7 +1080,7 @@
     "the **Position** (top or buttom) with respect to the other layers of the project": "• ** Poziția** (de sus sau de jos) în ceea ce privește celelalte straturi ale proiectului",
     "the **Projection system** to be associated": "• ** Sistem de proiectie** a fi asociat"
   },
-  "docs/client-layers.md": {
+  "docs/layers-and-attribute-table.md": {
     "![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.avif) Clear selection": "![Screenshot: tabel de selecție G3wclient clar](/img/manual-english-g3wclient-selection-table-clear.avif)  Șterge selecția",
     "![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.avif) Add/Remove filter": "![Screenshot: Filtru de tabel de selecție G3wclient](/img/manual-english-g3wclient-selection-table-filter.avif) Adaugă/Elimină filtru",
     "![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.avif) Invert selection": "![Screenshot: Tabel de selecție G3wclient Invert](/img/manual-english-g3wclient-selection-table-invert.avif) Inversează selecția",
@@ -1127,6 +1133,7 @@
     "The presence of an active filter on the layer is highlighted by the red icon next to the layer name.": "Prezența unui filtru activ pe strat este evidențiată de pictograma roșie de lângă numele stratului.",
     "The saved filters can be recovered via the dedicated menu that can be viewed by right-clicking on the name of the layer": "Filtrele salvate pot fi recuperate prin meniul dedicat care poate fi vizualizat prin click-dreapta pe numele stratului",
     "The selection of features can be made:": "Selectarea caracteristicilor se poate face:",
+    "This session shows the layers prepared on QGIS projects with the same organization the groups and subgroups.": "** Această sesiune prezintă straturile pregătite pe QGIS proiecte cu aceeași organizație grupurile și subgrupurile.**",
     "To be filtered, the geometries object of the filter must first be selected.": "Pentru filtrare, obiectul geometriei filtrului trebuie selectat mai întâi.",
     "To deactivate an active filter, simply click on the icon itself.": "Pentru a dezactiva un filtru activ, pur și simplu faceți clic pe pictograma însăși.",
     "To the left of each record in the table there are two/three tools:": "La stânga fiecărei înregistrări din tabel sunt două/trei instrumente:",
@@ -1158,7 +1165,7 @@
     "the ‘Show relations’ icon to open the list of 1:N relations (if present) of thath parent record": "the ‘Show relations’ icon to open the list of 1:N relations (if present) of thath parent record",
     "to the right of the layer on the TOC": "la dreapta stratului de pe COT"
   },
-  "docs/client-map-interaction.md": {
+  "docs/map-navigation-and-queries.md": {
     "![Icon: Navigation Addlayer](/img/manual-english-icon-navigation-addlayer.avif) **`Add layer`:** tool for temporarily uploading GML, GeoJson, KML, GPX, SHP (zipped) and CSV with coordinate to WebGis, or to add a custom WMS service": "![ Pictogramă: Navigație Addlayer](/img/manual-english-icon-navigation-addlayer.avif) **`Add layer`:** instrument pentru încărcarea temporară a GML, GeoJson, KML, GPX, SHP (zipată) și CSV cu coordonate la WebGis, sau pentru a adăuga un personalizat WMS  serviciu",
     "![Icon: Navigation Annotations](/img/manual-english-icon-navigation-annotations.avif) **`Redlinining`:** tool to add annotations or drawings objects to the map. For each of them it will be possible to define size, color, transparency, labeling and more. The elements drawn on the map will be shareable together with the other settings of the WebGis service and reported in the print output. The tool permits to create this type of annotations:": "![ Pictogramă: annotații de navigare](/img/manual-english-icon-navigation-annotations.avif) **`Redlinining`:** instrument de adaugare adnotari sau desene obiecte pe harta. Pentru fiecare dintre ele va fi posibil sa se definească dimensiunea, culoarea, transparenta, etichetarea si mai mult. Elementele desenate pe harta vor fi partajabile impreuna cu celelalte setari ale serviciului WebGis si raportate in rezultatul tiparului. Instrumentul permite crearea acestui tip de adnotari:",
     "![Icon: Navigation Fitextent](/img/manual-english-icon-navigation-fitextent.avif) **`Fit to extent`:** zoom to the initial extension": "![ Pictogramă: Fitextent de navigare](/img/manual-english-icon-navigation-fitextent.avif) **`Fit to extent`:**  Măreşte la extensia iniţială",
@@ -1205,7 +1212,7 @@
     "text labels": "etichete text",
     "within": "în"
   },
-  "docs/client-map-queries.md": {
+  "docs/map-queries-and-results.md": {
     "![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.avif) **Area query**": "![ Pictogramă: Zona de interogare a navigației](/img/manual-english-icon-navigation-query-area-icon.avif) **Interogare zonă**",
     "![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.avif) **Point query**": "![ Pictogramă: Interogare de navigaţie](/img/manual-english-icon-navigation-querylayer.avif) **Interogare punct**",
     "**Add feature on result:** add features (clicking on the map) to the current list of results (useful to choose manually the list of objects to select/download)": "**Adaugă caracteristică la rezultat:**  adăuga caracteristici (click pe hartă) la lista curentă de rezultate (util pentru a alege manual lista de obiecte pentru a selecta / descărca)",
@@ -1234,7 +1241,7 @@
     "Display 1:1 (join) and 1:N relation data": "Afișează datele referitoare la 1:1 (asociere) și 1:N",
     "Encode special characters in parameter values, and use `&` to separate multiple parameters.": "Codifică caractere speciale în valorile parametrilor și utilizează `&`  pentru a separa mai mulți parametri.",
     "For `ztf`, combine conditions with `AND` or `OR`, for example: `<project_url>?ztf=roads:type=primaryANDstatus=open`.": "Pentru `ztf`, combina conditiile cu `AND`  sau `OR`, de exemplu: `<project_url>?ztf=roads:type=primaryANDstatus=open`.",
-    "For further information on this point, see the [**dedicated paragraph**](projectsettings-layers.md#viewing-multimedia-content).": "Pentru informaţii suplimentare privind acest punct, a se vedea [** paragraf dedicat**](projectsettings-layers.md#viewing-multimedia-content).",
+    "For further information on this point, see the [**dedicated paragraph**](layer-properties.md#viewing-multimedia-content).": "Pentru informaţii suplimentare privind acest punct, a se vedea [** paragraf dedicat**](layer-properties.md#viewing-multimedia-content).",
     "Icon: Relations": "Pictogramă: Relaţii",
     "If a specific layer is selected in the TOC, the results are limited to that layer.": "Dacă în COT este selectat un anumit strat, rezultatele sunt limitate la acest strat.",
     "If the relations are inserted in a custom form dedicated to displaying attributes (QGIS Attributes form), then the link to them will be displayed directly in the parent attributes form.": "Dacă relaţiile sunt introduse într-o formă personalizată dedicată afişării atributelor (QGIS Formate de Atribute), apoi link-ul către acestea va fi afișat direct în forma atributelor părinte.",
@@ -1280,7 +1287,7 @@
     "deriving from a feature of a polygonal layer present in the project or added by the user": "derivat dintr-o caracteristică a unui strat poligonal prezent în proiect sau adăugat de utilizator",
     "draw: rectangles, circles or free-form polygons": "remiză: dreptunghiuri, cercuri sau poligoni cu formă liberă"
   },
-  "docs/client-tools-and-toc.md": {
+  "docs/map-tools.md": {
     "![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.avif) features visible on the map": "![ Filtru hartă de ecran: G3wclient](/img/manual-english-g3wclient-plots-map-filter.avif)  caracteristici vizibile pe hartă",
     "![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.avif) filter based on the selected features": "![Screenshot: Filtru selecție ploturi G3wclient](/img/manual-english-g3wclient-plots-selection-filter.avif)  filtru bazat pe caracteristicile selectate",
     "**Custom title:** using the **ItemIDs** at the print layout level of the QGIS project it is possible to insert one or more labels with **customized content in the print** from WebGis": "** Titlu personalizat:** cu **IDE ale produselor de uz uman** la nivelul de configurare a tipăririi QGIS  proiect este posibil să se introducă una sau mai multe etichete cu ** conținut personalizat în imprimantă** de la WebGis",
@@ -1361,7 +1368,7 @@
     "View the service's complete legend.": "Vezi că serviciul e o legendă completă.",
     "Zoom to features and download icons are available for results (single or cumulative)": "Zoom pentru caracteristici și download icoane sunt disponibile pentru rezultate (single sau cumulative)"
   },
-  "docs/components.md": {
+  "docs/components-of-g3w-suite.md": {
     "**`G3W-ADMIN` - the Administration component**: developed in **`Python`** using **`Django`**": "**`G3W-ADMIN` - componenta de administrare**: dezvoltat în **`Python`** cu **`Django`**",
     "**`G3W-CLIENT` - the map client**: built with **OpenLayers 10** and **Vue 2**": "**`G3W-CLIENT` - clientul harta**: construit cu **OpenLayers 10**  şi **Vue 2**",
     "**`Gulp.js`** as task runner": "**`Gulp.js`** ca alergător de sarcini",
@@ -1433,10 +1440,11 @@
     "The stack brings together the application, QGIS Server, NGINX and PostgreSQL/PostGIS services. It is a starting point for self-hosted deployments; production environments should be configured and maintained for their own operational requirements.": "Stivă aduce împreună aplicația, QGIS Server, NGINX și PostgreSQL/PostGIS  servicii. Este un punct de plecare pentru implementarea proprie; mediile de producţie ar trebui configurate şi menţinute pentru propriile cerinţe operaţionale.",
     "This component is released under the MIT licence. Check its repository for installation requirements and configuration details.": "Această componentă este eliberată sub licenţa MIT. Verificaţi depozitul pentru cerinţele de instalare şi detaliile de configurare.",
     "This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the `v3.11.x` branch of G3W-SUITE-DOCKER.": "Acest manual urmează: G3W-ADMIN 3.11.4, care se deplasează cu G3W-CLIENT 4.1.5. Pentru desfăşurarea Docker, utilizaţi `v3.11.x` ramura G3W-SUITE-DOCKER.",
+    "This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the v3.11.x branch of G3W-SUITE-DOCKER.": "Acest manual urmează: G3W-ADMIN 3.11.4, care se deplasează cu G3W-CLIENT 4.1.5. Pentru desfăşurarea Docker, utilizaţi v3.11.x ramura G3W-SUITE-DOCKER.",
     "Upload QGIS project and configure permissions and options": "Încarcă QGIS  proiect și configurare permisiuni și opțiuni",
     "Upload and configure": "Încarcă și configurează",
     "Use map navigation, search, identify and query tools, print layouts, charts and data tables. When enabled for a project, users can also edit features and related records directly in the browser.": "Utilizați instrumente de navigare pe hărți, căutare, identificare și interogare, formate de imprimare, diagrame și tabele de date. Atunci când sunt activate pentru un proiect, utilizatorii pot edita caracteristici și înregistrări conexe direct în browser.",
-    "Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project and the [Docker documentation](/docs/docker/) for setup details.": "Utilizaţi [ Ghid de pornire rapidă](/en/docs/quick-start/)  publicarea unui prim proiect și [Documentație Docker](/docs/docker/)  pentru detalii de configurare.",
+    "Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project and the [Docker documentation](/docs/docker-installation/) for setup details.": "Utilizaţi [ Ghid de pornire rapidă](/en/docs/quick-start/)  publicarea unui prim proiect și [Documentație Docker](/docs/docker-installation/)  pentru detalii de configurare.",
     "Versions and compatibility": "Variante și compatibilitate",
     "View the G3W-ADMIN source repository": "Vedeți G3W-ADMIN  depozit sursă",
     "View the G3W-ADMIN-PDND source repository": "Vedeți G3W-ADMIN-PDND  depozit sursă",
@@ -1446,7 +1454,7 @@
     "View the G3W-SUITE-DOCKER source repository": "Vedeți G3W-SUITE-DOCKER  depozit sursă",
     "Work together on geographic data": "Colaborarea pe baza datelor geografice"
   },
-  "docs/datamanagement.md": {
+  "docs/manage-qgis-data.md": {
     "**1:N relation data**": "**Date referitoare la relația 1:N**",
     "**Admin role users**": "** Utilizatori de roluri admin**",
     "**Editor1 role users**": "** Utilizatori de roluri Editor1**",
@@ -1493,6 +1501,7 @@
     "The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.": "Datele geografice stocate în zona locală **`project_data`**  Dosarul trebuie încărcat, reflectând orice structură a subdosarului.",
     "The main directory contains project_data for geographic data and projects for QGIS project files": "Directorul principal conține date despre proiect_date pentru date geografice și proiecte pentru QGIS  fișiere proiect",
     "The suite also supports viewing and editing:": "Apartamentul suportă, de asemenea, vizualizarea și editarea:",
+    "This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes": "** Această secțiune descrie modul de organizare QGIS date și proiecte la nivel local și cum să le sincronizăm pe server în scopul publicării**",
     "To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located in the upper right corner.": "Pentru a sincroniza accesul datelor la panoul de administrare al G3W-ADMIN  şi faceţi clic pe **`Configurations` pictogramă** ![ Pictogramă: Configurare](/img/manual-english-iconconfiguration.avif)  situat în colţul din dreapta sus.",
     "Two specific directories can also be created within the root directory of the File Manager:": "Două directoare specifice pot fi create și în directorul rădăcină al directorului de fișiere:",
     "Use this tool to manage geographic data stored on the server.": "Utilizați acest instrument pentru a gestiona datele geografice stocate pe server.",
@@ -1504,11 +1513,11 @@
     "a **`projects` sub-directory** that must contain the **QGIS cartographic projects** (.qgz or .qgs files)": "a **`projects` subdosar** care trebuie să conţină **QGIS  proiecte cartografice** (.qgz sau .qgs fișiere)",
     "a **main directory** named and positioned in according to need's user": "a ** directorul principal**  numele și poziția în funcție de utilizator"
   },
-  "docs/demo-editing.md": {
+  "docs/try-online-editing.md": {
     "![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)": "![Captură de ecran: G3W-SUITE  Lista de straturi a proiectului de administrare](/img/manual-english-g3wsuite-administration-project-layer-list.avif)",
     "**Do you want to test the online editing function more deeply?**": "** Doriți să testați funcția de editare online mai profund?**",
     "**Enable editing to modify the geometries and attributes of the Public Buildings layer and its related interventions.**": "**Activează editarea pentru a modifica geometriile și atributele stratului de clădiri publice și intervențiile aferente acestuia.**",
-    "**It is advisable to consult the section on** [editing activation and configuration](g3wsuite_editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**": "**Se recomandă consultarea secţiunii privind** [ editarea activării și a configurației](g3wsuite_editing.md) ** pentru lista și limitările de widget-uri individuale de editare moștenite de la QGIS  Proiect.**",
+    "**It is advisable to consult the section on** [editing activation and configuration](online-editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**": "**Se recomandă consultarea secţiunii privind** [ editarea activării și a configurației](online-editing.md) ** pentru lista și limitările de widget-uri individuale de editare moștenite de la QGIS  Proiect.**",
     "**`Buildings rating`**": "**`Buildings rating`**",
     "**`Buildings`**": "**`Buildings`**",
     "**`Maintenance_works`**": "**`Maintenance_works`**",
@@ -1545,7 +1554,8 @@
     "**zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)": "** Zonă** (text): editare text (cu valori implicite bazate pe a QGIS  expresia pentru asocierea cu zona de lucru intersectând)",
     "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.avif) (placed at the left of each rows) will open a modal window that will allow you to:": "Click pe pictogramă ** Editare strat** ![ Pictogramă: Editare](/img/manual-english-icon-editing.avif) (se află în stânga fiecărui rând) va deschide o fereastră modală care vă va permite:",
     "Editing on line": "Editare on-line",
-    "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).": "Pentru ** informaţii suplimentare** pe funcția de editare web, citiți [**secţiunea dedicată pe manual**](editing-client-tools.md).",
+    "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-tools.md).": "Pentru ** informaţii suplimentare** pe funcția de editare web, citiți [**secţiunea dedicată pe manual**](editing-tools.md).",
+    "Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.": "** Formele și widget-urile de editare sunt deja definite pe proiectul asociat cu tutorialul pentru stratul geometric al clădirilor și pentru intervențiile de masă alfanumerice legate de_întreținere.**",
     "Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**": "Odată ce funcția de editare este activată, actualizarea serviciului, **`Tools menu` va apărea pe panoul din stânga.**",
     "Personalize your demo": "Personalizează-ţi demo-ul",
     "Redefine attribute forms, aliases and editing widgets associated with the individual fields and reload the project to check the new settings.": "Redefiniți formularele atribute, pseudonimele și editarea widget-urilor asociate cu câmpurile individuale și reîncărcați proiectul pentru a verifica noile setări.",
@@ -1560,7 +1570,7 @@
     "define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing": "defini **`Viewer users`** (persoane fizice sau grupuri) **`enabled`**  pentru editare online",
     "define the **`editing activation scale`** (only for geometric tables)": "defini **`editing activation scale`** (numai pentru tabele geometrice)"
   },
-  "docs/demo-publish.md": {
+  "docs/publish-a-webgis-service.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![ Buton: Salvare](/img/manual-english-buttom-save.avif)",
     "![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.avif)": "![Screenshot: Managementul proiectului demo](/img/manual-english-demo-project-manage.avif)",
     "![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.avif) Clicking on the **`View map`** icon will access the WebGis service in consultation.": "![Screenshot: Iconmic Viewmap](/img/manual-english-iconsmall-viewmap.avif) Clic pe **`View map`**  Pictograma va accesa serviciul WebGis în consultare.",
@@ -1571,7 +1581,7 @@
     "After filling in the various form, click on the **`Save button`** to confirm your choices.": "După completarea în diferite forme, faceți clic pe **`Save button`**  pentru a confirma alegerile.",
     "After logging in, open the **`Administration session`** to view the **Dashboard**.": "După logare, deschideţi **`Administration session`**  pentru a vedea **Tablou de bord**.",
     "Click on the **`Show`** item in the ligth blue **Groups** box to acces at the list of available Cartographic Groups.": "Click pe **`Show`** element în albastru ligth ** Grupuri**  Casetă de acces la lista grupurilor cartografice disponibile.",
-    "For this exercise, keep the default options unless you want to test a specific setting. See [Publish and update WebGIS services](admin-publishing.md#publication-of-new-webgis-services) for the full explanation of permissions, base layers, and publication options.": "Pentru acest exerciţiu, păstraţi opţiunile implicite dacă nu doriţi să testaţi o anumită setare. [Publică și actualizează serviciile WebGIS](admin-publishing.md#publication-of-new-webgis-services)  pentru explicarea completă a permisiunilor, straturilor de bază și opțiunilor de publicare.",
+    "For this exercise, keep the default options unless you want to test a specific setting. See [Publish and update WebGIS services](publish-and-update-webgis-services.md#publication-of-new-webgis-services) for the full explanation of permissions, base layers, and publication options.": "Pentru acest exerciţiu, păstraţi opţiunile implicite dacă nu doriţi să testaţi o anumită setare. [Publică și actualizează serviciile WebGIS](publish-and-update-webgis-services.md#publication-of-new-webgis-services)  pentru explicarea completă a permisiunilor, straturilor de bază și opțiunilor de publicare.",
     "If you want to modify some graphic-functional aspects of your WebGis service, modify your QGIS project and update the WebGis service by clicking on the **`Modify`** icon ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif).": "Dacă doriți să modificați unele aspecte grafice-funcționale ale serviciului WebGis, modificați QGIS  proiectează și actualizează serviciul WebGis făcând clic pe **`Modify`**  Pictogramă![Screenshot: Editare iconmic](/img/manual-english-iconsmall-edit.avif).",
     "In **QGIS file**, select the `.qgs` or `.qgz` project you prepared in [Download demo data](demo.md#download-demo-data).": "În **QGIS  fișier**, selectați `.qgs`  sau `.qgz`  proiect în care ați pregătit [ Descărcați date demo](demo.md#download-demo-data).",
     "In the Dashboard there will be the menu for access to the **Cartographic Groups** pertaining to your user and the menus relating to additional modules not active in this demo.": "În Dashboard va fi meniul pentru acces la ** Grupuri cartografice**  referitoare la utilizatorul dvs. și la meniurile referitoare la modulele suplimentare care nu sunt active în acest demo.",
@@ -1584,11 +1594,12 @@
     "Screenshot: Demo Dashboard": "Screenshot: Dashboard demo",
     "Screenshot: Demo Webgis Project": "Screenshot: Proiect Webgis Demo",
     "To publish the project, you can **access the G3W-SUITE test application** via the following URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)": "Pentru a publica proiectul, puteți ** accesarea G3W-SUITE  cererea de încercare**  prin intermediul URL-ului următor: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)",
+    "To publish the project, you can access the G3W-SUITE test application via the following URL: https://v311.g3wsuite.it": "Pentru a publica proiectul, puteți ** accesarea G3W-SUITE cererea de încercare** prin intermediul URL-ului următor: https://v311.g3wsuite.it",
     "Update the published WebGis service": "Actualizează serviciul WebGis publicat",
     "password: **`G3wsuite123`**": "parolă: **`G3wsuite123`**",
     "user: **`demo`**": "utilizator: **`demo`**"
   },
-  "docs/demo-widgets.md": {
+  "docs/try-layer-tools-in-the-demo.md": {
     "![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.avif)": "![Screenshot: Managementul proiectului demo](/img/manual-english-demo-project-manage.avif)",
     "![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)": "![Screenshot: Demo Căutare Rezultat](/img/manual-english-demo-search-result.avif)",
     "![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)": "![Captură de ecran: G3W-SUITE Ploturi de administrare](/img/manual-english-g3wsuite-administration-plots.avif)",
@@ -1601,7 +1612,7 @@
     "**NB:** there may be a number of searches created by other users for the same layer.": "**NB:** pot exista mai multe căutări create de alți utilizatori pentru același strat.",
     "**The widget will already be **`linked`** and therefore available in the WebGis interface on the left panel.**": "**Widget va fi deja **`linked`**  și, prin urmare, disponibil în interfața WebGis pe panoul din stânga.**",
     "For this reason, there may be some plots created by other users for the same layer.": "Din acest motiv, pot exista unele parcele create de alți utilizatori pentru același strat.",
-    "In the client, try filtering the charts by visible or selected features. See [chart filters](client-tools-and-toc.md#charts) for the controls and their effect on related data.": "În client, încercați filtrarea diagramelor prin caracteristici vizibile sau selectate. Vezi [ filtre de grafică](client-tools-and-toc.md#charts)  pentru controale și efectul acestora asupra datelor aferente.",
+    "In the client, try filtering the charts by visible or selected features. See [chart filters](map-tools.md#charts) for the controls and their effect on related data.": "În client, încercați filtrarea diagramelor prin caracteristici vizibile sau selectate. Vezi [ filtre de grafică](map-tools.md#charts)  pentru controale și efectul acestora asupra datelor aferente.",
     "Layer tools": "Unelte plan",
     "Once the form has been filled in, click on the **`OK button` to save** the settings.": "Odată completat formularul, dați click pe **`OK button`  pentru a salva** setările.",
     "Once the settings are saved, the created widget will appear in the list of Widgets associated with the layer.": "Odată ce setările sunt salvate, widget-ul creat va apărea în lista de Widget-uri asociate cu stratul.",
@@ -1616,11 +1627,11 @@
     "The title of the chart, defined at the plugin level, will be the unique identifier.": "Titlul graficului, definit la nivelul modulului, va fi identificatorul unic.",
     "To **create a new search**, click on the blue link **`New widget`**.": "La ** creează o nouă căutare**, faceți clic pe link-ul albastru **`New widget`**.",
     "To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.avif)**": "Pentru a crea un instrument de căutare disponibil la nivel WebGis, ** alege stratul vectorial**  privind aplicarea instrumentului și ** click pe `Widget list icon` ![ Pictogramă: Widget](/img/manual-english-icon-widget.avif)**",
-    "Try enabling a download format for one layer. Then open the map, select that layer, and check that the format appears in the download options. See [layer tools](admin-widgets-setup.md) for all available settings.": "Încercaţi să activaţi un format de descărcare pentru un singur strat. Apoi deschideţi harta, selectaţi acest strat, şi verificaţi dacă formatul apare în opţiunile de descărcare. Vezi [ unelte de strat](admin-widgets-setup.md)  pentru toate setările disponibile.",
+    "Try enabling a download format for one layer. Then open the map, select that layer, and check that the format appears in the download options. See [layer tools](layer-tools.md) for all available settings.": "Încercaţi să activaţi un format de descărcare pentru un singur strat. Apoi deschideţi harta, selectaţi acest strat, şi verificaţi dacă formatul apare în opţiunile de descărcare. Vezi [ unelte de strat](layer-tools.md)  pentru toate setările disponibile.",
     "Try layer tools in the demo": "Încearcă unelte de strat în demo",
     "Try to create your plots in the QGIS project, save them as .xml and upload them to view the resluts on the webgis.": "Încercați să creați comploturile în QGIS  proiect, salvați-le ca .xml și încărcați-le pentru a vedea resluts pe webgis.",
     "Use the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) to view project layers and configure their client functions.": "Utilizaţi **`Layers list` pictogramă** ![Screenshot: Iconmic Layerlist](/img/manual-english-iconsmall-layerlist.avif)  pentru a vizualiza straturile proiectului și a configura funcțiile clientului.",
-    "Use the [search widget reference](admin-search.md) to choose the fields, input widgets, and comparison operators.": "Utilizaţi [Referință widget căutare](admin-search.md)  pentru a alege câmpurile, widget-uri de intrare, și operatorii de comparație.",
+    "Use the [search widget reference](search-widgets.md) to choose the fields, input widgets, and comparison operators.": "Utilizaţi [Referință widget căutare](search-widgets.md)  pentru a alege câmpurile, widget-uri de intrare, și operatorii de comparație.",
     "You can activate them by **clicking on the `Linked` chekbox**.": "Le puteți activa prin ** click pe `Linked` chekbox**."
   },
   "docs/demo.md": {
@@ -1680,7 +1691,7 @@
     "two standard **print layout** and an two **atlas print layout** based on buildgs layer features": "două standarde **model de imprimare**  şi un doi ** aranjamentul tipăririi atlasului** pe baza caracteristicilor strat buildgs",
     "user: **viewer1**": "utilizator: **spectator1**"
   },
-  "docs/docker.md": {
+  "docs/docker-installation.md": {
     "![Login Page](/img/installation-english-login-page.avif)": "![ Pagina de autentificare](/img/installation-english-login-page.avif)",
     "A custom CSS is added to the pages, the file is located in `config/g3w-suite/overrides/static/style.css` and can be modified directly, changes are effective immediately.": "Un CSS personalizat este adăugat la pagini, fișierul este situat în `config/g3w-suite/overrides/static/style.css`  şi pot fi modificate direct, modificările sunt în vigoare imediat.",
     "Before the first start, check `services.g3w-suite.environment` in `docker-compose.yml`. If it lists `G3WSUITE_ADMIN_PASS`, replace that entry with `G3WSUITE_ADMIN_PASSWORD` so the setup script receives the password from `.env`.": "Înainte de primul început, verificați `services.g3w-suite.environment`  în `docker-compose.yml`- Dacă e listat... `G3WSUITE_ADMIN_PASS`, înlocuiți această intrare cu `G3WSUITE_ADMIN_PASSWORD`  astfel încât script-ul de configurare primește parola de la `.env`.",
@@ -1694,7 +1705,7 @@
     "Data, projects, uploads and the database are stored in a shared mounted volume `shared-volume`, the volume should be on a persistent storage device and a backup": "Datele, proiectele, uploadurile și baza de date sunt stocate într-un volum montat în comun `shared-volume`, volumul trebuie să fie pe un dispozitiv de stocare persistentă și o copie de rezervă",
     "Database backups": "Baze de date de rezervă",
     "Deploy": "Desfăşurare",
-    "Description of other *environment variables* that can be used, are available on [Docker environment variables](docker_env)": "Descrierea altor elemente * variabile de mediu* care poate fi utilizat, sunt disponibile pe [ Variabilele mediului Docker](docker_env)",
+    "Description of other *environment variables* that can be used, are available on [Docker environment variables](docker-environment-variables.md)": "Descrierea altor elemente * variabile de mediu* care poate fi utilizat, sunt disponibile pe [ Variabilele mediului Docker](docker-environment-variables.md)",
     "Docker compose will download images from docker hub (https://hub.docker.com/u/g3wsuite),": "Docker compune va descărca imagini de pe hub-ul docker (https://hub.docker.com/u/g3wsuite),",
     "Docker installation": "Instalare Docker",
     "Editing": "Editare",
@@ -1730,7 +1741,7 @@
     "The stable Compose files use `kartoza/postgis:16-3.4`.": "Folosirea fişierelor de Compoziţie stabilă `kartoza/postgis:16-3.4`.",
     "The stable `.env.example` uses `./shared-volume`. Set `WEBGIS_DOCKER_SHARED_VOLUME` in `.env` to a persistent location suitable for production.": "La grajduri. `.env.example`  utilizări `./shared-volume` Gata. `WEBGIS_DOCKER_SHARED_VOLUME`  în `.env`  într-o locație persistentă adecvată pentru producție.",
     "These are database dumps, not a full installation backup. Also back up projects, file-based data, uploads, mounted configuration and any databases not covered by the script. Keep a copy off the server. The `db-restore` target replaces databases: test recovery on a separate installation before using it on live data.": "Acestea sunt halde de baze de date, nu o instalare completă de rezervă. De asemenea, backup proiecte, date bazate pe fișiere, upload-uri, configurare montat și orice baze de date care nu sunt acoperite de script. Păstrați o copie de pe server. `db-restore`  obiectivul înlocuiește bazele de date: testarea recuperării pe o instalație separată înainte de a o utiliza pe date live.",
-    "This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .": "Acest depozit conține script-uri și rețete pentru implementarea G3W-SUITE  Aplicație web-gis cu Docker și Docker compune .",
+    "This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .": "Acest depozit conține script-uri și rețete pentru implementarea G3W-SUITE Aplicație web-gis cu Docker și Docker compune .",
     "This will set the front end app as the default app": "Aceasta va stabili aplicația de sfârșit față ca aplicație implicită",
     "Tile cache can be configured and cleared per-layer through the webgis admin panel and lasts forever until it is disabled or cleared.": "Tile cache pot fi configurate și eliminate per-strat prin webgis admin panou și durează pentru totdeauna până când este dezactivat sau șters.",
     "Tip: enable cache on linestring and polygon layers.": "Sfat: permite cache pe liniile de siruri de caractere și straturi de poligon.",
@@ -1753,7 +1764,7 @@
     "when using rule-based/categorized classification or scale-dependent visibility create indexes on the column(s) involved in the rule expression (example: \"create index idx_elec_penwell_ious on elec_penwell_ious (owner);\" )": "atunci când se utilizează clasificarea bazată pe reguli/categorisită sau vizibilitatea dependentă de scară creează indici pe coloana (s) implicată în expresia regulii (exemplu: \"creează index idx_elec_penwell_ious on elec_penwell_ious (proprietar);\")",
     "will contain the database credentials (change `<your password>`) and other settings:": "va conţine acreditările bazei de date (schimbare `<your password>`) și alte setări:"
   },
-  "docs/docker_env.md": {
+  "docs/docker-environment-variables.md": {
     "A custom unique token to use for internal caching request.": "Un simbol unic pentru a fi utilizat pentru cererea internă de cache.",
     "Add them to the deployment `.env` file. Compose must also pass each variable to the service that uses it.": "Adăugaţi-le la desfăşurare `.env` fişier. Compoziţia trebuie să treacă, de asemenea, fiecare variabilă la serviciul care o utilizează.",
     "Caching system": "Sistem de cache",
@@ -1784,6 +1795,7 @@
     "QGIS environment variables can be set as described in the [QGIS Server manual](https://docs.qgis.org/3.44/en/docs/server_manual/config.html#environment-variables); add them to the relevant Compose service.": "QGIS  variabilele de mediu pot fi stabilite conform descrierii din [QGIS Manual server](https://docs.qgis.org/3.44/en/docs/server_manual/config.html#environment-variables); adăugați-le la serviciul de Compoziție relevant.",
     "QGIS server variables": "QGIS  variabile server",
     "Requirements variables": "Variabilele cerințelor",
+    "Set these environment variables when deploying G3W-SUITE with Docker.": "Setează aceste variabile de mediu atunci când se desfășoară G3W-SUITE cu Docker.",
     "Set these environment variables when deploying G3W-SUITE with [Docker](https://github.com/g3w-suite/g3w-suite-docker).": "Setează aceste variabile de mediu atunci când se desfășoară G3W-SUITE cu [Docker](https://github.com/g3w-suite/g3w-suite-docker).",
     "The Docker example settings provide a shared fallback token; set a unique value for each deployment.": "Setările de exemplu Docker oferă un token de rezervă comun; setează o valoare unică pentru fiecare implementare.",
     "The Gunicorn configuration is created in the shared volume on first startup and is not overwritten on later starts. The generated file reads these environment variables; review `/shared-volume/gunicorn.conf.py` if it has been customized.": "Configuraţia Gunicorn este creată în volumul comun la prima pornire şi nu este suprascrisă la starturile ulterioare. Fișierul generat citește aceste variabile de mediu; revizuire `/shared-volume/gunicorn.conf.py`  dacă a fost personalizat.",
@@ -1792,7 +1804,7 @@
     "The follow variables re for set the connection to G3W-SUITE administration database.": "Variabilele următoare re pentru setarea conexiunii la G3W-SUITE  Baza de date a administraţiei.",
     "The following varaible are just set into docker-compose files:": "Următoarele varaibile sunt doar setate în fișiere Docker-compose:",
     "The login used for the superuser account. Only works when setup a new environment.": "Autentificare folosit pentru contul de super-utilizator. Funcţionează numai atunci când setaţi un nou mediu.",
-    "The password used during initial setup. If `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead, correct `services.g3w-suite.environment` as shown in the [installation guide](docker.md#run). The optional Huey stack already passes `G3WSUITE_ADMIN_PASSWORD`.": "Parola utilizată în timpul configuraţiei iniţiale. Dacă `docker-compose.yml`  trece `G3WSUITE_ADMIN_PASS`  În schimb, corect `services.g3w-suite.environment`  aşa cum este indicat în [ ghid de instalare](docker.md#run). Opţionalul stack Huey deja trece `G3WSUITE_ADMIN_PASSWORD`.",
+    "The password used during initial setup. If `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead, correct `services.g3w-suite.environment` as shown in the [installation guide](docker-installation.md#run). The optional Huey stack already passes `G3WSUITE_ADMIN_PASSWORD`.": "Parola utilizată în timpul configuraţiei iniţiale. Dacă `docker-compose.yml`  trece `G3WSUITE_ADMIN_PASS`  În schimb, corect `services.g3w-suite.environment`  aşa cum este indicat în [ ghid de instalare](docker-installation.md#run). Opţionalul stack Huey deja trece `G3WSUITE_ADMIN_PASSWORD`.",
     "The path on which the docker permanent volume will be mounted with the application data inside.": "Calea pe care va fi montat volumul permanent al docker-ului cu datele de aplicare din interior.",
     "These notes describe the Docker `v3.11.x` branch; its `.env.example` and Compose files are not interchangeable with development-branch configuration.": "Aceste note descriu Docker `v3.11.x`  sucursala sa; `.env.example`  și fișierele Compozite nu sunt interschimbabile cu configurația de dezvoltare-ramură.",
     "Thi is used to compensate the python/gunicorn memory leaks.": "Este folosit pentru a compensa scurgerile de memorie ale pitonului/gunicornului.",
@@ -1800,7 +1812,7 @@
     "Usually then number of workers is equal to number of processor x 2.": "De obicei, numărul de lucrători este egal cu numărul de procesor x 2.",
     "docker container at runtime to PGSERVICEFILE path position.": "containerul de docker la rulare la poziţia de cale PGSERVICEFILE."
   },
-  "docs/editing-administration-settings.md": {
+  "docs/editing-permissions.md": {
     "![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)": "![Captură de ecran: G3W-SUITE  Lista de straturi a proiectului de administrare](/img/manual-english-g3wsuite-administration-project-layer-list.avif)",
     "**Active:** activate the editing function": "** Activ:**  activează funcția de editare",
     "**Add:** add feature, copy feature, add part to multipart": "**Adaugă:**  adăugaţi funcţie, copie, adăugaţi o parte la mai multe părţi",
@@ -1839,9 +1851,10 @@
     "These fields will contain references to G3W-SUITE users and users group who creators or modifiers of the individual features edited.": "Aceste câmpuri vor conține referințe la G3W-SUITE  grup de utilizatori și utilizatori care creatori sau modificatori de caracteristici individuale editate.",
     "Through these two optional settings it is possible to define four fields of the table of the layer being edited automatically filled in.": "Prin aceste două setări opționale este posibilă definirea a patru câmpuri ale tabelului stratului care este editat automat.",
     "To activate the online editing functions, access the **`Layer list`** section of the project within the administration panel of G3W-ADMIN.": "Pentru a activa funcţiile de editare online, accesaţi **`Layer list`** secţiunea proiectului din cadrul comitetului de administrare al G3W-ADMIN.",
+    "To activate the online editing functions, access the Layer list section of the project within the administration panel of G3W-ADMIN.": "Pentru a activa funcţiile de editare online, accesaţi Layer list secţiunea proiectului din cadrul comitetului de administrare al G3W-ADMIN.",
     "To allow editing on the related table in mode 1: n , the **editing function must also be activated** (always in the same way) **also for the related table** present in the project layers list.": "Pentru a permite editarea pe tabelul aferent în modul 1: n , ** funcția de editare trebuie, de asemenea, activate** (Întotdeauna în același mod) **de asemenea, pentru tabelul aferent**  prezent în lista straturilor proiectului."
   },
-  "docs/editing-client-tools.md": {
+  "docs/editing-tools.md": {
     "![Icon: Feature Add Part](/img/manual-english-icon-feature-add-part.avif) **Add part** of a multi-geometry": "![ Pictogramă: Feature Adaugă o parte](/img/manual-english-icon-feature-add-part.avif) **Adaugă parte** cu o geometrie multiplă",
     "![Icon: Feature Add](/img/manual-english-icon-feature-add.avif) **Add feature:** to add a feature": "![ Pictogramă: Adaugă caracteristici](/img/manual-english-icon-feature-add.avif) **Adaugă caracteristică:**  pentru a adăuga o caracteristică",
     "![Icon: Feature Attribute](/img/manual-english-icon-feature-attribute.avif)**Update feature attribute:** to modify the attribute values associated with an existing feature": "![ Pictogramă: Atribute de caracteristici](/img/manual-english-icon-feature-attribute.avif)**Atributul funcției de actualizare:**  modificarea valorilor atributelor asociate unei caracteristici existente",
@@ -1864,6 +1877,7 @@
     "A click on this icon will allow you to filter, and therefore show in the list, only the layers involved in the relations": "Un click pe această pictogramă vă va permite să filtrați, și, prin urmare, să afișați în listă, numai straturile implicate în relațiile",
     "A help panel will describe the steps to take for copy, dissolve and split operations.": "Un panou de ajutor va descrie pașii pe care trebuie să-i ia pentru copierea, dizolvarea și divizarea operațiunilor.",
     "Activating the Add features and Update feature vertex tools allows you to:": "Activarea caracteristicilor Adăugați și Update functional instrumente vertex vă permite să:",
+    "After enabling and configuring online editing for a project layer, Editing layers appears in the client's left sidebar.": "** După ce a permis și configurarea editării online pentru un strat de proiect, Editing layers Apare în bara stângă a clientului.**",
     "Any **mandatory fields will be marked with an asterisk**.": "Orice ** câmpurile obligatorii vor fi marcate cu un asterisc**.",
     "Any **unfulfilled constraints will be highlighted** with specific warning messages shown **in red**.": "Orice **vor fi evidențiate constrângerile neîmplinite** cu mesaje de avertizare specifice afișate ** în roşu**.",
     "Create and edit features": "Creează și editează caracteristici",
@@ -1903,6 +1917,7 @@
     "**alphanumeric (SQL) / QGIS expressions constraints**": "**Etichetă (SQL) / QGIS  constrângeri de exprimare**",
     "**geographic constraints**": "** constrângeri geografice**",
     "After clicking the OK button, the constraint will appear in the list and can be parameterized using two ways of defining the rules:": "După ce ați apăsat butonul OK, constrângerea va apărea în listă și poate fi parametrizată folosind două moduri de definire a regulilor:",
+    "Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.": "Alfanumeric (SQL) / QGIS constrângerile de exprimare vă permit să definiţi, pentru fiecare strat publicat, subgrupul de caracteristici care pot fi vizualizate şi/sau editate de utilizatori individuali şi/sau grupuri de utilizatori.",
     "Alphanumeric (SQL) / QGIS expressions Constraints": "Alfanumeric (SQL) / QGIS Constrângeri",
     "Both work in terms of visualization and/or editing": "Ambele lucrări în ceea ce privește vizualizarea și/sau editarea",
     "Choose where the filter applies:": "Alegeți locul în care se aplică filtrul:",
@@ -1943,7 +1958,7 @@
     "editing only": "Numai editare",
     "in both cases": "în ambele cazuri"
   },
-  "docs/editing-geocoding.md": {
+  "docs/geocoding.md": {
     "**Bing Places:** places based on Bing maps (service available only for the USA)": "** Locurile Bing:**  locuri bazate pe hărțile Bing (servicii disponibile doar pentru SUA)",
     "**Bing Streets:** Addresses based on Bing maps": "**Bing Streets:** Adrese bazate pe hărțile Bing",
     "**Clear markers selection:** to delete all markers inserted on the map": "** Selecţie de markeri clară:**  pentru a șterge toate marcajele introduse pe hartă",
@@ -1959,7 +1974,7 @@
     "Clicking on this icon will show the list of point layers on which online editing is enabled.": "Click pe această pictogramă va arăta lista de straturi puncte pe care este activată editarea online.",
     "Definition of the providers to use for each WebGis service": "Definirea furnizorilor de utilizat pentru fiecare serviciu WebGis",
     "First of all, **Geocoding** must be associated with the Cartographic Group by selecting it at the **Base Layers and Map default features** session level. This will ensure that the tool is present on all WebGis services published within the Group.": "În primul rând, **Geocodare**  trebuie să fie asociată cu Grupul Cartografic prin selectarea acestuia la ** Straturi de bază și caracteristici implicite ale hărții**  nivelul sesiunii. Aceasta va asigura faptul că instrumentul este prezent pe toate serviciile WebGis publicate în cadrul Grupului.",
-    "For details on the client-side editing tools, see [Editing tools](editing-client-tools.md).": "Pentru detalii privind instrumentele de editare de pe partea clientului, consultați [ Unelte de editare](editing-client-tools.md).",
+    "For details on the client-side editing tools, see [Editing tools](editing-tools.md).": "Pentru detalii privind instrumentele de editare de pe partea clientului, consultați [ Unelte de editare](editing-tools.md).",
     "Geocoding": "Geocodare",
     "Geocoding map control use case for populating project layers": "Geocoding map control utilizare caz pentru popularea straturilor de proiect",
     "In the publication form of your QGIS project you need to define the providers to be associated with the Geocoding map control:": "În forma de publicare a QGIS  proiect aveți nevoie pentru a defini furnizorii pentru a fi asociate cu controlul hărții Geocoding:",
@@ -1983,7 +1998,7 @@
     "Use results from the configured providers to populate point layers in the WebGIS service.": "Utilizați rezultatele furnizorilor configurați pentru a popula straturile de puncte în serviciul WebGIS.",
     "Using the Geocoding map control on the WebGis service": "Folosind controlul hărții geocoding pe serviciul WebGis"
   },
-  "docs/editing-project-settings.md": {
+  "docs/prepare-a-project-for-editing.md": {
     "**Additional settings at single layer level**": "**Setări suplimentare la nivel de un singur strat**",
     "**All the QGIS expressions can be used as default values.**": "** Toate QGIS  expresiile pot fi utilizate ca valori implicite.**",
     "**The expression-based filter can also be dependent on the values of other fields on the form and useful to create cascading drill down.**": "** Filtrul bazat pe expresie poate fi, de asemenea, dependent de valorile altor câmpuri pe forma și util pentru a crea burghiu cascada în jos.**",
@@ -2017,6 +2032,7 @@
     "In the **`Attribute Form`** section of the **`Layer Properties`** it is also possible to define for every field:": "În **`Attribute Form`** secţiunea **`Layer Properties`**  este posibilă definirea pentru fiecare domeniu:",
     "In the QGIS project's **`Vector Properties`** → **`Attribute Form`**, define an alias and editing widget for each attribute.": "În QGIS  Proiecte **`Vector Properties`** → **`Attribute Form`**, definesc un alias și editarea widget pentru fiecare atribut.",
     "In the QGIS project, **define the attribute display form structure** for each layer.": "În QGIS  proiect; ** definește structura formularului de afișare a atributului**  pentru fiecare strat.",
+    "In the QGIS project, define the attribute display form structure for each layer.": "În QGIS proiect; ** definește structura formularului de afișare a atributului** pentru fiecare strat.",
     "In the event that, at the QGIS project level, one or more 1: n type relationships have been associated with a layer (**`Project menu → Properties…`, `Relations` section**), it will be possible to carry out relational editing also on the webgis platform.": "În cazul în care, la QGIS  nivelul proiectului, una sau mai multe: n relaţiile de tip au fost asociate cu un strat (**`Project menu → Properties…`, `Relations` secţiune**), va fi posibil să se realizeze editarea relaţională şi pe platforma webgis.",
     "In this case, at the online edit level, the form relating to the field thus defined will be self-calculated and can be set not editable by the user.": "În acest caz, la nivelul de editare online, formularul referitor la câmpul astfel definit va fi autocalculat și poate fi setat needitabil de către utilizator.",
     "It is therefore possible to define the visibility of a forms (form or group) and of the fields it contains, on the basis of the values defined on further fields when filling in the attributes.": "Prin urmare, este posibil să se definească vizibilitatea formelor (forma sau grupul) și a câmpurilor pe care le conține, pe baza valorilor definite pe câmpuri suplimentare atunci când completează atributele.",
@@ -2042,7 +2058,7 @@
     "With regard to the **`Attachment widget`**, it is necessary to specify that the association of a multimedia file with a feature requires that this file is uploaded to a dedicated space (exposed on the web) on the server and that the association takes place via a URL that refers to that file.": "În ceea ce priveşte **`Attachment widget`**, este necesar să se specifice că asocierea unui fișier multimedia cu o caracteristică necesită ca acest fișier să fie încărcat într-un spațiu dedicat (expus pe web) pe server și că asociația are loc printr-un URL care se referă la acel fișier.",
     "the widget will be equipped with a pick layer tool at the cartographic client level": "widget-ul va fi echipat cu un instrument de pick strat la nivelul clientului cartografic"
   },
-  "docs/editing-relations.md": {
+  "docs/editing-related-records.md": {
     "![Icon: Feature Modify](/img/manual-english-icon-feature-modify.avif) **Update deature vertex:** modify the shape of the geometry": "![ Pictogramă: Modificare caracteristică](/img/manual-english-icon-feature-modify.avif) **Actualizare vertex de deatură:**  modificarea formei geometriei",
     "![Icon: Feature Move](/img/manual-english-icon-feature-move.avif) **Move feature:** move the geometry": "![ Pictogramă: Mutare caracteristică](/img/manual-english-icon-feature-move.avif) ** Funcție mutare:** Mută geometria",
     "![Icon: Join Erase](/img/manual-english-icon-join-erase.avif) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan": "![ Pictogramă: Alăturaţi-vă Şterge](/img/manual-english-icon-join-erase.avif) ** Relație de legătură:**  pentru a disocia înregistrarea de funcția editată, înregistrarea nu va fi ștersă, ci va deveni orfană",
@@ -2079,6 +2095,7 @@
     "Screenshot: Editing Client Save": "Screenshot: Editare Client Salvare",
     "Screenshot: Editing Form Relations": "Screenshot: Editare forme de relaţii",
     "Screenshot: Editing Form2": "Captura de ecran: Formularul de editare2",
+    "The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.": "** Activarea, la nivelul clientului cartografic, a modului de editare pe stratul de bază determină automat posibilitatea de a gestiona și informațiile de pe tabelul aferent.**",
     "To add a new record in the child layer, you first need to access the relations itself.": "Pentru a adăuga un nou record în stratul de copii, trebuie mai întâi să accesați relațiile în sine.",
     "To copy a geometry from another layer operate in this order:": "Pentru a copia o geometrie dintr-un alt strat funcționează în această ordine:",
     "You can fill in the individual attributes and save the new record. **The change must be validated by clicking on the `Save` button at the bottom of the form.**": "Puteți completa atributele individuale și salva noul record. ** Modificarea trebuie validată făcând clic pe `Save`  butonul de la partea de jos a formularului.**",
@@ -2101,7 +2118,7 @@
     "the list of all orphaned or already associated records will be displayed;": "lista tuturor înregistrărilor orfane sau deja asociate va fi afișată;",
     "the operator user is enabled for the editing function on these layers": "utilizatorul operatorului este activat pentru funcția de editare pe aceste straturi"
   },
-  "docs/elasticsearch.md": {
+  "docs/elasticsearch-integration.md": {
     "**Authentication errors** — if your Elasticsearch instance has security enabled, set `http_auth` in `ELASTICSEARCH_DSL['default']`.": "**Erori de autentificare** — if your Elasticsearch instance has security enabled, set `http_auth`  în `ELASTICSEARCH_DSL['default']`.",
     "**No results / empty indexes** — verify that `QES_INDEXING_PROJECT` is `True`, that the Elasticsearch service is reachable at the configured host, and that the `qes_indexer` command completes without errors. The module logs to the `elasticsearch` Python logger (`[QES-elasticsearch]` log tag).": "** Niciun rezultat / indexuri goale** — verify that `QES_INDEXING_PROJECT`  este `True`, că serviciul de cercetare Elastică este accesibil la gazda configurat, și că `qes_indexer`  comanda se completează fără erori. `elasticsearch`  Python logger (`[QES-elasticsearch]` log tag).",
     "**Stale data after editing** — the receivers only update documents for the project / layer being modified. To rebuild from scratch run `python manage.py qes_indexer --prj_ids <id>`.": "**Date vechi după editare** — the receivers only update documents for the project / layer being modified. To rebuild from scratch run `python manage.py qes_indexer --prj_ids <id>`.",
@@ -2133,6 +2150,7 @@
     "Set `QES_INDEXING_CRON_SCHEDULE` (see above) to run a full re-indexing on a regular basis through the Huey consumer.": "Set `QES_INDEXING_CRON_SCHEDULE` (a se vedea mai sus) să efectueze o re-indexare completă în mod regulat prin intermediul consumatorului Huey.",
     "Standard [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedocs.io/) connection dictionary. The `default` alias is the one used by the QES indexer. Use `http_auth` to provide credentials when X-Pack security is enabled.": "Standard [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedocs.io/) dicţionar de conexiune. `default`  alias este cel utilizat de indexatorul QES. Utilizare `http_auth`  să furnizeze acreditări atunci când X-Pack de securitate este activat.",
     "Starting from version 3.10, G3W-SUITE ships with the **`qes`** module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into [Elasticsearch](https://www.elastic.co/elasticsearch) to provide fast, full-text search across the published WebGIS projects.": "Începând cu versiunea 3.10, G3W-SUITE  nave cu navele cu **`qes`**  modul (QGIS Elasticsearch), o componentă opțională care indexează QGIS  caracteristici ale stratului în [Cercetari elastice](https://www.elastic.co/elasticsearch)  să ofere o căutare rapidă şi completă a proiectelor WebGIS publicate.",
+    "Starting from version 3.10, G3W-SUITE ships with the qes module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into Elasticsearch to provide fast, full-text search across the published WebGIS projects.": "Începând cu versiunea 3.10, G3W-SUITE nave cu navele cu qes modul (QGIS Elasticsearch), o componentă opțională care indexează QGIS caracteristici ale stratului în Cercetari elastice să ofere o căutare rapidă şi completă a proiectelor WebGIS publicate.",
     "The [standard Compose file for 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml) includes Elasticsearch 8.18.1, but the service is not on the same Compose network as `g3w-suite`. Add `internal` under `services.elasticsearch.networks` in the Compose file you deploy:": ", [ Fișier standard Compoziție pentru 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml) include Elasticsearch 8.18.1, dar serviciul nu este pe aceeași rețea Compoziție ca `g3w-suite`Adaugă `internal` sub `services.elasticsearch.networks`  în fișierul Compoziție pe care îl implementați:",
     "The `qes_indexer` management command performs a full indexing of one or more QGIS projects for every user that has permission to access them:": ", `qes_indexer`  comanda de management efectuează o indexare completă a unuia sau mai multor QGIS  proiecte pentru fiecare utilizator care are permisiunea de a le accesa:",
     "The endpoint honours the standard G3W-SUITE project permissions: anonymous users only see results from projects shared with the anonymous user, authenticated users see the subset of features that match their grants.": "Obiectivul final onorează standardul G3W-SUITE  permisiuni de proiect: utilizatorii anonimi văd doar rezultatele proiectelor împărtășite cu utilizatorul anonim, utilizatorii autentificați văd subgrupul de caracteristici care corespund granturilor lor.",
@@ -2140,7 +2158,7 @@
     "The module exposes a per-project search endpoint backed by `QesSearchAPIView`. Issue a `GET` request to the project search URL with a `q` query parameter, for example:": "Modulul expune un obiectiv de căutare per proiect susținut de `QesSearchAPIView`. Emiterea a `GET`  cerere pentru URL- ul de căutare a proiectului cu un `q`  parametrul de interogare, de exemplu:",
     "The module is part of the [g3w-admin](https://github.com/g3w-suite/g3w-admin) codebase (`g3w-admin/qes/`) and is activated by adding `qes` to the `G3WADMIN_LOCAL_MORE_APPS` list in `local_settings.py`.": "Modulul face parte din [g3w-admin](https://github.com/g3w-suite/g3w-admin) codebase (`g3w-admin/qes/`) și este activat prin adăugarea `qes` la `G3WADMIN_LOCAL_MORE_APPS`  listă în `local_settings.py`.",
     "The response is a JSON list of hits. Each hit contains:": "Răspunsul este o listă JSON de hit-uri. Fiecare lovitură conține:",
-    "This requires the Huey consumer to be running (see the *consumer* Docker compose recipe in [docker.md](docker.md)).": "Acest lucru necesită ca consumatorul Huey să fie difuzate (vezi * Consumator* Docker compune rețetă în [docker.md](docker.md)).",
+    "This requires the Huey consumer to be running (see the *consumer* Docker compose recipe in [docker-installation.md](docker-installation.md)).": "Acest lucru necesită ca consumatorul Huey să fie difuzate (vezi * Consumator* Docker compune rețetă în [docker-installation.md](docker-installation.md)).",
     "Troubleshooting": "Depanare",
     "When `QES_INDEXING_PROJECT = True`, G3W-SUITE listens to project save / delete and to editing commits on vector layers and updates the corresponding documents automatically. No manual action is required after the initial indexing.": "Când `QES_INDEXING_PROJECT = True`, G3W-SUITE  ascultă proiectul salvează / șterge și la editarea se angajează pe straturi vectoriale și actualizează automat documentele corespunzătoare. Nu este necesară nicio acțiune manuală după indexarea inițială.",
     "When `qes` is listed in `G3WADMIN_LOCAL_MORE_APPS`, G3W-SUITE automatically adds `django_elasticsearch_dsl` to `INSTALLED_APPS`.": "Când `qes`  este inclus în `G3WADMIN_LOCAL_MORE_APPS`, G3W-SUITE  adaugă automat `django_elasticsearch_dsl` la `INSTALLED_APPS`.",
@@ -2157,7 +2175,7 @@
     "index attribute values and a derived `text_content` field used for full-text search;": "valori ale atributelor indicelui și o valoare derivată `text_content`  câmpul utilizat pentru căutarea textului integral;",
     "keep the indexes synchronized with editing operations through Django signals (create / update / delete on vector layers managed by the `editing` module);": "mentine indexurile sincronizate cu operatiunile de editare prin semnale Django (creeaza / update / sterge pe straturile vectoriale gestionate de catre `editing`  modul);"
   },
-  "docs/g3wsuite_access_portal.md": {
+  "docs/access-portal.md": {
     "**`Change language`**": "**`Change language`**",
     "**`Go back to the home page`**": "**`Go back to the home page`**",
     "**`Info`**": "**`Info`**",
@@ -2187,11 +2205,12 @@
     "The [optional front-end portal](https://github.com/g3w-suite/g3w-admin-portal) provides the pages shown below. In a default installation without the portal, the site root opens the administration dashboard and redirects visitors who are not signed in to the login page. With the portal enabled, the dashboard is under `/admin/`.": ", [portal opțional de sfârșit față](https://github.com/g3w-suite/g3w-admin-portal)  oferă paginile prezentate mai jos. Într-o instalare implicită fără portal, rădăcina site-ului deschide tabloul de bord al administrației și redirecționează vizitatorii care nu sunt conectați la pagina de autentificare. Cu portalul activat, tabloul de bord este sub `/admin/`.",
     "The home page will contain, in addition to a brief and customizable presentation of the service, also:": "Pagina de start va conține, pe lângă o prezentare scurtă și personalizată a serviciului, și:",
     "The login portal sessions": "Sesiunile portalului de autentificare",
+    "This section describes the different sections of the access portal and how to login to the Administration Panel": "** Această secțiune descrie diferitele secțiuni ale portalului de acces și modul de conectare la Panoul de administrație**",
     "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_** Această secțiune descrie diferitele secțiuni ale portalului de acces și modul de conectare la Panoul de administrație**_",
     "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) with the following items:": "a **meniu în partea dreaptă sus** ![Captură de ecran: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) cu următoarele elemente:",
     "a **panel menu on the right** with the following items:": "a **meniu panou pe dreapta** cu următoarele elemente:"
   },
-  "docs/g3wsuite_administration.md": {
+  "docs/administration-panel.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![ Buton: Salvare](/img/manual-english-buttom-save.avif)",
     "**-->  Django Administration** (only for Staff user): to configure/managme Django advanced settings": "**-->   Administraţia Django** (numai pentru utilizatorul personalului): pentru configurare/managme Django setări avansate",
     "**-->  Edit general data**: to set information shown in the front-end portal": "**-->   Editează date generale**: setarea informațiilor afișate în portalul din față",
@@ -2232,7 +2251,7 @@
     "Front End Social Data": "Date sociale Front End",
     "Front end portal customization": "Personalizare portal frontal",
     "Frontend Groups Map Data": "Date privind grupurile de frontend",
-    "If the [optional portal](g3wsuite_access_portal.md) is enabled, use the **Administration Panel** to customize its content.": "Dacă [portal opțional](g3wsuite_access_portal.md)  este activat, utilizaţi **Panel de administrare**  pentru a personaliza conţinutul său.",
+    "If the [optional portal](access-portal.md) is enabled, use the **Administration Panel** to customize its content.": "Dacă [portal opțional](access-portal.md)  este activat, utilizaţi **Panel de administrare**  pentru a personaliza conţinutul său.",
     "In the **Credits** subsection it is possible to define additional text for the publishing aspects.": "În ** Credite** Subsecțiunea este posibilă definirea textului suplimentar pentru aspectele de publicare.",
     "In the **`General suite data`** form you can define all the informations that will appear on the portal home page": "În **`General suite data`**  forma puteți defini toate informațiile care vor apărea pe pagina principală portal",
     "Information that will be displayed in the **Login/Administration** session": "Informații care vor fi afișate în **Autentificare/administrare**  sesiune",
@@ -2260,6 +2279,7 @@
     "Screenshot: G3W-SUITE Administration Configuration Socialdata Result": "Captură de ecran: G3W-SUITE  Rezultat de configurarea administrației Date sociale",
     "Screenshot: G3W-SUITE Administration Desk": "Captură de ecran: G3W-SUITE  Biroul de administrare",
     "The main page of the Administration Panel shows the following items, depending on your permissions and the installed modules:": "Pagina principală a Panelului de Administraţie prezintă următoarele elemente, în funcţie de permisiunile dumneavoastră şi de modulele instalate:",
+    "This section describes how to manage the various aspects and features of the Suite:": "** Această secțiune descrie modul de gestionare a diferitelor aspecte și caracteristici ale Suite:**",
     "Use the Administration Panel to publish QGIS projects and configure their WebGIS services.": "Utilizați panoul de administrație pentru a publica QGIS  proiecte și configurarea serviciilor WebGIS.",
     "Users and Users Groups management": "Managementul grupurilor de utilizatori şi utilizatori",
     "Users and cartographic macro-groups": "Utilizatori și macrogrupuri cartografice",
@@ -2273,7 +2293,7 @@
     "_**updating and management of WebGis services (search tool and additional functions)**_": "_** actualizarea și gestionarea serviciilor WebGis (instrument de căutare și funcții suplimentare)**_",
     "_**user creation and management (individuals and groups)**_": "_** crearea și gestionarea utilizatorilor (persoane fizice și grupuri)**_"
   },
-  "docs/g3wsuite_client.md": {
+  "docs/map-client.md": {
     "**Add layer:** session to add local vector layers or custom WMS services to the map": "**Adaugă strat:**  sesiune pentru a adăuga straturi vectoriale locale sau personalizate WMS  servicii pe hartă",
     "**Admin:** access to the administration section": "**Admin:**  acces la secțiunea administrativă",
     "**Alerts:** the Messages associated with the individual WebGis services and displayed when the services are started can be recalled by the user at any time. The message will be displayed on a resizable modal and can be consulted in overlay while continuing to interact with the various elements of the cartographic client.": "**Alerte:**  Mesajele asociate cu serviciile individuale WebGis și afișate la începerea serviciilor pot fi rechemate de către utilizator în orice moment. Mesajul va fi afișat pe un mod de operare resizabil și poate fi consultat pe suprapus în timp ce interacționează cu diferitele elemente ale clientului cartografic.",
@@ -2325,7 +2345,7 @@
     "WebGis service title": "Titlul serviciului WebGis",
     "main title (set at General Data level) or MacroGroup name, according to the settings": "titlul principal (setat la nivelul datelor generale) sau denumirea macrogrupului, în funcție de setările"
   },
-  "docs/g3wsuite_editing.md": {
+  "docs/online-editing.md": {
     "**Attention:** the management of the editing of the N: M relations is limited to the management of the 1:N relationship between the parent layer and the intermediate table.": "** Atenţie:**  gestionarea editării relațiilor N: M este limitată la gestionarea relației 1:N între stratul părinte și tabelul intermediar.",
     "**Pay attention!**": "**Fiţi atenţi!**",
     "**reading and editing mode**": "** modul de citire și editare**",
@@ -2354,6 +2374,7 @@
     "Thanks to the integration with the APIs of QGIS it is now possible to manage the main formats (geographically and not) supported by QGIS Server:": "Datorită integrării cu API-urile QGIS  este acum posibil să se gestioneze formatele principale (geografice și nu) susținute de QGIS Server:",
     "The **editing settings** are defined partly at the **QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations)** and partly at the **Administration level** (users with editing power, activation scale, alpha and geo constraints).": ", ** editarea configurărilor**  sunt definite parţial la **QGIS  nivel proiect (editare structura formei, widget-uri asociate atributelor individuale, 1:n si, partial, N:M relatii)**  şi parţial la ** Nivelul de administrare** (utilizatori cu putere de editare, scala de activare, constrângeri alfa și geo).",
     "The editing function manages both direct editing on geometric and alphanumeric layers, and editing on layers in a 1:N or N:M (only in paert) relations, also both geometric and alphanumeric.": "Funcția de editare gestionează atât editarea directă pe straturi geometrice și alfanumerice, cât și editarea pe straturi într-un 1:N sau N:M (numai în Pairt), atât geometric cât și alfanumeric.",
+    "The editing settings are defined partly at the QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations) and partly at the Administration level (users with editing power, activation scale, alpha and geo constraints).": ", ** editarea configurărilor** sunt definite parţial la QGIS nivel proiect (editare structura formei, widget-uri asociate atributelor individuale, 1:n si, partial, N:M relatii) şi parţial la ** Nivelul de administrare** (utilizatori cu putere de editare, scala de activare, constrângeri alfa și geo).",
     "This block will be deactivated when the user exits the editing mode.": "Acest bloc va fi dezactivat atunci când utilizatorul iese din modul de editare.",
     "This means that currently it is not possible to create new records in table M but only:": "Aceasta înseamnă că în prezent nu este posibilă crearea de noi înregistrări în tabelul M, ci numai:",
     "Virtual layer": "Strat virtual",
@@ -2361,7 +2382,7 @@
     "create new relations between new elements of layer N and pre-existing records of layer M": "crearea unor noi relaţii între noile elemente ale stratului N şi înregistrările preexistente ale stratului M",
     "modify the current relations present": "modificarea relaţiilor actuale"
   },
-  "docs/g3wsuite_editing_iframe.md": {
+  "docs/editing-via-iframe.md": {
     "**Available methods:**": "** Metode disponibile:**",
     "**Error response:**": "** Răspuns eroare:**",
     "**Note:** Pay attention to the `\"id\": \"_new_1784646052597\"` value — in particular the `_new_` prefix, which is required to generate a new ID when the feature IDs stored in the database are auto-incremented.": "**Notã:** Fiţi atenţi la `\"id\": \"_new_1784646052597\"`  valoarea `_new_` prefixul, care este necesar pentru a genera un nou ID atunci când ID-urile caracteristicilor stocate în baza de date sunt auto-incrementate.",
@@ -2401,6 +2422,7 @@
     "Update a Feature": "Actualizează o caracteristică",
     "Update an existing feature": "Actualizează o caracteristică existentă",
     "Use **online editing** when G3W-SUITE is embedded in an `<iframe>` hosted by an external parent application.": "Utilizare ** editare online**  când G3W-SUITE  este încorporat într-un `<iframe>`  găzduită de o aplicație părinte externă.",
+    "Use online editing when G3W-SUITE is embedded in an <iframe> hosted by an external parent application.": "Utilizare ** editare online** când G3W-SUITE este încorporat într-un <iframe> găzduită de o aplicație părinte externă.",
     "When modifying an existing feature, include its GeoJSON (with its feature ID) in the request. Omit `geojson` when drawing a new feature. Once drawing finishes, the iframe sends the parent application the feature's GeoJSON — without attributes, which the application can add before calling `add` to save it to the database.": "Atunci când modifică o caracteristică existentă, include GeoJSON (cu ID-ul său de caracteristică) în cerere. `geojson`  atunci când desenează o nouă caracteristică. Odată ce desenul se termină, iframe trimite aplicația părintelui GeoJSON `add`  să-l salvez în baza de date.",
     "`action`": "`action`",
     "`add`": "`add`",
@@ -2437,12 +2459,12 @@
     "Editing via IFRAME": "Editare prin intermediul IFRAME",
     "Elasticsearch integration": "Integrarea cercetării elastică",
     "Follow the [Quick Start](quick-start.md) to publish your own project, or use the [demo tutorial](demo.md#demo-tutorial) to practice with prepared data.": "Urmează [Start rapid](quick-start.md)  să vă publicaţi propriul proiect sau să utilizaţi [tutorial demo](demo.md#demo-tutorial)  să practice cu date pregătite.",
-    "For the complete workflow, see [publish and update WebGIS services](admin-publishing.md).": "Pentru fluxul complet de lucru, a se vedea [ publică și actualizează serviciile WebGIS](admin-publishing.md).",
+    "For the complete workflow, see [publish and update WebGIS services](publish-and-update-webgis-services.md).": "Pentru fluxul complet de lucru, a se vedea [ publică și actualizează serviciile WebGIS](publish-and-update-webgis-services.md).",
     "G3W-SUITE 3.11 Manual": "G3W-SUITE 3.11 Manual",
     "G3W-SUITE administration panel": "G3W-SUITE  panou de administrare",
     "G3W-SUITE base layers": "G3W-SUITE  straturi de bază",
     "G3W-SUITE cartographic client": "G3W-SUITE client cartografic",
-    "G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.": "G3W-SUITE  este un cadru bazat pe Django și Python care se integrează QGIS  componente pentru construirea unui sistem de informații geografice și publicare QGIS  proiecte pe web.",
+    "G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.": "G3W-SUITE este un cadru bazat pe Django și Python care se integrează QGIS componente pentru construirea unui sistem de informații geografice și publicare QGIS proiecte pe web.",
     "Geocoding": "Geocodare",
     "Getting started": "Începutul",
     "Group base layers and languages": "Straturi de bază și limbi de grup",
@@ -2481,7 +2503,7 @@
     "Versions and compatibility": "Variante și compatibilitate",
     "WebGIS roles and organization": "Roluri și organizare WebGIS"
   },
-  "docs/install.md": {
+  "docs/manual-installation.md": {
     "!!IMPORTANT!! Make sure that paths set for DATASOURCE_PATH and MEDIA_ROOT exist.": "•!important!! Asigurați-vă că căile stabilite pentru DATASOURCE_PATH și MEDIA_ROOT există.",
     "**In this page**": "** În această pagină**",
     "After migration, create an administrator account from the directory containing `manage.py`:": "După migrare, creați un cont de administrator din directorul care conține `manage.py`:",
@@ -2499,8 +2521,8 @@
     "Django setup": "Configurare Django",
     "First step is install dev libraries packages for python module": "Primul pas este instalarea pachetelor de biblioteci dev pentru modulul python",
     "For G3W-SUITE deploy clearly can be used the native Python3 `venv` module, `virtualenvwrapper` is a third part module that render the use and management of virtual environments very simple.": "Pentru G3W-SUITE  implementarea clar poate fi folosit pitonul nativ3 `venv`  modul; `virtualenvwrapper`  este un modul din a treia parte care face ca utilizarea și gestionarea mediilor virtuale să fie foarte simplă.",
-    "For a containerized deployment, follow the [Docker installation guide](docker.md) instead.": "Pentru o desfăşurare containerizată, urmaţi [ Ghid de instalare Docker](docker.md)  În schimb.",
-    "For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.": "Pentru alte eliberări, verificaţi [ tabel de compatibilitate versiune](versions.md)  înainte de a alege Python și QGIS  versiuni.",
+    "For a containerized deployment, follow the [Docker installation guide](docker-installation.md) instead.": "Pentru o desfăşurare containerizată, urmaţi [ Ghid de instalare Docker](docker-installation.md)  În schimb.",
+    "For other releases, check the [version compatibility table](versions-and-compatibility.md) before choosing Python and QGIS versions.": "Pentru alte eliberări, verificaţi [ tabel de compatibilitate versiune](versions-and-compatibility.md)  înainte de a alege Python și QGIS  versiuni.",
     "From the repository root:": "Din rădăcina depozitului:",
     "G3W-ADMIN has a series of [paver](http://pythonhosted.org/Paver/) CLI commands to administrate the suite.": "G3W-ADMIN are o serie de [ pastor](http://pythonhosted.org/Paver/) CLI comandă administrarea suitei.",
     "G3W-ADMIN is a Django application. Copy the example settings file from the repository root:": "G3W-ADMIN  este o aplicație Django. Copiați fișierul de setări de exemplu din rădăcina depozitului:",
@@ -2540,6 +2562,7 @@
     "The simpler way is to use [Apache2](https://httpd.apache.org/) as server WEB and its [mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi) module.": "Modul mai simplu este de a utiliza [ Apache2color](https://httpd.apache.org/) ca server WEB și [ Mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi)  modul.",
     "The v3.11.4 checkout includes [docker-compose.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml) and [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). The `dev` branch has separate development configurations.": "V3.11.4 Checkout include [Docker-compune.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml)  şi [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). `dev` Sucursala are configuraţii de dezvoltare separate.",
     "These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.": "Aceste instrucţiuni utilizează Ubuntu 24,04 LTS (Noble) şi Python 3.12.3.",
+    "These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3. Use this installation for development, not production.": "Aceste instrucţiuni utilizează Ubuntu 24,04 LTS (Noble) şi Python 3.12.3. Utilizați această instalație pentru dezvoltare, nu pentru producție.",
     "This last command just make active your new virtualenv environment, for the next times is possible use the follow command to activate the virtualenv environment:": "Această ultimă comandă face doar activ noul mediu virtualenv, pentru următoarele ori este posibil utiliza comanda de urmat pentru a activa mediul virtualenv:",
     "To activate virtuenvwrapper on system login, add follow lines to 'bashrc' config file of your user": "Pentru a activa Environmentvpackper pe login sistem, adăugați liniile de urmărire la fișierul config 'bashrc' al utilizatorului",
     "To check that the active environment can import QGIS on Ubuntu, run:": "Pentru a verifica dacă mediul activ poate importa QGIS pe Ubuntu, fugi:",
@@ -2553,7 +2576,7 @@
     "and for stop": "şi pentru oprire",
     "set database connection parameters (DATABASES), media root (MEDIA_ROOT) and session cookies name (SESSION_COOKIE_NAME):": "parametrii de conectare a bazei de date (DATABASES), rădăcina media (MEDIA_ROOT) și numele cookie-urilor pentru sesiune (SESSION_COOKIE_NAME):"
   },
-  "docs/organization-examples.md": {
+  "docs/access-policy-examples.md": {
     "**Contents organized on a single level (Cartographic groups)**": "** Cuprins organizat la un singur nivel (grupuri cartografice)**",
     "**Contents organized on two levels (Cartographic macro-groups and cartographic groups)**": "**Conţinut organizat pe două niveluri (grupuri macro-cartografice şi grupuri cartografice)**",
     "**Editor1** users can in turn delegate some secondary administrators (**Editor2** role) in managing the contents of the individual Cartographic Groups.": "** Editor 1**  utilizatorii pot delega la rândul lor unii administratori secundari (** Editor 2**  rol) în gestionarea conținutului grupurilor cartografice individuale.",
@@ -2610,7 +2633,7 @@
     "Views services according to their credentials.": "Vizualizează servicii în funcție de acreditările lor.",
     "WebGIS services": "Servicii WebGIS"
   },
-  "docs/projectsettings-layers.md": {
+  "docs/layer-properties.md": {
     "**NB:** The name of this directory is defined by the basic settings set during the installation of the suite.": "**NB:**  Numele acestui director este definit de setările de bază stabilite în timpul instalării suitei.",
     "**PS:** remember that the **`File Manager`** tool also allows you to manage the synchronization of geographical data (in the case of using physical files) and the management of multimedia files.": "**PS:**  Amintiţi-vă că **`File Manager`** instrument, de asemenea, vă permite să gestionaţi sincronizarea datelor geografice (în cazul utilizării fişierelor fizice) şi gestionarea fişierelor multimedia.",
     "**The suite manages the presence of multiple styles associated with a layer.**": "**Apartamentul gestionează prezența mai multor stiluri asociate cu un strat.**",
@@ -2625,7 +2648,7 @@
     "Editing": "Editare",
     "Example:": "Exemplu:",
     "Following queries at the cartographic client level, we will have different behaviors based on the type of content:": "Urmand intrebari la nivel de clienti cartografici, vom avea comportamente diferite bazate pe tipul de continut:",
-    "For more information, see the [dedicated section on editing project settings](editing-project-settings.md).": "Pentru mai multe informaţii, consultaţi: [secţiune dedicată editării seturilor de proiect](editing-project-settings.md).",
+    "For more information, see the [dedicated section on editing project settings](prepare-a-project-for-editing.md).": "Pentru mai multe informaţii, consultaţi: [secţiune dedicată editării seturilor de proiect](prepare-a-project-for-editing.md).",
     "Icon: G3wclient Config": "Pictogramă: G3wclient Config",
     "If external SVG icons are used (added to the basic ones of QGIS, via the **`Settings -> Options -> System -> SVG paths`**), these must be uploaded to the server (through the **`File Manager`** tool) in order to be used by QGIS Server.": "Dacă se utilizează pictograme SVG externe (adăugate la cele de bază ale QGIS, prin intermediul **`Settings -> Options -> System -> SVG paths`**), acestea trebuie încărcate pe server (prin intermediul **`File Manager`** instrument) pentru a fi utilizat de QGIS Server.",
     "If you set a descriptive information in the **`Abstract`** form of the **`QGIS Server`** session of the **`Layer Properties`**, this information will be associated with the layer at the webgis level.": "Dacă setaţi o informaţie descriptivă în **`Abstract`**  forma **`QGIS Server`**  sesiunea sesiunii **`Layer Properties`**, aceste informații vor fi asociate cu stratul de la nivelul webgis.",
@@ -2679,7 +2702,7 @@
     "whether the field is exposed in the **WFS** service, if enabled": "dacă câmpul este expus în **WFS**  serviciu, dacă este activat",
     "whether the field is exposed in the **WMS** service and, therefore, in the WebGis service": "dacă câmpul este expus în **WMS** service si, prin urmare, in serviciul WebGis"
   },
-  "docs/projectsettings-properties.md": {
+  "docs/project-properties.md": {
     "**ATTENTION:** there are currently limitations in the use of N:M relations": "** ATENŢIE:**  există în prezent limitări în utilizarea relațiilor N:M",
     "**ATTENTION:** to correctly manage these types of relations it is NECESSARY to insert the reference to the relations in the customized form": "** ATENŢIE:**  pentru a gestiona corect aceste tipuri de relatii este necesar sa se insereze referinta la relatiile in forma personalizata",
     "**Data sources**": "** Surse de date**",
@@ -2738,7 +2761,7 @@
     "Screenshot: Qgisservergeneralaspectswfs": "Screenshot: Qgisservergeneralaspectswfs",
     "Screenshot: Qgisserversetmapexpetent": "Screenshot: Qgisserversetmapexpert",
     "Screenshot: Qgisserversrisrestriction": "Screenshot: Qgisserversrisrestriction",
-    "See also the [client metadata section](client-tools-and-toc.md#metadata).": "A se vedea, de asemenea, [ Secțiunea metadate client](client-tools-and-toc.md#metadata).",
+    "See also the [client metadata section](map-tools.md#metadata).": "A se vedea, de asemenea, [ Secțiunea metadate client](map-tools.md#metadata).",
     "Service capabilities": "Capacități de serviciu",
     "Show features count": "Arată numărul caracteristicilor",
     "Spatial Bookmarks": "Semne de carte spațiale",
@@ -2764,7 +2787,7 @@
     "in general it is recommended to check **`use the layer ids as names`** option": "în general, se recomandă verificarea **`use the layer ids as names`**  opțiune",
     "the option **`Add geometry to feature response`** must be checked to activate the **zoom to the features** on the WebGis service": "opțiunea **`Add geometry to feature response`**  trebuie verificat pentru a activa ** Măreşte caracteristicile** pe serviciul WebGis"
   },
-  "docs/projectsettings.md": {
+  "docs/qgis-project-settings.md": {
     "**Atlas and report are also supported.**": "**Atlas și raportul sunt, de asemenea, sprijinite.**",
     "**Print layouts can contain more than one `Map` items and panoramic maps.**": "**Modelele de imprimare pot conține mai multe `Map`  obiecte și hărți panoramice.**",
     "**don't use commas for aliases** associated with layers": "**Nu folosi virgule pentru pseudonime.**  asociate cu straturi",
@@ -2782,9 +2805,10 @@
     "Project properties and general settings": "Proprietățile proiectului și setările generale",
     "Project property": "Proprietate proiect",
     "QGIS: project settings": "QGIS: setările proiectului",
-    "See also the dedicated paragraph [Geographic data synchronization on the server](datamanagement#geographical-data-synchronization-on-the-server).": "A se vedea, de asemenea, paragraful dedicat [ Sincronizarea datelor geografice pe server](datamanagement#geographical-data-synchronization-on-the-server).",
+    "See also the dedicated paragraph [Geographic data synchronization on the server](manage-qgis-data.md#geographical-data-synchronization-on-the-server).": "A se vedea, de asemenea, paragraful dedicat [ Sincronizarea datelor geografice pe server](manage-qgis-data.md#geographical-data-synchronization-on-the-server).",
     "Thanks to the integration with QGIS Server, all the symbology aspects associated with the singoly layers are automatically reproduced on the WebGis service": "Datorită integrării cu QGIS Server, toate aspectele simbologie asociate cu straturile singulare sunt reproduse automat pe serviciul WebGis",
     "The following paragraphs describe which QGIS project settings are more relevant in relation to the published WebGis service.": "Următoarele paragrafe descriu care QGIS setările proiectului sunt mai relevante în raport cu serviciul WebGis publicat.",
+    "This section describes how to optimize your QGIS projects to publish as a WebGis service.": "** Această secțiune descrie modul de optimizare a dvs. QGIS proiecte de publicare ca serviciu WebGis.**",
     "Tips": "Sfaturi",
     "You can set also a **custom title** (definible in the WebGis side) setting an **Item ID** at a **Label** item.": "Puteți stabili, de asemenea, un ** titlu personalizat** Setarea unui **Id. element** la ** Eticheta**  obiect.",
     "_**This section describes how to optimize your QGIS projects to publish as a WebGis service.**_": "_** Această secțiune descrie modul de optimizare a dvs. QGIS  proiecte de publicare ca serviciu WebGis.**_",
@@ -2810,12 +2834,12 @@
     "2. Upload your geographic data": "2. Încărcați datele geografice",
     "3. Create a cartographic group": "3. Crearea unui grup cartografic",
     "4. Publish your QGIS project": "4. Publicați dvs. QGIS  proiect",
-    "After saving, check that the project appears in the group's project list. Open it with **View map** and check that the expected layers load. See [Publish and update WebGIS services](admin-publishing.md) for permissions, publication options, and updates.": "După salvare, verificați dacă proiectul apare în lista de proiecte a grupului. Deschideți-l cu **Vizualizare hartă**  şi verificaţi dacă straturile de încărcare aşteptate. [Publică și actualizează serviciile WebGIS](admin-publishing.md)  pentru permisiuni, opțiuni de publicare și actualizări.",
-    "Choose an existing [cartographic group](admin-cartographic-groups.md#add-group) or create one if your account allows it. Services in the same group must use the group's coordinate reference system.": "Alege un existent [ grup cartografic](admin-cartographic-groups.md#add-group)  sau creați unul dacă contul dvs. permite acest lucru. Serviciile din același grup trebuie să utilizeze sistemul de referință coordonat al grupului.",
+    "After saving, check that the project appears in the group's project list. Open it with **View map** and check that the expected layers load. See [Publish and update WebGIS services](publish-and-update-webgis-services.md) for permissions, publication options, and updates.": "După salvare, verificați dacă proiectul apare în lista de proiecte a grupului. Deschideți-l cu **Vizualizare hartă**  şi verificaţi dacă straturile de încărcare aşteptate. [Publică și actualizează serviciile WebGIS](publish-and-update-webgis-services.md)  pentru permisiuni, opțiuni de publicare și actualizări.",
+    "Choose an existing [cartographic group](cartographic-groups.md#add-group) or create one if your account allows it. Services in the same group must use the group's coordinate reference system.": "Alege un existent [ grup cartografic](cartographic-groups.md#add-group)  sau creați unul dacă contul dvs. permite acest lucru. Serviciile din același grup trebuie să utilizeze sistemul de referință coordonat al grupului.",
     "Create a cartographic project with the layers, symbology, forms and print layouts your workflow requires.": "Creați un proiect cartografic cu straturile, simbologie, forme și modele de imprimare necesare fluxului de lucru.",
-    "If you do not have an instance yet, [install G3W-SUITE with Docker](docker.md) or [follow the demo tutorial with prepared data](demo.md#demo-tutorial).": "Dacă nu aveți încă un caz, [instalează G3W-SUITE cu Docker](docker.md)  sau [ urmați tutorialul demo cu date pregătite](demo.md#demo-tutorial).",
-    "If your project uses local files such as Shapefile, GeoPackage, SpatiaLite or raster data, upload them to the server before publishing. The [FileManager](/docs/datamanagement/#geographical-data-synchronization-on-the-server) module preserves the organization of your local data. For PostgreSQL/PostGIS or Oracle Spatial, allow the suite to connect to the database.": "Dacă proiectul dumneavoastră utilizează fișiere locale, cum ar fi Shapefile, GeoPackage, SpatiaLite sau raster date, le încărcați pe server înainte de publicare. [Manager de fișiere](/docs/datamanagement/#geographical-data-synchronization-on-the-server)  modulul păstrează organizarea datelor locale.PostGIS  sau Oracle Spatial, permite suitei sa se conecteze la baza de date.",
-    "Organize your projects and geographic data on your computer as described in the [manual](/docs/datamanagement/#organization-of-data-and-projects).": "Organizaţi-vă proiectele şi datele geografice pe computer aşa cum sunt descrise în [manual](/docs/datamanagement/#organization-of-data-and-projects).",
+    "If you do not have an instance yet, [install G3W-SUITE with Docker](docker-installation.md) or [follow the demo tutorial with prepared data](demo.md#demo-tutorial).": "Dacă nu aveți încă un caz, [instalează G3W-SUITE cu Docker](docker-installation.md)  sau [ urmați tutorialul demo cu date pregătite](demo.md#demo-tutorial).",
+    "If your project uses local files such as Shapefile, GeoPackage, SpatiaLite or raster data, upload them to the server before publishing. The [FileManager](/docs/manage-qgis-data/#geographical-data-synchronization-on-the-server) module preserves the organization of your local data. For PostgreSQL/PostGIS or Oracle Spatial, allow the suite to connect to the database.": "Dacă proiectul dumneavoastră utilizează fișiere locale, cum ar fi Shapefile, GeoPackage, SpatiaLite sau raster date, le încărcați pe server înainte de publicare. [Manager de fișiere](/docs/manage-qgis-data/#geographical-data-synchronization-on-the-server)  modulul păstrează organizarea datelor locale.PostGIS  sau Oracle Spatial, permite suitei sa se conecteze la baza de date.",
+    "Organize your projects and geographic data on your computer as described in the [manual](/docs/manage-qgis-data/#organization-of-data-and-projects).": "Organizaţi-vă proiectele şi datele geografice pe computer aşa cum sunt descrise în [manual](/docs/manage-qgis-data/#organization-of-data-and-projects).",
     "QGIS project": "QGIS  proiect",
     "Quick Start": "Pornire rapidă",
     "Quick Start step 1: create your QGIS project": "Pasul Incepere rapid 1: creați-vă QGIS  proiect",
@@ -2823,7 +2847,7 @@
     "Quick Start step 3: create a cartographic group": "Pasul de pornire rapidă 3: crearea unui grup cartografic",
     "Quick Start step 4: publish your QGIS project": "Start rapid Pasul 4: publicați QGIS  proiect",
     "Steps": "Etape",
-    "To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.": "Pentru a publica propriul proiect, aveți nevoie QGIS Desktop, un sistem de rulare G3W-SUITE  Dacă trebuie să creaţi grupul, verificaţi dacă contul dvs. are această permisiune.",
+    "To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.": "Pentru a publica propriul proiect, aveți nevoie QGIS Desktop, un sistem de rulare G3W-SUITE Dacă trebuie să creaţi grupul, verificaţi dacă contul dvs. are această permisiune.",
     "Upload the `.qgs` or `.qgz` file to the cartographic group. No plugin is needed: the WebGIS service inherits the settings and functions configured in the QGIS project.": "Încărcaţi `.qgs`  sau `.qgz`  fișier la grupul cartografic. Nu este necesar niciun modul: serviciul WebGIS moșteneşte setările și funcțiile configurate în QGIS  Proiect."
   },
   "docs/settings.md": {
@@ -2904,6 +2928,7 @@
     "The `/api/config` response is cached separately from map tiles, by project and user. Project and related configuration changes invalidate the affected cache.": ", `/api/config`  răspunsul este cached separat de plăcile de hartă, de proiect și utilizator. Modificările de configurare și asociate nu invalidează cache-ul afectat.",
     "The example local settings use `http://localhost:8080/ors/v2/` as the Openrouteservice API endpoint.": "Exemplul de setări locale utiliza `http://localhost:8080/ors/v2/` ca serviciu de rută deschisă API  Criteriul final.",
     "The following variables can be added to or edited in the project’s `local_settings.py`:": "Următoarele variabile pot fi adăugate sau editate în cadrul proiectului `local_settings.py`:",
+    "The following variables can be added to or edited in the project’s local_settings.py:": "Următoarele variabile pot fi adăugate sau editate în cadrul proiectului local_settings.py:",
     "This logging system continues to save log records with no upper limit. To keep the table from getting too big, there is a `django command` that deletes records older than a set number of days.": "Acest sistem de exploatare forestieră continuă să salveze înregistrările jurnalului fără limită superioară. Pentru a păstra masa de la obtinerea prea mare, există o `django command` care elimină înregistrările mai vechi decât un număr de zile.",
     "Tile cache": "Cache-ul de tigle",
     "To activate it is sufficient add a new log `handler` inside Django `LOGGING` settings and use it for a `logger`:": "Pentru a activa este suficient să adăugați un nou jurnal `handler`  în interiorul Django `LOGGING` Setări și utilizați-l pentru a `logger`:",
@@ -2913,7 +2938,7 @@
     "`QDJANGO_PRJ_CACHE` enables this cache and defaults to `True`; set it to `False` to disable it. The cache uses Django's default cache backend. Docker configures Redis as that backend.": "`QDJANGO_PRJ_CACHE`  permite acest cache și implicit să `True`; setați-l `False` Docker configurază Redis ca suport.",
     "service plus of `Nominatim` default service.": "serviciu plus `Nominatim`  Serviciul implicit."
   },
-  "docs/social_authentication.md": {
+  "docs/social-login.md": {
     "**Note that the username in this case will be retrieved from the provider.**": "**Rețineți că numele de utilizator în acest caz va fi recuperat de la furnizor.**",
     "Add necessary providers": "Adaugă furnizorii necesari",
     "Add the social apps": "Adaugă aplicațiile sociale",
@@ -2940,6 +2965,7 @@
     "Screenshot: Socialauth User Sessions": "Screenshot: Sesiuni de utilizator Socialauth",
     "Set the site id": "Setează id- ul site-ului",
     "Since version 3.9, G3W-SUITE supports social authentication through [django-allauth](https://django-allauth.readthedocs.io/en/latest/).": "Din momentul versiunii 3.9, G3W-SUITE  sprijină autentificarea socială prin intermediul [django-allaut](https://django-allauth.readthedocs.io/en/latest/).",
+    "Since version 3.9, G3W-SUITE supports social authentication through django-allauth.": "Din momentul versiunii 3.9, G3W-SUITE sprijină autentificarea socială prin intermediul django-allaut.",
     "Social account corner cases": "Cazurile din colțul contului social",
     "Social apps are the settings that in fact enable providers to be used for authentication.": "Aplicaţiile sociale sunt setările care permit furnizorilor să fie utilizaţi pentru autentificare.",
     "Social login": "Autentificare socială",
@@ -2970,12 +2996,12 @@
     "using the Google provider can help the reader to understand the following": "folosind furnizorul Google poate ajuta cititorul să înțeleagă următoarele",
     "we can just add them in the ```local_settings.py``` under the ```G3WADMIN_LOCAL_MORE_APPS```": "Le putem adăuga în ```local_settings.py``` sub ```G3WADMIN_LOCAL_MORE_APPS```"
   },
-  "docs/translation.md": {
+  "docs/translate-g3w-suite.md": {
     "1. Declare the new language in the base settings": "1. Declaraţi noua limbă în setările de bază",
     "2. Create Translation Files": "2. Creați fișiere de traducere",
     "3. Translate the Messages": "3. Tradu mesajele",
     "4. Compile the Translations": "4. Compilează traducerile",
-    "Add a language to G3W-SUITE by following these steps.": "Adaugă o limbă la G3W-SUITE  prin urmărirea acestor paşi.",
+    "Add a language to G3W-SUITE by following these steps.": "Adaugă o limbă la G3W-SUITE prin urmărirea acestor paşi.",
     "After finishing (or updating) your translations, run:": "După ce aţi terminat (sau actualizat) traducerile, executaţi:",
     "By adding some of these lines (eg. into your `plugin.js` or `custom.js`) you can change or add custom translation entries:": "Prin adăugarea unora dintre aceste linii (de exemplu, în dumneavoastră `plugin.js`  sau `custom.js`) puteți modifica sau adăuga intrări de traducere personalizate:",
     "Creates **.po** files in `locale/it/LC_MESSAGES/`.": "Creează **.po**  fișiere în `locale/it/LC_MESSAGES/`.",
@@ -2996,7 +3022,7 @@
     "This creates the compiled **.mo** files Django uses to load translations:": "Aceasta creează compilat **.mo**  fișiere Django folosește pentru a încărca traduceri:",
     "Translate G3W-SUITE": "Tradu G3W-SUITE"
   },
-  "docs/twofa.md": {
+  "docs/double-factor-authentication-2fa.md": {
     "**G3W-SUITE** supports standard login plus optional two-factor authentication (2FA).": "**G3W-SUITE**  acceptă autentificarea standard plus autentificarea opțională a doi factori (2FA).",
     "**Introduction step**": "** Etapa de introducere**",
     "**Method selection**": "** Selectarea metodei**",
@@ -3011,6 +3037,7 @@
     "Double Factor Authentication (2FA)": "Autentificare dublă a factorului (2FA)",
     "Email": "Email",
     "From the **User Profile** page, users can open **Manage two factor authentication**.": "De la ** Profilul utilizatorului**  pagina, utilizatorii pot deschide **Gestionează autentificarea a doi factori**.",
+    "G3W-SUITE supports standard login plus optional two-factor authentication (2FA). When 2FA is enabled for a user, authentication is completed in two steps:": "G3W-SUITE acceptă autentificarea standard plus autentificarea opțională a doi factori (2FA). Atunci când 2FA este activat pentru un utilizator, autentificarea este finalizată în doi pași:",
     "If Django email is configured (`EMAIL_HOST` is set) and 2FA is enabled, users can choose to receive the token by email.": "Dacă e-mailul Django este configurat (`EMAIL_HOST`  este setat) și 2FA este activat, utilizatorii pot alege să primească jetonul prin e-mail.",
     "If TOTP is selected, the wizard provides:": "Dacă TOTP este selectat, vrăjitorul oferă:",
     "Login Flow with 2FA Enabled": "Flux de autentificare cu 2FA activat",
@@ -3033,7 +3060,7 @@
     "activate_2fa_step3": "activează_2fa_step3",
     "activate_2fa_step4": "activează_2fa_step4"
   },
-  "docs/user_groups_organization.md": {
+  "docs/webgis-roles-and-organization.md": {
     "**Admin role users**": "** Utilizatori de roluri admin**",
     "**Admin role users** will be able to access/edit/upload all the contents of the FileManager.": "** Utilizatori de roluri admin** va putea accesa/edit/încărca toate conținutul FileManager.",
     "**Anonymous user:** a visitor who has not signed in. Public access is granted by assigning permissions to the anonymous user.": "** Utilizator anonim:** un vizitator care nu a semnat inch Accesul public este acordat prin atribuirea permisiuni pentru utilizatorul anonim.",
@@ -3061,7 +3088,7 @@
     "As previously specified, **Editor 1** user will be able to:": "Aşa cum s-a specificat anterior, ** Editor 1**  utilizatorul va putea:",
     "Cartographic groups": "Grupuri cartografice",
     "Even the **Admin** user can publish **WebGis services** within a Cartographic Group and, if necessary, associate them with a user (single and/or group) of **Editor 2** type.": "Chiar şi **Admin**  utilizatorul poate publica ** Servicii WebGis**  în cadrul unui grup cartografic și, dacă este necesar, să le asocieze cu un utilizator (singur și/sau grup) de ** Editor 2** tip.",
-    "G3W-SUITE organizes WebGIS services on two thematic or functional levels:": "G3W-SUITE  organizează servicii WebGIS pe două niveluri tematice sau funcționale:",
+    "G3W-SUITE organizes WebGIS services on two thematic or functional levels:": "G3W-SUITE organizează servicii WebGIS pe două niveluri tematice sau funcționale:",
     "Hierarchical organization of contents": "Organizarea ierarhică a conținutului",
     "In G3W-SUITE it is possible to manage Webgis services in a more or less structured way": "În G3W-SUITE  este posibil să se administreze servicii Webgis într-un mod mai mult sau mai puțin structurat",
     "In G3W-SUITE you can create **Users** and **Users Groups** and associate them with specific roles:": "În G3W-SUITE  puteți crea ** Utilizatori**  şi ** Grupuri de utilizatori**  și să le asocieze cu roluri specifice:",
@@ -3100,7 +3127,7 @@
     "the eventual **Editor2** user (individual/group) to associate with this Group": "eventualul ** Editor 2**  utilizator (individual/grup) să se asocieze cu acest grup",
     "the eventual user (individual/group) **Editor 2** to associate the Group with": "utilizatorul final (individual/grup) ** Editor 2**  asocierea grupului cu"
   },
-  "docs/versions.md": {
+  "docs/versions-and-compatibility.md": {
     "Branch": "Sucursală",
     "Branch compatibility": "Compatibilitatea ramurii",
     "Bug fixes": "Reparații de bug",
@@ -3201,6 +3228,7 @@
     "The **capabilities and properties of QGIS server** like all the services supported by him WMS WFS, WCS etc are **now managed and controlled by G3W-SUITE through the QGIS API.**": ", ** capacitățile și proprietățile QGIS server** ca toate serviciile susţinute de el. WMS WFS, WCS etc sunt ** acum gestionate și controlate de G3W-SUITE  prin intermediul QGIS API.**",
     "The **transaction group management** QGIS function is inherited in WebGis editing.": ", ** gestionarea grupului de tranzacții** QGIS  Funcția este moștenită în editarea WebGis.",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.0 brings a major code restructuring and the first QGIS API integration, expanding support for visualization, querying and editing.": "Versiunea 3.0 aduce o restructurare majoră a codului și primul QGIS API integrare, suport extins pentru vizualizare, interogare și editare.",
     "official manual on ReadTheDocs": "manual oficial pe ReadTheDocs"
   },
   "news/2020-11-18-changelog-v3.1.md": {
@@ -3229,6 +3257,7 @@
     "The plots are connected to the layers defined on the QGIS project, in this way, as for the searches and the constraints, it is possible to activate the same plots on all WebGis services in which the reference layer is present.": "Terenurile sunt conectate la straturile definite pe QGIS  proiect, în acest fel, în ceea ce privește căutările și constrângerile, este posibil să se activeze aceleași parcele pe toate serviciile WebGis în care este prezent stratul de referință.",
     "To date, the** modules/functions are managed through the API** are:": "Până în prezent,**  modulele/funcțiile sunt gestionate prin intermediul API**  sunt:",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.1 introduces DataPlotly charts, Atlas print layouts and broader QGIS API support.": "Versiunea 3.1 introduce DataPlotly diagrame, schițe de imprimare Atlas și mai largi QGIS API sprijin.",
     "We hope you enjoy this great work!": "Sperăm să vă bucuraţi de această lucrare minunată!",
     "altas print layout": "Altas print layout",
     "editing and visualization constraints": "constrângeri de editare și vizualizare",
@@ -3262,6 +3291,7 @@
     "The **plots** can be **filtered** on the values associated with only the **filtered features** following selection": ", ** parcele**  poate fi ** filtrat**  privind valorile asociate numai ** caracteristici filtrate**  după selecție",
     "These will be **visible in the query results form** and **in the 1:N relations session**.": "Acestea vor fi ** vizibil în formularul de rezultate ale interogării**  şi ** în sesiunea de relații 1:N**.",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.2 adds QGIS 3.16 LTR support, layer filtering, DataPlotly integration and QGIS AuthCFG support.": "Versiunea 3.2 adaugă QGIS 3.16 Suport LTR, filtrare strat, DataPlotly integrarea și QGIS AuthCFG suport.",
     "We hope you enjoy this great work!": "Sperăm să vă bucuraţi de această lucrare minunată!",
     "ability to **select layer records** and **filter the content on the map and on print**": "capacitatea de a ** selectați înregistrările straturilor**  şi ** filtrează conținutul de pe hartă și pe imprimare**",
     "official ReadTheDocs documentation": "Documentaţie oficială ReadTheDocs"
@@ -3291,6 +3321,7 @@
     "Through a drop-down menu it is possible to view the **different combinations of layers** (switched on and off) **based on themes** defined in the **QGIS project**.": "Printr-un meniu drop-down este posibil să vizualizați ** combinații diferite de straturi** (Tremurat și oprit) **pe baza temelor**  definită în **QGIS  proiect**.",
     "To date, the** modules/functions are managed through the API** are:": "Până în prezent,**  modulele/funcțiile sunt gestionate prin intermediul API**  sunt:",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.3 introduces per-user editing permissions, QGIS expressions in online editing, Oracle Spatial editing and more API integration.": "Versiunea 3.3 introduce permisiuni de editare per utilizator, QGIS expresii în editare online, Editare spaţială Oracle şi mai mult API integrarea.",
     "We hope you enjoy this great work!": "Sperăm să vă bucuraţi de această lucrare minunată!",
     "altas print layout": "Altas print layout",
     "editing and visualization constraints": "constrângeri de editare și vizualizare",
@@ -3320,6 +3351,7 @@
     "The list of WMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.": "Lista WMS  servicii și specificul WMS  straturile adăugate vor rămâne disponibile utilizatorului până când cache-ul browser-ului este eliminat.",
     "This function will be reflected in the consultation side.": "Această funcție se va reflecta în partea de consultare.",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.4 adds embedded project management, cascading forms, custom WMS services, temporal layers and multiband raster plots.": "Versiunea 3.4 adaugă managementul de proiect integrat, formulare de cascadă, personalizat WMS servicii, straturi temporale și parcele raster multibandă.",
     "We hope you enjoy this great work!": "Sperăm să vă bucuraţi de această lucrare minunată!",
     "official ReadTheDocs documentation": "Documentaţie oficială ReadTheDocs"
   },
@@ -3341,6 +3373,7 @@
     "Setting inherited from the QGIS project": "Stabilirea moștenită de la QGIS  proiect",
     "Sponsor and funder": "Sponsor și finanțator",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.5 adds stability improvements, symbology category controls, web editing tools and refactored time series.": "Versiunea 3.5 adaugă îmbunătățiri de stabilitate, controale de categorie simbologie, instrumente de editare web și serii de timp refactorizate.",
     "We hope you enjoy this great work!": "Sperăm să vă bucuraţi de această lucrare minunată!",
     "We remember in particular:": "Ne amintim în special:",
     "access and modification permissions": "permisiuni de acces și modificare",
@@ -3370,6 +3403,7 @@
     "Take advantage of all the news related to the preparation of QGIS projects with the new LTR version": "Profitaţi de toate ştirile legate de pregătirea QGIS  proiecte cu noua versiune LTR",
     "The number of features updates automatically based on the style associated with the layer.": "Numărul de actualizări de caracteristici bazate automat pe stilul asociat cu stratul.",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.6 adds QGIS 3.28 LTR support, system logs, multilayer search, spatial bookmarks and project and group trash management.": "Versiunea 3.6 adaugă QGIS 3.28 Suport LTR, jurnale de sistem, căutare multistrat, semne de carte spațiale și gestionarea gunoiului de grup.",
     "We remember in particular:": "Ne amintim în special:",
     "With v3.6.x version G3W-SUITE can save message logs inside the database.": "Cu versiunea v3.6.x G3W-SUITE  poate salva jurnalele mesajelor din baza de date.",
     "message body (also in html)": "mesaj (de asemenea, în html)",
@@ -3457,6 +3491,7 @@
     "This function will allow you to activate analysis models on individual WebGis services and allow such analyzes to be carried out directly in the web environment.": "Această funcție vă va permite să activați modele de analiză pe servicii webGis individuale și să permiteți ca astfel de analize să fie efectuate direct în mediul web.",
     "Try the current demo": "Încearcă demo-ul curent",
     "Until now, only the Admin user could upload and manage geographic data on a physical file in the FileManager session.": "Până acum, doar utilizatorul admin putea încărca și administra date geografice pe un fișier fizic în sesiunea FileManager.",
+    "Version 3.7 introduces a module for running QGIS ModelDesigner analyses on the web, alongside improvements to filtering, editing and map tools.": "Versiunea 3.7 introduce un modul de funcționare QGIS ModelDesigner analizează pe web, alături de îmbunătățiri la filtrare, editare și instrumente de hartă.",
     "Version 3.7 of G3W-SUITE is characterized by the release of a module dedicated to the** integration of analysis models created on QGIS via ModelDesigner**.": "Versiunea 3.7 a G3W-SUITE  este caracterizat prin eliberarea unui modul dedicat**  integrarea modelelor de analiză create pe QGIS  prin ModelDesigner**.",
     "attribute table contents": "conținut tabel atribut",
     "data underlying the charts": "date care stau la baza hărților",
@@ -3504,6 +3539,7 @@
     "Output types supported": "Tipuri de ieșire acceptate",
     "QGIS Model Builder features and settings": "QGIS  Caracteristici și setări model constructor",
     "Release date: **13 December 2023**": "Data de lansare: **13 decembrie 2023**",
+    "Run QGIS Processing models in the web client and use their results in WebGIS projects.": "Fugi! QGIS Procesarea modelelor în clientul web și utilizarea rezultatelor lor în proiecte WebGIS.",
     "Screenshot: Algoritmi": "Screenshot: Algoritmi",
     "Screenshot: Inputs": "Captura de ecran: intrări",
     "Screenshot: Model Builder Model Import Settings": "Screenshot: Model Constructor Model Setări import",
@@ -3524,6 +3560,7 @@
     "**Training**: QGIS project preparation, creation and design of data entry forms, background maps, field data collection, synchronization and everything needed for the best results": "** Formare**: QGIS  pregătirea, crearea și proiectarea de formulare de intrare a datelor, hărți de fundal, colectarea datelor de câmp, sincronizare și toate cele necesare pentru cele mai bune rezultate",
     ", at every level, for the": ", la fiecare nivel, pentru",
     "API integration": "API  integrare",
+    "Gis3W is an official Mergin Maps partner, supporting field data collection workflows built on QGIS.": "Gis3W este un partener oficial al Mergin Maps, sprijinind fluxurile de lucru de colectare a datelor de teren construite pe QGIS.",
     "Gis3W, [official partner](https://merginmaps.com/partners) of Mergin Maps, provides:": "Gis3W, [ partener oficial](https://merginmaps.com/partners)  din Mergin Maps, oferă:",
     "Integration with G3W-SUITE": "Integrare cu G3W-SUITE",
     "Mergin Maps on devices": "Măreşte hărţile pe dispozitive",
@@ -3607,6 +3644,7 @@
     "The user can manually define the scale and DPI values for the the print outputs": "Utilizatorul poate defini manual valorile de scară și DPI pentru rezultatele de imprimare",
     "There are limitations related to the structure of the customized form": "Există limitări legate de structura formei personalizate",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.8 adds QGIS 3.34 LTR support, customized themes, SVG and GeoPDF export, multigeometric editing and PDF layer downloads.": "Versiunea 3.8 adaugă QGIS 3.34 Suport LTR, teme personalizate, export SVG și GeoPDF, editare multigeometrică și descărcări de strat PDF.",
     "WFS queries (QueryByBox, QueryByPolyon and QueryByDrawPolygon) are extended to layers deriving from embedded projects": "WFS  Întrebările (QueryByBox, QueryByPolyon și QueryByDrawPolygon) sunt extinse la straturile care derivă din proiecte integrate",
     "With this version it is also possible to export prints to **JPG**, **SVG** and **GeoPDF**": "Cu această versiune este, de asemenea, posibil să exportați amprentele **JPG**, **SVG**  şi **GeoPDF**",
     "export the map also in **SVG and GeoPDF format** by defining c**ustom scale and DPI values**": "exportă harta și în **Format SVG și GeoPDF**  prin definirea c** scala ustom și valorile DPI**",
@@ -3689,6 +3727,7 @@
     "This will allow only the results obtained to be automatically displayed in the map and attribute table.": "Acest lucru va permite doar rezultatele obținute să fie afișate automat în tabelul de hărți și atribute.",
     "Through this function it is possible to clone the editing settings of a user and automatically apply the same settings to other users and/or groups of users.": "Prin această funcție este posibilă clonarea setărilor de editare ale unui utilizator și aplicarea automată a acelorași setări și altor utilizatori și/sau grupuri de utilizatori.",
     "Try the current demo": "Încearcă demo-ul curent",
+    "Version 3.9 brings a redesigned map client, simpler editing-permission management and new editing features from QGIS.": "Versiunea 3.9 aduce un client de hartă reproiectat, management mai simplu de editare-permisiune și noi caracteristici de editare de la QGIS.",
     "Visibility management of conditional field groups has been implemented and improved, managing conditions based on Boolean fields or with multiple choices.": "Gestionarea vizibilității grupurilor de câmp condiționat a fost implementată și îmbunătățită, gestionarea condițiilor bazate pe domenii booleene sau cu opțiuni multiple.",
     "With this version it is possible to allow the choice of more than one value among those associated with a field via the “value relation” widget.": "Cu această versiune este posibil să permiteți alegerea mai multor valori printre cele asociate cu un câmp prin intermediul relației valoare",
     "a complete **restyling** of the cartographic client": "un complet **retilizare**  clientului cartografic",
@@ -3781,6 +3820,7 @@
     "This tool allows you to perform comprehensive searches based on a subset of the project layers, simplifying the use by the user.": "Acest instrument vă permite să efectuați căutări cuprinzătoare pe baza unui subset de straturi de proiect, simplificând utilizarea de către utilizator.",
     "This tool allows you to share the WebGis service while maintaining the customizations defined by the user, including, if present, the annotations created:": "Acest instrument vă permite să partajați serviciul WebGis în timp ce menține personalizările definite de utilizator, inclusiv, dacă sunt prezente, adnotările create:",
     "Try the demo": "Încearcă demo-ul.",
+    "Version 3.10 adds QGIS 3.40 LTR compatibility, Elasticsearch integration, Redlining Notes and improved DataPlotly chart management.": "Versiunea 3.10 adaugă QGIS 3.40 Compatibilitatea LTR, integrarea Elasticsearch, Note de Redlining și îmbunătățit DataPlotly managementul graficului.",
     "[**Elasticsearch**](https://www.elastic.co/) integration": "[**Cercetari elastice**](https://www.elastic.co/)  integrare",
     "add one or more records to the child table (only if alphanumeric) associating them with all the selected parents": "adăugați una sau mai multe înregistrări la tabelul pentru copii (numai dacă sunt alfanumerice) care le asociază cu toți părinții selectați",
     "and much more.": "şi mult mai mult.",
@@ -3859,6 +3899,7 @@
     "This function can also be set for cascading 1:N relations.": "Această funcție poate fi stabilită și pentru a cascada relațiile 1:N.",
     "This tool allows you to perform comprehensive searches based on a subset of the project layers, simplifying the use by the user.": "Acest instrument vă permite să efectuați căutări cuprinzătoare pe baza unui subset de straturi de proiect, simplificând utilizarea de către utilizator.",
     "Try the demo": "Încearcă demo-ul.",
+    "Version 3.11 brings QGIS 3.44 LTR compatibility, major reductions in file count and compilation time, and new integrations with the QGIS API.": "Versiunea 3.11 aduce QGIS 3.44 Compatibilitatea LTR, reduceri majore ale numărului de fișiere și timpul de compilare și noi integrări cu QGIS API.",
     "With the new version it is possible to merge multiple graphs from the DataPlotly plugin to create multiple overlapping graphs": "Cu noua versiune este posibil să se fuzioneze mai multe grafice de la DataPlotly  modul pentru a crea grafice multiple care se suprapun",
     "You can now create bookmarks for your favorite projects so they always appear on top of your admin session dashboard.": "Acum puteți crea semne de carte pentru proiectele dumneavoastră preferate astfel încât acestea să apară întotdeauna pe partea de sus a bord sesiune admin.",
     "ability to test changes “live” directly on a remote server (few substantial differences between evelopment and production environments)": "capacitatea de a testa modificările",

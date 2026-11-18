@@ -15,7 +15,7 @@ Then('the browser highlighter supports the languages used in code blocks', funct
   const assets = path.join(staticDir, 'highlight');
   const context = {};
   runInNewContext(fs.readFileSync(path.join(assets, 'highlight.min.js'), 'utf8'), context);
-  const docs = readPage(path.join(staticDir, 'docs', 'translation', 'index.html')).$;
+  const docs = readPage(path.join(staticDir, 'en', 'docs', 'translate-g3w-suite', 'index.html')).$;
   for (const language of ['js', 'po']) {
     const snippet = docs(`pre > code.language-${language}`).text();
     assert.ok(snippet.trim());
@@ -54,6 +54,8 @@ Then('Mermaid blocks render at runtime with accessible labels', function () {
 
 Then('the build supports a project base path without broken internal links', function () {
   const prefix = '/www.g3wsuite.it';
+  const obsoleteRedirect = fs.mkdtempSync(path.join(staticDir, 'obsolete-language-redirect-'));
+  fs.copyFileSync(path.join(staticDir, 'index.html'), path.join(obsoleteRedirect, 'index.html'));
   const build = basePath => {
     const result = spawnSync(process.execPath, ['build/server.js', '--build'], {
       env: { ...process.env, SITE_BASE_PATH: basePath },
@@ -63,6 +65,7 @@ Then('the build supports a project base path without broken internal links', fun
   };
   try {
     build(prefix);
+    assert.ok(!fs.existsSync(obsoleteRedirect), 'rebuilds must remove redirects for deleted page routes');
     for (const file of htmlFiles(staticDir)) {
       const { $ } = readPage(file);
       $('[href], [src]').each((_, element) => {
@@ -80,20 +83,33 @@ Then('the build supports a project base path without broken internal links', fun
     for (const lang of languages) {
       assert.equal($(`a[hreflang="${lang}"]`).attr('href'), `${prefix}/${lang}/`);
     }
+    const redirect = readPage(path.join(staticDir, 'docs', 'demo', 'index.html')).$;
+    const links = redirect('a[hreflang]').toArray().map(element => ({
+      href: redirect(element).attr('href'),
+      hreflang: redirect(element).attr('hreflang'),
+    }));
+    let redirected;
+    runInNewContext(redirect('script').text(), {
+      document: { querySelectorAll: () => links },
+      navigator: { languages: ['fr-CA', 'en'] },
+      location: { search: '?example=1', hash: '#details', replace: url => { redirected = url; } },
+    });
+    assert.equal(redirected, `${prefix}/fr/docs/demo/?example=1#details`);
     const explore = readPage(path.join(staticDir, 'en', 'about', 'index.html')).$;
     assert.equal(explore('link[rel="stylesheet"]').attr('href'), `${prefix}/app.css`);
-    const demos = readPage(path.join(staticDir, 'docs', 'demo', 'index.html')).$;
+    const demos = readPage(path.join(staticDir, 'en', 'docs', 'demo', 'index.html')).$;
     assert.ok(demos('a[href="https://v311.g3wsuite.it/"]').length, 'external URLs must remain unchanged');
-    const docs = readPage(path.join(staticDir, 'docs', 'index.html')).$;
-    assert.equal(docs('form.docs-search').attr('data-index-url'), `${prefix}/docs/search-index.json`);
-    const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'docs', 'search-index.json'), 'utf8'));
-    assert.ok(searchIndex.every(page => page.url.startsWith(`${prefix}/docs/`)), 'search results must include the project base path');
+    const docs = readPage(path.join(staticDir, 'en', 'docs', 'index.html')).$;
+    assert.equal(docs('form.docs-search').attr('data-index-url'), `${prefix}/en/docs/search-index.json`);
+    const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'en', 'docs', 'search-index.json'), 'utf8'));
+    assert.ok(searchIndex.every(page => page.url.startsWith(`${prefix}/en/docs/`)), 'search results must include the project base path');
     const italianDocs = readPage(path.join(staticDir, 'it', 'docs', 'index.html')).$;
     assert.equal(italianDocs('html').attr('lang'), 'it');
     assert.equal(italianDocs('form.docs-search').attr('data-index-url'), `${prefix}/it/docs/search-index.json`);
     const italianSearch = JSON.parse(fs.readFileSync(path.join(staticDir, 'it', 'docs', 'search-index.json'), 'utf8'));
     assert.ok(italianSearch.every(page => page.url.startsWith(`${prefix}/it/docs/`)), 'Italian search results must include the language route and project base path');
   } finally {
+    fs.rmSync(obsoleteRedirect, { recursive: true, force: true });
     build('');
   }
 });

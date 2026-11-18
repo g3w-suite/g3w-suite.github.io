@@ -7,8 +7,6 @@
   "@documentation": {
     "Documentation": "Documentação",
     "Documentation navigation": "Navegação de documentação",
-    "G3W-SUITE Documentation": "G3W-SUITE  Documentação",
-    "G3W-SUITE documentation": "G3W-SUITE  documentação",
     "No results found.": "Não foram encontrados resultados.",
     "Search docs": "Procurar documentos",
     "Search documentation": "Documentação de pesquisa",
@@ -197,11 +195,11 @@
     "**I develop DataPlotly, a QGIS plugin that links interactive charts to the map.**": "**Eu me desenvolvo DataPlotly, a QGIS plugin que liga gráficos interativos ao mapa.**",
     "Back to the project": "Voltar ao projeto",
     "Beyond G3W-SUITE": "Para além G3W-SUITE",
-    "G3W-SUITE brings charts made with DataPlotly into the web map. A project administrator can save a chart configuration as XML in QGIS and import it into G3W-ADMIN as a [QPlotly widget](/en/docs/admin-charts/), without having to recreate the chart for the web.": "G3W-SUITE  traz gráficos feitos com DataPlotly no mapa web. Um administrador de projetos pode salvar uma configuração de gráfico como XML QGIS e importá-lo para G3W-ADMIN  como uma [QPlotly widget](/en/docs/admin-charts/), sem ter que recriar o gráfico para a web.",
+    "G3W-SUITE brings charts made with DataPlotly into the web map. A project administrator can save a chart configuration as XML in QGIS and import it into G3W-ADMIN as a [QPlotly widget](/en/docs/configure-charts/), without having to recreate the chart for the web.": "G3W-SUITE  traz gráficos feitos com DataPlotly no mapa web. Um administrador de projetos pode salvar uma configuração de gráfico como XML QGIS e importá-lo para G3W-ADMIN  como uma [QPlotly widget](/en/docs/configure-charts/), sem ter que recriar o gráfico para a web.",
     "GitHub profile": "Perfil do GitHub",
     "I developed DataPlotly to create interactive charts directly in QGIS using Plotly. It supports scatter plots, histograms and box plots, among others. Selecting a point in a scatter plot can highlight the corresponding feature on the map, making it easier to see where an outlier is located.": "Eu desenvolvi DataPlotly  criar gráficos interativos diretamente em QGIS  usando o Gráfico. Ele suporta gráficos de dispersão, histogramas e gráficos de caixas, entre outros. Selecionar um ponto em um gráfico de dispersão pode destacar o recurso correspondente no mapa, tornando mais fácil ver onde um outlier está localizado.",
     "In G3W-SUITE": "In G3W-SUITE",
-    "In the web map, users can filter the chart to features they select or to those visible in the current map view. For example, a chart of property sizes can show only the parcels in view as a user zooms into a neighbourhood. The [widget demo guide](/en/docs/demo-widgets/) shows how to try both filters.": "No mapa web, os usuários podem filtrar o gráfico para as funcionalidades que selecionarem ou para as visíveis na visão atual do mapa. Por exemplo, um gráfico de tamanhos de propriedades pode mostrar apenas os pacotes em vista como um usuário amplia em uma vizinhança. [ guia de demonstração do widget](/en/docs/demo-widgets/)  mostra como tentar ambos os filtros.",
+    "In the web map, users can filter the chart to features they select or to those visible in the current map view. For example, a chart of property sizes can show only the parcels in view as a user zooms into a neighbourhood. The [widget demo guide](/en/docs/try-layer-tools-in-the-demo/) shows how to try both filters.": "No mapa web, os usuários podem filtrar o gráfico para as funcionalidades que selecionarem ou para as visíveis na visão atual do mapa. Por exemplo, um gráfico de tamanhos de propriedades pode mostrar apenas os pacotes em vista como um usuário amplia em uma vizinhança. [ guia de demonstração do widget](/en/docs/try-layer-tools-in-the-demo/)  mostra como tentar ambos os filtros.",
     "Matteo Ghetta - G3W-Suite": "Matteo Ghetta - G3W- Suite",
     "Matteo Ghetta develops DataPlotly, the QGIS plugin used to create interactive charts for G3W-SUITE web maps.": "Matteo Ghetta desenvolve DataPlotly, QGIS 'plugin' usado para criar gráficos interactivos G3W-SUITE  Mapas web.",
     "The [DataPlotly documentation](https://dataplotly-docs.readthedocs.io/en/latest/intro.html) shows how to combine charts and export them as HTML without losing interactivity. I have also worked on the [QGIS documentation](https://github.com/qgis/QGIS-Documentation/commits?author=ghtmtt), where I added copy buttons to code examples.": "A [DataPlotly  documentação](https://dataplotly-docs.readthedocs.io/en/latest/intro.html)  mostra como combinar gráficos e exportá- los como HTML sem perder a interatividade. Eu também trabalhei no [QGIS  documentação](https://github.com/qgis/QGIS-Documentation/commits?author=ghtmtt), onde eu adicionei botões de cópia para exemplos de código."
@@ -275,7 +273,7 @@
     "Use GitHub Discussions to ask questions, exchange ideas and share how you use G3W-SUITE.": "Use o GitHub Discussions para fazer perguntas, trocar ideias e compartilhar como você usa G3W-SUITE.",
     "View the public roadmap": "Ver o roteiro público"
   },
-  "docs/admin-base-layers.md": {
+  "docs/group-base-layers-and-languages.md": {
     "**Description**": "** Designação das mercadorias**",
     "**Description:** an internal description of the new Base Layer": "** Descrição:**  uma descrição interna da nova Camada de Base",
     "**Icon:** a descriptive, client-side view of the new Base Layer": "** Ícone:**  uma visão descritiva, do lado do cliente da nova Camada de Base",
@@ -318,9 +316,9 @@
     "Screenshot: Language Admin": "Imagem: Admin. de Linguagem",
     "Screenshot: Language Client": "Imagem: Cliente de linguagem",
     "Screenshot: Language Form": "Imagem: Forma de linguagem",
-    "See [base layer configuration](base_layers.md) for the CRS fields and further examples.": "Veja [ configuração da camada de base](base_layers.md) para os campos CRS e outros exemplos.",
+    "See [base layer configuration](g3w-suite-base-layers.md) for the CRS fields and further examples.": "Veja [ configuração da camada de base](g3w-suite-base-layers.md) para os campos CRS e outros exemplos.",
     "Sessions **`Cartographic MacroGroups`**, **`Cartographic Groups`** and **`WebGis Services`**: contents definable and translatable in the form defining these elements, limited to the items:": "Sessões **`Cartographic MacroGroups`**, **`Cartographic Groups`** e **`WebGis Services`**: conteúdo definível e translatável na forma que define estes elementos, limitado aos itens:",
-    "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](g3wsuite_administration.md) session of the Control Panel Administration": "Sessões **`Home`**, **`About`**, **`Maps`** e **`Login`**: conteúdo que pode ser definido e traduzido no [** Editar Dados Gerais**](g3wsuite_administration.md)  sessão da Administração do Painel de Controlo",
+    "Sessions **`Home`**, **`About`**, **`Maps`** and **`Login`**: content that can be defined and translated in the [**Edit General Data**](administration-panel.md) session of the Control Panel Administration": "Sessões **`Home`**, **`About`**, **`Maps`** e **`Login`**: conteúdo que pode ser definido e traduzido no [** Editar Dados Gerais**](administration-panel.md)  sessão da Administração do Painel de Controlo",
     "Spanish": "Espanhol",
     "Swedish": "Sueco",
     "The new Base Layer will then be available and can be activated at the level of individual Cartographic Groups.": "A nova Camada Base estará então disponível e pode ser ativada ao nível de Grupos Cartográficos individuais.",
@@ -339,7 +337,7 @@
     "save the new settings": "salvar as novas configurações",
     "save the settings": "salvar as configurações"
   },
-  "docs/admin-cartographic-groups.md": {
+  "docs/cartographic-groups.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![Botão: Salvar](/img/manual-english-buttom-save.avif)",
     "***NB:** the security protocols prevent the creation of screenshots if WMS services with domains other than the publication one are present on the map. **In this case the icons will not be present on the client even if the MapControl is selected.**": "***NB:**  os protocolos de segurança impedem a criação de imagens se WMS  serviços com outros domínios que não a publicação estão presentes no mapa. ** Neste caso, os ícones não estarão presentes no cliente mesmo que o MapControl esteja selecionado.**",
     "**Access and modification powers are managed.**": "** Os poderes de acesso e modificação são geridos.**",
@@ -372,7 +370,7 @@
     "**addlayers:** tool for temporarily uploading GML, GeoJson, KML, GPX, SHP (zipped) and CSV with coordinate to WebGis. These layers will remain until the end of the work session": "**addlayers:**  ferramenta para carregar temporariamente GML, GeoJson, KML, GPX, SHP (zipped) e CSV com coordenadas para WebGis. Estas camadas permanecerão até o final da sessão de trabalho",
     "**annotation:*** an useful tool to add custom texts or geometrics (points, line, cirlce, polygon) annotations to the map and share them": "** anotação:***  uma ferramenta útil para adicionar textos personalizados ou geométricos (pontos, linha, cirlce, polígono) anotações ao mapa e compartilhá-las",
     "**area:** surface measuring instrument": "** área:**  instrumento de medição de superfície",
-    "**geocoding:** address search tools and toponyms based on OSM; see the [dedicated paragraph](editing-geocoding.md) for using map control as a tool for populating project data": "**geocodificação:**  ferramentas de pesquisa de endereços e topônimos baseados no OSM; veja o [ parágrafo dedicado](editing-geocoding.md) para usar o controle de mapa como uma ferramenta para povoar dados do projeto",
+    "**geocoding:** address search tools and toponyms based on OSM; see the [dedicated paragraph](geocoding.md) for using map control as a tool for populating project data": "**geocodificação:**  ferramentas de pesquisa de endereços e topônimos baseados no OSM; veja o [ parágrafo dedicado](geocoding.md) para usar o controle de mapa como uma ferramenta para povoar dados do projeto",
     "**geolocation:** geolocation tool  (available only with https certificate)": "**geolocalização:**  ferramenta de geolocalização (disponível apenas com certificado https)",
     "**geoscreenshot:*** tool to create a GeoTIFF of the map area": "** imagem geográfica:***  ferramenta para criar um GeoTIFF da área do mapa",
     "**length:** linear measuring instrument": "** comprimento:**  instrumento de medição linear",
@@ -408,13 +406,14 @@
     "In the event that the Group is created by an Editor1 type user, the Group will be automatically associated with the MacroGroup associated with the same Editor1.": "Caso o Grupo seja criado por um usuário do tipo Editor1, o Grupo será automaticamente associado ao MacroGrupo associado ao mesmo Editor1.",
     "In the left side menu there is the **Cartographic Groups** item with two sub-items:": "No menu do lado esquerdo há o **Grupos cartográficos**  Artigo com dois subitens:",
     "In this box you can define:": "Nesta caixa você pode definir:",
-    "In this regard, consult the section on [**base layers**](admin-base-layers.md).": "A este respeito, consulte a secção sobre [** camadas de base**](admin-base-layers.md).",
-    "Learn more about this in the [dedicated session](user_groups_organization).": "Saiba mais sobre isso no [ sessão dedicada](user_groups_organization).",
+    "In this regard, consult the section on [**base layers**](group-base-layers-and-languages.md).": "A este respeito, consulte a secção sobre [** camadas de base**](group-base-layers-and-languages.md).",
+    "Learn more about this in the [dedicated session](webgis-roles-and-organization.md).": "Saiba mais sobre isso no [ sessão dedicada](webgis-roles-and-organization.md).",
     "Let's see in detail the various sub-sessions of the group creation form.": "Vejamos em detalhe as várias subsessões da forma de criação do grupo.",
     "Let’s see in detail the various sub-sessions of the ACL Users session:": "Vejamos em detalhe os vários subsessões da sessão Usuários ACL:",
     "Logo/Picture": "Logotipo/Foto",
     "MacroGroups": "Macrogrupos",
     "Manage cartographic groups": "Gerenciar grupos cartográficos",
+    "Manage existing Cartographic Groups or create new ones.": "Gerencie Grupos cartográficos existentes ou crie novos.",
     "Remember that it is possible to build customized Base Layers starting from open external Base Layer or from the contenents of a projects published on the suite.": "Lembre-se que é possível construir Camadas de Base personalizadas a partir de Camada de Base externa aberta ou dos conteúdos de um projeto publicado na suíte.",
     "Screenshot: G3W-SUITE Administration Group Add ACL": "Imagem: G3W-SUITE Grupo de Administração Adicionar ACL",
     "Screenshot: G3W-SUITE Administration Group Add Geodata": "Imagem: G3W-SUITE Grupo de Administração Adicionar Geodados",
@@ -423,7 +422,7 @@
     "The option **`Propagate viewers user (single and groups) permissions`** allows you to propagate the Viewer users (individuals and/or groups) associated to the Group to ALL the WebGis services present in it.": "A opção **`Propagate viewers user (single and groups) permissions`**  permite que você propague os usuários do Visualizador (individuais e/ou grupos) associados ao Grupo para TODOS os serviços WebGis presentes nele.",
     "The options present will vary according to the type of user (Admin or Editor1) who creates/manages the Group": "As opções presentes variam de acordo com o tipo de usuário (Admin ou Editor1) que cria/gerencia o Grupo",
     "This option is available only if Cartographic macro groups have been created": "Esta opção só está disponível se tiverem sido criados grupos macro cartográficos",
-    "To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-widgets-setup.md) section.": "Para evitar isto, defina o WMS  como ** interno WMS** na [ Gestão de elementos](admin-widgets-setup.md)  secção.",
+    "To avoid this, set the WMS as **internal WMS** in the [Widget management](layer-tools.md) section.": "Para evitar isto, defina o WMS  como ** interno WMS** na [ Gestão de elementos](layer-tools.md)  secção.",
     "You can also access the list of groups by clicking on the **\"Show\"** button in the **Cartographic Groups** box on the **Dashboard**.": "Você também pode acessar a lista de grupos clicando no **\"Mostrar\"**  botão no **Grupos cartográficos**  caixa na caixa ** Painel**.",
     "You can switch between WebGIS services while keeping the map extent and scale only when their projects belong to the same cartographic group.": "Você pode alternar entre serviços WebGIS mantendo a extensão e escala do mapa apenas quando seus projetos pertencem ao mesmo grupo cartográfico.",
     "_**Manage existing Cartographic Groups or create new ones.**_": "_**Gerencie Grupos cartográficos existentes ou crie novos.**_",
@@ -434,7 +433,7 @@
     "title associated with the **Cartographic MacroGroup**": "título associado ao **Macrogrupo cartográfico**",
     "title of the WebGis service": "título do serviço WebGis"
   },
-  "docs/admin-charts.md": {
+  "docs/configure-charts.md": {
     "![Icon: Dataplotly](/img/manual-english-icon-dataplotly.avif) QPlotly widget": "![ Ícone: Gráfico de dados](/img/manual-english-icon-dataplotly.avif) QPlotly widget",
     "![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)": "![ Imagem: G3W-SUITE  Gráficos de Administração](/img/manual-english-g3wsuite-administration-plots.avif)",
     "![Screenshot: G3W-SUITE Client Plots](/img/manual-english-g3wsuite-client-plots.avif)": "![ Imagem: G3W-SUITE  Gráficos do Cliente](/img/manual-english-g3wsuite-client-plots.avif)",
@@ -481,13 +480,14 @@
     "The chart title comes from the DataPlotly plugin and is used as its label in G3W-SUITE.": "O título do gráfico vem da DataPlotly plugin e é usado como sua etiqueta em G3W-SUITE.",
     "The module, based on the [Plotly library](https://plotly.com/), , manages plots builts and saved as xml in the DataPlotly QGIS plugin.": "O módulo, baseado no [ Biblioteca de gráficos](https://plotly.com/), , gerencia gráficos construídos e salvos como xml no DataPlotly QGIS plugin.",
     "To access the configuration menu, click on the **'Project QPlotly widgets order'** icon ![Icon: Chart Order](/img/manual-english-icon-chart-order.avif)": "Para aceder ao menu de configuração, clique no **«Projecto QPlotly  ordem de widgets'**  Ícone![ Ícone: Ordem do Gráfico](/img/manual-english-icon-chart-order.avif)",
+    "View plots created using QGIS DataPlotly (a great plugin developed by Matteo Ghetta) in the cartographic client.": "Ver gráficos criados usando QGIS DataPlotly (um grande plugin desenvolvido por Matteo Ghetta) no cliente cartográfico.",
     "You can use Drag&Drop to define the order on the widget list": "Você pode usar o Drag & Drop para definir a ordem na lista de widgets",
     "access the list of graphs associated with a specific layer": "acessar a lista de gráficos associados a uma camada específica",
     "click the Related widgets icon for one of the graphs to which you want to associate other graphs": "clique no ícone de widgets relacionados para um dos gráficos aos quais você deseja associar outros gráficos",
     "in the window, add the graphs that will make up the multiple graph from those already present and associated with the layer": "na janela, adicione os gráficos que irão compor o gráfico múltiplo daqueles já presentes e associados à camada",
     "sort the graphs to define their display order (the title shown will be the one associated with the first graph in the list).": "ordenar os gráficos para definir a sua ordem de exibição (o título mostrado será o que será associado com o primeiro gráfico na lista)."
   },
-  "docs/admin-group-management.md": {
+  "docs/manage-cartographic-groups.md": {
     "![Icon: Add](/img/manual-english-icon-add.avif) **Add a new project (QGIS)** to be published as WebGis service": "![ Ícone: Adicionar](/img/manual-english-icon-add.avif) ** Adicionar um novo projecto (QGIS)** a ser publicado como serviço WebGis",
     "![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** group definitions": "![ Ícone: Editar](/img/manual-english-icon-edit.avif) ** Alterar**  definições de grupo",
     "![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** group": "![ Ícone: Apagar](/img/manual-english-icon-erase.avif) ** Apagar**  grupo",
@@ -503,6 +503,7 @@
     "Drag and drop groups to change their order in the list.": "Arraste e solte grupos para alterar sua ordem na lista.",
     "Filter cartographic groups by:": "Filtrar grupos cartográficos por:",
     "For each group, the Title and associated EPSG are shown.": "Para cada grupo, o Título e os associados EPSG são mostrados.",
+    "From this item you can access the list of the created cartographic groups.": "A partir deste item você pode acessar a lista dos grupos cartográficos criados.",
     "General operations": "Operações gerais",
     "Groups List": "Lista de Grupos",
     "In case of request to delete the Cartographic Group, a popup will ask whether the deletion of the Group should be permanent or a simple deactivation, which can be restored from the Trash menu.": "Em caso de solicitação para excluir o Grupo Cartográfico, uma popup perguntará se a exclusão do Grupo deve ser permanente ou uma desativação simples, que pode ser restaurada do menu Lixo.",
@@ -525,7 +526,7 @@
     "the associated EPSG": "a EPSG",
     "the associated Editor1/Editor2 users and Editor2/Viewer user groups": "os usuários associados do Editor1/Editor2 e grupos de usuários do Editor2/Viewer"
   },
-  "docs/admin-publishing.md": {
+  "docs/publish-and-update-webgis-services.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![Botão: Salvar](/img/manual-english-buttom-save.avif)",
     "![Screenshot: Iconsmall Download](/img/manual-english-iconsmall-download.avif) **Download of the QGIS project**": "![ Imagem: Iconsmall Download](/img/manual-english-iconsmall-download.avif) ** Transferência da QGIS  projeto**",
     "![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif) **Update a project:** update of the QGIS file and other options related to the project": "![ Imagem: Iconsmall Editar](/img/manual-english-iconsmall-edit.avif) ** Atualizar um projeto:**  actualização da QGIS  arquivo e outras opções relacionadas ao projeto",
@@ -560,7 +561,7 @@
     "**`Map themes list initial status`**: it is possible to define whether the list of themes (views) possibly associated with the project is collapsed or expanded when the WebGis service is started": "**`Map themes list initial status`**: é possível definir se a lista de temas (vistas) possivelmente associados ao projeto é colapsada ou expandida quando o serviço WebGis é iniciado",
     "**`Max feature to get for query`***: maximum number of features returned in single or multiple query mode (default: 5; recommended value: 50)": "**`Max feature to get for query`***: número máximo de recursos retornados no modo de consulta simples ou múltipla (padrão: 5; valor recomendado: 50)",
     "**`Public title`:** title of the WebGis service, it will appear at the font end level and in the header of the client.": "**`Public title`:**  título do serviço WebGis, ele aparecerá no nível final da fonte e no cabeçalho do cliente.",
-    "**`QGIS file`**: upload the `.qgz` or `.qgs` project. Uploading the project is not a substitute for making its data sources available to QGIS Server. If a file-based layer is missing after publishing or updating, verify the server-side paths against the [data management guide](datamanagement.md).": "**`QGIS file`**: enviar o `.qgz` ou `.qgs` O envio do projecto não é um substituto para tornar as suas fontes de dados disponíveis para QGIS  Servidor. Se faltar uma camada baseada em ficheiros após a publicação ou actualização, verifique os caminhos do servidor contra a [ guia de gestão de dados](datamanagement.md).",
+    "**`QGIS file`**: upload the `.qgz` or `.qgs` project. Uploading the project is not a substitute for making its data sources available to QGIS Server. If a file-based layer is missing after publishing or updating, verify the server-side paths against the [data management guide](manage-qgis-data.md).": "**`QGIS file`**: enviar o `.qgz` ou `.qgs` O envio do projecto não é um substituto para tornar as suas fontes de dados disponíveis para QGIS  Servidor. Se faltar uma camada baseada em ficheiros após a publicação ou actualização, verifique os caminhos do servidor contra a [ guia de gestão de dados](manage-qgis-data.md).",
     "**`Query by bbox control mode`***: single or multiple": "**`Query by bbox control mode`***: único ou múltiplo",
     "**`Query by polygon control mode`***: single or multiple": "**`Query by polygon control mode`***: único ou múltiplo",
     "**`Query control mode`***: single or multiple": "**`Query control mode`***: único ou múltiplo",
@@ -597,7 +598,7 @@
     "In this session it is also possible to define which of the cartographic projects loaded within the group will be used as a panoramic map.": "Nesta sessão também é possível definir quais dos projetos cartográficos carregados dentro do grupo serão utilizados como mapa panorâmico.",
     "It is possible to access the list of trashed Projects and the restore functions through the tab Trash positioned just above the list of published projects": "É possível acessar a lista de Projetos destruídos e as funções de restauração através da aba Lixo posicionado logo acima da lista de projetos publicados",
     "It is possible to define a custom order by moving the published projects via drag&drop.": "É possível definir uma ordem personalizada movendo os projetos publicados via drag&drop.",
-    "Learn more about this in the [dedicated session](user_groups_organization).": "Saiba mais sobre isso no [ sessão dedicada](user_groups_organization).",
+    "Learn more about this in the [dedicated session](webgis-roles-and-organization.md).": "Saiba mais sobre isso no [ sessão dedicada](webgis-roles-and-organization.md).",
     "Let’s see in detail the various sub-sessions of the ACL Users session:": "Vejamos em detalhe os vários subsessões da sessão Usuários ACL:",
     "Messages": "Mensagens",
     "Name of the QGIS project file": "Nome da QGIS  arquivo de projeto",
@@ -607,7 +608,7 @@
     "Public title: if set": "Título público: se definido",
     "Publication of new WebGis services": "Publicação de novos serviços WebGis",
     "Publish and update WebGIS services": "Publicar e atualizar serviços WebGIS",
-    "Publish new QGIS projects:": "Publicar novo QGIS  Projectos:",
+    "Publish new QGIS projects:": "Publicar novo QGIS Projectos:",
     "QGIS project": "QGIS  projeto",
     "QGIS project title: if set on the **General session** of **QGIS project properties**": "QGIS  título do projeto: se definido no ** Sessão geral** de **QGIS  propriedades do projeto**",
     "Restoring a Project involves restoring all the accessory settings/functions of  the project (permissions, searches, editing settings, downloads, etc...).": "Restaurar um projeto envolve restaurar todas as configurações/funções do acessório do projeto (permissões, pesquisas, configurações de edição, downloads, etc...).",
@@ -622,7 +623,7 @@
     "Screenshot: Messages New": "Imagem: Mensagens Novas",
     "Screenshot: Project Delete": "Captura de tela: Projeto Apagar",
     "Screenshot: Tools Details": "Captura de tela: Detalhes das Ferramentas",
-    "See [embedded projects](projectsettings-properties.md#embedded-project) for the publication order and how updates affect dependent projects.": "Veja [ projetos incorporados](projectsettings-properties.md#embedded-project) para a ordem de publicação e como as atualizações afetam projetos dependentes.",
+    "See [embedded projects](project-properties.md#embedded-project) for the publication order and how updates affect dependent projects.": "Veja [ projetos incorporados](project-properties.md#embedded-project) para a ordem de publicação e como as atualizações afetam projetos dependentes.",
     "Setting up the overview map for WebGis services": "Configuração do mapa geral para serviços WebGis",
     "Show details": "Mostrar os detalhes",
     "The Project with all its related content (widgets and settings) is moved to the Trash session.": "O Projeto com todo o seu conteúdo relacionado (widgets e configurações) é movido para a sessão Lixo.",
@@ -655,7 +656,7 @@
     "visibility constraints on attribute fields": "restrições de visibilidade nos campos de atributos",
     "visibility constraints on layers": "restrições de visibilidade nas camadas"
   },
-  "docs/admin-search.md": {
+  "docs/search-widgets.md": {
     "![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools": "![ Ícone: Widget](/img/manual-english-icon-widget.avif)  Configuração de elementos - Ferramentas de pesquisa",
     "![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)": "![ Imagem: Resultado da Pesquisa de Demonstração](/img/manual-english-demo-search-result.avif)",
     "![Screenshot: G3W-SUITE Administration Project Search Form](/img/manual-english-g3wsuite-administration-project-search-form.avif)": "![ Imagem: G3W-SUITE  Formulário de Pesquisa de Projetos de Administração](/img/manual-english-g3wsuite-administration-project-search-form.avif)",
@@ -716,6 +717,7 @@
     "Tip": "Dica",
     "To **create a new search**, click on the link **`New widget`**.": "Para ** criar uma nova pesquisa**, clique no link **`New widget`**.",
     "To **deactivate a search** from a project, simply disconnect it using the check-box on the right.": "Para **desactivar uma pesquisa** de um projeto, simplesmente desconectá-lo usando a caixa de seleção à direita.",
+    "Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.": "Use este ícone para adicionar elementos à camada. O elemento básico define as ferramentas de pesquisa disponíveis no WebGIS.",
     "Value maps": "Mapas de valores",
     "Value relations": "Relações de valor",
     "`AutoCompleteBox`: values ​​shown through auto-complete mode": "`AutoCompleteBox`: valores mostrados através do modo auto-completar",
@@ -723,7 +725,7 @@
     "`InputBox`: manual compilation": "`InputBox`: compilação manual",
     "`SelectBox`: values ​​shown via drop-down menu": "`SelectBox`: valores mostrados através do menu suspenso"
   },
-  "docs/admin-users.md": {
+  "docs/users-and-macro-groups.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![Botão: Salvar](/img/manual-english-buttom-save.avif)",
     "![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** characteristics of the MacroGroup": "![ Ícone: Editar](/img/manual-english-icon-edit.avif) ** Alterar**  características do Macrogrupo",
     "![Icon: Edit](/img/manual-english-icon-edit.avif) **Modify:** to modify the characteristics of the group": "![ Ícone: Editar](/img/manual-english-icon-edit.avif) ** Modificar:**  modificar as características do grupo",
@@ -771,7 +773,7 @@
     "Assign one or more Editor1 users to a cartographic macro-group when you need to delegate content management.": "Atribuir um ou mais usuários do Editor1 a um macrogrupo cartográfico quando você precisar delegar o gerenciamento de conteúdo.",
     "Associated Cartographic MacroGroups (optional)": "Macrogrupos cartográficos associados (opcional)",
     "Backend: info on user creation (G3W-SUITE or LDAP)": "Infraestrutura: informações sobre a criação do utilizador (G3W-SUITE ou LDAP)",
-    "Client header composition follows the [Cartographic Group logo settings](admin-cartographic-groups.md).": "A composição do cabeçalho do cliente segue o [ Configuração do logotipo do Grupo Cartográfico](admin-cartographic-groups.md).",
+    "Client header composition follows the [Cartographic Group logo settings](cartographic-groups.md).": "A composição do cabeçalho do cliente segue o [ Configuração do logotipo do Grupo Cartográfico](cartographic-groups.md).",
     "Created: creation date": "Criado: data de criação",
     "Define the MacroGroups order on the FrontEnd": "Definir a ordem de Macrogrupos no FrontEnd",
     "Deleting a macro-group removes its associations with cartographic groups. It does not delete the groups, their projects, or their widgets. A cartographic group can belong to more than one macro-group.": "A exclusão de um macrogrupo remove as suas associações com grupos cartográficos. Ele não apaga os grupos, os seus projectos ou os seus elementos. Um grupo cartográfico pode pertencer a mais de um macrogrupo.",
@@ -781,10 +783,11 @@
     "General data": "Dados gerais",
     "Groups users list": "Lista de usuários de grupos",
     "In the left side menu there is the **Users** item with four sub-items:": "No menu do lado esquerdo há o ** Utilizadores**  Artigo com quatro subitens:",
+    "In the left side menu there is the Users item with four sub-items:": "No menu do lado esquerdo há o ** Utilizadores** Artigo com quatro subitens:",
     "In the specific form for creating user groups, the following info are defined:": "No formulário específico para a criação de grupos de usuários, as seguintes informações são definidas:",
     "In this section it is possible to view the list of Cartographic Macrogroups, manage them and create new ones.": "Nesta seção é possível visualizar a lista de Macrogrupos cartográficos, gerenciá-los e criar novos.",
     "It is possible to create only two types of user groups:": "É possível criar apenas dois tipos de grupos de usuários:",
-    "Learn more about this in the [dedicated session](user_groups_organization)": "Saiba mais sobre isso no [ sessão dedicada](user_groups_organization)",
+    "Learn more about this in the [dedicated session](webgis-roles-and-organization.md)": "Saiba mais sobre isso no [ sessão dedicada](webgis-roles-and-organization.md)",
     "Macro Cartographic Groups": "Grupos de MacroCartográficos",
     "MacroGroups list": "Lista de grupos de macros",
     "Main roles (**Editor1, Editor2 or Viewer**)": "Principais funções (**Editor1, Editor2 ou Visualizador**)",
@@ -795,7 +798,7 @@
     "Screenshot: G3W-SUITE Administration User List": "Imagem: G3W-SUITE  Lista de Usuários da Administração",
     "Screenshot: G3W-SUITE Administration Usergroup Add": "Imagem: G3W-SUITE  Administração Grupo de usuários Adicionar",
     "Screenshot: G3W-SUITE Administration Usergroup List": "Imagem: G3W-SUITE  Lista de grupo de usuários de administração",
-    "See chapter [Hierarchical organization of WebGis services and types of Users](user_groups_organization.md) to learn more about this aspect.": "Ver capítulo [ Organização hierárquica dos serviços WebGis e tipos de Usuários](user_groups_organization.md) para aprender mais sobre este aspecto.",
+    "See chapter [Hierarchical organization of WebGis services and types of Users](webgis-roles-and-organization.md) to learn more about this aspect.": "Ver capítulo [ Organização hierárquica dos serviços WebGis e tipos de Usuários](webgis-roles-and-organization.md) para aprender mais sobre este aspecto.",
     "State of user: active/deactivated": "Estado de utilização: activo/desactivado",
     "Super user and Staff privileges": "Privilégios de super usuário e equipe",
     "The association between user and user groups can also be achieved at the individual user management level.": "A associação entre grupos de usuários também pode ser alcançada no nível de gerenciamento individual.",
@@ -815,7 +818,7 @@
     "Users list": "Lista de usuários",
     "Using the icons at the head of each row, you can:": "Usando os ícones na parte de cima de cada linha, você pode:"
   },
-  "docs/admin-widgets-controls.md": {
+  "docs/layer-visibility-and-constraints.md": {
     "![Icon: Chart Order](/img/manual-english-icon-chart-order.avif) **`Project’s Qplotly widget order`:** allows you to define the display order of active graphs at the client interface level": "![ Ícone: Ordem do Gráfico](/img/manual-english-icon-chart-order.avif) **`Project’s Qplotly widget order`:**  permite- lhe definir a ordem de visualização dos gráficos ativos no nível da interface do cliente",
     "![Icon: Clone Users](/img/manual-english-icon-clone-users.avif) **`Copy permissions`:** allows you to clone all the settings defined for a user (editing permissions, various constraints...), relating to the project being managed, and assign them to other users": "![ Ícone: Clone Users](/img/manual-english-icon-clone-users.avif) **`Copy permissions`:**  permite clonar todas as configurações definidas para um usuário (editando permissões, várias restrições...), relacionadas com o projeto sendo gerenciado, e as atribui a outros usuários",
     "![Icon: Geoconstraints](/img/manual-english-icon-geoconstraints.avif) ![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.avif) Display and editing constraints": "![ Ícone: Geoconstraints](/img/manual-english-icon-geoconstraints.avif) ![ Ícone: Restrições Alfas](/img/manual-english-icon-alpha-constraints.avif) Display e edição de restrições",
@@ -834,16 +837,17 @@
     "Screenshot: G3W-SUITE Administration Hide Columns New": "Imagem: G3W-SUITE  Administração Ocultar Colunas Novo",
     "Screenshot: G3W-SUITE Administration Styles": "Imagem: G3W-SUITE  Estilos de Administração",
     "Search widgets": "Procurar widgets",
-    "See the dedicated paragraph in [Administration settings for editing](editing-administration-settings.md).": "Ver o parágrafo dedicado em [ Configurações de administração para edição](editing-administration-settings.md).",
+    "See the dedicated paragraph in [Administration settings for editing](editing-permissions.md).": "Ver o parágrafo dedicado em [ Configurações de administração para edição](editing-permissions.md).",
     "This setting is also available for the AnonymousUser user": "Esta configuração também está disponível para o utilizador AnónimoUser",
     "Through the **Geo-constraints by user/group** and **Alphanumeric and QGIS expressions constraints by user/groups**  widgets it is possible to define editing and display filters for users authorized to consult/edit the project.": "Através da **Constrangimentos geográficos por usuário/grupo** e **Alfanumérico e QGIS  restrições de expressões por usuário/grupos**  widgets é possível definir os filtros de edição e exibição para usuários autorizados a consultar/editar o projeto.",
+    "Through the Geo-constraints by user/group and Alphanumeric and QGIS expressions constraints by user/groups widgets it is possible to define editing and display filters for users authorized to consult/edit the project.": "Através da Constrangimentos geográficos por usuário/grupo e Alfanumérico e QGIS restrições de expressões por usuário/grupos widgets é possível definir os filtros de edição e exibição para usuários autorizados a consultar/editar o projeto.",
     "To activate this type of constraint, you must click, at the level of the layer of interest, on the Hide columns by User/Groups icon ![Icon: Hide Columns](/img/manual-english-icon-hide-columns.avif).": "Para ativar este tipo de restrição, você deve clicar, no nível da camada de interesse, no ícone Esconder colunas pelo usuário / Grupos ![ Ícone: Ocultar Colunas](/img/manual-english-icon-hide-columns.avif).",
     "Widgets management": "Gestão de elementos",
     "list of fields to hide": "lista de campos a esconder",
     "list of users for whom these fields should be hidden": "lista de usuários para quem estes campos devem ser ocultos",
     "list of users groups for whom these fields should be hidden": "lista de grupos de usuários para os quais estes campos devem ser escondidos"
   },
-  "docs/admin-widgets-setup.md": {
+  "docs/layer-tools.md": {
     "![Icon: Alpha Constraints](/img/manual-english-icon-alpha-constraints.avif) **Alphanumeric and QGIS expressions constraints by user/groups:** create or manage editing and visualization constraints based on SLQ language or QGIS expressions": "![ Ícone: Restrições Alfas](/img/manual-english-icon-alpha-constraints.avif) **Alfanumérico e QGIS  restrições de expressões por usuário/grupos:**  criar ou gerenciar restrições de edição e visualização com base na linguagem SLQ ou QGIS  expressões",
     "![Icon: Cache](/img/manual-english-icon-cache.avif) **Caching Layer:** allows you to activate and manage the cache of the single layer at the project level": "![ Ícone: Cache](/img/manual-english-icon-cache.avif) ** Camada de Cache:**  permite- lhe activar e gerir a 'cache' da camada única no nível do projecto",
     "![Icon: Cache](/img/manual-english-icon-cache.avif) Caching layer": "![ Ícone: Cache](/img/manual-english-icon-cache.avif)  Camada de cache",
@@ -888,11 +892,12 @@
     "Configure charts": "Configurar gráficos",
     "In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.": "Em caso de não-externa WMS, o serviço é gerenciado por Django e isso elimina problemas de domínio cruzado, mas o único gerenciado GetFeatureInfo tipo de resposta é GML.",
     "Layer tools": "Ferramentas de camadas",
-    "Learn more about how to create a new base layer in the [dedicated section](admin-base-layers.md).": "Saiba mais sobre como criar uma nova camada base no [ secção dedicada](admin-base-layers.md).",
+    "Learn more about how to create a new base layer in the [dedicated section](group-base-layers-and-languages.md).": "Saiba mais sobre como criar uma nova camada base no [ secção dedicada](group-base-layers-and-languages.md).",
     "Next to each layer are a series of icons and checkboxes:": "Ao lado de cada camada estão uma série de ícones e caixas de seleção:",
     "Once a cartographic project has been published, thougth the icon ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Uma vez publicado um projeto cartográfico, tugth o ícone![ Imagem: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) é possível acessar a lista dos estados geográficos que a compõem e definir alguns aspectos funcionais que serão possibilitados no nível cartográfico do cliente.",
+    "Once a cartographic project has been published, thougth the icon it is possible to access the list of the geographical states that compose it and define some functional aspects that will be enabled at the cartographic client level.": "Uma vez publicado um projeto cartográfico, tugth o ícone é possível acessar a lista dos estados geográficos que a compõem e definir alguns aspectos funcionais que serão possibilitados no nível cartográfico do cliente.",
     "Screenshot: G3W-SUITE Administration Hide Layer": "Imagem: G3W-SUITE  Administração Ocultar Camada",
-    "See the dedicated section on [editing administration settings](editing-administration-settings.md).": "Ver a secção dedicada em [ configurações de administração de edição](editing-administration-settings.md).",
+    "See the dedicated section on [editing administration settings](editing-permissions.md).": "Ver a secção dedicada em [ configurações de administração de edição](editing-permissions.md).",
     "The cache for the selected layer can be saved as a Base Layer, including when the published project contains other layers.": "A cache para a camada selecionada pode ser salva como uma Camada Base, inclusive quando o projeto publicado contém outras camadas.",
     "The external WMS option allows obtaining a response to the query (GetFeatureInfo) even if the response is not in GML but also in HTML or text/plain format.": "O exterior WMS  opção permite obter uma resposta à consulta (GetFeatureInfo) mesmo que a resposta não esteja em GML, mas também em HTML ou formato texto/plain.",
     "The eye icon shows the layer ID used in parameterized URLs.": "O ícone do olho mostra o ID da camada usado em URLs parametrizadas.",
@@ -906,13 +911,14 @@
     "With this icon it is possible to **activate/manage the cache of the single layers** and **create XYZ Tiles layer** that you can use as **Base Layer** in your WebGis.": "Com este ícone é possível ** ativar/gerir a cache das camadas simples** e ** criar camada de Azulejos XYZ** que pode utilizar como ** Camada Base** no teu WebGis.",
     "With this icon it will be possible to define the list of users (single and/or groups) who will be enabled to view this layer at the TOC and map level.": "Com este ícone será possível definir a lista de usuários (single e/ou grupos) que serão habilitados para visualizar esta camada no nível TOC e mapa."
   },
-  "docs/base_layers.md": {
+  "docs/g3w-suite-base-layers.md": {
     "**IMPORTANT** the configurations shown above are not `JSON` but are `Python dict`": "** IMPORTANTE** as configurações mostradas acima não são `JSON`  mas são `Python dict`",
     "**\\*** mandatory parameters": "**\\***  parâmetros obrigatórios",
+    "Add, edit or delete Base layers for WebGIS services at the Cartographic Group level. These layers are independent of the project.": "Adicionar, editar ou excluir Base layers para serviços WebGIS no nível do Grupo Cartográfico. Estas camadas são independentes do projeto.",
     "Add, edit or delete `Base layers` for WebGIS services at the Cartographic Group level. These layers are independent of the project.": "Adicionar, editar ou excluir `Base layers` para serviços WebGIS no nível do Grupo Cartográfico. Estas camadas são independentes do projeto.",
     "Below is a brief description of the parameters:": "Abaixo está uma breve descrição dos parâmetros:",
     "Form fields:": "Campos de formulários:",
-    "G3W-SUITE base layers": "G3W-SUITE  camadas de base",
+    "G3W-SUITE base layers": "G3W-SUITE camadas de base",
     "In the `Property` field, you can configure `TMS`, `WMS`, and `WMTS` services as base layers. Below are some examples:": "Na `Property`  campo, você pode configurar `TMS`, `WMS`, e `WMTS`  serviços como camadas de base. Abaixo estão alguns exemplos:",
     "Only users with the `Admin level 1` role can configure base layers in the Django admin interface.": "Apenas os utilizadores com o `Admin level 1` o papel pode configurar camadas de base na interface de administração Django.",
     "Screenshot: Configuration Django Admin Access": "Imagem: Configuração Django Admin Access",
@@ -1013,7 +1019,7 @@
     "using the icon and as tooltip the title of the dictionary.": "usando o ícone e como dica o título do dicionário.",
     "we get the following result:": "temos o seguinte resultado:"
   },
-  "docs/client-bottom-session.md": {
+  "docs/bottom-panel-and-time-series.md": {
     "**Label (optional):** the field to use to label the features": "**Rótulo (opcional):** o campo a utilizar para rotular as funcionalidades",
     "**N.B.** the added WMS layer cannot not be queried.": "**N.B.** o adicionado WMS  camada não pode ser consultada.",
     "**N.B.:** the added TMS layer cannot not be queried.": "**N.B.:** a camada adicionada de TMS não pode ser consultada.",
@@ -1074,7 +1080,7 @@
     "the **Position** (top or buttom) with respect to the other layers of the project": "a ** Posição** (topo ou button) no que diz respeito às outras camadas do projecto",
     "the **Projection system** to be associated": "a **Sistema de projecção** a ser associado"
   },
-  "docs/client-layers.md": {
+  "docs/layers-and-attribute-table.md": {
     "![Screenshot: G3wclient Selection Table Clear](/img/manual-english-g3wclient-selection-table-clear.avif) Clear selection": "![ Imagem: Tabela de seleção do G3wclient Limpar](/img/manual-english-g3wclient-selection-table-clear.avif)  Limpar a selecção",
     "![Screenshot: G3wclient Selection Table Filter](/img/manual-english-g3wclient-selection-table-filter.avif) Add/Remove filter": "![ Imagem: Filtro de Tabela de Seleção do G3wclient](/img/manual-english-g3wclient-selection-table-filter.avif)  Adicionar/Remover o filtro",
     "![Screenshot: G3wclient Selection Table Invert](/img/manual-english-g3wclient-selection-table-invert.avif) Invert selection": "![ Imagem: G3wclient Selection Table Inverter](/img/manual-english-g3wclient-selection-table-invert.avif) Inverter a selecção",
@@ -1127,6 +1133,7 @@
     "The presence of an active filter on the layer is highlighted by the red icon next to the layer name.": "A presença de um filtro ativo na camada é realçada pelo ícone vermelho ao lado do nome da camada.",
     "The saved filters can be recovered via the dedicated menu that can be viewed by right-clicking on the name of the layer": "Os filtros salvos podem ser recuperados através do menu dedicado que pode ser visto clicando com o botão direito no nome da camada",
     "The selection of features can be made:": "A seleção de recursos pode ser feita:",
+    "This session shows the layers prepared on QGIS projects with the same organization the groups and subgroups.": "** Esta sessão mostra as camadas preparadas em QGIS projectos com a mesma organização, os grupos e subgrupos.**",
     "To be filtered, the geometries object of the filter must first be selected.": "Para ser filtrado, primeiro deve ser selecionado o objeto de geometrias do filtro.",
     "To deactivate an active filter, simply click on the icon itself.": "Para desativar um filtro ativo, basta clicar no próprio ícone.",
     "To the left of each record in the table there are two/three tools:": "À esquerda de cada registro na tabela existem duas/três ferramentas:",
@@ -1158,7 +1165,7 @@
     "the ‘Show relations’ icon to open the list of 1:N relations (if present) of thath parent record": "o ícone ‘Mostrar relações’ para abrir a lista de relações 1:N (se presente) do registro pai do Thath",
     "to the right of the layer on the TOC": "à direita da camada no TOC"
   },
-  "docs/client-map-interaction.md": {
+  "docs/map-navigation-and-queries.md": {
     "![Icon: Navigation Addlayer](/img/manual-english-icon-navigation-addlayer.avif) **`Add layer`:** tool for temporarily uploading GML, GeoJson, KML, GPX, SHP (zipped) and CSV with coordinate to WebGis, or to add a custom WMS service": "![ Ícone: Addlayer de navegação](/img/manual-english-icon-navigation-addlayer.avif) **`Add layer`:**  ferramenta para carregar temporariamente GML, GeoJson, KML, GPX, SHP (zipped) e CSV com coordenadas para WebGis, ou para adicionar um personalizado WMS  serviço",
     "![Icon: Navigation Annotations](/img/manual-english-icon-navigation-annotations.avif) **`Redlinining`:** tool to add annotations or drawings objects to the map. For each of them it will be possible to define size, color, transparency, labeling and more. The elements drawn on the map will be shareable together with the other settings of the WebGis service and reported in the print output. The tool permits to create this type of annotations:": "![ Ícone: Anotações de navegação](/img/manual-english-icon-navigation-annotations.avif) **`Redlinining`:**  ferramenta para adicionar anotações ou desenhos de objetos ao mapa. Para cada um deles, será possível definir tamanho, cor, transparência, rotulagem e muito mais. Os elementos desenhados no mapa serão compartilháveis com as outras configurações do serviço WebGis e serão reportados na saída de impressão. A ferramenta permite criar este tipo de anotações:",
     "![Icon: Navigation Fitextent](/img/manual-english-icon-navigation-fitextent.avif) **`Fit to extent`:** zoom to the initial extension": "![ Ícone: Fitexent de navegação](/img/manual-english-icon-navigation-fitextent.avif) **`Fit to extent`:** zoom para a extensão inicial",
@@ -1205,7 +1212,7 @@
     "text labels": "rótulos de texto",
     "within": "dentro"
   },
-  "docs/client-map-queries.md": {
+  "docs/map-queries-and-results.md": {
     "![Icon: Navigation Query Area](/img/manual-english-icon-navigation-query-area-icon.avif) **Area query**": "![ Ícone: Área de Consulta de Navegação](/img/manual-english-icon-navigation-query-area-icon.avif) ** Consulta de área**",
     "![Icon: Navigation Querylayer](/img/manual-english-icon-navigation-querylayer.avif) **Point query**": "![ Ícone: Pesquisa de Navegação](/img/manual-english-icon-navigation-querylayer.avif) ** Consulta de pontos**",
     "**Add feature on result:** add features (clicking on the map) to the current list of results (useful to choose manually the list of objects to select/download)": "** Adicionar recurso no resultado:**  adicionar funcionalidades (clique no mapa) à lista de resultados actual (útil para escolher manualmente a lista de objectos a seleccionar/download)",
@@ -1234,7 +1241,7 @@
     "Display 1:1 (join) and 1:N relation data": "Mostrar 1:1 (juntar) e dados de relação 1:N",
     "Encode special characters in parameter values, and use `&` to separate multiple parameters.": "Codifique caracteres especiais em valores de parâmetros e use `&`  separar múltiplos parâmetros.",
     "For `ztf`, combine conditions with `AND` or `OR`, for example: `<project_url>?ztf=roads:type=primaryANDstatus=open`.": "Para `ztf`, combinar condições com `AND` ou `OR`, por exemplo: `<project_url>?ztf=roads:type=primaryANDstatus=open`.",
-    "For further information on this point, see the [**dedicated paragraph**](projectsettings-layers.md#viewing-multimedia-content).": "Para mais informações sobre este ponto, consultar o [** parágrafo dedicado**](projectsettings-layers.md#viewing-multimedia-content).",
+    "For further information on this point, see the [**dedicated paragraph**](layer-properties.md#viewing-multimedia-content).": "Para mais informações sobre este ponto, consultar o [** parágrafo dedicado**](layer-properties.md#viewing-multimedia-content).",
     "Icon: Relations": "Ícone: Relações",
     "If a specific layer is selected in the TOC, the results are limited to that layer.": "Se uma camada específica for selecionada no TOC, os resultados são limitados a essa camada.",
     "If the relations are inserted in a custom form dedicated to displaying attributes (QGIS Attributes form), then the link to them will be displayed directly in the parent attributes form.": "Se as relações forem inseridas em um formulário personalizado dedicado à exibição de atributos (QGIS Atributos formulário), então o link para eles será exibido diretamente no formulário atributos pai.",
@@ -1280,7 +1287,7 @@
     "deriving from a feature of a polygonal layer present in the project or added by the user": "derivando de uma característica de uma camada poligonal presente no projeto ou adicionada pelo usuário",
     "draw: rectangles, circles or free-form polygons": "desenho: retângulos, círculos ou polígonos de forma livre"
   },
-  "docs/client-tools-and-toc.md": {
+  "docs/map-tools.md": {
     "![Screenshot: G3wclient Plots Map Filter](/img/manual-english-g3wclient-plots-map-filter.avif) features visible on the map": "![ Imagem: Filtro de Mapa de Gráficos G3wclient](/img/manual-english-g3wclient-plots-map-filter.avif)  características visíveis no mapa",
     "![Screenshot: G3wclient Plots Selection Filter](/img/manual-english-g3wclient-plots-selection-filter.avif) filter based on the selected features": "![ Imagem: Filtro de Seleção de Gráficos G3wclient](/img/manual-english-g3wclient-plots-selection-filter.avif)  filtro baseado nas funcionalidades seleccionadas",
     "**Custom title:** using the **ItemIDs** at the print layout level of the QGIS project it is possible to insert one or more labels with **customized content in the print** from WebGis": "** Título personalizado:**  utilizando a **IDI de itens** no nível de disposição da impressão do QGIS  projeto é possível inserir um ou mais rótulos com ** conteúdo personalizado na impressão** do WebGis",
@@ -1361,7 +1368,7 @@
     "View the service's complete legend.": "Veja a lenda completa do serviço.",
     "Zoom to features and download icons are available for results (single or cumulative)": "Ampliar os recursos e baixar ícones estão disponíveis para resultados (único ou cumulativo)"
   },
-  "docs/components.md": {
+  "docs/components-of-g3w-suite.md": {
     "**`G3W-ADMIN` - the Administration component**: developed in **`Python`** using **`Django`**": "**`G3W-ADMIN` - componente Administração**: desenvolvido em **`Python`**  usando **`Django`**",
     "**`G3W-CLIENT` - the map client**: built with **OpenLayers 10** and **Vue 2**": "**`G3W-CLIENT` - o cliente do mapa**: construído com **OpenLayers 10** e **Vue 2**",
     "**`Gulp.js`** as task runner": "**`Gulp.js`**  como corredor de tarefas",
@@ -1433,10 +1440,11 @@
     "The stack brings together the application, QGIS Server, NGINX and PostgreSQL/PostGIS services. It is a starting point for self-hosted deployments; production environments should be configured and maintained for their own operational requirements.": "A pilha reúne a aplicação, QGIS  Servidor, NGINX e PostgreSQL/PostGIS  serviços. É um ponto de partida para implantações auto-hospedadas; ambientes de produção devem ser configurados e mantidos para os seus próprios requisitos operacionais.",
     "This component is released under the MIT licence. Check its repository for installation requirements and configuration details.": "Este componente é liberado sob a licença do MIT. Verifique seus repositórios para obter os requisitos de instalação e detalhes de configuração.",
     "This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the `v3.11.x` branch of G3W-SUITE-DOCKER.": "Este manual segue G3W-ADMIN 3.11.4, que navios com G3W-CLIENT 4.1.5. Para as implantações do Docker, use o `v3.11.x`  ramo de G3W-SUITE-DOCKER.",
+    "This manual follows G3W-ADMIN 3.11.4, which ships with G3W-CLIENT 4.1.5. For Docker deployments, use the v3.11.x branch of G3W-SUITE-DOCKER.": "Este manual segue G3W-ADMIN 3.11.4, que navios com G3W-CLIENT 4.1.5. Para as implantações do Docker, use o v3.11.x ramo de G3W-SUITE-DOCKER.",
     "Upload QGIS project and configure permissions and options": "Enviar QGIS  projetar e configurar permissões e opções",
     "Upload and configure": "Enviar e configurar",
     "Use map navigation, search, identify and query tools, print layouts, charts and data tables. When enabled for a project, users can also edit features and related records directly in the browser.": "Use as ferramentas de navegação, pesquisa, identificação e consulta de mapas, layouts de impressão, gráficos e tabelas de dados. Quando habilitado para um projeto, os usuários também podem editar recursos e registros relacionados diretamente no navegador.",
-    "Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project and the [Docker documentation](/docs/docker/) for setup details.": "Utilizar o [Guia de início rápido](/en/docs/quick-start/)  publicar um primeiro projecto e [ Documentação da acoplagem](/docs/docker/) para detalhes de configuração.",
+    "Use the [Quick Start guide](/en/docs/quick-start/) to publish a first project and the [Docker documentation](/docs/docker-installation/) for setup details.": "Utilizar o [Guia de início rápido](/en/docs/quick-start/)  publicar um primeiro projecto e [ Documentação da acoplagem](/docs/docker-installation/) para detalhes de configuração.",
     "Versions and compatibility": "Versões e compatibilidade",
     "View the G3W-ADMIN source repository": "Ver o G3W-ADMIN  repositório de código fonte",
     "View the G3W-ADMIN-PDND source repository": "Ver o G3W-ADMIN-PDND  repositório de código fonte",
@@ -1446,7 +1454,7 @@
     "View the G3W-SUITE-DOCKER source repository": "Ver o G3W-SUITE-DOCKER  repositório de código fonte",
     "Work together on geographic data": "Trabalhar em conjunto em dados geográficos"
   },
-  "docs/datamanagement.md": {
+  "docs/manage-qgis-data.md": {
     "**1:N relation data**": "**1:N dados de relação**",
     "**Admin role users**": "** Utilizadores de funções administrativas**",
     "**Editor1 role users**": "** Usuários de função do editor1**",
@@ -1477,7 +1485,7 @@
     "In the standard Docker configuration, QGIS searches for custom symbols in `/shared-volume/project_data/svg/`. Upload the SVG files to the `svg` directory with File Manager and use the same symbols in the QGIS project. The search paths are defined in [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/config/qgis/QGIS3.ini). Configure the symbol directory in QGIS Desktop too, use distinct names for different symbols and check the published map.": "Na configuração padrão do Docker, QGIS  procura por símbolos personalizados em `/shared-volume/project_data/svg/`. Envie os arquivos SVG para o `svg`  diretório com Gerenciador de arquivos e usar os mesmos símbolos no QGIS  projeto. Os caminhos de pesquisa estão definidos em [`config/qgis/QGIS3.ini`](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/config/qgis/QGIS3.ini). Configurar o diretório de símbolos em QGIS Desktop também, use nomes distintos para símbolos diferentes e verifique o mapa publicado.",
     "It will therefore be necessary, in the case of using geographic files on the file system, to synchronize the contents of the local **`project_data`** directory (and any sub-directories) before proceeding with the publication of QGIS projects.": "Por conseguinte, no caso de utilizar ficheiros geográficos no sistema de ficheiros, será necessário sincronizar o conteúdo do sistema local de ficheiros. **`project_data`**  diretório (e quaisquer subdiretórios) antes de prosseguir com a publicação de QGIS  Projectos.",
     "Main directory": "Pasta principal",
-    "Manage QGIS data": "Gerenciar QGIS  dados",
+    "Manage QGIS data": "Gerenciar QGIS dados",
     "Oracle Spatial (compiling QGIS Server)": "Espaço do Oracle (compilando QGIS  Servidor)",
     "Organization of data and projects": "Organização dos dados e projectos",
     "PostGreSQL/PostGIS": "PostGreSQL/PostGIS",
@@ -1493,6 +1501,7 @@
     "The geographic data stored in the local **`project_data`** folder must be loaded, reflecting any subdirectory structure.": "Os dados geográficos armazenados no local **`project_data`** pasta deve ser carregada, refletindo qualquer estrutura subdiretória.",
     "The main directory contains project_data for geographic data and projects for QGIS project files": "O diretório principal contém dados_project_ data para dados geográficos e projetos para QGIS  arquivos de projeto",
     "The suite also supports viewing and editing:": "A suite também suporta visualização e edição:",
+    "This section describes how to organize QGIS data and projects locally and how to synchronize them on the server environment for publication purposes": "** Esta seção descreve como organizar QGIS dados e projetos localmente e como sincronizá-los no ambiente do servidor para fins de publicação**",
     "To synchronize your data access to the Administration panel of G3W-ADMIN and click on the **`Configurations` icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located in the upper right corner.": "Para sincronizar o acesso de dados ao painel de Administração G3W-ADMIN e clique sobre o **`Configurations`  ícone** ![ Ícone: Configuração](/img/manual-english-iconconfiguration.avif)  localizado no canto superior direito.",
     "Two specific directories can also be created within the root directory of the File Manager:": "Dois diretórios específicos também podem ser criados dentro do diretório raiz do Gerenciador de arquivos:",
     "Use this tool to manage geographic data stored on the server.": "Use esta ferramenta para gerenciar dados geográficos armazenados no servidor.",
@@ -1504,11 +1513,11 @@
     "a **`projects` sub-directory** that must contain the **QGIS cartographic projects** (.qgz or .qgs files)": "a **`projects` subdiretório** que deve conter o **QGIS  Projectos cartográficos** (.qgz ou.qgs)",
     "a **main directory** named and positioned in according to need's user": "a ** diretório principal**  nomeado e posicionado de acordo com o usuário da necessidade"
   },
-  "docs/demo-editing.md": {
+  "docs/try-online-editing.md": {
     "![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)": "![ Imagem: G3W-SUITE  Lista de Camada de Projetos de Administração](/img/manual-english-g3wsuite-administration-project-layer-list.avif)",
     "**Do you want to test the online editing function more deeply?**": "** Você quer testar a função de edição online mais profundamente?**",
     "**Enable editing to modify the geometries and attributes of the Public Buildings layer and its related interventions.**": "** Habilitar edição para modificar as geometrias e atributos da camada Edifícios Públicos e suas intervenções relacionadas.**",
-    "**It is advisable to consult the section on** [editing activation and configuration](g3wsuite_editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**": "**É aconselhável consultar a secção sobre** [ ativação e configuração da edição](g3wsuite_editing.md) **para a lista e limitações dos widgets de edição individuais herdados da QGIS  projecto.**",
+    "**It is advisable to consult the section on** [editing activation and configuration](online-editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**": "**É aconselhável consultar a secção sobre** [ ativação e configuração da edição](online-editing.md) **para a lista e limitações dos widgets de edição individuais herdados da QGIS  projecto.**",
     "**`Buildings rating`**": "**`Buildings rating`**",
     "**`Buildings`**": "**`Buildings`**",
     "**`Maintenance_works`**": "**`Maintenance_works`**",
@@ -1545,7 +1554,8 @@
     "**zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)": "** zona** (texto): edição de texto (com valores padrão baseados em um QGIS  expressão para associação com a área de intersecção de obras)",
     "Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.avif) (placed at the left of each rows) will open a modal window that will allow you to:": "Clicando no ícone ** Edição da camada** ![ Ícone: Edição](/img/manual-english-icon-editing.avif) (colocado à esquerda de cada linha) abrirá uma janela modal que lhe permitirá:",
     "Editing on line": "Edição em linha",
-    "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-client-tools.md).": "Para ** outras informações** na função de edição web, leia o [** secção dedicada no manual**](editing-client-tools.md).",
+    "For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-tools.md).": "Para ** outras informações** na função de edição web, leia o [** secção dedicada no manual**](editing-tools.md).",
+    "Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.": "** Formas e widgets de edição já estão definidos no projeto associado ao tutorial para a camada geométrica de edifícios e para a tabela alfanumérica relacionada intervenções_manutenção.**",
     "Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**": "Uma vez que a função de edição é ativada, atualizando o serviço, o **`Tools menu`  aparecerá no painel esquerdo.**",
     "Personalize your demo": "Personalize sua demonstração",
     "Redefine attribute forms, aliases and editing widgets associated with the individual fields and reload the project to check the new settings.": "Redefine os formulários de atributos, os apelidos e os widgets de edição associados aos campos individuais e recarregue o projeto para verificar as novas configurações.",
@@ -1560,7 +1570,7 @@
     "define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing": "definir a **`Viewer users`** (individuais ou grupos) **`enabled`** para edição online",
     "define the **`editing activation scale`** (only for geometric tables)": "definir a **`editing activation scale`** (apenas para tabelas geométricas)"
   },
-  "docs/demo-publish.md": {
+  "docs/publish-a-webgis-service.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![Botão: Salvar](/img/manual-english-buttom-save.avif)",
     "![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.avif)": "![ Imagem: Demonstração de Projeto Gerenciar](/img/manual-english-demo-project-manage.avif)",
     "![Screenshot: Iconsmall Viewmap](/img/manual-english-iconsmall-viewmap.avif) Clicking on the **`View map`** icon will access the WebGis service in consultation.": "![ Imagem: Imagem do ícone](/img/manual-english-iconsmall-viewmap.avif) Clicando no **`View map`**  ícone acessará o serviço WebGis em consulta.",
@@ -1571,7 +1581,7 @@
     "After filling in the various form, click on the **`Save button`** to confirm your choices.": "Após preencher os vários formulários, clique no **`Save button`** para confirmar as suas escolhas.",
     "After logging in, open the **`Administration session`** to view the **Dashboard**.": "Após iniciar sessão, abra o **`Administration session`** para ver o ** Painel**.",
     "Click on the **`Show`** item in the ligth blue **Groups** box to acces at the list of available Cartographic Groups.": "Clique na **`Show`** item no azul ligth **Grupos**  caixa para acces na lista de Grupos Cartográficos disponíveis.",
-    "For this exercise, keep the default options unless you want to test a specific setting. See [Publish and update WebGIS services](admin-publishing.md#publication-of-new-webgis-services) for the full explanation of permissions, base layers, and publication options.": "Para este exercício, mantenha as opções padrão, a menos que queira testar uma configuração específica. Veja [Publicar e atualizar serviços WebGIS](admin-publishing.md#publication-of-new-webgis-services) para a explicação completa de permissões, camadas de base e opções de publicação.",
+    "For this exercise, keep the default options unless you want to test a specific setting. See [Publish and update WebGIS services](publish-and-update-webgis-services.md#publication-of-new-webgis-services) for the full explanation of permissions, base layers, and publication options.": "Para este exercício, mantenha as opções padrão, a menos que queira testar uma configuração específica. Veja [Publicar e atualizar serviços WebGIS](publish-and-update-webgis-services.md#publication-of-new-webgis-services) para a explicação completa de permissões, camadas de base e opções de publicação.",
     "If you want to modify some graphic-functional aspects of your WebGis service, modify your QGIS project and update the WebGis service by clicking on the **`Modify`** icon ![Screenshot: Iconsmall Edit](/img/manual-english-iconsmall-edit.avif).": "Se você quiser modificar alguns aspectos gráficos-funcionais do seu serviço WebGis, modifique QGIS  projetar e atualizar o serviço WebGis clicando no **`Modify`**  Ícone![ Imagem: Iconsmall Editar](/img/manual-english-iconsmall-edit.avif).",
     "In **QGIS file**, select the `.qgs` or `.qgz` project you prepared in [Download demo data](demo.md#download-demo-data).": "In **QGIS  arquivo**, selecionar o `.qgs` ou `.qgz`  projeto que você preparou em [ Transferir dados de demonstração](demo.md#download-demo-data).",
     "In the Dashboard there will be the menu for access to the **Cartographic Groups** pertaining to your user and the menus relating to additional modules not active in this demo.": "No Painel haverá o menu para acesso ao **Grupos cartográficos**  referente ao seu utilizador e aos menus relacionados com módulos adicionais não activos nesta demonstração.",
@@ -1584,11 +1594,12 @@
     "Screenshot: Demo Dashboard": "Imagem: Painel de demonstração",
     "Screenshot: Demo Webgis Project": "Imagem: Projeto Demo Webgis",
     "To publish the project, you can **access the G3W-SUITE test application** via the following URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)": "Para publicar o projeto, você pode ** acesso ao G3W-SUITE  aplicação de teste**  através do seguinte URL: [**`https://v311.g3wsuite.it`**](https://v311.g3wsuite.it)",
+    "To publish the project, you can access the G3W-SUITE test application via the following URL: https://v311.g3wsuite.it": "Para publicar o projeto, você pode ** acesso ao G3W-SUITE aplicação de teste** através do seguinte URL: https://v311.g3wsuite.it",
     "Update the published WebGis service": "Atualizar o serviço WebGis publicado",
     "password: **`G3wsuite123`**": "senha: **`G3wsuite123`**",
     "user: **`demo`**": "usuário: **`demo`**"
   },
-  "docs/demo-widgets.md": {
+  "docs/try-layer-tools-in-the-demo.md": {
     "![Screenshot: Demo Project Manage](/img/manual-english-demo-project-manage.avif)": "![ Imagem: Demonstração de Projeto Gerenciar](/img/manual-english-demo-project-manage.avif)",
     "![Screenshot: Demo Search Result](/img/manual-english-demo-search-result.avif)": "![ Imagem: Resultado da Pesquisa de Demonstração](/img/manual-english-demo-search-result.avif)",
     "![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)": "![ Imagem: G3W-SUITE  Gráficos de Administração](/img/manual-english-g3wsuite-administration-plots.avif)",
@@ -1601,7 +1612,7 @@
     "**NB:** there may be a number of searches created by other users for the same layer.": "**NB:**  pode haver uma série de pesquisas criadas por outros usuários para a mesma camada.",
     "**The widget will already be **`linked`** and therefore available in the WebGis interface on the left panel.**": "**O elemento já será **`linked`** e, portanto, disponível na interface WebGis no painel esquerdo.**",
     "For this reason, there may be some plots created by other users for the same layer.": "Por esta razão, pode haver alguns gráficos criados por outros usuários para a mesma camada.",
-    "In the client, try filtering the charts by visible or selected features. See [chart filters](client-tools-and-toc.md#charts) for the controls and their effect on related data.": "No cliente, tente filtrar os gráficos por recursos visíveis ou selecionados. Veja [ filtros de gráficos](client-tools-and-toc.md#charts) Para os controlos e os seus efeitos nos dados conexos.",
+    "In the client, try filtering the charts by visible or selected features. See [chart filters](map-tools.md#charts) for the controls and their effect on related data.": "No cliente, tente filtrar os gráficos por recursos visíveis ou selecionados. Veja [ filtros de gráficos](map-tools.md#charts) Para os controlos e os seus efeitos nos dados conexos.",
     "Layer tools": "Ferramentas de camadas",
     "Once the form has been filled in, click on the **`OK button` to save** the settings.": "Uma vez preenchido o formulário, clique no **`OK button` para salvar** As configurações.",
     "Once the settings are saved, the created widget will appear in the list of Widgets associated with the layer.": "Uma vez que as configurações são salvas, o widget criado aparecerá na lista de Widgets associados à camada.",
@@ -1616,11 +1627,11 @@
     "The title of the chart, defined at the plugin level, will be the unique identifier.": "O título do gráfico, definido no nível do plugin, será o identificador único.",
     "To **create a new search**, click on the blue link **`New widget`**.": "Para ** criar uma nova pesquisa**, clique no link azul **`New widget`**.",
     "To create a search tool available at WebGis level, **choose the vector layer** on which to apply the tool and **click on the `Widget list icon` ![Icon: Widget](/img/manual-english-icon-widget.avif)**": "Para criar uma ferramenta de pesquisa disponível no nível WebGis, ** escolher a camada vetorial** sobre o qual aplicar a ferramenta e ** clique na `Widget list icon` ![ Ícone: Widget](/img/manual-english-icon-widget.avif)**",
-    "Try enabling a download format for one layer. Then open the map, select that layer, and check that the format appears in the download options. See [layer tools](admin-widgets-setup.md) for all available settings.": "Tente habilitar um formato de download para uma camada. Depois abra o mapa, selecione essa camada e verifique se o formato aparece nas opções de download. Veja [ ferramentas de camada](admin-widgets-setup.md) para todas as configurações disponíveis.",
+    "Try enabling a download format for one layer. Then open the map, select that layer, and check that the format appears in the download options. See [layer tools](layer-tools.md) for all available settings.": "Tente habilitar um formato de download para uma camada. Depois abra o mapa, selecione essa camada e verifique se o formato aparece nas opções de download. Veja [ ferramentas de camada](layer-tools.md) para todas as configurações disponíveis.",
     "Try layer tools in the demo": "Tente ferramentas de camada na demonstração",
     "Try to create your plots in the QGIS project, save them as .xml and upload them to view the resluts on the webgis.": "Tente criar seus gráficos no QGIS  projeto, salve-os como .xml e faça upload para ver os resluts no webgis.",
     "Use the **`Layers list` icon** ![Screenshot: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) to view project layers and configure their client functions.": "Utilizar o **`Layers list`  ícone** ![ Imagem: Iconsmall Layerlist](/img/manual-english-iconsmall-layerlist.avif) para ver as camadas do projeto e configurar suas funções de cliente.",
-    "Use the [search widget reference](admin-search.md) to choose the fields, input widgets, and comparison operators.": "Utilizar o [ referência do widget de pesquisa](admin-search.md) para escolher os campos, widgets de entrada e operadores de comparação.",
+    "Use the [search widget reference](search-widgets.md) to choose the fields, input widgets, and comparison operators.": "Utilizar o [ referência do widget de pesquisa](search-widgets.md) para escolher os campos, widgets de entrada e operadores de comparação.",
     "You can activate them by **clicking on the `Linked` chekbox**.": "Você pode ativá-los por ** clicando sobre o `Linked` chekbox**."
   },
   "docs/demo.md": {
@@ -1680,7 +1691,7 @@
     "two standard **print layout** and an two **atlas print layout** based on buildgs layer features": "duas normas ** disposição da impressão** e um dois ** disposição de impressão do atlas**  baseado em funcionalidades de camada builds",
     "user: **viewer1**": "usuário: ** visualizador1**"
   },
-  "docs/docker.md": {
+  "docs/docker-installation.md": {
     "![Login Page](/img/installation-english-login-page.avif)": "![ Página de Login](/img/installation-english-login-page.avif)",
     "A custom CSS is added to the pages, the file is located in `config/g3w-suite/overrides/static/style.css` and can be modified directly, changes are effective immediately.": "Um CSS personalizado é adicionado às páginas, o arquivo está localizado em `config/g3w-suite/overrides/static/style.css` e pode ser modificado diretamente, as mudanças são efetivas imediatamente.",
     "Before the first start, check `services.g3w-suite.environment` in `docker-compose.yml`. If it lists `G3WSUITE_ADMIN_PASS`, replace that entry with `G3WSUITE_ADMIN_PASSWORD` so the setup script receives the password from `.env`.": "Antes do primeiro início, verifique `services.g3w-suite.environment` em `docker-compose.yml`. Se ele listar `G3WSUITE_ADMIN_PASS`, substituir essa entrada por `G3WSUITE_ADMIN_PASSWORD`  assim o script de configuração recebe a senha de `.env`.",
@@ -1694,7 +1705,7 @@
     "Data, projects, uploads and the database are stored in a shared mounted volume `shared-volume`, the volume should be on a persistent storage device and a backup": "Os dados, projetos, uploads e o banco de dados são armazenados em um volume montado compartilhado `shared-volume`, o volume deve estar em um dispositivo de armazenamento persistente e um backup",
     "Database backups": "Cópias de segurança da base de dados",
     "Deploy": "Embarcar",
-    "Description of other *environment variables* that can be used, are available on [Docker environment variables](docker_env)": "Descrição das outras * variáveis de ambiente* que podem ser utilizados, estão disponíveis em [Variáveis do ambiente de acoplagem](docker_env)",
+    "Description of other *environment variables* that can be used, are available on [Docker environment variables](docker-environment-variables.md)": "Descrição das outras * variáveis de ambiente* que podem ser utilizados, estão disponíveis em [Variáveis do ambiente de acoplagem](docker-environment-variables.md)",
     "Docker compose will download images from docker hub (https://hub.docker.com/u/g3wsuite),": "A composição do Docker irá transferir imagens do docker hub (https://hub.docker.com/u/g3wsuite),",
     "Docker installation": "Instalação do 'Acoplamento'",
     "Editing": "Edição",
@@ -1730,7 +1741,7 @@
     "The stable Compose files use `kartoza/postgis:16-3.4`.": "A configuração Compor os ficheiros usam `kartoza/postgis:16-3.4`.",
     "The stable `.env.example` uses `./shared-volume`. Set `WEBGIS_DOCKER_SHARED_VOLUME` in `.env` to a persistent location suitable for production.": "O estável `.env.example`  usos `./shared-volume`. Preparar `WEBGIS_DOCKER_SHARED_VOLUME` em `.env` a um local persistente adequado para a produção.",
     "These are database dumps, not a full installation backup. Also back up projects, file-based data, uploads, mounted configuration and any databases not covered by the script. Keep a copy off the server. The `db-restore` target replaces databases: test recovery on a separate installation before using it on live data.": "Estes são despejos de banco de dados, não uma cópia de segurança completa da instalação. Também faz backup de projetos, dados baseados em arquivos, uploads, configuração montada e quaisquer bases de dados não abrangidas pelo script. Mantenha uma cópia fora do servidor. `db-restore` O alvo substitui bases de dados: recuperação de testes em uma instalação separada antes de usá-lo em dados ao vivo.",
-    "This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .": "Este repositório contém scripts e receitas para implantação do G3W-SUITE  aplicação web-gis com Docker e Docker compor .",
+    "This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .": "Este repositório contém scripts e receitas para implantação do G3W-SUITE aplicação web-gis com Docker e Docker compor .",
     "This will set the front end app as the default app": "Isto irá definir a aplicação de frontend como a aplicação padrão",
     "Tile cache can be configured and cleared per-layer through the webgis admin panel and lasts forever until it is disabled or cleared.": "O cache de telha pode ser configurado e limpo por camada através do painel de administração webgis e dura para sempre até que ele esteja desativado ou limpo.",
     "Tip: enable cache on linestring and polygon layers.": "Dica: habilitar cache em camadas de linha e polígono.",
@@ -1753,7 +1764,7 @@
     "when using rule-based/categorized classification or scale-dependent visibility create indexes on the column(s) involved in the rule expression (example: \"create index idx_elec_penwell_ious on elec_penwell_ious (owner);\" )": "ao usar a classificação baseada em regras/categorizada ou visibilidade dependente de escala, crie índices na(s) coluna(s) envolvida(s) na expressão de regras (exemplo: \"criar índice idx_elec_penwell_ious em elec_penwell_ious (proprietário);\")",
     "will contain the database credentials (change `<your password>`) and other settings:": "conterá as credenciais da base de dados (alteração `<your password>`) e outras configurações:"
   },
-  "docs/docker_env.md": {
+  "docs/docker-environment-variables.md": {
     "A custom unique token to use for internal caching request.": "Um token personalizado para usar para pedido de cache interno.",
     "Add them to the deployment `.env` file. Compose must also pass each variable to the service that uses it.": "Adicione-os à implantação `.env`  arquivo. Compor também deve passar cada variável para o serviço que o usa.",
     "Caching system": "Sistema de cache",
@@ -1784,6 +1795,7 @@
     "QGIS environment variables can be set as described in the [QGIS Server manual](https://docs.qgis.org/3.44/en/docs/server_manual/config.html#environment-variables); add them to the relevant Compose service.": "QGIS as variáveis de ambiente podem ser definidas como descrito no [QGIS Manual do servidor](https://docs.qgis.org/3.44/en/docs/server_manual/config.html#environment-variables); adicioná-los ao serviço Compose relevante.",
     "QGIS server variables": "QGIS  variáveis do servidor",
     "Requirements variables": "Variáveis de requisitos",
+    "Set these environment variables when deploying G3W-SUITE with Docker.": "Definir estas variáveis de ambiente ao implantar G3W-SUITE com Acoplamento.",
     "Set these environment variables when deploying G3W-SUITE with [Docker](https://github.com/g3w-suite/g3w-suite-docker).": "Definir estas variáveis de ambiente ao implantar G3W-SUITE com [Acoplamento](https://github.com/g3w-suite/g3w-suite-docker).",
     "The Docker example settings provide a shared fallback token; set a unique value for each deployment.": "As configurações de exemplo do Docker fornecem um token de reserva compartilhado; defina um valor único para cada implantação.",
     "The Gunicorn configuration is created in the shared volume on first startup and is not overwritten on later starts. The generated file reads these environment variables; review `/shared-volume/gunicorn.conf.py` if it has been customized.": "A configuração do Gunicorn é criada no volume partilhado na primeira inicialização e não é sobrescrita em starts posteriores. O ficheiro gerado lê estas variáveis de ambiente; revisão `/shared-volume/gunicorn.conf.py` se tiver sido personalizado.",
@@ -1792,7 +1804,7 @@
     "The follow variables re for set the connection to G3W-SUITE administration database.": "As variáveis seguintes re para definir a conexão para G3W-SUITE base de dados de administração.",
     "The following varaible are just set into docker-compose files:": "A seguinte variável são apenas configuradas em arquivos docker-compose:",
     "The login used for the superuser account. Only works when setup a new environment.": "O login usado para a conta do superusuário. Só funciona quando configura um novo ambiente.",
-    "The password used during initial setup. If `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead, correct `services.g3w-suite.environment` as shown in the [installation guide](docker.md#run). The optional Huey stack already passes `G3WSUITE_ADMIN_PASSWORD`.": "A senha usada durante a configuração inicial. Se `docker-compose.yml`  passa `G3WSUITE_ADMIN_PASS` em vez disso, correto `services.g3w-suite.environment`  como mostrado na [ guia de instalação](docker.md#run). A pilha opcional Huey já passa `G3WSUITE_ADMIN_PASSWORD`.",
+    "The password used during initial setup. If `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead, correct `services.g3w-suite.environment` as shown in the [installation guide](docker-installation.md#run). The optional Huey stack already passes `G3WSUITE_ADMIN_PASSWORD`.": "A senha usada durante a configuração inicial. Se `docker-compose.yml`  passa `G3WSUITE_ADMIN_PASS` em vez disso, correto `services.g3w-suite.environment`  como mostrado na [ guia de instalação](docker-installation.md#run). A pilha opcional Huey já passa `G3WSUITE_ADMIN_PASSWORD`.",
     "The path on which the docker permanent volume will be mounted with the application data inside.": "O caminho no qual o volume permanente do docker será montado com os dados da aplicação dentro.",
     "These notes describe the Docker `v3.11.x` branch; its `.env.example` and Compose files are not interchangeable with development-branch configuration.": "Estas notas descrevem o Docker `v3.11.x`  ramo; a sua `.env.example` e arquivos Compose não são intercambiáveis com a configuração do ramo de desenvolvimento.",
     "Thi is used to compensate the python/gunicorn memory leaks.": "Thi é usado para compensar as fugas de memória python/gunicórnio.",
@@ -1800,7 +1812,7 @@
     "Usually then number of workers is equal to number of processor x 2.": "Normalmente, então, o número de trabalhadores é igual ao número de processador x 2.",
     "docker container at runtime to PGSERVICEFILE path position.": "recipiente de docker em tempo de execução para PGSERVEFILE posição de caminho."
   },
-  "docs/editing-administration-settings.md": {
+  "docs/editing-permissions.md": {
     "![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)": "![ Imagem: G3W-SUITE  Lista de Camada de Projetos de Administração](/img/manual-english-g3wsuite-administration-project-layer-list.avif)",
     "**Active:** activate the editing function": "**Activo:**  activar a função de edição",
     "**Add:** add feature, copy feature, add part to multipart": "** Adicionar:**  adicionar recurso, copiar recurso, adicionar parte ao multipart",
@@ -1839,9 +1851,10 @@
     "These fields will contain references to G3W-SUITE users and users group who creators or modifiers of the individual features edited.": "Estes campos conterão referências a G3W-SUITE  usuários e usuários agrupam os criadores ou modificadores das características individuais editados.",
     "Through these two optional settings it is possible to define four fields of the table of the layer being edited automatically filled in.": "Através destas duas configurações opcionais é possível definir quatro campos da tabela da camada sendo editada automaticamente preenchida.",
     "To activate the online editing functions, access the **`Layer list`** section of the project within the administration panel of G3W-ADMIN.": "Para ativar as funções de edição online, acesse o **`Layer list`**  secção do projecto no âmbito do painel de administração do G3W-ADMIN.",
+    "To activate the online editing functions, access the Layer list section of the project within the administration panel of G3W-ADMIN.": "Para ativar as funções de edição online, acesse o Layer list secção do projecto no âmbito do painel de administração do G3W-ADMIN.",
     "To allow editing on the related table in mode 1: n , the **editing function must also be activated** (always in the same way) **also for the related table** present in the project layers list.": "Para permitir edição na tabela relacionada no modo 1: n , o ** função de edição também deve ser ativada** (sempre da mesma forma) ** também para o quadro relacionado**  presente na lista de camadas do projeto."
   },
-  "docs/editing-client-tools.md": {
+  "docs/editing-tools.md": {
     "![Icon: Feature Add Part](/img/manual-english-icon-feature-add-part.avif) **Add part** of a multi-geometry": "![ Ícone: Característica Adicionar Parte](/img/manual-english-icon-feature-add-part.avif) ** Adicionar parte** de uma multigeometria",
     "![Icon: Feature Add](/img/manual-english-icon-feature-add.avif) **Add feature:** to add a feature": "![ Ícone: Característica Adicionar](/img/manual-english-icon-feature-add.avif) ** Adicionar recurso:** para adicionar um recurso",
     "![Icon: Feature Attribute](/img/manual-english-icon-feature-attribute.avif)**Update feature attribute:** to modify the attribute values associated with an existing feature": "![ Ícone: Atributos de Caracteres](/img/manual-english-icon-feature-attribute.avif)** Atualizar o atributo de recurso:** para modificar os valores dos atributos associados a uma funcionalidade existente",
@@ -1864,6 +1877,7 @@
     "A click on this icon will allow you to filter, and therefore show in the list, only the layers involved in the relations": "Um clique neste ícone permitirá filtrar, e, portanto, mostrar na lista, apenas as camadas envolvidas nas relações",
     "A help panel will describe the steps to take for copy, dissolve and split operations.": "Um painel de ajuda descreverá as etapas a serem tomadas para copiar, dissolver e dividir operações.",
     "Activating the Add features and Update feature vertex tools allows you to:": "Ativar os recursos Adicionar e Atualizar ferramentas de vértice de recursos permite que você:",
+    "After enabling and configuring online editing for a project layer, Editing layers appears in the client's left sidebar.": "** Após habilitar e configurar a edição online para uma camada de projeto, Editing layers aparece na barra esquerda do cliente.**",
     "Any **mandatory fields will be marked with an asterisk**.": "Qualquer ** campos obrigatórios serão marcados com um asterisco**.",
     "Any **unfulfilled constraints will be highlighted** with specific warning messages shown **in red**.": "Qualquer ** restrições não cumpridas serão destacadas** com mensagens de aviso específicas mostradas ** vermelho**.",
     "Create and edit features": "Criar e editar funcionalidades",
@@ -1903,6 +1917,7 @@
     "**alphanumeric (SQL) / QGIS expressions constraints**": "**alfanumérico (SQL) / QGIS  restrições de expressões**",
     "**geographic constraints**": "** restrições geográficas**",
     "After clicking the OK button, the constraint will appear in the list and can be parameterized using two ways of defining the rules:": "Depois de clicar no botão OK, a restrição aparecerá na lista e poderá ser parametrizada usando duas maneiras de definir as regras:",
+    "Alphanumeric (SQL) / QGIS expression constraints allow you to define, for each published layer, the subset of features that can be viewed and/or edited by individual users and/or groups of users.": "Alfanumérico (SQL) / QGIS restrições de expressão permitem definir, para cada camada publicada, o subconjunto de recursos que podem ser visualizados e/ou editados por usuários individuais e/ou grupos de usuários.",
     "Alphanumeric (SQL) / QGIS expressions Constraints": "Alfanumérico (SQL) / QGIS  expressões Restrições",
     "Both work in terms of visualization and/or editing": "Ambos trabalham em termos de visualização e/ou edição",
     "Choose where the filter applies:": "Escolha onde o filtro se aplica:",
@@ -1943,7 +1958,7 @@
     "editing only": "somente edição",
     "in both cases": "em ambos os casos"
   },
-  "docs/editing-geocoding.md": {
+  "docs/geocoding.md": {
     "**Bing Places:** places based on Bing maps (service available only for the USA)": "** Locais do Bing:**  lugares baseados em mapas do Bing (serviço disponível apenas para os EUA)",
     "**Bing Streets:** Addresses based on Bing maps": "**Ruas Bing:**  Endereços baseados em mapas do Bing",
     "**Clear markers selection:** to delete all markers inserted on the map": "** Limpar a selecção dos marcadores:** para apagar todos os marcadores inseridos no mapa",
@@ -1959,7 +1974,7 @@
     "Clicking on this icon will show the list of point layers on which online editing is enabled.": "Se carregar neste ícone, irá mostrar a lista de camadas de pontos em que a edição online está activada.",
     "Definition of the providers to use for each WebGis service": "Definição dos fornecedores a utilizar para cada serviço WebGis",
     "First of all, **Geocoding** must be associated with the Cartographic Group by selecting it at the **Base Layers and Map default features** session level. This will ensure that the tool is present on all WebGis services published within the Group.": "Primeiro de tudo, **Geocodificação**  deve ser associado ao Grupo Cartográfico, selecionando-o no ** Camadas de Base e funcionalidades padrão do Mapa**  nível de sessão. Isto irá garantir que a ferramenta está presente em todos os serviços WebGis publicados no Grupo.",
-    "For details on the client-side editing tools, see [Editing tools](editing-client-tools.md).": "Para mais detalhes sobre as ferramentas de edição do lado do cliente, consulte [ Ferramentas de edição](editing-client-tools.md).",
+    "For details on the client-side editing tools, see [Editing tools](editing-tools.md).": "Para mais detalhes sobre as ferramentas de edição do lado do cliente, consulte [ Ferramentas de edição](editing-tools.md).",
     "Geocoding": "Geocodificação",
     "Geocoding map control use case for populating project layers": "Caso de uso do controle de mapas de geocodificação para povoar camadas de projeto",
     "In the publication form of your QGIS project you need to define the providers to be associated with the Geocoding map control:": "Na forma de publicação do seu QGIS  projeto que você precisa definir os provedores a serem associados com o controle de mapa de geocodificação:",
@@ -1983,7 +1998,7 @@
     "Use results from the configured providers to populate point layers in the WebGIS service.": "Use os resultados dos provedores configurados para preencher camadas de pontos no serviço WebGIS.",
     "Using the Geocoding map control on the WebGis service": "Usando o controle de mapa de geocodificação no serviço WebGis"
   },
-  "docs/editing-project-settings.md": {
+  "docs/prepare-a-project-for-editing.md": {
     "**Additional settings at single layer level**": "** Configurações adicionais em nível de camada única**",
     "**All the QGIS expressions can be used as default values.**": "** Todos os QGIS  expressões podem ser usadas como valores padrão.**",
     "**The expression-based filter can also be dependent on the values of other fields on the form and useful to create cascading drill down.**": "**O filtro baseado em expressões também pode ser dependente dos valores de outros campos no formulário e útil para criar perfurações em cascata.**",
@@ -2017,6 +2032,7 @@
     "In the **`Attribute Form`** section of the **`Layer Properties`** it is also possible to define for every field:": "Na **`Attribute Form`**  Secção **`Layer Properties`** é também possível definir para cada campo:",
     "In the QGIS project's **`Vector Properties`** → **`Attribute Form`**, define an alias and editing widget for each attribute.": "Na QGIS  projeto **`Vector Properties`** → **`Attribute Form`**, defina um alias e widget de edição para cada atributo.",
     "In the QGIS project, **define the attribute display form structure** for each layer.": "Na QGIS  projecto, ** definir a estrutura do formulário de apresentação de atributos** para cada camada.",
+    "In the QGIS project, define the attribute display form structure for each layer.": "Na QGIS projecto, ** definir a estrutura do formulário de apresentação de atributos** para cada camada.",
     "In the event that, at the QGIS project level, one or more 1: n type relationships have been associated with a layer (**`Project menu → Properties…`, `Relations` section**), it will be possible to carry out relational editing also on the webgis platform.": "No caso de, no QGIS  nível do projecto, uma ou mais relações de tipo n 1: foram associadas a uma camada (**`Project menu → Properties…`, `Relations`  secção**), será possível realizar edição relacional também na plataforma webgis.",
     "In this case, at the online edit level, the form relating to the field thus defined will be self-calculated and can be set not editable by the user.": "Neste caso, no nível de edição online, o formulário relacionado ao campo assim definido será auto-calculado e pode ser definido não editável pelo usuário.",
     "It is therefore possible to define the visibility of a forms (form or group) and of the fields it contains, on the basis of the values defined on further fields when filling in the attributes.": "É, portanto, possível definir a visibilidade de um formulário (formulário ou grupo) e dos campos que contém, com base nos valores definidos em outros campos ao preencher os atributos.",
@@ -2042,7 +2058,7 @@
     "With regard to the **`Attachment widget`**, it is necessary to specify that the association of a multimedia file with a feature requires that this file is uploaded to a dedicated space (exposed on the web) on the server and that the association takes place via a URL that refers to that file.": "No que se refere à **`Attachment widget`**, é necessário especificar que a associação de um arquivo multimídia com uma característica requer que este arquivo seja carregado para um espaço dedicado (exposto na web) no servidor e que a associação ocorra através de uma URL que se refere a esse arquivo.",
     "the widget will be equipped with a pick layer tool at the cartographic client level": "o widget será equipado com uma ferramenta de camada de escolha no nível cartográfico do cliente"
   },
-  "docs/editing-relations.md": {
+  "docs/editing-related-records.md": {
     "![Icon: Feature Modify](/img/manual-english-icon-feature-modify.avif) **Update deature vertex:** modify the shape of the geometry": "![ Ícone: Modificar Característica](/img/manual-english-icon-feature-modify.avif) **Actualizar o vértice da deatura:**  modificar a forma da geometria",
     "![Icon: Feature Move](/img/manual-english-icon-feature-move.avif) **Move feature:** move the geometry": "![ Ícone: Movimentação da Característica](/img/manual-english-icon-feature-move.avif) ** Funcionalidade de movimento:**  mover a geometria",
     "![Icon: Join Erase](/img/manual-english-icon-join-erase.avif) **Unlink relation:** to dissociate the record from the edited feature, the record will not be deleted but will become an orphan": "![ Ícone: Juntar- se a Apagar](/img/manual-english-icon-join-erase.avif) **Desvincular a relação:** para dissociar o registro do recurso editado, o registro não será excluído, mas se tornará órfão",
@@ -2079,6 +2095,7 @@
     "Screenshot: Editing Client Save": "Imagem: Edição do Cliente Salvar",
     "Screenshot: Editing Form Relations": "Imagem: Editando Relações de Formulário",
     "Screenshot: Editing Form2": "Imagem: Editando o Form2",
+    "The activation, at the cartographic client level, of the editing mode on the parent layer automatically determines the possibility of also managing the information on the related table.": "A ativação, ao nível cartográfico do cliente, do modo de edição na camada pai determina automaticamente a possibilidade de também gerenciar as informações na tabela relacionada.",
     "To add a new record in the child layer, you first need to access the relations itself.": "Para adicionar um novo registro na camada infantil, você precisa primeiro acessar as relações em si.",
     "To copy a geometry from another layer operate in this order:": "Para copiar uma geometria de outra camada operar nesta ordem:",
     "You can fill in the individual attributes and save the new record. **The change must be validated by clicking on the `Save` button at the bottom of the form.**": "Você pode preencher os atributos individuais e salvar o novo registro. **A alteração deve ser validada clicando no botão `Save`  botão na parte inferior do formulário.**",
@@ -2101,7 +2118,7 @@
     "the list of all orphaned or already associated records will be displayed;": "A lista de todos os registos órfãos ou já associados será apresentada;",
     "the operator user is enabled for the editing function on these layers": "o usuário operador está habilitado para a função de edição nestas camadas"
   },
-  "docs/elasticsearch.md": {
+  "docs/elasticsearch-integration.md": {
     "**Authentication errors** — if your Elasticsearch instance has security enabled, set `http_auth` in `ELASTICSEARCH_DSL['default']`.": "** Erros de autenticação** — se a sua instância de pesquisa elástica tiver a segurança activada, definir `http_auth` em `ELASTICSEARCH_DSL['default']`.",
     "**No results / empty indexes** — verify that `QES_INDEXING_PROJECT` is `True`, that the Elasticsearch service is reachable at the configured host, and that the `qes_indexer` command completes without errors. The module logs to the `elasticsearch` Python logger (`[QES-elasticsearch]` log tag).": "**Sem resultados / índices vazios** — verificar se: `QES_INDEXING_PROJECT` é `True`, que o serviço Elasticsearch é acessível no host configurado, e que o `qes_indexer` o comando completa sem erros. O módulo loga no `elasticsearch` Registrador Python (`[QES-elasticsearch]` log tag).",
     "**Stale data after editing** — the receivers only update documents for the project / layer being modified. To rebuild from scratch run `python manage.py qes_indexer --prj_ids <id>`.": "** Dados em branco após a edição** — os receptores só actualizam os documentos do projecto/camada que está a ser modificado. Para reconstruir a partir do zero `python manage.py qes_indexer --prj_ids <id>`.",
@@ -2133,6 +2150,7 @@
     "Set `QES_INDEXING_CRON_SCHEDULE` (see above) to run a full re-indexing on a regular basis through the Huey consumer.": "Definir `QES_INDEXING_CRON_SCHEDULE` (ver acima) executar uma reindexagem completa numa base regular através do consumidor Huey.",
     "Standard [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedocs.io/) connection dictionary. The `default` alias is the one used by the QES indexer. Use `http_auth` to provide credentials when X-Pack security is enabled.": "Padrão [`django-elasticsearch-dsl`](https://django-elasticsearch-dsl.readthedocs.io/)  dicionário de ligação. `default` alias é o usado pelo indexador QES. Use `http_auth` para fornecer credenciais quando a segurança do X-Pack estiver ativada.",
     "Starting from version 3.10, G3W-SUITE ships with the **`qes`** module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into [Elasticsearch](https://www.elastic.co/elasticsearch) to provide fast, full-text search across the published WebGIS projects.": "A partir da versão 3.10, G3W-SUITE  navios com **`qes`**  módulo (QGIS  Elasticsearch), um componente opcional que indexa QGIS  características da camada para dentro [Pesquisa de Elastica](https://www.elastic.co/elasticsearch) para fornecer pesquisa rápida e completa em todos os projetos publicados do WebGIS.",
+    "Starting from version 3.10, G3W-SUITE ships with the qes module (QGIS Elasticsearch), an optional component that indexes QGIS layer features into Elasticsearch to provide fast, full-text search across the published WebGIS projects.": "A partir da versão 3.10, G3W-SUITE navios com qes módulo (QGIS Elasticsearch), um componente opcional que indexa QGIS características da camada para dentro Pesquisa de Elastica para fornecer pesquisa rápida e completa em todos os projetos publicados do WebGIS.",
     "The [standard Compose file for 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml) includes Elasticsearch 8.18.1, but the service is not on the same Compose network as `g3w-suite`. Add `internal` under `services.elasticsearch.networks` in the Compose file you deploy:": "A [ arquivo padrão Compor para 3.11](https://github.com/g3w-suite/g3w-suite-docker/blob/v3.11.x/docker-compose.yml)  inclui a Elasticsearch 8.18.1, mas o serviço não está na mesma rede Compose que `g3w-suite`. Adicionar `internal`  abaixo `services.elasticsearch.networks` no arquivo Compose que você implantar:",
     "The `qes_indexer` management command performs a full indexing of one or more QGIS projects for every user that has permission to access them:": "A `qes_indexer`  comando de gerenciamento executa uma indexação completa de um ou mais QGIS  projetos para cada usuário que tenha permissão para acessá-los:",
     "The endpoint honours the standard G3W-SUITE project permissions: anonymous users only see results from projects shared with the anonymous user, authenticated users see the subset of features that match their grants.": "O ponto de avaliação respeita o padrão G3W-SUITE  permissões do projeto: usuários anônimos só veem resultados de projetos compartilhados com o usuário anônimo, usuários autenticados veem o subconjunto de recursos que correspondem aos seus subsídios.",
@@ -2140,7 +2158,7 @@
     "The module exposes a per-project search endpoint backed by `QesSearchAPIView`. Issue a `GET` request to the project search URL with a `q` query parameter, for example:": "O módulo expõe um endpoint de pesquisa por projeto suportado por `QesSearchAPIView`. Emitir uma `GET`  solicitar para o URL de pesquisa do projeto com um `q`  parâmetro de consulta, por exemplo:",
     "The module is part of the [g3w-admin](https://github.com/g3w-suite/g3w-admin) codebase (`g3w-admin/qes/`) and is activated by adding `qes` to the `G3WADMIN_LOCAL_MORE_APPS` list in `local_settings.py`.": "O módulo faz parte do [g3w-admin](https://github.com/g3w-suite/g3w-admin) base de código (`g3w-admin/qes/`) e é activado adicionando `qes` à `G3WADMIN_LOCAL_MORE_APPS`  listar em `local_settings.py`.",
     "The response is a JSON list of hits. Each hit contains:": "A resposta é uma lista de hits do JSON. Cada hit contém:",
-    "This requires the Huey consumer to be running (see the *consumer* Docker compose recipe in [docker.md](docker.md)).": "Isto exige que o consumidor Huey esteja em funcionamento (ver * consumidor* Adorno compõe a receita em [docker.md](docker.md)).",
+    "This requires the Huey consumer to be running (see the *consumer* Docker compose recipe in [docker-installation.md](docker-installation.md)).": "Isto exige que o consumidor Huey esteja em funcionamento (ver * consumidor* Adorno compõe a receita em [docker-installation.md](docker-installation.md)).",
     "Troubleshooting": "Resolução de Problemas",
     "When `QES_INDEXING_PROJECT = True`, G3W-SUITE listens to project save / delete and to editing commits on vector layers and updates the corresponding documents automatically. No manual action is required after the initial indexing.": "Quando `QES_INDEXING_PROJECT = True`, G3W-SUITE  ouve o projeto salvar / excluir e editar commits em camadas vetoriais e atualiza os documentos correspondentes automaticamente. Nenhuma ação manual é necessária após a indexação inicial.",
     "When `qes` is listed in `G3WADMIN_LOCAL_MORE_APPS`, G3W-SUITE automatically adds `django_elasticsearch_dsl` to `INSTALLED_APPS`.": "Quando `qes`  está listado em `G3WADMIN_LOCAL_MORE_APPS`, G3W-SUITE  adiciona automaticamente `django_elasticsearch_dsl` para `INSTALLED_APPS`.",
@@ -2157,7 +2175,7 @@
     "index attribute values and a derived `text_content` field used for full-text search;": "valores de atributos de índice e um derivado `text_content`  campo utilizado para pesquisa de texto completo;",
     "keep the indexes synchronized with editing operations through Django signals (create / update / delete on vector layers managed by the `editing` module);": "manter os índices sincronizados com as operações de edição através de sinais Django (criar / atualizar / excluir em camadas vetoriais gerenciadas pela `editing`  módulo);"
   },
-  "docs/g3wsuite_access_portal.md": {
+  "docs/access-portal.md": {
     "**`Change language`**": "**`Change language`**",
     "**`Go back to the home page`**": "**`Go back to the home page`**",
     "**`Info`**": "**`Info`**",
@@ -2187,11 +2205,12 @@
     "The [optional front-end portal](https://github.com/g3w-suite/g3w-admin-portal) provides the pages shown below. In a default installation without the portal, the site root opens the administration dashboard and redirects visitors who are not signed in to the login page. With the portal enabled, the dashboard is under `/admin/`.": "A [portal de front-end opcional](https://github.com/g3w-suite/g3w-admin-portal)  fornece as páginas mostradas abaixo. Numa instalação padrão sem o portal, a raiz do site abre o painel de administração e redireciona os visitantes que não estão conectados à página de login. Com o portal habilitado, o painel está sob `/admin/`.",
     "The home page will contain, in addition to a brief and customizable presentation of the service, also:": "A página inicial conterá, além de uma breve e personalizável apresentação do serviço, também:",
     "The login portal sessions": "As sessões do portal de login",
+    "This section describes the different sections of the access portal and how to login to the Administration Panel": "** Esta seção descreve as diferentes seções do portal de acesso e como fazer login no Painel de Administração**",
     "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_** Esta seção descreve as diferentes seções do portal de acesso e como fazer login no Painel de Administração**_",
     "a **menu at the top right side** ![Screenshot: G3W-SUITE Portal Menu Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) with the following items:": "a **menu no canto superior direito** ![ Imagem: G3W-SUITE Menu do Portal Toprigth](/img/manual-english-g3wsuite-portal-menu-toprigth.avif) Com os seguintes elementos:",
     "a **panel menu on the right** with the following items:": "a **menu do painel à direita** Com os seguintes elementos:"
   },
-  "docs/g3wsuite_administration.md": {
+  "docs/administration-panel.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![Botão: Salvar](/img/manual-english-buttom-save.avif)",
     "**-->  Django Administration** (only for Staff user): to configure/managme Django advanced settings": "**-->   Administração Django** (somente para o usuário Staff): para configurar/managme Django configurações avançadas",
     "**-->  Edit general data**: to set information shown in the front-end portal": "**-->   Editar dados gerais**: para definir as informações mostradas no portal front-end",
@@ -2232,7 +2251,7 @@
     "Front End Social Data": "Dados sociais front- end",
     "Front end portal customization": "Personalização do portal frontal",
     "Frontend Groups Map Data": "Grupos de Frontend Map Data",
-    "If the [optional portal](g3wsuite_access_portal.md) is enabled, use the **Administration Panel** to customize its content.": "Se a [portal opcional](g3wsuite_access_portal.md)  está habilitado, use o ** Painel de Administração** para personalizar o seu conteúdo.",
+    "If the [optional portal](access-portal.md) is enabled, use the **Administration Panel** to customize its content.": "Se a [portal opcional](access-portal.md)  está habilitado, use o ** Painel de Administração** para personalizar o seu conteúdo.",
     "In the **Credits** subsection it is possible to define additional text for the publishing aspects.": "Na ** Créditos** subseção é possível definir texto adicional para os aspectos editoriais.",
     "In the **`General suite data`** form you can define all the informations that will appear on the portal home page": "Na **`General suite data`**  formulário que você pode definir todas as informações que aparecerão na página inicial do portal",
     "Information that will be displayed in the **Login/Administration** session": "Informações que serão exibidas na **Login/Administração**  sessão",
@@ -2260,6 +2279,7 @@
     "Screenshot: G3W-SUITE Administration Configuration Socialdata Result": "Imagem: G3W-SUITE  Configuração da Administração Resultado dos Dados Sociais",
     "Screenshot: G3W-SUITE Administration Desk": "Imagem: G3W-SUITE  Secretária de Administração",
     "The main page of the Administration Panel shows the following items, depending on your permissions and the installed modules:": "A página principal do Painel de Administração mostra os seguintes itens, dependendo de suas permissões e dos módulos instalados:",
+    "This section describes how to manage the various aspects and features of the Suite:": "** Esta seção descreve como gerenciar os vários aspectos e características da Suite:**",
     "Use the Administration Panel to publish QGIS projects and configure their WebGIS services.": "Use o Painel de Administração para publicar QGIS  projeta e configura seus serviços WebGIS.",
     "Users and Users Groups management": "Gestão de Grupos de Utilizadores e Utilizadores",
     "Users and cartographic macro-groups": "Usuários e macrogrupos cartográficos",
@@ -2273,7 +2293,7 @@
     "_**updating and management of WebGis services (search tool and additional functions)**_": "_** atualização e gerenciamento de serviços WebGis (ferramenta de pesquisa e funções adicionais)**_",
     "_**user creation and management (individuals and groups)**_": "_** criação e gestão de utilizadores (individuais e grupos)**_"
   },
-  "docs/g3wsuite_client.md": {
+  "docs/map-client.md": {
     "**Add layer:** session to add local vector layers or custom WMS services to the map": "** Adicionar camada:**  sessão para adicionar camadas vetoriais locais ou personalizadas WMS  serviços para o mapa",
     "**Admin:** access to the administration section": "** Administrador:**  acesso à secção de administração",
     "**Alerts:** the Messages associated with the individual WebGis services and displayed when the services are started can be recalled by the user at any time. The message will be displayed on a resizable modal and can be consulted in overlay while continuing to interact with the various elements of the cartographic client.": "** Alertas:** as Mensagens associadas aos serviços WebGis individuais e exibidas quando os serviços são iniciados podem ser lembradas pelo usuário a qualquer momento. A mensagem será exibida em um modal redimensionável e pode ser consultada em sobreposição, enquanto continua a interagir com os vários elementos do cliente cartográfico.",
@@ -2325,7 +2345,7 @@
     "WebGis service title": "Título do serviço WebGis",
     "main title (set at General Data level) or MacroGroup name, according to the settings": "título principal (definido no nível Geral de Dados) ou nome MacroGroup, de acordo com as configurações"
   },
-  "docs/g3wsuite_editing.md": {
+  "docs/online-editing.md": {
     "**Attention:** the management of the editing of the N: M relations is limited to the management of the 1:N relationship between the parent layer and the intermediate table.": "** Atenção:** o gerenciamento da edição das relações N: M está limitado ao manejo da relação 1:N entre a camada parental e a tabela intermediária.",
     "**Pay attention!**": "** Prestem atenção!**",
     "**reading and editing mode**": "** modo de leitura e edição**",
@@ -2354,6 +2374,7 @@
     "Thanks to the integration with the APIs of QGIS it is now possible to manage the main formats (geographically and not) supported by QGIS Server:": "Graças à integração com as APIs de QGIS  agora é possível gerenciar os principais formatos (geograficamente e não) suportados por QGIS  Servidor:",
     "The **editing settings** are defined partly at the **QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations)** and partly at the **Administration level** (users with editing power, activation scale, alpha and geo constraints).": "A ** configurações de edição** são definidos em parte na **QGIS  nível do projeto (edição de estrutura de formulário, widgets associados com atributos individuais, 1:n e, em parte, relações N:M)** e em parte na ** Nível de administração** (usuários com potência de edição, escala de ativação, restrições alfa e geo).",
     "The editing function manages both direct editing on geometric and alphanumeric layers, and editing on layers in a 1:N or N:M (only in paert) relations, also both geometric and alphanumeric.": "A função de edição gerencia tanto a edição direta em camadas geométricas e alfanuméricas, quanto a edição em camadas em relações 1:N ou N:M (apenas em paert), também geométricas e alfanuméricas.",
+    "The editing settings are defined partly at the QGIS project level (editing form structure, widgets associated with individual attributes, 1:n and, in part, N:M relations) and partly at the Administration level (users with editing power, activation scale, alpha and geo constraints).": "A ** configurações de edição** são definidos em parte na QGIS nível do projeto (edição de estrutura de formulário, widgets associados com atributos individuais, 1:n e, em parte, relações N:M) e em parte na ** Nível de administração** (usuários com potência de edição, escala de ativação, restrições alfa e geo).",
     "This block will be deactivated when the user exits the editing mode.": "Este bloco será desativado quando o usuário sair do modo de edição.",
     "This means that currently it is not possible to create new records in table M but only:": "Isto significa que atualmente não é possível criar novos registros na tabela M, mas apenas:",
     "Virtual layer": "Camada virtual",
@@ -2361,7 +2382,7 @@
     "create new relations between new elements of layer N and pre-existing records of layer M": "criar novas relações entre novos elementos da camada N e registros pré-existentes da camada M",
     "modify the current relations present": "modificar as relações atuais presentes"
   },
-  "docs/g3wsuite_editing_iframe.md": {
+  "docs/editing-via-iframe.md": {
     "**Available methods:**": "** Métodos disponíveis:**",
     "**Error response:**": "** Resposta de erro:**",
     "**Note:** Pay attention to the `\"id\": \"_new_1784646052597\"` value — in particular the `_new_` prefix, which is required to generate a new ID when the feature IDs stored in the database are auto-incremented.": "** Nota:**  Preste atenção ao `\"id\": \"_new_1784646052597\"` valor — em especial o `_new_` prefixo, que é necessário para gerar um novo ID quando os IDs de recursos armazenados no banco de dados são auto-incrementados.",
@@ -2401,6 +2422,7 @@
     "Update a Feature": "Atualizar uma Característica",
     "Update an existing feature": "Atualizar uma funcionalidade existente",
     "Use **online editing** when G3W-SUITE is embedded in an `<iframe>` hosted by an external parent application.": "Utilização ** edição online**  quando G3W-SUITE  está incorporado em uma `<iframe>`  hospedado por um aplicativo pai externo.",
+    "Use online editing when G3W-SUITE is embedded in an <iframe> hosted by an external parent application.": "Utilização ** edição online** quando G3W-SUITE está incorporado em uma <iframe> hospedado por um aplicativo pai externo.",
     "When modifying an existing feature, include its GeoJSON (with its feature ID) in the request. Omit `geojson` when drawing a new feature. Once drawing finishes, the iframe sends the parent application the feature's GeoJSON — without attributes, which the application can add before calling `add` to save it to the database.": "Ao modificar uma funcionalidade existente, inclua o seu GeoJSON (com o seu ID de funcionalidade) na requisição. Omit `geojson`  Ao desenhar uma nova funcionalidade. Uma vez que o desenho termina, o iframe envia o aplicativo pai do recurso GeoJSON — sem atributos, que o aplicativo pode adicionar antes de chamar `add` para salvá-lo na base de dados.",
     "`action`": "`action`",
     "`add`": "`add`",
@@ -2437,12 +2459,12 @@
     "Editing via IFRAME": "Edição via IFRAME",
     "Elasticsearch integration": "Integração da pesquisa elástica",
     "Follow the [Quick Start](quick-start.md) to publish your own project, or use the [demo tutorial](demo.md#demo-tutorial) to practice with prepared data.": "Seguir o [ Início Rápido](quick-start.md)  publicar o seu próprio projeto, ou usar o [tutorial de demonstração](demo.md#demo-tutorial) Praticar com dados preparados.",
-    "For the complete workflow, see [publish and update WebGIS services](admin-publishing.md).": "Para o fluxo de trabalho completo, consulte [ publicar e atualizar serviços WebGIS](admin-publishing.md).",
+    "For the complete workflow, see [publish and update WebGIS services](publish-and-update-webgis-services.md).": "Para o fluxo de trabalho completo, consulte [ publicar e atualizar serviços WebGIS](publish-and-update-webgis-services.md).",
     "G3W-SUITE 3.11 Manual": "G3W-SUITE 3.11 Manual",
     "G3W-SUITE administration panel": "G3W-SUITE  painel de administração",
     "G3W-SUITE base layers": "G3W-SUITE  camadas de base",
     "G3W-SUITE cartographic client": "G3W-SUITE  Cliente cartográfico",
-    "G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.": "G3W-SUITE é um framework baseado em Django e Python que integra QGIS  componentes para construir um Sistema de Informação Geográfica e publicar QGIS  projectos na Web.",
+    "G3W-SUITE is a framework based on Django and Python that integrates QGIS components to build a Geographic Information System and publish QGIS projects on the Web.": "G3W-SUITE é um framework baseado em Django e Python que integra QGIS componentes para construir um Sistema de Informação Geográfica e publicar QGIS projectos na Web.",
     "Geocoding": "Geocodificação",
     "Getting started": "Começar",
     "Group base layers and languages": "Grupo de camadas de base e línguas",
@@ -2481,7 +2503,7 @@
     "Versions and compatibility": "Versões e compatibilidade",
     "WebGIS roles and organization": "Funções e organização WebGIS"
   },
-  "docs/install.md": {
+  "docs/manual-installation.md": {
     "!!IMPORTANT!! Make sure that paths set for DATASOURCE_PATH and MEDIA_ROOT exist.": "!!ImPORTANTE!! Certifique-se de que existem caminhos definidos para DATASOURCE_PATH e MEDIA_ROOT.",
     "**In this page**": "** Nesta página**",
     "After migration, create an administrator account from the directory containing `manage.py`:": "Após a migração, crie uma conta de administrador a partir do diretório contendo `manage.py`:",
@@ -2499,8 +2521,8 @@
     "Django setup": "Configuração do Django",
     "First step is install dev libraries packages for python module": "O primeiro passo é instalar pacotes de bibliotecas dev para o módulo python",
     "For G3W-SUITE deploy clearly can be used the native Python3 `venv` module, `virtualenvwrapper` is a third part module that render the use and management of virtual environments very simple.": "Para G3W-SUITE implantar claramente pode ser usado o Python3 nativo `venv`  módulo, `virtualenvwrapper` é um módulo de terceira parte que torna o uso e gerenciamento de ambientes virtuais muito simples.",
-    "For a containerized deployment, follow the [Docker installation guide](docker.md) instead.": "Para uma implantação em contêiner, siga o [Guia de instalação do Docker](docker.md) Em vez disso.",
-    "For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.": "Para outras versões, verificar o [ tabela de compatibilidade de versões](versions.md)  antes de escolher Python e QGIS  versões.",
+    "For a containerized deployment, follow the [Docker installation guide](docker-installation.md) instead.": "Para uma implantação em contêiner, siga o [Guia de instalação do Docker](docker-installation.md) Em vez disso.",
+    "For other releases, check the [version compatibility table](versions-and-compatibility.md) before choosing Python and QGIS versions.": "Para outras versões, verificar o [ tabela de compatibilidade de versões](versions-and-compatibility.md)  antes de escolher Python e QGIS  versões.",
     "From the repository root:": "A partir da raiz do repositório:",
     "G3W-ADMIN has a series of [paver](http://pythonhosted.org/Paver/) CLI commands to administrate the suite.": "G3W-ADMIN  tem uma série de [paver](http://pythonhosted.org/Paver/)  Comandos CLI para administrar o pacote.",
     "G3W-ADMIN is a Django application. Copy the example settings file from the repository root:": "G3W-ADMIN é uma aplicação Django. Copie o ficheiro de configuração do exemplo da raiz do repositório:",
@@ -2540,6 +2562,7 @@
     "The simpler way is to use [Apache2](https://httpd.apache.org/) as server WEB and its [mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi) module.": "A maneira mais simples é usar [Apache2](https://httpd.apache.org/)  como servidor WEB e sua [mod_ wsgi](https://en.wikipedia.org/wiki/Mod_wsgi)  módulo.",
     "The v3.11.4 checkout includes [docker-compose.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml) and [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). The `dev` branch has separate development configurations.": "O checkout v3.11.4 inclui [- Compor docker.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml) e [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). A `dev` branch tem configurações de desenvolvimento separadas.",
     "These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.": "Estas instruções usam Ubuntu 24.04 LTS (Noble) e Python 3.12.3.",
+    "These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3. Use this installation for development, not production.": "Estas instruções usam Ubuntu 24.04 LTS (Noble) e Python 3.12.3. Use esta instalação para o desenvolvimento, não para a produção.",
     "This last command just make active your new virtualenv environment, for the next times is possible use the follow command to activate the virtualenv environment:": "Este último comando apenas ativa seu novo ambiente virtualenv, para as próximas vezes é possível usar o comando a seguir para ativar o ambiente virtualenv:",
     "To activate virtuenvwrapper on system login, add follow lines to 'bashrc' config file of your user": "Para ativar o virtutenvwrapper no login do sistema, adicione as seguintes linhas ao arquivo de configuração 'bashrc' do seu usuário",
     "To check that the active environment can import QGIS on Ubuntu, run:": "Para verificar se o ambiente activo pode importar QGIS no Ubuntu, execute:",
@@ -2553,7 +2576,7 @@
     "and for stop": "e para parar",
     "set database connection parameters (DATABASES), media root (MEDIA_ROOT) and session cookies name (SESSION_COOKIE_NAME):": "definir parâmetros de conexão de banco de dados (DATABASES), raiz de mídia (MEDIA_ROOT) e nome de cookies de sessão (SESSION_COOKIE_NAME):"
   },
-  "docs/organization-examples.md": {
+  "docs/access-policy-examples.md": {
     "**Contents organized on a single level (Cartographic groups)**": "** Conteúdo organizado a um nível único (grupos cartográficos)**",
     "**Contents organized on two levels (Cartographic macro-groups and cartographic groups)**": "** Conteúdo organizado em dois níveis (grupos cartográficos e macrogrupos cartográficos)**",
     "**Editor1** users can in turn delegate some secondary administrators (**Editor2** role) in managing the contents of the individual Cartographic Groups.": "**Editor1**  os utilizadores podem, por sua vez, delegar alguns administradores secundários (**Editor 2**  papel) na gestão dos conteúdos dos grupos cartográficos individuais.",
@@ -2610,7 +2633,7 @@
     "Views services according to their credentials.": "Serviços de visualização de acordo com suas credenciais.",
     "WebGIS services": "Serviços WebGIS"
   },
-  "docs/projectsettings-layers.md": {
+  "docs/layer-properties.md": {
     "**NB:** The name of this directory is defined by the basic settings set during the installation of the suite.": "**NB:** O nome deste diretório é definido pelas configurações básicas definidas durante a instalação do pacote.",
     "**PS:** remember that the **`File Manager`** tool also allows you to manage the synchronization of geographical data (in the case of using physical files) and the management of multimedia files.": "**PS:**  lembrar-se que o **`File Manager`** a ferramenta também permite gerenciar a sincronização de dados geográficos (no caso de usar arquivos físicos) e o gerenciamento de arquivos multimídia.",
     "**The suite manages the presence of multiple styles associated with a layer.**": "**A suíte gerencia a presença de vários estilos associados a uma camada.**",
@@ -2625,7 +2648,7 @@
     "Editing": "Edição",
     "Example:": "Exemplo:",
     "Following queries at the cartographic client level, we will have different behaviors based on the type of content:": "Após consultas no nível cartográfico do cliente, teremos comportamentos diferentes baseados no tipo de conteúdo:",
-    "For more information, see the [dedicated section on editing project settings](editing-project-settings.md).": "Para mais informações, consultar [ seção dedicada à configuração do projeto de edição](editing-project-settings.md).",
+    "For more information, see the [dedicated section on editing project settings](prepare-a-project-for-editing.md).": "Para mais informações, consultar [ seção dedicada à configuração do projeto de edição](prepare-a-project-for-editing.md).",
     "Icon: G3wclient Config": "Ícone: Configuração do G3wclient",
     "If external SVG icons are used (added to the basic ones of QGIS, via the **`Settings -> Options -> System -> SVG paths`**), these must be uploaded to the server (through the **`File Manager`** tool) in order to be used by QGIS Server.": "Se forem usados ícones SVG externos (adicionados aos básicos de QGIS, através da **`Settings -> Options -> System -> SVG paths`**), estes devem ser enviados para o servidor (através do **`File Manager`** (instrumento) para ser utilizado por QGIS  Servidor.",
     "If you set a descriptive information in the **`Abstract`** form of the **`QGIS Server`** session of the **`Layer Properties`**, this information will be associated with the layer at the webgis level.": "Se você definir uma informação descritiva no **`Abstract`**  forma da **`QGIS Server`**  sessão do **`Layer Properties`**, esta informação será associada com a camada no nível webgis.",
@@ -2679,7 +2702,7 @@
     "whether the field is exposed in the **WFS** service, if enabled": "se o campo está exposto na **WFS**  serviço, se habilitado",
     "whether the field is exposed in the **WMS** service and, therefore, in the WebGis service": "se o campo está exposto na **WMS**  serviço e, portanto, no serviço WebGis"
   },
-  "docs/projectsettings-properties.md": {
+  "docs/project-properties.md": {
     "**ATTENTION:** there are currently limitations in the use of N:M relations": "** Atenção:**  existem atualmente limitações no uso das relações N:M",
     "**ATTENTION:** to correctly manage these types of relations it is NECESSARY to insert the reference to the relations in the customized form": "** Atenção:** para gerir corretamente esses tipos de relações é necessário inserir a referência às relações na forma personalizada",
     "**Data sources**": "** Fontes de dados**",
@@ -2738,7 +2761,7 @@
     "Screenshot: Qgisservergeneralaspectswfs": "Imagem: Qgisservergeneralaspectswfs",
     "Screenshot: Qgisserversetmapexpetent": "Imagem: Qgisserversetmapexpetent",
     "Screenshot: Qgisserversrisrestriction": "Imagem: Qgisserversrisrestriction",
-    "See also the [client metadata section](client-tools-and-toc.md#metadata).": "Ver também o [ seção de metadados do cliente](client-tools-and-toc.md#metadata).",
+    "See also the [client metadata section](map-tools.md#metadata).": "Ver também o [ seção de metadados do cliente](map-tools.md#metadata).",
     "Service capabilities": "Capacidades de serviço",
     "Show features count": "Mostrar a contagem de funcionalidades",
     "Spatial Bookmarks": "Favoritos Espaciais",
@@ -2764,7 +2787,7 @@
     "in general it is recommended to check **`use the layer ids as names`** option": "em geral, recomenda-se verificar **`use the layer ids as names`**  opção",
     "the option **`Add geometry to feature response`** must be checked to activate the **zoom to the features** on the WebGis service": "a opção **`Add geometry to feature response`**  deve ser verificado para ativar o **zoom para as funcionalidades** no serviço WebGis"
   },
-  "docs/projectsettings.md": {
+  "docs/qgis-project-settings.md": {
     "**Atlas and report are also supported.**": "**O Atlas e o relatório também são apoiados.**",
     "**Print layouts can contain more than one `Map` items and panoramic maps.**": "** Os layouts de impressão podem conter mais de um `Map`  itens e mapas panorâmicos.**",
     "**don't use commas for aliases** associated with layers": "** não use vírgulas para nomes falsos**  associado a camadas",
@@ -2782,9 +2805,10 @@
     "Project properties and general settings": "Propriedades do projeto e configurações gerais",
     "Project property": "Propriedade do projeto",
     "QGIS: project settings": "QGIS: configurações do projeto",
-    "See also the dedicated paragraph [Geographic data synchronization on the server](datamanagement#geographical-data-synchronization-on-the-server).": "Ver também o parágrafo dedicado [Sincronização de dados geográficos no servidor](datamanagement#geographical-data-synchronization-on-the-server).",
+    "See also the dedicated paragraph [Geographic data synchronization on the server](manage-qgis-data.md#geographical-data-synchronization-on-the-server).": "Ver também o parágrafo dedicado [Sincronização de dados geográficos no servidor](manage-qgis-data.md#geographical-data-synchronization-on-the-server).",
     "Thanks to the integration with QGIS Server, all the symbology aspects associated with the singoly layers are automatically reproduced on the WebGis service": "Graças à integração com QGIS  Servidor, todos os aspectos simbologia associados com as camadas de sinólio são reproduzidos automaticamente no serviço WebGis",
     "The following paragraphs describe which QGIS project settings are more relevant in relation to the published WebGis service.": "Os parágrafos seguintes descrevem quais os QGIS as configurações do projeto são mais relevantes em relação ao serviço publicado WebGis.",
+    "This section describes how to optimize your QGIS projects to publish as a WebGis service.": "** Esta seção descreve como otimizar seu QGIS projetos para publicar como um serviço WebGis.**",
     "Tips": "Dicas",
     "You can set also a **custom title** (definible in the WebGis side) setting an **Item ID** at a **Label** item.": "Você pode definir também um ** título personalizado** (definivel no lado WebGis) definindo um **ID do item** em uma **Rótulo** item.",
     "_**This section describes how to optimize your QGIS projects to publish as a WebGis service.**_": "_** Esta seção descreve como otimizar seu QGIS  projetos para publicar como um serviço WebGis.**_",
@@ -2810,12 +2834,12 @@
     "2. Upload your geographic data": "2. Envie seus dados geográficos",
     "3. Create a cartographic group": "3. Criar um grupo cartográfico",
     "4. Publish your QGIS project": "4. Publique o seu QGIS  projeto",
-    "After saving, check that the project appears in the group's project list. Open it with **View map** and check that the expected layers load. See [Publish and update WebGIS services](admin-publishing.md) for permissions, publication options, and updates.": "Após salvar, verifique se o projeto aparece na lista de projetos do grupo. Abra- o com **Ver mapa** e verifique se as camadas esperadas carregam. Veja [Publicar e atualizar serviços WebGIS](admin-publishing.md) para permissões, opções de publicação e atualizações.",
-    "Choose an existing [cartographic group](admin-cartographic-groups.md#add-group) or create one if your account allows it. Services in the same group must use the group's coordinate reference system.": "Escolher um existente [ grupo cartográfico](admin-cartographic-groups.md#add-group) ou criar uma se a sua conta permitir. Os serviços no mesmo grupo devem usar o sistema de referência de coordenadas do grupo.",
+    "After saving, check that the project appears in the group's project list. Open it with **View map** and check that the expected layers load. See [Publish and update WebGIS services](publish-and-update-webgis-services.md) for permissions, publication options, and updates.": "Após salvar, verifique se o projeto aparece na lista de projetos do grupo. Abra- o com **Ver mapa** e verifique se as camadas esperadas carregam. Veja [Publicar e atualizar serviços WebGIS](publish-and-update-webgis-services.md) para permissões, opções de publicação e atualizações.",
+    "Choose an existing [cartographic group](cartographic-groups.md#add-group) or create one if your account allows it. Services in the same group must use the group's coordinate reference system.": "Escolher um existente [ grupo cartográfico](cartographic-groups.md#add-group) ou criar uma se a sua conta permitir. Os serviços no mesmo grupo devem usar o sistema de referência de coordenadas do grupo.",
     "Create a cartographic project with the layers, symbology, forms and print layouts your workflow requires.": "Crie um projeto cartográfico com as camadas, simbologia, formulários e layouts de impressão que seu fluxo de trabalho requer.",
-    "If you do not have an instance yet, [install G3W-SUITE with Docker](docker.md) or [follow the demo tutorial with prepared data](demo.md#demo-tutorial).": "Se ainda não tiver uma instância, [ instalar G3W-SUITE com o Docker](docker.md) ou [ siga o tutorial de demonstração com dados preparados](demo.md#demo-tutorial).",
-    "If your project uses local files such as Shapefile, GeoPackage, SpatiaLite or raster data, upload them to the server before publishing. The [FileManager](/docs/datamanagement/#geographical-data-synchronization-on-the-server) module preserves the organization of your local data. For PostgreSQL/PostGIS or Oracle Spatial, allow the suite to connect to the database.": "Se o seu projeto usa arquivos locais, como o Shapefile, GeoPackage, SpatiaLite ou raster dados, enviá-los para o servidor antes de publicar. [ Gerenciador de arquivos](/docs/datamanagement/#geographical-data-synchronization-on-the-server) O módulo preserva a organização dos seus dados locais. Para o PostgreSQL/PostGIS ou Oracle Spatial, permitir que o suite para conectar-se ao banco de dados.",
-    "Organize your projects and geographic data on your computer as described in the [manual](/docs/datamanagement/#organization-of-data-and-projects).": "Organize seus projetos e dados geográficos em seu computador, conforme descrito no [manual](/docs/datamanagement/#organization-of-data-and-projects).",
+    "If you do not have an instance yet, [install G3W-SUITE with Docker](docker-installation.md) or [follow the demo tutorial with prepared data](demo.md#demo-tutorial).": "Se ainda não tiver uma instância, [ instalar G3W-SUITE com o Docker](docker-installation.md) ou [ siga o tutorial de demonstração com dados preparados](demo.md#demo-tutorial).",
+    "If your project uses local files such as Shapefile, GeoPackage, SpatiaLite or raster data, upload them to the server before publishing. The [FileManager](/docs/manage-qgis-data/#geographical-data-synchronization-on-the-server) module preserves the organization of your local data. For PostgreSQL/PostGIS or Oracle Spatial, allow the suite to connect to the database.": "Se o seu projeto usa arquivos locais, como o Shapefile, GeoPackage, SpatiaLite ou raster dados, enviá-los para o servidor antes de publicar. [ Gerenciador de arquivos](/docs/manage-qgis-data/#geographical-data-synchronization-on-the-server) O módulo preserva a organização dos seus dados locais. Para o PostgreSQL/PostGIS ou Oracle Spatial, permitir que o suite para conectar-se ao banco de dados.",
+    "Organize your projects and geographic data on your computer as described in the [manual](/docs/manage-qgis-data/#organization-of-data-and-projects).": "Organize seus projetos e dados geográficos em seu computador, conforme descrito no [manual](/docs/manage-qgis-data/#organization-of-data-and-projects).",
     "QGIS project": "QGIS  projeto",
     "Quick Start": "Início rápido",
     "Quick Start step 1: create your QGIS project": "Passo 1: Iniciar rápido criar o seu QGIS  projeto",
@@ -2823,7 +2847,7 @@
     "Quick Start step 3: create a cartographic group": "Passo 3: Iniciar rapidamente criar um grupo cartográfico",
     "Quick Start step 4: publish your QGIS project": "Passo de início rápido 4: publicar o seu QGIS  projeto",
     "Steps": "Passos",
-    "To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.": "Para publicar o seu próprio projecto, você precisa QGIS Ecrã, uma execução G3W-SUITE  exemplo, e uma conta que pode publicar em um grupo cartográfico. Se você também precisa criar o grupo, verifique se sua conta tem essa permissão.",
+    "To publish your own project, you need QGIS Desktop, a running G3W-SUITE instance, and an account that can publish to a cartographic group. If you also need to create the group, check that your account has that permission.": "Para publicar o seu próprio projecto, você precisa QGIS Ecrã, uma execução G3W-SUITE exemplo, e uma conta que pode publicar em um grupo cartográfico. Se você também precisa criar o grupo, verifique se sua conta tem essa permissão.",
     "Upload the `.qgs` or `.qgz` file to the cartographic group. No plugin is needed: the WebGIS service inherits the settings and functions configured in the QGIS project.": "Enviar o `.qgs` ou `.qgz`  ficheiro para o grupo cartográfico. Não é necessário nenhum 'plugin': o serviço WebGIS herda as configurações e funções configuradas no QGIS  projecto."
   },
   "docs/settings.md": {
@@ -2904,6 +2928,7 @@
     "The `/api/config` response is cached separately from map tiles, by project and user. Project and related configuration changes invalidate the affected cache.": "A `/api/config` A resposta é armazenada separadamente das peças do mapa, pelo projeto e pelo usuário. As alterações de projeto e configuração relacionadas invalidam o cache afetado.",
     "The example local settings use `http://localhost:8080/ors/v2/` as the Openrouteservice API endpoint.": "O exemplo de configurações locais usa `http://localhost:8080/ors/v2/`  como o Openrouteservice API endpoint.",
     "The following variables can be added to or edited in the project’s `local_settings.py`:": "As seguintes variáveis podem ser adicionadas ou editadas no projeto `local_settings.py`:",
+    "The following variables can be added to or edited in the project’s local_settings.py:": "As seguintes variáveis podem ser adicionadas ou editadas no projeto local_settings.py:",
     "This logging system continues to save log records with no upper limit. To keep the table from getting too big, there is a `django command` that deletes records older than a set number of days.": "Este sistema de registo continua a gravar registos de registo sem limite superior. Para impedir que a tabela fique demasiado grande, existe uma `django command` que apaga registos mais antigos do que um número de dias.",
     "Tile cache": "Cache de ladrilhos",
     "To activate it is sufficient add a new log `handler` inside Django `LOGGING` settings and use it for a `logger`:": "Para ativá-lo é suficiente adicionar um novo log `handler`  dentro de Django `LOGGING`  configurações e usá- lo para uma `logger`:",
@@ -2913,7 +2938,7 @@
     "`QDJANGO_PRJ_CACHE` enables this cache and defaults to `True`; set it to `False` to disable it. The cache uses Django's default cache backend. Docker configures Redis as that backend.": "`QDJANGO_PRJ_CACHE`  permite esta 'cache' e o 'padrões' `True`; configurá-lo para `False` para desativá- lo. A cache usa a infraestrutura padrão de cache do Django. O Docker configura o Redis como essa infraestrutura.",
     "service plus of `Nominatim` default service.": "serviço mais de `Nominatim`  serviço padrão."
   },
-  "docs/social_authentication.md": {
+  "docs/social-login.md": {
     "**Note that the username in this case will be retrieved from the provider.**": "**Note que o nome de usuário neste caso será recuperado do provedor.**",
     "Add necessary providers": "Adicionar os fornecedores necessários",
     "Add the social apps": "Adicionar os aplicativos sociais",
@@ -2940,6 +2965,7 @@
     "Screenshot: Socialauth User Sessions": "Imagem: Sessões do usuário do Socialauth",
     "Set the site id": "Definir o ID do site",
     "Since version 3.9, G3W-SUITE supports social authentication through [django-allauth](https://django-allauth.readthedocs.io/en/latest/).": "Desde a versão 3.9, G3W-SUITE  suporta autenticação social através [django-allauth](https://django-allauth.readthedocs.io/en/latest/).",
+    "Since version 3.9, G3W-SUITE supports social authentication through django-allauth.": "Desde a versão 3.9, G3W-SUITE suporta autenticação social através django-allauth.",
     "Social account corner cases": "Caixas de canto de contas sociais",
     "Social apps are the settings that in fact enable providers to be used for authentication.": "Aplicativos sociais são as configurações que de fato permitem que os provedores sejam usados para autenticação.",
     "Social login": "Inclusão social",
@@ -2970,12 +2996,12 @@
     "using the Google provider can help the reader to understand the following": "utilizar o provedor do Google pode ajudar o leitor a entender o seguinte",
     "we can just add them in the ```local_settings.py``` under the ```G3WADMIN_LOCAL_MORE_APPS```": "Podemos apenas adicioná-los no ```local_settings.py```  sob a ```G3WADMIN_LOCAL_MORE_APPS```"
   },
-  "docs/translation.md": {
+  "docs/translate-g3w-suite.md": {
     "1. Declare the new language in the base settings": "1. Declare o novo idioma nas configurações de base",
     "2. Create Translation Files": "2. Criar arquivos de tradução",
     "3. Translate the Messages": "3. Traduzir as Mensagens",
     "4. Compile the Translations": "4. Compilar as traduções",
-    "Add a language to G3W-SUITE by following these steps.": "Adicionar um idioma a G3W-SUITE  seguindo estes passos.",
+    "Add a language to G3W-SUITE by following these steps.": "Adicionar um idioma a G3W-SUITE seguindo estes passos.",
     "After finishing (or updating) your translations, run:": "Depois de terminar (ou atualizar) suas traduções, execute:",
     "By adding some of these lines (eg. into your `plugin.js` or `custom.js`) you can change or add custom translation entries:": "Ao adicionar algumas destas linhas (por exemplo, no seu `plugin.js` ou `custom.js`) você pode alterar ou adicionar entradas de tradução personalizadas:",
     "Creates **.po** files in `locale/it/LC_MESSAGES/`.": "Cria **.po**  arquivos em `locale/it/LC_MESSAGES/`.",
@@ -2996,7 +3022,7 @@
     "This creates the compiled **.mo** files Django uses to load translations:": "Isto cria o compilado **.mo**  arquivos que Django usa para carregar traduções:",
     "Translate G3W-SUITE": "Traduzir G3W-SUITE"
   },
-  "docs/twofa.md": {
+  "docs/double-factor-authentication-2fa.md": {
     "**G3W-SUITE** supports standard login plus optional two-factor authentication (2FA).": "**G3W-SUITE**  suporta login padrão mais autenticação opcional de dois fatores (2FA).",
     "**Introduction step**": "** Passo de introdução**",
     "**Method selection**": "** Seleção do método**",
@@ -3011,6 +3037,7 @@
     "Double Factor Authentication (2FA)": "Autenticação de Fator Duplo (2FA)",
     "Email": "E- mail",
     "From the **User Profile** page, users can open **Manage two factor authentication**.": "Do ** Perfil do Usuário**  página, os usuários podem abrir **Gerenciar a autenticação de dois fatores**.",
+    "G3W-SUITE supports standard login plus optional two-factor authentication (2FA). When 2FA is enabled for a user, authentication is completed in two steps:": "G3W-SUITE suporta login padrão mais autenticação opcional de dois fatores (2FA). Quando 2FA está habilitado para um usuário, a autenticação é concluída em duas etapas:",
     "If Django email is configured (`EMAIL_HOST` is set) and 2FA is enabled, users can choose to receive the token by email.": "Se o e- mail Django estiver configurado (`EMAIL_HOST`  está definido) e 2FA está habilitado, os usuários podem optar por receber o token por e-mail.",
     "If TOTP is selected, the wizard provides:": "Se o TOTP estiver seleccionado, o assistente fornece:",
     "Login Flow with 2FA Enabled": "Fluxo de Login com 2FA Activado",
@@ -3033,7 +3060,7 @@
     "activate_2fa_step3": "activar_ 2fa_ passo3",
     "activate_2fa_step4": "activar_ 2fa_ passo4"
   },
-  "docs/user_groups_organization.md": {
+  "docs/webgis-roles-and-organization.md": {
     "**Admin role users**": "** Utilizadores de funções administrativas**",
     "**Admin role users** will be able to access/edit/upload all the contents of the FileManager.": "** Utilizadores de funções administrativas**  será capaz de acessar/editar/carregar todo o conteúdo do Gerenciador de Arquivos.",
     "**Anonymous user:** a visitor who has not signed in. Public access is granted by assigning permissions to the anonymous user.": "** Utilizador anônimo:** um visitante que não tenha assinado o seu sessão. O acesso público é concedido atribuindo permissões ao utilizador anônimo.",
@@ -3061,7 +3088,7 @@
     "As previously specified, **Editor 1** user will be able to:": "Como especificado anteriormente, **Editor 1** O utilizador poderá:",
     "Cartographic groups": "Grupos cartográficos",
     "Even the **Admin** user can publish **WebGis services** within a Cartographic Group and, if necessary, associate them with a user (single and/or group) of **Editor 2** type.": "Até mesmo o ** Administrador**  usuário pode publicar ** Serviços WebGis** no âmbito de um grupo cartográfico e, se necessário, associá-los a um utilizador (single e/ou grupo) de **Editor 2**  Tipo.",
-    "G3W-SUITE organizes WebGIS services on two thematic or functional levels:": "G3W-SUITE  organiza serviços WebGIS em dois níveis temáticos ou funcionais:",
+    "G3W-SUITE organizes WebGIS services on two thematic or functional levels:": "G3W-SUITE organiza serviços WebGIS em dois níveis temáticos ou funcionais:",
     "Hierarchical organization of contents": "Organização hierárquica dos conteúdos",
     "In G3W-SUITE it is possible to manage Webgis services in a more or less structured way": "In G3W-SUITE é possível gerenciar serviços Webgis de forma mais ou menos estruturada",
     "In G3W-SUITE you can create **Users** and **Users Groups** and associate them with specific roles:": "In G3W-SUITE  você pode criar ** Utilizadores** e **Grupos de Utilizadores** e associá-los a funções específicas:",
@@ -3100,7 +3127,7 @@
     "the eventual **Editor2** user (individual/group) to associate with this Group": "a eventual **Editor 2**  usuário (individual/grupo) para associar com este Grupo",
     "the eventual user (individual/group) **Editor 2** to associate the Group with": "o utilizador eventual (individual/grupo) **Editor 2**  associar o Grupo com"
   },
-  "docs/versions.md": {
+  "docs/versions-and-compatibility.md": {
     "Branch": "Ramo",
     "Branch compatibility": "Compatibilidade com os ramos",
     "Bug fixes": "Correcções de erros",
@@ -3201,6 +3228,7 @@
     "The **capabilities and properties of QGIS server** like all the services supported by him WMS WFS, WCS etc are **now managed and controlled by G3W-SUITE through the QGIS API.**": "A ** capacidades e propriedades de QGIS  servidor**  como todos os serviços apoiados por ele WMS WFS, WCS etc. são ** agora gerido e controlado por G3W-SUITE  através da QGIS API.**",
     "The **transaction group management** QGIS function is inherited in WebGis editing.": "A ** gestão de grupos de transações** QGIS  função é herdada na edição WebGis.",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.0 brings a major code restructuring and the first QGIS API integration, expanding support for visualization, querying and editing.": "Versão 3.0 traz uma grande reestruturação de código ea primeira QGIS API integração, ampliação do suporte para visualização, consulta e edição.",
     "official manual on ReadTheDocs": "manual oficial em ReadTheDocs"
   },
   "news/2020-11-18-changelog-v3.1.md": {
@@ -3229,6 +3257,7 @@
     "The plots are connected to the layers defined on the QGIS project, in this way, as for the searches and the constraints, it is possible to activate the same plots on all WebGis services in which the reference layer is present.": "As parcelas estão ligadas às camadas definidas no QGIS  projeto, desta forma, quanto às buscas e restrições, é possível ativar os mesmos gráficos em todos os serviços WebGis em que a camada de referência está presente.",
     "To date, the** modules/functions are managed through the API** are:": "Até à data, o**  módulos/funções são gerenciados através da API** são:",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.1 introduces DataPlotly charts, Atlas print layouts and broader QGIS API support.": "Versão 3.1 introduz DataPlotly gráficos, layouts de impressão do Atlas e mais amplos QGIS API apoio.",
     "We hope you enjoy this great work!": "Esperamos que goste deste grande trabalho!",
     "altas print layout": "disposição de impressão do alta",
     "editing and visualization constraints": "restrições de edição e visualização",
@@ -3262,6 +3291,7 @@
     "The **plots** can be **filtered** on the values associated with only the **filtered features** following selection": "A ** parcelas**  pode ser ** filtrado** sobre os valores associados apenas com o ** funcionalidades filtradas**  após a seleção",
     "These will be **visible in the query results form** and **in the 1:N relations session**.": "Estes serão ** visível no formulário de resultados da consulta** e **na sessão de relações 1:N**.",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.2 adds QGIS 3.16 LTR support, layer filtering, DataPlotly integration and QGIS AuthCFG support.": "Versão 3.2 acrescenta QGIS 3.16 Suporte LTR, filtragem de camada, DataPlotly integração e QGIS Suporte ao AuthCFG.",
     "We hope you enjoy this great work!": "Esperamos que goste deste grande trabalho!",
     "ability to **select layer records** and **filter the content on the map and on print**": "capacidade de ** selecionar registros de camadas** e ** filtrar o conteúdo no mapa e na impressão**",
     "official ReadTheDocs documentation": "Documentação oficial do ReadTheDocs"
@@ -3291,6 +3321,7 @@
     "Through a drop-down menu it is possible to view the **different combinations of layers** (switched on and off) **based on themes** defined in the **QGIS project**.": "Através de um menu suspenso é possível ver o ** diferentes combinações de camadas** (mwitched liga e desliga) ** baseado em temas**  definido na **QGIS  projeto**.",
     "To date, the** modules/functions are managed through the API** are:": "Até à data, o**  módulos/funções são gerenciados através da API** são:",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.3 introduces per-user editing permissions, QGIS expressions in online editing, Oracle Spatial editing and more API integration.": "A versão 3.3 introduz permissões de edição por utilizador, QGIS expressões em edição online, edição do Oracle Spatial e muito mais API integração.",
     "We hope you enjoy this great work!": "Esperamos que goste deste grande trabalho!",
     "altas print layout": "disposição de impressão do alta",
     "editing and visualization constraints": "restrições de edição e visualização",
@@ -3320,6 +3351,7 @@
     "The list of WMS services and the specific WMS layers added will remain available to the user until the browser cache is cleared.": "A lista de WMS  serviços e o específico WMS  camadas adicionadas permanecerão disponíveis para o usuário até que o cache do navegador seja limpo.",
     "This function will be reflected in the consultation side.": "Esta função será reflectida no lado da consulta.",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.4 adds embedded project management, cascading forms, custom WMS services, temporal layers and multiband raster plots.": "Versão 3.4 adiciona gerenciamento de projeto incorporado, formulários em cascata, customizados WMS serviços, camadas temporais e parcelas de raster multibandas.",
     "We hope you enjoy this great work!": "Esperamos que goste deste grande trabalho!",
     "official ReadTheDocs documentation": "Documentação oficial do ReadTheDocs"
   },
@@ -3341,6 +3373,7 @@
     "Setting inherited from the QGIS project": "Configuração herdada da QGIS  projeto",
     "Sponsor and funder": "Patrocinador e financiador",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.5 adds stability improvements, symbology category controls, web editing tools and refactored time series.": "A versão 3.5 adiciona melhorias de estabilidade, controles de categoria de simbologia, ferramentas de edição da web e séries temporais refatoradas.",
     "We hope you enjoy this great work!": "Esperamos que goste deste grande trabalho!",
     "We remember in particular:": "Lembramos em particular:",
     "access and modification permissions": "permissões de acesso e modificação",
@@ -3370,6 +3403,7 @@
     "Take advantage of all the news related to the preparation of QGIS projects with the new LTR version": "Aproveite todas as notícias relacionadas com a preparação de QGIS  projetos com a nova versão LTR",
     "The number of features updates automatically based on the style associated with the layer.": "O número de funcionalidades actualiza automaticamente com base no estilo associado à camada.",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.6 adds QGIS 3.28 LTR support, system logs, multilayer search, spatial bookmarks and project and group trash management.": "Versão 3.6 acrescenta QGIS 3.28 Suporte LTR, registros de sistema, busca multicamadas, marcadores espaciais e gerenciamento de lixo de projeto e grupo.",
     "We remember in particular:": "Lembramos em particular:",
     "With v3.6.x version G3W-SUITE can save message logs inside the database.": "Com a versão v3.6.x G3W-SUITE  pode salvar registros de mensagens dentro do banco de dados.",
     "message body (also in html)": "corpo da mensagem (também em html)",
@@ -3457,6 +3491,7 @@
     "This function will allow you to activate analysis models on individual WebGis services and allow such analyzes to be carried out directly in the web environment.": "Esta função permitirá ativar modelos de análise em serviços WebGis individuais e permitir que tais análises sejam realizadas diretamente no ambiente web.",
     "Try the current demo": "Tentar a demonstração actual",
     "Until now, only the Admin user could upload and manage geographic data on a physical file in the FileManager session.": "Até agora, apenas o usuário Admin poderia carregar e gerenciar dados geográficos em um arquivo físico na sessão do FileManager.",
+    "Version 3.7 introduces a module for running QGIS ModelDesigner analyses on the web, alongside improvements to filtering, editing and map tools.": "A versão 3.7 introduz um módulo para execução QGIS Análises ModelDesigner na web, além de melhorias para ferramentas de filtragem, edição e mapa.",
     "Version 3.7 of G3W-SUITE is characterized by the release of a module dedicated to the** integration of analysis models created on QGIS via ModelDesigner**.": "Versão 3.7 de G3W-SUITE  caracteriza-se pela liberação de um módulo dedicado à**  integração de modelos de análise criados em QGIS  através do ModelDesigner**.",
     "attribute table contents": "conteúdo da tabela de atributos",
     "data underlying the charts": "dados subjacentes aos gráficos",
@@ -3504,6 +3539,7 @@
     "Output types supported": "Tipos de saída suportados",
     "QGIS Model Builder features and settings": "QGIS  Características e configurações do Construtor de Modelos",
     "Release date: **13 December 2023**": "Data de lançamento: **13 de dezembro de 2023**",
+    "Run QGIS Processing models in the web client and use their results in WebGIS projects.": "Executar QGIS Processando modelos no cliente web e usando seus resultados em projetos WebGIS.",
     "Screenshot: Algoritmi": "Imagem: Algoritmi",
     "Screenshot: Inputs": "Imagem: Entradas",
     "Screenshot: Model Builder Model Import Settings": "Imagem: Model Builder Model Importar Configurações",
@@ -3524,6 +3560,7 @@
     "**Training**: QGIS project preparation, creation and design of data entry forms, background maps, field data collection, synchronization and everything needed for the best results": "** Formação**: QGIS  elaboração de projetos, criação e desenho de formulários de entrada de dados, mapas de fundo, coleta de dados de campo, sincronização e tudo o que for necessário para os melhores resultados",
     ", at every level, for the": ", em todos os níveis, para o",
     "API integration": "API  integração",
+    "Gis3W is an official Mergin Maps partner, supporting field data collection workflows built on QGIS.": "Gis3W é um parceiro oficial da Mergin Maps, apoiando fluxos de trabalho de coleta de dados em campo QGIS.",
     "Gis3W, [official partner](https://merginmaps.com/partners) of Mergin Maps, provides:": "Gis3W, [ parceiro oficial](https://merginmaps.com/partners) de Mergin Maps, fornece:",
     "Integration with G3W-SUITE": "Integração com G3W-SUITE",
     "Mergin Maps on devices": "Mapas de Mergim em dispositivos",
@@ -3607,6 +3644,7 @@
     "The user can manually define the scale and DPI values for the the print outputs": "O usuário pode definir manualmente os valores de escala e DPI para as saídas de impressão",
     "There are limitations related to the structure of the customized form": "Existem limitações relacionadas à estrutura do formulário personalizado",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.8 adds QGIS 3.34 LTR support, customized themes, SVG and GeoPDF export, multigeometric editing and PDF layer downloads.": "Versão 3.8 acrescenta QGIS 3.34 Suporte LTR, temas personalizados, SVG e GeoPDF exportação, edição multigeométrica e downloads de camada PDF.",
     "WFS queries (QueryByBox, QueryByPolyon and QueryByDrawPolygon) are extended to layers deriving from embedded projects": "WFS  consultas (QueryByBox, ConsultaByPolion e ConsultaByDrawPolygon) são estendidas para camadas derivadas de projetos incorporados",
     "With this version it is also possible to export prints to **JPG**, **SVG** and **GeoPDF**": "Com esta versão também é possível exportar impressões para **JPG**, **SVG** e **GeoPDF**",
     "export the map also in **SVG and GeoPDF format** by defining c**ustom scale and DPI values**": "exportar o mapa também em ** Formato SVG e GeoPDF**  definindo c** escala de ustom e valores de PPP**",
@@ -3689,6 +3727,7 @@
     "This will allow only the results obtained to be automatically displayed in the map and attribute table.": "Isso permitirá que apenas os resultados obtidos sejam automaticamente exibidos na tabela de mapas e atributos.",
     "Through this function it is possible to clone the editing settings of a user and automatically apply the same settings to other users and/or groups of users.": "Através desta função é possível clonar as configurações de edição de um usuário e aplicar automaticamente as mesmas configurações para outros usuários e/ou grupos de usuários.",
     "Try the current demo": "Tentar a demonstração actual",
+    "Version 3.9 brings a redesigned map client, simpler editing-permission management and new editing features from QGIS.": "Versão 3.9 traz um cliente de mapa redesenhado, gerenciamento de permissão de edição mais simples e novas funcionalidades de edição de QGIS.",
     "Visibility management of conditional field groups has been implemented and improved, managing conditions based on Boolean fields or with multiple choices.": "O gerenciamento de visibilidade de grupos de campo condicionais foi implementado e melhorado, gerenciando condições baseadas em campos booleanos ou com múltiplas escolhas.",
     "With this version it is possible to allow the choice of more than one value among those associated with a field via the “value relation” widget.": "Com esta versão é possível permitir a escolha de mais de um valor entre aqueles associados a um campo através do widget “relação de valor”.",
     "a complete **restyling** of the cartographic client": "um completo ** restyling** do cliente cartográfico",
@@ -3781,6 +3820,7 @@
     "This tool allows you to perform comprehensive searches based on a subset of the project layers, simplifying the use by the user.": "Esta ferramenta permite que você realize pesquisas abrangentes com base em um subconjunto das camadas do projeto, simplificando o uso pelo usuário.",
     "This tool allows you to share the WebGis service while maintaining the customizations defined by the user, including, if present, the annotations created:": "Esta ferramenta permite-lhe partilhar o serviço WebGis mantendo as personalizações definidas pelo utilizador, incluindo, se presente, as anotações criadas:",
     "Try the demo": "Experimente a demonstração",
+    "Version 3.10 adds QGIS 3.40 LTR compatibility, Elasticsearch integration, Redlining Notes and improved DataPlotly chart management.": "Versão 3.10 acrescenta QGIS 3.40 Compatibilidade LTR, integração Elasticsearch, notas Redlining e melhorado DataPlotly Gestão de gráficos.",
     "[**Elasticsearch**](https://www.elastic.co/) integration": "[**Pesquisa de Elastica**](https://www.elastic.co/)  integração",
     "add one or more records to the child table (only if alphanumeric) associating them with all the selected parents": "adicionar um ou mais registos à tabela de crianças (apenas se alfanumérico) que os associa com todos os pais seleccionados",
     "and much more.": "e muito mais.",
@@ -3859,6 +3899,7 @@
     "This function can also be set for cascading 1:N relations.": "Esta função também pode ser definida para as relações em cascata 1:N.",
     "This tool allows you to perform comprehensive searches based on a subset of the project layers, simplifying the use by the user.": "Esta ferramenta permite que você realize pesquisas abrangentes com base em um subconjunto das camadas do projeto, simplificando o uso pelo usuário.",
     "Try the demo": "Experimente a demonstração",
+    "Version 3.11 brings QGIS 3.44 LTR compatibility, major reductions in file count and compilation time, and new integrations with the QGIS API.": "Versão 3.11 traz QGIS 3.44 Compatibilidade LTR, reduções importantes na contagem de arquivos e tempo de compilação, e novas integrações com o QGIS API.",
     "With the new version it is possible to merge multiple graphs from the DataPlotly plugin to create multiple overlapping graphs": "Com a nova versão é possível mesclar múltiplos gráficos a partir da DataPlotly 'plugin' para criar múltiplos gráficos sobrepostos",
     "You can now create bookmarks for your favorite projects so they always appear on top of your admin session dashboard.": "Agora você pode criar favoritos para seus projetos favoritos para que eles sempre apareçam em cima do painel de sessão de administração.",
     "ability to test changes “live” directly on a remote server (few substantial differences between evelopment and production environments)": "capacidade de testar as alterações “ao vivo” diretamente em um servidor remoto (poucos diferenças substanciais entre ambientes de desenvolvimento e produção)",

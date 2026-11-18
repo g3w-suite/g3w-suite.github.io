@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.10 - G3W-Suite
+description: Version 3.10 adds QGIS 3.40 LTR compatibility, Elasticsearch integration, Redlining Notes and improved DataPlotly chart management.
 ---
 
 # Changelog G3W-Suite 3.10

@@ -7,7 +7,7 @@ const sourceDir = path.join(projectRoot, 'src');
 const catalogDir = path.join(projectRoot, 'i18n');
 // The client uses "se" internally for Swedish; the web language tag is "sv".
 const languages = ['it', 'en', 'bg', 'de', 'es', 'fi', 'fr', 'pl', 'pt', 'ro', 'sv', 'uk'];
-const docsRoot = lang => lang === 'en' ? '/docs' : `/${lang}/docs`;
+const docsRoot = lang => `/${lang}/docs`;
 function languageName(lang) {
   return new Intl.DisplayNames([lang], { type: 'language' }).of(lang);
 }

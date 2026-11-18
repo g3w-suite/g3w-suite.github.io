@@ -5,6 +5,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
+const { marked, getHeadingList } = require('../../utils/markdown');
+const { extractPageMetadata, catalog } = require('../../utils/translations');
+const { languages: siteLanguages } = require('../../utils/config');
 const { staticDir, languages, filesIn, htmlFiles, pageBodyClass, readPage, localTarget } = require('../support/site');
 
 Then('release links are available in the documentation navigation', function () {
@@ -16,7 +19,7 @@ Then('release links are available in the documentation navigation', function () 
     .map(([, , version]) => version);
 
   for (const lang of languages) {
-    const docsRoot = path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']));
+    const docsRoot = path.join(staticDir, lang, 'docs');
     const index = readPage(path.join(docsRoot, 'index.html')).$;
     const releaseSection = index('nav.docs-nav > details.docs-release-notes');
     assert.equal(releaseSection.length, 1, `${lang} release links must be in the documentation navigation`);
@@ -49,12 +52,32 @@ Then('release links are available in the documentation navigation', function () 
 Then('every documentation source is Markdown and has a generated page', function () {
   const sourceDir = path.resolve('src/docs');
   const sources = filesIn(sourceDir);
-  const pages = htmlFiles(path.join(staticDir, 'docs'));
+  const pages = htmlFiles(path.join(staticDir, 'en', 'docs'));
   assert.ok(sources.length > 0, 'expected Markdown documentation sources');
   assert.ok(sources.every(file => file.endsWith('.md')), 'documentation sources must use Markdown');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'images')), 'documentation images must be stored outside src/docs');
   assert.equal(pages.length, sources.length, 'each documentation source must have one English route');
-  const index = readPage(path.join(staticDir, 'docs', 'index.html')).$;
+  const catalogs = Object.fromEntries(siteLanguages.map(lang => [lang, catalog(lang)]));
+  for (const file of sources) {
+    const relative = path.relative(sourceDir, file);
+    const { html, metadata } = extractPageMetadata(fs.readFileSync(file, 'utf8'), file);
+    assert.ok(metadata?.title && metadata.description, `${file}: title and description must be declared in front matter`);
+    marked.parse(html);
+    const heading = getHeadingList()[0];
+    assert.equal(metadata.title, heading.raw, `${file}: front matter title must match H1`);
+    if (relative !== 'index.md') {
+      assert.equal(path.basename(file, '.md'), heading.id.replace(/_+/g, '-').replace(/-+/g, '-'), `${file}: filename must follow H1 with hyphen separators`);
+    }
+    for (const lang of siteLanguages) {
+      const translations = catalogs[lang][`docs/${relative.split(path.sep).join('/')}`] || {};
+      const output = relative === 'index.md' ? 'index.html' : relative.replace(/\.md$/, `${path.sep}index.html`);
+      const target = path.join(staticDir, lang, 'docs', output);
+      const head = load(fs.readFileSync(target, 'utf8').split('</head>')[0]);
+      assert.equal(head('title').text(), translations[metadata.title] || metadata.title, `${target}: title must use page metadata`);
+      assert.equal(head('meta[name="description"]').attr('content'), translations[metadata.description] || metadata.description, `${target}: description must use page metadata`);
+    }
+  }
+  const index = readPage(path.join(staticDir, 'en', 'docs', 'index.html')).$;
   assert.match(index('main h1').text(), /^G3W-SUITE .* Manual$/, 'documentation home must show the manual index');
   const italianPages = htmlFiles(path.join(staticDir, 'it', 'docs'));
   assert.equal(italianPages.length, sources.length, 'each documentation source must have one Italian route');
@@ -63,30 +86,31 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.match(italianIndex('main h1').text(), /^Manuale G3W-SUITE /);
   assert.equal(index('nav.docs-nav section').first().find('h2').text(), 'Getting started');
   assert.equal(index('nav.docs-nav section > details[open]').length, 1, 'only the current navigation group must start open');
-  assert.equal(index('nav.docs-nav section a').first().attr('href'), '/docs/');
+  assert.equal(index('nav.docs-nav section a').first().attr('href'), '/en/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().attr('href'), '/it/docs/');
   assert.equal(italianIndex('nav.docs-nav section a').first().text(), italianIndex('main h1').text());
   assert.equal(index('nav.docs-nav section a').first().attr('aria-current'), 'page');
   assert.equal(italianIndex('nav.docs-nav section a').first().attr('aria-current'), 'page');
-  assert.equal(index('nav.docs-nav a[href="/docs/quick-start/"]').length, 1, 'navigation must link to the standalone Quick Start');
-  assert.equal(index('.docs-content a[href="/docs/demo/#demo-tutorial"]').length, 1, 'manual home must offer the guided demo');
-  const quickStart = readPage(path.join(staticDir, 'docs', 'quick-start', 'index.html')).$;
+  assert.equal(index('nav.docs-nav a[href="/en/docs/quick-start/"]').length, 1, 'navigation must link to the standalone Quick Start');
+  assert.equal(index('.docs-content a[href="/en/docs/demo/#demo-tutorial"]').length, 1, 'manual home must offer the guided demo');
+  const quickStart = readPage(path.join(staticDir, 'en', 'docs', 'quick-start', 'index.html')).$;
   assert.equal(quickStart('main h1').text(), 'Quick Start');
-  assert.equal(quickStart('.docs-content a[href="/docs/admin-cartographic-groups/#add-group"]').length, 1);
-  const publishing = readPage(path.join(staticDir, 'docs', 'admin-publishing', 'index.html')).$;
+  assert.equal(quickStart('.docs-content a[href="/en/docs/cartographic-groups/#add-group"]').length, 1);
+  const publishing = readPage(path.join(staticDir, 'en', 'docs', 'publish-and-update-webgis-services', 'index.html')).$;
   assert.equal(publishing('.docs-content h2#update-webgis-services').length, 1, 'publishing must include the update guide');
   assert.ok(italianIndex('nav.docs-nav a[href="/it/docs/settings/"]').length, 'Italian navigation must link to the localized settings page');
   assert.equal(italianIndex('header.site-header .nav-list a[href="/it/docs/"]').length, 1, 'Italian documentation header must link to its localized home');
   assert.equal(italianIndex('footer.site-footer a[href="/it/docs/"]').length, 1, 'Italian documentation footer must link to its localized home');
   assert.equal(italianIndex('form.docs-search').attr('data-index-url'), '/it/docs/search-index.json');
-  const italianComponents = readPage(path.join(staticDir, 'it', 'docs', 'components', 'index.html')).$;
+  const italianComponents = readPage(path.join(staticDir, 'it', 'docs', 'components-of-g3w-suite', 'index.html')).$;
   assert.ok(italianComponents('main h2').toArray().some(heading => italianComponents(heading).text().includes('Infrastruttura tecnologica')));
   for (const file of pages) {
     const page = readPage(file).$;
-    const outputRelative = path.relative(path.join(staticDir, 'docs'), file).split(path.sep).join('/');
+    const outputRelative = path.relative(path.join(staticDir, 'en', 'docs'), file).split(path.sep).join('/');
     const italianFile = path.join(staticDir, 'it', 'docs', outputRelative);
     const italianPage = readPage(italianFile).$;
     for (const [document, name] of [[page, file], [italianPage, italianFile]]) {
+      assert.equal(document('.docs-layout > .docs-content + nav.docs-nav').length, 1, `${name}: content must precede navigation for mobile and keyboard reading order`);
       assert.equal(document('head style').length, 0, `${name}: styles must use the shared stylesheet`);
       assert.equal(document('head link[rel="stylesheet"][href="/app.css"]').length, 1, `${name}: shared stylesheet is missing`);
       const pageTitle = document('main > .page-header h1');
@@ -103,7 +127,7 @@ Then('every documentation source is Markdown and has a generated page', function
     assert.equal(italianPage('body').attr('class'), pageBodyClass(path.join('docs', outputRelative)), `${italianFile}: body must have a page-specific class`);
     const sourceRelative = outputRelative === 'index.html' ? 'index.md' : `${outputRelative.replace(/\/index\.html$/, '')}.md`;
     const docsRoute = outputRelative === 'index.html' ? '' : outputRelative.replace(/\/index\.html$/, '');
-    const englishRoute = docsRoute ? `/docs/${docsRoute}/` : '/docs/';
+    const englishRoute = docsRoute ? `/en/docs/${docsRoute}/` : '/en/docs/';
     const italianRoute = docsRoute ? `/it/docs/${docsRoute}/` : '/it/docs/';
     const sourcePath = sourceRelative.split('/').map(encodeURIComponent).join('/');
     assert.equal(page('.docs-toolbar').length, 0, `${file}: the old documentation toolbar must not remain`);
@@ -112,7 +136,7 @@ Then('every documentation source is Markdown and has a generated page', function
     assert.equal(page('nav.site-breadcrumb [aria-current="page"]').text(), page('main > .page-header h1').text(), `${file}: breadcrumb must identify the current page`);
     assert.ok(italianPage('nav.site-breadcrumb a[href="/it/"]').length, `${italianFile}: breadcrumb is missing the localized site home link`);
     if (outputRelative !== 'index.html') {
-      assert.equal(page('nav.site-breadcrumb a[href="/docs/"]').first().text(), 'Documentation');
+      assert.equal(page('nav.site-breadcrumb a[href="/en/docs/"]').first().text(), 'Documentation');
       assert.equal(italianPage('nav.site-breadcrumb a[href="/it/docs/"]').first().text(), 'Documentazione');
       assert.equal(page('nav.site-breadcrumb li').length, 3, `${file}: no parent page in the breadcrumb`);
       assert.equal(italianPage('nav.site-breadcrumb li').length, 3, `${italianFile}: no parent page in the breadcrumb`);
@@ -149,24 +173,24 @@ Then('every documentation source is Markdown and has a generated page', function
       assert.equal(document('nav.docs-nav section details details').length, 0, `${name}: page subgroups are not allowed`);
     }
   }
-  assert.ok(index('nav.docs-nav a[href="/docs/settings/"]').length, 'navigation must link to the local settings page');
-  assert.ok(fs.existsSync(path.join(staticDir, 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
+  assert.ok(index('nav.docs-nav a[href="/en/docs/settings/"]').length, 'navigation must link to the local settings page');
+  assert.ok(fs.existsSync(path.join(staticDir, 'en', 'docs', 'settings', 'index.html')), 'settings Markdown page was not generated');
   assert.equal(index('body > header.site-header').length, 1, 'documentation must use the shared site header');
   assert.equal(index('body > footer.site-footer').length, 1, 'documentation must use the shared site footer');
-  assert.equal(index('header.site-header .nav-list a[href="/docs/"]').length, 1, 'shared English header must link to English documentation');
-  assert.equal(index('footer.site-footer a[href="/docs/"]').length, 1, 'shared English footer must link to English documentation');
+  assert.equal(index('header.site-header .nav-list a[href="/en/docs/"]').length, 1, 'shared English header must link to English documentation');
+  assert.equal(index('footer.site-footer a[href="/en/docs/"]').length, 1, 'shared English footer must link to English documentation');
   assert.equal(index('form.docs-search[role="search"] input[type="search"]').length, 1, 'documentation must include a search form');
-  assert.equal(index('form.docs-search').attr('data-index-url'), '/docs/search-index.json');
+  assert.equal(index('form.docs-search').attr('data-index-url'), '/en/docs/search-index.json');
   assert.equal(index('body > script[src="/app.js"]').length, 1, 'documentation must load the shared site script');
-  const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'docs', 'search-index.json'), 'utf8'));
+  const searchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'en', 'docs', 'search-index.json'), 'utf8'));
   assert.equal(searchIndex.length, sources.length, 'every documentation page must appear in the search index');
-  assert.ok(searchIndex.every(page => page.title && page.text && page.url.startsWith('/docs/')), 'search index entries must include title, content and local URL');
+  assert.ok(searchIndex.every(page => page.title && page.text && page.url.startsWith('/en/docs/')), 'search index entries must include title, content and local URL');
   const italianSearchIndex = JSON.parse(fs.readFileSync(path.join(staticDir, 'it', 'docs', 'search-index.json'), 'utf8'));
   assert.equal(italianSearchIndex.length, sources.length, 'every documentation page must appear in the Italian search index');
   assert.ok(italianSearchIndex.every(page => page.title && page.text && page.url.startsWith('/it/docs/')), 'Italian search results must include localized page URLs');
   const englishPages = new Map(searchIndex.map(page => [page.url, page]));
   for (const page of italianSearchIndex) {
-    const englishPage = englishPages.get(page.url.replace('/it/docs/', '/docs/'));
+    const englishPage = englishPages.get(page.url.replace('/it/docs/', '/en/docs/'));
     assert.ok(englishPage, `${page.url}: missing English search entry`);
     assert.notEqual(
       `${page.title}\n${page.text}`,
@@ -178,7 +202,7 @@ Then('every documentation source is Markdown and has a generated page', function
   for (const [lang, docsPages] of [['en', pages], ['it', italianPages]]) {
     const expected = new Set(docsPages);
     const visited = new Set();
-    const queue = [path.join(staticDir, ...(lang === 'it' ? ['it', 'docs'] : ['docs']), 'index.html')];
+    const queue = [path.join(staticDir, lang, 'docs', 'index.html')];
     for (const file of queue) {
       if (visited.has(file)) continue;
       visited.add(file);
@@ -215,5 +239,5 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.ok(images.length, 'static/img must contain documentation and site images');
   assert.ok(images.every(file => path.dirname(file) === imagesDir), 'static/img must not contain subfolders');
   assert.ok(!fs.existsSync(path.join(staticDir, 'images')), 'legacy static/images folder must not exist');
-  assert.ok(!fs.existsSync(path.join(staticDir, 'docs', 'images')), 'documentation images must not be copied under docs');
+  assert.ok(!fs.existsSync(path.join(staticDir, 'en', 'docs', 'images')), 'documentation images must not be copied under docs');
 });

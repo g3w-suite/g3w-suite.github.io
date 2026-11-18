@@ -13,22 +13,40 @@ const { prepareMermaid, copyMermaidScript } = require('../utils/mermaid');
 function build(outputDir) {
   const diagrams = new Set();
   const catalogs = Object.fromEntries(languages.map(lang => [lang, catalog(lang)]));
-  const pageFiles = [
+  const sourceFiles = [
     ...htmlFiles(sourceDir),
-    ...markdownFiles(sourceDir).filter(file =>
-      path.relative(sourceDir, file).split(path.sep)[0] !== 'docs'
-    ),
+    ...markdownFiles(sourceDir),
   ];
-  const pages = pageFiles.map(file => ({
+  const pages = sourceFiles.filter(file =>
+    path.relative(sourceDir, file).split(path.sep)[0] !== 'docs'
+  ).map(file => ({
     file,
     page: path.relative(sourceDir, file),
   }));
   if (!pages.length) throw new Error('No source pages found in src');
 
   fs.mkdirSync(outputDir, { recursive: true });
-  const redirect = fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8').replace('{{languageLinks}}',
-    renderLanguageLinks(Object.fromEntries(languages.map(lang => [lang, languagePageUrl('index.md', lang)]))));
-  fs.writeFileSync(path.join(outputDir, 'index.html'), publishedHtml(redirect));
+  const redirectTemplate = fs.readFileSync(path.join(sourceDir, '_redirect.html'), 'utf8');
+  const redirectPages = sourceFiles.map(file => path.relative(sourceDir, file));
+  const redirectDirectories = new Set(redirectPages.map(page => outputPage(page).split(path.sep)[0]));
+  redirectDirectories.delete('index.html');
+  for (const entry of fs.readdirSync(outputDir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || languages.includes(entry.name)) continue;
+    const index = path.join(outputDir, entry.name, 'index.html');
+    if (fs.existsSync(index) && /<body class="page-redirect">/.test(fs.readFileSync(index, 'utf8'))) {
+      redirectDirectories.add(entry.name);
+    }
+  }
+  for (const directory of redirectDirectories) {
+    fs.rmSync(path.join(outputDir, directory), { recursive: true, force: true });
+  }
+  for (const page of redirectPages) {
+    const pageUrls = Object.fromEntries(languages.map(lang => [lang, languagePageUrl(page, lang)]));
+    const redirect = redirectTemplate.replace('{{languageLinks}}', renderLanguageLinks(pageUrls));
+    const target = path.join(outputDir, outputPage(page));
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, publishedHtml(redirect));
+  }
   for (const lang of languages) {
     fs.rmSync(path.join(outputDir, lang), { recursive: true, force: true });
     fs.mkdirSync(path.join(outputDir, lang), { recursive: true });

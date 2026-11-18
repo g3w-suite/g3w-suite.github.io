@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.1 - G3W-Suite
+description: Version 3.1 introduces DataPlotly charts, Atlas print layouts and broader QGIS API support.
 ---
 
 # Changelog G3W-Suite 3.1

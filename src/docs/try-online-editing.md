@@ -1,0 +1,84 @@
+---
+title: Try online editing
+description: Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.
+---
+
+# Try online editing
+
+## Editing on line
+_**Forms and editing widgets are already defined on the project associated with the tutorial for the geometric layer of buildings and for the alphanumeric table related interventions_maintenance.**_
+
+* **`Buildings`**
+  * **id** (integer - primary key): autogenerate
+  * **name** (text NOT NULL): text edit
+  * **address** (text): Value relation (roads layer - code/name fileds)
+  * **zone** (text): text edit (with default values based on a QGIS expression to for association with the intersecting works area)
+  * **type** (text NOT NULL): unique values (Administrative, Commercial, Residential)
+  * **subtype** (text NOT NULL): value relation with multiple selections (based on type_subtype table for a drill-down cascading forms)
+  * **attachment** (integer): check box 1/0 (the visibility of the conditional form Documents is based on this field)
+  * **photo** (text): attachment
+  * **link** (text): text edit
+  * **form** (text): attachment
+  * **user** (text): text edit (automatically filled in with the G3W-SUITE  username creator of the feature)
+  * **year** (integer NOT NULL): unique values (2015,2016,2017,2018,2019,2020)
+  * **high** (integer NOT NULL): range (10-30 step 2)
+  * **volume** (integer): range (50-200 step 10)
+  * **surface** (integer): text edit
+  * **architectural_barriers** (text): Checkbox (Checked - Not checked)
+  * **date_barriers** (date): date (yyyy/MM/dd)
+  * **safety_exits** (text): checkbox (Checked - Not checked)
+  * **date_exits** (date): date (yyyy/MM/dd)
+  * **fire_system** (text): Checkbox (Checked - Not checked)
+  * **date_fire** (date): date (yyyy/MM/dd)
+
+
+* **`Maintenance_works`**
+  * **id** (integer - primary key): autogenerate
+  * **id_buildings** (text - relation key): text edit
+  * **maintenance** (text NOT NULL): unique values
+  * **date** (date): date (yyyy/MM/dd)
+  * **form** (text): attachment
+  * **value** (integer): range (10-30 step 2)
+  * **outcome** (text): unique values (good, medium, bad)
+  * **responsible** (text): text edit
+  * **cost** (integer): range (1000-5000 step 1)
+  * **validation** (boolean): checkbox (0/1)
+   
+* **`Buildings rating`**
+  * **id** (integer - primary key): autogenerate
+  * **id_buildings** (text - relation key): text edit
+  * **date** (date): date (yyyy/MM/dd)
+  * **value** (integer): range (1000-4000 step 500)
+  * **year** (integer): range (2018-2022 step 1)
+
+To activate the editing function on webgis, access the list of layers and identify the three layers shown above.
+
+![Screenshot: G3W-SUITE Administration Project Layer List](/img/manual-english-g3wsuite-administration-project-layer-list.avif)
+
+Clicking on the icon **Editing layer** ![Icon: Editing](/img/manual-english-icon-editing.avif) (placed at the left of each rows) will open a modal window that will allow you to:
+* define the **`editing activation scale`** (only for geometric tables)
+* define the **`Viewer users`** (individuals or groups) **`enabled`** for online editing
+
+With regard to the last aspect, it should be noted that **Viewers users** (individuals or groups) **available** in the drop-down menu **will be limited to those who have allowed access in consultation to the WebGis project**
+
+![Screenshot: Editing Setting](/img/manual-english-editing-setting.avif)
+
+Once the editing function is activated, updating the service, the **`Tools menu` will appear on the left panel.**
+
+**Enable editing to modify the geometries and attributes of the Public Buildings layer and its related interventions.**
+
+![Screenshot: Editing Client Start](/img/manual-english-editing-client-start.avif)
+
+![Screenshot: Demo Editing Web](/img/manual-english-demo-editing-web.avif)
+
+![Screenshot: Editing Form2](/img/manual-english-editing-form2.avif)
+
+For **further information** on the web editing function, read the [**dedicated section on the manual**](editing-tools.md).
+
+## Personalize your demo
+
+**Do you want to test the online editing function more deeply?**
+
+Redefine attribute forms, aliases and editing widgets associated with the individual fields and reload the project to check the new settings.
+
+**It is advisable to consult the section on** [editing activation and configuration](online-editing.md) **for the list and limitations of the individual editing widgets inherited from the QGIS project.**

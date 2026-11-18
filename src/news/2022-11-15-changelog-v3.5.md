@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.5 - G3W-Suite
+description: Version 3.5 adds stability improvements, symbology category controls, web editing tools and refactored time series.
 ---
 
 # Changelog G3W-Suite 3.5

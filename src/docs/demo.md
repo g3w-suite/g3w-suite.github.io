@@ -1,3 +1,8 @@
+---
+title: Demo
+description: Explore a building and maintenance management project in the stable G3W-SUITE 3.11 demo, based on QGIS 3.44 LTR. Search the map, view charts and print reports.
+---
+
 # Demo
 
 ## Try the live demo
@@ -79,6 +84,6 @@ The publication system provides for the use of the **title of the project** as t
 
 ## Next steps
 
-- [Publish and update a service](demo-publish.md)
-- [Try layer tools in the demo](demo-widgets.md)
-- [Online editing](demo-editing.md)
+- [Publish and update a service](publish-a-webgis-service.md)
+- [Try layer tools in the demo](try-layer-tools-in-the-demo.md)
+- [Online editing](try-online-editing.md)

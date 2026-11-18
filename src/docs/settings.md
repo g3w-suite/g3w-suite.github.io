@@ -1,3 +1,8 @@
+---
+title: Settings
+description: "The following variables can be added to or edited in the project’s local_settings.py:"
+---
+
 # Settings
 
 The following variables can be added to or edited in the project’s `local_settings.py`:

@@ -1,5 +1,6 @@
 ---
 title: Model Builder Processing - G3W-Suite
+description: Run QGIS Processing models in the web client and use their results in WebGIS projects.
 ---
 
 # G3W-SUITE QPROCESSING: Model Builder & Processing

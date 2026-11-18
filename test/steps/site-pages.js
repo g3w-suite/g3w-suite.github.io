@@ -6,9 +6,10 @@ const path = require('node:path');
 const { runInNewContext } = require('node:vm');
 const { Given, Then } = require('@cucumber/cucumber');
 const { load } = require('cheerio');
-const { staticDir, languages, filesIn, htmlFiles, pageBodyClass, readPage, localTarget, checkPages } = require('../support/site');
+const { staticDir, languages, filesIn, htmlFiles, pageSourceFiles, pageBodyClass, readPage, localTarget, checkPages } = require('../support/site');
 const { languages: publishedLanguages, docsRoot } = require('../../utils/config');
 const { renderPageMarkdown } = require('../../utils/markdown');
+const { outputPage } = require('../../utils/routes');
 
 Given('the HTML pages in the language folders', function () {
   this.pages = languages.flatMap(lang => {
@@ -197,7 +198,7 @@ Then('every page links consistently to the published languages', function () {
   for (const lang of publishedLanguages.filter(code => !languages.includes(code))) {
     for (const [localizedRoute, englishRoute] of [
       [`/${lang}/about/`, '/en/about/'],
-      [`${docsRoot(lang)}/quick-start/`, '/docs/quick-start/'],
+      [`${docsRoot(lang)}/quick-start/`, '/en/docs/quick-start/'],
     ]) {
       const readRoute = url => readPage(path.join(staticDir, url, 'index.html')).$;
       const $ = readRoute(localizedRoute);
@@ -228,7 +229,7 @@ Then('the navigation controls retain their accessibility attributes', function (
         ]
       : [
           ['About', `/${lang}/about/`],
-          ['Documentation', '/docs/'],
+          ['Documentation', '/en/docs/'],
           ['Sponsors', `/${lang}/sponsors/`],
           ['News', `/${lang}/news/`],
           ['Community', `/${lang}/community/`],
@@ -255,7 +256,7 @@ Then('the navigation controls retain their accessibility attributes', function (
     const currentLinks = nav.find('a[aria-current="page"]');
     const activeHref = {
       about: `/${lang}/about/`,
-      documentation: lang === 'it' ? '/it/docs/' : '/docs/',
+      documentation: lang === 'it' ? '/it/docs/' : '/en/docs/',
       sponsors: `/${lang}/sponsors/`,
       news: `/${lang}/news/`,
       community: `/${lang}/community/`,
@@ -324,6 +325,40 @@ Then('the root page redirects to the best available version', function () {
   }
   assert.equal($('body').attr('class'), 'page-redirect', 'root redirect must have an identifying body class');
   assert.equal($('main').length, 0, 'the root page must remain a redirect');
+});
+Then('every language-neutral page redirects to the matching localized page', function () {
+  const sourceDir = path.resolve('src');
+  const sources = [...pageSourceFiles(sourceDir), ...filesIn(path.join(sourceDir, 'docs'))];
+  for (const source of sources) {
+    const output = outputPage(path.relative(sourceDir, source));
+    const route = output.split(path.sep).join('/').replace(/(^|\/)index\.html$/, '');
+    const file = path.join(staticDir, output);
+    const { $ } = readPage(file);
+    assert.equal($('body').attr('class'), 'page-redirect', `${file}: language-neutral pages must redirect`);
+    const links = $('a[hreflang]').toArray().map(element => ({
+      href: $(element).attr('href'),
+      hreflang: $(element).attr('hreflang'),
+    }));
+    assert.deepEqual(links.map(link => link.hreflang).sort(), [...publishedLanguages].sort());
+    for (const link of links) {
+      assert.equal(link.href, `/${link.hreflang}/${route}${route ? '/' : ''}`);
+      assert.ok(fs.existsSync(localTarget(file, link.href)), `${file}: manual language choice must resolve`);
+    }
+    for (const [preferences, language, expected] of [
+      [['fr-CA', 'it'], 'it', 'fr'],
+      [['zz', 'de-DE'], 'en', 'de'],
+      [['zz'], 'zz', 'en'],
+      [[], 'uk-UA', 'uk'],
+    ]) {
+      let redirected;
+      runInNewContext($('script').text(), {
+        document: { querySelectorAll: () => links },
+        navigator: { languages: preferences, language },
+        location: { search: '?example=1', hash: '#details', replace: url => { redirected = url; } },
+      });
+      assert.equal(redirected, `/${expected}/${route}${route ? '/' : ''}?example=1#details`, file);
+    }
+  }
 });
 Then('every internal link and asset resolves without HTML extensions', function () {
   const localized = publishedLanguages.filter(lang => !languages.includes(lang))

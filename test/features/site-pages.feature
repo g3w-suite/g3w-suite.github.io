@@ -36,3 +36,6 @@ Feature: Generated site pages
 
   Scenario: The root page chooses a supported browser language
     Then the root page redirects to the best available version
+
+  Scenario: URLs without a language keep their page and choose a supported language
+    Then every language-neutral page redirects to the matching localized page

@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.8 - G3W-Suite
+description: Version 3.8 adds QGIS 3.34 LTR support, customized themes, SVG and GeoPDF export, multigeometric editing and PDF layer downloads.
 ---
 
 # Changelog G3W-Suite 3.8

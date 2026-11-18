@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.9 - G3W-Suite
+description: Version 3.9 brings a redesigned map client, simpler editing-permission management and new editing features from QGIS.
 ---
 
 # Changelog G3W-Suite 3.9

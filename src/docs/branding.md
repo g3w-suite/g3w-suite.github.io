@@ -1,3 +1,8 @@
+---
+title: Branding
+description: Customize the G3W-SUITE interface to match your organization's branding.
+---
+
 # Branding
 
 Customize the G3W-SUITE interface to match your organization's branding.

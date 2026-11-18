@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.0 - G3W-Suite
+description: Version 3.0 brings a major code restructuring and the first QGIS API integration, expanding support for visualization, querying and editing.
 ---
 
 # Changelog G3W-Suite 3.0

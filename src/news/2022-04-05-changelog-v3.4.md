@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.4 - G3W-Suite
+description: Version 3.4 adds embedded project management, cascading forms, custom WMS services, temporal layers and multiband raster plots.
 ---
 
 # Changelog G3W-Suite 3.4

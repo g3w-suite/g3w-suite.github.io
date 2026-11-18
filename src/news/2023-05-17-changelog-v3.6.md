@@ -1,5 +1,6 @@
 ---
 title: Changelog 3.6 - G3W-Suite
+description: Version 3.6 adds QGIS 3.28 LTR support, system logs, multilayer search, spatial bookmarks and project and group trash management.
 ---
 
 # Changelog G3W-Suite 3.6
