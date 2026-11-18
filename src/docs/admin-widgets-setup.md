@@ -31,11 +31,11 @@ Next to each layer are a series of icons and checkboxes:
 
  * **Download capabilities:** allows the download of the geographic and not geographic layers in various formats
    * **Download as shp/geotiff:** for vector and raster layers
-   * **Download as GPK:** for geographic or not geographic layers
-   * **Download as xls:** for all types of layers, in .xls format
-   * **Download as csv:** for all types of layers, in .csv format
-   * **Download as gpx:** for geographic layers, in .gpx format
-   * **Download as PDF:** for all types of layers, in .pdf format (limited to the attributes associated with individual features)
+   * **Download as GPKG (GeoPackage):** for supported vector layers, including layers without geometry
+   * **Download as xls:** for supported vector layers, in .xls format
+   * **Download as csv:** for supported vector layers, in .csv format
+   * **Download as gpx:** for compatible vector layers, in .gpx format
+   * **Download as PDF:** for supported vector layers, in .pdf format (limited to the attributes associated with individual features)
  * **Visibility capabilities:** allows you to define some elements in a generic way, i.e. without distinction between users.
    * **Hide attributes table:** make the attribute table unsearchable
    * **Hide legend:** do not show the associated legend
@@ -55,7 +55,7 @@ The form allows you to:
    * **Reset cache:** limited to the specific layer
    * **Reset cache for project:** reset cache of all the layers in the project
 
-If the published project contains only one layer is it possible to convert this WebGis service into a Base Layer. 
+The cache for the selected layer can be saved as a Base Layer, including when the published project contains other layers.
 
 To do this you need to activate the **Base layer option** form and fill in the second part of the form:
  * Base layer title
@@ -103,12 +103,12 @@ With this icon it will be possible to define the list of users (single and/or gr
     "**Action**:": "**Action**:",
     "**Actions:** a series of icons dedicated to various functions": "**Actions:** una serie di icone dedicate a diverse funzioni",
     "**Active**: enable cache on the layer": "**Active**: attivare la cache sul layer",
-    "**Download as GPK:** for geographic or not geographic layers": "**Download as GPK:** per layer geografici e non geografici",
-    "**Download as PDF:** for all types of layers, in .pdf format (limited to the attributes associated with individual features)": "**Download as PDF:** per tutti i tipi di layer, in formato .pdf (limitato agli attributi associati ai singoli elementi)",
-    "**Download as csv:** for all types of layers, in .csv format": "**Download as csv:** per tutti i tipi di layer, in formato .csv",
-    "**Download as gpx:** for geographic layers, in .gpx format": "**Download as gpx:** per layer geografici, in formato .gpx",
+    "**Download as GPKG (GeoPackage):** for supported vector layers, including layers without geometry": "**Download as GPKG (GeoPackage):** per i layer vettoriali supportati, inclusi quelli senza geometria",
+    "**Download as PDF:** for supported vector layers, in .pdf format (limited to the attributes associated with individual features)": "**Download as PDF:** per i layer vettoriali supportati, in formato .pdf (limitato agli attributi associati ai singoli elementi)",
+    "**Download as csv:** for supported vector layers, in .csv format": "**Download as csv:** per i layer vettoriali supportati, in formato .csv",
+    "**Download as gpx:** for compatible vector layers, in .gpx format": "**Download as gpx:** per i layer vettoriali compatibili, in formato .gpx",
     "**Download as shp/geotiff:** for vector and raster layers": "**Download as shp/geotiff:** per layer vettoriali e raster",
-    "**Download as xls:** for all types of layers, in .xls format": "**Download as xls:** per tutti i tipi di layer, in formato .xls",
+    "**Download as xls:** for supported vector layers, in .xls format": "**Download as xls:** per i layer vettoriali supportati, in formato .xls",
     "**Download capabilities:** allows the download of the geographic and not geographic layers in various formats": "**Download capabilities:** consente di scaricare layer geografici e non geografici in vari formati",
     "**Embedded:** If the layer comes from an embedded project, the cell displays the name of the embedded project. Clicking the link takes you to the project management page.": "**Embedded:** se il layer proviene da un progetto incorporato, la cella mostra il nome del progetto. Facendo clic sul link si accede alla pagina di gestione del progetto.",
     "**Hide Layer TOC:** hide the layer in the TOC": "**Hide Layer TOC:** nasconde il layer nella TOC",
@@ -138,7 +138,6 @@ With this icon it will be possible to define the list of users (single and/or gr
     "Icon: Scale Visibility": "Icona: visibilità in base alla scala",
     "Icon: Styles": "Icona: stili",
     "Icon: Widget": "Icona: widget",
-    "If the published project contains only one layer is it possible to convert this WebGis service into a Base Layer.": "Se il progetto pubblicato contiene un solo layer, è possibile convertire il servizio WebGis in un Base Layer.",
     "In case of non-external WMS, the service is managed by Django and this eliminates cross-domain problems but the only managed GetFeatureInfo response type is GML.": "Nel caso di WMS non esterni, il servizio viene gestito da Django, evitando problemi cross-domain; l'unico formato di risposta GetFeatureInfo gestito è GML.",
     "Layer tools": "Strumenti dei layer",
     "Learn more about how to create a new base layer in the [dedicated section](admin-base-layers.md).": "Per ulteriori informazioni su come creare un Base Layer, consultare la [sezione dedicata](admin-base-layers.md).",
@@ -148,6 +147,7 @@ With this icon it will be possible to define the list of users (single and/or gr
     "Screenshot: G3W-SUITE Administration Project Layer List": "Schermata: elenco dei layer del progetto nell'amministrazione di G3W-SUITE",
     "Screenshot: Iconsmall Layerlist": "Icona piccola: elenco dei layer",
     "See the dedicated section on [editing administration settings](editing-administration-settings.md).": "Consultare la sezione dedicata alle [impostazioni di amministrazione della modifica](editing-administration-settings.md).",
+    "The cache for the selected layer can be saved as a Base Layer, including when the published project contains other layers.": "La cache del layer selezionato può essere salvata come Base Layer anche se il progetto pubblicato contiene altri layer.",
     "The external WMS option allows obtaining a response to the query (GetFeatureInfo) even if the response is not in GML but also in HTML or text/plain format.": "L'opzione WMS esterno consente di ottenere una risposta alla query (GetFeatureInfo) anche in formato HTML o text/plain, oltre che GML.",
     "The eye icon shows the layer ID used in parameterized URLs.": "L'icona dell'occhio mostra l'ID del layer usato negli URL parametrizzati.",
     "The form allows you to:": "Il modulo consente di:",

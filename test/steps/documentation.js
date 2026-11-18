@@ -90,8 +90,8 @@ Then('every documentation source is Markdown and has a generated page', function
   assert.equal(italianIndex('header.site-header .nav-list a[href="/it/docs/"]').length, 1, 'Italian documentation header must link to its localized home');
   assert.equal(italianIndex('footer.site-footer a[href="/it/docs/"]').length, 1, 'Italian documentation footer must link to its localized home');
   assert.equal(italianIndex('form.docs-search').attr('data-index-url'), '/it/docs/search-index.json');
-  const italianIntroduction = readPage(path.join(staticDir, 'it', 'docs', 'introduction', 'index.html')).$;
-  assert.equal(italianIntroduction('main h1').text(), 'Introduzione');
+  const italianComponents = readPage(path.join(staticDir, 'it', 'docs', 'components', 'index.html')).$;
+  assert.ok(italianComponents('main h2').toArray().some(heading => italianComponents(heading).text().includes('Infrastruttura tecnologica')));
   for (const file of pages) {
     const page = readPage(file).$;
     const outputRelative = path.relative(path.join(staticDir, 'docs'), file).split(path.sep).join('/');

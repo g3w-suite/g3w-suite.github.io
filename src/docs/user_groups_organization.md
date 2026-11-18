@@ -33,12 +33,10 @@ In G3W-SUITE you can create **Users** and **Users Groups** and associate them wi
    * publish/update WebGis services and define their access policy
    * activate and configure some functional modules
  * **`Viewer`:** user with access permission in **consultation on WebGis service**s characterized by authentication. This user can also use individual functional Modules if the relative permissions have been attributed to him
- * **`Anonymus User`:** user to be associated with WebGis services and/or functional modules **with free access**
+ * **Anonymous user:** a visitor who has not signed in. Public access is granted by assigning permissions to the anonymous user.
 
 **Pay attention:** The use of the **Editor1** user and **MacroGroups** is recommended only in specific cases or when you want to manage autonomous work environments (e.g. single Public Administrations) in a multi-environment context (e.g. Union of Public Administrations).
 
-
-In this case the individual **Editor1** users will be associated with cartographic Macrogroups and will **manage users and contents completely independently** from those of other Macrogroups associated with other Editor1 users.
 
 ## Hierarchical organization of contents
 _**The following paragraph is dedicated to better understanding the relationships between the different types of users and the different elements of the suite (MacroGroups, Map Groups, WebGis services ...).**_
@@ -56,7 +54,7 @@ In particular **Editor1 users will also be able to create/manage users who can b
 The cases relating to one or two organizational levels will be better described below.
 
 ### One organization level (absence of MacroGroups)
-If MacroGroups are not needed, the Admin user will be the only administrator of the suite and can therefore:
+Without macro-groups, admins manage the suite directly and can:
  * create users (individuals and/or groups) of various types
  * create **Cartographic Groups**
  * publish **WebGis services** within the individual **Cartographic Groups**
@@ -85,13 +83,7 @@ Even the **Admin** user can publish **WebGis services** within a Cartographic Gr
 
 **Macrogroups** can be created only by **Admin** users.
 
-Each **Macrogroup** can be associated with only one **Editor1** user.
-
-Each MacroGroup can be considered as a watertight compartment within which the associated Editor 1 user (administrator of the MacroGroup), will be able to create users and user groups that will be made available to define access permissions for content (Groups Maps, WebGis services, functional modules …) of the reference MacroGroup only.
-
-In this way it will be possible to create totally independent entities, the MacroGroups, which will be managed exclusively by the user Editor 1 associated with them.
-
-Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.
+A macro-group can have zero, one or several **Editor1** users. An **Editor1** user can be assigned to more than one macro-group. The assignments delegate management of content; they do not create separate user directories or installations. Admins retain access to all groups.
 
 ```mermaid {{t 'Admin oversees both macro-groups; each has its own Editor1, with Editor2 at group level and Viewer access at WebGIS service level'}}
 flowchart TB
@@ -121,13 +113,7 @@ As described in the previous chapter, the users who can access the FileManager a
 
 **Admin role users** will be able to access/edit/upload all the contents of the FileManager.
 
-**Editor1 role users** (administrators of a specific MacroGroup) will be able to access/modify/upload only the contents present within a folder identified with the same user name as Editor1 itself.
-
-The creation of a **Editor1** role user (**administrator of a MacroGroup**) determines the automatic creation of a subfolder of the **project_data** folder with the same name as that defined for the Editor1 user.
-
-This user will manage, independently, only the contents of that folder.
-
-Again from the perspective of an infrastructure dedicated to a Union of Municipalities, this will allow each Editor1 (manager of one Administrations) to be able to independently manage the geographical data of their own Administration.
+When File Manager is enabled, **Editor1** users work in a subfolder named after their username, not after the macro-group. Saving an Editor1 user in the administration panel creates that folder under `DATASOURCE_PATH` (typically `project_data` in Docker). If `FILEMANAGER_ROOT_PATH` points elsewhere, provision the corresponding username subfolder there as well.
 
 [Access policies and organization examples](organization-examples.md)
 
@@ -136,15 +122,14 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
   "it": {
     "**Admin role users**": "**Utenti con ruolo Admin**",
     "**Admin role users** will be able to access/edit/upload all the contents of the FileManager.": "Gli **utenti con ruolo Admin** potranno accedere, modificare e caricare tutti i contenuti di File Manager.",
+    "**Anonymous user:** a visitor who has not signed in. Public access is granted by assigning permissions to the anonymous user.": "**Utente anonimo:** un visitatore che non ha effettuato l'accesso. Per consentire l'accesso pubblico, assegna i permessi all'utente anonimo.",
     "**Editor 2** users will also be able to define the access policies to the published WebGis services, limited to the Viewers users associated with the Cartographic Group by the Admin user.": "Gli utenti **Editor 2** potranno anche definire i criteri di accesso ai servizi WebGIS pubblicati, limitandoli agli utenti Viewer associati al Gruppo cartografico dall'utente Admin.",
     "**Editor1 role users**": "**Utenti con ruolo Editor1**",
-    "**Editor1 role users** (administrators of a specific MacroGroup) will be able to access/modify/upload only the contents present within a folder identified with the same user name as Editor1 itself.": "Gli **utenti con ruolo Editor1** (amministratori di uno specifico Macrogruppo) potranno accedere, modificare e caricare solo i contenuti presenti nella cartella identificata dal nome dello stesso utente Editor1.",
     "**Macrogroups** can be created only by **Admin** users.": "I **Macrogruppi** possono essere creati solo dagli utenti **Admin**.",
     "**Pay attention:** The use of the **Editor1** user and **MacroGroups** is recommended only in specific cases or when you want to manage autonomous work environments (e.g. single Public Administrations) in a multi-environment context (e.g. Union of Public Administrations).": "**Attenzione:** si consiglia di usare l'utente **Editor1** e i **Macrogruppi** solo in casi specifici o quando si desidera gestire ambienti di lavoro autonomi (ad es. singole amministrazioni pubbliche) in un contesto multi-ente (ad es. un'unione di amministrazioni pubbliche).",
     "**These organizational levels can be associated with different types of users (Editor 1, Editor2 and Viewer) in order to manage the access/management powers to the individual elements in a granular way.**": "**Questi livelli organizzativi possono essere associati a diversi tipi di utenti (Editor 1, Editor2 e Viewer) per gestire in modo granulare i permessi di accesso e amministrazione dei singoli elementi.**",
     "**Viewers** users (individuals/groups) who will have access to this container": "gli utenti **Viewer** (singoli o gruppi) che avranno accesso a questo contenitore",
     "**`Admin`:** If the \"Staff status\" option is also active for this user, the administrator can also access the session of Django administration (basic configuration of the suite)": "**`Admin`:** se per l'utente è attiva anche l'opzione \"Staff status\", l'amministratore può accedere all'interfaccia di amministrazione di Django (configurazione di base della suite)",
-    "**`Anonymus User`:** user to be associated with WebGis services and/or functional modules **with free access**": "**`Anonymus User`:** utente da associare a servizi WebGIS e/o moduli funzionali **ad accesso libero**",
     "**`Cartographic MacroGroups`**": "**`Macrogruppi cartografici`**",
     "**`Cartographic groups`**": "**`Gruppi cartografici`**",
     "**`Editor1*`:** **administrator of one or more Cartographic MacroGroups** for which it will be possible:": "**`Editor1*`:** **amministratore di uno o più Macrogruppi cartografici**, con la possibilità di:",
@@ -152,44 +137,38 @@ Again from the perspective of an infrastructure dedicated to a Union of Municipa
     "**`Viewer`:** user with access permission in **consultation on WebGis service**s characterized by authentication. This user can also use individual functional Modules if the relative permissions have been attributed to him": "**`Viewer`:** utente autorizzato alla **consultazione dei servizi WebGIS** che richiedono autenticazione. Può inoltre usare i singoli moduli funzionali se gli sono stati assegnati i relativi permessi",
     "**an organizational level** (Cartographic Groups):": "**un livello organizzativo** (Gruppi cartografici):",
     "**two organizational levels** (MacroGroups and Cartographic Groups)": "**due livelli organizzativi** (Macrogruppi e Gruppi cartografici)",
+    "A macro-group can have zero, one or several **Editor1** users. An **Editor1** user can be assigned to more than one macro-group. The assignments delegate management of content; they do not create separate user directories or installations. Admins retain access to all groups.": "Un macrogruppo può avere zero, uno o più utenti **Editor1**. Un utente **Editor1** può essere assegnato a più macrogruppi. Le assegnazioni delegano la gestione dei contenuti, ma non creano elenchi di utenti o installazioni separati. Gli amministratori mantengono l'accesso a tutti i gruppi.",
     "Access policies and individual functional modules may be associated with each WebGis service.": "A ciascun servizio WebGIS è possibile associare criteri di accesso e moduli funzionali specifici.",
     "Access policies and organization examples": "Politiche di accesso ed esempi organizzativi",
     "Accessed the File Manager tool": "Accesso allo strumento File Manager",
     "Admin oversees both macro-groups; each has its own Editor1, with Editor2 at group level and Viewer access at WebGIS service level": "Admin gestisce entrambi i Macrogruppi, ciascuno con il proprio Editor1; Editor2 opera a livello di Gruppo e Viewer accede ai servizi WebGIS autorizzati",
     "Administration": "Amministrazione",
-    "Again from the perspective of an infrastructure dedicated to a Union of Municipalities, this will allow each Editor1 (manager of one Administrations) to be able to independently manage the geographical data of their own Administration.": "Anche nel caso di un'infrastruttura dedicata a un'Unione di Comuni, ciò consentirà a ciascun Editor1 (responsabile di un'amministrazione) di gestire in autonomia i dati geografici della propria amministrazione.",
     "As described in the previous chapter, the users who can access the FileManager are the following:": "Come descritto nel capitolo precedente, possono accedere a File Manager i seguenti utenti:",
     "As previously specified, **Editor 1** user will be able to:": "Come già specificato, l'utente **Editor 1** potrà:",
     "Cartographic groups": "Gruppi cartografici",
-    "Clearly the Admin users (1 and 2) will continue to have full powers on all groups present in the system.": "Naturalmente gli utenti Admin (1 e 2) continueranno ad avere pieni poteri su tutti i gruppi presenti nel sistema.",
-    "Each **Macrogroup** can be associated with only one **Editor1** user.": "A ciascun **Macrogruppo** può essere associato un solo utente **Editor1**.",
-    "Each MacroGroup can be considered as a watertight compartment within which the associated Editor 1 user (administrator of the MacroGroup), will be able to create users and user groups that will be made available to define access permissions for content (Groups Maps, WebGis services, functional modules …) of the reference MacroGroup only.": "Ogni Macrogruppo può essere considerato un compartimento isolato, nel quale l'utente Editor 1 associato (amministratore del Macrogruppo) può creare utenti e gruppi di utenti da usare per definire le autorizzazioni di accesso ai contenuti (Gruppi cartografici, servizi WebGIS, moduli funzionali...) del solo Macrogruppo di riferimento.",
     "Even the **Admin** user can publish **WebGis services** within a Cartographic Group and, if necessary, associate them with a user (single and/or group) of **Editor 2** type.": "Anche l'utente **Admin** può pubblicare **servizi WebGIS** all'interno di un Gruppo cartografico e, se necessario, associarli a un utente **Editor 2** (singolo e/o gruppo).",
     "G3W-SUITE organizes WebGIS services on two thematic or functional levels:": "G3W-SUITE organizza i servizi WebGIS su due livelli tematici o funzionali:",
     "Hierarchical organization of contents": "Organizzazione gerarchica dei contenuti",
-    "If MacroGroups are not needed, the Admin user will be the only administrator of the suite and can therefore:": "Se non sono necessari i Macrogruppi, l'utente Admin sarà l'unico amministratore della suite e potrà quindi:",
     "In G3W-SUITE it is possible to manage Webgis services in a more or less structured way": "In G3W-SUITE è possibile gestire i servizi WebGIS con diversi livelli di struttura:",
     "In G3W-SUITE you can create **Users** and **Users Groups** and associate them with specific roles:": "In G3W-SUITE è possibile creare **utenti** e **gruppi di utenti** e associarli a ruoli specifici:",
     "In particular **Editor1 users will also be able to create/manage users who can be associated with the Cartographic Groups and WebGis services present in the reference MacroGroup**.": "In particolare, gli utenti **Editor1 potranno anche creare e gestire utenti da associare ai Gruppi cartografici e ai servizi WebGIS presenti nel Macrogruppo di riferimento**.",
     "In the event that the Cartographic Group is assigned to **Editor 2** (single or group users), they will may autonomously publish/update WebGis services inside in this container.": "Se il Gruppo cartografico viene assegnato a **Editor 2** (utente singolo o gruppo), gli utenti potranno pubblicare o aggiornare autonomamente i servizi WebGIS al suo interno.",
-    "In this case the individual **Editor1** users will be associated with cartographic Macrogroups and will **manage users and contents completely independently** from those of other Macrogroups associated with other Editor1 users.": "In questo caso, i singoli utenti **Editor1** saranno associati a Macrogruppi cartografici e **gestiranno utenti e contenuti in modo del tutto indipendente** da quelli degli altri Macrogruppi associati ad altri utenti Editor1.",
-    "In this way it will be possible to create totally independent entities, the MacroGroups, which will be managed exclusively by the user Editor 1 associated with them.": "In questo modo è possibile creare entità del tutto indipendenti, i Macrogruppi, gestiti esclusivamente dall'utente Editor 1 a essi associato.",
     "It is in fact possible to associate the two types of containers (MacroGroups and Cartographic Groups) to users with different roles/powers (Editor1 and Editor2) who will thus become the Administrators of all their contents.": "È infatti possibile associare i due tipi di contenitore (Macrogruppi e Gruppi cartografici) a utenti con ruoli e permessi diversi (Editor1 ed Editor2), che diventeranno così amministratori di tutti i relativi contenuti.",
     "Macro-group": "Macrogruppo",
     "One organization level (absence of MacroGroups)": "Un livello organizzativo (senza Macrogruppi)",
     "Service": "Servizio",
     "The cases relating to one or two organizational levels will be better described below.": "I casi con uno o due livelli organizzativi sono descritti più dettagliatamente di seguito.",
-    "The creation of a **Editor1** role user (**administrator of a MacroGroup**) determines the automatic creation of a subfolder of the **project_data** folder with the same name as that defined for the Editor1 user.": "La creazione di un utente con ruolo **Editor1** (**amministratore di un Macrogruppo**) comporta la creazione automatica, nella cartella **project_data**, di una sottocartella con lo stesso nome assegnato all'utente Editor1.",
     "The following diagram shows an example of the functional use of these organizational levels within a Union of Municipalities.": "Il diagramma seguente mostra un esempio di utilizzo di questi livelli organizzativi all'interno di un'Unione di Comuni.",
     "These hierarchical levels can be used for **organizational purposes** (thematic containers) and/or **functional** (containers managed by different users/roles).": "Questi livelli gerarchici possono essere usati a fini **organizzativi** (contenitori tematici) e/o **funzionali** (contenitori gestiti da utenti o ruoli diversi).",
-    "This user will manage, independently, only the contents of that folder.": "L'utente gestirà autonomamente solo i contenuti di quella cartella.",
     "Two municipal administrations have separate macro-groups; each contains cartographic groups that can contain WebGIS services": "Due amministrazioni comunali hanno Macrogruppi separati; ciascuno contiene Gruppi cartografici che possono ospitare servizi WebGIS",
     "Two organization levels (presence of MacroGroups)": "Due livelli organizzativi (con Macrogruppi)",
     "Types of Users (Roles)": "Tipi di utenti (ruoli)",
     "WebGIS roles and organization": "Ruoli e organizzazione WebGIS",
     "When Editor 1 user creates a Cartographic Group, he can define:": "Quando l'utente Editor 1 crea un Gruppo cartografico, può definire:",
+    "When File Manager is enabled, **Editor1** users work in a subfolder named after their username, not after the macro-group. Saving an Editor1 user in the administration panel creates that folder under `DATASOURCE_PATH` (typically `project_data` in Docker). If `FILEMANAGER_ROOT_PATH` points elsewhere, provision the corresponding username subfolder there as well.": "Quando File Manager è attivo, gli utenti **Editor1** lavorano in una sottocartella con il proprio nome utente, non con il nome del macrogruppo. Il salvataggio di un utente Editor1 dal pannello di amministrazione crea la cartella in `DATASOURCE_PATH` (di norma `project_data` in Docker). Se `FILEMANAGER_ROOT_PATH` punta a un'altra cartella, predisponi anche lì la sottocartella con il nome utente.",
     "When creating a cartographic group, the Admin user can define:": "Quando crea un gruppo cartografico, l'utente Admin può definire:",
     "Without macro-groups, Admin manages all cartographic groups and can delegate group management to Editor2; Viewers can access authorized WebGIS services": "Senza Macrogruppi, Admin gestisce tutti i Gruppi cartografici e può delegarne la gestione a Editor2; i Viewer accedono ai servizi WebGIS autorizzati",
+    "Without macro-groups, admins manage the suite directly and can:": "Senza macrogruppi, gli amministratori gestiscono direttamente la suite e possono:",
     "_**G3W-SUITE organizes WebGIS services hierarchically.**_": "_**G3W-SUITE organizza i servizi WebGIS in modo gerarchico.**_",
     "_**The following paragraph is dedicated to better understanding the relationships between the different types of users and the different elements of the suite (MacroGroups, Map Groups, WebGis services ...).**_": "_**Il paragrafo seguente aiuta a comprendere meglio le relazioni tra i diversi tipi di utenti e i vari elementi della suite (Macrogruppi, Gruppi cartografici, servizi WebGIS...).**_",
     "activate **specific modules** on individual **WebGis services**": "attivare **moduli specifici** nei singoli **servizi WebGIS**",

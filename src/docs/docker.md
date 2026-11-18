@@ -14,6 +14,13 @@ For a cloud deployment, choose a Linux host that supports the required Docker im
 
 Follow steps to deploy G3W-SUITE on a Ubuntu Server (20.04)
 
+Clone the stable Docker branch and enter its directory:
+
+```bash
+git clone --branch v3.11.x https://github.com/g3w-suite/g3w-suite-docker.git
+cd g3w-suite-docker
+```
+
 ### Configuration 
 
 Create a file `.env` (or copy `.env.example` and rename it in `.env`) and place it in the main directory, the file
@@ -21,11 +28,11 @@ will contain the database credentials (change `<your password>`) and other setti
 
 ```bash
 # External hostname, for docker internal network aliases
-WEBGIS_PUBLIC_HOSTNAME=demo.g3wsuite.it/
+WEBGIS_PUBLIC_HOSTNAME=demo.g3wsuite.it
 
 # This volume is persistent and mounted by all
 # containers as /shared-volume
-WEBGIS_DOCKER_SHARED_VOLUME=/tmp/shared-volume-g3w-suite
+WEBGIS_DOCKER_SHARED_VOLUME=./shared-volume
 
 # Super User account
 G3WSUITE_ADMIN_USERNAME=admin
@@ -37,6 +44,8 @@ G3WSUITE_POSTGRES_PASS=<your_password>
 G3WSUITE_POSTGRES_DBNAME=g3wsuite
 G3WSUITE_POSTGRES_HOST=postgis
 G3WSUITE_POSTGRES_PORT=5432
+
+PGSERVICEFILE=/pg_service/pg_service.conf
 ```
 
 Description of other *environment variables* that can be used, are available on [Docker environment variables](docker_env)
@@ -44,7 +53,7 @@ Description of other *environment variables* that can be used, are available on 
 ### Run
 
 ```bash
-docker-compose up -d
+docker compose -f docker-compose-consumer.yml up -d
 ```
 
 If all went well, G3W-SUITE run on http://localhost:8080
@@ -52,11 +61,7 @@ If all went well, G3W-SUITE run on http://localhost:8080
 ![Login Page](/img/installation-english-login-page.avif)
 
 ## G3W-SUITE with consumer image
-G3W-SUITE use `huey` for bach processing (https://github.com/coleifer/huey), so if you want to use it,
-use `docker-compose-consumer.yml` file on deploy:
-```bash
-docker-compose -f docker-compose-consumer.yml up -d
-```
+The consumer Compose file starts the Huey worker for background processing and passes the initial administrator password to the application. In the stable branch, `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead of `G3WSUITE_ADMIN_PASSWORD`; correct that entry before using it for a new installation.
 
 ## Builds
 
@@ -68,48 +73,29 @@ but is also possible build main image of G3W-SUITE and other docker-compose imag
 The main suite docker image can be built with:
 
 ```bash
-docker build -f Dockerfile.g3wsuite.dockerfile -t g3wsuite/g3w-suite:dev --no-cache .
+docker build --build-arg G3W_SUITE_BRANCH=v.3.11.x -f Dockerfile.g3wsuite.dockerfile -t g3wsuite/g3w-suite:local-v3.11 .
 ```
 
-The image is build from `https://github.com/g3w-suite/g3w-admin.git --branch dev` and from a dependencies base image `Dockerfile.g3wsuite-deps.ltr.dockerfile`, the dependencies image can be built with:
+The build argument selects the stable admin branch. Without it, the setup script clones `dev`, even when using the stable Docker checkout. The Dockerfile uses the `g3wsuite/g3w-suite-deps-ltr:v3.11.x` base image.
 
-```bash
-docker build -f Dockerfile.g3wsuite-deps.ltr.dockerfile -t g3wsuite/g3w-suite-deps-ltr:dev --no-cache .
-```
-
-Usually is sufficient make build of main docker image g3wsuite/g3w-suite:dev, 
-the build of dependence image g3wsuite/g3w-suite-deps-ltr:dev is done to update last QGIS LTR version.
+To run a locally built image, change the image tag in the selected Compose file for both the application and consumer services.
 
 #### Postgis
 
-Postgis image can be built with:
-
-```bash
-docker build -f Dockerfile.postgis.dockerfile -t g3wsuite/postgis:11.0-2.5 .
-```
-
-The Docker hub name for this image is `g3wsuite/postgis:11.0-2.5`
+The stable Compose files use `kartoza/postgis:16-3.4`.
 
 ## Setups
 
 ### PG_SERVICE
 
-To use of PostgreSql Service, put your service setups into `./scripts/pg_service.conf file`, 
+To use of PostgreSql Service, put your service setups into `./secrets/pg_service.conf`,
 the conf file will be mounted into docker container at runtime to PGSERVICEFILE path position.
 
 ### HTTPS additional setup
 
-To active https with LetsEncrypt just follow the following instructions:
+For HTTPS, configure the hostname in `.env` and `config/nginx/nginx.conf`, including the administrator email in the latter. Ensure the domain resolves to the server and HTTP port 80 reaches the Nginx port 8080 for the ACME challenge; the provided Compose file publishes 8080, not 80.
 
-- move `config/_nginx/django_ssl.conf` to `config/nginx/django_ssl.conf`
-- check the domain name in the `.env` file and in `config/nginx/django_ssl.conf`
-- run: `docker pull certbot/certbot`
-- launch `./run_certbot.sh`
-- activate 301 redirect into `config/nginx/django.conf`
-- restart compose
-- make sure the certs are renewed by adding a cron job with `crontab -e` and add the following line:
-  `0 3 * * * /<path_to_your_docker_files>/run_certbot.sh`
-- if you disabled HTTPS, you can move `config/nginx/django_ssl.conf` back to its original location now, and restart the Docker compose to finally enable HTTPS
+With the HTTP configuration running, obtain a certificate before switching the includes in `config/nginx/nginx.conf` from `django` to `django_ssl` and restarting the selected stack. The repository's `run_certbot.sh` invokes an interactive container and recreates the default Compose stack, not the consumer stack; adapt and test certificate issuance and renewal for your deployment rather than assuming it works unattended in cron.
 
 
 ### Volumes
@@ -117,15 +103,13 @@ To active https with LetsEncrypt just follow the following instructions:
 Data, projects, uploads and the database are stored in a shared mounted volume `shared-volume`, the volume should be on a persistent storage device and a backup
 policy must be enforced.
 
-Currently, the volume is mounted in `/tmp/shared-volume-g3wsuite-dev`. In production
-environments it is encouraged to change this to a permanent location.
-This can be done by modifying the `.env` file.
+The stable `.env.example` uses `./shared-volume`. Set `WEBGIS_DOCKER_SHARED_VOLUME` in `.env` to a persistent location suitable for production.
 
 ### First time setup
 
 Set a strong administrator password in `.env` before starting a new installation. The `.env.example` file contains example credentials that must be changed.
 
-Sign in to the administration panel with `G3WSUITE_ADMIN_USERNAME` and `G3WSUITE_ADMIN_PASSWORD`. These variables create the initial account only; after initialization, change its password in the administration interface, not by editing `.env`.
+Sign in to the administration panel with `G3WSUITE_ADMIN_USERNAME` and `G3WSUITE_ADMIN_PASSWORD`. Setup runs only once per shared volume and sets passwords on existing users as well; use a fresh database and volume for a new installation. After initialization, change passwords in the administration interface, not by editing `.env`.
 
 ### Caching
 
@@ -139,7 +123,7 @@ Editing module is active by default, to avoid simultaneous feature editing by tw
 This locking system can remain active if users do not exit the editing state correctly, to avoid this it is advisable to activate a cron job on host machine that checks the features that have been locked for more than 4 hours and frees them:
 
 ```
-0 */1 * * * docker exec -e DISPLAY=:99 g3w-suite-docker_g3w-suite_1 python3 /code/g3w-admin/manage.py check_features_locked
+0 * * * * cd /path/to/g3w-suite-docker && docker compose -f docker-compose-consumer.yml exec -T g3w-suite python3 /code/g3w-admin/manage.py check_features_locked
 ```
 
 ## Front-end App
@@ -171,37 +155,10 @@ General rules (in no particular order: they are all mandatory):
 
 ## PostgreSQL administration
 
-PostgreSQL runs in a Docker container. To access it:
-
-### Check the container name
+PostgreSQL runs in a Docker container. From the Docker checkout, connect as the configured database user:
 
 ```bash
-$ docker ps | grep postgis
-84ef6a8d23e6        g3wsuite/postgis:11.0-2.5       "/bin/sh -c /docker-…"   2 days ago          Up 2 days           0.0.0.0:5438->5432/tcp           g3wsuitedocker_postgis_1
-```
-
-In the above example the container name is `g3wsuitedocker_postgis_1`
-
-### Log into the container
-
-```bash
-$ docker exec -it g3wsuitedocker_postgis_1 bash
-```
-
-### Become postgres user
-
-```bash
-root@84ef6a8d23e6:/# su - postgres
-```
-
-### Connect to postgis
-
-```bash
-postgres@84ef6a8d23e6:~$ psql
-psql (11.2 (Debian 11.2-1.pgdg90+1))
-Type "help" for help.
-
-postgres=#
+docker compose -f docker-compose-consumer.yml exec postgis sh -c 'psql -U "$POSTGRES_USER" -d "${POSTGRES_DBNAME%%,*}"'
 ```
 
 ## Portainer usage
@@ -225,6 +182,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "CPU, memory and storage needs depend on the number of users, the complexity of the maps, the data and the enabled services. This guide does not prescribe a universal minimum: test the deployment with representative projects and concurrent users before choosing production capacity.": "Le esigenze di CPU, memoria e archiviazione dipendono dal numero di utenti, dalla complessità delle mappe, dai dati e dai servizi attivi. Questa guida non prescrive un minimo universale: prova l'installazione con progetti rappresentativi e utenti simultanei prima di scegliere le risorse per la produzione.",
     "Caching": "Cache",
     "Check the container name": "Verificare il nome del container",
+    "Clone the stable Docker branch and enter its directory:": "Clona il branch Docker stabile e accedi alla sua directory:",
     "Configuration": "Configurazione",
     "Connect to postgis": "Connettersi a PostGIS",
     "Contributors": "Collaboratori",
@@ -239,6 +197,7 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Editing module is active by default, to avoid simultaneous feature editing by two or more users, the editing module works with a feature lock system.": "Il modulo di modifica è attivo per impostazione predefinita. Per evitare che due o più utenti modifichino contemporaneamente la stessa entità, il modulo utilizza un sistema di blocco delle entità.",
     "First time setup": "Configurazione iniziale",
     "Follow steps to deploy G3W-SUITE on a Ubuntu Server (20.04)": "Segui questi passaggi per distribuire G3W-SUITE su Ubuntu Server (20.04).",
+    "For HTTPS, configure the hostname in `.env` and `config/nginx/nginx.conf`, including the administrator email in the latter. Ensure the domain resolves to the server and HTTP port 80 reaches the Nginx port 8080 for the ACME challenge; the provided Compose file publishes 8080, not 80.": "Per HTTPS, configura il nome host in `.env` e `config/nginx/nginx.conf`, indicando nel secondo anche l'email dell'amministratore. Verifica che il dominio punti al server e che la porta HTTP 80 raggiunga la porta 8080 di Nginx per la verifica ACME; il file Compose fornito pubblica la 8080, non la 80.",
     "For a cloud deployment, choose a Linux host that supports the required Docker images and Docker Compose. Use persistent storage, plan backups and provide a domain and HTTPS for public access.": "Per una distribuzione cloud, scegli un server Linux che supporti le immagini Docker necessarie e Docker Compose. Usa archiviazione persistente, pianifica i backup e prevedi un dominio e HTTPS per l'accesso pubblico.",
     "Front-end App": "Applicazione front-end",
     "G3W-SUITE use `huey` for bach processing (https://github.com/coleifer/huey), so if you want to use it,": "G3W-SUITE usa `huey` per l'elaborazione in background (https://github.com/coleifer/huey); se vuoi utilizzarlo,",
@@ -256,19 +215,23 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Postgis": "PostGIS",
     "Postgis image can be built with:": "L'immagine PostGIS può essere creata con:",
     "PostgreSQL administration": "Amministrazione di PostgreSQL",
-    "PostgreSQL runs in a Docker container. To access it:": "PostgreSQL è in esecuzione in un container Docker. Per accedervi:",
+    "PostgreSQL runs in a Docker container. From the Docker checkout, connect as the configured database user:": "PostgreSQL è in esecuzione in un container Docker. Dalla copia Docker, connettiti con l'utente configurato per il database:",
     "Run": "Esecuzione",
     "Server sizing": "Dimensionamento del server",
     "Set a strong administrator password in `.env` before starting a new installation. The `.env.example` file contains example credentials that must be changed.": "Imposta una password amministratore robusta in `.env` prima di avviare una nuova installazione. Il file `.env.example` contiene credenziali di esempio da modificare.",
     "Set the environment variable": "Imposta la variabile d'ambiente",
     "Setups": "Configurazioni",
-    "Sign in to the administration panel with `G3WSUITE_ADMIN_USERNAME` and `G3WSUITE_ADMIN_PASSWORD`. These variables create the initial account only; after initialization, change its password in the administration interface, not by editing `.env`.": "Accedi al pannello di amministrazione con `G3WSUITE_ADMIN_USERNAME` e `G3WSUITE_ADMIN_PASSWORD`. Queste variabili servono solo a creare l'account iniziale; dopo l'inizializzazione, modifica la password nell'interfaccia di amministrazione, non nel file `.env`.",
+    "Sign in to the administration panel with `G3WSUITE_ADMIN_USERNAME` and `G3WSUITE_ADMIN_PASSWORD`. Setup runs only once per shared volume and sets passwords on existing users as well; use a fresh database and volume for a new installation. After initialization, change passwords in the administration interface, not by editing `.env`.": "Accedi al pannello di amministrazione con `G3WSUITE_ADMIN_USERNAME` e `G3WSUITE_ADMIN_PASSWORD`. La configurazione iniziale viene eseguita una sola volta per volume condiviso e imposta le password anche agli utenti esistenti: per una nuova installazione usa un database e un volume nuovi. Dopo l'inizializzazione, modifica le password nell'interfaccia di amministrazione, non nel file `.env`.",
     "Style customization": "Personalizzazione dello stile",
     "Templates can now be overridden by placing the overrides in the `config/g3w-suite/overrides/templates`, a Docker service restart is required to make the changes effective.": "I template possono essere sostituiti collocando le versioni personalizzate in `config/g3w-suite/overrides/templates`; per applicare le modifiche è necessario riavviare il servizio Docker.",
     "The Docker hub name for this image is `g3wsuite/postgis:11.0-2.5`": "Il nome di questa immagine su Docker Hub è `g3wsuite/postgis:11.0-2.5`.",
+    "The build argument selects the stable admin branch. Without it, the setup script clones `dev`, even when using the stable Docker checkout. The Dockerfile uses the `g3wsuite/g3w-suite-deps-ltr:v3.11.x` base image.": "L'argomento di build seleziona il branch stabile di admin. Senza di esso lo script clona `dev`, anche nella copia Docker stabile. Il Dockerfile usa l'immagine base `g3wsuite/g3w-suite-deps-ltr:v3.11.x`.",
+    "The consumer Compose file starts the Huey worker for background processing and passes the initial administrator password to the application. In the stable branch, `docker-compose.yml` passes `G3WSUITE_ADMIN_PASS` instead of `G3WSUITE_ADMIN_PASSWORD`; correct that entry before using it for a new installation.": "Il file Compose consumer avvia il worker Huey per le elaborazioni in background e passa all'applicazione la password iniziale dell'amministratore. Nel branch stabile, `docker-compose.yml` passa `G3WSUITE_ADMIN_PASS` invece di `G3WSUITE_ADMIN_PASSWORD`: correggi questa voce prima di usarlo per una nuova installazione.",
     "The image is build from `https://github.com/g3w-suite/g3w-admin.git --branch dev` and from a dependencies base image `Dockerfile.g3wsuite-deps.ltr.dockerfile`, the dependencies image can be built with:": "L'immagine viene creata da `https://github.com/g3w-suite/g3w-admin.git --branch dev` e dall'immagine base delle dipendenze `Dockerfile.g3wsuite-deps.ltr.dockerfile`; l'immagine delle dipendenze può essere creata con:",
     "The logo is also overridden (through `config/g3w-suite/settings_docker.py` which is mounted as a volume), changes to the settings file require the Docker service to be restarted.": "Anche il logo può essere sostituito (tramite `config/g3w-suite/settings_docker.py`, montato come volume); le modifiche al file delle impostazioni richiedono il riavvio del servizio Docker.",
     "The main suite docker image can be built with:": "L'immagine Docker principale della suite può essere creata con:",
+    "The stable Compose files use `kartoza/postgis:16-3.4`.": "I file Compose stabili usano `kartoza/postgis:16-3.4`.",
+    "The stable `.env.example` uses `./shared-volume`. Set `WEBGIS_DOCKER_SHARED_VOLUME` in `.env` to a persistent location suitable for production.": "Il file `.env.example` stabile usa `./shared-volume`. Imposta `WEBGIS_DOCKER_SHARED_VOLUME` in `.env` su un percorso persistente adatto alla produzione.",
     "This can be done by modifying the `.env` file.": "È possibile farlo modificando il file `.env`.",
     "This locking system can remain active if users do not exit the editing state correctly, to avoid this it is advisable to activate a cron job on host machine that checks the features that have been locked for more than 4 hours and frees them:": "Questo blocco può rimanere attivo se gli utenti non escono correttamente dalla modalità di modifica. Per evitarlo, è consigliabile attivare sul computer host un cron job che individui le entità bloccate da oltre 4 ore e le sblocchi:",
     "This repository contains scripts and recipes for deploy of the G3W-SUITE web-gis application with Docker and Docker compose .": "Questo repository contiene script e istruzioni per distribuire l'applicazione WebGIS G3W-SUITE con Docker e Docker Compose.",
@@ -276,9 +239,11 @@ Plese refer to the [Add new stack](https://docs.portainer.io/v/ce-2.9/user/docke
     "Tile cache can be configured and cleared per-layer through the webgis admin panel and lasts forever until it is disabled or cleared.": "La cache delle tile può essere configurata e svuotata per singolo layer dal pannello di amministrazione del WebGIS e rimane attiva finché non viene disabilitata o svuotata.",
     "Tip: enable cache on linestring and polygon layers.": "Suggerimento: attiva la cache sui layer lineari e poligonali.",
     "To active https with LetsEncrypt just follow the following instructions:": "Per attivare HTTPS con Let's Encrypt, segui queste istruzioni:",
-    "To use of PostgreSql Service, put your service setups into `./scripts/pg_service.conf file`,": "Per utilizzare il servizio PostgreSQL, inserisci le configurazioni del servizio nel file `./scripts/pg_service.conf`;",
+    "To run a locally built image, change the image tag in the selected Compose file for both the application and consumer services.": "Per eseguire un'immagine compilata localmente, modifica il tag dell'immagine nel file Compose selezionato sia per il servizio applicativo sia per il consumer.",
+    "To use of PostgreSql Service, put your service setups into `./secrets/pg_service.conf`,": "Per utilizzare il servizio PostgreSQL, inserisci le configurazioni nel file `./secrets/pg_service.conf`;",
     "Usually is sufficient make build of main docker image g3wsuite/g3w-suite:dev,": "Di solito è sufficiente creare l'immagine Docker principale g3wsuite/g3w-suite:dev;",
     "Volumes": "Volumi",
+    "With the HTTP configuration running, obtain a certificate before switching the includes in `config/nginx/nginx.conf` from `django` to `django_ssl` and restarting the selected stack. The repository's `run_certbot.sh` invokes an interactive container and recreates the default Compose stack, not the consumer stack; adapt and test certificate issuance and renewal for your deployment rather than assuming it works unattended in cron.": "Con la configurazione HTTP attiva, ottieni un certificato prima di sostituire gli include `django` con `django_ssl` in `config/nginx/nginx.conf` e riavviare lo stack selezionato. Il file `run_certbot.sh` del repository avvia un container interattivo e ricrea lo stack Compose predefinito, non quello consumer; adatta e verifica l'emissione e il rinnovo del certificato per la tua distribuzione, senza presumere che funzioni automaticamente con cron.",
     "activate 301 redirect into `config/nginx/django.conf`": "attiva il reindirizzamento 301 in `config/nginx/django.conf`",
     "but is also possible build main image of G3W-SUITE and other docker-compose images.": "ma è anche possibile creare l'immagine principale di G3W-SUITE e le altre immagini Docker Compose.",
     "check the domain name in the `.env` file and in `config/nginx/django_ssl.conf`": "verifica il nome di dominio nel file `.env` e in `config/nginx/django_ssl.conf`",

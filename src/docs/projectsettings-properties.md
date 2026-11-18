@@ -35,7 +35,7 @@ The option **`Automatically create transaction group where possible`** is automa
  
 
 **NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**
-See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint)
+See [dedicated paragraph](settings.md#g3w_client_search_endpoint)
 
 
 ![Screenshot: Datasources](/img/manual-english-datasources.avif)
@@ -208,7 +208,7 @@ The request to delete the basic embedded project causes a warning message as thi
       "Screenshot: Qgisservergeneralaspectswfs": "Schermata: aspetti generali WFS di QGIS Server",
       "Screenshot: Qgisserversetmapexpetent": "Schermata: impostazione dell'estensione della mappa in QGIS Server",
       "Screenshot: Qgisserversrisrestriction": "Schermata: restrizioni CRS di QGIS Server",
-      "See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint)": "Vedere il [paragrafo dedicato](appearance-settings.md#g3w_client_search_endpoint)",
+      "See [dedicated paragraph](settings.md#g3w_client_search_endpoint)": "Vedere il [paragrafo dedicato](settings.md#g3w_client_search_endpoint)",
       "See also the [client metadata section](client-tools-and-toc.md#metadata).": "Vedere anche la [sezione sui metadati del client](client-tools-and-toc.md#metadata).",
       "Service capabilities": "Capacità del servizio",
       "Show features count": "Mostrare il conteggio degli elementi",

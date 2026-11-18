@@ -80,7 +80,7 @@ The publication system provides for the use of the **title of the project** as t
 ## Next steps
 
 - [Publish and update a service](demo-publish.md)
-- [Activate additional functions](demo-widgets.md)
+- [Try layer tools in the demo](demo-widgets.md)
 - [Online editing](demo-editing.md)
 
 <script type="application/json" data-i18n>
@@ -99,7 +99,6 @@ The publication system provides for the use of the **title of the project** as t
     "**`roads` (linear layer):** layer to define the address associated to any buildings": "**`roads` (layer lineare):** layer per definire l'indirizzo associato agli edifici",
     "**`type_subtype` (alphanumeric table):** a decoding table of the type and subtype values associated with the individual buildings": "**`type_subtype` (tabella alfanumerica):** tabella di decodifica dei valori di tipo e sottotipo associati ai singoli edifici",
     "**`work_areas` (polygon layer):** with the perimeter of work areas to be used to define any geo-constraints": "**`work_areas` (layer poligonale):** contiene il perimetro delle aree di lavoro da utilizzare per definire eventuali vincoli geografici",
-    "Activate additional functions": "Attivare funzioni aggiuntive",
     "Back to Demo tutorial": "Torna al tutorial della demo",
     "Customize the demo": "Personalizzare la demo",
     "Demo introduction": "Introduzione alla demo",
@@ -134,6 +133,7 @@ The publication system provides for the use of the **title of the project** as t
     "The publication system provides for the use of the **title of the project** as the **unique identifier of the WebGis service**.": "Il sistema di pubblicazione utilizza il **titolo del progetto** come **identificativo univoco del servizio WebGIS**.",
     "The tutorial is based on predefined data and QGIS 3.44.x LTR project **downloadable from [this link](https://drive.google.com/file/d/1Xpx1FvTNWtx74maXe7jatU_GgyC8QlpB/view?usp=sharing)**.": "Il tutorial si basa su dati predefiniti e su un progetto QGIS 3.44.x LTR **scaricabile da [questo link](https://drive.google.com/file/d/1Xpx1FvTNWtx74maXe7jatU_GgyC8QlpB/view?usp=sharing)**.",
     "To try geometric and relational editing, sign in with the public demo account:": "Per provare la modifica geometrica e relazionale, accedi con l'account pubblico della demo:",
+    "Try layer tools in the demo": "Provare gli strumenti dei layer nella demo",
     "Try the live demo": "Prova la demo",
     "a **dressing categorized by the `buildings` layer** based on the categorical field **`type`**": "una **simbologia categorizzata del layer `buildings`** basata sul campo categoriale **`type`**",
     "activate the editing functionality by customizing associated forms and widgets": "attivare la funzionalità di modifica personalizzando i moduli e i widget associati",

@@ -4,7 +4,7 @@ _**This section describes the different sections of the access portal and how to
 ## The login portal sessions
 The G3W-SUITE application is accessible via any internet browser (FireFox and Chrome recommended) via the URL address defined during installation
 
-If you have also installed the front-end portal from the [GitHub repository](https://github.com/g3w-suite/g3w-admin-portal), access to the application will be via the portal itself.
+The [optional front-end portal](https://github.com/g3w-suite/g3w-admin-portal) provides the pages shown below. In a default installation without the portal, the site root opens the administration dashboard and redirects visitors who are not signed in to the login page. With the portal enabled, the dashboard is under `/admin/`.
 
 The home page will contain, in addition to a brief and customizable presentation of the service, also:
 
@@ -67,7 +67,6 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "If you are an **Administrator** or **Editor** of 1 or 2 level, you can also access the Administration session.": "Se si è **Amministratore** o **Editor** di livello 1 o 2, è possibile accedere anche alla sezione di amministrazione.",
       "If you have a user for access, you can authenticate yourself through the **Login session**.": "Se si dispone di un account, è possibile autenticarsi tramite la sezione **Accedi**.",
       "If you have a user with login credentials, you can authenticate yourself through this session by entering your user and password.": "Se si dispone di un account, è possibile autenticarsi da questa sezione inserendo il nome utente e la password.",
-      "If you have also installed the front-end portal from the [GitHub repository](https://github.com/g3w-suite/g3w-admin-portal), access to the application will be via the portal itself.": "Se è stato installato anche il portale front-end dal [repository GitHub](https://github.com/g3w-suite/g3w-admin-portal), si accederà all'applicazione tramite il portale stesso.",
       "Info": "Informazioni",
       "Login": "Accedi",
       "Maps": "Mappe",
@@ -83,6 +82,7 @@ Once logged in, you access the **Admin** session and from here, via the **"Backe
       "The **Info** session can contains a small introduction and contact information for your company or public facility.": "La sezione **Informazioni** può contenere una breve introduzione e i recapiti della società o dell'ente pubblico.",
       "The G3W-SUITE application is accessible via any internet browser (FireFox and Chrome recommended) via the URL address defined during installation": "L'applicazione G3W-SUITE è accessibile da qualsiasi browser Internet (si consigliano Firefox e Chrome) tramite l'indirizzo URL definito durante l'installazione.",
       "The MacroGroups, Groups and WebGis services listed will be those defined as free access.": "Saranno elencati i Macrogruppi, i Gruppi e i servizi WebGIS definiti ad accesso libero.",
+      "The [optional front-end portal](https://github.com/g3w-suite/g3w-admin-portal) provides the pages shown below. In a default installation without the portal, the site root opens the administration dashboard and redirects visitors who are not signed in to the login page. With the portal enabled, the dashboard is under `/admin/`.": "Il [portale front-end opzionale](https://github.com/g3w-suite/g3w-admin-portal) offre le pagine mostrate qui sotto. In un'installazione di default senza portale, l'indirizzo principale apre il pannello di amministrazione e reindirizza alla pagina di accesso chi non ha effettuato il login. Con il portale attivo, il pannello si trova sotto `/admin/`.",
       "The home page will contain, in addition to a brief and customizable presentation of the service, also:": "Oltre a una breve presentazione personalizzabile del servizio, la pagina iniziale conterrà:",
       "The login portal sessions": "Le sezioni del portale di accesso",
       "_**This section describes the different sections of the access portal and how to login to the Administration Panel**_": "_**Questa sezione descrive le varie aree del portale di accesso e spiega come accedere al pannello di amministrazione**_",

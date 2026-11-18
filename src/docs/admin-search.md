@@ -12,7 +12,7 @@ By default, searches can be built on individual vector layers based on the field
 
 **NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**
 
-See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).
+See [dedicated paragraph](settings.md#g3w_client_search_endpoint).
 
 
 Every search widget will be saved by referring to the layer identifiers (for example the DB parameters: IP, DB name, schema, layer name).
@@ -53,7 +53,7 @@ In the related form we can define:
      * `DateTimeBox`: widget to be used exclusively for date type fields. On the client, the user will define the date/time to search through the calendar/clock widget.
    * **`Alias`:** alias assigned to the field that will appear in the search form
    * **`Description`:** description assigned to the field
-   * **`Comparison operator`:** comparison operator (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) through which the search query will be carried out. The **IN** operator simplifies searches where a field must be associated with multiple values (OR operator)
+   * **`Comparison operator`:** operator used for the search (**=, <, >, <>, >=, <=, IN, LIKE, ILIKE**). **IN** matches a field against any of several values.
    * **`Use alternative unique values`** (for SelectBox widget):  possibility to associate a layer of the QGIS project, that reports the list of the unique values to show in the search field. The filed that report unique values must have the some name of the filed setted for the search. This greatly speeds up the loading times of the contents of the user-side search form, increasing the usability of the tool, especially in cases where there are numerous records with a small number of unique values.
    * **`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.   
 
@@ -92,9 +92,7 @@ In the event that, at QGIS project level, the following editing widgets are asso
 
 The values shown in the search tool will be those defined on the basis of the tables related via widegt.
 
-**Warning: in the case of fields with more than 100 unique values, the WMS service does not allow to obtain the complete list of values. In this case it is recommended not to use the `SelectBox` method**
-
-**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).
+**Tip:** Use `AutoCompleteBox` for fields with many distinct values, so users can type to narrow the suggestions instead of browsing a long list.
 
  
 ### Multiple layers search
@@ -114,7 +112,7 @@ Especially useful in the case of multi geometric layers.
 The option allows you to create a search based on the fields of a table (child in a 1:N relation) and obtain results relating to the parent layer of the relation.
 
 **N.B. to create searches based on fields derived from simple joins (1: 1 / N: 1) or from 1: N relation, you have to change the setting of the method used (from WMS to QGIS API).**
-See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).
+See [dedicated paragraph](settings.md#g3w_client_search_endpoint).
 
 The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.
 
@@ -126,7 +124,6 @@ The **Relations** option allows you to to define the relationship to be used (if
   "it": {
     "![Icon: Widget](/img/manual-english-icon-widget.avif) Widget setting - Search tools": "![Icona: widget](/img/manual-english-icon-widget.avif) Impostazioni dei widget - strumenti di ricerca",
     "**ATTENTION: deleting a search** will delete it from all projects in which that search is active.": "**ATTENZIONE: eliminando una ricerca** la si rimuove da tutti i progetti in cui è attiva.",
-    "**Alternatively, you can use the QGIS API as a search method to overcome this limitation. See** [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).": "**In alternativa, è possibile usare QGIS API come metodo di ricerca per superare questo limite. Consultare il** [paragrafo dedicato](appearance-settings.md#g3w_client_search_endpoint).",
     "**Form Title**": "**Titolo del modulo**",
     "**General configuration of research and results**": "**Configurazione generale della ricerca e dei risultati**",
     "**IMPORTANT:** the created search widget will now be available (disconnected) for all projects in which the layer with which it has been associated will be present.": "**IMPORTANTE:** il widget di ricerca creato sarà disponibile (scollegato) in tutti i progetti che contengono il layer a cui è stato associato.",
@@ -134,10 +131,10 @@ The **Relations** option allows you to to define the relationship to be used (if
     "**NB: to create searches based on fields derived from simple joins (1:1/N:1) or from 1:N relation, you have to change the setting of the method used (from WMS to QGIS API).**": "**NB: per creare ricerche basate su campi derivati da join semplici (1:1/N:1) o da relazioni 1:N, è necessario modificare il metodo usato (da WMS a QGIS API).**",
     "**Search fields settings**": "**Impostazioni dei campi di ricerca**",
     "**This will allow you not to have to recreate the widget several times and to decide in which projects to activate the search and in which not.**": "**In questo modo non sarà necessario ricreare più volte il widget e si potrà decidere in quali progetti attivare la ricerca.**",
+    "**Tip:** Use `AutoCompleteBox` for fields with many distinct values, so users can type to narrow the suggestions instead of browsing a long list.": "**Suggerimento:** usa `AutoCompleteBox` per i campi con molti valori distinti, così chi cerca può digitare per restringere i suggerimenti anziché scorrere un lungo elenco.",
     "**Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.**": "**Usa questa icona per aggiungere widget al layer. Il widget di base definisce gli strumenti di ricerca disponibili nel WebGIS.**",
-    "**Warning: in the case of fields with more than 100 unique values, the WMS service does not allow to obtain the complete list of values. In this case it is recommended not to use the `SelectBox` method**": "**Attenzione: per i campi con più di 100 valori univoci, il servizio WMS non consente di ottenere l'elenco completo. In questo caso si consiglia di non usare il metodo `SelectBox`.**",
     "**`Alias`:** alias assigned to the field that will appear in the search form": "**`Alias`:** alias assegnato al campo e visualizzato nel modulo di ricerca",
-    "**`Comparison operator`:** comparison operator (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) through which the search query will be carried out. The **IN** operator simplifies searches where a field must be associated with multiple values (OR operator)": "**`Comparison operator`:** operatore di confronto (**=, <,>,> <,> =, <=, IN, LIKE, ILIKE**) usato per eseguire la ricerca. L'operatore **IN** semplifica le ricerche in cui a un campo devono essere associati più valori (operatore OR)",
+    "**`Comparison operator`:** operator used for the search (**=, <, >, <>, >=, <=, IN, LIKE, ILIKE**). **IN** matches a field against any of several values.": "**`Comparison operator`:** operatore usato per la ricerca (**=, <, >, <>, >=, <=, IN, LIKE, ILIKE**). **IN** seleziona i record in cui il campo corrisponde a uno qualsiasi dei valori indicati.",
     "**`Dependency`:** this parameter (optional) allows, only in the case of **SelectBox** or  **AutoCompleteBox** widgets, to show the list of values of a field filtered according to the value defined for the previous fields.": "**`Dependency`:** questo parametro facoltativo consente, solo per i widget **SelectBox** o **AutoCompleteBox**, di mostrare i valori di un campo filtrati in base al valore impostato nei campi precedenti.",
     "**`Description`:** description assigned to the field": "**`Description`:** descrizione assegnata al campo",
     "**`Field`:** field on which to carry out the research": "**`Field`:** campo su cui eseguire la ricerca",
@@ -174,7 +171,7 @@ The **Relations** option allows you to to define the relationship to be used (if
     "Screenshot: G3W-SUITE Administration Project Widget List": "Schermata: elenco dei widget del progetto nell'amministrazione di G3W-SUITE",
     "Search based on 1:N relation data": "Ricerca basata sui dati di una relazione 1:N",
     "Search widgets": "Widget di ricerca",
-    "See [dedicated paragraph](appearance-settings.md#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](appearance-settings.md#g3w_client_search_endpoint).",
+    "See [dedicated paragraph](settings.md#g3w_client_search_endpoint).": "Consultare il [paragrafo dedicato](settings.md#g3w_client_search_endpoint).",
     "Set the **dependency level** (strict or not).": "Imposta il **grado di dipendenza** (stretta o meno).",
     "The **Other searching layers** option allows you to extend the search carried out to other layers.": "L'opzione **Other searching layers** consente di estendere la ricerca ad altri layer.",
     "The **Relations** option allows you to to define the relationship to be used (if present) to identify the parent layer whose results will be shown.": "L'opzione **Relations** consente di definire la relazione da usare (se presente) per individuare il layer padre di cui mostrare i risultati.",

@@ -96,12 +96,12 @@ On the left side menu there is the **MacroGroup Cartographic** item with two sub
 ### Add MacroGroups
 Through this item, available only for the **Admin** users, it will be possible to **create a new Cartographic MacroGroup.
 
-If necessary, each Cartographic MacroGroup can be associated with a specific Editor1 user.
+Assign one or more Editor1 users to a cartographic macro-group when you need to delegate content management.
 
 Learn more about this in the [dedicated session](user_groups_organization)
 
 #### ACL users
-**`Editor users`:** you define the **Editor1 user** who will become the **MacroGroup administrator**. This user will can manage the MacroGroup by creating Cartographic Groups, publishing projects and creating Users or User Groups.
+**`Editor users`:** select the **Editor1** users who can manage the macro-group's content. Only admins can change the macro-group itself or its assignments.
 
 #### General data
  * **`Identification name *`:** a generic internal identification name (not show in the front end)
@@ -128,10 +128,7 @@ There are a series of icons to access specific functions:
  * ![Icon: Edit](/img/manual-english-icon-edit.avif) **Change** characteristics of the MacroGroup
  * ![Icon: Erase](/img/manual-english-icon-erase.avif) **Delete** MacroGroup
 
-**ATTENTION:** the removal of the Cartographic MacroGroup group will result in:
- * the **removal of all the Cartographic Groups** contained in it
- * the **removal of all the cartographic projects** contained in the individual Groups
- * the **removal of all the widgets** (eg searches) that would remain orphaned after the removal of the cartographic projects contained in the group. See the Widget chapter for more information.
+Deleting a macro-group removes its associations with cartographic groups. It does not delete the groups, their projects, or their widgets. A cartographic group can belong to more than one macro-group.
 
 #### Define the MacroGroups order on the FrontEnd
 Through the Drag & Drop function it is possible to define the order of the MacroGroups in the list. This order will be reflected in the FrontEnd.
@@ -152,7 +149,6 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "![Icon: View](/img/manual-english-icon-view.avif) **Show details:** to consult the characteristics of the user group": "![Icona: visualizza](/img/manual-english-icon-view.avif) **Mostra dettagli:** consultare le caratteristiche del gruppo di utenti",
       "![Icon: View](/img/manual-english-icon-view.avif) **Show the details** of the MacroGroup": "![Icona: visualizza](/img/manual-english-icon-view.avif) **Mostra i dettagli** del Macrogruppo",
       "**ATTENTION: use the Cartographic MacroGroups only if you need them.**": "**ATTENZIONE: utilizzare i Macrogruppi cartografici solo se necessario.**",
-      "**ATTENTION:** the removal of the Cartographic MacroGroup group will result in:": "**ATTENZIONE:** la rimozione del Macrogruppo cartografico comporta:",
       "**Add MacroGroups:** to create a new Cartographic MacroGroup": "**Add MacroGroups:** creare un nuovo Macrogruppo cartografico",
       "**Add groups users**": "**Add groups users**",
       "**Add user**": "**Add user**",
@@ -170,7 +166,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "**Users:** list of users belonging to the group": "**Users:** elenco degli utenti appartenenti al gruppo",
       "**`Anagraphic`**: first name, last name and email address": "**`Anagraphic`**: nome, cognome e indirizzo e-mail",
       "**`Description`:** the description to be associated with the MacroGroup in the frontend": "**`Description`:** descrizione da associare al Macrogruppo nel front end",
-      "**`Editor users`:** you define the **Editor1 user** who will become the **MacroGroup administrator**. This user will can manage the MacroGroup by creating Cartographic Groups, publishing projects and creating Users or User Groups.": "**`Editor users`:** definisce l'utente **Editor1** che diventerà l'**amministratore del MacroGroup**. Questo utente potrà gestire il Macrogruppo creando Gruppi cartografici, pubblicando progetti e creando utenti o gruppi di utenti.",
+      "**`Editor users`:** select the **Editor1** users who can manage the macro-group's content. Only admins can change the macro-group itself or its assignments.": "**`Editor users`:** seleziona gli utenti **Editor1** che possono gestire i contenuti del macrogruppo. Solo gli amministratori possono modificare il macrogruppo o le sue assegnazioni.",
       "**`Editor`:** in which only Editor2 users can be inserted": "**`Editor`:** possono includere solo utenti Editor2",
       "**`Identification name *`:** a generic internal identification name (not show in the front end)": "**`Identification name *`:** un nome identificativo interno generico (non visibile nel front end)",
       "**`Login data`**: username and password": "**`Login data`**: nome utente e password",
@@ -187,12 +183,14 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "After compiling the form, click on the **Save button** to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante **Save** per confermare le scelte.",
       "After filling in the from, click on the **Save** button to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante **Save** per confermare le scelte.",
       "After filling in the various form, click on the Save button to confirm your choices.": "Dopo aver compilato il modulo, fare clic sul pulsante Save per confermare le scelte.",
+      "Assign one or more Editor1 users to a cartographic macro-group when you need to delegate content management.": "Assegna uno o più utenti Editor1 a un macrogruppo cartografico quando vuoi delegare la gestione dei contenuti.",
       "Associated Cartographic MacroGroups (optional)": "Macrogruppi cartografici associati (facoltativo)",
       "Backend: info on user creation (G3W-SUITE or LDAP)": "Backend: informazioni sulla creazione dell'utente (G3W-SUITE o LDAP)",
       "Button: Save": "Pulsante: salva",
       "Client header composition follows the [Cartographic Group logo settings](admin-cartographic-groups.md).": "La composizione dell'intestazione del client segue le [impostazioni del logo del Gruppo cartografico](admin-cartographic-groups.md).",
       "Created: creation date": "Created: data di creazione",
       "Define the MacroGroups order on the FrontEnd": "Definire l'ordine dei Macrogruppi nel FrontEnd",
+      "Deleting a macro-group removes its associations with cartographic groups. It does not delete the groups, their projects, or their widgets. A cartographic group can belong to more than one macro-group.": "Eliminare un macrogruppo rimuove le sue associazioni ai gruppi cartografici, ma non elimina i gruppi, i loro progetti o i loro widget. Un gruppo cartografico può appartenere a più macrogruppi.",
       "Departments and image to be associated with the profile": "Dipartimenti e immagine da associare al profilo",
       "Email, First and Last name": "E-mail, nome e cognome",
       "For example, you can create a **Macrogroup** to collect a series of **Cartographic Groups** belonging to the same Administration (single Municipality within a Union of Municipalities) or more simply to have main containers that contain second level groupings (Groups).": "Ad esempio, è possibile creare un **Macrogroup** per raccogliere una serie di **Gruppi cartografici** appartenenti alla stessa amministrazione (un singolo Comune all'interno di un'Unione di Comuni) oppure, più semplicemente, per creare contenitori principali che includono raggruppamenti di secondo livello (Gruppi).",
@@ -202,7 +200,6 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "Icon: Edit": "Icona: modifica",
       "Icon: Erase": "Icona: elimina",
       "Icon: View": "Icona: visualizza",
-      "If necessary, each Cartographic MacroGroup can be associated with a specific Editor1 user.": "Se necessario, ogni Macrogruppo cartografico può essere associato a uno specifico utente Editor1.",
       "In the left side menu there is the **Users** item with four sub-items:": "Nel menu laterale si trova la voce **Users**, con quattro sottovoci:",
       "In the specific form for creating user groups, the following info are defined:": "Nel modulo specifico per la creazione dei gruppi di utenti si definiscono le seguenti informazioni:",
       "In this section it is possible to view the list of Cartographic Macrogroups, manage them and create new ones.": "In questa sezione è possibile consultare l'elenco dei Macrogruppi cartografici, gestirli e crearne di nuovi.",
@@ -236,10 +233,7 @@ Through the Drag & Drop function it is possible to define the order of the Macro
       "Users and Users Groups management": "Gestione degli utenti e dei gruppi di utenti",
       "Users and macro-groups": "Utenti e macrogruppi",
       "Users list": "Elenco degli utenti",
-      "Using the icons at the head of each row, you can:": "Le icone all'inizio di ogni riga consentono di:",
-      "the **removal of all the Cartographic Groups** contained in it": "la **rimozione di tutti i Gruppi cartografici** che contiene",
-      "the **removal of all the cartographic projects** contained in the individual Groups": "la **rimozione di tutti i progetti cartografici** contenuti nei singoli Gruppi",
-      "the **removal of all the widgets** (eg searches) that would remain orphaned after the removal of the cartographic projects contained in the group. See the Widget chapter for more information.": "la **rimozione di tutti i widget** (ad es. le ricerche) che resterebbero orfani dopo la rimozione dei progetti cartografici contenuti nel gruppo. Per ulteriori informazioni, consultare il capitolo sui widget."
+      "Using the icons at the head of each row, you can:": "Le icone all'inizio di ogni riga consentono di:"
     }
   }
 </script>

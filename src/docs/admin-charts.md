@@ -33,7 +33,7 @@ It is also possible:
 
 ![Screenshot: G3W-SUITE Administration Plots](/img/manual-english-g3wsuite-administration-plots.avif)
 
-The title of the chart, defined at the plugin level, will be the unique identifier.
+The chart title comes from the DataPlotly plugin and is used as its label in G3W-SUITE.
 
 In the client, **filter charts by features visible on the map or selected by the user**.
 
@@ -127,8 +127,8 @@ You can use Drag&Drop to define the order on the widget list
     "Screenshot: G3wclient Fomr 1 N Plots": "Schermata: grafici 1:N nel modulo client G3W",
     "Steps to create a multiple graph:": "Procedura per creare un grafico multiplo:",
     "The QGIS DataPlotly plugin does not allow you to export the XML of multiple overlapping graphs.": "Il plugin DataPlotly per QGIS non consente di esportare l'XML di più grafici sovrapposti.",
+    "The chart title comes from the DataPlotly plugin and is used as its label in G3W-SUITE.": "Il titolo del grafico proviene dal plugin DataPlotly e viene usato come etichetta in G3W-SUITE.",
     "The module, based on the [Plotly library](https://plotly.com/), , manages plots builts and saved as xml in the DataPlotly QGIS plugin.": "Il modulo, basato sulla [libreria Plotly](https://plotly.com/), gestisce i grafici creati e salvati come XML nel plugin DataPlotly per QGIS.",
-    "The title of the chart, defined at the plugin level, will be the unique identifier.": "Il titolo del grafico, definito nel plugin, sarà l'identificatore univoco.",
     "To access the configuration menu, click on the **'Project QPlotly widgets order'** icon ![Icon: Chart Order](/img/manual-english-icon-chart-order.avif)": "Per accedere al menu di configurazione, fare clic sull'icona **'Project QPlotly widgets order'** ![Icon: Chart Order](/img/manual-english-icon-chart-order.avif)",
     "You can use Drag&Drop to define the order on the widget list": "È possibile usare Drag&Drop per definire l'ordine nell'elenco dei widget",
     "access the list of graphs associated with a specific layer": "accedere all'elenco dei grafici associati a un layer specifico",

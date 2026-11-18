@@ -5,16 +5,16 @@ Add a language to G3W-SUITE by following these steps.
 ## G3W-ADMIN
 
 
-### 1. Declare new language inside base settings
+### 1. Declare the new language in the base settings
 
-Declare the new language to django setting `LANGUAGES` list inse the `base/settings/base.py`
+Declare the new language in the Django `LANGUAGES` setting in `base/settings/base.py`.
 Open your settings.py file and make sure the following settings are present or correctly configured:
 
 ```python
 ...
 LANGUAGES = [
     ('en', _('English')),
-    ('it', _('Italian')), # Add t the end of list the new language
+    ('it', _('Italian')), # Add the new language at the end of the list
 ]
 ...
 
@@ -25,7 +25,7 @@ LANGUAGES = [
 From your project root (where manage.py is located), run:
 
 ```
-python3 manage makemessages -l it
+python3 manage.py makemessages -l it
 ```
 
 This command:
@@ -47,7 +47,7 @@ locale/
 
 G3W-SUITE is a modular Django application, so you may have multiple **django.po** files. For example, each module (e.g. `core`, `qdjango`, etc.) can contain its own `locale/<lang>/LC_MESSAGES/django.po` file.
 
-### 4. Translate the Messages
+### 3. Translate the Messages
 
 Open the locale/it/LC_MESSAGES/django.po file and translate the strings.
 
@@ -59,7 +59,7 @@ msgid "Welcome to the site!"
 msgstr "Benvenuto sul sito!"
 ```
 
-### 5. Compile the Translations
+### 4. Compile the Translations
 
 After finishing (or updating) your translations, run:
 
@@ -73,7 +73,7 @@ This creates the compiled **.mo** files Django uses to load translations:
 
 ## G3W-CLIENT
 
-Language files are stored into the [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales) folder.
+Language files are stored in the [`src/static/locales`](https://github.com/g3w-suite/g3w-client/blob/v4.1.5/src/static/locales) folder.
 
 By adding some of these lines (eg. into your `plugin.js` or `custom.js`) you can change or add custom translation entries:
 
@@ -92,15 +92,15 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
 <script type="application/json" data-i18n>
   {
     "it": {
-      "1. Declare new language inside base settings": "1. Dichiarare la nuova lingua nelle impostazioni di base",
+      "1. Declare the new language in the base settings": "1. Dichiarare la nuova lingua nelle impostazioni di base",
       "2. Create Translation Files": "2. Creare i file di traduzione",
-      "4. Translate the Messages": "4. Tradurre i messaggi",
-      "5. Compile the Translations": "5. Compilare le traduzioni",
+      "3. Translate the Messages": "3. Tradurre i messaggi",
+      "4. Compile the Translations": "4. Compilare le traduzioni",
       "Add a language to G3W-SUITE by following these steps.": "Segui questi passaggi per aggiungere una lingua a G3W-SUITE.",
       "After finishing (or updating) your translations, run:": "Al termine (o dopo aver aggiornato le traduzioni), eseguire:",
       "By adding some of these lines (eg. into your `plugin.js` or `custom.js`) you can change or add custom translation entries:": "Aggiungendo alcune di queste righe (ad es. nel file `plugin.js` o `custom.js`) è possibile modificare o aggiungere voci di traduzione personalizzate:",
       "Creates **.po** files in `locale/it/LC_MESSAGES/`.": "Crea i file **.po** in `locale/it/LC_MESSAGES/`.",
-      "Declare the new language to django setting `LANGUAGES` list inse the `base/settings/base.py`": "Dichiarare la nuova lingua nell'elenco `LANGUAGES` delle impostazioni Django in `base/settings/base.py`.",
+      "Declare the new language in the Django `LANGUAGES` setting in `base/settings/base.py`.": "Dichiarare la nuova lingua nell'impostazione Django `LANGUAGES` in `base/settings/base.py`.",
       "Directory structure:": "Struttura delle directory:",
       "Example:": "Esempio:",
       "From your project root (where manage.py is located), run:": "Dalla directory principale del progetto (dove si trova manage.py), eseguire:",
@@ -108,7 +108,7 @@ Otherwise, edit one of that files and then submit a [pull request](https://docs.
       "G3W-CLIENT": "G3W-CLIENT",
       "G3W-SUITE is a modular Django application, so you may have multiple **django.po** files. For example, each module (e.g. `core`, `qdjango`, etc.) can contain its own `locale/<lang>/LC_MESSAGES/django.po` file.": "G3W-SUITE è un'applicazione Django modulare, quindi possono essere presenti più file **django.po**. Ad esempio, ogni modulo (come `core`, `qdjango` ecc.) può contenere il proprio file `locale/<lang>/LC_MESSAGES/django.po`.",
       "Important": "Importante",
-      "Language files are stored into the [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales) folder.": "I file delle lingue sono archiviati nella cartella [`src/assets/locales`](https://github.com/g3w-suite/g3w-client/blob/dev/src/assets/locales).",
+      "Language files are stored in the [`src/static/locales`](https://github.com/g3w-suite/g3w-client/blob/v4.1.5/src/static/locales) folder.": "I file delle lingue sono archiviati nella cartella [`src/static/locales`](https://github.com/g3w-suite/g3w-client/blob/v4.1.5/src/static/locales).",
       "Open the locale/it/LC_MESSAGES/django.po file and translate the strings.": "Aprire il file locale/it/LC_MESSAGES/django.po e tradurre le stringhe.",
       "Open your settings.py file and make sure the following settings are present or correctly configured:": "Aprire il file settings.py e verificare che le seguenti impostazioni siano presenti o configurate correttamente:",
       "Otherwise, edit one of that files and then submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) with appropriate changes.": "In alternativa, modificare uno di questi file e inviare una [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) con le modifiche appropriate.",

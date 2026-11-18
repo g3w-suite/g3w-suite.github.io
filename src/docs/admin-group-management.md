@@ -4,7 +4,7 @@
 **From this item you can access the list of the created cartographic groups.**
 
 ### General operations
-For each group, the Title and Subtitle defined at the time of creation are shown.
+For each group, the Title and associated EPSG are shown.
 
 There are also a series of icons to access specific functions:
  * ![Icon: Add](/img/manual-english-icon-add.avif) **Add a new project (QGIS)** to be published as WebGis service
@@ -28,7 +28,7 @@ A large **+ icon** is available to access the form for creating a new group.
 Filter cartographic groups by:
  * the MacroGroup to which they belong
  * the associated EPSG
- * the different types of users (Editor, Editor and Viewer) associated with them
+ * the associated Editor1/Editor2 users and Editor2/Viewer user groups
 
 The options of this last filter vary based on the type of logged in user.
 
@@ -75,7 +75,7 @@ This order will be reflected within the belonging MacroGroups.
     "Define the Groups order on the FrontEnd": "Definire l'ordine dei Gruppi nel FrontEnd",
     "Drag and drop groups to change their order in the list.": "Trascina i gruppi per cambiarne l'ordine nell'elenco.",
     "Filter cartographic groups by:": "Filtra i gruppi cartografici per:",
-    "For each group, the Title and Subtitle defined at the time of creation are shown.": "Per ciascun gruppo vengono mostrati il titolo e il sottotitolo definiti durante la creazione.",
+    "For each group, the Title and associated EPSG are shown.": "Per ciascun gruppo vengono mostrati il titolo e il codice EPSG associato.",
     "General operations": "Operazioni generali",
     "Groups List": "Elenco dei gruppi",
     "Icon: Add": "Icona: aggiungi",
@@ -101,7 +101,7 @@ This order will be reflected within the belonging MacroGroups.
     "the **removal of all widgets** (eg searches) that would be orphaned after the removal of the WebGis services contained in the group. See the Widget chapter for more information.": "la **rimozione di tutti i widget** (ad es. le ricerche) che resterebbero orfani dopo la rimozione dei servizi WebGis del gruppo. Per ulteriori informazioni, consultare il capitolo sui widget.",
     "the MacroGroup to which they belong": "Macrogruppo di appartenenza",
     "the associated EPSG": "EPSG associato",
-    "the different types of users (Editor, Editor and Viewer) associated with them": "tipi di utenti associati (Editor, Editor e Viewer)"
+    "the associated Editor1/Editor2 users and Editor2/Viewer user groups": "utenti Editor1/Editor2 e gruppi di utenti Editor2/Viewer associati"
   }
 }
 </script>

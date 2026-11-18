@@ -12,10 +12,10 @@ In the **Django Administration** session, access the **Base Layers** sub-session
 
 ![Screenshot: Django Base Layers](/img/manual-english-django-base-layers.avif)
 
-Assuming you want to add the following WMST service [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/) you fill in the form as follows:
+To add the following TMS tile service [http://qgstiles.webmapp.it](http://qgstiles.webmapp.it/), fill in the form as follows:
 
- * **Name:** an internal identifier of the new Base Layer
- * **Title:** the descriptive, client-side visible name of the new Base Layer
+ * **Name:** an internal identifier of the new Base Layer; the client bundled with G3W-ADMIN 3.11.4 (v4.1.5) displays this value in the base-layer list
+ * **Title:** the descriptive name of the new Base Layer; clients from v4.1.6 display this value in the base-layer list
  * **Icon:** a descriptive, client-side view of the new Base Layer
  * **Description:** an internal description of the new Base Layer
  * **Property:** the specifications of the new Base Layer; for example, for our case:
@@ -41,7 +41,7 @@ The new Base Layer will then be available and can be activated at the level of i
 
 ### Create new Base Layers starting from your own layers
 
-As a first step, you need to publish a new WebGis service based on a QGIS project containing a **single layer**, the layer that will need to be converted into a Base Layer.
+First, publish a WebGIS service based on a QGIS project that contains the layer to convert into a Base Layer. The cache action applies to that layer, even when the project contains other layers.
 
 As an example, remember that you can publish a set of orthophotos as a single VRT file produced in QGIS.
 
@@ -53,8 +53,8 @@ Automatically a new **Base Layer** will be inserted into those present in the Ba
 
 Remember to associate a thumbnail with the Base layer, as described in the previous paragraph, to make it available at the map client level.
 
-## Multilinguage
-The suite is translated in this languages:
+## Multilingual interface
+The suite is available in these languages:
  * Bulgarian
  * Deutsch
  * English
@@ -62,6 +62,7 @@ The suite is translated in this languages:
  * Finnish
  * French
  * Italian
+ * Polish
  * Portuguese
  * Romanian
  * Swedish
@@ -114,18 +115,16 @@ Then:
       "**Description**": "**Descrizione**",
       "**Description:** an internal description of the new Base Layer": "**Description:** una descrizione interna del nuovo Base Layer",
       "**Icon:** a descriptive, client-side view of the new Base Layer": "**Icon:** un'immagine descrittiva del nuovo Base Layer visualizzata nel client",
-      "**Name:** an internal identifier of the new Base Layer": "**Name:** un identificatore interno del nuovo Base Layer",
+      "**Name:** an internal identifier of the new Base Layer; the client bundled with G3W-ADMIN 3.11.4 (v4.1.5) displays this value in the base-layer list": "**Name:** identificatore interno del nuovo Base Layer; il client incluso in G3W-ADMIN 3.11.4 (v4.1.5) mostra questo valore nell'elenco dei layer di base",
       "**Property:** the specifications of the new Base Layer; for example, for our case:": "**Property:** le specifiche del nuovo Base Layer; nel nostro caso, ad esempio:",
       "**Public Title**": "**Public Title**",
-      "**Title:** the descriptive, client-side visible name of the new Base Layer": "**Title:** il nome descrittivo del nuovo Base Layer visibile nel client",
+      "**Title:** the descriptive name of the new Base Layer; clients from v4.1.6 display this value in the base-layer list": "**Title:** nome descrittivo del nuovo Base Layer; i client dalla versione 4.1.6 mostrano questo valore nell'elenco dei layer di base",
       "**Titles and Descriptions of the various elements in the defined languages ​​will be available on the front.**": "**I titoli e le descrizioni dei vari elementi nelle lingue definite saranno disponibili nel front end.**",
       "Add custom Base layers": "Aggiungere livelli di base personalizzati",
       "Add custom base layers and make them available to individual WebGIS services.": "Aggiungi layer di base personalizzati e rendili disponibili ai singoli servizi WebGIS.",
       "Administration": "Amministrazione",
       "After publishing, you will need to activate the cache on that specific layer and and activate the **Save as Base layer** option in the form option.": "Dopo la pubblicazione, è necessario attivare la cache su quel layer e selezionare l'opzione **Save as Base layer** nel modulo.",
-      "As a first step, you need to publish a new WebGis service based on a QGIS project containing a **single layer**, the layer that will need to be converted into a Base Layer.": "Per prima cosa, è necessario pubblicare un nuovo servizio WebGis basato su un progetto QGIS contenente un **solo layer**, quello da convertire in un Base Layer.",
       "As an example, remember that you can publish a set of orthophotos as a single VRT file produced in QGIS.": "Ad esempio, è possibile pubblicare un insieme di ortofoto come singolo file VRT creato con QGIS.",
-      "Assuming you want to add the following WMST service [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/) you fill in the form as follows:": "Supponendo di voler aggiungere il seguente servizio WMST [http://qgistiles.webmapp.it](http://qgstiles.webmapp.it/), compilare il modulo come segue:",
       "Automatically a new **Base Layer** will be inserted into those present in the Base Layer subsession of the **Django Administration** session and it will be available and can be activated at the level of individual Cartographic Groups.": "Un nuovo **Base Layer** verrà inserito automaticamente tra quelli presenti nella sottosezione Base Layers di **Django Administration**; sarà quindi disponibile per l'attivazione nei singoli Gruppi cartografici.",
       "Bulgarian": "Bulgaro",
       "Create new Base Layers starting from external services": "Creare nuovi Base Layer a partire da servizi esterni",
@@ -133,6 +132,7 @@ Then:
       "Deutsch": "Tedesco",
       "English": "Inglese",
       "Finnish": "Finlandese",
+      "First, publish a WebGIS service based on a QGIS project that contains the layer to convert into a Base Layer. The cache action applies to that layer, even when the project contains other layers.": "Per prima cosa, pubblicare un servizio WebGIS basato su un progetto QGIS che contenga il layer da convertire in un Base Layer. La cache si applica al layer selezionato anche se il progetto contiene altri layer.",
       "Fixed front end content is already available in the four basic languages.": "I contenuti fissi del front end sono già disponibili nelle quattro lingue di base.",
       "French": "Francese",
       "Front end": "Front end",
@@ -140,9 +140,10 @@ Then:
       "In the **Django Administration** session, access the **Base Layers** sub-session and click on the **Add Base Layer** button.": "Nella sezione **Django Administration**, accedere alla sottosezione **Base Layers** e fare clic sul pulsante **Add Base Layer**.",
       "Italian": "Italiano",
       "Map client": "Client cartografico",
-      "Multilinguage": "Multilinguismo",
+      "Multilingual interface": "Interfaccia multilingue",
       "On the top bar you can choose, through a drop-down menu, the language of the entire client interface.": "Dalla barra superiore è possibile scegliere, tramite un menu a discesa, la lingua dell'intera interfaccia del client.",
       "Other languages ​​can be added.": "È possibile aggiungere altre lingue.",
+      "Polish": "Polacco",
       "Portuguese": "Portoghese",
       "Remember to associate a thumbnail with the Base layer, as described in the previous paragraph, to make it available at the map client level.": "Ricordarsi di associare una miniatura al Base Layer, come descritto nel paragrafo precedente, per renderlo disponibile nel client cartografico.",
       "Romanian": "Rumeno",
@@ -159,8 +160,9 @@ Then:
       "Spanish": "Spagnolo",
       "Swedish": "Svedese",
       "The new Base Layer will then be available and can be activated at the level of individual Cartographic Groups.": "Il nuovo Base Layer sarà quindi disponibile e potrà essere attivato nei singoli Gruppi cartografici.",
-      "The suite is translated in this languages:": "La suite è tradotta nelle seguenti lingue:",
+      "The suite is available in these languages:": "La suite è disponibile nelle seguenti lingue:",
       "Then:": "Quindi:",
+      "To add the following TMS tile service [http://qgstiles.webmapp.it](http://qgstiles.webmapp.it/), fill in the form as follows:": "Per aggiungere il seguente servizio di tile TMS [http://qgstiles.webmapp.it](http://qgstiles.webmapp.it/), compilare il modulo come segue:",
       "To carry out the translation of these contents, proceed as follows:": "Per tradurre questi contenuti, procedere come segue:",
       "Use the same dropdown to set the administration panel language.": "Usa lo stesso menu a discesa per impostare la lingua del pannello di amministrazione.",
       "Variable contents, i.e. user-definable contents, are instead translated:": "I contenuti variabili, ovvero quelli definibili dagli utenti, vengono invece tradotti:",

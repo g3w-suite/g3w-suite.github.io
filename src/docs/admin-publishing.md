@@ -51,7 +51,7 @@ You can also start without an active base layer.
  * **`Public title`:** title of the WebGis service, it will appear at the font end level and in the header of the client.
  * **`Description`:** Description of the project, it will appear at the public portal level.
  * **`Thumbnail (Logo)`:** logo to associate with the project. This image will be viewable in the list of projects within the cartographic group
- * **`URL alias`:** a human readable URL for the map. Only alphanumeric characters, not white space or special characters.
+ * **`URL alias`:** a human-readable URL for the map. Use only letters, numbers, hyphens (`-`) and underscores (`_`); spaces and other characters are not allowed. The alias must be unique.
 
 
 The title associated with the WebGis service is inherited by the following settings evaluated in the following order of priority:
@@ -85,7 +85,7 @@ Otherwise the initial extension will correspond to the maximum one defined on th
  
 The next options allow you to define the type of WMS / WFS query to be carried out and the maximum number of results obtainable following a query.
  * **`WMS GeMap image format`***: definition of the image format associated to WMS service in the map (PNG 16bit raccomaned for best managment of transaprency)
- * **`Max feature to get for query`***: max number of feature to get for single or multiple mode (recommended value: 50)
+ * **`Max feature to get for query`***: maximum number of features returned in single or multiple query mode (default: 5; recommended value: 50)
  * **`Query control mode`***: single or multiple
  * **`Query by bbox control mode`***: single or multiple
  * **`Query by polygon control mode`***: single or multiple
@@ -244,7 +244,7 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
     "**`Editor1 user`:** defines the **user (Editor1) manager of the WebGis service**.": "**`Editor1 user`:** definisce l'**utente Editor1 che gestisce il servizio WebGis**.",
     "**`Editor2 User`:** defines the **user (Editor2) manager of the WebGis service**.": "**`Editor2 User`:** definisce l'**utente Editor2 che gestisce il servizio WebGis**.",
     "**`Map themes list initial status`**: it is possible to define whether the list of themes (views) possibly associated with the project is collapsed or expanded when the WebGis service is started": "**`Map themes list initial status`**: definire se l'elenco dei temi (viste) eventualmente associati al progetto debba essere compresso o espanso all'avvio del servizio WebGis",
-    "**`Max feature to get for query`***: max number of feature to get for single or multiple mode (recommended value: 50)": "**`Max feature to get for query`***: numero massimo di elementi da ottenere in modalità singola o multipla (valore consigliato: 50)",
+    "**`Max feature to get for query`***: maximum number of features returned in single or multiple query mode (default: 5; recommended value: 50)": "**`Max feature to get for query`***: numero massimo di elementi restituiti in modalità di interrogazione singola o multipla (valore predefinito: 5; valore consigliato: 50)",
     "**`Public title`:** title of the WebGis service, it will appear at the font end level and in the header of the client.": "**`Public title`:** titolo del servizio WebGis, visibile nel front end e nell'intestazione del client.",
     "**`QGIS file`***: load the QGIS cartographic project to be published (.qgz or .qgs file)": "**`QGIS file`***: caricare il progetto cartografico QGIS da pubblicare (file .qgz o .qgs)",
     "**`Query by bbox control mode`***: single or multiple": "**`Query by bbox control mode`***: singola o multipla",
@@ -255,7 +255,7 @@ To set the panoramic map, choose the projects and tick the check box in the **`O
     "**`Tab's TOC active as default`**: set tab's TOC (Layers, Base layers, Legend) open by default on startup of WebGis service": "**`Tab's TOC active as default`**: impostare come aperta per impostazione predefinita all'avvio del servizio WebGis la scheda TOC (Layers, Base layers, Legend)",
     "**`Tab’s TOC layer initial status`**: it is possible to define whether the TOC layer list is collapsed or expanded when the WebGis service is started": "**`Tab’s TOC layer initial status`**: definire se l'elenco dei layer TOC debba essere compresso o espanso all'avvio del servizio WebGis",
     "**`Thumbnail (Logo)`:** logo to associate with the project. This image will be viewable in the list of projects within the cartographic group": "**`Thumbnail (Logo)`:** logo da associare al progetto. L'immagine sarà visibile nell'elenco dei progetti del Gruppo cartografico",
-    "**`URL alias`:** a human readable URL for the map. Only alphanumeric characters, not white space or special characters.": "**`URL alias`:** URL leggibile per la mappa. Usare solo caratteri alfanumerici, senza spazi o caratteri speciali.",
+    "**`URL alias`:** a human-readable URL for the map. Use only letters, numbers, hyphens (`-`) and underscores (`_`); spaces and other characters are not allowed. The alias must be unique.": "**`URL alias`:** URL leggibile per la mappa. Usare solo lettere, numeri, trattini (`-`) e trattini bassi (`_`); non sono ammessi spazi o altri caratteri. L'alias deve essere univoco.",
     "**`User QGIS project map start extent as WebGis init extent`**: check this control if you want set initial extent from QGSI project initial extent": "**`User QGIS project map start extent as WebGis init extent`**: selezionare questa opzione per impostare l'estensione iniziale usando quella definita nel progetto QGIS",
     "**`Viewer user groups`:** you define the **user groups (Viewer) which have the credentials to view the content of the service**.": "**`Viewer user groups`:** definisce i **gruppi di utenti Viewer autorizzati a visualizzare i contenuti del servizio**.",
     "**`Viewers users`:** define the individual **users (Viewers) who have the credentials to view the WebGis service**. By choosing the anonymous user (**AnonymusUser**) the group will be freely accessible.": "**`Viewers users`:** definisce i singoli **utenti Viewer autorizzati a visualizzare il servizio WebGis**. Scegliendo l'utente anonimo (**AnonymusUser**), il gruppo sarà accessibile liberamente.",

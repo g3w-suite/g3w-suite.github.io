@@ -88,17 +88,13 @@ to one of the user roles** available in the suite:
 * Editor Level 1
 * Editor Level 2
 * Viewer Level 1
-* Viewer Level 2
 
-If no role is set, the _Viewer Level 1_ is automatically set to the new registered user.
+The default role is _Viewer Level 1_. The adapter accepts only the three roles above for `SOCIALACCOUNT_USER_ROLE`; unsupported values fall back to _Viewer Level 1_. Assign admin roles manually.
 It is possible to tweak this setting by overriding the setting:
 
 ```python
 SOCIALACCOUNT_USER_ROLE = 'Editor Level 1'
 ```
-
-The admin roles have to be manually set, if necessary. Any typo in this setting or 
-admin role choice will fallback to the default viewer role.
 
 **Note that the username in this case will be retrieved from the provider.**
 
@@ -110,8 +106,7 @@ by overriding the setting:
 SOCIALACCOUNT_USER_GROUP = '<existing_user_group>'
 ```
 
-Make sure that the user **group** you are trying to assing is compatibile with the user **role** assigned to the user, 
-else the groupd setting will be ignored, leaving the user without an assigned group and the need for a manual intervention.
+When `SOCIALACCOUNT_USER_GROUP` is configured, the adapter assigns that group if it exists. For a _Viewer Level 1_ user, the group must have a viewer role; missing or incompatible group assignments are logged and skipped.
 
 
 ### Linking social authentication to existing suite users
@@ -150,14 +145,12 @@ Once enabled the django admin will provide the following view:
       "Editor Level 1": "Editor di livello 1",
       "Editor Level 2": "Editor di livello 2",
       "Enable the required provider modules. The default settings include Google and Microsoft alongside the allauth modules:": "Abilita i moduli dei provider necessari. Le impostazioni predefinite includono Google e Microsoft insieme ai moduli allauth:",
-      "If no role is set, the _Viewer Level 1_ is automatically set to the new registered user.": "Se non viene specificato un ruolo, al nuovo utente registrato viene assegnato automaticamente _Viewer Level 1_.",
       "In these cases it is necessary to override the site setting with the currently used": "In questi casi è necessario sovrascrivere l'impostazione del sito con l'ID attualmente utilizzato",
       "It is also possible to connect social accounts to existing users. The match": "È anche possibile collegare account social a utenti esistenti. La corrispondenza",
       "It is beyond the scope of this manual to explain how to enable social applications": "Esula dagli obiettivi di questo manuale spiegare come abilitare le applicazioni social",
       "It is possible to tweak this setting by overriding the setting:": "È possibile modificare questa impostazione sovrascrivendo il valore:",
       "It will be necessay to also acc social applications to the django settings.": "È necessario aggiungere anche le applicazioni social alle impostazioni di Django.",
       "Linking social authentication to existing suite users": "Collegare l'autenticazione social agli utenti esistenti della suite",
-      "Make sure that the user **group** you are trying to assing is compatibile with the user **role** assigned to the user,": "Assicurarsi che il **gruppo** a cui si intende assegnare l'utente sia compatibile con il **ruolo** assegnato all'utente,",
       "Once enabled the django admin will provide the following view:": "Una volta abilitata, l'interfaccia di amministrazione di Django mostrerà la seguente schermata:",
       "Once the social application is (properly configured and) saved, the login button": "Dopo aver salvato l'applicazione social (configurata correttamente), il pulsante di accesso",
       "Screenshot: Socialauth Admin Settings": "Schermata: impostazioni di amministrazione Socialauth",
@@ -170,8 +163,8 @@ Once enabled the django admin will provide the following view:
       "Social account corner cases": "Casi particolari degli account social",
       "Social apps are the settings that in fact enable providers to be used for authentication.": "Le app social sono le impostazioni che abilitano effettivamente i provider per l'autenticazione.",
       "Social login": "Accesso con account social",
-      "The admin roles have to be manually set, if necessary. Any typo in this setting or": "Se necessario, i ruoli di amministrazione devono essere impostati manualmente. Eventuali errori di battitura in questa impostazione o",
       "The base settings of the suite have a site id configured as 1.": "Le impostazioni di base della suite prevedono l'ID del sito impostato su 1.",
+      "The default role is _Viewer Level 1_. The adapter accepts only the three roles above for `SOCIALACCOUNT_USER_ROLE`; unsupported values fall back to _Viewer Level 1_. Assign admin roles manually.": "Il ruolo predefinito è _Viewer Level 1_. L'adapter accetta solo i tre ruoli elencati sopra per `SOCIALACCOUNT_USER_ROLE`; i valori non supportati vengono sostituiti da _Viewer Level 1_. I ruoli amministrativi devono essere assegnati manualmente.",
       "The required Django apps and some providers are preconfigured. You can add other providers supported by ```django-allauth```.": "Le app Django necessarie e alcuni provider sono preconfigurati. Puoi aggiungere altri provider supportati da ```django-allauth```.",
       "The social account integration also brings the possibility to enable": "L'integrazione degli account social consente anche di abilitare",
       "To add additional providers (Gitlab, Github, Twitter, Facebook, etc) to the game,": "Per aggiungere altri provider (GitLab, GitHub, Twitter, Facebook ecc.),",
@@ -179,11 +172,9 @@ Once enabled the django admin will provide the following view:
       "User Session Tracking": "Tracciamento delle sessioni utente",
       "Usually it is also necessary to **assign the user to an existing group**. This can be done": "Di solito è anche necessario **assegnare l'utente a un gruppo esistente**. È possibile farlo",
       "Viewer Level 1": "Viewer di livello 1",
-      "Viewer Level 2": "Viewer di livello 2",
+      "When `SOCIALACCOUNT_USER_GROUP` is configured, the adapter assigns that group if it exists. For a _Viewer Level 1_ user, the group must have a viewer role; missing or incompatible group assignments are logged and skipped.": "Quando `SOCIALACCOUNT_USER_GROUP` è configurato, l'adapter assegna il gruppo se esiste. Per un utente _Viewer Level 1_, il gruppo deve avere un ruolo viewer; l'assegnazione di gruppi mancanti o incompatibili viene registrata nei log e ignorata.",
       "While this can be fine for some cases, usually one needs to differentiate at least": "Sebbene possa essere sufficiente in alcuni casi, di solito è necessario distinguere almeno",
-      "admin role choice will fallback to the default viewer role.": "nella scelta del ruolo di amministratore faranno ricadere sul ruolo Viewer predefinito.",
       "by overriding the setting:": "sovrascrivendo l'impostazione:",
-      "else the groupd setting will be ignored, leaving the user without an assigned group and the need for a manual intervention.": "altrimenti l'impostazione del gruppo verrà ignorata, l'utente resterà senza gruppo e sarà necessario intervenire manualmente.",
       "image.": "immagine.",
       "in this case occurrs through the email address. The username of the original": "in questo caso avviene tramite l'indirizzo e-mail. Il nome utente dell'utente originale",
       "of the chosen provider will appear on the suite's login screen.": "del provider scelto apparirà nella schermata di accesso della suite.",

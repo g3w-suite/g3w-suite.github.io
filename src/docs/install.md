@@ -4,6 +4,7 @@ These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.
 Use this installation for development, not production.
 
 For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.
+The commands below select G3W-ADMIN v3.11.4. The QGIS LTR repository changes over time, so check the installed QGIS version against that table.
 
 For a containerized deployment, follow the [Docker installation guide](docker.md) instead.
 
@@ -43,10 +44,11 @@ I suggest you to create a systemd service to run it on bootstrap.
 ## Install QGIS Server
 
 ```sh
-sudo curl -sS https://download.qgis.org/downloads/qgis-archive-keyring.gpg > /etc/apt/keyrings/qgis-archive-keyring.gpg && \
-sudo echo "deb [signed-by=/etc/apt/keyrings/qgis-archive-keyring.gpg] https://qgis.org/ubuntu-ltr noble main" | \
+sudo install -d /etc/apt/keyrings && \
+curl -fsSL https://download.qgis.org/downloads/qgis-archive-keyring.gpg | sudo tee /etc/apt/keyrings/qgis-archive-keyring.gpg > /dev/null && \
+echo "deb [signed-by=/etc/apt/keyrings/qgis-archive-keyring.gpg] https://qgis.org/ubuntu-ltr noble main" | \
 sudo tee /etc/apt/sources.list.d/qgis.list && \
-sudo apt-get update && apt-get install -y python3-qgis qgis-server
+sudo apt-get update && sudo apt-get install -y python3-qgis qgis-server
 ```
 
 ## Installation of node.js and Yarn
@@ -56,7 +58,7 @@ G3W-ADMIN use javacript package manager [**Yarn**](https://yarnpkg.com/) and [**
 sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
 sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | \
 sudo tee /etc/apt/sources.list.d/yarn.list && \
-sudo apt-get update && apt install -y yarn && apt-get clean
+sudo apt-get update && sudo apt install -y yarn && sudo apt-get clean
 ```
 ## Create virtualenv
 
@@ -119,14 +121,14 @@ For G3W-SUITE deploy clearly can be used the native Python3 `venv` module, `virt
 
 ### Clone code from github
 ```bash
-git clone https://github.com/g3w-suite/g3w-admin.git
+git clone --branch v3.11.4 https://github.com/g3w-suite/g3w-admin.git
+cd g3w-admin
 ```
 
-### Set local_config.py file
-G3W-ADMIN is a Django application, and to work is necessary set a config.py file. To start copy local_settings.example.py and set the databse and other:
+### Set local_settings.py file
+G3W-ADMIN is a Django application. Copy the example settings file from the repository root:
 ```bash
-cd g3w-admin/g3w-admin/base/settings
-cp local_settings_example.py local_settings.py
+cp g3w-admin/base/settings/local_settings_example.py g3w-admin/base/settings/local_settings.py
 ```
 
 set database connection parameters (DATABASES), media root (MEDIA_ROOT) and session cookies name (SESSION_COOKIE_NAME):
@@ -164,6 +166,7 @@ SESSION_COOKIE_NAME = '<unique_session_id>'
 
 G3W-ADMIN has a series of [paver](http://pythonhosted.org/Paver/) CLI commands to administrate the suite.
 After prepared environment if sufficient invoke paver *install* task
+Run the following commands from the cloned repository root.
 
 #### Install paver
 ```bash
@@ -180,11 +183,13 @@ The installation prompts you to create the first administrator account.
 
 #### By Django
 ```shell
-cd g3w-admin/g3w-admin
+cd g3w-admin
 python3 manage.py runserver 0.0.0.0:8000
 ```
 
 #### To run the application with paver (EXPERIMENTAL)
+
+From the repository root:
 
 ```bash
 paver start
@@ -226,21 +231,12 @@ The preferred installation is by using the `paver` script as mentioned above, bu
 
 
 ```bash
-# Install yarn (requires root):
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | \
-    tee /etc/apt/sources.list.d/yarn.list
-apt-get update && sudo apt install -y yarn
-# Back to unprivileged user, from the repository directory, run:
+# From the repository directory, run:
 yarn --ignore-engines --ignore-scripts --prod
 nodejs -e "try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'g3w-admin/core/static/bower_components', 'junction') } catch (e) { }"
 ```
 
-Make sure build components are available in static and collected later
-```
-cd g3w-admin/core/static
-ln -s "../../../node_modules/@bower_components" bower_components
-```
+Run the JavaScript and requirements commands from the repository root. The symlink makes the components available for static collection.
 
 ### Install requirements
 
@@ -253,7 +249,10 @@ pip install -r requirements_huey.txt
 
 ### Django setup
 
+Run these commands from the directory containing `manage.py`:
+
 ```bash
+cd g3w-admin
 python manage.py collectstatic --noinput
 python manage.py migrate --noinput
 ```
@@ -296,16 +295,7 @@ Review the staged diff before committing it. To refresh working-tree files, make
 
 CI tests are automatically run on GitHub by custom actions.
 
-The Docker compose configuration used in the CI tests is available at [docker-compose.latest.yml](https://github.com/g3w-suite/g3w-admin/blob/dev/docker-compose.latest.yml).
-
-The testing image is built from the dependency image and it will run all install and build steps from the local repository.
-
-The dependency image is built from the [Dockerfile.deps](https://github.com/g3w-suite/g3w-admin/blob/dev/ci_scripts/Dockerfile.deps).
-
-G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore there are also dockerfiles and docker compose files for this version:
-
-* [docker-composer.322.yml](https://github.com/g3w-suite/g3w-admin/blob/dev/docker-compose.322.yml)
-* [Dockerfile.32..deps](https://github.com/g3w-suite/g3w-admin/blob/dev/ci_scripts/Dockerfile.322.deps)
+The v3.11.4 checkout includes [docker-compose.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml) and [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). The `dev` branch has separate development configurations.
 
 <script type="application/json" data-i18n>
   {
@@ -329,11 +319,11 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "For G3W-SUITE deploy clearly can be used the native Python3 `venv` module, `virtualenvwrapper` is a third part module that render the use and management of virtual environments very simple.": "Per distribuire G3W-SUITE è possibile utilizzare il modulo nativo `venv` di Python 3. `virtualenvwrapper` è un modulo di terze parti che semplifica notevolmente l'uso e la gestione degli ambienti virtuali.",
       "For a containerized deployment, follow the [Docker installation guide](docker.md) instead.": "Per un’installazione in container, segui la [guida all’installazione Docker](docker.md).",
       "For other releases, check the [version compatibility table](versions.md) before choosing Python and QGIS versions.": "Per le altre versioni, consulta la [tabella di compatibilità](versions.md) prima di scegliere le versioni di Python e QGIS. Le soluzioni per versioni precedenti di Ubuntu e Python non sono istruzioni per questa installazione.",
+      "From the repository root:": "Dalla radice del repository:",
       "G3W-ADMIN has a series of [paver](http://pythonhosted.org/Paver/) CLI commands to administrate the suite.": "G3W-ADMIN mette a disposizione una serie di comandi CLI [paver](http://pythonhosted.org/Paver/) per amministrare la suite.",
-      "G3W-ADMIN is a Django application, and to work is necessary set a config.py file. To start copy local_settings.example.py and set the databse and other:": "G3W-ADMIN è un'applicazione Django e per funzionare richiede un file di configurazione. Per iniziare, copia `local_settings_example.py` in `local_settings.py` e configura il database e gli altri parametri:",
+      "G3W-ADMIN is a Django application. Copy the example settings file from the repository root:": "G3W-ADMIN è un'applicazione Django. Copia il file di configurazione di esempio dalla radice del repository:",
       "G3W-ADMIN is a django application so is possible run app by standard django manage.py commands": "G3W-ADMIN è un'applicazione Django, quindi può essere avviata con i normali comandi `manage.py` di Django.",
       "G3W-ADMIN use javacript package manager [**Yarn**](https://yarnpkg.com/) and [**Node.js**](https://nodejs.org/it/)": "G3W-ADMIN utilizza il gestore di pacchetti JavaScript [**Yarn**](https://yarnpkg.com/) e [**Node.js**](https://nodejs.org/it/).",
-      "G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore there are also dockerfiles and docker compose files for this version:": "G3W-SUITE supporta la versione LTR più recente di QGIS, attualmente la 3.22; sono quindi disponibili anche Dockerfile e file Docker Compose per questa versione:",
       "I suggest you to create a systemd service to run it on bootstrap.": "È consigliabile creare un servizio systemd per avviare il server automaticamente all'avvio.",
       "If the import fails, check that `python3-qgis` is installed and that the environment uses the system Python with access to system site packages.": "Se l'importazione fallisce, verifica che `python3-qgis` sia installato e che l'ambiente usi il Python di sistema con accesso ai pacchetti di sistema.",
       "If you are running a ubuntu Server version is necessary to install also a XServer for the Qt libraries.": "Se utilizzi Ubuntu Server, è necessario installare anche un server X per le librerie Qt.",
@@ -349,7 +339,6 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "Is possible install `XVFB` a virtual framebuffer X server for X Version 11 and run it.": "È possibile installare `XVFB`, un server X virtuale basato su framebuffer per X11, ed eseguirlo.",
       "Line endings in a Git checkout": "Fine riga in una copia Git",
       "Login again with your user to activate `Virtualenvwrapper`": "Accedi nuovamente con il tuo utente per attivare `Virtualenvwrapper`.",
-      "Make sure build components are available in static and collected later": "Assicurati che i componenti compilati siano disponibili in `static` e vengano raccolti in seguito.",
       "Manual installation": "Installazione manuale",
       "Manual installation steps": "Passaggi per l'installazione manuale",
       "On the web if simple to find tutorial for deploy a Django application.": "Sul web è facile trovare tutorial per distribuire un'applicazione Django.",
@@ -357,15 +346,17 @@ G3W-SUITE supports the latest LTR QGIS version, so at now is the 3.22, therefore
       "Review the staged diff before committing it. To refresh working-tree files, make a fresh checkout after committing the normalization. Git applies the repository's attributes and your Git configuration when writing files, so confirm they specify LF for the working tree if LF is required.": "Controlla il diff nell'indice prima di committarlo. Per aggiornare i file della copia di lavoro, crea una nuova copia dopo il commit della normalizzazione. Quando scrive i file, Git applica gli attributi del repository e la tua configurazione Git: se serve LF, verifica che lo prevedano per la copia di lavoro.",
       "Run G3W-SUITE": "Avviare G3W-SUITE",
       "Run `git ls-files --eol` to inspect line endings and check the repository's `.gitattributes` for its intended checkout settings. Normalizing the Git index does not by itself rewrite files in the working tree.": "Esegui `git ls-files --eol` per controllare i fine riga e verifica le impostazioni del file `.gitattributes` del repository. La normalizzazione dell'indice Git non riscrive da sola i file nella copia di lavoro.",
-      "Set local_config.py file": "Configurare il file local_config.py",
+      "Run the JavaScript and requirements commands from the repository root. The symlink makes the components available for static collection.": "Esegui i comandi JavaScript e dei requisiti dalla radice del repository. Il collegamento simbolico rende disponibili i componenti per la raccolta dei file statici.",
+      "Run the following commands from the cloned repository root.": "Esegui i comandi seguenti dalla radice del repository clonato.",
+      "Run these commands from the directory containing `manage.py`:": "Esegui questi comandi dalla directory che contiene `manage.py`:",
+      "Set local_settings.py file": "Configurare il file local_settings.py",
       "Sync menu tree items (re-run this command in case you installed optional modules and they are not visible in the admin menu tree):": "Sincronizzare gli elementi del menu (eseguire di nuovo il comando se hai installato moduli opzionali che non compaiono nel menu di amministrazione):",
-      "The Docker compose configuration used in the CI tests is available at [docker-compose.latest.yml](https://github.com/g3w-suite/g3w-admin/blob/dev/docker-compose.latest.yml).": "La configurazione Docker Compose utilizzata nei test è disponibile in [docker-compose.latest.yml](https://github.com/g3w-suite/g3w-admin/blob/dev/docker-compose.latest.yml).",
-      "The dependency image is built from the [Dockerfile.deps](https://github.com/g3w-suite/g3w-admin/blob/dev/ci_scripts/Dockerfile.deps).": "L'immagine delle dipendenze viene creata a partire da [Dockerfile.deps](https://github.com/g3w-suite/g3w-admin/blob/dev/ci_scripts/Dockerfile.deps).",
+      "The commands below select G3W-ADMIN v3.11.4. The QGIS LTR repository changes over time, so check the installed QGIS version against that table.": "I comandi seguenti selezionano G3W-ADMIN v3.11.4. Il repository QGIS LTR cambia nel tempo: verifica quindi la versione QGIS installata rispetto alla tabella.",
       "The following instructions are for python 3.12": "Le istruzioni seguenti si riferiscono a Python 3.12.",
       "The installation prompts you to create the first administrator account.": "L'installazione richiede di creare il primo account amministratore.",
       "The preferred installation is by using the `paver` script as mentioned above, but in case you need to customize the installation process, here are the build and setup steps:": "Il metodo consigliato è utilizzare lo script `paver` descritto sopra. Se devi personalizzare il processo di installazione, segui questi passaggi di compilazione e configurazione:",
       "The simpler way is to use [Apache2](https://httpd.apache.org/) as server WEB and its [mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi) module.": "La soluzione più semplice consiste nell'utilizzare [Apache2](https://httpd.apache.org/) come server web e il relativo modulo [mod_wsgi](https://en.wikipedia.org/wiki/Mod_wsgi).",
-      "The testing image is built from the dependency image and it will run all install and build steps from the local repository.": "L'immagine di test viene creata a partire dall'immagine delle dipendenze ed esegue tutti i passaggi di installazione e compilazione del repository locale.",
+      "The v3.11.4 checkout includes [docker-compose.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml) and [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). The `dev` branch has separate development configurations.": "La copia v3.11.4 include [docker-compose.ltr.yml](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/docker-compose.ltr.yml) e [Dockerfile.ltr.deps](https://github.com/g3w-suite/g3w-admin/blob/v3.11.4/ci_scripts/Dockerfile.ltr.deps). Il branch `dev` dispone di configurazioni di sviluppo separate.",
       "These instructions use Ubuntu 24.04 LTS (Noble) and Python 3.12.3.": "Queste istruzioni usano Ubuntu 24.04 LTS (Noble) e Python 3.12.3.",
       "This last command just make active your new virtualenv environment, for the next times is possible use the follow command to activate the virtualenv environment:": "L'ultimo comando attiva il nuovo ambiente virtuale. Per attivarlo in seguito, puoi usare il comando seguente:",
       "To activate virtuenvwrapper on system login, add follow lines to 'bashrc' config file of your user": "Per attivare virtualenvwrapper all'accesso al sistema, aggiungi le righe seguenti al file di configurazione `.bashrc` del tuo utente.",

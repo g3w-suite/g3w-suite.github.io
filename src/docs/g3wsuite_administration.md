@@ -32,9 +32,9 @@ _**This section describes how to manage the various aspects and features of the 
 
 Use the Administration Panel to publish QGIS projects and configure their WebGIS services.
 
-The main page of the Administration Panel shows:
+The main page of the Administration Panel shows the following items, depending on your permissions and the installed modules:
  * **`a bar at the top`:**
-   * **Frontend:** to return the landing page portal
+   * **Frontend:** to return to the landing page when the optional portal is enabled
    * **Username:** to edit your profile and log out
    * **Language:** to choose the interface language
    * **A gear icon** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif): to access a menu with:
@@ -62,9 +62,9 @@ The main page of the Administration Panel shows:
 ![Screenshot: G3W-SUITE Administration Desk](/img/manual-english-g3wsuite-administration-desk.avif)
 
 ## Front end portal customization
-From the **Administration Panel**, customize the information shown on the front-end portal.
+If the [optional portal](g3wsuite_access_portal.md) is enabled, use the **Administration Panel** to customize its content.
 
-Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.
+Open the **Configurations** menu ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) at the top right and choose **Edit general data**.
 
 ![Screenshot: G3W-SUITE Administration Configuration](/img/manual-english-g3wsuite-administration-configuration.avif)
 
@@ -147,7 +147,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "**Cartographic Groups:** to create/manage cartographic groups": "**Cartographic Groups:** creare e gestire i Gruppi cartografici",
     "**Dashboard:** Administration dashboard": "**Dashboard:** pannello di amministrazione",
     "**Dashboard:** to access to list of Cartographic Groups": "**Dashboard:** accedere all'elenco dei Gruppi cartografici",
-    "**Frontend:** to return the landing page portal": "**Frontend:** tornare al portale della pagina iniziale",
+    "**Frontend:** to return to the landing page when the optional portal is enabled": "**Frontend:** torna alla pagina iniziale quando il portale opzionale è attivo",
     "**Language:** to choose the interface language": "**Language:** scegliere la lingua dell'interfaccia",
     "**List of active modules:** to activate/manage the functional modules active in your installation": "**List of active modules:** attivare e gestire i moduli funzionali attivi nell'installazione",
     "**Macro Cartographic Groups:** to create/manage Cartographic MacroGroups": "**Macro Cartographic Groups:** creare e gestire i Macrogruppi cartografici",
@@ -172,15 +172,14 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Button: Save": "Pulsante: salva",
     "Cartographic Groups": "Gruppi cartografici",
     "Cartographic groups": "Gruppi cartografici",
-    "Click on the **Configurations** icon ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) located at the right bottom and choose the item **Edit general data** which will appear in the menu below.": "Fare clic sull'icona **Configurations** ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) in basso a destra e scegliere la voce **Edit general data** dal menu che apparirà.",
     "Description of the interface": "Descrizione dell'interfaccia",
-    "From the **Administration Panel**, customize the information shown on the front-end portal.": "Dal **pannello di amministrazione**, personalizza le informazioni mostrate nel portale front end.",
     "Front End About Data": "Dati della sezione About del front end",
     "Front End Home Data": "Dati della pagina iniziale del front end",
     "Front End Login Data": "Dati di accesso del front end",
     "Front End Social Data": "Dati social del front end",
     "Front end portal customization": "Personalizzazione del portale front end",
     "Frontend Groups Map Data": "Dati delle mappe dei gruppi del front end",
+    "If the [optional portal](g3wsuite_access_portal.md) is enabled, use the **Administration Panel** to customize its content.": "Se il [portale opzionale](g3wsuite_access_portal.md) è attivo, usa il **pannello di amministrazione** per personalizzarne i contenuti.",
     "In the **Credits** subsection it is possible to define additional text for the publishing aspects.": "Nella sottosezione **Credits** è possibile definire testo aggiuntivo relativo alla pubblicazione.",
     "In the **`General suite data`** form you can define all the informations that will appear on the portal home page": "Nel modulo **`General suite data`** è possibile definire tutte le informazioni che appariranno nella pagina iniziale del portale",
     "Information that will be displayed in the **Login/Administration** session": "Informazioni visualizzate nella sezione **Login/Administration**",
@@ -192,6 +191,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Main title to be displayed in the cartographic client bar": "Titolo principale da visualizzare nella barra del client cartografico",
     "Map client data": "Dati del client cartografico",
     "Multilinguage": "Multilinguismo",
+    "Open the **Configurations** menu ![Icon: Configuration](/img/manual-english-iconconfiguration.avif) at the top right and choose **Edit general data**.": "Apri il menu **Configurazioni** ![Icona: configurazione](/img/manual-english-iconconfiguration.avif) in alto a destra e scegli **Modifica dati generali**.",
     "Publication of new WebGis services": "Pubblicazione di nuovi servizi WebGis",
     "Publish and update WebGIS services": "Pubblicazione e aggiornamento dei servizi WebGIS",
     "Screenshot: G3W-SUITE Administration Configuration": "Schermata: configurazione dell'amministrazione di G3W-SUITE",
@@ -208,7 +208,7 @@ After filling in the various form, click on the **Save button** to confirm your 
     "Screenshot: G3W-SUITE Administration Configuration Socialdata": "Schermata: configurazione dei dati social di G3W-SUITE",
     "Screenshot: G3W-SUITE Administration Configuration Socialdata Result": "Schermata: risultato della configurazione dei dati social di G3W-SUITE",
     "Screenshot: G3W-SUITE Administration Desk": "Schermata: dashboard di amministrazione di G3W-SUITE",
-    "The main page of the Administration Panel shows:": "La pagina principale del pannello di amministrazione mostra:",
+    "The main page of the Administration Panel shows the following items, depending on your permissions and the installed modules:": "La pagina principale del pannello di amministrazione mostra le voci seguenti, a seconda dei permessi e dei moduli installati:",
     "Update/ Manage WebGis services": "Aggiornamento e gestione dei servizi WebGis",
     "Use the Administration Panel to publish QGIS projects and configure their WebGIS services.": "Usa il pannello di amministrazione per pubblicare progetti QGIS e configurare i relativi servizi WebGIS.",
     "Users and Users Groups management": "Gestione degli utenti e dei gruppi di utenti",

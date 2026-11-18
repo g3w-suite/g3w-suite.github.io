@@ -8,7 +8,7 @@ The current release (3.11) is compatible with QGIS 3.44 LTR (Server and Desktop)
 - **QGIS Server** for publishing QGIS projects as OGC services.
 - **G3W-ADMIN** for project management, access control, OGC proxy and REST API.
 - **G3W-CLIENT** for consulting and interacting with OGC services.
-- **The geographic portal** for accessing information, thematic groups and WebGIS services.
+- **The optional geographic portal** for accessing information, thematic groups and WebGIS services.
 
 Through the web interface, administrators can publish and organize QGIS projects, manage users and roles, configure search tools, enable online editing and functional modules, and assign access permissions.
 
@@ -20,10 +20,8 @@ Follow the [Quick Start](quick-start.md) to publish your own project, or use the
 - [Quick Start](quick-start.md)
 - [Demo](demo.md)
 - [Publish a WebGIS service](demo-publish.md)
-- [Try layer tools](demo-widgets.md)
-- [Search and charts in the demo](demo-search-charts.md)
+- [Try layer tools in the demo](demo-widgets.md)
 - [Try online editing](demo-editing.md)
-- [Introduction](introduction.md)
 - [Components of G3W-SUITE](components.md)
 - [Versions and compatibility](versions.md)
 
@@ -35,7 +33,6 @@ Use Docker for a containerized deployment, or follow the manual installation gui
 - [Manual installation](install.md)
 - [Docker environment variables](docker_env.md)
 - [Settings](settings.md)
-- [Appearance settings](appearance-settings.md)
 - [Social login](social_authentication.md)
 - [Double Factor Authentication (2FA)](twofa.md)
 
@@ -78,12 +75,10 @@ For the complete workflow, see [publish and update WebGIS services](admin-publis
 - [Editing constraints](editing-constraints.md)
 - [Geocoding](editing-geocoding.md)
 - [Branding](branding.md)
-- [Client appearance](branding-client.md)
 
 ## Integrate and contribute
 
 - [Editing via IFRAME](g3wsuite_editing_iframe.md)
-- [Iframe editing examples](iframe-editing-examples.md)
 - [Elasticsearch integration](elasticsearch.md)
 - [Translate G3W-SUITE](translation.md)
 
@@ -97,15 +92,13 @@ For the complete workflow, see [publish and update WebGIS services](admin-publis
       "**G3W-CLIENT** for consulting and interacting with OGC services.": "**G3W-CLIENT** per consultare e utilizzare i servizi OGC.",
       "**QGIS Desktop** for managing geographic data and creating cartographic projects.": "**QGIS Desktop** per gestire i dati geografici e creare progetti cartografici.",
       "**QGIS Server** for publishing QGIS projects as OGC services.": "**QGIS Server** per pubblicare i progetti QGIS come servizi OGC.",
-      "**The geographic portal** for accessing information, thematic groups and WebGIS services.": "**Il portale geografico** per accedere alle informazioni, ai gruppi tematici e ai servizi WebGIS.",
+      "**The optional geographic portal** for accessing information, thematic groups and WebGIS services.": "**Il portale geografico opzionale** per accedere alle informazioni, ai gruppi tematici e ai servizi WebGIS.",
       "Access policy examples": "Esempi di criteri di accesso",
       "Access portal": "Portale di accesso",
       "Administration panel": "Pannello di amministrazione",
-      "Appearance settings": "Impostazioni grafiche",
       "Bottom panel and time series": "Pannello inferiore e serie temporali",
       "Branding": "Personalizzazione del marchio",
       "Cartographic groups": "Gruppi cartografici",
-      "Client appearance": "Aspetto del client",
       "Components": "Componenti",
       "Components of G3W-SUITE": "Componenti di G3W-SUITE",
       "Configure charts": "Configurare i grafici",
@@ -131,10 +124,8 @@ For the complete workflow, see [publish and update WebGIS services](admin-publis
       "Geocoding": "Geocodifica",
       "Getting started": "Per iniziare",
       "Group base layers and languages": "Layer di base e lingue dei gruppi",
-      "Iframe editing examples": "Esempi di modifica via iframe",
       "Install and maintain": "Installare e mantenere",
       "Integrate and contribute": "Integrare e contribuire",
-      "Introduction": "Introduzione",
       "Layer properties": "Proprietà dei layer",
       "Layer tools": "Strumenti dei layer",
       "Layer visibility and constraints": "Visibilità e vincoli dei layer",
@@ -155,7 +146,6 @@ For the complete workflow, see [publish and update WebGIS services](admin-publis
       "Publish and update WebGIS services": "Pubblicare e aggiornare i servizi WebGIS",
       "QGIS: project settings": "QGIS: impostazioni del progetto",
       "Quick Start": "Guida rapida",
-      "Search and charts in the demo": "Ricerche e grafici nella demo",
       "Search widgets": "Widget di ricerca",
       "Settings": "Impostazioni",
       "Social login": "Accesso con account social",
@@ -163,7 +153,7 @@ For the complete workflow, see [publish and update WebGIS services](admin-publis
       "The current release (3.11) is compatible with QGIS 3.44 LTR (Server and Desktop). G3W-SUITE includes:": "La versione attuale (3.11) è compatibile con QGIS 3.44 LTR (Server e Desktop). G3W-SUITE comprende:",
       "Through the web interface, administrators can publish and organize QGIS projects, manage users and roles, configure search tools, enable online editing and functional modules, and assign access permissions.": "Dall'interfaccia web gli amministratori possono pubblicare e organizzare progetti QGIS, gestire utenti e ruoli, configurare gli strumenti di ricerca, abilitare la modifica online e i moduli funzionali e assegnare i permessi di accesso.",
       "Translate G3W-SUITE": "Tradurre G3W-SUITE",
-      "Try layer tools": "Provare gli strumenti dei layer",
+      "Try layer tools in the demo": "Provare gli strumenti dei layer nella demo",
       "Try online editing": "Provare la modifica online",
       "Tutorial": "Tutorial",
       "Use Docker for a containerized deployment, or follow the manual installation guide if you manage the system packages and services yourself.": "Usa Docker per un'installazione in container, oppure segui la guida all'installazione manuale se gestisci direttamente i pacchetti e i servizi di sistema.",

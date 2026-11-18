@@ -7,6 +7,7 @@ The following variables can be added to or edited in the project’s `local_sett
 - [Base settings](#base-settings)
 - [Database logging](#database-logging)
 - [Frontend portal setting](#frontend-portal-setting)
+- [Map client settings](#map-client-settings)
 - [Editing settings](#editing-settings)
 - [Caching settings](#caching-settings)
 - [File manager settings](#file-manager-settings)
@@ -33,10 +34,6 @@ G3W-SUITE accessory modules:
 ### `DATASOURCE_PATH`
 Path to geo data directory (shp, Spatialite, raster, etc..).
 
-### `G3WFILE_FORM_UPLOAD_FORMATS`
-List of formats file that `file form ajax uploader` can manage at global level.
-Default is `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`
-
 > **Important**
 > Last part of path could be common with QGIS project datasource path. I.e.:
 >
@@ -50,11 +47,18 @@ Default is `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'x
 
 Mandatory.
 
+### `G3WFILE_FORM_UPLOAD_FORMATS`
+List of formats file that `file form ajax uploader` can manage at global level.
+Default is `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`
+
 ### `G3WADMIN_VECTOR_LAYER_DOWNLOAD_FORMATS`
-Default is `['shp', 'xls']`, set download data format. Values possible:
+Default is `['shp', 'xls', 'csv', 'gpkg', 'pdf']`, set download data format. Values possible:
   - *shp*: download into Esri Shape format.
   - *xls*: download into Excel format
   - *gpx*: download into GPS format (only for Point and Line layers)
+  - *csv*: download as CSV
+  - *gpkg*: download as GeoPackage
+  - *pdf*: download as PDF
 
 ### `RESET_USER_PASSWORD`
 Default is `False`, set tot `True` to activate reset user password by email workflow.
@@ -119,7 +123,64 @@ FRONTEND = True
 FRONTEND_APP = 'frontend'
 ~~~
 
-See [Appearance settings](appearance-settings.md) for logos, layout, and map client options.
+See [Branding](branding.md) for logos, styles, and client layout.
+
+## Map client settings
+
+### `G3W_CLIENT_SEARCH_ENDPOINT`
+Deprecated since 3.8. In 3.11 the search endpoint is forced to `api`.
+
+### `G3W_CLIENT_NOT_SHOW_EMPTY_VECTORLAYER`
+Default is `False`. Set to `True` for remove from webgis TOC vector layer empty, without data.
+
+### `GEOCODING_PROVIDERS`
+Set the geocoding providers available for webgis services:
+~~~
+GEOCODING_PROVIDERS = {
+  "nominatim": {
+    "label": "Nominatim (OSM)",
+    "url": "https://nominatim.openstreetmap.org/search"
+  },
+}
+~~~
+
+You can also add custom providers (or edit the existing ones within `static/client/geocoding-providers` folder), just remember to use javascript file name as "provider" identifier:
+
+~~~
+https://dev.g3wsuite.it/static/client/geocoding-providers/nominatim.js
+https://dev.g3wsuite.it/static/client/geocoding-providers/bing_streets.js
+https://dev.g3wsuite.it/static/client/geocoding-providers/bing_places.js
+https://dev.g3wsuite.it/static/client/geocoding-providers/your_custom_provider.js
+~~~
+
+~~~
+VENDOR_KEYS['bing'] = 'bing.secret.key'
+
+GEOCODING_PROVIDERS = {
+ "nominatim": {
+   "label": "Nominatim (OSM)",
+   "url": "https://nominatim.openstreetmap.org/search",
+   # "icon": "road",
+ },
+ "bing_streets": {
+    "label": "Bing Streets",
+    "url": "https://dev.virtualearth.net/REST/v1/Locations/?key=" + VENDOR_KEYS['bing'],
+    # "icon": "road",
+  },
+ "bing_places": {
+    "label": "Bing Places",
+    "url": "https://dev.virtualearth.net/REST/v1/LocalSearch/?key=" + VENDOR_KEYS['bing'],
+    # "icon": "poi",
+  },
+  "your_custom_provider": {
+    "label": "Custom Provider",
+    "url": "https://your-custom-server.com/Search/?key=example",
+    "icon": "poi",
+  },
+}
+~~~
+
+NB: for more info see: `Getting a Bing maps key <https://learn.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key>`
 
 ## Editing settings
 Settings params for `editing` module.
@@ -152,7 +213,7 @@ A name to identify caching
 Default is `Disk` to save tile on a disk. Set to `Memcache` for to use *Memcached* caching framework (https://www.memcached.org/)
 
 ### `TILESTACHE_CACHE_DISK_PATH`
-Path to disk space where to save tile created by tilestache if `TILESTAHCE_CACHE_TYEPE` is se to `Disk`.
+Path to disk space where to save tile created by tilestache if `TILESTACHE_CACHE_TYPE` is set to `Disk`.
 
 ### `TILESTACHE_CACHE_TOKEN`
 Mandatory, strign to use as token for internal WMS call for caching module.
@@ -164,7 +225,7 @@ Settings params for `filemanager` module.
 Mandatory, path to disk space where to CRUD geo data files i.e. Shp Raster, etc.
 
 ### `FILEMANAGER_MAX_UPLOAD_N_FILES`
-Default is 5, max number files to upload simultaneously.
+Default is 10, max number files to upload simultaneously.
 
 ## Qplotly settings
 
@@ -174,13 +235,13 @@ Default is `False`, set to `True` to import DataPlotly settings from QGIS projec
 ## Openrouteservice settings
 
 ### `ORS_API_ENDPOINT`
-Default is `http://localhost:8080/ors/v2/`, this is the endpoint for Openrouteservice API.
+The example local settings use `http://localhost:8080/ors/v2/` as the Openrouteservice API endpoint.
 
 ### `ORS_API_KEY`
 Openrouteservice API key, optional, can be blank if the key is not required by the endpoint.
 
 ### `ORS_PROFILES`
-List of available Openrouteservice profiles, default: `("driving-car", "driving-hgv")`
+The example local settings define a dictionary of Openrouteservice profiles: `{"driving-car": {"name": "Car"}, "driving-hgv": {"name": "Heavy Goods Vehicle"}}`.
 
 ## Vendors settings
 Settings variables about third part services, i.e. Google API etc..
@@ -206,7 +267,7 @@ Google reCAPTCHA system can be added to *login form* and to *password reset form
 Default is *False*, active or deactive Google reCAPTCHA checkbox.
 
 ### `RECAPTCHA_VERSION`
-Default is *2*, reCAPTCHA version *2* or *3*
+Default is `'3'`, reCAPTCHA version `'2'` or `'3'`.
 
 ### `RECAPTCHA_PUBLIC_KEY`
 Required if RECAPTCHA is True, Google reCAPATCHA public key.
@@ -238,8 +299,11 @@ Default *g3wsuite.it*, Email's sign of emails of Registration workflow: activati
       "**Important**": "**Importante**",
       "**In this page**": "**In questa pagina**",
       "*QGIS project*:": "*Progetto QGIS*:",
+      "*csv*: download as CSV": "*csv*: scarica in formato CSV",
+      "*gpkg*: download as GeoPackage": "*gpkg*: scarica in formato GeoPackage",
       "*gpx*: download into GPS format (only for Point and Line layers)": "*gpx*: scarica in formato GPS (solo per layer di punti e linee)",
       "*local_settings.py*:": "*local_settings.py*:",
+      "*pdf*: download as PDF": "*pdf*: scarica in formato PDF",
       "*shp*: download into Esri Shape format.": "*shp*: scarica in formato Esri Shapefile.",
       "*xls*: download into Excel format": "*xls*: scarica in formato Excel",
       "A list with services API keys.": "Elenco delle chiavi API dei servizi.",
@@ -253,23 +317,24 @@ Default *g3wsuite.it*, Email's sign of emails of Registration workflow: activati
       "Database logging": "Registrazione dei log nel database",
       "Default *[G3W-SUITE]*, Prefix for email subjects of Registration workflow: activation, activated and activation admin email.": "Valore predefinito *[G3W-SUITE]*: prefisso degli oggetti delle e-mail del flusso di registrazione, comprese quelle di attivazione, conferma e notifica all'amministratore.",
       "Default *g3wsuite.it*, Email's sign of emails of Registration workflow: activation, activated and activation admin email.": "Valore predefinito *g3wsuite.it*: firma delle e-mail del flusso di registrazione, comprese quelle di attivazione, conferma e notifica all'amministratore.",
-      "Default is *2*, reCAPTCHA version *2* or *3*": "Il valore predefinito è *2*; le versioni di reCAPTCHA disponibili sono *2* e *3*.",
       "Default is *2*, this is the number of days users will have to activate their accounts after registering. If a user does not activate within that period, the account will remain permanently inactive unless a site administrator manually activates it.": "Il valore predefinito è *2*: numero di giorni entro cui gli utenti devono attivare i propri account dopo la registrazione. Se un utente non lo attiva entro tale periodo, l'account resterà inattivo in modo permanente, a meno che un amministratore del sito non lo attivi manualmente.",
       "Default is *False*, Activate/deactivate the user registration system.": "Il valore predefinito è *False*; attiva o disattiva il sistema di registrazione degli utenti.",
       "Default is *False*, active or deactive Google reCAPTCHA checkbox.": "Il valore predefinito è *False*; attiva o disattiva la casella di controllo Google reCAPTCHA.",
       "Default is *False*, if *True* the activation of a self-signed user must be done by administrator user.": "Il valore predefinito è *False*; se impostato su *True*, un utente registrato autonomamente deve essere attivato da un amministratore.",
-      "Default is 5, max number files to upload simultaneously.": "Il valore predefinito è 5: numero massimo di file caricabili contemporaneamente.",
+      "Default is 10, max number files to upload simultaneously.": "Il valore predefinito è 10: numero massimo di file caricabili contemporaneamente.",
+      "Default is `'3'`, reCAPTCHA version `'2'` or `'3'`.": "Il valore predefinito è `'3'`; le versioni disponibili di reCAPTCHA sono `'2'` e `'3'`.",
       "Default is `'GET'`, set to `'POST'` to change default http call method.": "Il valore predefinito è `'GET'`; impostare `'POST'` per modificare il metodo predefinito delle richieste HTTP.",
       "Default is `Disk` to save tile on a disk. Set to `Memcache` for to use *Memcached* caching framework (https://www.memcached.org/)": "Il valore predefinito è `Disk` per salvare le tile su disco. Impostare `Memcache` per usare il framework di caching *Memcached* (https://www.memcached.org/).",
       "Default is `False`, set to `True` for activate **G3W-SUITE** frontend portal like `g3w-admin-portal`.": "Il valore predefinito è `False`; impostare `True` per attivare il portale front-end di **G3W-SUITE**, come `g3w-admin-portal`.",
       "Default is `False`, set to `True` to import DataPlotly settings from QGIS project.": "Il valore predefinito è `False`; impostare `True` per importare le impostazioni di DataPlotly dal progetto QGIS.",
       "Default is `False`, set tot `True` to activate reset user password by email workflow.": "Il valore predefinito è `False`; impostare `True` per attivare la procedura di reimpostazione della password utente tramite e-mail.",
+      "Default is `False`. Set to `True` for remove from webgis TOC vector layer empty, without data.": "Il valore predefinito è `False`. Impostare `True` per rimuovere dal TOC del WebGIS i layer vettoriali vuoti, privi di dati.",
       "Default is `False`. Set to `True` to log users editing action into database.": "Il valore predefinito è `False`. Impostare `True` per registrare nel database le azioni di modifica degli utenti.",
       "Default is `False`. Set to `True` to render possible give to `anonymous user` editing permissions.": "Il valore predefinito è `False`. Impostare `True` per poter concedere i permessi di modifica all'`utente anonimo`.",
       "Default is `True`. Set to `False` for not show editing button activate/deactivate into layers project list.": "Il valore predefinito è `True`. Impostare `False` per non mostrare il pulsante di attivazione/disattivazione della modifica nell'elenco dei layer del progetto.",
       "Default is `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`": "Il valore predefinito è `['qgs', 'qgz', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ods']`.",
-      "Default is `['shp', 'xls']`, set download data format. Values possible:": "Il valore predefinito è `['shp', 'xls']`; definisce il formato di download dei dati. I valori possibili sono:",
-      "Default is `http://localhost:8080/ors/v2/`, this is the endpoint for Openrouteservice API.": "Il valore predefinito è `http://localhost:8080/ors/v2/`, l'endpoint dell'API Openrouteservice.",
+      "Default is `['shp', 'xls', 'csv', 'gpkg', 'pdf']`, set download data format. Values possible:": "Il valore predefinito è `['shp', 'xls', 'csv', 'gpkg', 'pdf']`; definisce i formati di download dei dati. I valori possibili sono:",
+      "Deprecated since 3.8. In 3.11 the search endpoint is forced to `api`.": "Deprecato dalla versione 3.8. Nella 3.11 l'endpoint di ricerca è forzato a `api`.",
       "Editing settings": "Impostazioni di modifica",
       "File manager settings": "Impostazioni di File Manager",
       "Frontend portal setting": "Impostazione del portale front-end",
@@ -283,22 +348,24 @@ Default *g3wsuite.it*, Email's sign of emails of Registration workflow: activati
       "In this case records older than 30 days will be deleted.": "In questo caso verranno eliminati i record più vecchi di 30 giorni.",
       "Is possible set a cronjob with the follow command:": "È possibile pianificare un cron job con il comando seguente:",
       "Last part of path could be common with QGIS project datasource path. I.e.:": "La parte finale del percorso può coincidere con il percorso delle sorgenti dati del progetto QGIS. Ad esempio:",
-      "List of available Openrouteservice profiles, default: `(\"driving-car\", \"driving-hgv\")`": "Elenco dei profili Openrouteservice disponibili; il valore predefinito è `(\"driving-car\", \"driving-hgv\")`.",
       "List of formats file that `file form ajax uploader` can manage at global level.": "Elenco dei formati di file che il `caricatore AJAX del modulo file` può gestire a livello globale.",
       "Mandatory, path to disk space where to CRUD geo data files i.e. Shp Raster, etc.": "Obbligatorio: percorso su disco in cui eseguire operazioni CRUD sui file di dati geografici, ad es. Shp, raster ecc.",
       "Mandatory, strign to use as token for internal WMS call for caching module.": "Obbligatorio: stringa da usare come token per le chiamate WMS interne del modulo di caching.",
       "Mandatory.": "Obbligatorio.",
+      "Map client settings": "Impostazioni del client cartografico",
       "Module name added to `G3WADMIN_LOCAL_MORE_APPS` to use as `portal-frontend`. I.e.": "Nome del modulo aggiunto a `G3WADMIN_LOCAL_MORE_APPS` da usare come `portal-frontend`. Ad esempio:",
+      "NB: for more info see: `Getting a Bing maps key <https://learn.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key>`": "Nota: per ulteriori informazioni vedere `Come ottenere una chiave Bing Maps <https://learn.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key>`.",
       "Openrouteservice API key, optional, can be blank if the key is not required by the endpoint.": "Chiave API Openrouteservice, facoltativa; può essere vuota se l'endpoint non la richiede.",
       "Openrouteservice settings": "Impostazioni di Openrouteservice",
-      "Path to disk space where to save tile created by tilestache if `TILESTAHCE_CACHE_TYEPE` is se to `Disk`.": "Percorso su disco in cui salvare le tile create da tilestache se `TILESTAHCE_CACHE_TYEPE` è impostato su `Disk`.",
+      "Path to disk space where to save tile created by tilestache if `TILESTACHE_CACHE_TYPE` is set to `Disk`.": "Percorso su disco in cui salvare le tile create da tilestache se `TILESTACHE_CACHE_TYPE` è impostato su `Disk`.",
       "Path to geo data directory (shp, Spatialite, raster, etc..).": "Percorso della directory dei dati geografici (shp, Spatialite, raster ecc.).",
       "Project configuration cache": "Cache della configurazione del progetto",
       "Qplotly settings": "Impostazioni di Qplotly",
       "Registration": "Registrazione",
       "Required if RECAPTCHA is True, Google reCAPATCHA private key.": "Obbligatoria se RECAPTCHA è True: chiave privata Google reCAPTCHA.",
       "Required if RECAPTCHA is True, Google reCAPATCHA public key.": "Obbligatoria se RECAPTCHA è True: chiave pubblica Google reCAPTCHA.",
-      "See [Appearance settings](appearance-settings.md) for logos, layout, and map client options.": "Consulta le [impostazioni grafiche](appearance-settings.md) per loghi, layout e opzioni del client cartografico.",
+      "See [Branding](branding.md) for logos, styles, and client layout.": "Consulta [Personalizzazione del marchio](branding.md) per loghi, stili e layout del client.",
+      "Set the geocoding providers available for webgis services:": "Imposta i provider di geocodifica disponibili per i servizi WebGIS:",
       "Settings": "Impostazioni",
       "Settings params for `caching` module": "Parametri di configurazione del modulo `caching`",
       "Settings params for `editing` module.": "Parametri di configurazione del modulo `editing`.",
@@ -306,12 +373,15 @@ Default *g3wsuite.it*, Email's sign of emails of Registration workflow: activati
       "Settings variables about third part services, i.e. Google API etc..": "Variabili di configurazione per servizi di terze parti, ad es. API Google ecc.",
       "Settings variables for user registration system.": "Variabili di configurazione del sistema di registrazione degli utenti.",
       "The `/api/config` response is cached separately from map tiles, by project and user. Project and related configuration changes invalidate the affected cache.": "La risposta di `/api/config` viene memorizzata per progetto e utente, separatamente dalle tile della mappa. Le modifiche al progetto e alle configurazioni associate invalidano la cache interessata.",
+      "The example local settings define a dictionary of Openrouteservice profiles: `{\"driving-car\": {\"name\": \"Car\"}, \"driving-hgv\": {\"name\": \"Heavy Goods Vehicle\"}}`.": "Le impostazioni locali di esempio definiscono un dizionario di profili Openrouteservice: `{\"driving-car\": {\"name\": \"Car\"}, \"driving-hgv\": {\"name\": \"Heavy Goods Vehicle\"}}`.",
+      "The example local settings use `http://localhost:8080/ors/v2/` as the Openrouteservice API endpoint.": "Le impostazioni locali di esempio usano `http://localhost:8080/ors/v2/` come endpoint API Openrouteservice.",
       "The following variables can be added to or edited in the project’s `local_settings.py`:": "Le seguenti variabili possono essere aggiunte o modificate nel file `local_settings.py` del progetto:",
       "This logging system continues to save log records with no upper limit. To keep the table from getting too big, there is a `django command` that deletes records older than a set number of days.": "Questo sistema continua a salvare i record di log senza limiti. Per evitare che la tabella diventi troppo grande, è disponibile un `comando Django` che elimina i record più vecchi di un numero di giorni specificato.",
       "Tile cache": "Cache delle tile",
       "To activate it is sufficient add a new log `handler` inside Django `LOGGING` settings and use it for a `logger`:": "Per attivarla è sufficiente aggiungere un nuovo `handler` di log alle impostazioni `LOGGING` di Django e utilizzarlo per un `logger`:",
       "Vendors settings": "Impostazioni dei fornitori",
       "With v3.6.x version G3W-SUITE can save message logs inside the database.": "Dalla versione 3.6.x, G3W-SUITE può salvare i messaggi di log nel database.",
+      "You can also add custom providers (or edit the existing ones within `static/client/geocoding-providers` folder), just remember to use javascript file name as \"provider\" identifier:": "È possibile aggiungere provider personalizzati (o modificare quelli esistenti nella cartella `static/client/geocoding-providers`); ricordarsi di usare il nome del file JavaScript come identificatore del \"provider\":",
       "`QDJANGO_PRJ_CACHE` enables this cache and defaults to `True`; set it to `False` to disable it. The cache uses Django's default cache backend. Docker configures Redis as that backend.": "`QDJANGO_PRJ_CACHE` abilita questa cache ed è `True` per impostazione predefinita; impostalo su `False` per disattivarla. La cache usa il backend predefinito di Django. Docker configura Redis come backend.",
       "service plus of `Nominatim` default service.": "oltre al servizio predefinito `Nominatim`."
     }

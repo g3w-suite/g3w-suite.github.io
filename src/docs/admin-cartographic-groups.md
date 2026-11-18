@@ -117,10 +117,7 @@ To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-
 
 ![Screenshot: G3W-SUITE Administration Group Add Geodata](/img/manual-english-g3wsuite-administration-group-add-geodata.avif)
 
-With regard to the **Base Layers**, it is specified that the external services available by default are:
- * **OSM**
-
-Due to the change in licenses, it is no longer possible to use **Bing** and **Google** as BaseLayer outside of Bing and Google applications.
+The bundled base-layer data includes **OpenStreetMap** and **Bing** presets. Check current provider licensing before enabling Bing or Google base maps; a preset in the administration panel does not itself grant permission to use a service.
 
 Remember that it is possible to build customized Base Layers starting from open external Base Layer or from the contenents of a projects published on the suite.
 
@@ -199,7 +196,6 @@ After filling in the various form, click on the **Save** button to confirm your 
     "Cartographic Groups": "Gruppi cartografici",
     "Cartographic groups": "Gruppi cartografici",
     "Copyright": "Copyright",
-    "Due to the change in licenses, it is no longer possible to use **Bing** and **Google** as BaseLayer outside of Bing and Google applications.": "A causa delle modifiche alle licenze, non è più possibile usare **Bing** e **Google** come BaseLayer al di fuori delle applicazioni Bing e Google.",
     "During creation, some functional characteristics and tools that the WebGis interface will show for all cartographic projects published within the group are also defined.": "Durante la creazione si definiscono anche alcune caratteristiche funzionali e gli strumenti che l'interfaccia WebGis mostrerà per tutti i progetti cartografici pubblicati nel gruppo.",
     "GEO data": "Dati GEO",
     "General data": "Dati generali",
@@ -219,12 +215,12 @@ After filling in the various form, click on the **Save** button to confirm your 
     "Remember that it is possible to build customized Base Layers starting from open external Base Layer or from the contenents of a projects published on the suite.": "È possibile creare Base Layer personalizzati a partire da Base Layer esterni aperti o dai contenuti di un progetto pubblicato sulla Suite.",
     "Screenshot: G3W-SUITE Administration Group Add ACL": "Schermata: ACL durante l'aggiunta di un Gruppo nell'amministrazione di G3W-SUITE",
     "Screenshot: G3W-SUITE Administration Group Add Geodata": "Schermata: dati geografici durante l'aggiunta di un Gruppo nell'amministrazione di G3W-SUITE",
+    "The bundled base-layer data includes **OpenStreetMap** and **Bing** presets. Check current provider licensing before enabling Bing or Google base maps; a preset in the administration panel does not itself grant permission to use a service.": "I dati dei layer di base inclusi nella Suite comprendono le opzioni **OpenStreetMap** e **Bing**. Prima di attivare mappe di base Bing o Google, verificare le licenze attuali del provider: la presenza di un'opzione nel pannello di amministrazione non autorizza di per sé l'uso del servizio.",
     "The entry is present only when the Admin type user creates the Group": "La voce è presente solo quando il Gruppo viene creato da un utente di tipo Admin",
     "The option **`Propagate viewers user (single and groups) permissions`** allows you to propagate the Viewer users (individuals and/or groups) associated to the Group to ALL the WebGis services present in it.": "L'opzione **`Propagate viewers user (single and groups) permissions`** consente di propagare a TUTTI i servizi WebGis del Gruppo i permessi degli utenti Viewer (singoli e/o gruppi) associati al Gruppo.",
     "The options present will vary according to the type of user (Admin or Editor1) who creates/manages the Group": "Le opzioni disponibili variano in base al tipo di utente (Admin o Editor1) che crea o gestisce il Gruppo",
     "This option is available only if Cartographic macro groups have been created": "Questa opzione è disponibile solo se sono stati creati Macrogruppi cartografici",
     "To avoid this, set the WMS as **internal WMS** in the [Widget management](admin-widgets-setup.md) section.": "Per evitarlo, impostare il WMS come **internal WMS** nella sezione [Gestione dei widget](admin-widgets-setup.md).",
-    "With regard to the **Base Layers**, it is specified that the external services available by default are:": "Per quanto riguarda i **Base Layers**, i servizi esterni disponibili per impostazione predefinita sono:",
     "You can also access the list of groups by clicking on the **\"Show\"** button in the **Cartographic Groups** box on the **Dashboard**.": "È possibile accedere all'elenco dei gruppi anche facendo clic sul pulsante **\"Show\"** nel riquadro **Cartographic Groups** della **Dashboard**.",
     "You can switch between WebGIS services while keeping the map extent and scale only when their projects belong to the same cartographic group.": "Puoi passare da un servizio WebGIS all'altro mantenendo estensione e scala solo se i progetti appartengono allo stesso gruppo cartografico.",
     "_**Manage existing Cartographic Groups or create new ones.**_": "_**Gestisci i Gruppi cartografici esistenti o creane di nuovi.**_",
