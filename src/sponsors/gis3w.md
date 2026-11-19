@@ -7,10 +7,6 @@ description: Gis3W develops and supports open-source GIS solutions and is the ma
 
 Gis3W is the main sponsor of G3W-SUITE and provides consulting, technical support and custom development for organisations using the platform.
 
-Supported releases:
-
-[3.0](/en/news/v3.0/) · [3.1](/en/news/v3.1/) · [3.8](/en/news/v3.8/) · [3.9](/en/news/v3.9/) · [3.10](/en/news/v3.10/)
-
 G3W-SUITE is an open-source WebGIS platform for publishing QGIS projects on the web. It brings the maps, styles, forms, relations and print layouts prepared in QGIS into an interactive browser-based environment.
 
 Gis3W is also a Mergin Maps partner for field data collection workflows.
@@ -26,5 +22,9 @@ The team also works with Mergin Maps, a tool for field data collection based on 
 Version 3.0 introduced QGIS API integration.
 
 The supported releases added DataPlotly charts and Atlas printing in 3.1, saved themes and PDF exports in 3.8, a redesigned map client and editing-configuration options in 3.9, and QGIS 3.40 LTR compatibility, annotations and Elasticsearch search in 3.10.
+
+## Supported releases:
+
+[3.0](/en/news/v3.0/) · [3.1](/en/news/v3.1/) · [3.8](/en/news/v3.8/) · [3.9](/en/news/v3.9/) · [3.10](/en/news/v3.10/)
 
 [Official website](https://www.gis3w.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

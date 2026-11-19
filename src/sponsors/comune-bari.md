@@ -7,10 +7,6 @@ description: The Municipality of Bari supports G3W-SUITE and publishes its munic
 
 ![Comune di Bari](/img/site-bari-city-logo.avif)
 
-Supported releases:
-
-[3.3](/en/news/v3.3/) · [3.4](/en/news/v3.4/)
-
 The Municipality of Bari publishes its municipal WebGIS through G3W-SUITE. The online portal makes geographic information about the city available to residents and other map users.
 
 The Municipality supported G3W-SUITE versions 3.3 and 3.4.
@@ -26,5 +22,9 @@ Conditional forms can show relevant fields in response to entered values, and ca
 The releases cover both sides of a published WebGIS: map users can find and inspect features, while administrators control editing access and configure forms for the underlying QGIS project.
 
 Bari is the capital of Apulia and a coastal regional centre on the Adriatic. Its neighbourhoods and urban territory are the geographic context for the municipal WebGIS, which makes the municipality's geographic information available through an online map.
+
+## Supported releases:
+
+[3.3](/en/news/v3.3/) · [3.4](/en/news/v3.4/)
 
 [Official website](https://www.comune.bari.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

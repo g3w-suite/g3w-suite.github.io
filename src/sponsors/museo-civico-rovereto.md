@@ -7,10 +7,6 @@ description: The Rovereto Civic Museum Foundation works across science, archaeol
 
 ![Fondazione Museo Civico di Rovereto](/img/site-logomcr.avif)
 
-Supported releases:
-
-[3.9](/en/news/v3.9/)
-
 The Foundation maintains digital archives and a WebGIS portal that presents maps and geospatial information from research, monitoring and territorial projects.
 
 The Foundation supported G3W-SUITE 3.9. The 2025 release focused on a redesign of the cartographic client and changes to editing configuration, with pagination for search results, improvements to related records and options for managing editing permissions.
@@ -26,5 +22,9 @@ Public engagement extends beyond exhibitions. The Foundation's programme include
 The Foundation also maintains digital archives of images, documents, videos, bibliographic resources and environmental data. Its online catalogue makes collection records available to explore, while a WebGIS portal presents maps and geospatial information from research, monitoring and territorial projects.
 
 The WebGIS portal can be consulted without registration. It offers an additional way to encounter the Foundation's work: alongside museum objects and exhibitions, visitors can explore information connected to places and landscapes. The Foundation's archive pages explain how to access its different collections and databases.
+
+## Supported releases:
+
+[3.9](/en/news/v3.9/)
 
 [Official website](https://www.fondazionemcr.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

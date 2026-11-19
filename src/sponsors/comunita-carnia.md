@@ -7,10 +7,6 @@ description: The Mountain Community of Carnia supported G3W-SUITE 3.6 and 3.10; 
 
 ![Comunità di Montagna della Carnia](/img/site-carnia-mountain-community-logo.avif)
 
-Supported releases:
-
-[3.6](/en/news/v3.6/) · [3.10](/en/news/v3.10/)
-
 The project "Consultazione PPR-FVG 2_3" is published through WebGIS Carnia as a G3W-SUITE map service. It exposes the statutory and strategic layers of the Friuli Venezia Giulia Regional Landscape Plan for consultation and download by administrators, technicians, professionals and citizens.
 
 The map gives the plan a navigable geographic interface. Users can query mapped features, search for places, measure distances and areas, and consult the territorial information at different locations and scales. The published datasets are also available through Eagle FVG.
@@ -26,5 +22,9 @@ The Mountain Community of Carnia supported G3W-SUITE versions 3.6 and 3.10.
 Version 3.6 added QGIS 3.28 LTR compatibility, search across multiple layers, spatial bookmarks, layer-transparency controls and navigation between previous and next map views.
 
 Version 3.10 added QGIS 3.40 LTR compatibility, map annotations and Elasticsearch-based search, alongside improvements to charts and online editing.
+
+## Supported releases:
+
+[3.6](/en/news/v3.6/) · [3.10](/en/news/v3.10/)
 
 [Official website](https://www.carnia.comunitafvg.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

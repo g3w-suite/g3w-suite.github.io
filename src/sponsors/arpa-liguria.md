@@ -7,10 +7,6 @@ description: ARPA Liguria is the regional agency for environmental protection in
 
 ![ARPA Liguria](/img/site-arpal.avif)
 
-Supported releases:
-
-[3.3](/en/news/v3.3/) · [3.10](/en/news/v3.10/) · [3.11](/en/news/v3.11/)
-
 ARPA Liguria is the regional agency for environmental protection in Liguria, Italy.
 
 Its work includes monitoring water resources and publishing weather forecasts and information on pollen and spores.
@@ -30,5 +26,9 @@ Environmental controls extend to industrial activities and technological risks. 
 The regional laboratory carries out chemical, microbiological, biological and physical analyses. Its work supports environmental checks and public-health prevention, alongside the agency's field monitoring and technical assessments.
 
 The agency's role combines monitoring, laboratory analysis and communication with support for public institutions. Its official website provides access to its environmental themes, services and organisational information.
+
+## Supported releases:
+
+[3.3](/en/news/v3.3/) · [3.10](/en/news/v3.10/) · [3.11](/en/news/v3.11/)
 
 [Official website](https://www.arpal.liguria.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

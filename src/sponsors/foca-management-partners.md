@@ -7,12 +7,12 @@ description: SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8.
 
 SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8.
 
-Supported releases:
-
-[3.8](/en/news/v3.8/)
-
 Version 3.8 added QGIS 3.34 LTR compatibility and map export to SVG and GeoPDF.
 
 The release also introduced saved map themes for signed-in users and PDF downloads of attributes from query or search results.
+
+## Supported releases:
+
+[3.8](/en/news/v3.8/)
 
 [Back to sponsors](/en/sponsors/ "outline-button")

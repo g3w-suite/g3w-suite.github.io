@@ -7,10 +7,6 @@ description: The Municipality of Trento supports G3W-SUITE and publishes its bas
 
 ![Comune di Trento](/img/site-trento.avif)
 
-Supported releases:
-
-[3.3](/en/news/v3.3/) · [3.4](/en/news/v3.4/) · [3.6](/en/news/v3.6/)
-
 The Municipality of Trento's GIS portal publishes interactive maps of the municipal area. Its general cartography group brings together the technical map, aerial photographs, street names, municipal property and the land cadastre, with links to WMS and WFS services.
 
 Visitors can navigate the map or search by street and house number, cadastral municipality and parcel number. The portal also includes themes for public and school green spaces, street trees and sports facilities. The green-space inventory is based on surveys carried out since 1996 and is still being updated; the portal identifies these datasets as partial where that applies.
@@ -22,5 +18,9 @@ The portal therefore supports two ways to locate information: map navigation for
 The Municipality of Trento supported G3W-SUITE versions 3.3, 3.4 and 3.6.
 
 Version 3.3 added layer-specific editing permissions and QGIS expression support. Version 3.4 introduced cascading and conditional editing forms and visualisation of raster and vector time series. Version 3.6 added multi-layer search, spatial bookmarks, controls for layer transparency and navigation between previous and next map views.
+
+## Supported releases:
+
+[3.3](/en/news/v3.3/) · [3.4](/en/news/v3.4/) · [3.6](/en/news/v3.6/)
 
 [Official website](https://www.comune.trento.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

@@ -7,10 +7,6 @@ description: Planetek Italia works with geospatial information and Earth observa
 
 ![Planetek Italia](/img/site-planetek.avif)
 
-Supported releases:
-
-[3.1](/en/news/v3.1/) · [3.2](/en/news/v3.2/) · [3.3](/en/news/v3.3/) · [3.4](/en/news/v3.4/)
-
 Planetek Italia has supported four releases of G3W-SUITE.
 
 Version 3.1 introduced DataPlotly charts and Atlas print support.
@@ -28,5 +24,9 @@ Planetek also designs spatial data infrastructures for storing, managing and sha
 The fields described on its website include environmental and territorial monitoring, public administration, engineering, transport, utilities and energy. Scientific satellite missions and space exploration are another part of its activities. Planetek Italia is part of the D-Orbit group and works in national and international markets as well as research.
 
 Its solutions include the processing of imagery for cartography, services based on satellite observations and infrastructures for sharing spatial information. The company also works with positioning systems such as GPS, Galileo and other GNSS technologies, connecting geographic data with real-time location.
+
+## Supported releases:
+
+[3.1](/en/news/v3.1/) · [3.2](/en/news/v3.2/) · [3.3](/en/news/v3.3/) · [3.4](/en/news/v3.4/)
 
 [Official website](https://www.planetek.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

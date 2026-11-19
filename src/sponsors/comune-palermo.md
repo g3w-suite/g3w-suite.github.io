@@ -7,10 +7,6 @@ description: The Municipality of Palermo supports G3W-SUITE through its online g
 
 ![Comune di Palermo](/img/site-palermo.avif)
 
-Supported releases:
-
-[3.3](/en/news/v3.3/)
-
 The Municipality of Palermo publishes an online geographic portal, one of the public G3W-SUITE deployments. The portal is branded URBAN-TOOLS and uses the G3W-Portal interface, version 4.0.6.
 
 The Municipality supported G3W-SUITE 3.3.
@@ -28,5 +24,9 @@ Other 3.3 changes added Oracle Spatial editing and geographic and alphanumeric f
 Version 3.3 also supports importing GML, GeoJSON, KML, GPX, shapefile and CSV data into the map client, with labels taken from a selected field. Map users can export the current map extent as a GeoTIFF. Map-query results can be adjusted before exporting or using them as the basis for filters.
 
 Palermo is the regional capital of Sicily, on the Mediterranean coast. The municipality's online portal provides a map-based point of access to geographic information about its territory. The urban area includes libraries, museums, archaeological sites, monuments, parks and gardens represented in the municipality's public information.
+
+## Supported releases:
+
+[3.3](/en/news/v3.3/)
 
 [Official website](https://www.comune.palermo.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

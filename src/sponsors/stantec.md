@@ -7,10 +7,6 @@ description: Stantec is an international engineering and design company based in
 
 ![Stantec](/img/site-stanec.avif)
 
-Supported releases:
-
-[3.10](/en/news/v3.10/)
-
 Stantec supported G3W-SUITE 3.10, released in July 2025. The version included a substantial refactoring, compatibility with QGIS 3.40 LTR and Elasticsearch integration, as well as redlining notes and improvements to Data Plotly charts.
 
 Stantec's geospatial teams collect, analyse and use location-based information across sectors such as transport, water, energy and the environment.
@@ -28,5 +24,9 @@ Geographic information systems are part of the company's digital solutions for t
 One example is FireFlow, a GIS-based tool that gives firefighters information about London hydrants, including their flow and firefighting capacity. It also helps identify hydrants and hose routes for an incident.
 
 In Italy, Stantec works with clients ranging from municipalities and utilities to industrial, financial and real-estate organisations. Its international presence brings together local experience and expertise from projects in different regions.
+
+## Supported releases:
+
+[3.10](/en/news/v3.10/)
 
 [Official website](https://www.stantec.com/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")
