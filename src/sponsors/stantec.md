@@ -7,9 +7,15 @@ description: Stantec is an international engineering and design company based in
 
 ![Stantec](/img/site-stanec.avif)
 
-Stantec is an international engineering and design company based in Canada.
+Supported releases:
 
-Its work addresses challenges involving cities and infrastructure, including climate change and digital transformation. The company works with clients and communities in different countries.
+[3.10](/en/news/v3.10/)
+
+Stantec supported G3W-SUITE 3.10, released in July 2025. The version included a substantial refactoring, compatibility with QGIS 3.40 LTR and Elasticsearch integration, as well as redlining notes and improvements to Data Plotly charts.
+
+Stantec's geospatial teams collect, analyse and use location-based information across sectors such as transport, water, energy and the environment.
+
+Stantec is an international engineering and design company based in Canada.
 
 Founded in 1954, Stantec brings together professionals in engineering, architecture, planning and environmental sciences. Its projects span buildings, water, energy, infrastructure and environmental services, combining technical disciplines to address the needs of different places and communities.
 
@@ -22,15 +28,5 @@ Geographic information systems are part of the company's digital solutions for t
 One example is FireFlow, a GIS-based tool that gives firefighters information about London hydrants, including their flow and firefighting capacity. It also helps identify hydrants and hose routes for an incident.
 
 In Italy, Stantec works with clients ranging from municipalities and utilities to industrial, financial and real-estate organisations. Its international presence brings together local experience and expertise from projects in different regions.
-
-## Contribution to G3W-SUITE
-
-Supported releases:
-
-[3.10](/en/news/v3.10/)
-
-Stantec supported G3W-SUITE 3.10, released in July 2025. The version included a substantial refactoring, compatibility with QGIS 3.40 LTR and Elasticsearch integration, as well as redlining notes and improvements to Data Plotly charts.
-
-Learn more about [Stantec's geospatial work](https://www.stantec.com/au/services/geospatial) and [GIS applications](https://www.stantec.com/en/ideas/careers/inside-stantec/using-geographic-information-systems-gis-to-view-shape-the-world-around-us).
 
 [Official website](https://www.stantec.com/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

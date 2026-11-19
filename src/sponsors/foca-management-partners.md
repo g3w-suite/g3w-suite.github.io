@@ -7,8 +7,6 @@ description: SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8.
 
 SC FOCA MANAGEMENT PARTNERS SRL supported G3W-SUITE 3.8.
 
-## Contribution to G3W-SUITE
-
 Supported releases:
 
 [3.8](/en/news/v3.8/)
