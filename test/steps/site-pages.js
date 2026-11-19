@@ -46,9 +46,9 @@ Then('every page declares its language, metadata, and main structure', function 
     }
     const pagePath = path.relative(path.join(staticDir, lang), file).split(path.sep).join('/');
     const breadcrumb = main.children('nav.site-breadcrumb');
-    if (pagePath === 'index.html') {
-      expect(breadcrumb.length === 0, 'homepage must not have a breadcrumb');
-      expect(main.find('.site-edit-link').length === 0, 'homepage must not have an edit link');
+    if (pagePath === 'index.html' || pagePath === '404/index.html') {
+      expect(breadcrumb.length === 0, 'homepage and 404 must not have a breadcrumb');
+      expect(main.find('.site-edit-link').length === 0, 'homepage and 404 must not have an edit link');
     } else {
       expect(breadcrumb.length === 1, 'page must have one breadcrumb');
       expect(breadcrumb.find(`a[href="/${lang}/"]`).length === 1, 'breadcrumb must link to the localized home');

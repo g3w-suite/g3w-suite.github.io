@@ -18,7 +18,7 @@ PROTECTED = re.compile(
 def translate_text(source, translate):
     parts = PROTECTED.split(source)
     for index in range(0, len(parts), 2):
-        match = re.fullmatch(r"(\s*)(.*?)(\s*)", parts[index], re.DOTALL)
+        match = re.fullmatch(r"(\s*(?:[^\w\s]+\s*)*)(.*?)(\s*[\u2018\u201c\u201e]?\s*)", parts[index], re.DOTALL)
         if match and re.search(r"[A-Za-z]", match[2]):
             text = " ".join(translate(match[2]).split())
             if not text:

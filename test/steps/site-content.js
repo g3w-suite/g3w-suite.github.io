@@ -11,7 +11,7 @@ const { extractPageMetadata } = require('../../utils/translations');
 Then('the governing board and team are listed separately and news credits link to the board', function () {
   const groups = {
     'governing-board': ['francesco-boccacci', 'leonardo-lami', 'matteo-tosi', 'walter-lorenzetti'],
-    team: ['alessandro-pasotti', 'andrea-antonello', 'matteo-ghetta', 'tudor-barascu'],
+    contributors: ['alessandro-pasotti', 'andrea-antonello', 'matteo-ghetta', 'tudor-barascu'],
   };
   const news = fs.readdirSync(path.resolve('src', 'news')).filter(file => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(file));
   for (const lang of languages) {
@@ -20,7 +20,7 @@ Then('the governing board and team are listed separately and news credits link t
       const section = about(`#${id}`).closest('section');
       const headings = {
         'governing-board': lang === 'it' ? 'Consiglio direttivo' : 'Governing board',
-        team: lang === 'it' ? 'Contributori' : 'Contributors',
+        contributors: lang === 'it' ? 'Contributori' : 'Contributors',
       };
       assert.equal(section.find('h3').text().trim(), headings[id]);
       assert.deepEqual(
@@ -117,7 +117,7 @@ Then('both languages are generated from shared page templates', function () {
   assert.ok(fs.existsSync(path.join(sourceDir, '_redirect.html')), 'missing root redirect template');
   assert.ok(fs.existsSync(path.join(sourceDir, '_header.html')), 'missing shared components');
   assert.ok(!fs.existsSync(path.join(sourceDir, 'i18n')), 'translation catalog directory must not exist');
-  assert.ok(!fs.existsSync(path.resolve('i18n')), 'translation catalog must not use a root i18n/ folder');
+  assert.ok(fs.existsSync(path.resolve('i18n')), 'translation catalog directory must exist at the root');
   assert.ok(!fs.existsSync(path.join(staticDir, 'i18n')), 'translation catalog must not be stored in static/');
   assert.ok(!fs.existsSync(path.join(staticDir, 'assets')), 'static/assets must be merged into static root');
   for (const lang of languages) {
@@ -252,10 +252,11 @@ Then('both languages are generated from shared page templates', function () {
       'g3w-admin-pdnd',
       'g3w-client-plugin-editing',
     ];
+    const componentAnchors = [...components.slice(0, -1), 'collaborative-editing'];
     assert.equal(componentSections.length, components.length, `${lang} About page must present each component separately`);
     componentSections.each((index, section) => {
       const component = explore(section);
-      const href = `${docsRoot}/components-of-g3w-suite/#${components[index]}`;
+      const href = `${docsRoot}/components-of-g3w-suite/#${componentAnchors[index]}`;
       assert.equal(component.find('img[alt][src^="/img/"]').length, 1, `${lang} component must have a local illustration`);
       assert.equal(component.find(`h2 a[href="${href}"]`).length, 1, `${lang} component title must link to its documentation`);
       const github = component.find('a.btn--github[href^="https://github.com/g3w-suite/"]');
@@ -266,8 +267,8 @@ Then('both languages are generated from shared page templates', function () {
     });
     const componentPage = readPage(path.join(staticDir, lang, 'docs', 'components-of-g3w-suite', 'index.html')).$;
     assert.equal(componentPage(`nav.docs-nav a[aria-current="page"][href="${docsRoot}/components-of-g3w-suite/"]`).length, 1);
-    for (const component of components) {
-      assert.equal(componentPage(`#${component}`).length, 1, `${lang} component documentation must include #${component}`);
+    for (const [index, component] of components.entries()) {
+      assert.equal(componentPage(`#${componentAnchors[index]}`).length, 1, `${lang} component documentation must include #${componentAnchors[index]}`);
       assert.ok(!fs.existsSync(path.join(staticDir, lang, 'about', component)), `${lang} old component route must be removed`);
     }
     assert.equal(componentPage('main a[href="https://github.com/g3w-suite/g3w-admin-portal"]').length, 1);

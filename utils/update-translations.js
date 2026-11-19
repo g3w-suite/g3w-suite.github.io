@@ -70,7 +70,7 @@ function validateTranslation(source, translation) {
   if (typeof translation !== 'string' || !translation.trim()) {
     throw new Error('Empty translation');
   }
-  if (/(?:^|\s)(\p{L}[\p{L}\p{M}\p{N}'\u2019-]*)(?:\s+\1){7,}(?=\s|[.,;:!?]|$)/iu.test(translation)) {
+  if (/(?:^|[\s,])(\p{L}[\p{L}\p{M}\p{N}'\u2019.-]*)(?:[,\s]+\1){3,}(?=[\s,.;:!?]|$)/iu.test(translation)) {
     throw new Error('Corrupted translation: repeated words');
   }
   const brokenEntity = /&\s+(?:#(?:x[\da-f]+|\d+)|[a-z]+);/i;

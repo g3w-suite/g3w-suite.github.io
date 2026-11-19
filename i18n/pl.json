@@ -56,7 +56,7 @@
     "Write to info@gis3w.it →": "Zapisz do info@gis3w.it →"
   },
   "_header.html": {
-    "About": "O",
+    "About": "O projekcie",
     "Choose a language": "Wybierz język",
     "Community": "Wspólnota",
     "Documentation": "Dokumentacja",
@@ -2570,7 +2570,7 @@
     "This last command just make active your new virtualenv environment, for the next times is possible use the follow command to activate the virtualenv environment:": "Ostatnie polecenie po prostu aktywuje nowe środowisko wirtualenv, ponieważ w następnym czasie jest możliwe użycie polecenia follow do aktywacji środowiska virtalenv:",
     "To activate virtuenvwrapper on system login, add follow lines to 'bashrc' config file of your user": "Aby aktywować wirtualnowipper podczas logowania systemu, dodaj kolejne wiersze do pliku konfiguracyjnego 'bashrc' użytkownika",
     "To check that the active environment can import QGIS on Ubuntu, run:": "Aby sprawdzić, czy środowisko aktywne może importować QGIS na Ubuntu, uruchomić:",
-    "To create a virtualnenv is sufficient call mkvirtualenv follow by the identification name for virtualenv (to use QGIS API into a virtualenv only solution is to give access python system site-packages to it using *--system-site-packages* option)": "Aby utworzyć wirtualnenv jest wystarczające wywołanie mkvirtualenv po nazwie identyfikacyjnej dla virtualenv (do wykorzystania QGIS API w wirtualenv tylko rozwiązanie jest dać dostęp do systemu Python site- pakiety do niego za pomocą *-- system- site- packags- packags- system- site- packags- system- site- packags- system- site- packags- system- site- site- packags- system- site- site- site- packag- site- site- packag- system- site- site- site- packas- system- site- sit- site- sit- packas- system- sit- site- site- site- site- packas- system- sit- sit- sit- sit- system- site- sitexpackat- system- system- site- sit- sitex- system- site- sit- sit- system- system- sit- sit- sit- sit- sit- sit- pactyme- system- sit- site- sit-* opcja)",
+    "To create a virtualnenv is sufficient call mkvirtualenv follow by the identification name for virtualenv (to use QGIS API into a virtualenv only solution is to give access python system site-packages to it using *--system-site-packages* option)": "Aby utworzyć virtualenv, wywołaj mkvirtualenv z nazwą środowiska. Aby używać QGIS API w virtualenv, należy udostępnić mu systemowe pakiety Pythona za pomocą opcji *--system-site-packages*.",
     "To normalize tracked files, first preserve all changes, including staged changes. The following command stages every tracked file, so do not run it if you need to keep uncommitted changes.": "Aby normalizować śledzone pliki, najpierw zachować wszystkie zmiany, w tym zmiany w trybie ustawionym. Następujące etapy komend każdy śledzony plik, więc nie uruchamiaj go, jeśli musisz zachować niezrealizowane zmiany.",
     "To run the application with paver (EXPERIMENTAL)": "Do wykonania aplikacji z pawirem (EXPERIMENTAL)",
     "Use of native `venv` Python3": "Wykorzystanie rodzimych `venv` Pyton 3",

@@ -45,8 +45,9 @@ Then('the translation updater adds only missing source keys', function () {
 
 Then('corrupted machine translations are rejected', function () {
   for (const [source, translated, error] of [
-    ['No plugin needed.', `Inget ${'nej '.repeat(12)}plugin behövs.`, /repeated words/],
+    ['No plugin needed.', `Inget ${'nej '.repeat(4)}plugin behövs.`, /repeated words/],
     ['Open the map.', 'Відкрийте '.repeat(12), /repeated words/],
+    ['Open the map.', 'С.В., '.repeat(4), /repeated words/],
     ['user: **viewer1**', 'utilisateur : **visualiseur1**', /changed login value/],
     ['password: **example123**', 'mot de passe : **example123 (extra)**', /changed login value/],
     ['Title:', 'Titre & #160;:', /malformed HTML entity/],
