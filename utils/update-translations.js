@@ -73,6 +73,10 @@ function validateTranslation(source, translation) {
   if (/(?:^|[\s,])(\p{L}[\p{L}\p{M}\p{N}'\u2019.-]*)(?:[,\s]+\1){3,}(?=[\s,.;:!?]|$)/iu.test(translation)) {
     throw new Error('Corrupted translation: repeated words');
   }
+  const repeatedPunctuation = /,(?:\s*,)+|[!?](?:\s*[!?]){3,}|!{2,}\[/;
+  if (repeatedPunctuation.test(translation) && !repeatedPunctuation.test(source)) {
+    throw new Error('Corrupted translation: repeated punctuation');
+  }
   const brokenEntity = /&\s+(?:#(?:x[\da-f]+|\d+)|[a-z]+);/i;
   if (brokenEntity.test(translation) && !brokenEntity.test(source)) {
     throw new Error('Corrupted translation: malformed HTML entity');
