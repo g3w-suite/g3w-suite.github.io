@@ -448,7 +448,7 @@
     "**Edit icon:** to reload the XML file after editing the chart in QGIS": "**Edytuj ikonę:** aby ponownie załadować plik XML po edycji wykresu w QGIS",
     "**Linked checkbox:** to activate/deactivate the chart without removing it": "**Połączona opcja:** do aktywacji / dezaktywacji wykresu bez jego usuwania",
     "**Position drop-down menu:** to define whether the chart should be displayed in the client sidebar, associated with the queried feature (Query), related to data from a 1:N relationship, or in both positions (Sidebar, Query)": "**Menu z pozycji \"spadek\":** określenie, czy wykres powinien być wyświetlany w pasku bocznym klienta, związanym z funkcją quered (Query), związanym z danymi z relacji 1: N, czy w obu pozycjach (Sidebar, Query)",
-    "**Query:** only associated with parent attributes only at the parent feature attribute level": "**Pytanie:** tylko związane z atrybutami nadrzędnymi tylko na poziomie atrybutów atrybutów atrybutów macierzystych",
+    "**Query:** only associated with parent attributes only at the parent feature attribute level": "**Zapytanie:** powiązane wyłącznie z atrybutami obiektu nadrzędnego na poziomie jego atrybutów",
     "**Related widgets icon:** to create multiple charts (see the dedicated section below)": "**Powiązana ikona widgetów:** aby utworzyć wiele wykresów (patrz dedykowana sekcja poniżej)",
     "**Sidebar, Query:** in both positions (default)": "**Sidebar, Query:** w obu pozycjach (domyślnie)",
     "**Sidebar:** only on the main chart panel": "**Pasek boczny:** tylko na głównym panelu mapy",
@@ -724,10 +724,10 @@
     "Use this icon to add widgets to the layer. The basic widget defines search tools available in the WebGIS.": "Użyj tej ikony, aby dodać widżety do warstwy. Podstawowy widżet definiuje narzędzia wyszukiwania dostępne w WebGIS.",
     "Value maps": "Mapy wartości",
     "Value relations": "Stosunki wartości",
-    "`AutoCompleteBox`: values ​​shown through auto-complete mode": "`AutoCompleteBox`: wartości wartości Plik wyświetlany przez tryb auto- complete",
+    "`AutoCompleteBox`: values ​​shown through auto-complete mode": "`AutoCompleteBox`: wartości wyświetlane w trybie autouzupełniania",
     "`DateTimeBox`: widget to be used exclusively for date type fields. On the client, the user will define the date/time to search through the calendar/clock widget.": "`DateTimeBox`: widget używany wyłącznie do pól typu date. Na kliencie użytkownik określi datę / czas wyszukiwania za pomocą widgetu kalendarza / zegara.",
     "`InputBox`: manual compilation": "`InputBox`: manual composition",
-    "`SelectBox`: values ​​shown via drop-down menu": "`SelectBox`: wartości wartości wartości profilowane pokazane przez menu drop- down"
+    "`SelectBox`: values ​​shown via drop-down menu": "`SelectBox`: wartości wyświetlane w menu rozwijanym"
   },
   "docs/users-and-macro-groups.md": {
     "![Button: Save](/img/manual-english-buttom-save.avif)": "![Przycisk: Zapisz](/img/manual-english-buttom-save.avif)",
@@ -1943,7 +1943,7 @@
     "QGIS Expressions Rules": "QGIS Zasady wyrażeń",
     "Screenshot: Alpha Constrain List": "Zrzut ekranu: Alpha Constrate List",
     "Screenshot: Editing Alpha Constrain Layer": "Zrzut ekranu: Edycja warstwy Alpha Constrate",
-    "Screenshot: Editing Alpha Constrain Layer Init": "Zrzut ekranu: Edycja warstwy warstwy Alpha Constrate",
+    "Screenshot: Editing Alpha Constrain Layer Init": "Zrzut ekranu: początkowe ograniczenie alfanumeryczne warstwy",
     "Screenshot: Editing Alpha Constrain Setting": "Zrzut ekranu: Edycja Alpha Constrate Ustawienie",
     "Screenshot: Editing Constrain Layer": "Zrzut ekranu: Edycja warstwy konstrakcyjnej",
     "Screenshot: Editing Geoconstrain Layer Summary": "Zrzut ekranu: Edycja Geoslipin Layer Podsumowanie",
@@ -4081,7 +4081,7 @@
     "Observations can be made from different perspectives. The institute has described the use of airborne LiDAR and remotely piloted aircraft in earth-science research, as well as satellite observations. Its website also provides access to cartographic resources and citizen-science initiatives, connecting research with information for a wider public.": "Obserwacje można przeprowadzać z różnych perspektyw. Instytut opisał wykorzystanie samolotów liDAR i zdalnie pilotowanych w badaniach naukowych nad Ziemią, a także obserwacje satelitarne. Jego strona internetowa zapewnia również dostęp do zasobów kartograficznych i inicjatyw obywatelskich, łącząc badania z informacjami dla szerszej publiczności.",
     "Official website": "Oficjalna strona internetowa",
     "Supported releases:": "Obsługiwane wydania:",
-    "The CNR Research Institute for Geo-Hydrological Protection studied natural hazards and the protection of land and water. In 2026 it became part of CNR-GEO.": "W 2026 roku został częścią CNR- GEO- GEO-.",
+    "The CNR Research Institute for Geo-Hydrological Protection studied natural hazards and the protection of land and water. In 2026 it became part of CNR-GEO.": "Instytut Badawczy CNR ds. Ochrony Geohydrologicznej zajmował się zagrożeniami naturalnymi oraz ochroną ziemi i wód. W 2026 roku stał się częścią CNR-GEO.",
     "The institute worked on the processes that affect slopes, rivers and groundwater, combining scientific research with the study of hazards and their effects on the territory. Its website presents research projects, laboratories, instruments and services alongside information intended for citizens, schools, public administrations and businesses.": "Instytut pracował nad procesami, które wpływają na zbocza, rzeki i wody gruntowe, łącząc badania naukowe z badaniem zagrożeń i ich skutków na terytorium. Na swojej stronie internetowej prezentowane są projekty badawcze, laboratoria, instrumenty i usługi wraz z informacjami przeznaczonymi dla obywateli, szkół, administracji publicznej i przedsiębiorstw.",
     "The linked changelogs provide more information about each version and its development. The institute's official website offers further details about its scientific work and the transition to CNR-GEO.": "Związane z nimi zmiennokształtne dostarczają więcej informacji o każdej wersji i jej rozwoju. Oficjalna strona instytutu zawiera dalsze informacje na temat jego prac naukowych i przejścia do CNR- GEO.",
     "Version 3.4 introduced conditional editing forms and time-series visualization.": "Wersja 3.4 wprowadziła warunkowe formularze edycji i wizualizację serii time-."

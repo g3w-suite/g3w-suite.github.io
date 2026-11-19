@@ -45,7 +45,9 @@ Then('the translation updater adds only missing source keys', function () {
 
 Then('corrupted machine translations are rejected', function () {
   for (const [source, translated, error] of [
-    ['No plugin needed.', `Inget ${'nej '.repeat(4)}plugin behövs.`, /repeated words/],
+    ['No plugin needed.', `Inget ${'nej '.repeat(3)}plugin behövs.`, /repeated words/],
+    ['Community', 'gemenskap gemenskap', /repeated words/],
+    ['Enable snapping.', `Aktivieren Sie ${'Schnapp'.repeat(6)}.`, /repeated characters/],
     ['Open the map.', 'Відкрийте '.repeat(12), /repeated words/],
     ['Open the map.', 'С.В., '.repeat(4), /repeated words/],
     ['Open the map.', 'Відкрити, , , карту.', /repeated punctuation/],
@@ -63,6 +65,8 @@ Then('corrupted machine translations are rejected', function () {
   }
   assert.doesNotThrow(() => validateTranslation('user: **viewer1**', 'utilisateur : **viewer1**'));
   assert.doesNotThrow(() => validateTranslation('The **map** is ready.', 'La **carte** est prête.'));
+  assert.doesNotThrow(() => validateTranslation('Wait!!!!', 'Attendez!!!!'));
+  assert.doesNotThrow(() => validateTranslation('No no no!', 'Non non non !'));
 });
 
 Then('translated text is rendered for each language', function () {

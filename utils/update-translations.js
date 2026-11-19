@@ -70,8 +70,15 @@ function validateTranslation(source, translation) {
   if (typeof translation !== 'string' || !translation.trim()) {
     throw new Error('Empty translation');
   }
-  if (/(?:^|[\s,])(\p{L}[\p{L}\p{M}\p{N}'\u2019.-]*)(?:[,\s]+\1){3,}(?=[\s,.;:!?]|$)/iu.test(translation)) {
+  const repeatedWords = /(?:^|[\s,])(\p{L}[\p{L}\p{M}\p{N}'\u2019.-]*)(?:[,\s]+\1){2,}(?=[\s,.;:!?]|$)/iu;
+  const repeatedLabel = /^\s*(\p{L}[\p{L}\p{M}\p{N}'\u2019.-]*)(?:\s+\1)+\s*$/iu;
+  if ((repeatedWords.test(translation) && !repeatedWords.test(source)) ||
+      (repeatedLabel.test(translation) && !repeatedLabel.test(source))) {
     throw new Error('Corrupted translation: repeated words');
+  }
+  const repeatedSequence = /([\p{L}\p{N}]{2,12}?)\1{5,}/iu;
+  if (repeatedSequence.test(translation) && !repeatedSequence.test(source)) {
+    throw new Error('Corrupted translation: repeated characters');
   }
   const repeatedPunctuation = /,(?:\s*,)+|[!?](?:\s*[!?]){3,}|!{2,}\[/;
   if (repeatedPunctuation.test(translation) && !repeatedPunctuation.test(source)) {
