@@ -507,6 +507,53 @@
   <url><loc>https://www.g3wsuite.it/fi/community/</loc></url>
   <url><loc>https://www.g3wsuite.it/fi/docs/access-policy-examples/</loc></url>
   <url><loc>https://www.g3wsuite.it/fi/docs/access-portal/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/administration-panel/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/bottom-panel-and-time-series/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/branding/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/cartographic-groups/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/components-of-g3w-suite/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/configure-charts/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/demo/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/docker-environment-variables/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/docker-installation/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/double-factor-authentication-2fa/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/editing-constraints/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/editing-permissions/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/editing-related-records/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/editing-tools/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/editing-via-iframe/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/elasticsearch-integration/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/g3w-suite-base-layers/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/geocoding/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/group-base-layers-and-languages/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/layer-properties/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/layer-tools/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/layer-visibility-and-constraints/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/layers-and-attribute-table/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/manage-cartographic-groups/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/manage-qgis-data/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/manual-installation/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/map-client/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/map-navigation-and-queries/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/map-queries-and-results/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/map-tools/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/online-editing/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/prepare-a-project-for-editing/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/project-properties/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/publish-a-webgis-service/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/publish-and-update-webgis-services/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/qgis-project-settings/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/quick-start/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/search-widgets/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/settings/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/social-login/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/translate-g3w-suite/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/try-layer-tools-in-the-demo/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/try-online-editing/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/users-and-macro-groups/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/versions-and-compatibility/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fi/docs/webgis-roles-and-organization/</loc></url>
   <url><loc>https://www.g3wsuite.it/fi/</loc></url>
   <url><loc>https://www.g3wsuite.it/fi/news/geospatial-infrastructure/</loc></url>
   <url><loc>https://www.g3wsuite.it/fi/news/</loc></url>
@@ -557,6 +604,53 @@
   <url><loc>https://www.g3wsuite.it/fr/about/tudor-barascu/</loc></url>
   <url><loc>https://www.g3wsuite.it/fr/about/walter-lorenzetti/</loc></url>
   <url><loc>https://www.g3wsuite.it/fr/community/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/access-policy-examples/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/access-portal/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/administration-panel/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/bottom-panel-and-time-series/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/branding/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/cartographic-groups/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/components-of-g3w-suite/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/configure-charts/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/demo/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/docker-environment-variables/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/docker-installation/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/double-factor-authentication-2fa/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/editing-constraints/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/editing-permissions/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/editing-related-records/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/editing-tools/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/editing-via-iframe/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/elasticsearch-integration/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/g3w-suite-base-layers/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/geocoding/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/group-base-layers-and-languages/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/layer-properties/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/layer-tools/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/layer-visibility-and-constraints/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/layers-and-attribute-table/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/manage-cartographic-groups/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/manage-qgis-data/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/manual-installation/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/map-client/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/map-navigation-and-queries/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/map-queries-and-results/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/map-tools/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/online-editing/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/prepare-a-project-for-editing/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/project-properties/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/publish-a-webgis-service/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/publish-and-update-webgis-services/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/qgis-project-settings/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/quick-start/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/search-widgets/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/settings/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/social-login/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/translate-g3w-suite/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/try-layer-tools-in-the-demo/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/try-online-editing/</loc></url>
+  <url><loc>https://www.g3wsuite.it/fr/docs/users-and-macro-groups/</loc></url>
   <url><loc>https://www.g3wsuite.it/fr/docs/versions-and-compatibility/</loc></url>
   <url><loc>https://www.g3wsuite.it/fr/docs/webgis-roles-and-organization/</loc></url>
   <url><loc>https://www.g3wsuite.it/fr/</loc></url>
