@@ -23,6 +23,7 @@ def translate_text(source, translate):
             text = " ".join(translate(match[2]).split())
             if not text:
                 raise ValueError(f"Empty translation: {match[2]!r}")
+            text = re.sub(r" ?& #160;", "\u00a0", text)
             parts[index] = match[1] + text + match[3]
     return "".join(parts)
 

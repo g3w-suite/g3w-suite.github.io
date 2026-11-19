@@ -51,7 +51,7 @@ All translation catalogs in `i18n/` group entries by the page or component path 
 
 On pushes to `vanilla` or manual runs on that branch, the [CI workflow](./.github/workflows/ci.yml) uses Argos Translate locally on the runner to fill missing keys without overwriting existing translations. After the tests pass, it commits any catalog changes directly to `vanilla`; it opens no pull request. Translation generation and commits are disabled on pull requests and other branches. The workflow token must be allowed to push to `vanilla`. To list missing string counts without translating or editing catalogs, run `node utils/update-translations.js --dry-run`.
 
-Generation rejects repeated-word loops, changed login values or software versions, malformed HTML entities and broken Markdown emphasis before saving. The catalog tests apply these checks to existing translations too. Technical identifiers, software versions and demo credentials are kept out of the translation model; semantic accuracy still requires review.
+Generation restores nonbreaking spaces emitted by Argos as `& #160;`, then rejects repeated-word loops, changed login values or software versions, other malformed HTML entities and broken Markdown emphasis before saving. The catalog tests apply these checks to existing translations too. Technical identifiers, software versions and demo credentials are kept out of the translation model; semantic accuracy still requires review.
 
 ## Add or update a page
 

@@ -9,6 +9,16 @@ translate_text = runpy.run_path(
 
 
 class TranslationTests(unittest.TestCase):
+    def test_argos_nonbreaking_space_is_restored_without_touching_source_entities(self):
+        fragments = {
+            "Feature:": "Caract\u00e9ristique & #160;:",
+            "API integration": "Int\u00e9gration de l'API",
+        }
+        self.assertEqual(
+            translate_text("Feature: QGIS API integration &amp;", fragments.__getitem__),
+            "Caract\u00e9ristique\u00a0: QGIS Int\u00e9gration de l'API &amp;",
+        )
+
     def test_leading_punctuation_is_preserved_outside_model_input(self):
         fragments = []
 

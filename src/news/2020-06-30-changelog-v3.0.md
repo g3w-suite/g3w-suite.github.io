@@ -13,7 +13,7 @@ Release date: **30 June 2020**
 
 G3W-SUITE 3.0 brings an extensive list of new changes and a lot of **polishing of existing features** – the highlights of which we will try to cover here.
 
-In particular, the new release was affected by an **important code restructuring** work that led to a f**irst integration with the QGIS API** (a great work of **[Alessandro Pasotti](https://github.com/elpaso)**).
+In particular, the new release was affected by an **important code restructuring** work that led to a **first integration with the QGIS API** (a great work of **[Alessandro Pasotti](https://github.com/elpaso)**).
 
 This integration concerns the **management in visualization, interrogation, consultation and editing to the main formats supported by QGIS**.
 
