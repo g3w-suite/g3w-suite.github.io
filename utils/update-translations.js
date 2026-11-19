@@ -85,6 +85,12 @@ function validateTranslation(source, translation) {
     throw new Error('Corrupted translation: repeated punctuation');
   }
   const withoutCode = text => text.replace(/(`+[^`\n]*`+)/g, '\0');
+  const damagedWord = text => /\p{L}\?\p{L}/u.test(withoutCode(text)
+    .replace(/\]\([^)\n]*\)|(?:https?:\/\/|\/)[^\s<>\])]+/g, ''));
+  if ((translation.includes('\uFFFD') && !source.includes('\uFFFD')) ||
+      (damagedWord(translation) && !damagedWord(source))) {
+    throw new Error('Corrupted translation: damaged text encoding');
+  }
   const repeatedSpaces = /(?<=\S) {2,}(?=\S)/;
   if (repeatedSpaces.test(withoutCode(translation)) && !repeatedSpaces.test(withoutCode(source))) {
     throw new Error('Corrupted translation: repeated spaces');

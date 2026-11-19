@@ -70,7 +70,7 @@ python -m unittest discover -s test -p 'test_*.py'
 
 The Gherkin scenarios in `test/features/` check page structure, assets, language links, navigation accessibility and every internal `href`/`src` target (including HTML fragments) without contacting external sites; their implementations are in `test/steps/`. GitHub Actions runs them on every push and pull request.
 
-Source Markdown, HTML, CSS, JavaScript and SVG must be saved as UTF-8. Tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities.
+Source Markdown, HTML, CSS, JavaScript, SVG and translation catalogs must be saved as UTF-8. Source tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities. Translation validation also rejects introduced replacement characters and question marks embedded in words, excluding URLs and inline code.
 
 The [CD workflow](./.github/workflows/cd.yml) starts after a successful CI run on `vanilla` (excluding pull requests). CI uploads the validated commit SHA, including any generated translation commit, so CD builds and deploys that exact revision rather than a potentially newer branch tip. CD can also be started manually to deploy the selected revision without generating translations.
 

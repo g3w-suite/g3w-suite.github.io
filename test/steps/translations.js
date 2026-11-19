@@ -59,6 +59,8 @@ Then('corrupted machine translations are rejected', function () {
     ['user: **viewer1**', 'utilisateur : **visualiseur1**', /changed login value/],
     ['password: **example123**', 'mot de passe : **example123 (extra)**', /changed login value/],
     ['Title:', 'Titre & #160;:', /malformed HTML entity/],
+    ['Data search', 'B?squeda de datos', /damaged text encoding/],
+    ['Installation', 'Installazion\uFFFDe', /damaged text encoding/],
     ['Use QGIS 3.40 LTR.', 'Utiliser QGIS 3,40 LTR.', /changed software version/],
     ['Use QGIS 3.4.', 'Utiliser QGIS 3.44.', /changed software version/],
     ['**Open the map**', '** Ouvrir la carte**', /broken Markdown/],
@@ -73,6 +75,9 @@ Then('corrupted machine translations are rejected', function () {
   assert.doesNotThrow(() => validateTranslation('user: **viewer1**', 'utilisateur : **viewer1**'));
   assert.doesNotThrow(() => validateTranslation('The **map** is ready.', 'La **carte** est prête.'));
   assert.doesNotThrow(() => validateTranslation('Wait!!!!', 'Attendez!!!!'));
+  assert.doesNotThrow(() => validateTranslation('What is new?', '¿Qué hay de nuevo?'));
+  assert.doesNotThrow(() => validateTranslation('Read the guide.', 'Leggi la [guida](guide?lang=it) su https://example.com/guide?lang=it.'));
+  assert.doesNotThrow(() => validateTranslation('Use `a?b`.', 'Usa `a?b`.'));
   assert.doesNotThrow(() => validateTranslation('No no no!', 'Non non non !'));
   assert.doesNotThrow(() => validateTranslation('An ellipsis…', 'Wielokropek...'));
   assert.doesNotThrow(() => validateTranslation('Use `x y`.', 'Użyj `x  y`.'));
