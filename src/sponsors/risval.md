@@ -7,8 +7,6 @@ description: RISVAL was an Alpine seismic risk and vulnerability project under t
 
 RISVAL was an Alpine seismic risk and vulnerability project under the Italy–France ALCOTRA 2014–2020 programme.
 
-RISVAL supported G3W-SUITE 3.0, released in June 2020. That version integrated the QGIS API and expanded support for geographic data formats and QGIS Server services. It also introduced multilingual portal content and incorporated previously separate caching and file-management modules into the core.
-
 Running from April 2017 to April 2020, RISVAL brought together public authorities and research institutions from both sides of the Alps. Its aim was to improve knowledge of seismic risk and develop tools and procedures for prevention, emergency planning and territorial management.
 
 The project addressed an Alpine area where earthquakes occur relatively frequently, generally at low or moderate intensity, but where destructive events cannot be ruled out. Its work considered how seismic events could affect built-up areas and how local authorities could prepare for emergencies.
@@ -21,8 +19,12 @@ The Autonomous Region of Valle d'Aosta led the partnership. Participants include
 
 Its total budget was nearly €2 million, including approximately €1.69 million from the European Regional Development Fund.
 
-## Supported releases:
+## Contribution to G3W-SUITE
+
+Supported releases:
 
 [3.0](/en/news/v3.0/)
+
+RISVAL supported G3W-SUITE 3.0, released in June 2020. That version integrated the QGIS API and expanded support for geographic data formats and QGIS Server services. It also introduced multilingual portal content and incorporated previously separate caching and file-management modules into the core.
 
 [Project information](https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/risval-rischio-sismico-vulnerabilita-alpina "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

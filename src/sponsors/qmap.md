@@ -7,12 +7,6 @@ description: QMAP provides GIS services for territorial digitalization and manag
 
 ![QMAP](/img/site-qmap-logo.avif)
 
-QMAP appears among the funders of G3W-SUITE 3.8, released in June 2024. That version included compatibility with QGIS 3.34 LTR, saved map themes for authenticated users and additional print formats. It also offered PDF downloads of attributes resulting from a query or search.
-
-The same release brought changes to editing workflows involving 1:N relationships and the ability to begin editing from the attribute table.
-
-Version 3.8 added QGIS 3.34 LTR compatibility and map export to SVG and GeoPDF.
-
 QMAP provides GIS services for territorial digitalization and management of geospatial data.
 
 Its portal describes services for public administrations and businesses, including the conversion of planning documents into GIS data and the management of cadastral information.
@@ -25,8 +19,16 @@ Other listed applications concern the location of built and natural heritage, th
 
 The portal also presents tools for managing construction permits and recording the status of investment projects. Its catalogue brings planning, land records and local infrastructure together as related areas of territorial administration. Each service is described in relation to the data it helps maintain.
 
-## Supported releases:
+QMAP appears among the funders of G3W-SUITE 3.8, released in June 2024. That version included compatibility with QGIS 3.34 LTR, saved map themes for authenticated users and additional print formats. It also offered PDF downloads of attributes resulting from a query or search.
+
+The same release brought changes to editing workflows involving 1:N relationships and the ability to begin editing from the attribute table. Discover these improvements and more in the changelog below.
+
+## Contribution to G3W-SUITE
+
+Supported releases:
 
 [3.8](/en/news/v3.8/)
+
+Version 3.8 added QGIS 3.34 LTR compatibility and map export to SVG and GeoPDF.
 
 [Official website](https://qmap.ro/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

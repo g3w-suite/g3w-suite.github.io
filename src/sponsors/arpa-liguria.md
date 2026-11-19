@@ -9,11 +9,7 @@ description: ARPA Liguria is the regional agency for environmental protection in
 
 ARPA Liguria is the regional agency for environmental protection in Liguria, Italy.
 
-Its work includes monitoring water resources and publishing weather forecasts and information on pollen and spores.
-
-Version 3.3 added layer editing permissions and QGIS expression support.
-
-Version 3.10 introduced QGIS 3.40 LTR compatibility, map annotations and Elasticsearch-based search, along with updates to charts and online editing. Version 3.11 moved to QGIS 3.44 LTR and extended map interaction, editing and chart capabilities.
+Its work includes monitoring water resources and publishing weather forecasts and information on pollen and spores. These services make environmental information available across the region.
 
 Established by regional legislation in 1995 and operational since 1998, ARPAL provides technical and scientific support to the regional government, provinces and municipalities. Its responsibilities bring together environmental protection, water resources, soil protection, civil protection and public health.
 
@@ -27,8 +23,12 @@ The regional laboratory carries out chemical, microbiological, biological and ph
 
 The agency's role combines monitoring, laboratory analysis and communication with support for public institutions. Its official website provides access to its environmental themes, services and organisational information.
 
-## Supported releases:
+## Contribution to G3W-SUITE
+
+Supported releases:
 
 [3.3](/en/news/v3.3/) · [3.10](/en/news/v3.10/) · [3.11](/en/news/v3.11/)
+
+Version 3.3 added layer editing permissions and QGIS expression support.
 
 [Official website](https://www.arpal.liguria.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

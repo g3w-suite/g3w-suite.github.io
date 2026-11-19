@@ -7,11 +7,9 @@ description: The Rovereto Civic Museum Foundation works across science, archaeol
 
 ![Fondazione Museo Civico di Rovereto](/img/site-logomcr.avif)
 
-The Foundation maintains digital archives and a WebGIS portal that presents maps and geospatial information from research, monitoring and territorial projects.
+The Rovereto Civic Museum Foundation works across science, archaeology, education and the history of the city.
 
-The Foundation supported G3W-SUITE 3.9. The 2025 release focused on a redesign of the cartographic client and changes to editing configuration, with pagination for search results, improvements to related records and options for managing editing permissions.
-
-Version 3.9 refreshed the map client and improved editing permissions.
+Its museums present collections and exhibitions on subjects ranging from astronomy and zoology to local history.
 
 The Foundation brings together different ways of exploring natural and cultural heritage. Its Museum of Science and Archaeology presents archaeology, zoology, botany, astronomy, earth sciences and robotics through permanent collections and temporary exhibitions. Its programme also includes educational activities for schools and other visitors.
 
@@ -23,8 +21,16 @@ The Foundation also maintains digital archives of images, documents, videos, bib
 
 The WebGIS portal can be consulted without registration. It offers an additional way to encounter the Foundation's work: alongside museum objects and exhibitions, visitors can explore information connected to places and landscapes. The Foundation's archive pages explain how to access its different collections and databases.
 
-## Supported releases:
+The Foundation supported G3W-SUITE 3.9. The 2025 release focused on a redesign of the cartographic client and changes to editing configuration, with pagination for search results, improvements to related records and options for managing editing permissions.
+
+Visit the Foundation's website to discover its current exhibitions, educational projects and visitor information.
+
+## Contribution to G3W-SUITE
+
+Supported releases:
 
 [3.9](/en/news/v3.9/)
+
+Version 3.9 refreshed the map client and improved editing permissions.
 
 [Official website](https://www.fondazionemcr.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

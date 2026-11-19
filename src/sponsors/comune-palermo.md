@@ -1,32 +1,34 @@
 ---
 title: Comune di Palermo - G3W-Suite
-description: The Municipality of Palermo supports G3W-SUITE through its online geographic portal and sponsorship of version 3.3.
+description: The Municipality of Palermo is the local government of Palermo, Sicily.
 ---
 
 # Comune di Palermo
 
 ![Comune di Palermo](/img/site-palermo.avif)
 
-The Municipality of Palermo publishes an online geographic portal, one of the public G3W-SUITE deployments. The portal is branded URBAN-TOOLS and uses the G3W-Portal interface, version 4.0.6.
+The Municipality of Palermo is the local government of Palermo, Sicily.
 
-The Municipality supported G3W-SUITE 3.3.
+Palermo is the regional capital of Sicily and a city on the Mediterranean coast, overlooking the Gulf of Palermo. The municipality provides information about local administration and services to residents.
 
-Version 3.3 added editing permissions for individual users and layers, QGIS expressions in online editing, and options to control layer and attribute-table visibility.
+The municipal website brings together information about the city's administration, services and public life. Its pages present local offices and services alongside news, events and resources for residents. The city also provides an online geographic portal, included among the examples of G3W-SUITE use on this site.
 
-Administrators can assign create, geometry-edit, attribute-edit and delete operations per layer and user or group. Default-value QGIS expressions calculate fields in browser forms, while visibility and attribute-table constraints determine which information each user can access.
+Palermo's institutional site highlights places throughout the municipal area, including libraries, museums, archaeological sites, monuments, parks and gardens. It also presents cultural, artistic, social and sporting events. These resources offer different ways to learn about the city's spaces and the activities taking place in them.
 
-QGIS themes let visitors switch between project-defined combinations of layers. Related-data searches connect child records to their mapped parent features, and direct links open individual features on the map.
+The geographic portal provides another perspective on the territory, using maps as a way to access spatial information. Web mapping can bring different layers of information into a common view, allowing users to move around a territory and inspect the features represented on the map.
 
-Searches can span multiple layers with matching fields, returning results grouped by layer. Queries based on a related one-to-many table can return the associated parent geometry.
+The Municipality of Palermo supported G3W-SUITE 3.3. This release added more detailed editing permissions, allowing different operations to be configured for individual users and layers. It also extended the use of QGIS expressions in online editing and introduced additional options for controlling the visibility of layers and attribute tables.
 
-Other 3.3 changes added Oracle Spatial editing and geographic and alphanumeric filters for anonymous visitors. Administrators can hide empty layers automatically and search project and cartographic-group names in the administration interface.
+Version 3.3 included improvements for exploring maps as well. These covered QGIS map themes, searches involving related data and links that zoom directly to individual features. Together with the editing tools, they expanded the ways a published QGIS project could be consulted and managed through the web.
 
-Version 3.3 also supports importing GML, GeoJSON, KML, GPX, shapefile and CSV data into the map client, with labels taken from a selected field. Map users can export the current map extent as a GeoTIFF. Map-query results can be adjusted before exporting or using them as the basis for filters.
+Palermo's official website provides access to local information and services, while its geographic portal offers a map-based view. The version link below leads to the full overview of the G3W-SUITE release supported by the municipality.
 
-Palermo is the regional capital of Sicily, on the Mediterranean coast. The municipality's online portal provides a map-based point of access to geographic information about its territory. The urban area includes libraries, museums, archaeological sites, monuments, parks and gardens represented in the municipality's public information.
+## Contribution to G3W-SUITE
 
-## Supported releases:
+Supported releases:
 
 [3.3](/en/news/v3.3/)
+
+Version 3.3 added layer editing permissions and QGIS expression support.
 
 [Official website](https://www.comune.palermo.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")

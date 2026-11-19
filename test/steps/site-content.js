@@ -84,23 +84,13 @@ Then('sponsor profiles link to their credited releases in both languages', funct
     for (const [slug, versions] of Object.entries(sponsors)) {
       assert.equal(index(`main a[href="/${lang}/sponsors/${slug}/"]`).length, 1, `${lang}: missing ${slug}`);
       const profile = readPage(path.join(staticDir, lang, 'sponsors', slug, 'index.html')).$;
-      assert.equal(
-        profile(`main a[href="/${lang}/sponsors/"]`).filter((_, link) =>
-          profile(link).text().trim() === (lang === 'it' ? 'Torna agli sponsor' : 'Back to sponsors')
-        ).length,
-        1,
-        `${lang}: ${slug} must link back`
-      );
+      assert.equal(profile(`main > section a[href="/${lang}/sponsors/"]`).length, 1, `${lang}: ${slug} must link back`);
       assert.deepEqual(
         profile(`main a[href^="/${lang}/news/v"]`).map((_, link) => link.attribs.href).get(),
         versions.split(',').map(version => `/${lang}/news/v${version}/`),
         `${lang}: ${slug} must link to its credited releases`
       );
-      assert.equal(
-        profile('main h2').first().text(),
-        lang === 'it' ? 'Versioni sostenute:' : 'Supported releases:',
-        `${lang}: ${slug} supported releases heading`
-      );
+      assert.equal(profile('main h2').first().text(), lang === 'it' ? 'Contributo a G3W-SUITE' : 'Contribution to G3W-SUITE');
     }
   }
 });

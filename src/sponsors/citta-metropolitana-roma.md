@@ -1,28 +1,34 @@
 ---
 title: Città Metropolitana di Roma Capitale - G3W-Suite
-description: The Metropolitan City of Rome Capital supports G3W-SUITE and publishes climate-risk maps through its cartographic catalogue.
+description: The Metropolitan City of Rome Capital is a local authority whose geoportal publishes geographic information about its territory.
 ---
 
 # Città Metropolitana di Roma Capitale
 
 ![Città Metropolitana di Roma Capitale](/img/site-rome-metropolitan-city-logo.avif)
 
-The Metropolitan City's cartographic catalogue connects its climate and energy strategy to interactive maps published with G3W-SUITE. The 2025 catalogue includes maps of climate indicators, heat-wave risk, drought and water scarcity, floods, urban flooding, fires and landslides.
+The Metropolitan City of Rome Capital is a local authority whose geoportal publishes geographic information about its territory.
 
-Each catalogue entry identifies its project, subject, year, scale and data owner. Visitors can open the map viewer and access the related WMS service or dataset. The catalogue groups maps by categories such as environment, planning, hydrography, transport and land use.
+Its online cartographic catalogue offers a way to explore territorial information through the geoportal.
 
-The climate indicators compare projections for 2036–2065 with the 1981–2010 reference period, under both intermediate and high-emissions scenarios. Other entries map the exposure of homes, services, roads, cultural sites and natural areas to specific hazards, including heat, drought, flooding, fire and landslides.
+The metropolitan authority serves a territory that includes Rome and surrounding municipalities in Lazio. Its institutional website presents the area's towns and landscapes alongside information about public services, local initiatives and the work of the authority. Its responsibilities extend beyond the boundaries of the capital to the wider metropolitan area.
 
-The catalogue separates the hazard from the exposed assets in each map, and records the relevant project, category and scale. The map viewer and WMS links make these layers available for direct consultation and use in other GIS clients.
+Geographic information is available through the metropolitan geoportal and its cartographic catalogue. A catalogue offers a way to find and consult maps and territorial resources in one place, bringing geographic data into the context of the area it describes. The geoportal is also listed among the examples of G3W-SUITE use on this site.
 
-The Metropolitan City of Rome Capital supported G3W-SUITE 3.5.
+The metropolitan area includes urban centres, towns and landscapes with different characteristics. The authority's public activities include initiatives related to local government, schools, biodiversity and the environment. Its website provides information on these areas as well as news and documents for people who live and work in the territory.
 
-Version 3.5 expanded online editing and support for raster and vector time series. It added a summary of WebGIS settings, including active searches and editing permissions, so administrators can review a published service.
+The Metropolitan City of Rome Capital supported G3W-SUITE 3.5. This release expanded tools for online editing and for working with raster and vector time series. It also introduced a summary of WebGIS settings, including active searches and editing permissions, to help administrators review a published service.
 
-Other changes in 3.5 covered map interaction and editing: users could manage individual symbology categories, use parameterised views in a URL, work with overlapping features, copy features between layers and use default form values. Search and query results gained pagination, related records could be shown alongside feature data, and editing settings could be shared between users. Raster and vector time-series support complements the catalogue's time-based climate indicators.
+Changes to map interaction included the ability to manage individual symbology categories and use parameterised views in a URL. Editing improvements addressed overlapping features, copying between layers and displaying default values in forms. These developments are part of version 3.5, which can be explored through the link below.
 
-## Supported releases:
+The geoportal connects this profile with a concrete example of geographic information published for a metropolitan territory. For the authority's other activities and current services, its institutional website provides news and information organised by subject.
+
+## Contribution to G3W-SUITE
+
+Supported releases:
 
 [3.5](/en/news/v3.5/)
+
+Version 3.5 improved editing and time-series tools.
 
 [Official website](https://geoportale.cittametropolitanaroma.it/ "outline-button") [Back to sponsors](/en/sponsors/ "outline-button")
