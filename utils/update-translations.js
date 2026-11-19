@@ -123,23 +123,26 @@ function validateTranslation(source, translation) {
 
 function updateCatalog(entries, missing, translations) {
   const updated = { ...entries };
+  const errors = [];
   for (const [page, keys] of Object.entries(missing)) {
     const values = new Map(Object.entries(entries[page] || {}));
     for (const key of keys) {
       if (values.has(key)) continue;
       if (!Object.hasOwn(translations, key) || typeof translations[key] !== 'string' || !translations[key].trim()) {
-        throw new Error(`Missing machine translation for ${page}: ${key}`);
+        errors.push(`Missing machine translation for ${page}: ${key}`);
+        continue;
       }
       try {
         validateTranslation(key, translations[key]);
       } catch (error) {
-        error.message = `${page}: ${error.message}: ${key}`;
-        throw error;
+        errors.push(`${page}: ${error.message}: ${key}`);
+        continue;
       }
       values.set(key, translations[key]);
     }
     updated[page] = Object.fromEntries([...values.keys()].sort().map(key => [key, values.get(key)]));
   }
+  if (errors.length) throw new AggregateError(errors, errors.join('\n'));
   return Object.fromEntries(Object.keys(updated).sort().map(key => [key, updated[key]]));
 }
 
@@ -176,10 +179,18 @@ function main() {
   if (result.error) throw result.error;
   if (result.status !== 0) throw new Error(`Argos Translate failed (${result.signal || result.status})`);
   const translated = JSON.parse(result.stdout);
-  const updates = Object.keys(requests).map(lang => [
-    path.join(catalogDir, `${lang}.json`),
-    JSON.stringify(updateCatalog(catalogs[lang], missing[lang], translated[lang]), null, 2) + '\n',
-  ]);
+  const updates = [];
+  const errors = [];
+  for (const lang of Object.keys(requests)) {
+    try {
+      const updated = updateCatalog(catalogs[lang], missing[lang], translated[lang] || {});
+      updates.push([path.join(catalogDir, `${lang}.json`), JSON.stringify(updated, null, 2) + '\n']);
+    } catch (error) {
+      if (!(error instanceof AggregateError)) throw error;
+      errors.push(...error.errors.map(message => `${lang}: ${message}`));
+    }
+  }
+  if (errors.length) throw new Error(`Cannot save translations (${errors.length} errors):\n${errors.join('\n')}`);
   for (const [file, contents] of updates) fs.writeFileSync(file, contents);
 }
 

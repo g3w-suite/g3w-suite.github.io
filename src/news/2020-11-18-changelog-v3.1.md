@@ -141,7 +141,7 @@ It is now possible to consult **data on 1: N relations** through the **attribute
 
 ### Feature: Initial and maximum extent
 
-When you publish a QGIS project we can choose if use the** initial QGIS project extent as initial WebGis extent.**
+When publishing a QGIS project, you can choose to **use the project's initial extent for the WebGIS map**.
 
 The **maximum extension** is setted from the **WMS capabilities extent** set on the QGIS project.
 

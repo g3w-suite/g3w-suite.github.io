@@ -66,6 +66,10 @@ Then('corrupted machine translations are rejected', function () {
   ]) {
     assert.throws(() => updateCatalog({}, { 'example.md': [source] }, { [source]: translated }), error);
   }
+  assert.throws(
+    () => updateCatalog({}, { 'a.md': ['Title:'], 'b.md': ['Use labels.'] }, { 'Title:': 'Titre & #160;:' }),
+    /a\.md: Corrupted translation: malformed HTML entity[\s\S]*Missing machine translation for b\.md/
+  );
   assert.doesNotThrow(() => validateTranslation('user: **viewer1**', 'utilisateur : **viewer1**'));
   assert.doesNotThrow(() => validateTranslation('The **map** is ready.', 'La **carte** est prête.'));
   assert.doesNotThrow(() => validateTranslation('Wait!!!!', 'Attendez!!!!'));

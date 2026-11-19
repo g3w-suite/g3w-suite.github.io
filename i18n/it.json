@@ -3433,7 +3433,7 @@
     "Try the current demo": "Prova la demo attuale",
     "Version 3.1 introduces DataPlotly charts, Atlas print layouts and broader QGIS API support.": "La versione 3.1 introduce grafici DataPlotly, layout di stampa Atlas e un supporto più ampio alle API QGIS.",
     "We hope you enjoy this great work!": "Speriamo che questo lavoro vi piaccia!",
-    "When you publish a QGIS project we can choose if use the** initial QGIS project extent as initial WebGis extent.**": "Quando si pubblica un progetto QGIS è possibile scegliere se utilizzare l'**estensione iniziale del progetto QGIS come estensione iniziale del WebGis.**",
+    "When publishing a QGIS project, you can choose to **use the project's initial extent for the WebGIS map**.": "Quando si pubblica un progetto QGIS, si può scegliere di **usare l'estensione iniziale del progetto per la mappa WebGIS**.",
     "altas print layout": "layout di stampa atlante",
     "editing and visualization constraints": "vincoli di modifica e visualizzazione",
     "official manual on ReadTheDocs": "manuale ufficiale su ReadTheDocs",
