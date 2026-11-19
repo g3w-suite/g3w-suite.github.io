@@ -7,7 +7,7 @@ const { Then } = require('@cucumber/cucumber');
 const { missingPageKeys, updateCatalog, validateTranslation } = require('../../utils/update-translations');
 const { languages: siteLanguages } = require('../../utils/config');
 const { autoTranslateMarkdown } = require('../../utils/markdown');
-const { catalog, pageCatalog, extractPageMetadata } = require('../../utils/translations');
+const { catalog, pageCatalog, extractPageMetadata, translateHtml } = require('../../utils/translations');
 const {
   staticDir,
   languages,
@@ -27,6 +27,9 @@ Then('the translation updater adds only missing source keys', function () {
   const markdown = [
     '---', 'title: New title', 'ogType: website', '---', '# Existing',
     'New **body** with `QGIS`.', '[Navigation label](/en/docs/)', '| Table heading |',
+    '| **{{t \'Description\'}}** | Table heading |',
+    '![{{t \'Description\'}}](/img/example.avif)',
+    '[{{t \'Description\'}}](/en/docs/)',
     'Read the [localized guide](https://{{#it}}it.{{/it}}example.org).',
     '<iframe title="{{t \'Video title\'}}"></iframe>',
     '{{#it}}Testo gia localizzato{{/it}}', '{{#en}}English branch{{/en}}',
@@ -34,13 +37,21 @@ Then('the translation updater adds only missing source keys', function () {
   ].join('\n');
   const missing = missingPageKeys(markdown, file, 'it', entries[file]);
   assert.deepEqual(missing.sort(), [
-    'Navigation label', 'New **body** with `QGIS`.', 'New title', 'Table heading', 'Video title', 'localized guide',
+    'Description', 'Navigation label', 'New **body** with `QGIS`.', 'New title', 'Table heading', 'Video title', 'localized guide',
   ]);
   assert.ok(missingPageKeys(markdown, file, 'fr', {}).includes('English branch'));
   const generated = Object.fromEntries([...missing, 'Existing'].map(key => [key, `Draft: ${key}`]));
   const updated = updateCatalog(entries, { [file]: [...missing, 'Existing'] }, generated);
   assert.equal(updated[file].Existing, 'Gia tradotto');
   assert.deepEqual(missingPageKeys(markdown, file, 'it', updated[file]), []);
+  const tableTranslations = { it: {
+    Description: 'Descrizione',
+    'Table heading': 'Intestazione',
+    "**{{t 'Description'}}**": "**{{t 'Descrizione'}}**",
+  } };
+  const table = "| **{{t 'Description'}}** | Table heading |";
+  assert.equal(translateHtml(autoTranslateMarkdown(table, 'it', tableTranslations), 'it', tableTranslations),
+    '| **Descrizione** | Intestazione |');
 });
 
 Then('corrupted machine translations are rejected', function () {

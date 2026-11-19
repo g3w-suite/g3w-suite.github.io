@@ -20,6 +20,7 @@ function addHeadingAliases(html, sourceHeadings) {
 function autoTranslateMarkdown(markdown, lang, translations = {}) {
   // ponytail: single-line blocks only; add token-aware parsing if multiline Markdown needs translation
   const entries = translations[lang] || {};
+  const hasTranslation = key => !/[{}]/.test(key) && Object.hasOwn(entries, key);
   const lines = markdown.split(/(\r?\n)/);
   let inCodeFence = false;
   for (let index = 0; index < lines.length; index += 2) {
@@ -35,23 +36,23 @@ function autoTranslateMarkdown(markdown, lang, translations = {}) {
         const leading = /^\s*/.exec(cell)[0];
         const trailing = /\s*$/.exec(cell)[0];
         const key = cell.slice(leading.length, cell.length - trailing.length);
-        return `${leading}${Object.hasOwn(entries, key) ? entries[key] : key}${trailing}`;
+        return `${leading}${hasTranslation(key) ? entries[key] : key}${trailing}`;
       }).join('|');
     }
     if (lang !== 'en' && !wholeBlockTranslated && !/^\s*\|/.test(line)) {
       const match = /^(\s*(?:(?:#{1,6}|>+)\s+|(?:[-*+]\s+|\d+[.)]\s+))?)(.*?)(\s*)$/.exec(line);
-      if (match && match[2] && !/[{}]/.test(match[2]) && Object.hasOwn(entries, match[2])) {
+      if (match && match[2] && hasTranslation(match[2])) {
         lines[index] = `${match[1]}${entries[match[2]]}${match[3]}`;
         wholeBlockTranslated = true;
       }
     }
     if (!wholeBlockTranslated && lang !== 'en') {
       lines[index] = lines[index].replace(/!\[([^\[\]]+)\]\(([^)]*)\)/g, (_, label, destination) => {
-        const translatedLabel = Object.hasOwn(entries, label) ? entries[label] : label;
+        const translatedLabel = hasTranslation(label) ? entries[label] : label;
         return `![${translatedLabel}](${destination})`;
       });
       lines[index] = lines[index].replace(/(^|[^!])\[((?:[^\[\]]|!\[[^\[\]]*\]\([^)]*\))*)\]\(([^)]*)\)/g, (_, before, label, destination) => {
-        const translatedLabel = Object.hasOwn(entries, label) ? entries[label] : label;
+        const translatedLabel = hasTranslation(label) ? entries[label] : label;
         return `${before}[${translatedLabel}](${destination})`;
       });
     }
