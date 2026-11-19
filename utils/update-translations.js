@@ -80,9 +80,14 @@ function validateTranslation(source, translation) {
   if (repeatedSequence.test(translation) && !repeatedSequence.test(source)) {
     throw new Error('Corrupted translation: repeated characters');
   }
-  const repeatedPunctuation = /,(?:\s*,)+|[!?](?:\s*[!?]){3,}|!{2,}\[/;
+  const repeatedPunctuation = /,(?:\s*,)+|[!?](?:\s*[!?]){3,}|!{2,}\[|\. {1,}\.|\.{4,}/;
   if (repeatedPunctuation.test(translation) && !repeatedPunctuation.test(source)) {
     throw new Error('Corrupted translation: repeated punctuation');
+  }
+  const withoutCode = text => text.replace(/(`+[^`\n]*`+)/g, '\0');
+  const repeatedSpaces = /(?<=\S) {2,}(?=\S)/;
+  if (repeatedSpaces.test(withoutCode(translation)) && !repeatedSpaces.test(withoutCode(source))) {
+    throw new Error('Corrupted translation: repeated spaces');
   }
   const brokenEntity = /&\s+(?:#(?:x[\da-f]+|\d+)|[a-z]+);/i;
   if (brokenEntity.test(translation) && !brokenEntity.test(source)) {

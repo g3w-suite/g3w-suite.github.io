@@ -51,8 +51,11 @@ Then('corrupted machine translations are rejected', function () {
     ['Open the map.', 'Відкрийте '.repeat(12), /repeated words/],
     ['Open the map.', 'С.В., '.repeat(4), /repeated words/],
     ['Open the map.', 'Відкрити, , , карту.', /repeated punctuation/],
+    ['Read it.', 'Прочитайте . .', /repeated punctuation/],
+    ['Read it.', 'Прочитайте.....', /repeated punctuation/],
     ['See ![Map](/img/map.avif).', 'Див. !!!!!!!!!', /repeated punctuation/],
     ['See ![Map](/img/map.avif).', 'Див. !!![Карта](/img/map.avif).', /repeated punctuation/],
+    ['Use labels.', 'Використайте  підписи.', /repeated spaces/],
     ['user: **viewer1**', 'utilisateur : **visualiseur1**', /changed login value/],
     ['password: **example123**', 'mot de passe : **example123 (extra)**', /changed login value/],
     ['Title:', 'Titre & #160;:', /malformed HTML entity/],
@@ -67,6 +70,9 @@ Then('corrupted machine translations are rejected', function () {
   assert.doesNotThrow(() => validateTranslation('The **map** is ready.', 'La **carte** est prête.'));
   assert.doesNotThrow(() => validateTranslation('Wait!!!!', 'Attendez!!!!'));
   assert.doesNotThrow(() => validateTranslation('No no no!', 'Non non non !'));
+  assert.doesNotThrow(() => validateTranslation('An ellipsis…', 'Wielokropek...'));
+  assert.doesNotThrow(() => validateTranslation('Use `x y`.', 'Użyj `x  y`.'));
+  assert.doesNotThrow(() => validateTranslation('A hard break', 'Łamanie wiersza  '));
 });
 
 Then('translated text is rendered for each language', function () {
