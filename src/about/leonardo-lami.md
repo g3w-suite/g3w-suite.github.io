@@ -5,11 +5,11 @@ description: Leonardo Lami contributes to G3W-SUITE and its documentation.
 
 # Leonardo Lami
 
-![Leonardo Lami](https://github.com/leolami.png?size=400)
+![Leonardo Lami](https://github.com/leonardolami.png?size=400)
 
 **I contribute to G3W-SUITE and its documentation, helping people publish QGIS projects and work with them on the web.**
 
-[GitHub @leolami](https://github.com/leolami) · [GitHub @leonardolami](https://github.com/leonardolami) · [LinkedIn](https://www.linkedin.com/in/leonardolami/)
+[GitHub @leonardolami](https://github.com/leolami) · [LinkedIn](https://www.linkedin.com/in/leonardolami/)
 
 ## Documentation and releases
 
@@ -21,7 +21,7 @@ I also worked on documentation for versions 3.8, 3.9 and 3.10, including updated
 
 ## From the platform to its users
 
-My GitHub accounts, [@leolami](https://github.com/leolami) and [@leonardolami](https://github.com/leonardolami), include repositories for [G3W-ADMIN](https://github.com/leolami/g3w-admin) and the [end-user documentation](https://github.com/leolami/g3w-suite-documentation). Together, they cover the platform's administration tools and the guides that accompany them.
+My GitHub account, [@leonardolami](https://github.com/leolami), include repositories for [G3W-ADMIN](https://github.com/leolami/g3w-admin) and the [end-user documentation](https://github.com/leolami/g3w-suite-documentation). Together, they cover the platform's administration tools and the guides that accompany them.
 
 G3W-ADMIN connects QGIS projects with a web-based administration environment. Projects, users and permissions can be organized there before maps are made available through the client. Documentation and screenshots help administrators and map users navigate those workflows.
 
