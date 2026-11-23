@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
-const { missingPageKeys, updateCatalog, validateTranslation } = require('../../utils/update-translations');
+const { cleanCatalog, missingPageKeys, updateCatalog, validateTranslation } = require('../../utils/update-translations');
 const { languages: siteLanguages } = require('../../utils/config');
 const { autoTranslateMarkdown } = require('../../utils/markdown');
 const { catalog, pageCatalog, extractPageMetadata, translateHtml } = require('../../utils/translations');
@@ -22,6 +22,21 @@ const {
 } = require('../support/site');
 
 Then('the translation updater adds only missing source keys', function () {
+  assert.deepEqual(cleanCatalog({
+    '@breadcrumb': { Home: 'Home', Stale: 'Old' },
+    '@documentation': { Search: 'Search' },
+    'example.md': { Existing: 'Gia tradotto', Stale: 'Vecchio' },
+    'orphan.md': { Orphan: 'Orfano' },
+  }, {
+    '@breadcrumb': new Set(['Home']),
+    '@documentation': new Set(['Search']),
+    'example.md': new Set(['Existing']),
+  }), {
+    '@breadcrumb': { Home: 'Home' },
+    '@documentation': { Search: 'Search' },
+    'example.md': { Existing: 'Gia tradotto' },
+  });
+
   const file = 'docs/example.md';
   const entries = { [file]: { Existing: 'Gia tradotto' } };
   const markdown = [

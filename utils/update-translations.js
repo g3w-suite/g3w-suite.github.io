@@ -90,6 +90,28 @@ function missingSharedKeys(lang, entries) {
   ];
 }
 
+function usedSharedKeys(lang, entries) {
+  const breadcrumb = new Set();
+  renderBreadcrumb(lang, [], 'index.md', { '@breadcrumb': new Proxy(entries['@breadcrumb'] || {}, {
+    get(target, key) {
+      if (typeof key === 'string') breadcrumb.add(key);
+      return target[key];
+    },
+  }) });
+  return {
+    '@breadcrumb': breadcrumb,
+    '@documentation': new Set(Object.values(documentationLabels)),
+  };
+}
+
+function cleanCatalog(entries, used) {
+  return Object.fromEntries(Object.keys(used).sort().flatMap(page => {
+    const values = Object.fromEntries(Object.entries(entries[page] || {})
+      .filter(([key]) => used[page].has(key)));
+    return Object.keys(values).length || page.startsWith('@') ? [[page, values]] : [];
+  }));
+}
+
 function validateTranslation(source, translation) {
   if (typeof translation !== 'string' || !translation.trim()) {
     throw new Error('Empty translation');
@@ -186,46 +208,57 @@ function main() {
   const requests = {};
   for (const lang of languages.filter(lang => lang !== 'en')) {
     const entries = catalogs[lang] = catalog(lang);
+    used[lang] = {};
     const pages = sources.map(([file, source]) => {
-      used[`${lang}:${file}`] = usedPageKeys(source, file, lang, entries[file] || {});
+      used[lang][file] = usedPageKeys(source, file, lang, entries[file] || {});
       return [file, missingPageKeys(source, file, lang, entries[file] || {})];
     });
+    const shared = usedSharedKeys(lang, entries);
+    Object.assign(used[lang], shared);
     missing[lang] = Object.fromEntries([...pages, ...missingSharedKeys(lang, entries)].filter(([, keys]) => keys.length));
+    for (const [page, keys] of Object.entries(missing[lang])) {
+      for (const key of keys) used[lang][page].add(key);
+    }
     const keys = [...new Set(Object.values(missing[lang]).flat())];
     if (keys.length) requests[lang] = keys;
     console.log(`${lang}: ${keys.length} unique missing strings`);
   }
   const hasMissing = Object.keys(requests).length > 0;
+  const hasUnused = Object.entries(catalogs).some(([lang, entries]) =>
+    Object.entries(entries).some(([page, values]) =>
+      !Object.hasOwn(used[lang], page) || Object.keys(values).some(key => !used[lang][page].has(key))
+    )
+  );
+  const hasChanges = hasMissing || hasUnused;
   if (process.argv.includes('--dry-run')) {
-    if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `has_missing=${hasMissing}\n`);
+    if (process.env.GITHUB_OUTPUT) {
+      fs.appendFileSync(process.env.GITHUB_OUTPUT,
+        `has_missing=${hasMissing}\nhas_unused=${hasUnused}\nhas_changes=${hasChanges}\n`);
+    }
     return;
   }
-  if (!hasMissing) return;
 
-  const result = spawnSync(process.env.PYTHON || 'python', [path.join(__dirname, 'translate-argos.py')], {
-    input: JSON.stringify(requests),
-    encoding: 'utf8',
-    maxBuffer: 32 * 1024 * 1024,
-    stdio: ['pipe', 'pipe', 'inherit'],
-  });
-  if (result.error) throw result.error;
-  if (result.status !== 0) throw new Error(`Argos Translate failed (${result.signal || result.status})`);
-  const translated = JSON.parse(result.stdout);
-  const updates = [];
+  let translated = {};
+  if (hasMissing) {
+    const result = spawnSync(process.env.PYTHON || 'python', [path.join(__dirname, 'translate-argos.py')], {
+      input: JSON.stringify(requests),
+      encoding: 'utf8',
+      maxBuffer: 32 * 1024 * 1024,
+      stdio: ['pipe', 'pipe', 'inherit'],
+    });
+    if (result.error) throw result.error;
+    if (result.status !== 0) throw new Error(`Argos Translate failed (${result.signal || result.status})`);
+    translated = JSON.parse(result.stdout);
+  }
   const errors = [];
-  for (const lang of Object.keys(requests)) {
+  const updates = [];
+  for (const [lang, entries] of Object.entries(catalogs)) {
     try {
-      const updated = updateCatalog(catalogs[lang], missing[lang], translated[lang] || {});
-      // Keep only keys that are actually used
-      const usedKeys = new Set();
-      for (const [file, keys] of Object.entries(used).filter(([k]) => k.startsWith(`${lang}:`))) {
-        for (const key of keys) usedKeys.add(key);
-      }
-      const cleaned = {};
-      for (const page of Object.keys(updated)) {
-        cleaned[page] = Object.fromEntries(Object.entries(updated[page]).filter(([k]) => usedKeys.has(k)));
-      }
-      updates.push([path.join(catalogDir, `${lang}.json`), JSON.stringify(cleaned, null, 2) + '\n']);
+      const updated = updateCatalog(entries, missing[lang], translated[lang] || {});
+      const cleaned = cleanCatalog(updated, used[lang]);
+      const file = path.join(catalogDir, `${lang}.json`);
+      const contents = JSON.stringify(cleaned, null, 2) + '\n';
+      if (fs.readFileSync(file, 'utf8') !== contents) updates.push([file, contents]);
     } catch (error) {
       if (!(error instanceof AggregateError)) throw error;
       errors.push(...error.errors.map(message => `${lang}: ${message}`));
@@ -236,4 +269,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { missingPageKeys, updateCatalog, validateTranslation };
+module.exports = { cleanCatalog, missingPageKeys, updateCatalog, validateTranslation };
