@@ -48,7 +48,7 @@ jobs:
         run: |
           if [[ "$EVENT_NAME" == "workflow_run" ]]; then
             PR_NUMBER=$(gh api --method GET "repos/$GITHUB_REPOSITORY/pulls" \
-              -f state=open -f base=vanilla -f "head=$GITHUB_REPOSITORY:$HEAD_BRANCH" \
+              -f state=open -f base=vanilla -f "head=$GITHUB_REPOSITORY_OWNER:$HEAD_BRANCH" \
               --jq '.[0].number // empty')
           fi
           if [[ -z "$PR_NUMBER" ]]; then
@@ -147,6 +147,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Download validated commit
         if: github.event_name == 'workflow_run' && github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.head_branch == 'vanilla'
         uses: actions/download-artifact@v4
@@ -166,22 +169,34 @@ jobs:
             exit 1
           fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Read deployed production commit
+        if: needs.update-preview.result == 'success' && needs.update-preview.outputs.eligible == 'true'
+        id: production
+        env:
+          PAGE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          sha=$(curl --fail --silent --show-error --header 'Cache-Control: no-cache' \
+            "$PAGE_URL/production-sha.txt?run=$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT")
+          if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Invalid deployed production commit SHA"
+            exit 1
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.validated.outputs.sha || github.sha }}
+          ref: ${{ steps.production.outputs.sha || steps.validated.outputs.sha || github.sha }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm ci
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
       - name: Build site
         run: npm run build
         env:
           SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Record deployed production commit
+        run: git rev-parse HEAD > static/production-sha.txt
       - name: Include open pull request previews
         env:
           GH_TOKEN: ${{ github.token }}
