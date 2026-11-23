@@ -69,3 +69,10 @@ test('preview deploys require a valid production commit', () => {
   }
   assert.match(step('deploy', 'Checkout').with.ref, /steps\.production\.outputs\.sha/);
 });
+
+test('production and preview deployments share a non-replacing queue', () => {
+  const { concurrency } = workflow.jobs.deploy;
+  assert.equal(concurrency.group, 'pages');
+  assert.equal(concurrency.queue, 'max');
+  assert.equal(concurrency['cancel-in-progress'], false);
+});

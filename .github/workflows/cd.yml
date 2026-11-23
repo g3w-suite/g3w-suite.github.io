@@ -151,11 +151,13 @@ jobs:
        (needs.update-preview.result == 'success' &&
         needs.update-preview.outputs.eligible == 'true'))
     runs-on: ubuntu-latest
-    # Share one deployment slot across production and preview updates; do not
-    # interrupt a Pages deployment that is already in progress.
+    # Share one deployment slot across production and preview updates. Queue
+    # pending jobs instead of replacing a production deployment with a preview.
+    # ponytail: the queue holds 100 pending jobs; use an external queue if needed.
     concurrency:
       group: pages
       cancel-in-progress: false
+      queue: max
     permissions:
       contents: read
       actions: read
