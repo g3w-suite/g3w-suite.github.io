@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { Then } = require('@cucumber/cucumber');
-const { missingPageKeys, updateCatalog, validateTranslation } = require('../../utils/update-translations');
+const { cleanCatalog, missingPageKeys, usedPageKeys, updateCatalog, validateTranslation } = require('../../utils/update-translations');
 const { languages: siteLanguages } = require('../../utils/config');
 const { autoTranslateMarkdown } = require('../../utils/markdown');
 const { catalog, pageCatalog, extractPageMetadata, translateHtml } = require('../../utils/translations');
@@ -22,6 +22,31 @@ const {
 } = require('../support/site');
 
 Then('the translation updater adds only missing source keys', function () {
+  const notFound = fs.readFileSync(path.join('src', '404.md'), 'utf8');
+  for (const lang of siteLanguages.filter(lang => lang !== 'en')) {
+    const entries = catalog(lang)['404.md'];
+    const used = usedPageKeys(notFound, '404.md', lang, entries);
+    assert.equal(cleanCatalog({ '404.md': entries }, { '404.md': used })['404.md'].Search, entries.Search);
+    const withoutSearch = { ...entries };
+    delete withoutSearch.Search;
+    assert.ok(missingPageKeys(notFound, '404.md', lang, withoutSearch).includes('Search'));
+  }
+
+  assert.deepEqual(cleanCatalog({
+    '@breadcrumb': { Home: 'Home', Stale: 'Old' },
+    '@documentation': { Search: 'Search' },
+    'example.md': { Existing: 'Gia tradotto', Stale: 'Vecchio' },
+    'orphan.md': { Orphan: 'Orfano' },
+  }, {
+    '@breadcrumb': new Set(['Home']),
+    '@documentation': new Set(['Search']),
+    'example.md': new Set(['Existing']),
+  }), {
+    '@breadcrumb': { Home: 'Home' },
+    '@documentation': { Search: 'Search' },
+    'example.md': { Existing: 'Gia tradotto' },
+  });
+
   const file = 'docs/example.md';
   const entries = { [file]: { Existing: 'Gia tradotto' } };
   const markdown = [
