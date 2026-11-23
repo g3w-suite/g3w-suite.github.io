@@ -212,11 +212,9 @@
   },
   "about/leonardo-lami.md": {
     "**I contribute to G3W-SUITE and its documentation, helping people publish QGIS projects and work with them on the web.**": "**Minä osallistun G3W-SUITE ja sen dokumentointi, auttaa ihmisiä julkaisemaan QGIS hankkeita ja työskennellä niiden kanssa verkossa.**",
-    "@leonardolami": "@leonardolami",
     "Back to the project": "Takaisin projektiin",
     "Documentation and releases": "Asiakirjat ja julkaisut",
     "From the platform to its users": "Alustasta sen käyttäjille",
-    "G3W-ADMIN": "G3W-ADMIN",
     "G3W-ADMIN connects QGIS projects with a web-based administration environment. Projects, users and permissions can be organized there before maps are made available through the client. Documentation and screenshots help administrators and map users navigate those workflows.": "G3W-ADMIN Yhdistää QGIS Hankkeet, käyttäjät ja käyttöoikeudet voidaan järjestää siellä ennen kuin kartat ovat saatavilla asiakkaan kautta. Dokumentaatio- ja kuvakaappaukset auttavat hallinnoijia ja kartalla käyttäjiä navigoimaan näitä työnkulkuja.",
     "GitHub @leonardolami": "GitHub @leonardolami",
     "I also worked on documentation for versions 3.8, 3.9 and 3.10, including updated images and links. The documentation repository includes guides to Docker deployment, authentication and the organization of users and groups.": "Olen myös työskennellyt dokumentaation versioiden 3.8, 3.9 ja 3.10, mukaan lukien päivitetyt kuvat ja linkit. Dockerin käyttöönotto-, tunnistus- ja organisointioppaat ovat mukana dokumentaatiovarastossa.",
@@ -228,8 +226,7 @@
     "LinkedIn": "LinkedIn",
     "My GitHub account, [@leonardolami](https://github.com/leolami), include repositories for [G3W-ADMIN](https://github.com/leolami/g3w-admin) and the [end-user documentation](https://github.com/leolami/g3w-suite-documentation). Together, they cover the platform's administration tools and the guides that accompany them.": "GitHub-tilini. [@leonardolami](https://github.com/leolami), sisältää [G3W-ADMIN](https://github.com/leolami/g3w-admin) ja [loppukäyttäjän asiakirjat](https://github.com/leolami/g3w-suite-documentation). Yhdessä ne kattavat foorumin hallintovälineet ja niiden mukana olevat oppaat.",
     "My updates for versions 3.1 through 3.4 included English documentation for the portal, administration, the client and editing, as well as screenshots for forms and charts. [Manual 3.1 update](https://github.com/g3w-suite/g3w-admin/commit/22c4df2f) · [Version 3.4 documentation](https://github.com/g3w-suite/g3w-admin/commit/16d65b21).": "Päivitykset versioihin 3.1 - 3.4 sisälsivät englanninkielistä dokumentaatiota portaaliin, hallintoon, asiakkaaseen ja editointiin sekä kuvakaappauksia lomakkeiden ja kaavioiden näyttämiseen. [Manuaalinen 3.1 päivitys](https://github.com/g3w-suite/g3w-admin/commit/22c4df2f) · [Versio 3.4 - asiakirjat](https://github.com/g3w-suite/g3w-admin/commit/16d65b21).",
-    "The Quick Start walks through preparing a QGIS project, uploading geographic data, creating a cartographic group and publishing the project. The administration and editing guides then cover the settings needed to work with a WebGIS service.": "Quick Start kävelee läpi valmistelu QGIS projekti, paikkatietojen lataaminen, kartografisen ryhmän luominen ja projektin julkaiseminen. Hallinnon ja editointioppaat kattavat ne asetukset, joita tarvitaan WebGIS-palvelun kanssa tehtävään työhön.",
-    "end-user documentation": "loppukäyttäjän asiakirjat"
+    "The Quick Start walks through preparing a QGIS project, uploading geographic data, creating a cartographic group and publishing the project. The administration and editing guides then cover the settings needed to work with a WebGIS service.": "Quick Start kävelee läpi valmistelu QGIS projekti, paikkatietojen lataaminen, kartografisen ryhmän luominen ja projektin julkaiseminen. Hallinnon ja editointioppaat kattavat ne asetukset, joita tarvitaan WebGIS-palvelun kanssa tehtävään työhön."
   },
   "about/matteo-ghetta.md": {
     "**I develop DataPlotly, a QGIS plugin that links interactive charts to the map.**": "**Kehitän DataPlotly, a QGIS plugin, joka linkittää interaktiiviset kaaviot karttaan.**",

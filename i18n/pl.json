@@ -212,11 +212,9 @@
   },
   "about/leonardo-lami.md": {
     "**I contribute to G3W-SUITE and its documentation, helping people publish QGIS projects and work with them on the web.**": "**Ja przyczyniam się do G3W-SUITE i jego dokumentacji, pomagając ludziom publikować QGIS projekty i współpraca z nimi w sieci.**",
-    "@leonardolami": "@leonardolami",
     "Back to the project": "Powrót do projektu",
     "Documentation and releases": "Dokumentacja i wydania",
     "From the platform to its users": "Od platformy do jej użytkowników",
-    "G3W-ADMIN": "G3W-ADMIN",
     "G3W-ADMIN connects QGIS projects with a web-based administration environment. Projects, users and permissions can be organized there before maps are made available through the client. Documentation and screenshots help administrators and map users navigate those workflows.": "G3W-ADMIN połączenia QGIS projekty z internetowym środowiskiem administracyjnym. Projekty, użytkownicy i uprawnienia mogą być tam organizowane przed udostępnieniem map za pośrednictwem klienta. Dokumentacja i zrzuty ekranu pomagają administratorom i użytkownikom map poruszać się po tych przepływach pracy.",
     "GitHub @leonardolami": "GitHub @leonardolami",
     "I also worked on documentation for versions 3.8, 3.9 and 3.10, including updated images and links. The documentation repository includes guides to Docker deployment, authentication and the organization of users and groups.": "Pracowałem także nad dokumentacją dla wersji 3.8, 3.9 i 3.10, w tym uaktualnionych obrazów i linków. Repozytorium dokumentacji zawiera przewodniki do wdrażania Docker, uwierzytelniania i organizacji użytkowników i grup.",
@@ -228,8 +226,7 @@
     "LinkedIn": "LinkedIn",
     "My GitHub account, [@leonardolami](https://github.com/leolami), include repositories for [G3W-ADMIN](https://github.com/leolami/g3w-admin) and the [end-user documentation](https://github.com/leolami/g3w-suite-documentation). Together, they cover the platform's administration tools and the guides that accompany them.": "Moje konto GitHub, [@leonardolami](https://github.com/leolami), w tym repozytoria [G3W-ADMIN](https://github.com/leolami/g3w-admin) oraz [dokumentacja użytkownika](https://github.com/leolami/g3w-suite-documentation). Razem obejmują one narzędzia administracyjne platformy i przewodniki, które im towarzyszą.",
     "My updates for versions 3.1 through 3.4 included English documentation for the portal, administration, the client and editing, as well as screenshots for forms and charts. [Manual 3.1 update](https://github.com/g3w-suite/g3w-admin/commit/22c4df2f) · [Version 3.4 documentation](https://github.com/g3w-suite/g3w-admin/commit/16d65b21).": "Moje aktualizacje do wersji 3.1-3.4 obejmowały angielską dokumentację portalu, administracji, klienta i edycji, a także zrzuty ekranu dla formularzy i wykresów. [Podręcznik 3.1 aktualizacja](https://github.com/g3w-suite/g3w-admin/commit/22c4df2f) · [Wersja 3.4 dokumentacja](https://github.com/g3w-suite/g3w-admin/commit/16d65b21).",
-    "The Quick Start walks through preparing a QGIS project, uploading geographic data, creating a cartographic group and publishing the project. The administration and editing guides then cover the settings needed to work with a WebGIS service.": "Szybki Start przechodzi przez przygotowanie QGIS projekt, przesyłanie danych geograficznych, tworzenie grupy kartograficznej i publikowanie projektu. Przewodniki administracyjne i edycyjne obejmują następnie ustawienia niezbędne do pracy z serwisem WebGIS.",
-    "end-user documentation": "dokumentacja użytkownika"
+    "The Quick Start walks through preparing a QGIS project, uploading geographic data, creating a cartographic group and publishing the project. The administration and editing guides then cover the settings needed to work with a WebGIS service.": "Szybki Start przechodzi przez przygotowanie QGIS projekt, przesyłanie danych geograficznych, tworzenie grupy kartograficznej i publikowanie projektu. Przewodniki administracyjne i edycyjne obejmują następnie ustawienia niezbędne do pracy z serwisem WebGIS."
   },
   "about/matteo-ghetta.md": {
     "**I develop DataPlotly, a QGIS plugin that links interactive charts to the map.**": "**Rozwijam się DataPlotly, a QGIS plugin, który łączy interaktywne wykresy z mapą.**",
