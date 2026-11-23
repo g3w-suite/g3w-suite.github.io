@@ -9,7 +9,7 @@ PROTECTED = re.compile(
     r"(`+[^`\n]+`+|\]\([^)\n]*\)|</?[A-Za-z][^>\n]*>|"
     r"(?:https?://|/)[^\s<>\])]+|[\w.+-]+@[\w.-]+\.[A-Za-z]+|"
     r"&(?:#\w+|\w+);|\\[^\w\s]|\*+|_+|~~|[\[\]|]|"
-    r"\b(?:G3W-SUITE|G3W-CLIENT|G3W-ADMIN|QGIS|PostGIS|DataPlotly|GeoPackage|WebGIS|"
+    r"\b(?:G3W-(?:SUITE|CLIENT|ADMIN)(?:-[A-Z0-9]+)*|QGIS|PostGIS|DataPlotly|GeoPackage|WebGIS|"
     r"Viewer|Editor[12]?|Admin|Noble|[A-Za-z]+[A-Za-z_]*\d[A-Za-z\d_]*|"
     r"\d+(?:\.\d+)+(?:\.x)?)\b)"
 )

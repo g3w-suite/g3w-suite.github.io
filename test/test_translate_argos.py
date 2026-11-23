@@ -53,6 +53,23 @@ class TranslationTests(unittest.TestCase):
             self.assertIn(literal, result)
             self.assertFalse(any(literal in fragment for fragment in fragments))
 
+    def test_g3w_software_names_with_suffixes_are_not_translated(self):
+        fragments = []
+
+        def translate(text):
+            fragments.append(text)
+            return text.upper()
+
+        result = translate_text(
+            "G3W-ADMIN-PROCESSING, G3W-CLIENT-PLUGIN-EDITING, G3W-SUITE-DOCKER",
+            translate,
+        )
+        self.assertEqual(
+            result,
+            "G3W-ADMIN-PROCESSING, G3W-CLIENT-PLUGIN-EDITING, G3W-SUITE-DOCKER",
+        )
+        self.assertEqual(fragments, [])
+
 
 if __name__ == "__main__":
     unittest.main()

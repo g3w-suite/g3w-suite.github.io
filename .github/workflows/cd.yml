@@ -1,39 +1,181 @@
 name: Deploy static content to Pages
 
+# CI completion deploys validated production or PR builds. A PR closure removes
+# its preview; manual runs deploy the selected revision without running CI.
 on:
   workflow_run:
     workflows: ["Test BDD"]
     types: [completed]
-    branches: ["vanilla"]
+  pull_request_target:
+    types: [closed]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   actions: read
+  pull-requests: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
+  # Store previews separately from production, and clean them up when a PR
+  # closes. Only successful CI runs for same-repository PRs are eligible.
+  update-preview:
     if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.event != 'pull_request')
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.event == 'pull_request' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_repository.full_name == github.repository &&
+       github.event.workflow_run.head_branch != '') ||
+      (github.event_name == 'pull_request_target' &&
+       github.event.pull_request.base.ref == 'vanilla' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    # Serialize updates and closure for the same head branch so they cannot
+    # modify its preview branch at the same time.
+    concurrency:
+      group: preview-state-${{ github.event.workflow_run.head_branch || github.event.pull_request.head.ref }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: read
+      pull-requests: read
+    outputs:
+      eligible: ${{ steps.pr.outputs.eligible }}
+      number: ${{ steps.pr.outputs.number }}
+    steps:
+      # workflow_run does not reliably include a PR number. Look up an open PR
+      # by owner and head branch, then verify its full repository and base;
+      # closure events already supply the PR number.
+      - name: Verify pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [[ "$EVENT_NAME" == "workflow_run" ]]; then
+            PR_NUMBER=$(gh api --method GET "repos/$GITHUB_REPOSITORY/pulls" \
+              -f state=open -f base=vanilla -f "head=$GITHUB_REPOSITORY_OWNER:$HEAD_BRANCH" \
+              --jq '.[0].number // empty')
+          fi
+          if [[ -z "$PR_NUMBER" ]]; then
+            exit 0
+          fi
+          pr=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER")
+          if [[ "$(jq -r '.head.repo.full_name' <<< "$pr")" != "$GITHUB_REPOSITORY" ||
+                "$(jq -r '.base.ref' <<< "$pr")" != "vanilla" ]]; then
+            exit 0
+          fi
+          echo "eligible=true" >> "$GITHUB_OUTPUT"
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+      # Download only the artifact produced by the successful triggering run;
+      # the privileged workflow never checks out or executes the PR's code.
+      - name: Download pull request preview
+        if: github.event_name == 'workflow_run' && steps.pr.outputs.eligible == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: pr-preview-${{ steps.pr.outputs.number }}
+          path: ${{ runner.temp }}/pr-preview
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      # Use trusted vanilla Git metadata to create or update a storage branch.
+      - name: Checkout default branch
+        if: github.event_name == 'workflow_run' && steps.pr.outputs.eligible == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: vanilla
+      - name: Create or update preview branch
+        if: github.event_name == 'workflow_run' && steps.pr.outputs.eligible == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        # Create pr-preview-<number> if absent, then replace only that PR's
+        # directory with the artifact. Require an Italian homepage and reject
+        # symlinks before committing; unchanged previews need no commit.
+        run: |
+          set -euo pipefail
+          repo_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
+          branch="pr-preview-$PR_NUMBER"
+          if ! git ls-remote --exit-code --heads "$repo_url" "$branch" >/dev/null 2>&1; then
+            base_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/vanilla" --jq .object.sha)
+            if ! gh api "repos/$GITHUB_REPOSITORY/git/refs" -X POST \
+              -f "ref=refs/heads/$branch" -f "sha=$base_sha" >/dev/null; then
+              git ls-remote --exit-code --heads "$repo_url" "$branch" >/dev/null
+            fi
+          fi
+          gh auth setup-git
+          git fetch --depth=1 origin "refs/heads/$branch:refs/remotes/origin/$branch"
+          git switch --track -c "$branch" "origin/$branch"
+          test -f "$RUNNER_TEMP/pr-preview/it/index.html"
+          if find "$RUNNER_TEMP/pr-preview" -type l -print -quit | grep -q .; then
+            echo "::error::Preview artifact contains a symbolic link"
+            exit 1
+          fi
+          rm -rf "pr/$PR_NUMBER"
+          mkdir -p "pr/$PR_NUMBER"
+          cp -R "$RUNNER_TEMP/pr-preview/." "pr/$PR_NUMBER/"
+          git add -A -- "pr/$PR_NUMBER"
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "Update preview for PR #$PR_NUMBER" \
+            -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          git push origin "$branch"
+      # Closing or merging a PR deletes its generated preview branch if present.
+      - name: Delete preview branch
+        if: github.event_name == 'pull_request_target' && steps.pr.outputs.eligible == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          branch="pr-preview-$PR_NUMBER"
+          if gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/$branch" >/dev/null 2>&1; then
+            gh api "repos/$GITHUB_REPOSITORY/git/refs/heads/$branch" -X DELETE
+          fi
+
+  # GitHub Pages replaces the whole site on each deployment, so every deploy
+  # combines a production build with the currently available open PR previews.
+  deploy:
+    needs: update-preview
+    if: >-
+      always() &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'workflow_run' &&
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event != 'pull_request' &&
+        github.event.workflow_run.head_branch == 'vanilla') ||
+       (needs.update-preview.result == 'success' &&
+        needs.update-preview.outputs.eligible == 'true'))
+    runs-on: ubuntu-latest
+    # Share one deployment slot across production and preview updates. Queue
+    # pending jobs instead of replacing a production deployment with a preview.
+    # ponytail: the queue holds 100 pending jobs; use an external queue if needed.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+      queue: max
+    permissions:
+      contents: read
+      actions: read
+      pull-requests: read
+      issues: write
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
+      # configure-pages supplies the site's origin and optional project prefix.
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      # For successful production CI, fetch the exact tested SHA artifact.
       - name: Download validated commit
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.head_branch == 'vanilla'
         uses: actions/download-artifact@v4
         with:
           name: deployment-sha
@@ -41,9 +183,10 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
       - name: Read validated commit
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.head_branch == 'vanilla'
         id: validated
         shell: bash
+        # Reject malformed or missing SHA data instead of deploying a fallback.
         run: |
           sha=$(cat "$RUNNER_TEMP/ci-deployment/deployment-sha.txt")
           if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
@@ -51,27 +194,91 @@ jobs:
             exit 1
           fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      # A preview update must retain the currently deployed production revision,
+      # not an untested vanilla tip. The cache-busted public marker identifies
+      # that revision; fail closed if it is missing, unreachable or invalid.
+      - name: Read deployed production commit
+        if: needs.update-preview.result == 'success' && needs.update-preview.outputs.eligible == 'true'
+        id: production
+        env:
+          PAGE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          sha=$(curl --fail --silent --show-error --header 'Cache-Control: no-cache' \
+            "$PAGE_URL/production-sha.txt?run=$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT")
+          if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Invalid deployed production commit SHA"
+            exit 1
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      # Priority: deployed production for preview-only updates, validated CI
+      # commit for production, selected revision for a manual deployment.
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.validated.outputs.sha || github.sha }}
+          ref: ${{ steps.production.outputs.sha || steps.validated.outputs.sha || github.sha }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm ci
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
       - name: Build site
         run: npm run build
         env:
           SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      # The marker travels with this deployment and pins subsequent
+      # preview-only deployments to the production revision used here.
+      - name: Record deployed production commit
+        run: git rev-parse HEAD > static/production-sha.txt
+      # Discover open same-repository PRs and copy each existing preview
+      # directory from its storage branch into the combined Pages artifact.
+      - name: Include open pull request previews
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          repo_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
+          gh auth setup-git
+          prs=$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
+            --jq '.[] | select(.head.repo.full_name == env.GITHUB_REPOSITORY) | .number')
+          while read -r number; do
+            [[ "$number" =~ ^[0-9]+$ ]] || continue
+            branch="pr-preview-$number"
+            if ! git ls-remote --exit-code --heads "$repo_url" "$branch" >/dev/null 2>&1; then
+              continue
+            fi
+            git fetch --depth=1 origin "refs/heads/$branch:refs/remotes/origin/$branch"
+            git archive --format=tar "refs/remotes/origin/$branch" "pr/$number" | tar -xf - -C static
+          done <<< "$prs"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the generated site and tracked assets
-          path: 'static'
+          # ponytail: each open PR adds a full static copy; use isolated hosting if Pages approaches its size limit.
+          path: static
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+      # After deployment, create or update one bot comment with the configured
+      # Pages URL; replace it with a removal notice when the PR is closed.
+      - name: Publish preview link
+        if: needs.update-preview.outputs.eligible == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ needs.update-preview.outputs.number }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          page_url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .html_url)
+          page_url=${page_url%/}
+          if [[ "$EVENT_NAME" == "pull_request_target" ]]; then
+            body="The preview for this PR was removed because it was closed.<!-- g3w-suite-pr-preview -->"
+          else
+            url="$page_url/pr/$PR_NUMBER/"
+            body="Preview: [Open the site preview]($url)<!-- g3w-suite-pr-preview -->"
+          fi
+          comment_id=$(gh api --paginate "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments?per_page=100" \
+            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- g3w-suite-pr-preview -->"))) | .id' \
+            | tail -n 1)
+          if [[ -n "$comment_id" ]]; then
+            gh api "repos/$GITHUB_REPOSITORY/issues/comments/$comment_id" -X PATCH -f "body=$body"
+          else
+            gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -f "body=$body"
+          fi

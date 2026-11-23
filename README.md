@@ -72,7 +72,7 @@ The Gherkin scenarios in `test/features/` check page structure, assets, language
 
 Source Markdown, HTML, CSS, JavaScript, SVG and translation catalogs must be saved as UTF-8. Source tests reject invalid UTF-8, replacement characters and common mojibake sequences, including those encoded as HTML entities. Translation validation also rejects introduced replacement characters and question marks embedded in words, excluding URLs and inline code.
 
-The [CD workflow](./.github/workflows/cd.yml) starts after a successful CI run on `vanilla` (excluding pull requests). CI uploads the validated commit SHA, including any generated translation commit, so CD builds and deploys that exact revision rather than a potentially newer branch tip. CD can also be started manually to deploy the selected revision without generating translations.
+The [CD workflow](./.github/workflows/cd.yml) starts after a successful CI run on `vanilla` and deploys the validated commit SHA, including any generated translation commit. Successful pull requests from branches in this repository also get a preview at `/pr/<number>/`; the workflow posts the link on the PR and removes the preview when it closes. Fork pull requests are excluded because previews share the site's origin. The preview copies are kept on per-PR `pr-preview-*` branches and included in each Pages deployment. Preview-only deployments reuse the production commit recorded at `/production-sha.txt` by a previous deployment; they fail until this marker exists. Production and preview deployments share a queue of up to 100 pending jobs. CD can also be started manually to deploy the selected revision without generating translations.
 
 ## Connect a custom domain
 
