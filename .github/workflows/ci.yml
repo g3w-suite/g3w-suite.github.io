@@ -1,5 +1,7 @@
 name: Test BDD
 
+# Run on branch updates, PR updates and manual requests. Preview storage
+# branches contain generated files only and must not trigger CI themselves.
 on:
   push:
     branches-ignore:
@@ -8,9 +10,13 @@ on:
   workflow_dispatch:
 
 permissions:
+  # Translation updates are pushed back to eligible branches; Pages metadata
+  # supplies the base path for same-repository PR previews.
   contents: write
   pages: read
 
+# Serialize runs for the same ref without cancelling a run that may push
+# translation updates. Branch and PR refs have separate concurrency groups.
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: false
@@ -19,6 +25,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # Test the PR's actual head, including for forks, rather than GitHub's
+      # synthetic merge commit. Other events test the triggering commit.
       - uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
@@ -28,6 +36,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Detect catalog changes first; install Argos and its CPU dependencies
+      # only when new translations must actually be generated.
       - name: Find missing translations
         id: translations
         run: node utils/update-translations.js --dry-run
@@ -39,6 +49,8 @@ jobs:
         if: steps.translations.outputs.has_missing == 'true'
         env:
           ARGOS_CHUNK_TYPE: MINISBD
+        # MINISBD avoids the default sentence segmentation dependency; use the
+        # CPU PyTorch wheel because the hosted runner does not need GPU support.
         run: |
           python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
           python -m pip install argostranslate==1.11.0
@@ -47,9 +59,13 @@ jobs:
         env:
           ARGOS_CHUNK_TYPE: MINISBD
         run: node utils/update-translations.js
+      # Run the translation, deployment-workflow and generated-site checks
+      # before publishing or committing any generated catalogs.
       - run: python -m unittest discover -s test -p 'test_*.py'
       - run: node --test test/preview-workflow.test.js
       - run: npm test
+      # Fork PR tokens cannot push to the contributor's branch. Make catalog
+      # changes available as an artifact instead of attempting a commit.
       - name: Upload translations for fork pull requests
         if: steps.translations.outputs.has_changes == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
         uses: actions/upload-artifact@v4
@@ -57,10 +73,14 @@ jobs:
           name: updated-translations
           path: i18n/*.json
           if-no-files-found: error
+      # For same-repository PRs and branch runs, commit only catalog changes
+      # after the tests pass; the checkout may already contain generated edits.
       - name: Commit updated translations
         if: steps.translations.outputs.has_changes == 'true' && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (github.event_name != 'pull_request' && github.ref_type == 'branch'))
         env:
           TARGET_BRANCH: ${{ github.head_ref || github.ref_name }}
+        # Avoid an empty commit and push to the triggering branch, not the
+        # detached checkout. GITHUB_TOKEN pushes do not start another CI run.
         run: |
           git add -- 'i18n/*.json'
           if git diff --cached --quiet; then exit 0; fi
@@ -69,6 +89,8 @@ jobs:
               commit -m 'Update website translations' \
               -m 'Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>'
           git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+      # Production CD must build the tested checkout, including any catalog
+      # commit made above, rather than a potentially newer vanilla branch tip.
       - name: Record validated commit
         if: github.ref == 'refs/heads/vanilla' && github.event_name != 'pull_request'
         run: git rev-parse HEAD > "$RUNNER_TEMP/deployment-sha.txt"
@@ -78,6 +100,9 @@ jobs:
           name: deployment-sha
           path: ${{ runner.temp }}/deployment-sha.txt
           if-no-files-found: error
+      # Only PRs targeting vanilla from this repository get a preview: fork
+      # content must not be published on the production site's origin.
+      # Preserve the configured Pages prefix before appending /pr/<number>/.
       - name: Configure Pages for preview
         if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'vanilla' && github.event.pull_request.head.repo.full_name == github.repository
         id: preview-pages
@@ -87,6 +112,8 @@ jobs:
         run: npm run build
         env:
           SITE_BASE_PATH: ${{ steps.preview-pages.outputs.base_path }}/pr/${{ github.event.pull_request.number }}
+      # The completed workflow's artifact is consumed by CD; it contains the
+      # entire generated site and tracked static assets for this PR.
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'vanilla' && github.event.pull_request.head.repo.full_name == github.repository
         with:

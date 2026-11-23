@@ -1,5 +1,7 @@
 name: Deploy static content to Pages
 
+# CI completion deploys validated production or PR builds. A PR closure removes
+# its preview; manual runs deploy the selected revision without running CI.
 on:
   workflow_run:
     workflows: ["Test BDD"]
@@ -16,6 +18,8 @@ permissions:
   id-token: write
 
 jobs:
+  # Store previews separately from production, and clean them up when a PR
+  # closes. Only successful CI runs for same-repository PRs are eligible.
   update-preview:
     if: >-
       (github.event_name == 'workflow_run' &&
@@ -27,6 +31,8 @@ jobs:
        github.event.pull_request.base.ref == 'vanilla' &&
        github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
+    # Serialize updates and closure for the same head branch so they cannot
+    # modify its preview branch at the same time.
     concurrency:
       group: preview-state-${{ github.event.workflow_run.head_branch || github.event.pull_request.head.ref }}
       cancel-in-progress: false
@@ -38,6 +44,9 @@ jobs:
       eligible: ${{ steps.pr.outputs.eligible }}
       number: ${{ steps.pr.outputs.number }}
     steps:
+      # workflow_run does not reliably include a PR number. Look up an open PR
+      # by owner and head branch, then verify its full repository and base;
+      # closure events already supply the PR number.
       - name: Verify pull request
         id: pr
         env:
@@ -61,6 +70,8 @@ jobs:
           fi
           echo "eligible=true" >> "$GITHUB_OUTPUT"
           echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+      # Download only the artifact produced by the successful triggering run;
+      # the privileged workflow never checks out or executes the PR's code.
       - name: Download pull request preview
         if: github.event_name == 'workflow_run' && steps.pr.outputs.eligible == 'true'
         uses: actions/download-artifact@v4
@@ -69,6 +80,7 @@ jobs:
           path: ${{ runner.temp }}/pr-preview
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
+      # Use trusted vanilla Git metadata to create or update a storage branch.
       - name: Checkout default branch
         if: github.event_name == 'workflow_run' && steps.pr.outputs.eligible == 'true'
         uses: actions/checkout@v4
@@ -79,6 +91,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
+        # Create pr-preview-<number> if absent, then replace only that PR's
+        # directory with the artifact. Require an Italian homepage and reject
+        # symlinks before committing; unchanged previews need no commit.
         run: |
           set -euo pipefail
           repo_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
@@ -110,6 +125,7 @@ jobs:
             commit -m "Update preview for PR #$PR_NUMBER" \
             -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
           git push origin "$branch"
+      # Closing or merging a PR deletes its generated preview branch if present.
       - name: Delete preview branch
         if: github.event_name == 'pull_request_target' && steps.pr.outputs.eligible == 'true'
         env:
@@ -121,6 +137,8 @@ jobs:
             gh api "repos/$GITHUB_REPOSITORY/git/refs/heads/$branch" -X DELETE
           fi
 
+  # GitHub Pages replaces the whole site on each deployment, so every deploy
+  # combines a production build with the currently available open PR previews.
   deploy:
     needs: update-preview
     if: >-
@@ -133,6 +151,8 @@ jobs:
        (needs.update-preview.result == 'success' &&
         needs.update-preview.outputs.eligible == 'true'))
     runs-on: ubuntu-latest
+    # Share one deployment slot across production and preview updates; do not
+    # interrupt a Pages deployment that is already in progress.
     concurrency:
       group: pages
       cancel-in-progress: false
@@ -147,9 +167,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # configure-pages supplies the site's origin and optional project prefix.
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      # For successful production CI, fetch the exact tested SHA artifact.
       - name: Download validated commit
         if: github.event_name == 'workflow_run' && github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.head_branch == 'vanilla'
         uses: actions/download-artifact@v4
@@ -162,6 +184,7 @@ jobs:
         if: github.event_name == 'workflow_run' && github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.head_branch == 'vanilla'
         id: validated
         shell: bash
+        # Reject malformed or missing SHA data instead of deploying a fallback.
         run: |
           sha=$(cat "$RUNNER_TEMP/ci-deployment/deployment-sha.txt")
           if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
@@ -169,6 +192,9 @@ jobs:
             exit 1
           fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      # A preview update must retain the currently deployed production revision,
+      # not an untested vanilla tip. The cache-busted public marker identifies
+      # that revision; fail closed if it is missing, unreachable or invalid.
       - name: Read deployed production commit
         if: needs.update-preview.result == 'success' && needs.update-preview.outputs.eligible == 'true'
         id: production
@@ -182,6 +208,8 @@ jobs:
             exit 1
           fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      # Priority: deployed production for preview-only updates, validated CI
+      # commit for production, selected revision for a manual deployment.
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -195,8 +223,12 @@ jobs:
         run: npm run build
         env:
           SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      # The marker travels with this deployment and pins subsequent
+      # preview-only deployments to the production revision used here.
       - name: Record deployed production commit
         run: git rev-parse HEAD > static/production-sha.txt
+      # Discover open same-repository PRs and copy each existing preview
+      # directory from its storage branch into the combined Pages artifact.
       - name: Include open pull request previews
         env:
           GH_TOKEN: ${{ github.token }}
@@ -223,6 +255,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+      # After deployment, create or update one bot comment with the configured
+      # Pages URL; replace it with a removal notice when the PR is closed.
       - name: Publish preview link
         if: needs.update-preview.outputs.eligible == 'true'
         env:
