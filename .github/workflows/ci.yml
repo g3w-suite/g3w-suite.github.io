@@ -23,7 +23,6 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Find missing translations
-        if: github.ref == 'refs/heads/vanilla' && github.event_name != 'pull_request'
         id: translations
         run: node utils/update-translations.js --dry-run
       - uses: actions/setup-python@v5
