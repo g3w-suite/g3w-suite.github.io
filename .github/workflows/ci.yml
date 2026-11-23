@@ -2,6 +2,8 @@ name: Test BDD
 
 on:
   push:
+    branches-ignore:
+      - pr-preview-*
   pull_request:
   workflow_dispatch:
 
@@ -73,4 +75,16 @@ jobs:
         with:
           name: deployment-sha
           path: ${{ runner.temp }}/deployment-sha.txt
+          if-no-files-found: error
+      - name: Build pull request preview
+        if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'vanilla' && github.event.pull_request.head.repo.full_name == github.repository
+        run: npm run build
+        env:
+          SITE_BASE_PATH: /pr/${{ github.event.pull_request.number }}
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'vanilla' && github.event.pull_request.head.repo.full_name == github.repository
+        with:
+          name: pr-preview-${{ github.event.pull_request.number }}
+          path: static
+          retention-days: 90
           if-no-files-found: error
