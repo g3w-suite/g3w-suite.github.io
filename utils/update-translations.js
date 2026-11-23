@@ -9,7 +9,7 @@ const { htmlFiles, markdownFiles } = require('./files');
 const { autoTranslateMarkdown } = require('./markdown');
 const { documentationLabels } = require('./documentation');
 const { renderBreadcrumb } = require('./routes');
-const { catalog, extractPageMetadata, renderLanguageBlocks, renderPageMetadata, translateHtml } = require('./translations');
+const { catalog, extractPageMetadata, renderLanguageBlocks, renderPageMetadata, translateHtml, notFoundSearchLabel } = require('./translations');
 
 function observeMissing(entries, missing) {
   return new Proxy(entries, {
@@ -30,6 +30,7 @@ function isMarkdownText(key) {
 function usedPageKeys(source, file, lang, entries) {
   const { html, metadata } = extractPageMetadata(source, file);
   const used = new Set();
+  if (file === '404.md') used.add(notFoundSearchLabel);
   const body = renderLanguageBlocks(html, lang);
   const explicit = { [lang]: new Proxy(entries, {
     get(target, key) {
@@ -54,6 +55,7 @@ function usedPageKeys(source, file, lang, entries) {
 function missingPageKeys(source, file, lang, entries) {
   const { html, metadata } = extractPageMetadata(source, file);
   const missing = new Set();
+  if (file === '404.md' && !Object.hasOwn(entries, notFoundSearchLabel)) missing.add(notFoundSearchLabel);
   const body = renderLanguageBlocks(html, lang);
   const explicit = { [lang]: observeMissing(entries, missing) };
   renderPageMetadata(metadata, lang, explicit);
@@ -269,4 +271,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { cleanCatalog, missingPageKeys, updateCatalog, validateTranslation };
+module.exports = { cleanCatalog, missingPageKeys, usedPageKeys, updateCatalog, validateTranslation };

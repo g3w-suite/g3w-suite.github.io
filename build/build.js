@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { projectRoot, staticDir, sourceDir, siteOrigin, basePath, languages, publishedHtml } = require('../utils/config');
 const { htmlFiles, markdownFiles } = require('../utils/files');
-const { catalog, pageCatalog, localizeSiteLinks, renderLanguageBlocks, translate, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates } = require('../utils/translations');
+const { catalog, pageCatalog, localizeSiteLinks, renderLanguageBlocks, translate, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates, notFoundSearchLabel } = require('../utils/translations');
 const { marked, getHeadingList, addHeadingAliases, autoTranslateMarkdown, renderPageMarkdown, renderChangelogMarkdown, renderYoutubeVideos, renderMarkdownButtonLinks } = require('../utils/markdown');
 const { outputPage, languagePageUrl, renderLanguageLinks, renderBreadcrumb, renderComponent } = require('../utils/routes');
 const { buildDocumentation } = require('../utils/documentation');
@@ -91,7 +91,7 @@ function build(outputDir) {
               : renderPageMarkdown(content, page)
           : content;
         if (page === '404.md') {
-          const searchLabel = translate('Search', lang, translations);
+          const searchLabel = translate(notFoundSearchLabel, lang, translations);
           const search = `<form class="google-search" role="search" action="https://www.google.com/search" method="get">
             <input type="hidden" name="as_sitesearch" value="${new URL(siteOrigin).hostname}">
             <label for="google-search-input" class="sr-only">${searchLabel}</label>

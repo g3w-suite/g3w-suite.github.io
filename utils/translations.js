@@ -5,6 +5,8 @@ const path = require('node:path');
 const { parse: parseYaml } = require('yaml');
 const { catalogDir, docsRoot, languages } = require('./config');
 
+const notFoundSearchLabel = 'Search';
+
 function catalog(lang) {
   if (lang === 'en') return {};
   const file = path.join(catalogDir, `${lang}.json`);
@@ -113,4 +115,4 @@ function renderPageAlternates(pageUrls) {
   ).join('\n');
 }
 
-module.exports = { catalog, pageCatalog, localizeSiteUrl, localizeSiteLinks, renderLanguageBlocks, translate, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates };
+module.exports = { catalog, pageCatalog, localizeSiteUrl, localizeSiteLinks, renderLanguageBlocks, translate, translateHtml, extractPageMetadata, renderPageMetadata, renderPageAlternates, notFoundSearchLabel };

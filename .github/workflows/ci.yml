@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -43,8 +46,17 @@ jobs:
         run: node utils/update-translations.js
       - run: python -m unittest discover -s test -p 'test_*.py'
       - run: npm test
+      - name: Upload translations for fork pull requests
+        if: steps.translations.outputs.has_changes == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-translations
+          path: i18n/*.json
+          if-no-files-found: error
       - name: Commit updated translations
-        if: steps.translations.outputs.has_changes == 'true'
+        if: steps.translations.outputs.has_changes == 'true' && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (github.event_name != 'pull_request' && github.ref_type == 'branch'))
+        env:
+          TARGET_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           git add -- 'i18n/*.json'
           if git diff --cached --quiet; then exit 0; fi
@@ -52,7 +64,7 @@ jobs:
               -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
               commit -m 'Update website translations' \
               -m 'Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>'
-          git push origin HEAD:refs/heads/vanilla
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
       - name: Record validated commit
         if: github.ref == 'refs/heads/vanilla' && github.event_name != 'pull_request'
         run: git rev-parse HEAD > "$RUNNER_TEMP/deployment-sha.txt"
