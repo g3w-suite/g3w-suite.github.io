@@ -27,6 +27,30 @@ function isMarkdownText(key) {
     !/^(?:https?:\/\/|\/)\S+$/i.test(prose);
 }
 
+function usedPageKeys(source, file, lang, entries) {
+  const { html, metadata } = extractPageMetadata(source, file);
+  const used = new Set();
+  const body = renderLanguageBlocks(html, lang);
+  const explicit = { [lang]: new Proxy(entries, {
+    get(target, key) {
+      if (Object.hasOwn(target, key)) used.add(key);
+      return target[key];
+    },
+  }) };
+  renderPageMetadata(metadata, lang, explicit);
+  translateHtml(body, lang, explicit);
+  if (file.endsWith('.md')) {
+    const markdown = { [lang]: new Proxy(entries, {
+      getOwnPropertyDescriptor(target, key) {
+        if (Object.hasOwn(target, key)) used.add(key);
+        return Reflect.getOwnPropertyDescriptor(target, key);
+      },
+    }) };
+    autoTranslateMarkdown(body, lang, markdown);
+  }
+  return used;
+}
+
 function missingPageKeys(source, file, lang, entries) {
   const { html, metadata } = extractPageMetadata(source, file);
   const missing = new Set();
@@ -158,12 +182,14 @@ function main() {
     .map(file => [path.relative(sourceDir, file).split(path.sep).join('/'), fs.readFileSync(file, 'utf8')]);
   const catalogs = {};
   const missing = {};
+  const used = {};
   const requests = {};
   for (const lang of languages.filter(lang => lang !== 'en')) {
     const entries = catalogs[lang] = catalog(lang);
-    const pages = sources.map(([file, source]) => [
-      file, missingPageKeys(source, file, lang, entries[file] || {}),
-    ]);
+    const pages = sources.map(([file, source]) => {
+      used[`${lang}:${file}`] = usedPageKeys(source, file, lang, entries[file] || {});
+      return [file, missingPageKeys(source, file, lang, entries[file] || {})];
+    });
     missing[lang] = Object.fromEntries([...pages, ...missingSharedKeys(lang, entries)].filter(([, keys]) => keys.length));
     const keys = [...new Set(Object.values(missing[lang]).flat())];
     if (keys.length) requests[lang] = keys;
@@ -190,7 +216,16 @@ function main() {
   for (const lang of Object.keys(requests)) {
     try {
       const updated = updateCatalog(catalogs[lang], missing[lang], translated[lang] || {});
-      updates.push([path.join(catalogDir, `${lang}.json`), JSON.stringify(updated, null, 2) + '\n']);
+      // Keep only keys that are actually used
+      const usedKeys = new Set();
+      for (const [file, keys] of Object.entries(used).filter(([k]) => k.startsWith(`${lang}:`))) {
+        for (const key of keys) usedKeys.add(key);
+      }
+      const cleaned = {};
+      for (const page of Object.keys(updated)) {
+        cleaned[page] = Object.fromEntries(Object.entries(updated[page]).filter(([k]) => usedKeys.has(k)));
+      }
+      updates.push([path.join(catalogDir, `${lang}.json`), JSON.stringify(cleaned, null, 2) + '\n']);
     } catch (error) {
       if (!(error instanceof AggregateError)) throw error;
       errors.push(...error.errors.map(message => `${lang}: ${message}`));
